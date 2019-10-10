@@ -98,6 +98,18 @@
       <DependentUpon>frmPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Localidades\frmProductos.Designer.vb">
+      <DependentUpon>frmProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Localidades\frmProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\frmNuevoProducto.Designer.vb">
+      <DependentUpon>frmNuevoProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\frmNuevoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Proveedores\frmNuevoProveedor.Designer.vb">
       <DependentUpon>frmNuevoProveedor.vb</DependentUpon>
     </Compile>
@@ -138,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localidades\frmProductos.resx">
+      <DependentUpon>frmProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\frmNuevoProducto.resx">
+      <DependentUpon>frmNuevoProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\frmNuevoProveedor.resx">
       <DependentUpon>frmNuevoProveedor.vb</DependentUpon>

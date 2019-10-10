@@ -90,7 +90,7 @@ Partial Class frmNuevoCliente
         'txtNomApel
         '
         Me.txtNomApel.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNomApel.Location = New System.Drawing.Point(147, 87)
+        Me.txtNomApel.Location = New System.Drawing.Point(148, 87)
         Me.txtNomApel.MaxLength = 45
         Me.txtNomApel.Name = "txtNomApel"
         Me.txtNomApel.Size = New System.Drawing.Size(291, 31)
@@ -140,7 +140,7 @@ Partial Class frmNuevoCliente
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(26, 246)
+        Me.Label5.Location = New System.Drawing.Point(23, 243)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(116, 26)
         Me.Label5.TabIndex = 18
@@ -159,7 +159,7 @@ Partial Class frmNuevoCliente
         'txtTelefono
         '
         Me.txtTelefono.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(147, 139)
+        Me.txtTelefono.Location = New System.Drawing.Point(148, 139)
         Me.txtTelefono.MaxLength = 25
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(237, 31)

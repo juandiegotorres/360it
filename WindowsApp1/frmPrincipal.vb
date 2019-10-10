@@ -38,6 +38,7 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnStock.Click
         panelCost.Height = btnStock.Height
         panelCost.Top = btnStock.Top
+        abrirForm(frmProductos)
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
