@@ -1,0 +1,96 @@
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\Entidades.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\Entidades.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\MySql.Data.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\MySql.Data.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.CopyComplete
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.pdb
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\Entidades.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\Entidades.pdb
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\Entidades.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\MySql.Data.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.pdb
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\bin\Debug\MySql.Data.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.Resources.resources
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.CopyComplete
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\bin\Debug\Entidades.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\bin\Debug\Entidades.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\obj\Debug\Entidades.vbproj.CopyComplete
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\obj\Debug\Entidades.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\obj\Debug\Entidades.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Juandi\Documents\360it\360it\Entidades\bin\Debug\Entidades.dll
+C:\Users\Juandi\Documents\360it\360it\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Juandi\Documents\360it\360it\Entidades\bin\Debug\Entidades.xml
+C:\Users\Juandi\Documents\360it\360it\Entidades\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\360it\360it\Entidades\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Documents\360it\360it\Entidades\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\360it\360it\Entidades\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\360it\360it\Entidades\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Documents\360it\360it\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache
+C:\Users\Juandi\Documents\360it\360it\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\Juandi\Documents\360it\360it\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.cache
+C:\Users\Juandi\Documents\360it\360it\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Documents\360it\360it\Entidades\obj\Debug\Entidades.vbproj.CopyComplete
+C:\Users\Juandi\Documents\360it\360it\Entidades\obj\Debug\Entidades.dll
+C:\Users\Juandi\Documents\360it\360it\Entidades\obj\Debug\Entidades.xml
+C:\Users\Juandi\Documents\360it\360it\Entidades\obj\Debug\Entidades.pdb
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\bin\Debug\Entidades.dll
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\bin\Debug\Entidades.pdb
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\bin\Debug\Entidades.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\bin\Debug\CapaDeNegocios.dll
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\bin\Debug\MySql.Data.dll
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\bin\Debug\CapaDeNegocios.pdb
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\bin\Debug\CapaDeNegocios.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\bin\Debug\MySql.Data.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.cache
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\obj\Debug\Entidades.vbproj.CopyComplete
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\obj\Debug\Entidades.dll
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\obj\Debug\Entidades.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Juandi\Desktop\360it\Entidades\bin\Debug\Entidades.dll
+C:\Users\Juandi\Desktop\360it\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Juandi\Desktop\360it\Entidades\bin\Debug\Entidades.xml
+C:\Users\Juandi\Desktop\360it\Entidades\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Desktop\360it\Entidades\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Desktop\360it\Entidades\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Desktop\360it\Entidades\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Desktop\360it\Entidades\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Desktop\360it\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache
+C:\Users\Juandi\Desktop\360it\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\Juandi\Desktop\360it\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.cache
+C:\Users\Juandi\Desktop\360it\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Desktop\360it\Entidades\obj\Debug\Entidades.vbproj.CopyComplete
+C:\Users\Juandi\Desktop\360it\Entidades\obj\Debug\Entidades.dll
+C:\Users\Juandi\Desktop\360it\Entidades\obj\Debug\Entidades.xml
+C:\Users\Juandi\Desktop\360it\Entidades\obj\Debug\Entidades.pdb

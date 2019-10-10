@@ -1,0 +1,149 @@
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbprojAssemblyReference.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmPrincipal.resources
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.GenerateResource.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CoreCompileInputs.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoCliente.resources
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\Entidades.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\MySql.Data.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\Entidades.pdb
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\Entidades.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\MySql.Data.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CopyComplete
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\Entidades.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\MySql.Data.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\Entidades.pdb
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\Entidades.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.pdb
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\bin\Debug\MySql.Data.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbprojAssemblyReference.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmLocalidades.resources
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoCliente.resources
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmPrincipal.resources
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.GenerateResource.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CoreCompileInputs.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CopyComplete
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\Entidades.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\Entidades.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\Entidades.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbprojAssemblyReference.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmLocalidades.resources
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoCliente.resources
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmPrincipal.resources
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.GenerateResource.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CopyComplete
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmClientes.resources
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmProveedores.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoProveedor.resources
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\Entidades.dll
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\Entidades.pdb
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\Entidades.xml
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbprojAssemblyReference.cache
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmClientes.resources
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmLocalidades.resources
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoCliente.resources
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmPrincipal.resources
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoProveedor.resources
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmProveedores.resources
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.GenerateResource.cache
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CopyComplete
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\Juandi\Documents\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\Entidades.dll
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\MySql.Data.dll
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\Entidades.pdb
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\Entidades.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\CapaDeNegocios.pdb
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\CapaDeNegocios.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\bin\Debug\MySql.Data.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbprojAssemblyReference.cache
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmClientes.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmLocalidades.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoCliente.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmPrincipal.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoProveedor.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.frmProveedores.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.GenerateResource.cache
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CoreCompileInputs.cache
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CopyComplete
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\JUANDI\Documents\Visual Studio 2019\Projects\360it\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\Entidades.dll
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\Entidades.pdb
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\Entidades.xml
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Desktop\360it\WindowsApp1\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbprojAssemblyReference.cache
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.frmClientes.resources
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.frmLocalidades.resources
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoCliente.resources
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.frmPrincipal.resources
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevoProveedor.resources
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.frmProveedores.resources
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.GenerateResource.cache
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\CapaDePresentacion.vbproj.CopyComplete
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb

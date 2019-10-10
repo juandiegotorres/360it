@@ -1,0 +1,78 @@
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\MySql.Data.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\MySql.Data.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbprojAssemblyReference.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.Resources.resources
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.GenerateResource.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CoreCompileInputs.cache
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CopyComplete
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.xml
+C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.pdb
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\MySql.Data.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\bin\Debug\MySql.Data.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbprojAssemblyReference.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.Resources.resources
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.GenerateResource.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CoreCompileInputs.cache
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CopyComplete
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.xml
+C:\BACKUP SSD\Documents\Visual Studio 2017\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbprojAssemblyReference.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.Resources.resources
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.GenerateResource.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CopyComplete
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbprojAssemblyReference.cache
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.Resources.resources
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.GenerateResource.cache
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CopyComplete
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbprojAssemblyReference.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.Resources.resources
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.GenerateResource.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CopyComplete
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Documents\Visual Studio 2019\Projects\360it\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\bin\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\bin\Debug\MySql.Data.dll
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\bin\Debug\MySql.Data.xml
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbprojAssemblyReference.cache
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.Resources.resources
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.GenerateResource.cache
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CoreCompileInputs.cache
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.vbproj.CopyComplete
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.xml
+C:\Users\Juandi\Desktop\360it\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
