@@ -1,5 +1,27 @@
 ﻿Public Class frmProveedores
     Public eProveedor As New Entidades.Proveedor
+    Private _producto As Boolean
+    Public Property producto As Boolean
+        Set(value As Boolean)
+            _producto = value
+        End Set
+        Get
+            Return _producto
+        End Get
+    End Property
+    Private Sub FrmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        actualizarProveedores()
+        If producto = True Then
+            picCerrar.Visible = True
+            btnAgregar.Visible = False
+            btnBajaCliente.Visible = False
+            btnModificar.Visible = False
+            btnAceptar.Visible = True
+            btnCancelar.Visible = True
+            pnlHeader.Visible = True
+        End If
+    End Sub
+
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         frmPrincipal.Hide()
         Dim nuevoProovedor As New frmNuevoProveedor
@@ -9,9 +31,6 @@
         End If
     End Sub
 
-    Private Sub FrmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        actualizarProveedores()
-    End Sub
     Public Sub actualizarProveedores()
         Dim tabla As New DataTable
         eProveedor.recuperarProveedores(tabla)
@@ -62,11 +81,35 @@
     End Sub
 
     Private Sub BtnVerRubros_Click(sender As Object, e As EventArgs) Handles btnVerRubros.Click
-        eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
-        dgvProveedores.Width = 750%
-        dgvRubros.Visible = True
-        btnOcultarRubros.Visible = True
-        actualizarRubros()
+        If dgvRubros.Visible = False Then
+            eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
+            dgvProveedores.Width = 750%
+            dgvRubros.Visible = True
+            btnOcultarRubros.Visible = True
+            actualizarRubros()
+        Else
+            eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
+            dgvProveedores.Width = 1000%
+            dgvRubros.Visible = False
+            btnOcultarRubros.Visible = False
 
+        End If
+
+
+    End Sub
+
+    Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
+        Me.Close()
+        frmNuevoProducto.Show()
+    End Sub
+
+    Private Sub BtnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        If dgvProveedores.CurrentRow.Selected = False Then
+            MsgBox("No ha seleccionado ningun proveedor", MsgBoxStyle.Exclamation, "Localidades")
+        Else
+            eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
+            eProveedor.nombre = dgvProveedores.CurrentRow.Cells("nombre").Value
+            Me.DialogResult = DialogResult.OK
+        End If
     End Sub
 End Class

@@ -1,9 +1,17 @@
 ﻿Public Class frmNuevoProducto
-    Dim precioCosto As Integer
-    Dim precioVenta As Integer
+    Dim precioCosto As Double
+    Dim precioVenta As Double
     Dim porcentaje As Integer
     Dim eProducto As New Entidades.Producto
-
+    Private _modificar As Boolean
+    Public Property modificar As Boolean
+        Set(value As Boolean)
+            _modificar = value
+        End Set
+        Get
+            Return _modificar
+        End Get
+    End Property
 
     Private Sub frmNuevoProducto_Load(sender As Object, e As EventArgs) Handles Me.Load
         cargarCategorias()
@@ -85,5 +93,38 @@
         End If
     End Sub
 
+    Private Sub BtnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+        Dim proveedores As New frmProveedores
+        Me.Hide()
+        With proveedores
+            .producto = True
+            .ShowDialog()
+            If .DialogResult = DialogResult.OK Then
+                eProducto.idProveedor = proveedores.eProveedor.idProveedor
+                eProducto.nombProveedor = proveedores.eProveedor.nombre
+                txtProveedor.Text = eProducto.nombProveedor
+                Me.Show()
+            End If
+        End With
 
+    End Sub
+
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        eProducto.nombProducto = txtNombre.Text
+        eProducto.modelo = txtModelo.Text
+        eProducto.categoria = cbCategorias.SelectedValue
+        eProducto.cantidad = txtCantidad.Text
+        eProducto.precioCosto = txtPrecioCosto.Text
+        eProducto.precioVenta = txtPrecioVenta.Text
+        eProducto.descripcion = txtDescripcion.Text
+        If _modificar = False Then
+            eProducto.nuevoProducto()
+            MsgBox("Producto guardado con éxito", MsgBoxStyle.Information, "Nuevo Producto")
+            Me.DialogResult = DialogResult.OK
+        Else
+            ' eProducto.guardarProveedorModif()
+            'MsgBox("Proveedor modificado con éxito", MsgBoxStyle.Information, "Modificar proveedor")
+            'Me.DialogResult = DialogResult.OK
+        End If
+    End Sub
 End Class

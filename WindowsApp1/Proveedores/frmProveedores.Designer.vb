@@ -28,6 +28,7 @@ Partial Class frmProveedores
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProveedores))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnBajaCliente = New System.Windows.Forms.Button()
@@ -45,8 +46,15 @@ Partial Class frmProveedores
         Me.idrubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnOcultarRubros = New System.Windows.Forms.Button()
         Me.btnVerRubros = New System.Windows.Forms.Button()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
+        Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.pnlHeader = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlHeader.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -268,24 +276,89 @@ Partial Class frmProveedores
         Me.btnVerRubros.Text = "Ver Rubros"
         Me.btnVerRubros.UseVisualStyleBackColor = True
         '
+        'picCerrar
+        '
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = CType(resources.GetObject("picCerrar.Image"), System.Drawing.Image)
+        Me.picCerrar.Location = New System.Drawing.Point(950, 12)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(34, 34)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picCerrar.TabIndex = 20
+        Me.picCerrar.TabStop = False
+        Me.picCerrar.Visible = False
+        '
+        'btnAceptar
+        '
+        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAceptar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptar.ForeColor = System.Drawing.Color.Black
+        Me.btnAceptar.Location = New System.Drawing.Point(815, 479)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(131, 41)
+        Me.btnAceptar.TabIndex = 21
+        Me.btnAceptar.Text = "Seleccionar"
+        Me.btnAceptar.UseVisualStyleBackColor = True
+        Me.btnAceptar.Visible = False
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btnCancelar.Location = New System.Drawing.Point(662, 479)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(131, 41)
+        Me.btnCancelar.TabIndex = 22
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.Visible = False
+        '
+        'pnlHeader
+        '
+        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlHeader.Controls.Add(Me.Panel3)
+        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(984, 12)
+        Me.pnlHeader.TabIndex = 23
+        Me.pnlHeader.Visible = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(21, 24)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(75, 77)
+        Me.Panel3.TabIndex = 2
+        '
         'frmProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(984, 561)
+        Me.Controls.Add(Me.picCerrar)
+        Me.Controls.Add(Me.pnlHeader)
         Me.Controls.Add(Me.btnVerRubros)
         Me.Controls.Add(Me.btnOcultarRubros)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnBajaCliente)
-        Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.dgvRubros)
         Me.Controls.Add(Me.dgvProveedores)
+        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnAgregar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmProveedores"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmProveedores"
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlHeader.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -308,4 +381,9 @@ Partial Class frmProveedores
     Friend WithEvents idrubro As DataGridViewTextBoxColumn
     Friend WithEvents btnOcultarRubros As Button
     Friend WithEvents btnVerRubros As Button
+    Friend WithEvents picCerrar As PictureBox
+    Friend WithEvents btnAceptar As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents pnlHeader As Panel
+    Friend WithEvents Panel3 As Panel
 End Class

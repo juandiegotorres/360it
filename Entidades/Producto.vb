@@ -1,4 +1,5 @@
-﻿Public Class Producto
+﻿Imports MySql.Data.MySqlClient
+Public Class Producto
     Dim capaDatos As New CapaDeNegocios.cdDatosPrueba
 #Region "Declaración de propiedes"
 
@@ -112,5 +113,25 @@
 
     End Sub
 
+    Public Sub nuevoProducto()
+        Try
+            Dim consultaSQL As String = "INSERT INTO productos(categoria, nombre, modelo, descripcion, proveedor, cantidad, precioCosto, precioVenta, activo) VALUES (@categoria,@nombre,@modelo,@descripcion,@proveedor,@cantidad,@precioCosto,@precioVenta,'1')"
+            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+            sqlComando.Parameters.Add("@categoria", MySqlDbType.Int64).Value = Me.categoria
+            sqlComando.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = Me.nombProducto
+            sqlComando.Parameters.Add("@modelo", MySqlDbType.VarChar).Value = Me.modelo
+            sqlComando.Parameters.Add("@descripcion", MySqlDbType.VarChar).Value = Me.descripcion
+            sqlComando.Parameters.Add("@proveedor", MySqlDbType.Int64).Value = Me.idProveedor
+            sqlComando.Parameters.Add("@cantidad", MySqlDbType.Int64).Value = Me.cantidad
+            sqlComando.Parameters.Add("@precioCosto", MySqlDbType.Float).Value = Me.precioCosto
+            sqlComando.Parameters.Add("@precioVenta", MySqlDbType.Float).Value = Me.precioVenta
+
+            capaDatos.cargarDatos(sqlComando)
+
+        Catch ex As Exception
+            MsgBox(ex.Message, "Productos")
+
+        End Try
+    End Sub
 #End Region
 End Class
