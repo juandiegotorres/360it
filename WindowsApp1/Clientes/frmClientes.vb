@@ -1,6 +1,7 @@
 ﻿Public Class frmClientes
     Dim eCliente As New Entidades.Cliente
     Dim bsClientes As New BindingSource
+    Dim filtroBS As String
     Private Sub FrmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarClientes()
         dgvClientes.ClearSelection()
@@ -73,5 +74,15 @@
 
     Private Sub dgvClientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientes.CellClick
         eCliente.idCliente = dgvClientes.CurrentRow.Cells("idCliente").Value
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        filtroBS = "nombreApel like '%" & txtBuscar.Text & "%'"
+        bsClientes.Filter = filtroBS
+        ' dgvClientes.ClearSelection()
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class

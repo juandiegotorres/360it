@@ -25,6 +25,12 @@ Partial Class frmPrincipal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnWEB = New System.Windows.Forms.Button()
         Me.panelCost = New System.Windows.Forms.Panel()
         Me.btnProveedores = New System.Windows.Forms.Button()
         Me.btnStock = New System.Windows.Forms.Button()
@@ -35,28 +41,33 @@ Partial Class frmPrincipal
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.cmsClientes = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.VerEquiposAsociadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BorrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlContenedor.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsClientes.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.btnWEB)
         Me.Panel1.Controls.Add(Me.panelCost)
         Me.Panel1.Controls.Add(Me.btnProveedores)
         Me.Panel1.Controls.Add(Me.btnStock)
@@ -69,6 +80,72 @@ Partial Class frmPrincipal
         Me.Panel1.Size = New System.Drawing.Size(194, 703)
         Me.Panel1.TabIndex = 0
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(175, 288)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(19, 13)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = "F5"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(175, 238)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(19, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "F4"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(175, 188)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(19, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "F3"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(175, 138)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(19, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "F2"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(175, 88)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(19, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "F1"
+        '
+        'btnWEB
+        '
+        Me.btnWEB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnWEB.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnWEB.Location = New System.Drawing.Point(52, 663)
+        Me.btnWEB.Name = "btnWEB"
+        Me.btnWEB.Size = New System.Drawing.Size(84, 28)
+        Me.btnWEB.TabIndex = 5
+        Me.btnWEB.Text = "WEB"
+        Me.btnWEB.UseVisualStyleBackColor = True
+        '
         'panelCost
         '
         Me.panelCost.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -76,6 +153,7 @@ Partial Class frmPrincipal
         Me.panelCost.Name = "panelCost"
         Me.panelCost.Size = New System.Drawing.Size(8, 44)
         Me.panelCost.TabIndex = 3
+        Me.panelCost.Visible = False
         '
         'btnProveedores
         '
@@ -189,17 +267,17 @@ Partial Class frmPrincipal
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox2
+        'picCerrar
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(1200, 12)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(34, 34)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = CType(resources.GetObject("picCerrar.Image"), System.Drawing.Image)
+        Me.picCerrar.Location = New System.Drawing.Point(1200, 12)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(34, 34)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picCerrar.TabIndex = 3
+        Me.picCerrar.TabStop = False
         '
         'Label1
         '
@@ -214,11 +292,22 @@ Partial Class frmPrincipal
         '
         'pnlContenedor
         '
-        Me.pnlContenedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.pnlContenedor.Controls.Add(Me.PictureBox3)
+        Me.pnlContenedor.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlContenedor.Location = New System.Drawing.Point(194, 71)
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(1040, 632)
         Me.pnlContenedor.TabIndex = 5
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(209, 114)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(628, 264)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
         '
         'cmsClientes
         '
@@ -244,51 +333,31 @@ Partial Class frmPrincipal
         Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.ModificarToolStripMenuItem.Text = "Modificar"
         '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(5, 307)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(189, 44)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "     S. Técnico"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(56, 655)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 703)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.picCerrar)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlContenedor)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlContenedor.ResumeLayout(False)
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsClientes.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -305,7 +374,7 @@ Partial Class frmPrincipal
     Friend WithEvents btnCuentas As Button
     Friend WithEvents btnClientes As Button
     Friend WithEvents panelCost As Panel
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents picCerrar As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents cmsClientes As ContextMenuStrip
@@ -313,6 +382,11 @@ Partial Class frmPrincipal
     Friend WithEvents BorrarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ModificarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnWEB As Button
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
 End Class

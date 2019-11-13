@@ -175,3 +175,5 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\CapaDePresentacion.
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.exe
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.xml
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmCuentas.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmVentas.resources

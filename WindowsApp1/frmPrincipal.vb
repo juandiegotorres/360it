@@ -13,41 +13,48 @@
         formHijo.Show()
     End Sub
 
+
+
+    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'panelCost.Height = btnVentas.Height
+        'panelCost.Top = btnVentas.Top
+
+    End Sub
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
         panelCost.Height = btnClientes.Height
         panelCost.Top = btnClientes.Top
         abrirForm(frmClientes)
     End Sub
-
-    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
+        panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
-        panelCost.Height = btnVentas.Height
-        panelCost.Top = btnVentas.Top
+        abrirForm(frmVentas)
     End Sub
 
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnCuentas.Click
+    Private Sub btnCuentas_Click(sender As Object, e As EventArgs) Handles btnCuentas.Click
+        panelCost.Visible = True
         panelCost.Height = btnCuentas.Height
         panelCost.Top = btnCuentas.Top
+        abrirForm(frmCuentas)
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnStock.Click
+    Private Sub btnStock_Click(sender As Object, e As EventArgs) Handles btnStock.Click
+        panelCost.Visible = True
         panelCost.Height = btnStock.Height
         panelCost.Top = btnStock.Top
         abrirForm(frmProductos)
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+    Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+        panelCost.Visible = True
         panelCost.Height = btnProveedores.Height
         panelCost.Top = btnProveedores.Top
         abrirForm(frmProveedores)
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
         If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "360 IT") = MsgBoxResult.Yes Then
             Me.Close()
 
@@ -58,7 +65,28 @@
         Me.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnWEB.Click
         System.Diagnostics.Process.Start("www.infoandina.com")
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+
+    End Sub
+
+    Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.F1
+                Call btnVentas_Click(btnVentas, e)
+            Case Keys.F2
+                Call btnClientes_Click(btnClientes, e)
+            Case Keys.F3
+                Call btnCuentas_Click(btnCuentas, e)
+            Case Keys.F4
+                Call btnStock_Click(btnStock, e)
+            Case Keys.F5
+                Call btnProveedores_Click(btnProveedores, e)
+            Case Keys.Escape
+                Call picCerrar_Click(picCerrar, e)
+        End Select
     End Sub
 End Class

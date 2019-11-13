@@ -91,7 +91,7 @@ Public Class Proveedor
         Try
             'Dim comando((Me._rubro.Count + 1) + (Me._formPago.Count + 1)) As MySqlCommand
             'Dim listaComandos As New List(Of MySqlCommand)
-            Dim consultaSQL As String = "INSERT INTO proveedores(nombre, telefono, cbu, direccion, horario, activo) VALUES (@nombre,@telefono,@cbu,@direccion,@horario,'1')"
+            Dim consultaSQL As String = "INSERT INTO proveedores(nombreProveedor, telefono, cbu, direccion, horario, activo) VALUES (@nombre,@telefono,@cbu,@direccion,@horario,'1')"
             Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
             sqlComando.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = Me.nombre
             sqlComando.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = Me.telefono
@@ -145,7 +145,7 @@ Public Class Proveedor
             capaDatos.llenarDatos(tabla, consultaSQL)
             If tabla.Rows.Count = 1 Then
                 _idProveedor = tabla.Rows(0).Item("idproveedor").ToString
-                _nombre = tabla.Rows(0).Item("nombre").ToString
+                _nombre = tabla.Rows(0).Item("nombreProveedor").ToString
                 _telefono = tabla.Rows(0).Item("telefono").ToString
                 _cbu = tabla.Rows(0).Item("cbu").ToString
                 _direccion = tabla.Rows(0).Item("direccion").ToString
@@ -165,7 +165,7 @@ Public Class Proveedor
         Try
             'No tengo nada para comentar en esta parte porque ni yo se como hice
             'para que funcionara
-            Dim consultaSQL As String = "UPDATE proveedores SET nombre = @nombre, telefono = @telefono, cbu= @cbu, direccion = @direccion, horario = @horario WHERE idproveedor = @idproveedor"
+            Dim consultaSQL As String = "UPDATE proveedores SET nombreProveedor = @nombre, telefono = @telefono, cbu= @cbu, direccion = @direccion, horario = @horario WHERE idproveedor = @idproveedor"
             Dim comandoSQL As MySqlCommand = New MySqlCommand(consultaSQL)
             comandoSQL.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = Me.nombre
             comandoSQL.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = Me.telefono

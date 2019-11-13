@@ -17,7 +17,7 @@
         cargarCategorias()
     End Sub
 
-    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs)
         Me.Close()
         frmPrincipal.Show()
     End Sub
@@ -69,8 +69,6 @@
                 txt.Text = ""
             End If
         Next
-        cbCategorias.Text = ""
-        cbCategorias.SelectedValue = 0
     End Sub
 
     Private Sub TxtPrecioCosto_TextChanged(sender As Object, e As EventArgs) Handles txtPrecioCosto.TextChanged
@@ -110,21 +108,62 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        eProducto.nombProducto = txtNombre.Text
-        eProducto.modelo = txtModelo.Text
-        eProducto.categoria = cbCategorias.SelectedValue
-        eProducto.cantidad = txtCantidad.Text
-        eProducto.precioCosto = txtPrecioCosto.Text
-        eProducto.precioVenta = txtPrecioVenta.Text
-        eProducto.descripcion = txtDescripcion.Text
-        If _modificar = False Then
-            eProducto.nuevoProducto()
-            MsgBox("Producto guardado con éxito", MsgBoxStyle.Information, "Nuevo Producto")
-            Me.DialogResult = DialogResult.OK
-        Else
-            ' eProducto.guardarProveedorModif()
-            'MsgBox("Proveedor modificado con éxito", MsgBoxStyle.Information, "Modificar proveedor")
-            'Me.DialogResult = DialogResult.OK
+        If comprobarDatos() Then
+            eProducto.nombProducto = txtNombre.Text
+            eProducto.modelo = txtModelo.Text
+            eProducto.categoria = cbCategorias.SelectedValue
+            eProducto.cantidad = txtCantidad.Text
+            eProducto.precioCosto = txtPrecioCosto.Text
+            eProducto.precioVenta = txtPrecioVenta.Text
+            eProducto.descripcion = txtDescripcion.Text
+            If _modificar = False Then
+                eProducto.nuevoProducto()
+                MsgBox("Producto guardado con éxito", MsgBoxStyle.Information, "Nuevo Producto")
+                Me.DialogResult = DialogResult.OK
+            Else
+
+            End If
         End If
     End Sub
+#Region "KEYPRESS"
+    Private Sub txtCantidad_Click(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtPorcentaje_Click(sender As Object, e As KeyPressEventArgs) Handles txtPorcentaje.KeyPress
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtPrecioCosto_Click(sender As Object, e As KeyPressEventArgs) Handles txtPrecioCosto.KeyPress
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Or e.KeyChar = "," Or e.KeyChar = "." Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtPrecioVenta_Click(sender As Object, e As KeyPressEventArgs) Handles txtPrecioVenta.KeyPress
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Or e.KeyChar = "," Or e.KeyChar = "." Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.Close()
+        frmPrincipal.Show()
+    End Sub
+
+    Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        limpiarCampos()
+    End Sub
+
+
+#End Region
 End Class

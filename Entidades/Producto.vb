@@ -112,10 +112,13 @@ Public Class Producto
         capaDatos.llenarDatos(tabla, consultaSQL)
 
     End Sub
-
+    Public Sub recuperarProductos(ByVal tabla As DataTable)
+        Dim consultaSQL As String = "SELECT * FROM vistaproductos"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+    End Sub
     Public Sub nuevoProducto()
         Try
-            Dim consultaSQL As String = "INSERT INTO productos(categoria, nombre, modelo, descripcion, proveedor, cantidad, precioCosto, precioVenta, activo) VALUES (@categoria,@nombre,@modelo,@descripcion,@proveedor,@cantidad,@precioCosto,@precioVenta,'1')"
+            Dim consultaSQL As String = "INSERT INTO productos(categoria, nombreProducto, modelo, descripcion, proveedor, cantidad, precioCosto, precioVenta, activo) VALUES (@categoria,@nombre,@modelo,@descripcion,@proveedor,@cantidad,@precioCosto,@precioVenta,'1')"
             Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
             sqlComando.Parameters.Add("@categoria", MySqlDbType.Int64).Value = Me.categoria
             sqlComando.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = Me.nombProducto

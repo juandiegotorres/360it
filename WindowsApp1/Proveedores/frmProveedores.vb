@@ -1,4 +1,7 @@
 ﻿Public Class frmProveedores
+    Dim bsProveedores As New BindingSource
+    Dim filtroBS As String
+
     Public eProveedor As New Entidades.Proveedor
     Private _producto As Boolean
     Public Property producto As Boolean
@@ -12,6 +15,7 @@
     Private Sub FrmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarProveedores()
         If producto = True Then
+            btnAgregar2.Visible = True
             picCerrar.Visible = True
             btnAgregar.Visible = False
             btnBajaCliente.Visible = False
@@ -34,7 +38,8 @@
     Public Sub actualizarProveedores()
         Dim tabla As New DataTable
         eProveedor.recuperarProveedores(tabla)
-        dgvProveedores.DataSource = tabla
+        bsProveedores.DataSource = tabla
+        dgvProveedores.DataSource = bsProveedores
         dgvProveedores.ClearSelection()
     End Sub
     'Dim a As UInt16 = dgvProveedores.Width
@@ -83,7 +88,7 @@
     Private Sub BtnVerRubros_Click(sender As Object, e As EventArgs) Handles btnVerRubros.Click
         If dgvRubros.Visible = False Then
             eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
-            dgvProveedores.Width = 750%
+            dgvProveedores.Width = 790%
             dgvRubros.Visible = True
             btnOcultarRubros.Visible = True
             actualizarRubros()
@@ -98,7 +103,7 @@
 
     End Sub
 
-    Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
+    Private Sub picCerrar_Click(sender As Object, e As EventArgs)
         Me.Close()
         frmNuevoProducto.Show()
     End Sub
@@ -110,6 +115,20 @@
             eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
             eProveedor.nombre = dgvProveedores.CurrentRow.Cells("nombre").Value
             Me.DialogResult = DialogResult.OK
+        End If
+    End Sub
+
+    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        filtroBS = "nombre like '%" & txtBuscar.Text & "%'"
+        bsProveedores.Filter = filtroBS
+    End Sub
+
+    Private Sub BtnAgregar2_Click(sender As Object, e As EventArgs)
+        frmPrincipal.Hide()
+        Dim nuevoProovedor As New frmNuevoProveedor
+        nuevoProovedor.ShowDialog()
+        If nuevoProovedor.DialogResult = DialogResult.OK Then
+            frmPrincipal.Show()
         End If
     End Sub
 End Class

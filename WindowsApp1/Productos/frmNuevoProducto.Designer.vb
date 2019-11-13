@@ -24,7 +24,6 @@ Partial Class frmNuevoProducto
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNuevoProducto))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnLimpiar = New System.Windows.Forms.Button()
@@ -53,7 +52,6 @@ Partial Class frmNuevoProducto
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btnProveedores = New System.Windows.Forms.Button()
-        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,18 +65,6 @@ Partial Class frmNuevoProducto
         Me.Label1.Size = New System.Drawing.Size(323, 44)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Agregar producto"
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnCerrar.Image = CType(resources.GetObject("btnCerrar.Image"), System.Drawing.Image)
-        Me.btnCerrar.Location = New System.Drawing.Point(481, 9)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(34, 34)
-        Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.btnCerrar.TabIndex = 9
-        Me.btnCerrar.TabStop = False
         '
         'PictureBox1
         '
@@ -281,7 +267,7 @@ Partial Class frmNuevoProducto
         '
         Me.txtPorcentaje.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPorcentaje.Location = New System.Drawing.Point(341, 347)
-        Me.txtPorcentaje.MaxLength = 25
+        Me.txtPorcentaje.MaxLength = 3
         Me.txtPorcentaje.Name = "txtPorcentaje"
         Me.txtPorcentaje.ReadOnly = True
         Me.txtPorcentaje.Size = New System.Drawing.Size(50, 31)
@@ -386,7 +372,6 @@ Partial Class frmNuevoProducto
         Me.Controls.Add(Me.cbCategorias)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label9)
@@ -397,7 +382,6 @@ Partial Class frmNuevoProducto
         Me.Name = "frmNuevoProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " "
-        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -405,7 +389,6 @@ Partial Class frmNuevoProducto
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnCerrar As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnLimpiar As Button

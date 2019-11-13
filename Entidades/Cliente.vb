@@ -73,6 +73,24 @@ Public Class Cliente
             _direccion = value
         End Set
     End Property
+    Private _fechaCreacion As Date
+    Public Property fechaCreacion As Date
+        Set(value As Date)
+            _fechaCreacion = value
+        End Set
+        Get
+            Return _fechaCreacion
+        End Get
+    End Property
+    Private _fechaModificacion As Date
+    Public Property fechaModificacion As Date
+        Set(value As Date)
+            _fechaModificacion = value
+        End Set
+        Get
+            Return _fechaModificacion
+        End Get
+    End Property
 #End Region
 #Region "Métodos"
     Dim SqlComando As MySqlCommand
@@ -88,13 +106,15 @@ Public Class Cliente
     End Sub
     Public Sub guardarCliente()
         Try
-            Dim comandoSQL As String = "Insert into clientes(nombreapel, direccion, localidad, provincia, telefono, activo) VALUES (@nombreApel,@direccion,@localidad,@provincia,@telefono,'1')"
+            Dim comandoSQL As String = "Insert into clientes(nombreapel, direccion, localidad, provincia, telefono, fechaCreacion, fechaModificacion, activo) VALUES (@nombreApel,@direccion,@localidad,@provincia,@telefono, @fechaCreacion, @fechaModificacion,'1')"
             Dim sqlcomando As MySqlCommand = New MySqlCommand(comandoSQL)
             sqlcomando.Parameters.Add("@nombreApel", MySqlDbType.VarChar).Value = Me.nombApel
             sqlcomando.Parameters.Add("@direccion", MySqlDbType.VarChar).Value = Me.direccion
             sqlcomando.Parameters.Add("@localidad", MySqlDbType.Int16).Value = Me.idLocalidad
             sqlcomando.Parameters.Add("@provincia", MySqlDbType.Int16).Value = Me.idProvincia
             sqlcomando.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = Me.telefono
+            sqlcomando.Parameters.Add("@fechaCreacion", MySqlDbType.Date).Value = Me.fechaCreacion
+            sqlcomando.Parameters.Add("@fechaModificacion", MySqlDbType.Date).Value = Me.fechaModificacion
             capaDatosPrueba.cargarDatos(sqlcomando)
         Catch ex As Exception
             MsgBox(ex.Message, "Entidad Cliente")
@@ -136,8 +156,15 @@ Public Class Cliente
     End Sub
     Public Sub guardarClienteModif()
         Try
-            Dim consultaSQL As String = "UPDATE clientes SET nombreApel ='" & _nombApel & "', telefono = '" & _telefono & "', direccion = '" & _direccion & "', provincia = '" & _idProvincia & "', localidad ='" & _idLocalidad & "' WHERE idCliente = '" & _idCliente & "'"
-            capaDatosPrueba.cargarDatos(consultaSQL)
+            Dim comandoSQL As String = "UPDATE clientes SET nombreApel =  @nombreApel, direccion = @direccion, localidad = @localidad, provincia = @provincia, telefono = @telefono, fechaModificacion = @fechaModificacion WHERE idCliente = '" & _idCliente & "'"
+            Dim sqlcomando As MySqlCommand = New MySqlCommand(comandoSQL)
+            sqlcomando.Parameters.Add("@nombreApel", MySqlDbType.VarChar).Value = Me.nombApel
+            sqlcomando.Parameters.Add("@direccion", MySqlDbType.VarChar).Value = Me.direccion
+            sqlcomando.Parameters.Add("@localidad", MySqlDbType.Int16).Value = Me.idLocalidad
+            sqlcomando.Parameters.Add("@provincia", MySqlDbType.Int16).Value = Me.idProvincia
+            sqlcomando.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = Me.telefono
+            sqlcomando.Parameters.Add("@fechaModificacion", MySqlDbType.Date).Value = Me.fechaModificacion
+            capaDatosPrueba.cargarDatos(sqlcomando)
         Catch ex As Exception
             MsgBox(ex.Message, "Entidad Cliente")
         End Try

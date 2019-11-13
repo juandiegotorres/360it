@@ -124,6 +124,13 @@
             txtLocalidad.Text = ""
         End If
     End Sub
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "Agregar Cliente") = MsgBoxResult.Yes Then
+            Me.Close()
+            frmClientes.Show()
+        End If
+    End Sub
+
 #Region "KEYPRESS"
     Private Sub txtTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelefono.KeyPress
         If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
@@ -133,12 +140,6 @@
         End If
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "Agregar Cliente") = MsgBoxResult.Yes Then
-            Me.Close()
-            frmClientes.Show()
-        End If
-    End Sub
 
 #End Region
 End Class
