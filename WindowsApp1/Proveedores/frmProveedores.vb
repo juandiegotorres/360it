@@ -15,7 +15,7 @@
     Private Sub FrmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarProveedores()
         If producto = True Then
-            btnAgregar2.Visible = True
+            'btnAgregar2.Visible = True
             picCerrar.Visible = True
             btnAgregar.Visible = False
             btnBajaCliente.Visible = False
@@ -119,7 +119,7 @@
     End Sub
 
     Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        filtroBS = "nombre like '%" & txtBuscar.Text & "%'"
+        filtroBS = "nombreProveedor like '%" & txtBuscar.Text & "%'"
         bsProveedores.Filter = filtroBS
     End Sub
 

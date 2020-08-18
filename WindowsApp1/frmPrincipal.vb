@@ -1,6 +1,18 @@
-﻿Public Class frmPrincipal
+﻿Imports System.Windows.Forms
+Imports System.Runtime.InteropServices
+
+Public Class frmPrincipal
+
+    'Importar archivos para poder mover el form con el mouse, ya que no tiene bordes
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hwnd As System.IntPtr, ByVal wmsg As Integer, ByVal wparam As Integer, ByVal lparam As Integer)
+    End Sub
 
     Private Sub abrirForm(ByVal formulario As Form)
+
         Dim formHijo As Form = TryCast(formulario, Form)
         formHijo.TopLevel = False
         formHijo.FormBorderStyle = FormBorderStyle.None
@@ -89,4 +101,15 @@
                 Call picCerrar_Click(picCerrar, e)
         End Select
     End Sub
+    'Poder mover la ventana con el mouse, porque el form no tiene bordes
+    Private Sub frmPrincipal_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112, &HF012, 0)
+    End Sub
+    Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112, &HF012, 0)
+    End Sub
+
+
 End Class
