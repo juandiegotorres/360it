@@ -98,7 +98,7 @@ Partial Class frmNuevoProveedor
         'txtDireccion
         '
         Me.txtDireccion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(175, 192)
+        Me.txtDireccion.Location = New System.Drawing.Point(175, 193)
         Me.txtDireccion.MaxLength = 45
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(264, 31)
@@ -167,7 +167,7 @@ Partial Class frmNuevoProveedor
         Me.clbRubro.CheckOnClick = True
         Me.clbRubro.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.clbRubro.FormattingEnabled = True
-        Me.clbRubro.Location = New System.Drawing.Point(174, 298)
+        Me.clbRubro.Location = New System.Drawing.Point(174, 299)
         Me.clbRubro.Name = "clbRubro"
         Me.clbRubro.Size = New System.Drawing.Size(238, 92)
         Me.clbRubro.TabIndex = 25

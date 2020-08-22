@@ -110,7 +110,7 @@
 
     Private Sub BtnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If dgvProveedores.CurrentRow.Selected = False Then
-            MsgBox("No ha seleccionado ningun proveedor", MsgBoxStyle.Exclamation, "Localidades")
+            MsgBox("No ha seleccionado ningún cliente", MsgBoxStyle.Exclamation, "Proveedores")
         Else
             eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
             eProveedor.nombre = dgvProveedores.CurrentRow.Cells("nombre").Value
@@ -130,5 +130,9 @@
         If nuevoProovedor.DialogResult = DialogResult.OK Then
             frmPrincipal.Show()
         End If
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.Close()
     End Sub
 End Class

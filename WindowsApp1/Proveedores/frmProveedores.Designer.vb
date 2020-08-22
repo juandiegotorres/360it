@@ -49,14 +49,14 @@ Partial Class frmProveedores
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.picCerrar = New System.Windows.Forms.PictureBox()
-        Me.pnlHeader = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.pnlHeader = New System.Windows.Forms.Panel()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHeader.SuspendLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -311,18 +311,25 @@ Partial Class frmProveedores
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "Buscar nombre:"
         '
-        'picCerrar
+        'btnModificar
         '
-        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.picCerrar.Image = CType(resources.GetObject("picCerrar.Image"), System.Drawing.Image)
-        Me.picCerrar.Location = New System.Drawing.Point(1001, 12)
-        Me.picCerrar.Name = "picCerrar"
-        Me.picCerrar.Size = New System.Drawing.Size(34, 34)
-        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.picCerrar.TabIndex = 25
-        Me.picCerrar.TabStop = False
-        Me.picCerrar.Visible = False
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Location = New System.Drawing.Point(579, 547)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(131, 41)
+        Me.btnModificar.TabIndex = 14
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(21, 24)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(75, 77)
+        Me.Panel3.TabIndex = 2
         '
         'pnlHeader
         '
@@ -335,25 +342,18 @@ Partial Class frmProveedores
         Me.pnlHeader.TabIndex = 26
         Me.pnlHeader.Visible = False
         '
-        'Panel3
+        'picCerrar
         '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(21, 24)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(75, 77)
-        Me.Panel3.TabIndex = 2
-        '
-        'btnModificar
-        '
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(579, 547)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(131, 41)
-        Me.btnModificar.TabIndex = 14
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = CType(resources.GetObject("picCerrar.Image"), System.Drawing.Image)
+        Me.picCerrar.Location = New System.Drawing.Point(1001, 12)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(34, 34)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picCerrar.TabIndex = 25
+        Me.picCerrar.TabStop = False
+        Me.picCerrar.Visible = False
         '
         'frmProveedores
         '
@@ -368,19 +368,19 @@ Partial Class frmProveedores
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvRubros)
         Me.Controls.Add(Me.dgvProveedores)
-        Me.Controls.Add(Me.btnBajaCliente)
-        Me.Controls.Add(Me.btnAgregar)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
-        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.btnAgregar)
+        Me.Controls.Add(Me.btnBajaCliente)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmProveedores"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmProveedores"
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlHeader.ResumeLayout(False)
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -399,9 +399,6 @@ Partial Class frmProveedores
     Friend WithEvents btnCancelar As Button
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents picCerrar As PictureBox
-    Friend WithEvents pnlHeader As Panel
-    Friend WithEvents Panel3 As Panel
     Friend WithEvents idProveedor As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents telefono As DataGridViewTextBoxColumn
@@ -410,4 +407,7 @@ Partial Class frmProveedores
     Friend WithEvents formPago As DataGridViewTextBoxColumn
     Friend WithEvents horario As DataGridViewTextBoxColumn
     Friend WithEvents btnModificar As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents pnlHeader As Panel
+    Friend WithEvents picCerrar As PictureBox
 End Class

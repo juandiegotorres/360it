@@ -1,9 +1,19 @@
 ﻿Public Class frmClientes
-    Dim eCliente As New Entidades.Cliente
+    Public eCliente As New Entidades.Cliente
     Dim bsClientes As New BindingSource
     Dim filtroBS As String
+    Public reparacion As Boolean
     Private Sub FrmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarClientes()
+        If reparacion = True Then
+            picCerrar.Visible = True
+            btnAgregar.Visible = False
+            btnBajaCliente.Visible = False
+            btnModificar.Visible = False
+            btnAceptar.Visible = True
+            btnCancelar.Visible = True
+            pnlHeader.Visible = True
+        End If
         dgvClientes.ClearSelection()
     End Sub
 
@@ -84,5 +94,24 @@
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
+    End Sub
+
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        If dgvClientes.CurrentRow.Selected = False Then
+            MsgBox("No ha seleccionado ningún cliente", MsgBoxStyle.Exclamation, "Clientes")
+        Else
+            eCliente.idCliente = dgvClientes.CurrentRow.Cells("idcliente").Value
+            eCliente.nombApel = dgvClientes.CurrentRow.Cells("nombreApel").Value.ToString
+            Me.DialogResult = DialogResult.OK
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.DialogResult = DialogResult.Cancel
+
+    End Sub
+
+    Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
+        Me.Close()
     End Sub
 End Class

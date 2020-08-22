@@ -26,7 +26,7 @@ Partial Class frmPrincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnServTecnico = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -65,7 +65,7 @@ Partial Class frmPrincipal
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btnServTecnico)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -95,20 +95,20 @@ Partial Class frmPrincipal
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "F4"
         '
-        'Button1
+        'btnServTecnico
         '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(5, 204)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(189, 44)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "     Serv. Técnico"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnServTecnico.FlatAppearance.BorderSize = 0
+        Me.btnServTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnServTecnico.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnServTecnico.Image = CType(resources.GetObject("btnServTecnico.Image"), System.Drawing.Image)
+        Me.btnServTecnico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnServTecnico.Location = New System.Drawing.Point(5, 204)
+        Me.btnServTecnico.Name = "btnServTecnico"
+        Me.btnServTecnico.Size = New System.Drawing.Size(189, 44)
+        Me.btnServTecnico.TabIndex = 10
+        Me.btnServTecnico.Text = "     Serv. Técnico"
+        Me.btnServTecnico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnServTecnico.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -420,5 +420,5 @@ Partial Class frmPrincipal
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnServTecnico As Button
 End Class

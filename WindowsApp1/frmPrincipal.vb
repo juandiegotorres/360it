@@ -65,6 +65,12 @@ Public Class frmPrincipal
         panelCost.Top = btnProveedores.Top
         abrirForm(frmProveedores)
     End Sub
+    Private Sub btnServTecnico_Click(sender As Object, e As EventArgs) Handles btnServTecnico.Click
+        panelCost.Visible = True
+        panelCost.Height = btnServTecnico.Height
+        panelCost.Top = btnServTecnico.Top
+        abrirForm(frmServTecnico)
+    End Sub
 
     Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
         If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "360 IT") = MsgBoxResult.Yes Then
@@ -79,10 +85,6 @@ Public Class frmPrincipal
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnWEB.Click
         System.Diagnostics.Process.Start("www.infoandina.com")
-    End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-
     End Sub
 
     Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
