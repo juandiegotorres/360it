@@ -22,7 +22,6 @@ Partial Class frmPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -43,22 +42,23 @@ Partial Class frmPrincipal
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.cmsClientes = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.VerEquiposAsociadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BorrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ModificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnMinimizar = New System.Windows.Forms.PictureBox()
+        Me.btnAchicar = New System.Windows.Forms.PictureBox()
+        Me.btnAgrandar = New System.Windows.Forms.PictureBox()
+        Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.cmsClientes.SuspendLayout()
+        CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnAchicar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnAgrandar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -81,7 +81,7 @@ Partial Class frmPrincipal
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(194, 703)
+        Me.Panel1.Size = New System.Drawing.Size(209, 703)
         Me.Panel1.TabIndex = 0
         '
         'Label5
@@ -89,7 +89,7 @@ Partial Class frmPrincipal
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(175, 235)
+        Me.Label5.Location = New System.Drawing.Point(183, 235)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(19, 13)
         Me.Label5.TabIndex = 8
@@ -115,7 +115,7 @@ Partial Class frmPrincipal
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(175, 332)
+        Me.Label7.Location = New System.Drawing.Point(183, 332)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(19, 13)
         Me.Label7.TabIndex = 11
@@ -126,7 +126,7 @@ Partial Class frmPrincipal
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(175, 282)
+        Me.Label6.Location = New System.Drawing.Point(183, 282)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(19, 13)
         Me.Label6.TabIndex = 9
@@ -137,7 +137,7 @@ Partial Class frmPrincipal
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(175, 188)
+        Me.Label4.Location = New System.Drawing.Point(183, 188)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(19, 13)
         Me.Label4.TabIndex = 7
@@ -148,7 +148,7 @@ Partial Class frmPrincipal
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(175, 138)
+        Me.Label3.Location = New System.Drawing.Point(183, 138)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(19, 13)
         Me.Label3.TabIndex = 6
@@ -159,7 +159,7 @@ Partial Class frmPrincipal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(175, 88)
+        Me.Label2.Location = New System.Drawing.Point(183, 88)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(19, 13)
         Me.Label2.TabIndex = 1
@@ -167,6 +167,7 @@ Partial Class frmPrincipal
         '
         'btnWEB
         '
+        Me.btnWEB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnWEB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnWEB.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnWEB.Location = New System.Drawing.Point(52, 663)
@@ -265,9 +266,9 @@ Partial Class frmPrincipal
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(194, 0)
+        Me.Panel2.Location = New System.Drawing.Point(209, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1040, 12)
+        Me.Panel2.Size = New System.Drawing.Size(1025, 12)
         Me.Panel2.TabIndex = 1
         '
         'Panel3
@@ -297,18 +298,6 @@ Partial Class frmPrincipal
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
-        'picCerrar
-        '
-        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.picCerrar.Image = CType(resources.GetObject("picCerrar.Image"), System.Drawing.Image)
-        Me.picCerrar.Location = New System.Drawing.Point(1200, 12)
-        Me.picCerrar.Name = "picCerrar"
-        Me.picCerrar.Size = New System.Drawing.Size(34, 34)
-        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.picCerrar.TabIndex = 3
-        Me.picCerrar.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -322,6 +311,9 @@ Partial Class frmPrincipal
         '
         'pnlContenedor
         '
+        Me.pnlContenedor.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlContenedor.Controls.Add(Me.PictureBox3)
         Me.pnlContenedor.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlContenedor.Location = New System.Drawing.Point(194, 71)
@@ -331,6 +323,9 @@ Partial Class frmPrincipal
         '
         'PictureBox3
         '
+        Me.PictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(209, 114)
         Me.PictureBox3.Name = "PictureBox3"
@@ -339,56 +334,91 @@ Partial Class frmPrincipal
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
         '
-        'cmsClientes
+        'btnMinimizar
         '
-        Me.cmsClientes.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerEquiposAsociadosToolStripMenuItem, Me.BorrarToolStripMenuItem, Me.ModificarToolStripMenuItem})
-        Me.cmsClientes.Name = "cmsClientes"
-        Me.cmsClientes.Size = New System.Drawing.Size(191, 70)
+        Me.btnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMinimizar.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnMinimizar.Image = Global.WindowsApp1.My.Resources.Resources.minimize
+        Me.btnMinimizar.Location = New System.Drawing.Point(1121, 13)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.Size = New System.Drawing.Size(34, 34)
+        Me.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnMinimizar.TabIndex = 9
+        Me.btnMinimizar.TabStop = False
         '
-        'VerEquiposAsociadosToolStripMenuItem
+        'btnAchicar
         '
-        Me.VerEquiposAsociadosToolStripMenuItem.Name = "VerEquiposAsociadosToolStripMenuItem"
-        Me.VerEquiposAsociadosToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.VerEquiposAsociadosToolStripMenuItem.Text = "Ver equipos asociados"
+        Me.btnAchicar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAchicar.BackColor = System.Drawing.Color.Transparent
+        Me.btnAchicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnAchicar.Image = Global.WindowsApp1.My.Resources.Resources.maximize
+        Me.btnAchicar.Location = New System.Drawing.Point(1161, 13)
+        Me.btnAchicar.Name = "btnAchicar"
+        Me.btnAchicar.Size = New System.Drawing.Size(34, 34)
+        Me.btnAchicar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnAchicar.TabIndex = 8
+        Me.btnAchicar.TabStop = False
         '
-        'BorrarToolStripMenuItem
+        'btnAgrandar
         '
-        Me.BorrarToolStripMenuItem.Name = "BorrarToolStripMenuItem"
-        Me.BorrarToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.BorrarToolStripMenuItem.Text = "Borrar "
+        Me.btnAgrandar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAgrandar.BackColor = System.Drawing.Color.Transparent
+        Me.btnAgrandar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnAgrandar.Image = Global.WindowsApp1.My.Resources.Resources.maximized
+        Me.btnAgrandar.Location = New System.Drawing.Point(1161, 13)
+        Me.btnAgrandar.Name = "btnAgrandar"
+        Me.btnAgrandar.Size = New System.Drawing.Size(34, 34)
+        Me.btnAgrandar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnAgrandar.TabIndex = 7
+        Me.btnAgrandar.TabStop = False
+        Me.btnAgrandar.Visible = False
         '
-        'ModificarToolStripMenuItem
+        'btnCerrar
         '
-        Me.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
-        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.ModificarToolStripMenuItem.Text = "Modificar"
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.btnCerrar.Location = New System.Drawing.Point(1201, 13)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(34, 34)
+        Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnCerrar.TabIndex = 6
+        Me.btnCerrar.TabStop = False
         '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 703)
+        Me.Controls.Add(Me.btnMinimizar)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.picCerrar)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlContenedor)
+        Me.Controls.Add(Me.btnAgrandar)
+        Me.Controls.Add(Me.btnAchicar)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlContenedor.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.cmsClientes.ResumeLayout(False)
+        CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnAchicar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnAgrandar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -404,13 +434,8 @@ Partial Class frmPrincipal
     Friend WithEvents btnCuentas As Button
     Friend WithEvents btnClientes As Button
     Friend WithEvents panelCost As Panel
-    Friend WithEvents picCerrar As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents pnlContenedor As Panel
-    Friend WithEvents cmsClientes As ContextMenuStrip
-    Friend WithEvents VerEquiposAsociadosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BorrarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ModificarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnWEB As Button
     Friend WithEvents PictureBox3 As PictureBox
@@ -421,4 +446,8 @@ Partial Class frmPrincipal
     Friend WithEvents Label2 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents btnServTecnico As Button
+    Friend WithEvents btnCerrar As PictureBox
+    Friend WithEvents btnAgrandar As PictureBox
+    Friend WithEvents btnAchicar As PictureBox
+    Friend WithEvents btnMinimizar As PictureBox
 End Class

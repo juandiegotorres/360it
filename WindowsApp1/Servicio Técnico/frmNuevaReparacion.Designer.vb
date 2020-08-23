@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmNuevaReparacion
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmNuevaReparacion
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNuevaReparacion))
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -29,14 +29,14 @@ Partial Class frmNuevaReparacion
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.txtModelo = New System.Windows.Forms.TextBox()
+        Me.txtMarca = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtNombreCliente = New System.Windows.Forms.TextBox()
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cbTipoArticulo = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtModelo = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cbEstado = New System.Windows.Forms.ComboBox()
@@ -50,6 +50,7 @@ Partial Class frmNuevaReparacion
         Me.dtRecepcion = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.chbSinFecha = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -116,14 +117,14 @@ Partial Class frmNuevaReparacion
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'txtModelo
+        'txtMarca
         '
-        Me.txtModelo.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtModelo.Location = New System.Drawing.Point(192, 193)
-        Me.txtModelo.MaxLength = 25
-        Me.txtModelo.Name = "txtModelo"
-        Me.txtModelo.Size = New System.Drawing.Size(291, 31)
-        Me.txtModelo.TabIndex = 51
+        Me.txtMarca.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMarca.Location = New System.Drawing.Point(192, 193)
+        Me.txtMarca.MaxLength = 25
+        Me.txtMarca.Name = "txtMarca"
+        Me.txtMarca.Size = New System.Drawing.Size(291, 31)
+        Me.txtMarca.TabIndex = 3
         '
         'Label3
         '
@@ -160,7 +161,7 @@ Partial Class frmNuevaReparacion
         Me.btnClientes.Location = New System.Drawing.Point(489, 87)
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.Size = New System.Drawing.Size(44, 31)
-        Me.btnClientes.TabIndex = 76
+        Me.btnClientes.TabIndex = 1
         Me.btnClientes.Text = "..."
         Me.btnClientes.UseVisualStyleBackColor = True
         '
@@ -182,16 +183,16 @@ Partial Class frmNuevaReparacion
         Me.cbTipoArticulo.Location = New System.Drawing.Point(192, 140)
         Me.cbTipoArticulo.Name = "cbTipoArticulo"
         Me.cbTipoArticulo.Size = New System.Drawing.Size(234, 34)
-        Me.cbTipoArticulo.TabIndex = 77
+        Me.cbTipoArticulo.TabIndex = 2
         '
-        'TextBox1
+        'txtModelo
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(192, 246)
-        Me.TextBox1.MaxLength = 25
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(291, 31)
-        Me.TextBox1.TabIndex = 85
+        Me.txtModelo.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtModelo.Location = New System.Drawing.Point(192, 246)
+        Me.txtModelo.MaxLength = 25
+        Me.txtModelo.Name = "txtModelo"
+        Me.txtModelo.Size = New System.Drawing.Size(291, 31)
+        Me.txtModelo.TabIndex = 4
         '
         'Label9
         '
@@ -221,27 +222,27 @@ Partial Class frmNuevaReparacion
         Me.cbEstado.Location = New System.Drawing.Point(192, 299)
         Me.cbEstado.Name = "cbEstado"
         Me.cbEstado.Size = New System.Drawing.Size(234, 34)
-        Me.cbEstado.TabIndex = 87
+        Me.cbEstado.TabIndex = 5
         '
         'txtAccesorios
         '
         Me.txtAccesorios.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAccesorios.Location = New System.Drawing.Point(190, 483)
-        Me.txtAccesorios.MaxLength = 25
+        Me.txtAccesorios.MaxLength = 99
         Me.txtAccesorios.Multiline = True
         Me.txtAccesorios.Name = "txtAccesorios"
         Me.txtAccesorios.Size = New System.Drawing.Size(341, 60)
-        Me.txtAccesorios.TabIndex = 92
+        Me.txtAccesorios.TabIndex = 8
         '
         'txtDescripcion
         '
         Me.txtDescripcion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.Location = New System.Drawing.Point(190, 573)
-        Me.txtDescripcion.MaxLength = 60
+        Me.txtDescripcion.MaxLength = 149
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(341, 96)
-        Me.txtDescripcion.TabIndex = 91
+        Me.txtDescripcion.TabIndex = 9
         '
         'Label12
         '
@@ -271,7 +272,7 @@ Partial Class frmNuevaReparacion
         Me.dtEntrega.Location = New System.Drawing.Point(192, 420)
         Me.dtEntrega.Name = "dtEntrega"
         Me.dtEntrega.Size = New System.Drawing.Size(159, 31)
-        Me.dtEntrega.TabIndex = 98
+        Me.dtEntrega.TabIndex = 7
         '
         'Label6
         '
@@ -301,7 +302,7 @@ Partial Class frmNuevaReparacion
         Me.dtRecepcion.Location = New System.Drawing.Point(190, 360)
         Me.dtRecepcion.Name = "dtRecepcion"
         Me.dtRecepcion.Size = New System.Drawing.Size(161, 31)
-        Me.dtRecepcion.TabIndex = 95
+        Me.dtRecepcion.TabIndex = 6
         '
         'Label1
         '
@@ -323,11 +324,23 @@ Partial Class frmNuevaReparacion
         Me.Label8.TabIndex = 93
         Me.Label8.Text = "Fecha de :"
         '
+        'chbSinFecha
+        '
+        Me.chbSinFecha.AutoSize = True
+        Me.chbSinFecha.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chbSinFecha.Location = New System.Drawing.Point(192, 457)
+        Me.chbSinFecha.Name = "chbSinFecha"
+        Me.chbSinFecha.Size = New System.Drawing.Size(139, 19)
+        Me.chbSinFecha.TabIndex = 99
+        Me.chbSinFecha.Text = "Sin fecha de entrega"
+        Me.chbSinFecha.UseVisualStyleBackColor = True
+        '
         'frmNuevaReparacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(573, 785)
+        Me.Controls.Add(Me.chbSinFecha)
         Me.Controls.Add(Me.dtEntrega)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label7)
@@ -340,7 +353,7 @@ Partial Class frmNuevaReparacion
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.cbEstado)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtModelo)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cbTipoArticulo)
@@ -348,7 +361,7 @@ Partial Class frmNuevaReparacion
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.txtModelo)
+        Me.Controls.Add(Me.txtMarca)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtNombreCliente)
@@ -370,14 +383,14 @@ Partial Class frmNuevaReparacion
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents txtModelo As TextBox
+    Friend WithEvents txtMarca As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txtNombreCliente As TextBox
     Friend WithEvents btnClientes As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents cbTipoArticulo As ComboBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtModelo As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents cbEstado As ComboBox
@@ -391,4 +404,5 @@ Partial Class frmNuevaReparacion
     Friend WithEvents dtRecepcion As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents chbSinFecha As CheckBox
 End Class

@@ -30,6 +30,13 @@ Public Class frmPrincipal
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
         'panelCost.Height = btnVentas.Height
         'panelCost.Top = btnVentas.Top
+        'Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
+        'Me.Bounds = Screen.GetWorkingArea(Me)
+        Me.WindowState = FormWindowState.Normal
+        Me.StartPosition = FormStartPosition.Manual
+        With Screen.PrimaryScreen.WorkingArea
+            Me.SetBounds(.Left, .Top, .Width, .Height)
+        End With
 
     End Sub
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
@@ -72,13 +79,6 @@ Public Class frmPrincipal
         abrirForm(frmServTecnico)
     End Sub
 
-    Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
-        If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "360 IT") = MsgBoxResult.Yes Then
-            Me.Close()
-
-        End If
-    End Sub
-
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Maximized
     End Sub
@@ -100,7 +100,7 @@ Public Class frmPrincipal
             Case Keys.F5
                 Call btnProveedores_Click(btnProveedores, e)
             Case Keys.Escape
-                Call picCerrar_Click(picCerrar, e)
+                Call btnCerrar_Click(btnCerrar, e)
         End Select
     End Sub
     'Poder mover la ventana con el mouse, porque el form no tiene bordes
@@ -113,5 +113,34 @@ Public Class frmPrincipal
         SendMessage(Me.Handle, &H112, &HF012, 0)
     End Sub
 
+    Private Sub btnAgrandar_Click(sender As Object, e As EventArgs) Handles btnAgrandar.Click
 
+        With Screen.PrimaryScreen.WorkingArea
+            Me.SetBounds(.Left, .Top, .Width, .Height)
+        End With
+        btnAgrandar.Visible = False
+        btnAchicar.Visible = True
+    End Sub
+
+    Private Sub btnAchicar_Click(sender As Object, e As EventArgs) Handles btnAchicar.Click
+
+        With Screen.PrimaryScreen.WorkingArea
+            Me.SetBounds(.Left, .Top, 1234, 703)
+        End With
+        'Me.WindowState = FormWindowState.Normal
+        btnAchicar.Visible = False
+        btnAgrandar.Visible = True
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "360 IT") = MsgBoxResult.Yes Then
+            Me.Close()
+
+        End If
+    End Sub
+
+    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
+
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
 End Class

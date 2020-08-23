@@ -1,4 +1,5 @@
-﻿Public Class ServTecnico
+﻿Imports MySql.Data.MySqlClient
+Public Class ServTecnico
     Dim capaDatos As New CapaDeNegocios.cdDatosPrueba
 #Region "Declaracion de propiedades"
 
@@ -112,5 +113,25 @@
         Dim consultaSQL As String = "SELECT * FROM estado"
         capaDatos.llenarDatos(tabla, consultaSQL)
     End Sub
+    Public Function nuevaReparacion()
+        Try
+            Dim consultaSQL As String = "INSERT INTO serviciotecnico(cliente, tipo, marca, modelo, accesorios, descripcion, fechaRecep, fechaLimite, estado, activo) VALUES (@idCliente,@tipo,@marca, @modelo,@accesorios,@descripcion,@fechaRecep,@fechaLimite,@estado,'1')"
+            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+            sqlComando.Parameters.Add("@idCliente", MySqlDbType.Int64).Value = Me.idCliente
+            sqlComando.Parameters.Add("@tipo", MySqlDbType.Int64).Value = Me.idTipo
+            sqlComando.Parameters.Add("@marca", MySqlDbType.VarChar).Value = Me.marca
+            sqlComando.Parameters.Add("@modelo", MySqlDbType.VarChar).Value = Me.modelo
+            sqlComando.Parameters.Add("@accesorios", MySqlDbType.VarChar).Value = Me.accesorios
+            sqlComando.Parameters.Add("@descripcion", MySqlDbType.VarChar).Value = Me.descripcion
+            sqlComando.Parameters.Add("@fechaRecep", MySqlDbType.Date).Value = Me.fechaRecep
+            sqlComando.Parameters.Add("@fechaLimite", MySqlDbType.Date).Value = Me.fechaLimite
+            sqlComando.Parameters.Add("@estado", MySqlDbType.Int32).Value = Me.idEstado
+            capaDatos.cargarDatos(sqlComando)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+            Return False
+        End Try
+    End Function
 #End Region
 End Class

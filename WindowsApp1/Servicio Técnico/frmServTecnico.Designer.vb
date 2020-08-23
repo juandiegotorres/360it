@@ -22,27 +22,25 @@ Partial Class frmServTecnico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.categoriaid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idproveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precioCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnBajaCliente = New System.Windows.Forms.Button()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreApel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.accesorios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaRecep = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaLimite = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,134 +62,58 @@ Partial Class frmServTecnico
         Me.dgvProductos.AllowUserToDeleteRows = False
         Me.dgvProductos.AllowUserToOrderColumns = True
         Me.dgvProductos.AllowUserToResizeColumns = False
-        DataGridViewCellStyle21.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.categoriaid, Me.idproveedor, Me.nombreProducto, Me.modelo, Me.nombCategoria, Me.nombreProveedor, Me.cantidad, Me.descripcion, Me.precioCosto, Me.precioVenta})
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle23
+        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.nombreApel, Me.tipoArticulo, Me.marca, Me.modelo, Me.accesorios, Me.fechaRecep, Me.fechaLimite, Me.estado})
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvProductos.EnableHeadersVisualStyles = False
         Me.dgvProductos.Location = New System.Drawing.Point(25, 118)
         Me.dgvProductos.MultiSelect = False
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         Me.dgvProductos.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black
-        Me.dgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
+        Me.dgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProductos.Size = New System.Drawing.Size(1000, 412)
         Me.dgvProductos.TabIndex = 16
         '
-        'id
-        '
-        Me.id.DataPropertyName = "idProducto"
-        Me.id.HeaderText = "idProducto"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Visible = False
-        '
-        'categoriaid
-        '
-        Me.categoriaid.DataPropertyName = "categoria"
-        Me.categoriaid.HeaderText = "categoria"
-        Me.categoriaid.Name = "categoriaid"
-        Me.categoriaid.ReadOnly = True
-        Me.categoriaid.Visible = False
-        '
-        'idproveedor
-        '
-        Me.idproveedor.DataPropertyName = "proveedor"
-        Me.idproveedor.HeaderText = "idproveedor"
-        Me.idproveedor.Name = "idproveedor"
-        Me.idproveedor.ReadOnly = True
-        Me.idproveedor.Visible = False
-        '
-        'nombreProducto
-        '
-        Me.nombreProducto.DataPropertyName = "nombreProducto"
-        Me.nombreProducto.HeaderText = "Nombre"
-        Me.nombreProducto.Name = "nombreProducto"
-        Me.nombreProducto.ReadOnly = True
-        '
-        'modelo
-        '
-        Me.modelo.DataPropertyName = "modelo"
-        Me.modelo.HeaderText = "Modelo"
-        Me.modelo.Name = "modelo"
-        Me.modelo.ReadOnly = True
-        '
-        'nombCategoria
-        '
-        Me.nombCategoria.DataPropertyName = "nombCategoria"
-        Me.nombCategoria.HeaderText = "Categoría"
-        Me.nombCategoria.Name = "nombCategoria"
-        Me.nombCategoria.ReadOnly = True
-        '
-        'nombreProveedor
-        '
-        Me.nombreProveedor.DataPropertyName = "nombreProveedor"
-        Me.nombreProveedor.HeaderText = "Proveedor"
-        Me.nombreProveedor.Name = "nombreProveedor"
-        Me.nombreProveedor.ReadOnly = True
-        '
-        'cantidad
-        '
-        Me.cantidad.DataPropertyName = "cantidad"
-        Me.cantidad.HeaderText = "Cantidad"
-        Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
-        '
-        'descripcion
-        '
-        Me.descripcion.DataPropertyName = "descripcion"
-        Me.descripcion.HeaderText = "Descripción"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
-        '
-        'precioCosto
-        '
-        Me.precioCosto.DataPropertyName = "precioCosto"
-        Me.precioCosto.HeaderText = "Precio Costo"
-        Me.precioCosto.Name = "precioCosto"
-        Me.precioCosto.ReadOnly = True
-        '
-        'precioVenta
-        '
-        Me.precioVenta.DataPropertyName = "precioVenta"
-        Me.precioVenta.HeaderText = "Precio Venta"
-        Me.precioVenta.Name = "precioVenta"
-        Me.precioVenta.ReadOnly = True
-        '
         'btnAgregar
         '
+        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Black
@@ -204,6 +126,7 @@ Partial Class frmServTecnico
         '
         'btnModificar
         '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
@@ -216,6 +139,7 @@ Partial Class frmServTecnico
         '
         'btnBajaCliente
         '
+        Me.btnBajaCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBajaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBajaCliente.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBajaCliente.ForeColor = System.Drawing.Color.Black
@@ -225,6 +149,69 @@ Partial Class frmServTecnico
         Me.btnBajaCliente.TabIndex = 25
         Me.btnBajaCliente.Text = "Baja"
         Me.btnBajaCliente.UseVisualStyleBackColor = True
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'nombreApel
+        '
+        Me.nombreApel.DataPropertyName = "nombreApel"
+        Me.nombreApel.HeaderText = "Cliente"
+        Me.nombreApel.Name = "nombreApel"
+        Me.nombreApel.ReadOnly = True
+        '
+        'tipoArticulo
+        '
+        Me.tipoArticulo.DataPropertyName = "tipoArticulo"
+        Me.tipoArticulo.HeaderText = "Artículo"
+        Me.tipoArticulo.Name = "tipoArticulo"
+        Me.tipoArticulo.ReadOnly = True
+        '
+        'marca
+        '
+        Me.marca.DataPropertyName = "marca"
+        Me.marca.HeaderText = "Marca"
+        Me.marca.Name = "marca"
+        Me.marca.ReadOnly = True
+        '
+        'modelo
+        '
+        Me.modelo.DataPropertyName = "modelo"
+        Me.modelo.HeaderText = "Modelo"
+        Me.modelo.Name = "modelo"
+        Me.modelo.ReadOnly = True
+        '
+        'accesorios
+        '
+        Me.accesorios.DataPropertyName = "accesorios"
+        Me.accesorios.HeaderText = "Accesorios"
+        Me.accesorios.Name = "accesorios"
+        Me.accesorios.ReadOnly = True
+        '
+        'fechaRecep
+        '
+        Me.fechaRecep.DataPropertyName = "fechaRecep"
+        Me.fechaRecep.HeaderText = "Fecha de Recepción"
+        Me.fechaRecep.Name = "fechaRecep"
+        Me.fechaRecep.ReadOnly = True
+        '
+        'fechaLimite
+        '
+        Me.fechaLimite.DataPropertyName = "fechaLimite"
+        Me.fechaLimite.HeaderText = "Fecha límite"
+        Me.fechaLimite.Name = "fechaLimite"
+        Me.fechaLimite.ReadOnly = True
+        '
+        'estado
+        '
+        Me.estado.DataPropertyName = "estado"
+        Me.estado.HeaderText = "Estado"
+        Me.estado.Name = "estado"
+        Me.estado.ReadOnly = True
         '
         'frmServTecnico
         '
@@ -246,18 +233,16 @@ Partial Class frmServTecnico
 
     Friend WithEvents Label1 As Label
     Public WithEvents dgvProductos As DataGridView
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents categoriaid As DataGridViewTextBoxColumn
-    Friend WithEvents idproveedor As DataGridViewTextBoxColumn
-    Friend WithEvents nombreProducto As DataGridViewTextBoxColumn
-    Friend WithEvents modelo As DataGridViewTextBoxColumn
-    Friend WithEvents nombCategoria As DataGridViewTextBoxColumn
-    Friend WithEvents nombreProveedor As DataGridViewTextBoxColumn
-    Friend WithEvents cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents precioCosto As DataGridViewTextBoxColumn
-    Friend WithEvents precioVenta As DataGridViewTextBoxColumn
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnBajaCliente As Button
+    Friend WithEvents ID As DataGridViewTextBoxColumn
+    Friend WithEvents nombreApel As DataGridViewTextBoxColumn
+    Friend WithEvents tipoArticulo As DataGridViewTextBoxColumn
+    Friend WithEvents marca As DataGridViewTextBoxColumn
+    Friend WithEvents modelo As DataGridViewTextBoxColumn
+    Friend WithEvents accesorios As DataGridViewTextBoxColumn
+    Friend WithEvents fechaRecep As DataGridViewTextBoxColumn
+    Friend WithEvents fechaLimite As DataGridViewTextBoxColumn
+    Friend WithEvents estado As DataGridViewTextBoxColumn
 End Class

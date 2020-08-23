@@ -52,9 +52,8 @@
                 If _control Is txtDescripcion Then
                 Else
                     If _control.Text = "" Then
-                        MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Clientes")
+                        MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Productos")
                         Return False
-
                     End If
                 End If
             End If
