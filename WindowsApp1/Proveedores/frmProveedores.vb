@@ -51,7 +51,6 @@
     End Sub
 
 
-
     Private Sub dgvProveedores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick
         eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idProveedor").Value
         actualizarRubros()

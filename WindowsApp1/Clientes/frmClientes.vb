@@ -25,8 +25,6 @@
         dgvClientes.ClearSelection()
     End Sub
 
-
-
     Private Sub dgvClientes_CellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs)
         If e.Button = MouseButtons.Right Then
             Dim columna As UInt16 = e.ColumnIndex

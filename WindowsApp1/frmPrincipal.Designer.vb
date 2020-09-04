@@ -316,9 +316,9 @@ Partial Class frmPrincipal
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlContenedor.Controls.Add(Me.PictureBox3)
         Me.pnlContenedor.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlContenedor.Location = New System.Drawing.Point(194, 71)
+        Me.pnlContenedor.Location = New System.Drawing.Point(209, 71)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(1040, 632)
+        Me.pnlContenedor.Size = New System.Drawing.Size(1025, 632)
         Me.pnlContenedor.TabIndex = 5
         '
         'PictureBox3
@@ -329,7 +329,7 @@ Partial Class frmPrincipal
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(209, 114)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(628, 264)
+        Me.PictureBox3.Size = New System.Drawing.Size(613, 264)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False

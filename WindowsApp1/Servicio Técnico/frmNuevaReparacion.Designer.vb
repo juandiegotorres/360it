@@ -267,7 +267,7 @@ Partial Class frmNuevaReparacion
         'dtEntrega
         '
         Me.dtEntrega.CalendarFont = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtEntrega.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtEntrega.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtEntrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtEntrega.Location = New System.Drawing.Point(192, 420)
         Me.dtEntrega.Name = "dtEntrega"
@@ -297,7 +297,8 @@ Partial Class frmNuevaReparacion
         'dtRecepcion
         '
         Me.dtRecepcion.CalendarFont = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtRecepcion.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtRecepcion.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.dtRecepcion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtRecepcion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtRecepcion.Location = New System.Drawing.Point(190, 360)
         Me.dtRecepcion.Name = "dtRecepcion"

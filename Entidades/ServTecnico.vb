@@ -21,6 +21,15 @@ Public Class ServTecnico
             Return _idCliente
         End Get
     End Property
+    Private _nombreCliente As String
+    Public Property nombreCliente As String
+        Set(value As String)
+            _nombreCliente = value
+        End Set
+        Get
+            Return _nombreCliente
+        End Get
+    End Property
     Private _idTipo As UInt16
     Public Property idTipo As UInt64
         Set(value As UInt64)
@@ -105,13 +114,29 @@ Public Class ServTecnico
 
 #End Region
 #Region "Metodos"
+    Public Sub traerReparaciones(ByVal tabla As DataTable, ByRef id As UInt16)
+        Try
+            Dim consultaSQL As String = "CALL procedimiento_servtecnico(" & id & ")"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+        End Try
+    End Sub
     Public Sub tipoArticulo(ByRef tabla As DataTable)
-        Dim consultaSQL As String = "SELECT * FROM tipoarticulo"
-        capaDatos.llenarDatos(tabla, consultaSQL)
+        Try
+            Dim consultaSQL As String = "SELECT * FROM tipoarticulo"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+        End Try
     End Sub
     Public Sub estadoArticulo(ByRef tabla As DataTable)
-        Dim consultaSQL As String = "SELECT * FROM estado"
-        capaDatos.llenarDatos(tabla, consultaSQL)
+        Try
+            Dim consultaSQL As String = "SELECT * FROM estado"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+        End Try
     End Sub
     Public Function nuevaReparacion()
         Try
@@ -133,5 +158,53 @@ Public Class ServTecnico
             Return False
         End Try
     End Function
+
+    Public Sub modificarReparacion()
+        Try
+            Dim tabla As New DataTable
+            Dim consultaSQL As String = "SELECT clientes.nombreApel, idReparacion, cliente, tipo, marca, modelo, accesorios, descripcion, fechaRecep, fechaLimite, estado FROM serviciotecnico JOIN clientes on serviciotecnico.cliente = clientes.idcliente WHERE idReparacion = '" & _idReparacion & "'"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+            _idReparacion = tabla.Rows(0).Item("idReparacion").ToString
+            _nombreCliente = tabla.Rows(0).Item("nombreApel").ToString
+            _idCliente = tabla.Rows(0).Item("cliente").ToString
+            _idTipo = tabla.Rows(0).Item("tipo").ToString
+            _marca = tabla.Rows(0).Item("marca").ToString
+            _modelo = tabla.Rows(0).Item("modelo").ToString
+            _accesorios = tabla.Rows(0).Item("accesorios").ToString
+            _descripcion = tabla.Rows(0).Item("descripcion").ToString
+            _fechaRecep = tabla.Rows(0).Item("fechaRecep").ToString
+            _fechaLimite = tabla.Rows(0).Item("fechaLimite").ToString
+            _idEstado = tabla.Rows(0).Item("estado").ToString
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+        End Try
+    End Sub
+    Public Function guardarReparacionModificada()
+        Try
+            Dim comandoSQL As String = "UPDATE serviciotecnico SET cliente = @idCliente, tipo = @idTipo, marca = @marca, modelo = @modelo, accesorios = @accesorios, descripcion = @descripcion, fechaRecep = @fechaRecep, fechaLimite = @fechaLimite, estado = @idEstado WHERE idReparacion = @idReparacion"
+            Dim sqlcomando As MySqlCommand = New MySqlCommand(comandoSQL)
+            sqlcomando.Parameters.Add("@idReparacion", MySqlDbType.UInt64).Value = Me.idReparacion
+            sqlcomando.Parameters.Add("@idCliente", MySqlDbType.UInt64).Value = Me.idCliente
+            sqlcomando.Parameters.Add("@idTipo", MySqlDbType.UInt64).Value = Me.idTipo
+            sqlcomando.Parameters.Add("@marca", MySqlDbType.VarChar).Value = Me.marca
+            sqlcomando.Parameters.Add("@modelo", MySqlDbType.VarChar).Value = Me.modelo
+            sqlcomando.Parameters.Add("@accesorios", MySqlDbType.VarChar).Value = Me.accesorios
+            sqlcomando.Parameters.Add("@descripcion", MySqlDbType.VarChar).Value = Me.descripcion
+            sqlcomando.Parameters.Add("@fechaRecep", MySqlDbType.Date).Value = Me.fechaRecep
+            sqlcomando.Parameters.Add("@fechaLimite", MySqlDbType.Date).Value = Me.fechaLimite
+            sqlcomando.Parameters.Add("@idEstado", MySqlDbType.UInt64).Value = Me.idEstado
+            capaDatos.cargarDatos(sqlcomando)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Cliente")
+            Return False
+        End Try
+    End Function
+    Public Sub bajaReparacion()
+        Dim comandoSQl As String = "UPDATE serviciotecnico SET activo = 0 WHERE idReparacion = @idReparacion"
+        Dim sqlcomando As MySqlCommand = New MySqlCommand(comandoSQl)
+        sqlcomando.Parameters.Add("@idReparacion", MySqlDbType.UInt64).Value = Me.idReparacion
+        capaDatos.cargarDatos(sqlcomando)
+    End Sub
 #End Region
 End Class

@@ -30,6 +30,13 @@ Partial Class frmClientes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClientes))
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
+        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreApel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBajaCliente = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -41,13 +48,6 @@ Partial Class frmClientes
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
-        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreApel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHeader.SuspendLayout()
@@ -55,6 +55,7 @@ Partial Class frmClientes
         '
         'btnAgregar
         '
+        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Black
@@ -70,9 +71,12 @@ Partial Class frmClientes
         Me.dgvClientes.AllowUserToAddRows = False
         Me.dgvClientes.AllowUserToDeleteRows = False
         Me.dgvClientes.AllowUserToOrderColumns = True
-        Me.dgvClientes.AllowUserToResizeColumns = False
+        Me.dgvClientes.AllowUserToResizeRows = False
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvClientes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvClientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -116,131 +120,6 @@ Partial Class frmClientes
         Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvClientes.Size = New System.Drawing.Size(1000, 412)
         Me.dgvClientes.TabIndex = 7
-        '
-        'btnBajaCliente
-        '
-        Me.btnBajaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBajaCliente.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBajaCliente.ForeColor = System.Drawing.Color.Black
-        Me.btnBajaCliente.Location = New System.Drawing.Point(739, 547)
-        Me.btnBajaCliente.Name = "btnBajaCliente"
-        Me.btnBajaCliente.Size = New System.Drawing.Size(131, 41)
-        Me.btnBajaCliente.TabIndex = 8
-        Me.btnBajaCliente.Text = "Baja"
-        Me.btnBajaCliente.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(583, 547)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(131, 41)
-        Me.btnModificar.TabIndex = 9
-        Me.btnModificar.Text = "Modificación"
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Montserrat", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(21, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(306, 75)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "CLIENTES"
-        '
-        'btnSondeo
-        '
-        Me.btnSondeo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSondeo.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSondeo.ForeColor = System.Drawing.Color.Black
-        Me.btnSondeo.Location = New System.Drawing.Point(23, 547)
-        Me.btnSondeo.Name = "btnSondeo"
-        Me.btnSondeo.Size = New System.Drawing.Size(131, 41)
-        Me.btnSondeo.TabIndex = 11
-        Me.btnSondeo.Text = "Sondeo"
-        Me.btnSondeo.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(21, 84)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(135, 22)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Buscar apellido:"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(158, 85)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(234, 23)
-        Me.txtBuscar.TabIndex = 13
-        '
-        'picCerrar
-        '
-        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.picCerrar.Image = CType(resources.GetObject("picCerrar.Image"), System.Drawing.Image)
-        Me.picCerrar.Location = New System.Drawing.Point(1001, 12)
-        Me.picCerrar.Name = "picCerrar"
-        Me.picCerrar.Size = New System.Drawing.Size(34, 34)
-        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.picCerrar.TabIndex = 27
-        Me.picCerrar.TabStop = False
-        Me.picCerrar.Visible = False
-        '
-        'pnlHeader
-        '
-        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnlHeader.Controls.Add(Me.Panel3)
-        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
-        Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1035, 12)
-        Me.pnlHeader.TabIndex = 28
-        Me.pnlHeader.Visible = False
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(21, 24)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(75, 77)
-        Me.Panel3.TabIndex = 2
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(739, 547)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(131, 41)
-        Me.btnCancelar.TabIndex = 30
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        Me.btnCancelar.Visible = False
-        '
-        'btnAceptar
-        '
-        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAceptar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.ForeColor = System.Drawing.Color.Black
-        Me.btnAceptar.Location = New System.Drawing.Point(892, 547)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(131, 41)
-        Me.btnAceptar.TabIndex = 29
-        Me.btnAceptar.Text = "Seleccionar"
-        Me.btnAceptar.UseVisualStyleBackColor = True
-        Me.btnAceptar.Visible = False
         '
         'idCliente
         '
@@ -296,6 +175,137 @@ Partial Class frmClientes
         Me.nombLocalidad.Name = "nombLocalidad"
         Me.nombLocalidad.ReadOnly = True
         '
+        'btnBajaCliente
+        '
+        Me.btnBajaCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnBajaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBajaCliente.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBajaCliente.ForeColor = System.Drawing.Color.Black
+        Me.btnBajaCliente.Location = New System.Drawing.Point(739, 547)
+        Me.btnBajaCliente.Name = "btnBajaCliente"
+        Me.btnBajaCliente.Size = New System.Drawing.Size(131, 41)
+        Me.btnBajaCliente.TabIndex = 8
+        Me.btnBajaCliente.Text = "Baja"
+        Me.btnBajaCliente.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Location = New System.Drawing.Point(583, 547)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(131, 41)
+        Me.btnModificar.TabIndex = 9
+        Me.btnModificar.Text = "Modificación"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Montserrat", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(21, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(306, 75)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "CLIENTES"
+        '
+        'btnSondeo
+        '
+        Me.btnSondeo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnSondeo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSondeo.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSondeo.ForeColor = System.Drawing.Color.Black
+        Me.btnSondeo.Location = New System.Drawing.Point(23, 547)
+        Me.btnSondeo.Name = "btnSondeo"
+        Me.btnSondeo.Size = New System.Drawing.Size(131, 41)
+        Me.btnSondeo.TabIndex = 11
+        Me.btnSondeo.Text = "Sondeo"
+        Me.btnSondeo.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(21, 84)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(135, 22)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Buscar apellido:"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(158, 85)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(234, 23)
+        Me.txtBuscar.TabIndex = 13
+        '
+        'picCerrar
+        '
+        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = CType(resources.GetObject("picCerrar.Image"), System.Drawing.Image)
+        Me.picCerrar.Location = New System.Drawing.Point(1001, 12)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(34, 34)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picCerrar.TabIndex = 27
+        Me.picCerrar.TabStop = False
+        Me.picCerrar.Visible = False
+        '
+        'pnlHeader
+        '
+        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlHeader.Controls.Add(Me.Panel3)
+        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(1035, 12)
+        Me.pnlHeader.TabIndex = 28
+        Me.pnlHeader.Visible = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(21, 24)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(75, 77)
+        Me.Panel3.TabIndex = 2
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btnCancelar.Location = New System.Drawing.Point(739, 547)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(131, 41)
+        Me.btnCancelar.TabIndex = 30
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.Visible = False
+        '
+        'btnAceptar
+        '
+        Me.btnAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAceptar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptar.ForeColor = System.Drawing.Color.Black
+        Me.btnAceptar.Location = New System.Drawing.Point(892, 547)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(131, 41)
+        Me.btnAceptar.TabIndex = 29
+        Me.btnAceptar.Text = "Seleccionar"
+        Me.btnAceptar.UseVisualStyleBackColor = True
+        Me.btnAceptar.Visible = False
+        '
         'frmClientes
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -308,10 +318,10 @@ Partial Class frmClientes
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.dgvClientes)
-        Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnBajaCliente)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnAceptar)
         Me.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmClientes"

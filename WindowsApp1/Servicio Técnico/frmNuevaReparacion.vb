@@ -1,9 +1,30 @@
 ﻿Public Class frmNuevaReparacion
-    Dim eServTecnico As New Entidades.ServTecnico
+    Public eServTecnico As New Entidades.ServTecnico
+    Public modificar As Boolean
     Private Sub frmNuevaReparacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tipoArticulo()
         estadoArticulo()
         dtEntrega.Value = Today.AddDays(3)
+        If modificar = True Then
+            eServTecnico.modificarReparacion()
+            txtNombreCliente.Text = eServTecnico.nombreCliente
+            cbTipoArticulo.SelectedValue = eServTecnico.idTipo
+            txtMarca.Text = eServTecnico.marca
+            txtModelo.Text = eServTecnico.modelo
+            cbEstado.SelectedValue = eServTecnico.idEstado
+            dtRecepcion.Value = eServTecnico.fechaRecep
+            dtEntrega.Value = eServTecnico.fechaLimite
+            If eServTecnico.accesorios = "Sin accesorios" Then
+                txtAccesorios.Text = ""
+            Else
+                txtAccesorios.Text = eServTecnico.accesorios
+            End If
+            If eServTecnico.descripcion = "Sin descripción" Then
+                txtDescripcion.Text = ""
+            Else
+                txtDescripcion.Text = eServTecnico.descripcion
+            End If
+        End If
     End Sub
     Public Function comprobarAccesoriosYDescripcion()
         If Trim(txtAccesorios.Text) = "" Then
@@ -81,8 +102,8 @@
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        Me.Close()
-        frmPrincipal.Show()
+        Me.DialogResult = DialogResult.Cancel
+
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -119,12 +140,22 @@
             Else
                 eServTecnico.fechaLimite = #01/01/2000 12:00:00AM#
             End If
-            If eServTecnico.nuevaReparacion() Then
-                MsgBox("Reparación agregada", MsgBoxStyle.Information, "Nueva Reparacion")
-                Me.Close()
-                frmPrincipal.Show()
+            If modificar = False Then
+                If eServTecnico.nuevaReparacion() Then
+                    MsgBox("Reparación agregada", MsgBoxStyle.Information, "Nueva Reparacion")
+                    Me.DialogResult = DialogResult.OK
+                    frmPrincipal.Show()
+                Else
+                    MsgBox("Sucedión un problema y no pudimos guardar la reparación por favor intente de nuevo", MsgBoxStyle.Critical, "Nueva Reparación")
+                End If
             Else
-                MsgBox("Sucedión un problema y no pudimos guardar la reparacón por favor intente de nuevi", MsgBoxStyle.Critical, "Nueva Reparacion")
+                If eServTecnico.guardarReparacionModificada() Then
+                    MsgBox("Reparación modificada", MsgBoxStyle.Information, "Servicio Técnico")
+                    Me.DialogResult = DialogResult.OK
+                    frmPrincipal.Show()
+                Else
+                    MsgBox("Sucedión un problema y no pudimos modificar la reparación por favor intente de nuevo", MsgBoxStyle.Critical, "ModificarReparación")
+                End If
             End If
         End If
 
