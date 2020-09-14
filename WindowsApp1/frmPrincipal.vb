@@ -48,7 +48,7 @@ Public Class frmPrincipal
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
-        abrirForm(frmVentas)
+        abrirForm(frmFacturacion)
     End Sub
 
 
@@ -56,7 +56,7 @@ Public Class frmPrincipal
         panelCost.Visible = True
         panelCost.Height = btnCuentas.Height
         panelCost.Top = btnCuentas.Top
-        abrirForm(frmCuentas)
+        abrirForm(frmFacturacion)
     End Sub
 
     Private Sub btnStock_Click(sender As Object, e As EventArgs) Handles btnStock.Click

@@ -85,6 +85,12 @@
     <Compile Include="Cuentas\frmCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Facturacion\frmFacturacion.Designer.vb">
+      <DependentUpon>frmFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frmFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Localidades\frmLocalidades.Designer.vb">
       <DependentUpon>frmLocalidades.vb</DependentUpon>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cuentas\frmCuentas.resx">
       <DependentUpon>frmCuentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frmFacturacion.resx">
+      <DependentUpon>frmFacturacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Localidades\frmLocalidades.resx">
       <DependentUpon>frmLocalidades.vb</DependentUpon>
