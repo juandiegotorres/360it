@@ -72,15 +72,15 @@
         Dim tablaArticulo As New DataTable
         eServTecnico.tipoArticulo(tablaArticulo)
         cbTipoArticulo.DataSource = tablaArticulo
-        cbTipoArticulo.DisplayMember = "nombreTipo"
-        cbTipoArticulo.ValueMember = "idTipo"
+        cbTipoArticulo.DisplayMember = "tipoArticulo"
+        cbTipoArticulo.ValueMember = "id"
         cbTipoArticulo.SelectedValue = 1
     End Sub
     Public Sub estadoArticulo()
         Dim tablaEstadoArticulo As New DataTable
         eServTecnico.estadoArticulo(tablaEstadoArticulo)
         cbEstado.DataSource = tablaEstadoArticulo
-        cbEstado.DisplayMember = "nombre"
+        cbEstado.DisplayMember = "nombreEstado"
         cbEstado.ValueMember = "id"
         cbEstado.SelectedValue = 1
     End Sub

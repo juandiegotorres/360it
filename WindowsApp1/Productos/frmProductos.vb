@@ -23,6 +23,7 @@
         nuevoProducto.ShowDialog()
         If nuevoProducto.DialogResult = DialogResult.OK Then
             frmPrincipal.Show()
+            actualizarProductos()
         End If
     End Sub
 

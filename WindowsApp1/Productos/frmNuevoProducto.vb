@@ -108,7 +108,8 @@
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If comprobarDatos() Then
-            eProducto.nombProducto = txtNombre.Text
+            eProducto.tipoProducto = txtTipo.Text
+            eProducto.marca = txtMarca.Text
             eProducto.modelo = txtModelo.Text
             eProducto.categoria = cbCategorias.SelectedValue
             eProducto.cantidad = txtCantidad.Text

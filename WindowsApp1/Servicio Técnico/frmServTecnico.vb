@@ -31,7 +31,7 @@
         Dim tablaEstadoArticulo As New DataTable
         eServTec.estadoArticulo(tablaEstadoArticulo)
         cbEstado.DataSource = tablaEstadoArticulo
-        cbEstado.DisplayMember = "nombre"
+        cbEstado.DisplayMember = "nombreEstado"
         cbEstado.ValueMember = "id"
         cbEstado.SelectedValue = 1
     End Sub
@@ -73,7 +73,6 @@
     End Sub
 
     Private Sub dgvServTecnico_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServTecnico.CellClick
-
         eServTec.fechaLimite = dgvServTecnico.CurrentRow.Cells("fechaLimite").Value
     End Sub
 
@@ -81,7 +80,7 @@
         actualizarReparaciones()
     End Sub
 
-    Private Sub dgvServTecnico_LostFocus(sender As Object, e As EventArgs) Handles dgvServTecnico.LostFocus
-        dgvServTecnico.ClearSelection()
-    End Sub
+    'Private Sub dgvServTecnico_LostFocus(sender As Object, e As EventArgs) Handles dgvServTecnico.LostFocus
+    '    dgvServTecnico.ClearSelection()
+    'End Sub
 End Class

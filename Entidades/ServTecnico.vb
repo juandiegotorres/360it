@@ -124,7 +124,7 @@ Public Class ServTecnico
     End Sub
     Public Sub tipoArticulo(ByRef tabla As DataTable)
         Try
-            Dim consultaSQL As String = "SELECT * FROM tipoarticulo"
+            Dim consultaSQL As String = "SELECT * FROM tipoarticulo WHERE activo = 1"
             capaDatos.llenarDatos(tabla, consultaSQL)
         Catch ex As Exception
             MsgBox(ex.Message, "Servicio Técnico")
@@ -132,7 +132,7 @@ Public Class ServTecnico
     End Sub
     Public Sub estadoArticulo(ByRef tabla As DataTable)
         Try
-            Dim consultaSQL As String = "SELECT * FROM estado"
+            Dim consultaSQL As String = "SELECT * FROM estado WHERE activo = 1"
             capaDatos.llenarDatos(tabla, consultaSQL)
         Catch ex As Exception
             MsgBox(ex.Message, "Servicio Técnico")

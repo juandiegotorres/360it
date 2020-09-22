@@ -13,13 +13,23 @@ Public Class Producto
         End Get
     End Property
 
-    Private _nombProducto As String
-    Public Property nombProducto As String
+    Private _tipoProducto As String
+    Public Property tipoProducto As String
         Set(value As String)
-            _nombProducto = value
+            _tipoProducto = value
         End Set
         Get
-            Return _nombProducto
+            Return _tipoProducto
+        End Get
+    End Property
+
+    Private _marca As String
+    Public Property marca As String
+        Set(value As String)
+            _marca = value
+        End Set
+        Get
+            Return _marca
         End Get
     End Property
 
@@ -118,10 +128,10 @@ Public Class Producto
     End Sub
     Public Sub nuevoProducto()
         Try
-            Dim consultaSQL As String = "INSERT INTO productos(categoria, nombreProducto, modelo, descripcion, proveedor, cantidad, precioCosto, precioVenta, activo) VALUES (@categoria,@nombre,@modelo,@descripcion,@proveedor,@cantidad,@precioCosto,@precioVenta,'1')"
+            Dim consultaSQL As String = "INSERT INTO productos(categoria, tipoProducto, marca, modelo, descripcion, proveedor, cantidad, precioCosto, precioVenta, activo) VALUES (@categoria,@tipoProducto,@marca,@modelo,@descripcion,@proveedor,@cantidad,@precioCosto,@precioVenta,'1')"
             Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
             sqlComando.Parameters.Add("@categoria", MySqlDbType.Int64).Value = Me.categoria
-            sqlComando.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = Me.nombProducto
+            sqlComando.Parameters.Add("@tipoProducto", MySqlDbType.VarChar).Value = Me.tipoProducto
             sqlComando.Parameters.Add("@modelo", MySqlDbType.VarChar).Value = Me.modelo
             sqlComando.Parameters.Add("@descripcion", MySqlDbType.VarChar).Value = Me.descripcion
             sqlComando.Parameters.Add("@proveedor", MySqlDbType.Int64).Value = Me.idProveedor
