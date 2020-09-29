@@ -16,9 +16,9 @@
         End If
         dgvClientes.ClearSelection()
     End Sub
-
+    Dim tablaCliente As New DataTable
     Public Sub actualizarClientes()
-        Dim tablaCliente As New DataTable
+        tablaCliente.Clear()
         eCliente.traerClientes(tablaCliente)
         bsClientes.DataSource = tablaCliente
         dgvClientes.DataSource = bsClientes

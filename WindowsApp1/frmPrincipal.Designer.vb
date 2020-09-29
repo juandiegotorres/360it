@@ -100,6 +100,7 @@ Partial Class frmPrincipal
         Me.btnServTecnico.FlatAppearance.BorderSize = 0
         Me.btnServTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnServTecnico.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnServTecnico.ForeColor = System.Drawing.Color.White
         Me.btnServTecnico.Image = CType(resources.GetObject("btnServTecnico.Image"), System.Drawing.Image)
         Me.btnServTecnico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnServTecnico.Location = New System.Drawing.Point(5, 204)
@@ -191,6 +192,7 @@ Partial Class frmPrincipal
         Me.btnProveedores.FlatAppearance.BorderSize = 0
         Me.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProveedores.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProveedores.ForeColor = System.Drawing.Color.White
         Me.btnProveedores.Image = CType(resources.GetObject("btnProveedores.Image"), System.Drawing.Image)
         Me.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnProveedores.Location = New System.Drawing.Point(5, 301)
@@ -206,6 +208,7 @@ Partial Class frmPrincipal
         Me.btnStock.FlatAppearance.BorderSize = 0
         Me.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStock.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStock.ForeColor = System.Drawing.Color.White
         Me.btnStock.Image = CType(resources.GetObject("btnStock.Image"), System.Drawing.Image)
         Me.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStock.Location = New System.Drawing.Point(5, 251)
@@ -221,6 +224,7 @@ Partial Class frmPrincipal
         Me.btnCuentas.FlatAppearance.BorderSize = 0
         Me.btnCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCuentas.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCuentas.ForeColor = System.Drawing.Color.White
         Me.btnCuentas.Image = CType(resources.GetObject("btnCuentas.Image"), System.Drawing.Image)
         Me.btnCuentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCuentas.Location = New System.Drawing.Point(5, 157)
@@ -236,6 +240,7 @@ Partial Class frmPrincipal
         Me.btnClientes.FlatAppearance.BorderSize = 0
         Me.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClientes.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClientes.ForeColor = System.Drawing.Color.White
         Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
         Me.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnClientes.Location = New System.Drawing.Point(5, 107)
@@ -251,6 +256,7 @@ Partial Class frmPrincipal
         Me.btnVentas.FlatAppearance.BorderSize = 0
         Me.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVentas.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVentas.ForeColor = System.Drawing.Color.White
         Me.btnVentas.Image = CType(resources.GetObject("btnVentas.Image"), System.Drawing.Image)
         Me.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVentas.Location = New System.Drawing.Point(5, 57)
@@ -380,7 +386,7 @@ Partial Class frmPrincipal
         Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
-        Me.btnCerrar.Location = New System.Drawing.Point(1201, 13)
+        Me.btnCerrar.Location = New System.Drawing.Point(1200, 13)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(34, 34)
         Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -401,7 +407,7 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.btnAgrandar)
         Me.Controls.Add(Me.btnAchicar)
-        Me.ForeColor = System.Drawing.Color.White
+        Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
         Me.Name = "frmPrincipal"

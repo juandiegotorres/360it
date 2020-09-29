@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+
 Public Class cdDatosPrueba
     Dim conexion As New MySqlConnection
     Dim adaptador As New MySqlDataAdapter
@@ -79,12 +80,47 @@ Public Class cdDatosPrueba
         End Using
 
     End Function
+    Public Sub lllenarDatos(ByRef tbCliente As List(Of Clientes), ByRef consultaSQL As String)
+        Try
+            comando.CommandText = consultaSQL
+            comando.Connection = conexion
+            adaptador.SelectCommand = comando
+
+            AbrirConexion()
+
+            Using datos As MySqlDataReader = comando.ExecuteReader()
+
+                While datos.Read
+                    Dim cliente As New Clientes
+                    With cliente
+                        .idCliente = datos.GetUInt32("idCliente")
+                        .nombApel = datos.GetString("nombreApel")
+
+                    End With
+                    tbCliente.Add(cliente)
+
+                End While
+            End Using
+            'While comando.reader()
+
+            'End While
+
+            ' adaptador.Fill(tabla)
+            CerrarConexion()
+        Catch ex As Exception
+            MsgBox(ex.Message, "Clase cdDatosPrueba")
+        End Try
+    End Sub
     Public Sub llenarDatos(ByRef tabla As DataTable, ByRef consultaSQL As String)
         Try
             comando.CommandText = consultaSQL
             comando.Connection = conexion
             adaptador.SelectCommand = comando
+
             AbrirConexion()
+
+
+
             adaptador.Fill(tabla)
             CerrarConexion()
         Catch ex As Exception

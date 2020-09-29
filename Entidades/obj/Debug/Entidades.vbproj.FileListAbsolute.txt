@@ -104,9 +104,9 @@ C:\Users\Juandi\Documents\GitHub\360it\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\Entidades.dll
 C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\Entidades.pdb
 C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\Entidades.xml
-C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\CapaDeNegocios.dll
 C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\MySql.Data.dll
 C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\CapaDeNegocios.pdb
 C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\CapaDeNegocios.xml
 C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\MySql.Data.xml
 C:\Users\Juandi\Documents\GitHub\360it\Entidades\obj\Debug\Entidades.vbproj.CopyComplete
+C:\Users\Juandi\Documents\GitHub\360it\Entidades\bin\Debug\CapaDeNegocios.exe

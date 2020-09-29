@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class Cliente
+Public Class Clientes
 #Region "Declaracion de propiedades"
     Private _idCliente As UInt32
     Public Property idCliente As UInt32
@@ -96,7 +96,6 @@ Public Class Cliente
     Dim SqlComando As MySqlCommand
     Dim capaDatos As New CapaDeNegocios.cdDatos
     Dim capaDatosPrueba As New CapaDeNegocios.cdDatosPrueba
-
     Public Sub traerProvincias(ByRef tabla As DataTable)
         Try
             Dim consultaSQL As String = "Select * from provincias"
@@ -121,10 +120,6 @@ Public Class Cliente
             MsgBox(ex.Message, "Entidad Cliente")
         End Try
     End Sub
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="tabla"></param>
     Public Sub traerClientes(ByRef tabla As DataTable)
         Try
             Dim consultaSQL As String = "Select * from vistaclientes"

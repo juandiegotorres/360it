@@ -85,6 +85,12 @@
     <Compile Include="Cuentas\frmCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Facturacion\frmCantidad.Designer.vb">
+      <DependentUpon>frmCantidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frmCantidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Facturacion\frmFacturacion.Designer.vb">
       <DependentUpon>frmFacturacion.vb</DependentUpon>
     </Compile>
@@ -138,6 +144,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -180,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cuentas\frmCuentas.resx">
       <DependentUpon>frmCuentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frmCantidad.resx">
+      <DependentUpon>frmCantidad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frmFacturacion.resx">
       <DependentUpon>frmFacturacion.vb</DependentUpon>
@@ -237,12 +247,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.vbproj">
-      <Project>{f823b30e-b7c2-4131-be8c-ddab1123a37d}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\078-remove.png" />
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +275,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.vbproj">
+      <Project>{f823b30e-b7c2-4131-be8c-ddab1123a37d}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

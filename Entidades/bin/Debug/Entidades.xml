@@ -22,5 +22,11 @@ Entidades
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:Entidades.Cliente.traerClientes(System.Data.DataTable@)">
+ <summary>
+ 
+ </summary>
+ <param name="tabla"></param>
+</member>
 </members>
 </doc>

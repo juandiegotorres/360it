@@ -153,7 +153,6 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\WindowsApp1.pdb
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\WindowsApp1.xml
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Entidades.dll
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\MySql.Data.dll
-C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Entidades.pdb
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Entidades.xml
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\MySql.Data.xml
@@ -181,3 +180,5 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuev
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmServTecnico.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmEstado.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmFacturacion.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmCantidad.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\CapaDeNegocios.exe
