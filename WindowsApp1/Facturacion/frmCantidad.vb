@@ -16,6 +16,10 @@ Public Class frmCantidad
     Private Sub frmCantidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If cantidadProductos = 1 Then
             lblDisponibilidad.Text = "Solo queda " & cantidadProductos & " producto en stock"
+        ElseIf cantidadProductos = 0 Then
+            lblDisponibilidad.Text = "No hay mas stock de este producto"
+            lblDisponibilidad.ForeColor = Color.Red
+            txtCantidad.Enabled = False
         Else
             lblDisponibilidad.Text = "Quedan " & cantidadProductos & " productos en stock"
         End If
@@ -36,17 +40,22 @@ Public Class frmCantidad
     ''' <summary>
     '''Puse esta porcion de codigo en un procedimiento ya que quiero que se ejecute lo mismo al realizar dos acciones. Al presionar enter se ejecutaria esto, y al darle al boton agregar con el mouse
     ''' </summary>
-    Public Sub aceptar()
-        cantidadSeleccionada = txtCantidad.Text
-        If cantidadSeleccionada > cantidadProductos Then
-            lblError.Visible = True
-            txtCantidad.Text = ""
-            txtCantidad.Select()
+    Public Function aceptar()
+        If LTrim(txtCantidad.Text) = "" Then
+            Return False
         Else
             cantidadSeleccionada = txtCantidad.Text
-            Me.DialogResult = DialogResult.OK
+            If cantidadSeleccionada > cantidadProductos Then
+                lblError.Visible = True
+                txtCantidad.Text = ""
+                txtCantidad.Select()
+            Else
+                cantidadSeleccionada = txtCantidad.Text
+                Me.DialogResult = DialogResult.OK
+            End If
+            Return True
         End If
-    End Sub
+    End Function
 
     'Establezco la accion al presionar la tecla enter y escape con el evento keydown
     Private Sub txtCantidad_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCantidad.KeyDown
@@ -56,5 +65,21 @@ Public Class frmCantidad
             Case Keys.Escape
                 Me.DialogResult = DialogResult.Cancel
         End Select
+    End Sub
+    'Dejo introducir solo numeros
+    Private Sub txtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
+        If LTrim(txtCantidad.Text) = "" Then
+            btnAgregar.Enabled = False
+        Else
+            btnAgregar.Enabled = True
+        End If
     End Sub
 End Class

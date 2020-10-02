@@ -99,6 +99,7 @@ Partial Class frmCantidad
         '
         'btnAgregar
         '
+        Me.btnAgregar.Enabled = False
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.Location = New System.Drawing.Point(137, 172)
