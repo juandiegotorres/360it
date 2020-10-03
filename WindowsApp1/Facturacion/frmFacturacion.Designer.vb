@@ -23,15 +23,16 @@ Partial Class frmFacturacion
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim gbProductos As System.Windows.Forms.GroupBox
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.dgvProductosLista = New System.Windows.Forms.DataGridView()
         Me.idProductoLista = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,6 +48,10 @@ Partial Class frmFacturacion
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.cbFormPago = New System.Windows.Forms.ComboBox()
+        Me.lblDescuento = New System.Windows.Forms.Label()
+        Me.lblRecargo = New System.Windows.Forms.Label()
         Me.rbRecargoPorcentaje = New System.Windows.Forms.RadioButton()
         Me.rbRecargoPlata = New System.Windows.Forms.RadioButton()
         Me.rbDescuentoPorcentaje = New System.Windows.Forms.RadioButton()
@@ -60,6 +65,7 @@ Partial Class frmFacturacion
         Me.precioTotalCarrito = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioVentaCarrito = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioCostoCarrito = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEliminarDGV = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtRecargo = New System.Windows.Forms.TextBox()
         Me.txtFecha = New System.Windows.Forms.TextBox()
@@ -79,8 +85,6 @@ Partial Class frmFacturacion
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.idProduct = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lblDescuento = New System.Windows.Forms.Label()
-        Me.lblRecargo = New System.Windows.Forms.Label()
         gbProductos = New System.Windows.Forms.GroupBox()
         gbProductos.SuspendLayout()
         CType(Me.dgvProductosLista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,26 +133,26 @@ Partial Class frmFacturacion
         Me.dgvProductosLista.CausesValidation = False
         Me.dgvProductosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductosLista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProductoLista, Me.tipoProductoLista, Me.marcaProductoLista, Me.modeloProductoLista, Me.cantidadProductoLista, Me.precioCostoLista, Me.precioVentaLista})
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Brown
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvProductosLista.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Brown
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductosLista.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvProductosLista.Location = New System.Drawing.Point(6, 68)
         Me.dgvProductosLista.MultiSelect = False
         Me.dgvProductosLista.Name = "dgvProductosLista"
         Me.dgvProductosLista.ReadOnly = True
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductosLista.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductosLista.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvProductosLista.RowHeadersVisible = False
         Me.dgvProductosLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProductosLista.Size = New System.Drawing.Size(452, 394)
@@ -200,9 +204,9 @@ Partial Class frmFacturacion
         'precioVentaLista
         '
         Me.precioVentaLista.DataPropertyName = "precioVenta"
-        DataGridViewCellStyle10.Format = "C2"
-        DataGridViewCellStyle10.NullValue = Nothing
-        Me.precioVentaLista.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Format = "C2"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.precioVentaLista.DefaultCellStyle = DataGridViewCellStyle1
         Me.precioVentaLista.HeaderText = "Precio"
         Me.precioVentaLista.Name = "precioVentaLista"
         Me.precioVentaLista.ReadOnly = True
@@ -210,6 +214,7 @@ Partial Class frmFacturacion
         'cbBuscarCategoria
         '
         Me.cbBuscarCategoria.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbBuscarCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbBuscarCategoria.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbBuscarCategoria.FormattingEnabled = True
         Me.cbBuscarCategoria.Location = New System.Drawing.Point(314, 30)
@@ -247,7 +252,7 @@ Partial Class frmFacturacion
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Black
-        Me.btnAgregar.Location = New System.Drawing.Point(11, 468)
+        Me.btnAgregar.Location = New System.Drawing.Point(6, 468)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(452, 29)
         Me.btnAgregar.TabIndex = 17
@@ -270,6 +275,8 @@ Partial Class frmFacturacion
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Label13)
+        Me.GroupBox1.Controls.Add(Me.cbFormPago)
         Me.GroupBox1.Controls.Add(Me.lblDescuento)
         Me.GroupBox1.Controls.Add(Me.lblRecargo)
         Me.GroupBox1.Controls.Add(Me.rbRecargoPorcentaje)
@@ -302,12 +309,57 @@ Partial Class frmFacturacion
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "                   "
         '
+        'Label13
+        '
+        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(7, 296)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(105, 21)
+        Me.Label13.TabIndex = 42
+        Me.Label13.Text = "Forma pago:"
+        '
+        'cbFormPago
+        '
+        Me.cbFormPago.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbFormPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbFormPago.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbFormPago.FormattingEnabled = True
+        Me.cbFormPago.Location = New System.Drawing.Point(123, 296)
+        Me.cbFormPago.Name = "cbFormPago"
+        Me.cbFormPago.Size = New System.Drawing.Size(158, 26)
+        Me.cbFormPago.TabIndex = 41
+        '
+        'lblDescuento
+        '
+        Me.lblDescuento.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDescuento.AutoSize = True
+        Me.lblDescuento.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescuento.Location = New System.Drawing.Point(101, 335)
+        Me.lblDescuento.Name = "lblDescuento"
+        Me.lblDescuento.Size = New System.Drawing.Size(19, 18)
+        Me.lblDescuento.TabIndex = 38
+        Me.lblDescuento.Text = "%"
+        '
+        'lblRecargo
+        '
+        Me.lblRecargo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblRecargo.AutoSize = True
+        Me.lblRecargo.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecargo.Location = New System.Drawing.Point(101, 371)
+        Me.lblRecargo.Name = "lblRecargo"
+        Me.lblRecargo.Size = New System.Drawing.Size(19, 18)
+        Me.lblRecargo.TabIndex = 39
+        Me.lblRecargo.Text = "%"
+        '
         'rbRecargoPorcentaje
         '
         Me.rbRecargoPorcentaje.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbRecargoPorcentaje.AutoSize = True
         Me.rbRecargoPorcentaje.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbRecargoPorcentaje.Location = New System.Drawing.Point(201, 369)
+        Me.rbRecargoPorcentaje.Location = New System.Drawing.Point(201, 364)
         Me.rbRecargoPorcentaje.Name = "rbRecargoPorcentaje"
         Me.rbRecargoPorcentaje.Size = New System.Drawing.Size(34, 19)
         Me.rbRecargoPorcentaje.TabIndex = 37
@@ -320,7 +372,7 @@ Partial Class frmFacturacion
         Me.rbRecargoPlata.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbRecargoPlata.AutoSize = True
         Me.rbRecargoPlata.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbRecargoPlata.Location = New System.Drawing.Point(201, 385)
+        Me.rbRecargoPlata.Location = New System.Drawing.Point(201, 380)
         Me.rbRecargoPlata.Name = "rbRecargoPlata"
         Me.rbRecargoPlata.Size = New System.Drawing.Size(32, 19)
         Me.rbRecargoPlata.TabIndex = 36
@@ -333,7 +385,7 @@ Partial Class frmFacturacion
         Me.rbDescuentoPorcentaje.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbDescuentoPorcentaje.AutoSize = True
         Me.rbDescuentoPorcentaje.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbDescuentoPorcentaje.Location = New System.Drawing.Point(201, 331)
+        Me.rbDescuentoPorcentaje.Location = New System.Drawing.Point(201, 326)
         Me.rbDescuentoPorcentaje.Name = "rbDescuentoPorcentaje"
         Me.rbDescuentoPorcentaje.Size = New System.Drawing.Size(34, 19)
         Me.rbDescuentoPorcentaje.TabIndex = 35
@@ -346,7 +398,7 @@ Partial Class frmFacturacion
         Me.rbDescuentoPlata.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbDescuentoPlata.AutoSize = True
         Me.rbDescuentoPlata.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbDescuentoPlata.Location = New System.Drawing.Point(201, 347)
+        Me.rbDescuentoPlata.Location = New System.Drawing.Point(201, 342)
         Me.rbDescuentoPlata.Name = "rbDescuentoPlata"
         Me.rbDescuentoPlata.Size = New System.Drawing.Size(32, 19)
         Me.rbDescuentoPlata.TabIndex = 34
@@ -360,51 +412,51 @@ Partial Class frmFacturacion
         Me.dgvCarrito.AllowUserToDeleteRows = False
         Me.dgvCarrito.AllowUserToOrderColumns = True
         Me.dgvCarrito.AllowUserToResizeColumns = False
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvCarrito.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvCarrito.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvCarrito.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvCarrito.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCarrito.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCarrito.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCarrito.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProductoCarrito, Me.tipoCarrito, Me.marcaCarrito, Me.modeloCarrito, Me.cantidadCarrito, Me.precioTotalCarrito, Me.precioVentaCarrito, Me.precioCostoCarrito})
+        Me.dgvCarrito.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProductoCarrito, Me.tipoCarrito, Me.marcaCarrito, Me.modeloCarrito, Me.cantidadCarrito, Me.precioTotalCarrito, Me.precioVentaCarrito, Me.precioCostoCarrito, Me.btnEliminarDGV})
         Me.dgvCarrito.Cursor = System.Windows.Forms.Cursors.Default
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCarrito.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCarrito.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvCarrito.EnableHeadersVisualStyles = False
         Me.dgvCarrito.Location = New System.Drawing.Point(11, 62)
         Me.dgvCarrito.MultiSelect = False
         Me.dgvCarrito.Name = "dgvCarrito"
         Me.dgvCarrito.ReadOnly = True
         Me.dgvCarrito.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCarrito.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCarrito.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvCarrito.RowHeadersVisible = False
         Me.dgvCarrito.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
-        Me.dgvCarrito.RowsDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
+        Me.dgvCarrito.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvCarrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCarrito.Size = New System.Drawing.Size(474, 262)
+        Me.dgvCarrito.Size = New System.Drawing.Size(474, 222)
         Me.dgvCarrito.TabIndex = 22
         '
         'idProductoCarrito
@@ -446,9 +498,9 @@ Partial Class frmFacturacion
         'precioTotalCarrito
         '
         Me.precioTotalCarrito.DataPropertyName = "precioTotal"
-        DataGridViewCellStyle15.Format = "C2"
-        DataGridViewCellStyle15.NullValue = Nothing
-        Me.precioTotalCarrito.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle6.Format = "C2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.precioTotalCarrito.DefaultCellStyle = DataGridViewCellStyle6
         Me.precioTotalCarrito.HeaderText = "Precio"
         Me.precioTotalCarrito.Name = "precioTotalCarrito"
         Me.precioTotalCarrito.ReadOnly = True
@@ -469,13 +521,25 @@ Partial Class frmFacturacion
         Me.precioCostoCarrito.ReadOnly = True
         Me.precioCostoCarrito.Visible = False
         '
+        'btnEliminarDGV
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.Format = "Eliminar"
+        Me.btnEliminarDGV.DefaultCellStyle = DataGridViewCellStyle7
+        Me.btnEliminarDGV.HeaderText = "Eliminar"
+        Me.btnEliminarDGV.Name = "btnEliminarDGV"
+        Me.btnEliminarDGV.ReadOnly = True
+        Me.btnEliminarDGV.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.btnEliminarDGV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.btnEliminarDGV.Text = "Eliminar"
+        '
         'Label8
         '
         Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(7, 376)
+        Me.Label8.Location = New System.Drawing.Point(7, 371)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(75, 21)
         Me.Label8.TabIndex = 32
@@ -486,7 +550,8 @@ Partial Class frmFacturacion
         Me.txtRecargo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtRecargo.Enabled = False
         Me.txtRecargo.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRecargo.Location = New System.Drawing.Point(123, 373)
+        Me.txtRecargo.Location = New System.Drawing.Point(123, 368)
+        Me.txtRecargo.MaxLength = 9
         Me.txtRecargo.Name = "txtRecargo"
         Me.txtRecargo.Size = New System.Drawing.Size(73, 26)
         Me.txtRecargo.TabIndex = 31
@@ -571,7 +636,7 @@ Partial Class frmFacturacion
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(7, 340)
+        Me.Label5.Location = New System.Drawing.Point(7, 335)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(93, 21)
         Me.Label5.TabIndex = 26
@@ -583,7 +648,7 @@ Partial Class frmFacturacion
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(288, 376)
+        Me.Label4.Location = New System.Drawing.Point(299, 374)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 21)
         Me.Label4.TabIndex = 25
@@ -595,7 +660,7 @@ Partial Class frmFacturacion
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(261, 340)
+        Me.Label3.Location = New System.Drawing.Point(272, 338)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 21)
         Me.Label3.TabIndex = 21
@@ -606,7 +671,8 @@ Partial Class frmFacturacion
         Me.txtDescuento.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDescuento.BackColor = System.Drawing.Color.White
         Me.txtDescuento.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescuento.Location = New System.Drawing.Point(123, 337)
+        Me.txtDescuento.Location = New System.Drawing.Point(123, 332)
+        Me.txtDescuento.MaxLength = 9
         Me.txtDescuento.Name = "txtDescuento"
         Me.txtDescuento.Size = New System.Drawing.Size(73, 26)
         Me.txtDescuento.TabIndex = 24
@@ -615,30 +681,32 @@ Partial Class frmFacturacion
         '
         Me.txtSubtotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSubtotal.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSubtotal.Location = New System.Drawing.Point(353, 337)
+        Me.txtSubtotal.Location = New System.Drawing.Point(364, 335)
         Me.txtSubtotal.Name = "txtSubtotal"
         Me.txtSubtotal.ReadOnly = True
         Me.txtSubtotal.Size = New System.Drawing.Size(121, 26)
         Me.txtSubtotal.TabIndex = 23
         Me.txtSubtotal.Text = "0"
+        Me.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtTotal
         '
         Me.txtTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtTotal.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotal.Location = New System.Drawing.Point(353, 373)
+        Me.txtTotal.Location = New System.Drawing.Point(364, 371)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(121, 26)
         Me.txtTotal.TabIndex = 22
         Me.txtTotal.Text = "0"
+        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label9
         '
         Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(339, 340)
+        Me.Label9.Location = New System.Drawing.Point(350, 338)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(16, 18)
         Me.Label9.TabIndex = 30
@@ -649,7 +717,7 @@ Partial Class frmFacturacion
         Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(339, 376)
+        Me.Label10.Location = New System.Drawing.Point(350, 374)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(16, 18)
         Me.Label10.TabIndex = 33
@@ -671,9 +739,9 @@ Partial Class frmFacturacion
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLimpiar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLimpiar.ForeColor = System.Drawing.Color.Black
-        Me.btnLimpiar.Location = New System.Drawing.Point(519, 550)
+        Me.btnLimpiar.Location = New System.Drawing.Point(525, 550)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(485, 38)
+        Me.btnLimpiar.Size = New System.Drawing.Size(479, 38)
         Me.btnLimpiar.TabIndex = 29
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
@@ -684,28 +752,6 @@ Partial Class frmFacturacion
         Me.idProduct.HeaderText = "ID"
         Me.idProduct.Name = "idProduct"
         Me.idProduct.Width = 75
-        '
-        'lblDescuento
-        '
-        Me.lblDescuento.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblDescuento.AutoSize = True
-        Me.lblDescuento.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescuento.Location = New System.Drawing.Point(101, 340)
-        Me.lblDescuento.Name = "lblDescuento"
-        Me.lblDescuento.Size = New System.Drawing.Size(19, 18)
-        Me.lblDescuento.TabIndex = 38
-        Me.lblDescuento.Text = "%"
-        '
-        'lblRecargo
-        '
-        Me.lblRecargo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblRecargo.AutoSize = True
-        Me.lblRecargo.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRecargo.Location = New System.Drawing.Point(101, 376)
-        Me.lblRecargo.Name = "lblRecargo"
-        Me.lblRecargo.Size = New System.Drawing.Size(19, 18)
-        Me.lblRecargo.TabIndex = 39
-        Me.lblRecargo.Text = "%"
         '
         'frmFacturacion
         '
@@ -761,14 +807,6 @@ Partial Class frmFacturacion
     Friend WithEvents cantidadProductoLista As DataGridViewTextBoxColumn
     Friend WithEvents precioCostoLista As DataGridViewTextBoxColumn
     Friend WithEvents precioVentaLista As DataGridViewTextBoxColumn
-    Friend WithEvents idProductoCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents tipoCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents marcaCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents modeloCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents cantidadCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioTotalCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioVentaCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioCostoCarrito As DataGridViewTextBoxColumn
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents rbDescuentoPlata As RadioButton
@@ -780,4 +818,15 @@ Partial Class frmFacturacion
     Friend WithEvents Label11 As Label
     Friend WithEvents lblDescuento As Label
     Friend WithEvents lblRecargo As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents cbFormPago As ComboBox
+    Friend WithEvents idProductoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents tipoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents marcaCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents modeloCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents cantidadCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioTotalCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioVentaCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioCostoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents btnEliminarDGV As DataGridViewButtonColumn
 End Class
