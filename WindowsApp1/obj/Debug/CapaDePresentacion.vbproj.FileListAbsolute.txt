@@ -182,3 +182,4 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmEsta
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmFacturacion.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmCantidad.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\CapaDeNegocios.exe
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.Form1.resources

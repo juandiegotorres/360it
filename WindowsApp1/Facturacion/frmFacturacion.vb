@@ -1,4 +1,5 @@
 ﻿Public Class frmFacturacion
+
     'Instancio la clae ventas
     Public eVenta As New Entidades.Venta
     'defino las variables para poder guardar los datos del dgv productos para pasarlos hacia el carrito
@@ -23,7 +24,7 @@
         nroVenta()
     End Sub
 
-    Private Sub txtDescuento_TextChanged(sender As Object, e As EventArgs) Handles txtDescuento.TextChanged
+    Private Sub txtDescuento_TextChanged(sender As Object, e As EventArgs)
         If rbDescuentoPlata.Checked = True And rbDescuentoPorcentaje.Checked = False Then
             If LTrim(txtDescuento.Text) = "" Then
                 txtDescuento.BackColor = Color.White
@@ -125,7 +126,7 @@
         anidadirAlCarro()
     End Sub
 
-    Private Sub txtRecargo_TextChanged(sender As Object, e As EventArgs) Handles txtRecargo.TextChanged
+    Private Sub txtRecargo_TextChanged(sender As Object, e As EventArgs)
         If rbRecargoPlata.Checked = True And rbRecargoPorcentaje.Checked = False Then
             If LTrim(txtRecargo.Text) = "" Then
                 total = subtotal
@@ -150,9 +151,14 @@
         End If
     End Sub
 
-    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
-        limpiarCarrito()
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
     End Sub
+
+
+    'Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+    '    limpiarCarrito()
+    'End Sub
 
 
 
@@ -173,54 +179,54 @@
     End Sub
 #Region "Seleccion Radio Button"
     'Estos son los eventos al seleccionar uno de los radiobutton a la derecha del descuento y el recargo. Esto lo que va a hacer es deshabilitar el textbox que no se esta usando, habilitar el que estoy usando. Establecer el simbolo del label depende del radiobutton que elegi y vaciar ambos textbox. Tambien restablezco el valor del total y le pongo un maximo de caracteres
-    Private Sub rbDescuentoPorcentaje_CheckedChanged(sender As Object, e As EventArgs) Handles rbDescuentoPorcentaje.CheckedChanged
+    Private Sub rbDescuentoPorcentaje_CheckedChanged(sender As Object, e As EventArgs)
         If rbDescuentoPorcentaje.Checked = True Then
             txtRecargo.Enabled = False
             txtDescuento.Enabled = True
             txtDescuento.Text = ""
             txtRecargo.Text = ""
             txtTotal.Text = subtotal
-            lblDescuento.Text = "%"
+            ' lblDescuento.Text = "%"
             txtDescuento.MaxLength = 3
         End If
     End Sub
-    Private Sub rbDescuentoPlata_CheckedChanged(sender As Object, e As EventArgs) Handles rbDescuentoPlata.CheckedChanged
+    Private Sub rbDescuentoPlata_CheckedChanged(sender As Object, e As EventArgs)
         If rbDescuentoPlata.Checked = True Then
             txtRecargo.Enabled = False
             txtDescuento.Enabled = True
             txtDescuento.Text = ""
             txtRecargo.Text = ""
             txtTotal.Text = subtotal
-            lblDescuento.Text = "$"
+            'lblDescuento.Text = "$"
             txtDescuento.MaxLength = 9
         End If
     End Sub
-    Private Sub rbRecargoPlata_CheckedChanged(sender As Object, e As EventArgs) Handles rbRecargoPlata.CheckedChanged
+    Private Sub rbRecargoPlata_CheckedChanged(sender As Object, e As EventArgs)
         If rbRecargoPlata.Checked = True Then
             txtDescuento.Enabled = False
             txtRecargo.Enabled = True
             txtRecargo.Text = ""
             txtDescuento.Text = ""
             txtTotal.Text = subtotal
-            lblRecargo.Text = "$"
+            'lblRecargo.Text = "$"
             txtRecargo.MaxLength = 9
         End If
     End Sub
-    Private Sub rbRecargoPorcentaje_CheckedChanged(sender As Object, e As EventArgs) Handles rbRecargoPorcentaje.CheckedChanged
+    Private Sub rbRecargoPorcentaje_CheckedChanged(sender As Object, e As EventArgs)
         If rbRecargoPorcentaje.Checked = True Then
             txtDescuento.Enabled = False
             txtRecargo.Enabled = True
             txtRecargo.Text = ""
             txtDescuento.Text = ""
             txtTotal.Text = subtotal
-            lblRecargo.Text = "%"
+            'lblRecargo.Text = "%"
             txtRecargo.MaxLength = 3
         End If
     End Sub
 
 #End Region
 #Region "Key Press/Down"
-    Private Sub txtDescuento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescuento.KeyPress
+    Private Sub txtDescuento_KeyPress(sender As Object, e As KeyPressEventArgs)
         'Este evento me permite solo introducir numeros y comas en el recargo. Y tambien solo se va a poder escribir si hay algun producto en el carro
         If Char.IsNumber(e.KeyChar) And total <> 0 Then
             e.Handled = False
@@ -235,7 +241,7 @@
 
     End Sub
 
-    Private Sub txtRecargo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRecargo.KeyPress
+    Private Sub txtRecargo_KeyPress(sender As Object, e As KeyPressEventArgs)
         'Este evento me permite solo introducir numeros y comas en el recargo. Y tambien solo se va a poder escribir si hay algun producto en el carro
         If Char.IsNumber(e.KeyChar) And total <> 0 Then
             e.Handled = False
@@ -248,7 +254,7 @@
             e.Handled = True
         End If
     End Sub
-    Private Sub txtDescuento_KeyDown(sender As Object, e As KeyEventArgs) Handles txtDescuento.KeyDown
+    Private Sub txtDescuento_KeyDown(sender As Object, e As KeyEventArgs)
         'Si yo presiono la tecla de borrar se va a borrar todo el contenido del textbox. Esto lo hago porque yo voy haciendo los calculos del total mientras el usuario esta escribiendo, y no puedo hacerlo a la inversa de deshacerlo mientras el usuario esta borrando por lo que borro de una sola vez. Lo podria hacer pero no tengo ganas xD
         If e.KeyCode = Keys.Back Then
             txtDescuento.Text = ""
