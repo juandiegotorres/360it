@@ -103,6 +103,12 @@
     <Compile Include="Facturacion\frmCantidad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Facturacion\frmVentaRealizada.Designer.vb">
+      <DependentUpon>frmVentaRealizada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frmVentaRealizada.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Localidades\frmLocalidades.Designer.vb">
       <DependentUpon>frmLocalidades.vb</DependentUpon>
     </Compile>
@@ -203,6 +209,9 @@
     <EmbeddedResource Include="Facturacion\frmCantidad.resx">
       <DependentUpon>frmCantidad.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frmVentaRealizada.resx">
+      <DependentUpon>frmVentaRealizada.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Localidades\frmLocalidades.resx">
       <DependentUpon>frmLocalidades.vb</DependentUpon>
     </EmbeddedResource>
@@ -290,6 +299,15 @@
       <Project>{f823b30e-b7c2-4131-be8c-ddab1123a37d}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmarkPNG.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmarkPNG1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

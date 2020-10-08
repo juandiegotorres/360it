@@ -49,7 +49,32 @@ Public Class cdDatosPrueba
             MsgBox(ex.Message, "Clase cdDatosPrueba")
         End Try
     End Sub
-    Public Function Guardar(ByRef ComandoTurno As List(Of MySqlCommand)) As Byte
+    Public Function GuardarComando(ByRef ComandoVenta As MySqlCommand) As Boolean
+        Dim Transaccion As MySqlTransaction
+        Dim comando As MySqlCommand = conexion.CreateCommand
+        Using conexion
+            AbrirConexion()
+            Transaccion = conexion.BeginTransaction()
+            Try
+                ComandoVenta.Connection = conexion
+                ComandoVenta.Transaction = Transaccion
+                ComandoVenta.ExecuteNonQuery()
+                Transaccion.Commit()
+                Return True
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Try
+                    Transaccion.Rollback()
+                Catch ex2 As MySqlException
+                    MsgBox("Error: " & ex2.Message)
+                End Try
+                Return False
+            Finally
+                CerrarConexion()
+            End Try
+        End Using
+    End Function
+    Public Function GuardarListaComandos(ByRef ComandoTurno As List(Of MySqlCommand)) As Byte
         Dim Transaccion As MySqlTransaction
         Dim comando As MySqlCommand = conexion.CreateCommand
         Dim RegistrosInsertados As Byte

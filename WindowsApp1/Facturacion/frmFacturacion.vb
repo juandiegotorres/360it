@@ -12,6 +12,8 @@
     'Creo la tabla que va a contener los productos en stock para llenar el datagrid
     Dim tablaProductos As New DataTable
     Dim tablaFormPago As New DataTable
+    Dim listaProductos As New List(Of UInt16)
+    Dim cantidades As New List(Of UInt16)
     Private Sub frmFacturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnEliminarDGV.UseColumnTextForButtonValue = True
         btnEliminarDGV.Text = "Eliminar"
@@ -24,44 +26,6 @@
         nroVenta()
     End Sub
 
-    Private Sub txtDescuento_TextChanged(sender As Object, e As EventArgs)
-        If rbDescuentoPlata.Checked = True And rbDescuentoPorcentaje.Checked = False Then
-            If LTrim(txtDescuento.Text) = "" Then
-                txtDescuento.BackColor = Color.White
-                total = subtotal
-                txtTotal.Text = total
-            Else
-                If CInt(txtDescuento.Text) > subtotal Then
-                    txtDescuento.BackColor = Color.FromArgb(255, 122, 122)
-                    txtTotal.Text = subtotal
-                Else
-                    descuento = CInt(txtDescuento.Text)
-                    total = subtotal
-                    If descuento > subtotal Then
-                        total = 0
-                    Else
-                        total = total - descuento
-                    End If
-                    txtTotal.Text = total
-                End If
-            End If
-        End If
-        If rbDescuentoPorcentaje.Checked = True And rbDescuentoPlata.Checked = False Then
-            If LTrim(txtDescuento.Text) = "" Then
-                total = subtotal
-                txtTotal.Text = total
-            Else
-                descuento = CInt(txtDescuento.Text)
-                total = subtotal
-                If ((total * descuento) / 100) > subtotal Then
-                    total = 0
-                Else
-                    total = total - ((total * descuento) / 100)
-                End If
-                txtTotal.Text = total
-            End If
-        End If
-    End Sub
     'Traigo los productos desde la base de datos mediante la instancia a la clase ventas
     Public Sub actualizarProductos()
         tablaProductos.Clear()
@@ -69,6 +33,7 @@
         dgvProductosLista.DataSource = tablaProductos
         dgvProductosLista.ClearSelection()
     End Sub
+    'Cargo el combobox de la forma de pago
     Public Sub cargarFormPago()
         tablaFormPago.Clear()
         eVenta.cargarFormasPago(tablaFormPago)
@@ -76,10 +41,12 @@
         cbFormPago.DisplayMember = "nombFormaPago"
         cbFormPago.ValueMember = "idformpago"
     End Sub
+    'Cargo el numero de ventas realizadas en total en el textbox
     Public Sub nroVenta()
         eVenta.calcularNumeroVenta()
         txtNroVenta.Text = eVenta.nroVenta
     End Sub
+    'Procedimiento para eliminar todo el contenido del datagrid del carrito
     Public Sub limpiarCarrito()
         dgvCarrito.Rows.Clear()
         rbDescuentoPorcentaje.Checked = True
@@ -126,7 +93,94 @@
         anidadirAlCarro()
     End Sub
 
-    Private Sub txtRecargo_TextChanged(sender As Object, e As EventArgs)
+    Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
+        Try
+            'Al vender verifico si el carrito no esta vacio
+            If dgvCarrito.Rows.Count > 0 Then
+                For i = 0 To dgvCarrito.Rows.Count - 1
+                    'lleno las listas con los ids de los productos vendidos y su cantidad
+                    idProductoCarro = dgvCarrito.Rows(i).Cells("idProductoCarrito").Value
+                    listaProductos.Add(idProductoCarro)
+                    cantidad = dgvCarrito.Rows(i).Cells("cantidadCarrito").Value
+                    cantidades.Add(cantidad)
+                Next
+                eVenta.idProductos = listaProductos
+                eVenta.cantidad = cantidades
+                subtotal = txtSubtotal.Text
+                eVenta.precioInicial = subtotal
+                eVenta.descuento = descuento
+                eVenta.recargo = recargo
+                total = txtTotal.Text
+                eVenta.precioFinal = total
+                eVenta.fechaHora = Date.Now
+                eVenta.idFormPago = cbFormPago.SelectedValue
+                'Si se pudo guardar en la base de datos muestra un mensaje al usuario diciendo que se realizo la venta
+                If eVenta.ventaCorriente() = True Then
+                    frmVentaRealizada.ShowDialog()
+                    limpiarCarrito()
+                    nroVenta()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("Hubo un problema y no se pudo realizar la venta. Información del problema: " & ex.Message, MsgBoxStyle.Critical, "Facturacion")
+        End Try
+
+    End Sub
+
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        limpiarCarrito()
+    End Sub
+
+    'Al hacer doble click en la celda se agrega un producto al carrito tambien
+    Private Sub dgvProductosLista_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductosLista.CellDoubleClick
+        anidadirAlCarro()
+    End Sub
+#Region "Text Changed Descuento y Recargo"
+    Private Sub txtDescuento_TextChanged_1(sender As Object, e As EventArgs) Handles txtDescuento.TextChanged
+        If rbDescuentoPlata.Checked = True And rbDescuentoPorcentaje.Checked = False Then
+            'Proceso para reestablecer el text box si esta vacio ya que cuando se pasa de monto se pone en color rojo y reestablece el total
+            If LTrim(txtDescuento.Text) = "" Then
+                txtDescuento.BackColor = Color.White
+                total = subtotal
+                txtTotal.Text = total
+            Else
+                'Si el monto de descuento se pasa del monto a pagar el text box se pone en rojo
+                If CInt(txtDescuento.Text) > subtotal Then
+                    txtDescuento.BackColor = Color.FromArgb(255, 122, 122)
+                    txtTotal.Text = subtotal
+                Else
+                    'De la otra forma se va descontando a medida que vamos presionando los numeros
+                    descuento = CInt(txtDescuento.Text)
+                    total = subtotal
+                    If descuento > subtotal Then
+                        total = 0
+                    Else
+                        total = total - descuento
+                    End If
+                    txtTotal.Text = total
+                End If
+            End If
+        End If
+        'El mismo metodo pero si el descuento es en porcentaje
+        If rbDescuentoPorcentaje.Checked = True And rbDescuentoPlata.Checked = False Then
+            If LTrim(txtDescuento.Text) = "" Then
+                total = subtotal
+                txtTotal.Text = total
+            Else
+                descuento = CInt(txtDescuento.Text)
+                total = subtotal
+                If ((total * descuento) / 100) > subtotal Then
+                    total = 0
+                Else
+                    total = total - ((total * descuento) / 100)
+                End If
+                txtTotal.Text = total
+            End If
+        End If
+    End Sub
+
+    Private Sub txtRecargo_TextChanged_1(sender As Object, e As EventArgs) Handles txtRecargo.TextChanged
+        'Suma del dinero al total dependiendo si es por monto de dinero o porcentaje
         If rbRecargoPlata.Checked = True And rbRecargoPorcentaje.Checked = False Then
             If LTrim(txtRecargo.Text) = "" Then
                 total = subtotal
@@ -151,57 +205,10 @@
         End If
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-
-    'Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
-    '    limpiarCarrito()
-    'End Sub
-
-
-
-    'Recibe el 'row' y retorna su contenido en un array tipo string
-    'Me.dgvCarrito.Rows.Add(ObtenerValoresFila(Seleccion))
-    Function ObtenerValoresFila(ByVal fila As DataGridViewRow) As String()
-        'Dimensionar el array al tamaño de columnas del DGV
-        Dim Contenido(Me.dgvProductosLista.ColumnCount - 1) As String
-        'Rellenar el contenido con el valor de las celdas de la fila
-        For i As Integer = 0 To Contenido.Length - 1
-            Contenido(i) = fila.Cells(i).Value
-        Next
-        Return Contenido
-    End Function
-    'Al hacer doble click en la celda se agrega un producto al carrito tambien
-    Private Sub dgvProductosLista_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductosLista.CellDoubleClick
-        anidadirAlCarro()
-    End Sub
+#End Region
 #Region "Seleccion Radio Button"
     'Estos son los eventos al seleccionar uno de los radiobutton a la derecha del descuento y el recargo. Esto lo que va a hacer es deshabilitar el textbox que no se esta usando, habilitar el que estoy usando. Establecer el simbolo del label depende del radiobutton que elegi y vaciar ambos textbox. Tambien restablezco el valor del total y le pongo un maximo de caracteres
-    Private Sub rbDescuentoPorcentaje_CheckedChanged(sender As Object, e As EventArgs)
-        If rbDescuentoPorcentaje.Checked = True Then
-            txtRecargo.Enabled = False
-            txtDescuento.Enabled = True
-            txtDescuento.Text = ""
-            txtRecargo.Text = ""
-            txtTotal.Text = subtotal
-            ' lblDescuento.Text = "%"
-            txtDescuento.MaxLength = 3
-        End If
-    End Sub
-    Private Sub rbDescuentoPlata_CheckedChanged(sender As Object, e As EventArgs)
-        If rbDescuentoPlata.Checked = True Then
-            txtRecargo.Enabled = False
-            txtDescuento.Enabled = True
-            txtDescuento.Text = ""
-            txtRecargo.Text = ""
-            txtTotal.Text = subtotal
-            'lblDescuento.Text = "$"
-            txtDescuento.MaxLength = 9
-        End If
-    End Sub
-    Private Sub rbRecargoPlata_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub rbRecargoPlata_CheckedChanged(sender As Object, e As EventArgs) Handles rbRecargoPlata.CheckedChanged
         If rbRecargoPlata.Checked = True Then
             txtDescuento.Enabled = False
             txtRecargo.Enabled = True
@@ -212,7 +219,8 @@
             txtRecargo.MaxLength = 9
         End If
     End Sub
-    Private Sub rbRecargoPorcentaje_CheckedChanged(sender As Object, e As EventArgs)
+
+    Private Sub rbRecargoPorcentaje_CheckedChanged_1(sender As Object, e As EventArgs) Handles rbRecargoPorcentaje.CheckedChanged
         If rbRecargoPorcentaje.Checked = True Then
             txtDescuento.Enabled = False
             txtRecargo.Enabled = True
@@ -223,6 +231,31 @@
             txtRecargo.MaxLength = 3
         End If
     End Sub
+
+    Private Sub rbDescuentoPlata_CheckedChanged_1(sender As Object, e As EventArgs) Handles rbDescuentoPlata.CheckedChanged
+        If rbDescuentoPlata.Checked = True Then
+            txtRecargo.Enabled = False
+            txtDescuento.Enabled = True
+            txtDescuento.Text = ""
+            txtRecargo.Text = ""
+            txtTotal.Text = subtotal
+            'lblDescuento.Text = "$"
+            txtDescuento.MaxLength = 9
+        End If
+    End Sub
+
+    Private Sub rbDescuentoPorcentaje_CheckedChanged_1(sender As Object, e As EventArgs) Handles rbDescuentoPorcentaje.CheckedChanged
+        If rbDescuentoPorcentaje.Checked = True Then
+            txtRecargo.Enabled = False
+            txtDescuento.Enabled = True
+            txtDescuento.Text = ""
+            txtRecargo.Text = ""
+            txtTotal.Text = subtotal
+            ' lblDescuento.Text = "%"
+            txtDescuento.MaxLength = 3
+        End If
+    End Sub
+
 
 #End Region
 #Region "Key Press/Down"
@@ -262,7 +295,7 @@
         End If
     End Sub
 #End Region
-
+#Region "Eliminar producto del carrito"
     'Accion al presionar una celda  del datagrid  carrito
     Private Sub dgvCarrito_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCarrito.CellContentClick
         'Si la columna clickeada es la de eliminar(index 8) entra en el if 
@@ -284,4 +317,6 @@
             End If
         End If
     End Sub
+#End Region
+
 End Class
