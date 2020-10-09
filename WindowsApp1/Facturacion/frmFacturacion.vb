@@ -92,8 +92,7 @@
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         anidadirAlCarro()
     End Sub
-
-    Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
+    Public Sub vender()
         Try
             'Al vender verifico si el carrito no esta vacio
             If dgvCarrito.Rows.Count > 0 Then
@@ -115,15 +114,35 @@
                 eVenta.fechaHora = Date.Now
                 eVenta.idFormPago = cbFormPago.SelectedValue
                 'Si se pudo guardar en la base de datos muestra un mensaje al usuario diciendo que se realizo la venta
-                If eVenta.ventaCorriente() = True Then
-                    frmVentaRealizada.ShowDialog()
-                    limpiarCarrito()
-                    nroVenta()
+                If eVenta.detalleVenta() = True Then
+                    If txtTotal.Tag = 1 Then
+                        frmVentaRealizada.ShowDialog()
+                        limpiarCarrito()
+                        nroVenta()
+                    ElseIf txtTotal.Tag = 2 Then
+                        Dim ctaCorriente As New frmCuentaCorriente()
+                        ctaCorriente.ShowDialog()
+                        If ctaCorriente.DialogResult = DialogResult.OK Then
+                            eVenta.idCliente = ctaCorriente.eVenta.idCliente
+                            eVenta.entregaDinero = ctaCorriente.eVenta.entregaDinero
+                            eVenta.cuotas = ctaCorriente.eVenta.cuotas
+                            eVenta.idFormPago = ctaCorriente.eVenta.idFormPago
+                            eVenta.ventaCuentaCorriente()
+                            frmVentaRealizada.ShowDialog()
+                            limpiarCarrito()
+                            nroVenta()
+                        End If
+                    End If
                 End If
             End If
         Catch ex As Exception
             MsgBox("Hubo un problema y no se pudo realizar la venta. Información del problema: " & ex.Message, MsgBoxStyle.Critical, "Facturacion")
         End Try
+    End Sub
+    Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
+        'Asigno el 1 para saber que es una venta corriente y asi poder mostrar el formulario de venta realizada correctamente
+        txtTotal.Tag = 1
+        vender()
 
     End Sub
 
@@ -135,6 +154,13 @@
     Private Sub dgvProductosLista_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductosLista.CellDoubleClick
         anidadirAlCarro()
     End Sub
+
+    Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
+        txtTotal.Tag = 2
+        vender()
+    End Sub
+
+
 #Region "Text Changed Descuento y Recargo"
     Private Sub txtDescuento_TextChanged_1(sender As Object, e As EventArgs) Handles txtDescuento.TextChanged
         If rbDescuentoPlata.Checked = True And rbDescuentoPorcentaje.Checked = False Then

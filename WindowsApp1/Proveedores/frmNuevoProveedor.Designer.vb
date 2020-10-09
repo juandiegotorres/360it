@@ -89,7 +89,7 @@ Partial Class frmNuevoProveedor
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(160, 85)
+        Me.txtNombre.Location = New System.Drawing.Point(174, 85)
         Me.txtNombre.MaxLength = 45
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(323, 31)

@@ -23,16 +23,16 @@ Partial Class frmFacturacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim gbProductos As System.Windows.Forms.GroupBox
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle53 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle54 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle52 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle55 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle58 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle59 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle60 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle56 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle57 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.dgvProductosLista = New System.Windows.Forms.DataGridView()
         Me.idProductoLista = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,6 +46,8 @@ Partial Class frmFacturacion
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.xd = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cbFormPago = New System.Windows.Forms.ComboBox()
@@ -86,11 +88,10 @@ Partial Class frmFacturacion
         Me.txtNroVenta = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.xd = New System.Windows.Forms.TableLayoutPanel()
         gbProductos = New System.Windows.Forms.GroupBox()
         gbProductos.SuspendLayout()
         CType(Me.dgvProductosLista, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.xd.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -98,7 +99,6 @@ Partial Class frmFacturacion
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.dgvCarrito, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.xd.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbProductos
@@ -147,37 +147,37 @@ Partial Class frmFacturacion
         Me.dgvProductosLista.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvProductosLista.CausesValidation = False
         Me.dgvProductosLista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductosLista.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle51.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle51.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductosLista.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle51
         Me.dgvProductosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductosLista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProductoLista, Me.tipoProductoLista, Me.marcaProductoLista, Me.modeloProductoLista, Me.cantidadProductoLista, Me.precioCostoLista, Me.precioVentaLista})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvProductosLista.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle53.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle53.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle53.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductosLista.DefaultCellStyle = DataGridViewCellStyle53
         Me.dgvProductosLista.EnableHeadersVisualStyles = False
         Me.dgvProductosLista.Location = New System.Drawing.Point(11, 68)
         Me.dgvProductosLista.MultiSelect = False
         Me.dgvProductosLista.Name = "dgvProductosLista"
         Me.dgvProductosLista.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductosLista.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle54.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle54.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle54.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductosLista.RowHeadersDefaultCellStyle = DataGridViewCellStyle54
         Me.dgvProductosLista.RowHeadersVisible = False
         Me.dgvProductosLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProductosLista.Size = New System.Drawing.Size(456, 343)
@@ -229,9 +229,9 @@ Partial Class frmFacturacion
         'precioVentaLista
         '
         Me.precioVentaLista.DataPropertyName = "precioVenta"
-        DataGridViewCellStyle2.Format = "C2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.precioVentaLista.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle52.Format = "C2"
+        DataGridViewCellStyle52.NullValue = Nothing
+        Me.precioVentaLista.DefaultCellStyle = DataGridViewCellStyle52
         Me.precioVentaLista.HeaderText = "Precio"
         Me.precioVentaLista.Name = "precioVentaLista"
         Me.precioVentaLista.ReadOnly = True
@@ -284,6 +284,37 @@ Partial Class frmFacturacion
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Montserrat", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(21, 9)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(21, 9, 3, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(448, 74)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "FACTURACIÓN"
+        '
+        'xd
+        '
+        Me.xd.ColumnCount = 3
+        Me.xd.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.45164!))
+        Me.xd.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15.0!))
+        Me.xd.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.54836!))
+        Me.xd.Controls.Add(Me.Label1, 0, 0)
+        Me.xd.Controls.Add(gbProductos, 0, 1)
+        Me.xd.Controls.Add(Me.GroupBox1, 2, 1)
+        Me.xd.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.xd.Location = New System.Drawing.Point(0, 0)
+        Me.xd.Name = "xd"
+        Me.xd.RowCount = 2
+        Me.xd.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.02919!))
+        Me.xd.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.01003!))
+        Me.xd.Size = New System.Drawing.Size(1019, 561)
+        Me.xd.TabIndex = 0
+        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -316,7 +347,7 @@ Partial Class frmFacturacion
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(6, 266)
+        Me.Label13.Location = New System.Drawing.Point(3, 264)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(105, 21)
         Me.Label13.TabIndex = 62
@@ -328,7 +359,7 @@ Partial Class frmFacturacion
         Me.cbFormPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbFormPago.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbFormPago.FormattingEnabled = True
-        Me.cbFormPago.Location = New System.Drawing.Point(123, 265)
+        Me.cbFormPago.Location = New System.Drawing.Point(120, 263)
         Me.cbFormPago.Name = "cbFormPago"
         Me.cbFormPago.Size = New System.Drawing.Size(158, 26)
         Me.cbFormPago.TabIndex = 61
@@ -646,44 +677,44 @@ Partial Class frmFacturacion
         Me.dgvCarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvCarrito.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvCarrito.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCarrito.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle55.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle55.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCarrito.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle55
         Me.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCarrito.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProductoCarrito, Me.tipoCarrito, Me.marcaCarrito, Me.modeloCarrito, Me.cantidadCarrito, Me.precioTotalCarrito, Me.precioVentaCarrito, Me.precioCostoCarrito, Me.btnEliminarDGV})
         Me.dgvCarrito.Cursor = System.Windows.Forms.Cursors.Default
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCarrito.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle58.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle58.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle58.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCarrito.DefaultCellStyle = DataGridViewCellStyle58
         Me.dgvCarrito.EnableHeadersVisualStyles = False
         Me.dgvCarrito.Location = New System.Drawing.Point(6, 62)
         Me.dgvCarrito.MultiSelect = False
         Me.dgvCarrito.Name = "dgvCarrito"
         Me.dgvCarrito.ReadOnly = True
         Me.dgvCarrito.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCarrito.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle59.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle59.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCarrito.RowHeadersDefaultCellStyle = DataGridViewCellStyle59
         Me.dgvCarrito.RowHeadersVisible = False
         Me.dgvCarrito.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        Me.dgvCarrito.RowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle60.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle60.ForeColor = System.Drawing.Color.Black
+        Me.dgvCarrito.RowsDefaultCellStyle = DataGridViewCellStyle60
         Me.dgvCarrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCarrito.Size = New System.Drawing.Size(461, 190)
         Me.dgvCarrito.TabIndex = 22
@@ -727,9 +758,9 @@ Partial Class frmFacturacion
         'precioTotalCarrito
         '
         Me.precioTotalCarrito.DataPropertyName = "precioTotal"
-        DataGridViewCellStyle6.Format = "C2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.precioTotalCarrito.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle56.Format = "C2"
+        DataGridViewCellStyle56.NullValue = Nothing
+        Me.precioTotalCarrito.DefaultCellStyle = DataGridViewCellStyle56
         Me.precioTotalCarrito.HeaderText = "Precio"
         Me.precioTotalCarrito.Name = "precioTotalCarrito"
         Me.precioTotalCarrito.ReadOnly = True
@@ -752,9 +783,9 @@ Partial Class frmFacturacion
         '
         'btnEliminarDGV
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Format = "Eliminar"
-        Me.btnEliminarDGV.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle57.Format = "Eliminar"
+        Me.btnEliminarDGV.DefaultCellStyle = DataGridViewCellStyle57
         Me.btnEliminarDGV.HeaderText = "Eliminar"
         Me.btnEliminarDGV.Name = "btnEliminarDGV"
         Me.btnEliminarDGV.ReadOnly = True
@@ -820,37 +851,6 @@ Partial Class frmFacturacion
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Venta"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Montserrat", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(21, 9)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(21, 9, 3, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(448, 74)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "FACTURACIÓN"
-        '
-        'xd
-        '
-        Me.xd.ColumnCount = 3
-        Me.xd.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.45164!))
-        Me.xd.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15.0!))
-        Me.xd.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.54836!))
-        Me.xd.Controls.Add(Me.Label1, 0, 0)
-        Me.xd.Controls.Add(gbProductos, 0, 1)
-        Me.xd.Controls.Add(Me.GroupBox1, 2, 1)
-        Me.xd.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.xd.Location = New System.Drawing.Point(0, 0)
-        Me.xd.Name = "xd"
-        Me.xd.RowCount = 2
-        Me.xd.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.02919!))
-        Me.xd.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.01003!))
-        Me.xd.Size = New System.Drawing.Size(1019, 561)
-        Me.xd.TabIndex = 0
-        '
         'frmFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -863,6 +863,8 @@ Partial Class frmFacturacion
         gbProductos.ResumeLayout(False)
         gbProductos.PerformLayout()
         CType(Me.dgvProductosLista, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.xd.ResumeLayout(False)
+        Me.xd.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
@@ -873,28 +875,9 @@ Partial Class frmFacturacion
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.dgvCarrito, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.xd.ResumeLayout(False)
-        Me.xd.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents GroupBox1 As GroupBox
-    Public WithEvents dgvCarrito As DataGridView
-    Friend WithEvents idProductoCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents tipoCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents marcaCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents modeloCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents cantidadCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioTotalCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioVentaCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioCostoCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents btnEliminarDGV As DataGridViewButtonColumn
-    Friend WithEvents txtFecha As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtNroVenta As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents dgvProductosLista As DataGridView
     Friend WithEvents idProductoLista As DataGridViewTextBoxColumn
@@ -910,21 +893,10 @@ Partial Class frmFacturacion
     Friend WithEvents btnAgregar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents xd As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents btnVender As Button
-    Friend WithEvents btnCuentaCorriente As Button
-    Private WithEvents btnLimpiar As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents cbFormPago As ComboBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents rbRecargoPorcentaje As RadioButton
-    Friend WithEvents rbRecargoPlata As RadioButton
-    Friend WithEvents rbDescuentoPorcentaje As RadioButton
-    Friend WithEvents rbDescuentoPlata As RadioButton
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtRecargo As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtDescuento As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
@@ -932,6 +904,33 @@ Partial Class frmFacturacion
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents cbFormPago As ComboBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents txtRecargo As TextBox
+    Friend WithEvents txtDescuento As TextBox
+    Friend WithEvents rbRecargoPorcentaje As RadioButton
+    Friend WithEvents rbRecargoPlata As RadioButton
+    Friend WithEvents rbDescuentoPorcentaje As RadioButton
+    Friend WithEvents rbDescuentoPlata As RadioButton
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents btnCuentaCorriente As Button
+    Private WithEvents btnLimpiar As Button
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents btnVender As Button
+    Public WithEvents dgvCarrito As DataGridView
+    Friend WithEvents idProductoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents tipoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents marcaCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents modeloCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents cantidadCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioTotalCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioVentaCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioCostoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents btnEliminarDGV As DataGridViewButtonColumn
+    Friend WithEvents txtFecha As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtNroVenta As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label11 As Label
 End Class

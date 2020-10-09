@@ -3,15 +3,14 @@
     Dim bsClientes As New BindingSource
     Dim filtroBS As String
     Public reparacion As Boolean
+    Public ctaCorriente As Boolean
     Private Sub FrmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarClientes()
         If reparacion = True Then
-            picCerrar.Visible = True
-            btnAgregar.Visible = False
-            btnBajaCliente.Visible = False
+            'piccerrar.visible = True
+            btnAgregarSeleccionar.Text = "Seleccionar"
             btnModificar.Visible = False
-            btnAceptar.Visible = True
-            btnCancelar.Visible = True
+            btnBajaCancelar.Text = "Cancelar"
             pnlHeader.Visible = True
         End If
         dgvClientes.ClearSelection()
@@ -38,30 +37,63 @@
     End Sub
 
 
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        Dim nuevoCliente As New frmNuevoCliente
-        frmPrincipal.Hide()
-        With nuevoCliente
-            .ShowDialog()
-            If .DialogResult = DialogResult.OK Then
-                actualizarClientes()
-                frmPrincipal.Show()
-            End If
-        End With
+    Private Sub dgvClientes_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+        eCliente.idCliente = dgvClientes.CurrentRow.Cells("idCliente").Value
     End Sub
 
-    Private Sub BtnBajaCliente_Click_1(sender As Object, e As EventArgs) Handles btnBajaCliente.Click
-        If dgvClientes.CurrentRow.Selected = False Then
-            MsgBox("No hay ningun cliente seleccionado", MsgBoxStyle.Information, "Clientes")
+
+
+
+    Private Sub picCerrar_Click(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+
+
+
+    Private Sub btnAgregarSeleccionar_Click(sender As Object, e As EventArgs) Handles btnAgregarSeleccionar.Click
+        If reparacion = True Then
+            If dgvClientes.CurrentRow.Selected = False Then
+                MsgBox("No ha seleccionado ningún cliente", MsgBoxStyle.Exclamation, "Clientes")
+            Else
+                eCliente.idCliente = dgvClientes.CurrentRow.Cells("idcliente").Value
+                eCliente.nombApel = dgvClientes.CurrentRow.Cells("nombreApel").Value.ToString
+                Me.DialogResult = DialogResult.OK
+            End If
         Else
-            If MsgBox("¿Desea dar de baja este cliente?", MsgBoxStyle.YesNo, "Clientes") = MsgBoxResult.Yes Then
-                eCliente.bajaCliente()
-                actualizarClientes()
+            Dim nuevoCliente As New frmNuevoCliente
+            frmPrincipal.Hide()
+            With nuevoCliente
+                .ShowDialog()
+                If .DialogResult = DialogResult.OK Then
+                    actualizarClientes()
+                    frmPrincipal.Show()
+                End If
+            End With
+        End If
+    End Sub
+
+    Private Sub btnBajaCancelar_Click(sender As Object, e As EventArgs) Handles btnBajaCancelar.Click
+        If reparacion = True Then
+            Me.DialogResult = DialogResult.Cancel
+        Else
+            If dgvClientes.CurrentRow.Selected = False Then
+                MsgBox("No hay ningun cliente seleccionado", MsgBoxStyle.Information, "Clientes")
+            Else
+                If MsgBox("¿Desea dar de baja este cliente?", MsgBoxStyle.YesNo, "Clientes") = MsgBoxResult.Yes Then
+                    eCliente.bajaCliente()
+                    actualizarClientes()
+                End If
             End If
         End If
     End Sub
 
-    Private Sub BtnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        filtroBS = "nombreApel like '%" & txtBuscar.Text & "%'"
+        bsClientes.Filter = filtroBS
+        ' dgvClientes.ClearSelection()
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         If dgvClientes.CurrentRow.Selected = False Then
             MsgBox("No hay ningun cliente seleccionado", MsgBoxStyle.MsgBoxHelp, "Clientes")
         Else
@@ -78,38 +110,5 @@
             End With
             frmPrincipal.Show()
         End If
-    End Sub
-
-    Private Sub dgvClientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientes.CellClick
-        eCliente.idCliente = dgvClientes.CurrentRow.Cells("idCliente").Value
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        filtroBS = "nombreApel like '%" & txtBuscar.Text & "%'"
-        bsClientes.Filter = filtroBS
-        ' dgvClientes.ClearSelection()
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If dgvClientes.CurrentRow.Selected = False Then
-            MsgBox("No ha seleccionado ningún cliente", MsgBoxStyle.Exclamation, "Clientes")
-        Else
-            eCliente.idCliente = dgvClientes.CurrentRow.Cells("idcliente").Value
-            eCliente.nombApel = dgvClientes.CurrentRow.Cells("nombreApel").Value.ToString
-            Me.DialogResult = DialogResult.OK
-        End If
-    End Sub
-
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        Me.DialogResult = DialogResult.Cancel
-
-    End Sub
-
-    Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
-        Me.Close()
     End Sub
 End Class

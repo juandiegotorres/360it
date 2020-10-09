@@ -25,10 +25,10 @@ Partial Class frmVentaRealizada
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVentaRealizada))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlHeader = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +52,17 @@ Partial Class frmVentaRealizada
         Me.pnlHeader.Name = "pnlHeader"
         Me.pnlHeader.Size = New System.Drawing.Size(392, 10)
         Me.pnlHeader.TabIndex = 34
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Montserrat SemiBold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(143, 94)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(199, 58)
+        Me.Label2.TabIndex = 39
+        Me.Label2.Text = "Venta realizada" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    correctamente"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox2
         '
@@ -86,17 +97,6 @@ Partial Class frmVentaRealizada
         Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnCerrar.TabIndex = 35
         Me.btnCerrar.TabStop = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Montserrat SemiBold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(143, 94)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(199, 58)
-        Me.Label2.TabIndex = 39
-        Me.Label2.Text = "Venta realizada" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    correctamente"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frmVentaRealizada
         '

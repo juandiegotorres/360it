@@ -10,6 +10,24 @@ Public Class Venta
             _nroVenta = value
         End Set
     End Property
+    Private _idCliente As UInt64
+    Public Property idCliente As UInt64
+        Get
+            Return _idCliente
+        End Get
+        Set(value As UInt64)
+            _idCliente = value
+        End Set
+    End Property
+    Private _cuotas As UShort
+    Public Property cuotas As UShort
+        Get
+            Return _cuotas
+        End Get
+        Set(value As UShort)
+            _cuotas = value
+        End Set
+    End Property
     Private _fechaHora As DateTime
     Public Property fechaHora As DateTime
         Get
@@ -53,6 +71,15 @@ Public Class Venta
         End Get
         Set(value As List(Of UInt16))
             _cantidad = value
+        End Set
+    End Property
+    Private _entregaDinero As Double
+    Public Property entregaDinero As Double
+        Get
+            Return _entregaDinero
+        End Get
+        Set(value As Double)
+            _entregaDinero = value
         End Set
     End Property
     Private _precioInicial As Double
@@ -119,7 +146,7 @@ Public Class Venta
             MsgBox(ex.Message, "Entidad Ventas")
         End Try
     End Sub
-    Public Function ventaNormal() As Boolean
+    Public Function venta() As Boolean
         Dim EjecutaComando As New CapaDeNegocios.cdDatosPrueba
         Dim comando As MySqlCommand
         Dim strComando As String
@@ -136,8 +163,8 @@ Public Class Venta
             Return False
         End Try
     End Function
-    Public Function ventaCorriente() As Boolean
-        If ventaNormal() = True Then
+    Public Function detalleVenta() As Boolean
+        If venta() = True Then
             Dim EjecutaComando As New CapaDeNegocios.cdDatosPrueba
             Dim comando(Me.idProductos.Count + 1) As MySqlCommand
             Dim strComando As String
@@ -165,6 +192,34 @@ Public Class Venta
             End Try
         End If
         Return False
+    End Function
+    Public Function ventaCuentaCorriente() As Boolean
+        Try
+
+            Dim consultaSQL1 As String = "INSERT INTO movimientos(clienteMovimiento, tipoMovimiento, monto, fechaMovimiento) VALUES (@idCliente,@tipoMovimiento,@monto,@fecha)"
+            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL1)
+            sqlComando.Parameters.Add("@idCliente", MySqlDbType.Int64).Value = Me.idCliente
+            sqlComando.Parameters.Add("@tipoMovimiento", MySqlDbType.VarChar).Value = "D"
+            sqlComando.Parameters.Add("@monto", MySqlDbType.Int64).Value = Me.precioFinal
+            sqlComando.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = Date.Now
+            capaDatos.cargarDatos(sqlComando)
+            If entregaDinero > 0 Then
+                sqlComando.Parameters("@tipoMovimiento").Value = "C"
+                sqlComando.Parameters("@monto").Value = entregaDinero
+                capaDatos.cargarDatos(sqlComando)
+            End If
+
+
+            Dim consultaSQL2 As String = "INSERT INTO cuentascorriente(cliente, venta, cuotas) VALUES (@idCliente,(SELECT max(idVenta) FROM ventas), @cuotas)"
+            Dim sqlComando1 As MySqlCommand = New MySqlCommand(consultaSQL2)
+            sqlComando1.Parameters.Add("@idCliente", MySqlDbType.Int64).Value = Me.idCliente
+            sqlComando1.Parameters.Add("@cuotas", MySqlDbType.UInt16).Value = Me.cuotas
+            capaDatos.cargarDatos(sqlComando1)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+            Return False
+        End Try
     End Function
 #End Region
 End Class

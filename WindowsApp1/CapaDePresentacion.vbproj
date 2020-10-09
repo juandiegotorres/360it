@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Clientes\frmClientes.Designer.vb">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </Compile>
@@ -89,6 +95,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
     <Compile Include="Facturacion\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\frmCuentaCorriente.Designer.vb">
+      <DependentUpon>frmCuentaCorriente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frmCuentaCorriente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Facturacion\frmFacturacion.Designer.vb">
@@ -194,6 +206,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Clientes\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frmCuentaCorriente.resx">
+      <DependentUpon>frmCuentaCorriente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frmFacturacion.resx">
       <DependentUpon>frmFacturacion.vb</DependentUpon>

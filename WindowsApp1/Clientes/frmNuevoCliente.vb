@@ -127,7 +127,7 @@
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "Agregar Cliente") = MsgBoxResult.Yes Then
             Me.Close()
-            frmClientes.Show()
+            frmPrincipal.Show()
         End If
     End Sub
 
