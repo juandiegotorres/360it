@@ -43,13 +43,14 @@ Partial Class frmClientes
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel2
@@ -145,8 +146,8 @@ Partial Class frmClientes
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvClientes.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvClientes.EnableHeadersVisualStyles = False
-        Me.dgvClientes.Location = New System.Drawing.Point(20, 178)
-        Me.dgvClientes.Margin = New System.Windows.Forms.Padding(20, 20, 18, 10)
+        Me.dgvClientes.Location = New System.Drawing.Point(20, 145)
+        Me.dgvClientes.Margin = New System.Windows.Forms.Padding(20, 5, 18, 10)
         Me.dgvClientes.MultiSelect = False
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.ReadOnly = True
@@ -162,7 +163,7 @@ Partial Class frmClientes
         Me.dgvClientes.RowHeadersVisible = False
         Me.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvClientes.Size = New System.Drawing.Size(981, 305)
+        Me.dgvClientes.Size = New System.Drawing.Size(981, 338)
         Me.dgvClientes.TabIndex = 40
         '
         'idCliente
@@ -234,8 +235,8 @@ Partial Class frmClientes
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 5
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 102.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1019, 561)
@@ -261,7 +262,7 @@ Partial Class frmClientes
         '
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(4, 121)
+        Me.Panel1.Location = New System.Drawing.Point(4, 104)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(424, 33)
@@ -269,11 +270,11 @@ Partial Class frmClientes
         '
         'txtBuscar
         '
-        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(155, 7)
+        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(155, 8)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(200, 23)
+        Me.txtBuscar.Size = New System.Drawing.Size(200, 24)
         Me.txtBuscar.TabIndex = 44
         '
         'Label2
@@ -293,39 +294,44 @@ Partial Class frmClientes
         Me.TableLayoutPanel3.ColumnCount = 2
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.picCerrar, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 1, 0)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 19)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 16)
+        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(3, 0, 0, 3)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1012, 96)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1016, 79)
         Me.TableLayoutPanel3.TabIndex = 44
+        '
+        'picCerrar
+        '
+        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.picCerrar.Location = New System.Drawing.Point(989, 0)
+        Me.picCerrar.Margin = New System.Windows.Forms.Padding(0)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(27, 26)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCerrar.TabIndex = 41
+        Me.picCerrar.TabStop = False
+        Me.picCerrar.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label1.Font = New System.Drawing.Font("Montserrat", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(21, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(21, 9, 4, 2)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(306, 75)
+        Me.Label1.Size = New System.Drawing.Size(306, 68)
         Me.Label1.TabIndex = 40
         Me.Label1.Text = "CLIENTES"
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 1
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(809, 3)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(200, 90)
-        Me.TableLayoutPanel4.TabIndex = 41
         '
         'frmClientes
         '
@@ -345,6 +351,7 @@ Partial Class frmClientes
         Me.Panel1.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -367,6 +374,6 @@ Partial Class frmClientes
     Friend WithEvents Label2 As Label
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Label1 As Label
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents pnlHeader As TableLayoutPanel
+    Friend WithEvents picCerrar As PictureBox
 End Class

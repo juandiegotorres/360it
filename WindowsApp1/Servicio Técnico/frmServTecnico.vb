@@ -2,16 +2,6 @@
     Dim eServTec As New Entidades.ServTecnico
     Dim fechaLim As String
     'Dim idEstadoArticulo As UInt16
-    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        frmPrincipal.Hide()
-        Dim nuevaReparacion As New frmNuevaReparacion
-        nuevaReparacion.ShowDialog()
-        If nuevaReparacion.DialogResult = DialogResult.OK Then
-            actualizarReparaciones()
-        End If
-        frmPrincipal.Show()
-
-    End Sub
 
     Private Sub frmServTecnico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'idEstadoArticulo = 1
@@ -43,7 +33,35 @@
         dgvServTecnico.ClearSelection()
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+
+    Private Sub dgvServTecnico_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+        eServTec.fechaLimite = dgvServTecnico.CurrentRow.Cells("fechaLimite").Value
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        frmPrincipal.Hide()
+        Dim nuevaReparacion As New frmNuevaReparacion
+        nuevaReparacion.ShowDialog()
+        If nuevaReparacion.DialogResult = DialogResult.OK Then
+            actualizarReparaciones()
+        End If
+        frmPrincipal.Show()
+
+    End Sub
+
+    Private Sub btnBaja_Click(sender As Object, e As EventArgs) Handles btnBaja.Click
+        If dgvServTecnico.CurrentRow.Selected = False Then
+            MsgBox("No hay ninguna reparacion seleccionada", MsgBoxStyle.Information, "Servicio Técnico")
+        Else
+            If MsgBox("¿Desea dar de baja esta reparación?", MsgBoxStyle.YesNo, "Servicio Técnico") = MsgBoxResult.Yes Then
+                eServTec.bajaReparacion()
+                actualizarReparaciones()
+            End If
+        End If
+    End Sub
+
+    Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         If dgvServTecnico.CurrentRow.Selected = False Then
             MsgBox("No hay ninguna reparación seleccionada", MsgBoxStyle.MsgBoxHelp, "Servicio Técnico")
         Else
@@ -61,26 +79,7 @@
         End If
     End Sub
 
-    Private Sub btnBajaCliente_Click(sender As Object, e As EventArgs) Handles btnBajaCliente.Click
-        If dgvServTecnico.CurrentRow.Selected = False Then
-            MsgBox("No hay ninguna reparacion seleccionada", MsgBoxStyle.Information, "Servicio Técnico")
-        Else
-            If MsgBox("¿Desea dar de baja esta reparación?", MsgBoxStyle.YesNo, "Servicio Técnico") = MsgBoxResult.Yes Then
-                eServTec.bajaReparacion()
-                actualizarReparaciones()
-            End If
-        End If
-    End Sub
-
-    Private Sub dgvServTecnico_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServTecnico.CellClick
-        eServTec.fechaLimite = dgvServTecnico.CurrentRow.Cells("fechaLimite").Value
-    End Sub
-
     Private Sub cbEstado_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbEstado.SelectionChangeCommitted
         actualizarReparaciones()
     End Sub
-
-    'Private Sub dgvServTecnico_LostFocus(sender As Object, e As EventArgs) Handles dgvServTecnico.LostFocus
-    '    dgvServTecnico.ClearSelection()
-    'End Sub
 End Class

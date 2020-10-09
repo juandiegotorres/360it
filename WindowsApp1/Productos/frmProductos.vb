@@ -17,7 +17,7 @@
         dgvProductos.ClearSelection()
     End Sub
 
-    Private Sub BtnAgregar_Click_1(sender As Object, e As EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click_2(sender As Object, e As EventArgs) Handles btnAgregar.Click
         frmPrincipal.Hide()
         Dim nuevoProducto As New frmNuevoProducto
         nuevoProducto.ShowDialog()
@@ -27,7 +27,15 @@
         End If
     End Sub
 
-    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+    Private Sub btnBaja_Click(sender As Object, e As EventArgs) Handles btnBaja.Click
+
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+    End Sub
+
+    Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         filtroBS = "modelo like '%" & txtBuscar.Text & "%'"
         bsProductos.Filter = filtroBS
     End Sub

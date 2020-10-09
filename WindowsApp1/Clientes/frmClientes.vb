@@ -7,7 +7,7 @@
     Private Sub FrmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarClientes()
         If reparacion = True Then
-            'piccerrar.visible = True
+            piccerrar.visible = True
             btnAgregarSeleccionar.Text = "Seleccionar"
             btnModificar.Visible = False
             btnBajaCancelar.Text = "Cancelar"
@@ -111,4 +111,6 @@
             frmPrincipal.Show()
         End If
     End Sub
+
+
 End Class
