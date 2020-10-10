@@ -2,7 +2,7 @@
     Dim precioCosto As Double
     Dim precioVenta As Double
     Dim porcentaje As Integer
-    Dim eProducto As New Entidades.Producto
+    Public eProducto As New Entidades.Producto
     Private _modificar As Boolean
     Public Property modificar As Boolean
         Set(value As Boolean)
@@ -15,6 +15,18 @@
 
     Private Sub frmNuevoProducto_Load(sender As Object, e As EventArgs) Handles Me.Load
         cargarCategorias()
+        If modificar = True Then
+            eProducto.modificarProducto()
+            txtMarca.Text = eProducto.marca
+            txtModelo.Text = eProducto.modelo
+            txtTipo.Text = eProducto.tipoProducto
+            cbCategorias.SelectedValue = eProducto.categoria
+            txtProveedor.Text = eProducto.nombProveedor
+            txtCantidad.Text = eProducto.cantidad
+            txtPrecioCosto.Text = eProducto.precioCosto
+            txtPrecioVenta.Text = eProducto.precioVenta
+            txtDescripcion.Text = eProducto.descripcion
+        End If
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs)
@@ -50,6 +62,7 @@
         For Each _control In Me.Controls
             If TypeOf _control Is TextBox Then
                 If _control Is txtDescripcion Then
+                ElseIf _control Is txtPorcentaje Then
                 Else
                     If _control.Text = "" Then
                         MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Productos")
@@ -115,13 +128,19 @@
             eProducto.cantidad = txtCantidad.Text
             eProducto.precioCosto = txtPrecioCosto.Text
             eProducto.precioVenta = txtPrecioVenta.Text
-            eProducto.descripcion = txtDescripcion.Text
+            If LTrim(txtDescripcion.Text) = "" Then
+                eProducto.descripcion = "Sin descripción"
+            Else
+                eProducto.descripcion = txtDescripcion.Text
+            End If
             If _modificar = False Then
                 eProducto.nuevoProducto()
                 MsgBox("Producto guardado con éxito", MsgBoxStyle.Information, "Nuevo Producto")
                 Me.DialogResult = DialogResult.OK
             Else
-
+                eProducto.guardarProductoModificado()
+                MsgBox("Producto modificado con éxito", MsgBoxStyle.Information, "Modificar Producto")
+                Me.DialogResult = DialogResult.OK
             End If
         End If
     End Sub

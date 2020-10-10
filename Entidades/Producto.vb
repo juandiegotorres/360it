@@ -133,6 +133,61 @@ Public Class Producto
             sqlComando.Parameters.Add("@categoria", MySqlDbType.Int64).Value = Me.categoria
             sqlComando.Parameters.Add("@tipoProducto", MySqlDbType.VarChar).Value = Me.tipoProducto
             sqlComando.Parameters.Add("@modelo", MySqlDbType.VarChar).Value = Me.modelo
+            sqlComando.Parameters.Add("@marca", MySqlDbType.VarChar).Value = Me.marca
+            sqlComando.Parameters.Add("@descripcion", MySqlDbType.VarChar).Value = Me.descripcion
+            sqlComando.Parameters.Add("@proveedor", MySqlDbType.Int64).Value = Me.idProveedor
+            sqlComando.Parameters.Add("@cantidad", MySqlDbType.Int64).Value = Me.cantidad
+            sqlComando.Parameters.Add("@precioCosto", MySqlDbType.Float).Value = Me.precioCosto
+            sqlComando.Parameters.Add("@precioVenta", MySqlDbType.Float).Value = Me.precioVenta
+
+            capaDatos.cargarDatos(sqlComando)
+
+        Catch ex As Exception
+            MsgBox(ex.Message, "Productos")
+
+        End Try
+    End Sub
+    Public Sub bajaProducto()
+        Try
+            Dim consultaSQL As String = "UPDATE productos SET activo = 0 WHERE idProducto = '" & _idProducto & "'"
+            capaDatos.cargarDatos(consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Producto")
+        End Try
+    End Sub
+    Public Sub modificarProducto()
+        Try
+            Dim consultaSQL As String = "SELECT * FROM vistaproductos WHERE idProducto ='" & _idProducto & "'"
+            Dim tabla As New DataTable
+            capaDatos.llenarDatos(tabla, consultaSQL)
+            If tabla.Rows.Count = 1 Then
+                _idProveedor = tabla.Rows(0).Item("proveedor").ToString
+                _categoria = tabla.Rows(0).Item("categoria").ToString
+                _tipoProducto = tabla.Rows(0).Item("tipoProducto").ToString
+                _marca = tabla.Rows(0).Item("marca").ToString
+                _modelo = tabla.Rows(0).Item("modelo").ToString
+                If LTrim(tabla.Rows(0).Item("descripcion").ToString) = "" Then
+                    _descripcion = "Sin descripción"
+                Else
+                    _descripcion = tabla.Rows(0).Item("descripcion").ToString
+                End If
+                _nombProveedor = tabla.Rows(0).Item("nombreProveedor").ToString
+                _cantidad = tabla.Rows(0).Item("cantidad").ToString
+                _precioCosto = tabla.Rows(0).Item("precioCosto").ToString
+                _precioVenta = tabla.Rows(0).Item("precioVenta").ToString
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Cliente")
+        End Try
+    End Sub
+    Public Sub guardarProductoModificado()
+        Try
+            Dim consultaSQL As String = "UPDATe productos SET categoria = @categoria, tipoProducto = @tipoProducto, modelo = @modelo, marca = @marca, descripcion = @descripcion, proveedor = @proveedor, cantidad = @cantidad, precioCosto = @precioCosto, precioVenta = @precioVenta WHERE idProducto = '" & _idProducto & "'"
+            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+            sqlComando.Parameters.Add("@categoria", MySqlDbType.Int64).Value = Me.categoria
+            sqlComando.Parameters.Add("@tipoProducto", MySqlDbType.VarChar).Value = Me.tipoProducto
+            sqlComando.Parameters.Add("@modelo", MySqlDbType.VarChar).Value = Me.modelo
+            sqlComando.Parameters.Add("@marca", MySqlDbType.VarChar).Value = Me.marca
             sqlComando.Parameters.Add("@descripcion", MySqlDbType.VarChar).Value = Me.descripcion
             sqlComando.Parameters.Add("@proveedor", MySqlDbType.Int64).Value = Me.idProveedor
             sqlComando.Parameters.Add("@cantidad", MySqlDbType.Int64).Value = Me.cantidad
