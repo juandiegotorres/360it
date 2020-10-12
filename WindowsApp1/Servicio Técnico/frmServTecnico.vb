@@ -82,4 +82,6 @@
     Private Sub cbEstado_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbEstado.SelectionChangeCommitted
         actualizarReparaciones()
     End Sub
+
+
 End Class

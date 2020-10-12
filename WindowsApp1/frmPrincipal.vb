@@ -143,4 +143,11 @@ Public Class frmPrincipal
 
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+    Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
+        panelCost.Visible = True
+        panelCost.Height = btnCuentaCorriente.Height
+        panelCost.Top = btnCuentaCorriente.Top
+        abrirForm(frmCuentasCorriente)
+    End Sub
 End Class

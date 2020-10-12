@@ -64,6 +64,15 @@ Public Class Venta
             _idProductos = value
         End Set
     End Property
+    Private _precioProductos As List(Of UInt16)
+    Public Property precioProductos As List(Of UInt16)
+        Get
+            Return _precioProductos
+        End Get
+        Set(value As List(Of UInt16))
+            _precioProductos = value
+        End Set
+    End Property
     Private _cantidad As List(Of UInt16)
     Public Property cantidad As List(Of UInt16)
         Get
@@ -177,9 +186,11 @@ Public Class Venta
                     comando(i).Parameters.Add("@recargo", MySqlDbType.Float).Value = Me.recargo
                     comando(i).Parameters.Add("@precioFinal", MySqlDbType.Float).Value = Me.precioFinal
                     comando(i).Parameters.Add("@producto", MySqlDbType.Int16)
+                    comando(i).Parameters.Add("@precioProducto", MySqlDbType.Int16)
                     comando(i).Parameters.Add("@cantidad", MySqlDbType.Int16)
-                    strComando = "INSERT INTO detalleventa(venta, producto, cantidad, precioIncial, descuento, recargo, precioFinal) VALUES ((SELECT max(idVenta) FROM ventas), @producto, @cantidad, @precioInicial, @descuento, @recargo, @precioFinal); UPDATE productos SET cantidad = (cantidad - @cantidad) WHERE idProducto = @producto"
+                    strComando = "INSERT INTO detalleventa(venta, producto, cantidad, precioProducto, precioIncial, descuento, recargo, precioFinal) VALUES ((SELECT max(idVenta) FROM ventas), @producto, @cantidad, @precioProducto, @precioInicial, @descuento, @recargo, @precioFinal); UPDATE productos SET cantidad = (cantidad - @cantidad) WHERE idProducto = @producto"
                     comando(i).CommandText = strComando
+                    comando(i).Parameters("@precioProducto").Value = Me.precioProductos.Item(i)
                     comando(i).Parameters("@producto").Value = Me.idProductos.Item(i)
                     comando(i).Parameters("@cantidad").Value = Me.cantidad.Item(i)
                     Comandos.Add(comando(i))

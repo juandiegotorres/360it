@@ -52,6 +52,11 @@ WindowsApp1
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApp1.My.Resources.Resources.buscar">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApp1.My.Resources.Resources.checkmark">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -83,6 +88,11 @@ WindowsApp1
 </summary>
 </member>
 <member name="P:WindowsApp1.My.Resources.Resources.minimize">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp1.My.Resources.Resources.pngtree_find_search_view_glass_blue_dotted_line_line_icon_png_image_1622078">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

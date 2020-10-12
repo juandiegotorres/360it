@@ -1,4 +1,4 @@
-﻿Public Class frmCuentaCorriente
+﻿Public Class frmCargarCuentaCorriente
     Public eVenta As New Entidades.Venta
     Dim tablaFormPago As New DataTable
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txtEntrega.TextChanged

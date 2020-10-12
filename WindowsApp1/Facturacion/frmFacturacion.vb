@@ -14,6 +14,8 @@
     Dim tablaFormPago As New DataTable
     Dim listaProductos As New List(Of UInt16)
     Dim cantidades As New List(Of UInt16)
+    Dim precioProductos As New List(Of UInt16)
+    Dim precioProductoIndividual As Double
     Private Sub frmFacturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnEliminarDGV.UseColumnTextForButtonValue = True
         btnEliminarDGV.Text = "Eliminar"
@@ -78,7 +80,7 @@
                     ROW.Cells("cantidadProductoLista").Value = cantidad - cantidadSeleccionada
                     'agrego los datos seleccionados al datagrid  de ventas
                     precioTotal = precioVenta * cantidadSeleccionada
-                    dgvCarrito.Rows.Add(idProducto, tipo, marca, modelo, cantidadSeleccionada, precioTotal, precioCosto)
+                    dgvCarrito.Rows.Add(idProducto, tipo, marca, modelo, cantidadSeleccionada, precioTotal, precioVenta)
                     subtotal = precioTotal + subtotal
                     total = subtotal
                     txtSubtotal.Text = subtotal
@@ -100,10 +102,13 @@
                     'lleno las listas con los ids de los productos vendidos y su cantidad
                     idProductoCarro = dgvCarrito.Rows(i).Cells("idProductoCarrito").Value
                     listaProductos.Add(idProductoCarro)
+                    precioProductoIndividual = dgvCarrito.Rows(i).Cells("precioVentaCarrito").Value
+                    precioProductos.Add(precioProductoIndividual)
                     cantidad = dgvCarrito.Rows(i).Cells("cantidadCarrito").Value
                     cantidades.Add(cantidad)
                 Next
                 eVenta.idProductos = listaProductos
+                eVenta.precioProductos = precioProductos
                 eVenta.cantidad = cantidades
                 subtotal = txtSubtotal.Text
                 eVenta.precioInicial = subtotal
@@ -120,7 +125,7 @@
                         limpiarCarrito()
                         nroVenta()
                     ElseIf txtTotal.Tag = 2 Then
-                        Dim ctaCorriente As New frmCuentaCorriente()
+                        Dim ctaCorriente As New frmCargarCuentaCorriente()
                         ctaCorriente.ShowDialog()
                         If ctaCorriente.DialogResult = DialogResult.OK Then
                             eVenta.idCliente = ctaCorriente.eVenta.idCliente
@@ -159,6 +164,8 @@
         txtTotal.Tag = 2
         vender()
     End Sub
+
+
 
 
 #Region "Text Changed Descuento y Recargo"

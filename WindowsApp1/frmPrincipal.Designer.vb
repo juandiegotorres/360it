@@ -49,6 +49,7 @@ Partial Class frmPrincipal
         Me.btnAchicar = New System.Windows.Forms.PictureBox()
         Me.btnAgrandar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
+        Me.btnCuentaCorriente = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -64,6 +65,7 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnCuentaCorriente)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnServTecnico)
         Me.Panel1.Controls.Add(Me.Label7)
@@ -231,7 +233,7 @@ Partial Class frmPrincipal
         Me.btnCuentas.Name = "btnCuentas"
         Me.btnCuentas.Size = New System.Drawing.Size(189, 44)
         Me.btnCuentas.TabIndex = 0
-        Me.btnCuentas.Text = "     Cuentas"
+        Me.btnCuentas.Text = "     Facturación"
         Me.btnCuentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCuentas.UseVisualStyleBackColor = True
         '
@@ -393,6 +395,22 @@ Partial Class frmPrincipal
         Me.btnCerrar.TabIndex = 6
         Me.btnCerrar.TabStop = False
         '
+        'btnCuentaCorriente
+        '
+        Me.btnCuentaCorriente.FlatAppearance.BorderSize = 0
+        Me.btnCuentaCorriente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCuentaCorriente.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCuentaCorriente.ForeColor = System.Drawing.Color.White
+        Me.btnCuentaCorriente.Image = CType(resources.GetObject("btnCuentaCorriente.Image"), System.Drawing.Image)
+        Me.btnCuentaCorriente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCuentaCorriente.Location = New System.Drawing.Point(5, 351)
+        Me.btnCuentaCorriente.Name = "btnCuentaCorriente"
+        Me.btnCuentaCorriente.Size = New System.Drawing.Size(189, 44)
+        Me.btnCuentaCorriente.TabIndex = 12
+        Me.btnCuentaCorriente.Text = "     Cta Corriente"
+        Me.btnCuentaCorriente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCuentaCorriente.UseVisualStyleBackColor = True
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -456,4 +474,5 @@ Partial Class frmPrincipal
     Friend WithEvents btnAgrandar As PictureBox
     Friend WithEvents btnAchicar As PictureBox
     Friend WithEvents btnMinimizar As PictureBox
+    Friend WithEvents btnCuentaCorriente As Button
 End Class

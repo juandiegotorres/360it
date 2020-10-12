@@ -85,6 +85,12 @@
     <Compile Include="Clientes\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cuenta Corriente\frmCuentasCorriente.Designer.vb">
+      <DependentUpon>frmCuentasCorriente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cuenta Corriente\frmCuentasCorriente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cuentas\frmCuentas.Designer.vb">
       <DependentUpon>frmCuentas.vb</DependentUpon>
     </Compile>
@@ -97,10 +103,10 @@
     <Compile Include="Facturacion\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\frmCuentaCorriente.Designer.vb">
-      <DependentUpon>frmCuentaCorriente.vb</DependentUpon>
+    <Compile Include="Facturacion\frmCargarCuentaCorriente.Designer.vb">
+      <DependentUpon>frmCargarCuentaCorriente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\frmCuentaCorriente.vb">
+    <Compile Include="Facturacion\frmCargarCuentaCorriente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Facturacion\frmFacturacion.Designer.vb">
@@ -212,14 +218,17 @@
     <EmbeddedResource Include="Clientes\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cuenta Corriente\frmCuentasCorriente.resx">
+      <DependentUpon>frmCuentasCorriente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cuentas\frmCuentas.resx">
       <DependentUpon>frmCuentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturacion\frmCuentaCorriente.resx">
-      <DependentUpon>frmCuentaCorriente.vb</DependentUpon>
+    <EmbeddedResource Include="Facturacion\frmCargarCuentaCorriente.resx">
+      <DependentUpon>frmCargarCuentaCorriente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frmFacturacion.resx">
       <DependentUpon>frmFacturacion.vb</DependentUpon>
@@ -326,6 +335,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkmarkPNG1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-find-search-view-glass-blue-dotted-line-line-icon-png-image_1622078.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
