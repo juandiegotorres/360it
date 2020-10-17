@@ -28,8 +28,8 @@ Partial Class frmCuentasCorriente
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
-        Me.btnBajaCancelar = New System.Windows.Forms.Button()
+        Me.btnDetalleVenta = New System.Windows.Forms.Button()
+        Me.btnEntregaDeDinero = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtNombreCliente = New System.Windows.Forms.TextBox()
@@ -42,8 +42,9 @@ Partial Class frmCuentasCorriente
         Me.tipoMovimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cuotas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoRestante = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idcliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtResto = New System.Windows.Forms.TextBox()
@@ -92,8 +93,8 @@ Partial Class frmCuentasCorriente
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.24048!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.24048!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.13828!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnAgregarSeleccionar, 4, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnBajaCancelar, 3, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnDetalleVenta, 4, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnEntregaDeDinero, 3, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btnModificar, 2, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(4, 475)
@@ -104,33 +105,33 @@ Partial Class frmCuentasCorriente
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(997, 64)
         Me.TableLayoutPanel2.TabIndex = 41
         '
-        'btnAgregarSeleccionar
+        'btnDetalleVenta
         '
-        Me.btnAgregarSeleccionar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAgregarSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarSeleccionar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarSeleccionar.ForeColor = System.Drawing.Color.Black
-        Me.btnAgregarSeleccionar.Location = New System.Drawing.Point(815, 10)
-        Me.btnAgregarSeleccionar.Margin = New System.Windows.Forms.Padding(10, 10, 0, 10)
-        Me.btnAgregarSeleccionar.Name = "btnAgregarSeleccionar"
-        Me.btnAgregarSeleccionar.Size = New System.Drawing.Size(182, 44)
-        Me.btnAgregarSeleccionar.TabIndex = 36
-        Me.btnAgregarSeleccionar.Text = "Agregar"
-        Me.btnAgregarSeleccionar.UseVisualStyleBackColor = True
+        Me.btnDetalleVenta.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDetalleVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetalleVenta.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalleVenta.ForeColor = System.Drawing.Color.Black
+        Me.btnDetalleVenta.Location = New System.Drawing.Point(815, 10)
+        Me.btnDetalleVenta.Margin = New System.Windows.Forms.Padding(10, 10, 0, 10)
+        Me.btnDetalleVenta.Name = "btnDetalleVenta"
+        Me.btnDetalleVenta.Size = New System.Drawing.Size(182, 44)
+        Me.btnDetalleVenta.TabIndex = 36
+        Me.btnDetalleVenta.Text = "Detalle Venta"
+        Me.btnDetalleVenta.UseVisualStyleBackColor = True
         '
-        'btnBajaCancelar
+        'btnEntregaDeDinero
         '
-        Me.btnBajaCancelar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnBajaCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBajaCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBajaCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnBajaCancelar.Location = New System.Drawing.Point(613, 10)
-        Me.btnBajaCancelar.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnBajaCancelar.Name = "btnBajaCancelar"
-        Me.btnBajaCancelar.Size = New System.Drawing.Size(182, 44)
-        Me.btnBajaCancelar.TabIndex = 37
-        Me.btnBajaCancelar.Text = "Baja"
-        Me.btnBajaCancelar.UseVisualStyleBackColor = True
+        Me.btnEntregaDeDinero.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnEntregaDeDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntregaDeDinero.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEntregaDeDinero.ForeColor = System.Drawing.Color.Black
+        Me.btnEntregaDeDinero.Location = New System.Drawing.Point(613, 10)
+        Me.btnEntregaDeDinero.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnEntregaDeDinero.Name = "btnEntregaDeDinero"
+        Me.btnEntregaDeDinero.Size = New System.Drawing.Size(182, 44)
+        Me.btnEntregaDeDinero.TabIndex = 37
+        Me.btnEntregaDeDinero.Text = "Entrega de Dinero"
+        Me.btnEntregaDeDinero.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
@@ -152,7 +153,7 @@ Partial Class frmCuentasCorriente
         Me.Panel1.Controls.Add(Me.txtNombreCliente)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(0, 101)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(488, 39)
         Me.Panel1.TabIndex = 43
@@ -169,6 +170,7 @@ Partial Class frmCuentasCorriente
         Me.txtNombreCliente.ReadOnly = True
         Me.txtNombreCliente.Size = New System.Drawing.Size(297, 27)
         Me.txtNombreCliente.TabIndex = 44
+        Me.txtNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -251,16 +253,15 @@ Partial Class frmCuentasCorriente
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fechaMovimiento, Me.tipoMovimiento, Me.monto, Me.cuotas, Me.idCliente, Me.venta})
+        Me.dgvCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fechaMovimiento, Me.tipoMovimiento, Me.monto, Me.cuotas, Me.montoRestante, Me.venta, Me.idcliente})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvCuentas.Enabled = False
         Me.dgvCuentas.EnableHeadersVisualStyles = False
         Me.dgvCuentas.Location = New System.Drawing.Point(20, 5)
         Me.dgvCuentas.Margin = New System.Windows.Forms.Padding(20, 5, 18, 0)
@@ -311,23 +312,29 @@ Partial Class frmCuentasCorriente
         Me.cuotas.HeaderText = "Cuotas"
         Me.cuotas.Name = "cuotas"
         Me.cuotas.ReadOnly = True
-        Me.cuotas.Visible = False
         '
-        'idCliente
+        'montoRestante
         '
-        Me.idCliente.DataPropertyName = "clienteMovimiento"
-        Me.idCliente.HeaderText = "ID Cliente"
-        Me.idCliente.Name = "idCliente"
-        Me.idCliente.ReadOnly = True
-        Me.idCliente.Visible = False
+        Me.montoRestante.DataPropertyName = "montoRestante"
+        Me.montoRestante.HeaderText = "Monto"
+        Me.montoRestante.Name = "montoRestante"
+        Me.montoRestante.ReadOnly = True
+        Me.montoRestante.Visible = False
         '
         'venta
         '
         Me.venta.DataPropertyName = "venta"
-        Me.venta.HeaderText = "Venta"
+        Me.venta.HeaderText = "Número de venta"
         Me.venta.Name = "venta"
         Me.venta.ReadOnly = True
-        Me.venta.Visible = False
+        '
+        'idcliente
+        '
+        Me.idcliente.DataPropertyName = "idcliente"
+        Me.idcliente.HeaderText = "ID Cliente"
+        Me.idcliente.Name = "idcliente"
+        Me.idcliente.ReadOnly = True
+        Me.idcliente.Visible = False
         '
         'TableLayoutPanel5
         '
@@ -431,8 +438,8 @@ Partial Class frmCuentasCorriente
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents btnAgregarSeleccionar As Button
-    Friend WithEvents btnBajaCancelar As Button
+    Friend WithEvents btnDetalleVenta As Button
+    Friend WithEvents btnEntregaDeDinero As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtNombreCliente As TextBox
@@ -447,11 +454,12 @@ Partial Class frmCuentasCorriente
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txtResto As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents picClientes As PictureBox
     Friend WithEvents fechaMovimiento As DataGridViewTextBoxColumn
     Friend WithEvents tipoMovimiento As DataGridViewTextBoxColumn
     Friend WithEvents monto As DataGridViewTextBoxColumn
     Friend WithEvents cuotas As DataGridViewTextBoxColumn
-    Friend WithEvents idCliente As DataGridViewTextBoxColumn
+    Friend WithEvents montoRestante As DataGridViewTextBoxColumn
     Friend WithEvents venta As DataGridViewTextBoxColumn
-    Friend WithEvents picClientes As PictureBox
+    Friend WithEvents idcliente As DataGridViewTextBoxColumn
 End Class

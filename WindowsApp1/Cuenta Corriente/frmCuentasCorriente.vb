@@ -3,6 +3,7 @@
     Dim tablaCuenta As New DataTable
     Dim debe, entrega As Double
     Public Sub cargarCuentaCorriente()
+        tablaCuenta.Clear()
         debe = 0
         entrega = 0
         txtResto.Text = 0
@@ -75,8 +76,39 @@
         End With
     End Sub
 
+    Private Sub btnDetalleVenta_Click(sender As Object, e As EventArgs) Handles btnDetalleVenta.Click
+        Dim detalleVenta As New frmDetalleVenta
+        With detalleVenta
+            If dgvCuentas.SelectedRows.Count = 1 Then
+                .e_Venta.idVenta = dgvCuentas.CurrentRow.Cells("venta").Value
+                .ShowDialog()
+            End If
+        End With
+    End Sub
+
     Private Sub frmCuentasCorriente_Load(sender As Object, e As EventArgs) Handles Me.Load
         debe = 0
         entrega = 0
+    End Sub
+
+    Private Sub dgvCuentas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCuentas.CellClick
+
+    End Sub
+
+    Private Sub btnEntregaDeDinero_Click(sender As Object, e As EventArgs) Handles btnEntregaDeDinero.Click
+        If dgvCuentas.Rows.Count >= 1 Then
+            Dim entregaDinero As New frmEntrega()
+            entregaDinero.ShowDialog()
+            If entregaDinero.DialogResult = DialogResult.OK Then
+                eCuentaCorriente.entrega = entregaDinero.eCtaCorriente.entrega
+                eCuentaCorriente.idVenta = dgvCuentas.Rows(0).Cells("venta").Value
+                eCuentaCorriente.entregaDinero()
+                cargarCuentaCorriente()
+            End If
+        End If
+    End Sub
+
+    Private Sub dgvCuentas_ColumnHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvCuentas.ColumnHeaderMouseClick
+        corregirDataGrid()
     End Sub
 End Class

@@ -23,6 +23,8 @@
         subtotal = 0
         total = 0
         rbDescuentoPorcentaje.Checked = True
+        txtSubtotal.Text = subtotal.ToString("C2")
+        txtTotal.Text = total.ToString("C2")
         actualizarProductos()
         cargarFormPago()
         nroVenta()
@@ -33,7 +35,6 @@
         tablaProductos.Clear()
         eVenta.verProductos(tablaProductos)
         dgvProductosLista.DataSource = tablaProductos
-        dgvProductosLista.ClearSelection()
     End Sub
     'Cargo el combobox de la forma de pago
     Public Sub cargarFormPago()
@@ -54,8 +55,8 @@
         rbDescuentoPorcentaje.Checked = True
         subtotal = 0
         total = 0
-        txtTotal.Text = total
-        txtSubtotal.Text = subtotal
+        txtTotal.Text = total.ToString("C2")
+        txtSubtotal.Text = subtotal.ToString("C2")
         txtDescuento.Text = ""
         txtRecargo.Text = ""
         actualizarProductos()
@@ -83,8 +84,8 @@
                     dgvCarrito.Rows.Add(idProducto, tipo, marca, modelo, cantidadSeleccionada, precioTotal, precioVenta)
                     subtotal = precioTotal + subtotal
                     total = subtotal
-                    txtSubtotal.Text = subtotal
-                    txtTotal.Text = total
+                    txtSubtotal.Text = subtotal.ToString("C2")
+                    txtTotal.Text = total.ToString("C2")
                     dgvCarrito.ClearSelection()
                 Next
             End If
@@ -107,14 +108,26 @@
                     cantidad = dgvCarrito.Rows(i).Cells("cantidadCarrito").Value
                     cantidades.Add(cantidad)
                 Next
+                If LTrim(txtDescuento.Text) = "" And LTrim(txtRecargo.Text) = "" Then
+                    'Si el descuento o recargo se hace en monto de dinero establezco la S de Sin recargo/descuento
+                    eVenta.tipoDescuentoRecargo = "S"
+                Else
+                    If rbDescuentoPlata.Checked = True Or rbRecargoPlata.Checked = True Then
+                        'Si el descuento o recargo se hace en monto de dinero establezco la D de Dinero
+                        eVenta.tipoDescuentoRecargo = "D"
+                    ElseIf rbRecargoPorcentaje.Checked = True Or rbDescuentoPorcentaje.Checked = True Then
+                        'Si el descuento o recargo se hace en monto de dinero establezco la P de Porcentaje
+                        eVenta.tipoDescuentoRecargo = "P"
+                    End If
+                End If
                 eVenta.idProductos = listaProductos
                 eVenta.precioProductos = precioProductos
                 eVenta.cantidad = cantidades
-                subtotal = txtSubtotal.Text
+                subtotal = CInt(txtSubtotal.Text)
                 eVenta.precioInicial = subtotal
                 eVenta.descuento = descuento
                 eVenta.recargo = recargo
-                total = txtTotal.Text
+                total = CInt(txtTotal.Text)
                 eVenta.precioFinal = total
                 eVenta.fechaHora = Date.Now
                 eVenta.idFormPago = cbFormPago.SelectedValue
@@ -175,12 +188,12 @@
             If LTrim(txtDescuento.Text) = "" Then
                 txtDescuento.BackColor = Color.White
                 total = subtotal
-                txtTotal.Text = total
+                txtTotal.Text = total.ToString("C2")
             Else
                 'Si el monto de descuento se pasa del monto a pagar el text box se pone en rojo
                 If CInt(txtDescuento.Text) > subtotal Then
                     txtDescuento.BackColor = Color.FromArgb(255, 122, 122)
-                    txtTotal.Text = subtotal
+                    txtTotal.Text = subtotal.ToString("C2")
                 Else
                     'De la otra forma se va descontando a medida que vamos presionando los numeros
                     descuento = CInt(txtDescuento.Text)
@@ -190,7 +203,7 @@
                     Else
                         total = total - descuento
                     End If
-                    txtTotal.Text = total
+                    txtTotal.Text = total.ToString("C2")
                 End If
             End If
         End If
@@ -198,7 +211,7 @@
         If rbDescuentoPorcentaje.Checked = True And rbDescuentoPlata.Checked = False Then
             If LTrim(txtDescuento.Text) = "" Then
                 total = subtotal
-                txtTotal.Text = total
+                txtTotal.Text = total.ToString("C2")
             Else
                 descuento = CInt(txtDescuento.Text)
                 total = subtotal
@@ -207,7 +220,7 @@
                 Else
                     total = total - ((total * descuento) / 100)
                 End If
-                txtTotal.Text = total
+                txtTotal.Text = total.ToString("C2")
             End If
         End If
     End Sub
@@ -217,23 +230,23 @@
         If rbRecargoPlata.Checked = True And rbRecargoPorcentaje.Checked = False Then
             If LTrim(txtRecargo.Text) = "" Then
                 total = subtotal
-                txtTotal.Text = total
+                txtTotal.Text = total.ToString("C2")
             Else
                 recargo = CInt(txtRecargo.Text)
                 total = subtotal
                 total = total + recargo
-                txtTotal.Text = total
+                txtTotal.Text = total.ToString("C2")
             End If
         End If
         If rbRecargoPorcentaje.Checked = True And rbRecargoPlata.Checked = False Then
             If LTrim(txtRecargo.Text) = "" Then
                 total = subtotal
-                txtTotal.Text = total
+                txtTotal.Text = total.ToString("C2")
             Else
                 descuento = CInt(txtRecargo.Text)
                 total = subtotal
                 total = total + ((total * descuento) / 100)
-                txtTotal.Text = total
+                txtTotal.Text = total.ToString("C2")
             End If
         End If
     End Sub
@@ -247,7 +260,7 @@
             txtRecargo.Enabled = True
             txtRecargo.Text = ""
             txtDescuento.Text = ""
-            txtTotal.Text = subtotal
+            txtTotal.Text = subtotal.ToString("C2")
             'lblRecargo.Text = "$"
             txtRecargo.MaxLength = 9
         End If
@@ -259,7 +272,7 @@
             txtRecargo.Enabled = True
             txtRecargo.Text = ""
             txtDescuento.Text = ""
-            txtTotal.Text = subtotal
+            txtTotal.Text = subtotal.ToString("C2")
             'lblRecargo.Text = "%"
             txtRecargo.MaxLength = 3
         End If
@@ -271,7 +284,7 @@
             txtDescuento.Enabled = True
             txtDescuento.Text = ""
             txtRecargo.Text = ""
-            txtTotal.Text = subtotal
+            txtTotal.Text = subtotal.ToString("C2")
             'lblDescuento.Text = "$"
             txtDescuento.MaxLength = 9
         End If
@@ -283,7 +296,7 @@
             txtDescuento.Enabled = True
             txtDescuento.Text = ""
             txtRecargo.Text = ""
-            txtTotal.Text = subtotal
+            txtTotal.Text = subtotal.ToString("C2")
             ' lblDescuento.Text = "%"
             txtDescuento.MaxLength = 3
         End If

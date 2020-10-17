@@ -48,7 +48,7 @@ Public Class frmPrincipal
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
-        abrirForm(frmFacturacion)
+        abrirForm(frmVentas)
     End Sub
 
 

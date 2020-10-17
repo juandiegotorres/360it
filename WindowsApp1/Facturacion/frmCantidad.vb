@@ -57,15 +57,8 @@ Public Class frmCantidad
         End If
     End Function
 
-    'Establezco la accion al presionar la tecla enter y escape con el evento keydown
-    Private Sub txtCantidad_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCantidad.KeyDown
-        Select Case e.KeyData
-            Case Keys.Enter
-                aceptar()
-            Case Keys.Escape
-                Me.DialogResult = DialogResult.Cancel
-        End Select
-    End Sub
+
+
     'Dejo introducir solo numeros
     Private Sub txtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress
         If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
@@ -81,5 +74,16 @@ Public Class frmCantidad
         Else
             btnAgregar.Enabled = True
         End If
+    End Sub
+    'Establezco la accion al presionar la tecla enter y escape con el evento keydown
+    Private Sub frmCantidad_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyData
+            Case Keys.Enter
+                If txtCantidad.Enabled = True Then
+                    aceptar()
+                End If
+            Case Keys.Escape
+                Me.DialogResult = DialogResult.Cancel
+        End Select
     End Sub
 End Class

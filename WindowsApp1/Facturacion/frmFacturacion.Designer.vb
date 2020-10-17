@@ -57,8 +57,6 @@ Partial Class frmFacturacion
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtSubtotal = New System.Windows.Forms.TextBox()
         Me.txtTotal = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtRecargo = New System.Windows.Forms.TextBox()
         Me.txtDescuento = New System.Windows.Forms.TextBox()
@@ -389,8 +387,6 @@ Partial Class frmFacturacion
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txtSubtotal)
         Me.Panel2.Controls.Add(Me.txtTotal)
-        Me.Panel2.Controls.Add(Me.Label9)
-        Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Location = New System.Drawing.Point(272, 3)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(15, 3, 3, 3)
         Me.Panel2.Name = "Panel2"
@@ -431,10 +427,10 @@ Partial Class frmFacturacion
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSubtotal.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSubtotal.Location = New System.Drawing.Point(92, 8)
+        Me.txtSubtotal.Location = New System.Drawing.Point(84, 8)
         Me.txtSubtotal.Name = "txtSubtotal"
         Me.txtSubtotal.ReadOnly = True
-        Me.txtSubtotal.Size = New System.Drawing.Size(89, 26)
+        Me.txtSubtotal.Size = New System.Drawing.Size(97, 26)
         Me.txtSubtotal.TabIndex = 55
         Me.txtSubtotal.Text = "0"
         Me.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -445,39 +441,13 @@ Partial Class frmFacturacion
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtTotal.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotal.Location = New System.Drawing.Point(92, 44)
+        Me.txtTotal.Location = New System.Drawing.Point(84, 42)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
-        Me.txtTotal.Size = New System.Drawing.Size(89, 26)
+        Me.txtTotal.Size = New System.Drawing.Size(97, 26)
         Me.txtTotal.TabIndex = 54
         Me.txtTotal.Text = "0"
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(79, 12)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(16, 18)
-        Me.Label9.TabIndex = 57
-        Me.Label9.Text = "$"
-        '
-        'Label10
-        '
-        Me.Label10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(79, 48)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(16, 18)
-        Me.Label10.TabIndex = 58
-        Me.Label10.Text = "$"
         '
         'Panel1
         '
@@ -903,8 +873,6 @@ Partial Class frmFacturacion
     Friend WithEvents Label3 As Label
     Friend WithEvents txtSubtotal As TextBox
     Friend WithEvents txtTotal As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtRecargo As TextBox
     Friend WithEvents txtDescuento As TextBox

@@ -102,7 +102,7 @@ Partial Class frmCantidad
         Me.btnAgregar.Enabled = False
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(137, 172)
+        Me.btnAgregar.Location = New System.Drawing.Point(137, 169)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(110, 41)
         Me.btnAgregar.TabIndex = 35
@@ -111,33 +111,33 @@ Partial Class frmCantidad
         '
         'lblError
         '
-        Me.lblError.AutoSize = True
         Me.lblError.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError.ForeColor = System.Drawing.Color.Red
-        Me.lblError.Location = New System.Drawing.Point(27, 138)
+        Me.lblError.Location = New System.Drawing.Point(12, 134)
         Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(319, 21)
+        Me.lblError.Size = New System.Drawing.Size(368, 21)
         Me.lblError.TabIndex = 36
         Me.lblError.Text = "No dispones de esa cantidad de unidades"
+        Me.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblError.Visible = False
         '
         'lblDisponibilidad
         '
-        Me.lblDisponibilidad.AutoSize = True
         Me.lblDisponibilidad.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDisponibilidad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblDisponibilidad.Location = New System.Drawing.Point(40, 57)
+        Me.lblDisponibilidad.Location = New System.Drawing.Point(12, 62)
         Me.lblDisponibilidad.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDisponibilidad.Name = "lblDisponibilidad"
-        Me.lblDisponibilidad.Size = New System.Drawing.Size(319, 21)
+        Me.lblDisponibilidad.Size = New System.Drawing.Size(367, 21)
         Me.lblDisponibilidad.TabIndex = 37
         Me.lblDisponibilidad.Text = "No dispones de esa cantidad de unidades"
+        Me.lblDisponibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frmCantidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(392, 225)
+        Me.ClientSize = New System.Drawing.Size(392, 221)
         Me.Controls.Add(Me.lblDisponibilidad)
         Me.Controls.Add(Me.lblError)
         Me.Controls.Add(Me.btnAgregar)
@@ -149,6 +149,7 @@ Partial Class frmCantidad
         Me.Controls.Add(Me.pnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.ImeMode = System.Windows.Forms.ImeMode.[On]
+        Me.KeyPreview = True
         Me.Name = "frmCantidad"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmCantidad"
