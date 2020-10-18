@@ -54,7 +54,15 @@
         bsProductos.Filter = filtroBS
     End Sub
 
-    Private Sub dgvProductos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductos.CellClick
+    Private Sub dgvProductos_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         eProducto.idProducto = dgvProductos.CurrentRow.Cells("id").Value
+    End Sub
+
+    Private Sub dgvProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductos.CellContentClick
+
+    End Sub
+
+    Private Sub TableLayoutPanel5_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel5.Paint
+
     End Sub
 End Class

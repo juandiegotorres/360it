@@ -303,5 +303,17 @@ Public Class Venta
             MsgBox(ex.Message, "Entidad Venta")
         End Try
     End Sub
+    Public Sub ventaPorFechas(ByRef tabla As DataTable, ByRef fechaDesde As Date, ByRef fechaHasta As Date)
+        Try
+            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT * FROM vistahistorialventas WHERE fechaHora between @fechaDesde and @fechaHasta")
+            comandoSQL.Parameters.Add("@fechaDesde", MySqlDbType.Date).Value = fechaDesde
+            comandoSQL.Parameters.Add("@fechaHasta", MySqlDbType.Date).Value = fechaHasta
+            capaDatos.CargarDatos(tabla, comandoSQL)
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+    End Sub
 #End Region
 End Class

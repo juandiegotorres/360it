@@ -213,16 +213,16 @@
     <Compile Include="Servicio Técnico\frmServTecnico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\frmDetalleVenta.Designer.vb">
-      <DependentUpon>frmDetalleVenta.vb</DependentUpon>
+    <Compile Include="Cuenta Corriente\frmDetalleVentaCtaCorriente.Designer.vb">
+      <DependentUpon>frmDetalleVentaCtaCorriente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\frmDetalleVenta.vb">
+    <Compile Include="Cuenta Corriente\frmDetalleVentaCtaCorriente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\frmVentas.Designer.vb">
-      <DependentUpon>frmVentas.vb</DependentUpon>
+    <Compile Include="Ventas\frmHistorialVentas.Designer.vb">
+      <DependentUpon>frmHistorialVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\frmVentas.vb">
+    <Compile Include="Ventas\frmHistorialVentas.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -293,11 +293,11 @@
     <EmbeddedResource Include="Servicio Técnico\frmServTecnico.resx">
       <DependentUpon>frmServTecnico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas\frmDetalleVenta.resx">
-      <DependentUpon>frmDetalleVenta.vb</DependentUpon>
+    <EmbeddedResource Include="Cuenta Corriente\frmDetalleVentaCtaCorriente.resx">
+      <DependentUpon>frmDetalleVentaCtaCorriente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas\frmVentas.resx">
-      <DependentUpon>frmVentas.vb</DependentUpon>
+    <EmbeddedResource Include="Ventas\frmHistorialVentas.resx">
+      <DependentUpon>frmHistorialVentas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

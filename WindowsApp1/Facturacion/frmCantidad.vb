@@ -16,12 +16,14 @@ Public Class frmCantidad
     Private Sub frmCantidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If cantidadProductos = 1 Then
             lblDisponibilidad.Text = "Solo queda " & cantidadProductos & " producto en stock"
+            txtCantidad.Text = "1"
         ElseIf cantidadProductos = 0 Then
             lblDisponibilidad.Text = "No hay mas stock de este producto"
             lblDisponibilidad.ForeColor = Color.Red
             txtCantidad.Enabled = False
         Else
             lblDisponibilidad.Text = "Quedan " & cantidadProductos & " productos en stock"
+            txtCantidad.Text = "1"
         End If
     End Sub
     'Accion al cerrar el formulario
@@ -47,8 +49,12 @@ Public Class frmCantidad
             cantidadSeleccionada = txtCantidad.Text
             If cantidadSeleccionada > cantidadProductos Then
                 lblError.Visible = True
+                lblError.Text = "No dispones de esa cantidad de unidades"
                 txtCantidad.Text = ""
                 txtCantidad.Select()
+            ElseIf cantidadSeleccionada = 0 Then
+                lblError.Visible = True
+                lblError.Text = "Debe seleccionar al menos una unidad"
             Else
                 cantidadSeleccionada = txtCantidad.Text
                 Me.DialogResult = DialogResult.OK

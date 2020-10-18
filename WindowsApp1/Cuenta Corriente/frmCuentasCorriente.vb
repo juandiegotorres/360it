@@ -58,7 +58,7 @@
     End Sub
 
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles picClientes.Click
+    Private Sub picClientes_Click(sender As Object, e As EventArgs) Handles picClientes.Click
         Dim clientes As New frmClientes
         frmPrincipal.Hide()
         With clientes
@@ -77,7 +77,7 @@
     End Sub
 
     Private Sub btnDetalleVenta_Click(sender As Object, e As EventArgs) Handles btnDetalleVenta.Click
-        Dim detalleVenta As New frmDetalleVenta
+        Dim detalleVenta As New frmDetalleVentaCtaCorriente
         With detalleVenta
             If dgvCuentas.SelectedRows.Count = 1 Then
                 .e_Venta.idVenta = dgvCuentas.CurrentRow.Cells("venta").Value
@@ -98,11 +98,29 @@
     Private Sub btnEntregaDeDinero_Click(sender As Object, e As EventArgs) Handles btnEntregaDeDinero.Click
         If dgvCuentas.Rows.Count >= 1 Then
             Dim entregaDinero As New frmEntrega()
+            entregaDinero.eCtaCorriente.idCtaCorriente = dgvCuentas.Rows(0).Cells("cuentacorriente").Value
+            If dgvCuentas.SelectedRows.Count = 1 Then
+                entregaDinero.eCtaCorriente.idVenta = dgvCuentas.CurrentRow.Cells("venta").Value
+            End If
             entregaDinero.ShowDialog()
             If entregaDinero.DialogResult = DialogResult.OK Then
                 eCuentaCorriente.entrega = entregaDinero.eCtaCorriente.entrega
-                eCuentaCorriente.idVenta = dgvCuentas.Rows(0).Cells("venta").Value
+                eCuentaCorriente.idVenta = entregaDinero.eCtaCorriente.idVenta
+                eCuentaCorriente.idCtaCorriente = dgvCuentas.Rows(0).Cells("cuentacorriente").Value
                 eCuentaCorriente.entregaDinero()
+                cargarCuentaCorriente()
+            End If
+        End If
+    End Sub
+
+    Private Sub btnEliminarMovimiento_Click(sender As Object, e As EventArgs) Handles btnEliminarMovimiento.Click
+        If dgvCuentas.SelectedRows.Count = 1 Then
+            Dim a As String = dgvCuentas.CurrentRow.Cells("tipoMovimiento").Value.ToString
+            If a = "DÉBITO" Then
+                MsgBox("No se puede eliminar una venta", MsgBoxStyle.Exclamation, "Cuentas Corriente")
+            Else
+                eCuentaCorriente.idMovimiento = dgvCuentas.CurrentRow.Cells("idmovimiento").Value
+                eCuentaCorriente.eliminarMovimiento()
                 cargarCuentaCorriente()
             End If
         End If

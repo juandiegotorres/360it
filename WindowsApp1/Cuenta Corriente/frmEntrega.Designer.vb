@@ -30,6 +30,8 @@ Partial Class frmEntrega
         Me.pnlHeader = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbVenta = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -39,7 +41,7 @@ Partial Class frmEntrega
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(175, 164)
+        Me.btnAceptar.Location = New System.Drawing.Point(174, 200)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(110, 41)
         Me.btnAceptar.TabIndex = 44
@@ -50,7 +52,7 @@ Partial Class frmEntrega
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Montserrat SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(87, 100)
+        Me.Label2.Location = New System.Drawing.Point(87, 92)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 26)
         Me.Label2.TabIndex = 43
@@ -59,7 +61,7 @@ Partial Class frmEntrega
         'txtEntrega
         '
         Me.txtEntrega.Font = New System.Drawing.Font("Montserrat", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEntrega.Location = New System.Drawing.Point(198, 96)
+        Me.txtEntrega.Location = New System.Drawing.Point(198, 88)
         Me.txtEntrega.Name = "txtEntrega"
         Me.txtEntrega.Size = New System.Drawing.Size(169, 33)
         Me.txtEntrega.TabIndex = 41
@@ -107,11 +109,33 @@ Partial Class frmEntrega
         Me.btnCerrar.TabIndex = 39
         Me.btnCerrar.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Montserrat SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(87, 139)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(75, 26)
+        Me.Label3.TabIndex = 45
+        Me.Label3.Text = "Venta:"
+        '
+        'cbVenta
+        '
+        Me.cbVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbVenta.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbVenta.FormattingEnabled = True
+        Me.cbVenta.Location = New System.Drawing.Point(198, 136)
+        Me.cbVenta.Name = "cbVenta"
+        Me.cbVenta.Size = New System.Drawing.Size(169, 34)
+        Me.cbVenta.TabIndex = 46
+        '
         'frmEntrega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(460, 217)
+        Me.ClientSize = New System.Drawing.Size(460, 252)
+        Me.Controls.Add(Me.cbVenta)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
@@ -120,6 +144,7 @@ Partial Class frmEntrega
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.pnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "frmEntrega"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -137,4 +162,6 @@ Partial Class frmEntrega
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCerrar As PictureBox
     Friend WithEvents pnlHeader As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cbVenta As ComboBox
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class frmDetalleVenta
+﻿Public Class frmDetalleVentaCtaCorriente
     Public e_Venta As New Entidades.Venta
 
     Public Sub cargarProductos()

@@ -136,6 +136,31 @@ Public Class cdDatosPrueba
             MsgBox(ex.Message, "Clase cdDatosPrueba")
         End Try
     End Sub
+    Public Function CargarDatos(ByRef Tabla As DataTable, ByRef cmComandoSql As MySqlCommand) As Boolean 'sub por function
+        Try
+
+            'Asignamos la conexión al Objetos MySqlCommand
+            cmComandoSql.Connection = conexion
+            'Asignamos el comando al Objeto MySqlDataAdapter
+            adaptador.SelectCommand = cmComandoSql
+            AbrirConexion()
+            'Llenamos la el DataTable con los datos obtenidos de la Base de Datos
+            adaptador.Fill(Tabla)
+            CerrarConexion()
+            'Pregunto si las filas de la tabla es mayor que 0 y devuelvo vedadero si hay datos y sino retorna falso
+            If Tabla.Rows.Count > 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As MySqlException
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Clase cdDatos")
+            Return False
+        Catch e As Exception
+            MsgBox(e.Message, MsgBoxStyle.Critical, "Clase cdDatos")
+            Return False
+        End Try
+    End Function
     Public Sub llenarDatos(ByRef tabla As DataTable, ByRef consultaSQL As String)
         Try
             comando.CommandText = consultaSQL
