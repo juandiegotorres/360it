@@ -53,8 +53,9 @@ Partial Class frmProductos
         Me.precioCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnDetalleVenta = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnQuitar = New System.Windows.Forms.Button()
+        Me.btnAgregarStock = New System.Windows.Forms.Button()
+        Me.btnSinStock = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -371,57 +372,75 @@ Partial Class frmProductos
         'TableLayoutPanel5
         '
         Me.TableLayoutPanel5.ColumnCount = 1
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Button1, 0, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.btnDetalleVenta, 0, 0)
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel5.Controls.Add(Me.btnSinStock, 0, 2)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnQuitar, 0, 1)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnAgregarStock, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(855, 0)
         Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 3
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.7538!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 286.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel5.RowCount = 4
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(178, 390)
         Me.TableLayoutPanel5.TabIndex = 47
         '
-        'btnDetalleVenta
+        'btnQuitar
         '
-        Me.btnDetalleVenta.BackColor = System.Drawing.Color.Transparent
-        Me.btnDetalleVenta.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDetalleVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDetalleVenta.FlatAppearance.BorderSize = 2
-        Me.btnDetalleVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnDetalleVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDetalleVenta.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetalleVenta.ForeColor = System.Drawing.Color.Black
-        Me.btnDetalleVenta.Location = New System.Drawing.Point(5, 5)
-        Me.btnDetalleVenta.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
-        Me.btnDetalleVenta.Name = "btnDetalleVenta"
-        Me.btnDetalleVenta.Size = New System.Drawing.Size(155, 37)
-        Me.btnDetalleVenta.TabIndex = 40
-        Me.btnDetalleVenta.Text = "Agregar Stock"
-        Me.btnDetalleVenta.UseVisualStyleBackColor = False
+        Me.btnQuitar.BackColor = System.Drawing.Color.Transparent
+        Me.btnQuitar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnQuitar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnQuitar.FlatAppearance.BorderSize = 2
+        Me.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitar.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitar.ForeColor = System.Drawing.Color.Black
+        Me.btnQuitar.Location = New System.Drawing.Point(5, 52)
+        Me.btnQuitar.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
+        Me.btnQuitar.Name = "btnQuitar"
+        Me.btnQuitar.Size = New System.Drawing.Size(155, 32)
+        Me.btnQuitar.TabIndex = 41
+        Me.btnQuitar.Text = "Quitar Stock"
+        Me.btnQuitar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnAgregarStock
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 2
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(5, 57)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(155, 37)
-        Me.Button1.TabIndex = 43
-        Me.Button1.Text = "Quitar Stock"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnAgregarStock.BackColor = System.Drawing.Color.Transparent
+        Me.btnAgregarStock.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAgregarStock.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregarStock.FlatAppearance.BorderSize = 2
+        Me.btnAgregarStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnAgregarStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarStock.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarStock.ForeColor = System.Drawing.Color.Black
+        Me.btnAgregarStock.Location = New System.Drawing.Point(5, 5)
+        Me.btnAgregarStock.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
+        Me.btnAgregarStock.Name = "btnAgregarStock"
+        Me.btnAgregarStock.Size = New System.Drawing.Size(155, 32)
+        Me.btnAgregarStock.TabIndex = 40
+        Me.btnAgregarStock.Text = "Agregar Stock"
+        Me.btnAgregarStock.UseVisualStyleBackColor = False
+        '
+        'btnSinStock
+        '
+        Me.btnSinStock.BackColor = System.Drawing.Color.Transparent
+        Me.btnSinStock.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSinStock.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSinStock.FlatAppearance.BorderSize = 2
+        Me.btnSinStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnSinStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSinStock.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSinStock.ForeColor = System.Drawing.Color.Black
+        Me.btnSinStock.Location = New System.Drawing.Point(5, 99)
+        Me.btnSinStock.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
+        Me.btnSinStock.Name = "btnSinStock"
+        Me.btnSinStock.Size = New System.Drawing.Size(155, 48)
+        Me.btnSinStock.TabIndex = 42
+        Me.btnSinStock.Text = "Productos sin Stock primero"
+        Me.btnSinStock.UseVisualStyleBackColor = False
         '
         'frmProductos
         '
@@ -470,6 +489,7 @@ Partial Class frmProductos
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents precioCosto As DataGridViewTextBoxColumn
     Friend WithEvents precioVenta As DataGridViewTextBoxColumn
-    Friend WithEvents btnDetalleVenta As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAgregarStock As Button
+    Friend WithEvents btnQuitar As Button
+    Friend WithEvents btnSinStock As Button
 End Class

@@ -1,7 +1,8 @@
 ﻿Public Class frmServTecnico
     Dim eServTec As New Entidades.ServTecnico
     Dim fechaLim As String
-    'Dim idEstadoArticulo As UInt16
+    Dim id_Reparacion As UInt64
+    Dim id_Estado As UInt16
 
     Private Sub frmServTecnico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'idEstadoArticulo = 1
@@ -19,7 +20,7 @@
     End Sub
     Public Sub estadoArticulo()
         Dim tablaEstadoArticulo As New DataTable
-        eServTec.estadoArticulo(tablaEstadoArticulo)
+        eServTec.estadoReparacion(tablaEstadoArticulo)
         cbEstado.DataSource = tablaEstadoArticulo
         cbEstado.DisplayMember = "nombreEstado"
         cbEstado.ValueMember = "id"
@@ -83,5 +84,27 @@
         actualizarReparaciones()
     End Sub
 
+    Private Sub dgvServTecnico_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServTecnico.CellContentClick
 
+    End Sub
+
+    Private Sub btnVerDetalles_Click(sender As Object, e As EventArgs) Handles btnVerDetalles.Click
+        If dgvServTecnico.SelectedRows.Count = 1 Then
+            id_Reparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
+            Dim detallesReparacion As New frmDetalleReparacion(id_Reparacion)
+            detallesReparacion.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub btnCambiarEstado_Click(sender As Object, e As EventArgs) Handles btnCambiarEstado.Click
+        If dgvServTecnico.SelectedRows.Count = 1 Then
+            id_Reparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
+            id_Estado = dgvServTecnico.CurrentRow.Cells("estado").Value
+            Dim cambiarEstado As New frmCambiarEstado(id_Estado, id_Reparacion)
+            cambiarEstado.ShowDialog()
+            If cambiarEstado.DialogResult = DialogResult.OK Then
+                actualizarReparaciones()
+            End If
+        End If
+    End Sub
 End Class

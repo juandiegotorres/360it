@@ -3,7 +3,7 @@
     Public modificar As Boolean
     Private Sub frmNuevaReparacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tipoArticulo()
-        estadoArticulo()
+        estadoReparacion()
         dtEntrega.Value = Today.AddDays(3)
         If modificar = True Then
             eServTecnico.modificarReparacion()
@@ -76,9 +76,9 @@
         cbTipoArticulo.ValueMember = "id"
         cbTipoArticulo.SelectedValue = 1
     End Sub
-    Public Sub estadoArticulo()
+    Public Sub estadoReparacion()
         Dim tablaEstadoArticulo As New DataTable
-        eServTecnico.estadoArticulo(tablaEstadoArticulo)
+        eServTecnico.estadoReparacion(tablaEstadoArticulo)
         cbEstado.DataSource = tablaEstadoArticulo
         cbEstado.DisplayMember = "nombreEstado"
         cbEstado.ValueMember = "id"

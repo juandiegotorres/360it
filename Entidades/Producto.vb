@@ -201,5 +201,29 @@ Public Class Producto
 
         End Try
     End Sub
+    Public Sub quitarDelStock()
+        Try
+            Dim consultaSQL As String = "UPDATE productos SET cantidad = (cantidad - @cantidad) WHERE idProducto = @producto"
+            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+            sqlComando.Parameters.Add("@producto", MySqlDbType.Int64).Value = Me.idProducto
+            sqlComando.Parameters.Add("@cantidad", MySqlDbType.Int64).Value = Me.cantidad
+            capaDatos.cargarDatos(sqlComando)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Productos")
+
+        End Try
+    End Sub
+    Public Sub agregarAlStock()
+        Try
+            Dim consultaSQL As String = "UPDATE productos SET cantidad = (cantidad + @cantidad) WHERE idProducto = @producto"
+            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+            sqlComando.Parameters.Add("@producto", MySqlDbType.Int64).Value = Me.idProducto
+            sqlComando.Parameters.Add("@cantidad", MySqlDbType.Int64).Value = Me.cantidad
+            capaDatos.cargarDatos(sqlComando)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Productos")
+
+        End Try
+    End Sub
 #End Region
 End Class

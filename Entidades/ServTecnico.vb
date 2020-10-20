@@ -111,13 +111,54 @@ Public Class ServTecnico
             Return _entregado
         End Get
     End Property
-
+    Private _nombreEstado As String
+    Public Property nombreEstado As String
+        Set(value As String)
+            _nombreEstado = value
+        End Set
+        Get
+            Return _nombreEstado
+        End Get
+    End Property
+    Private _notaTecnico As String
+    Public Property notaTecnico As String
+        Set(value As String)
+            _notaTecnico = value
+        End Set
+        Get
+            Return _notaTecnico
+        End Get
+    End Property
 #End Region
 #Region "Metodos"
     Public Sub traerReparaciones(ByVal tabla As DataTable, ByRef id As UInt16)
         Try
             Dim consultaSQL As String = "CALL procedimiento_servtecnico(" & id & ")"
             capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+        End Try
+    End Sub
+    Public Sub detalleReparacion()
+        Try
+            Dim tabla As New DataTable
+            Dim consultaSQL As String = "SELECT clientes.nombreApel, estado.nombreEstado, accesorios, descripcion, notaTecnico FROM serviciotecnico JOIN clientes ON serviciotecnico.cliente = clientes.idcliente JOIN estado ON estado.id = serviciotecnico.estado WHERE idReparacion = '" & _idReparacion & "'"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+            _nombreCliente = tabla.Rows(0).Item("nombreApel").ToString
+            _nombreEstado = tabla.Rows(0).Item("nombreEstado").ToString
+            _accesorios = tabla.Rows(0).Item("accesorios").ToString
+            _descripcion = tabla.Rows(0).Item("descripcion").ToString
+            _notaTecnico = tabla.Rows(0).Item("notaTecnico").ToString
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+        End Try
+    End Sub
+    Public Sub verNotaTecnico()
+        Try
+            Dim tabla As New DataTable
+            Dim consultaSQL As String = "SELECT notaTecnico FROM serviciotecnico WHERE idReparacion = '" & _idReparacion & "'"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+            _notaTecnico = tabla.Rows(0).Item("notaTecnico").ToString
         Catch ex As Exception
             MsgBox(ex.Message, "Servicio Técnico")
         End Try
@@ -130,7 +171,7 @@ Public Class ServTecnico
             MsgBox(ex.Message, "Servicio Técnico")
         End Try
     End Sub
-    Public Sub estadoArticulo(ByRef tabla As DataTable)
+    Public Sub estadoReparacion(ByRef tabla As DataTable)
         Try
             Dim consultaSQL As String = "SELECT * FROM estado WHERE activo = 1"
             capaDatos.llenarDatos(tabla, consultaSQL)
@@ -138,6 +179,7 @@ Public Class ServTecnico
             MsgBox(ex.Message, "Servicio Técnico")
         End Try
     End Sub
+
     Public Function nuevaReparacion()
         Try
             Dim consultaSQL As String = "INSERT INTO serviciotecnico(cliente, tipo, marca, modelo, accesorios, descripcion, fechaRecep, fechaLimite, estado, activo) VALUES (@idCliente,@tipo,@marca, @modelo,@accesorios,@descripcion,@fechaRecep,@fechaLimite,@estado,'1')"
@@ -193,6 +235,20 @@ Public Class ServTecnico
             sqlcomando.Parameters.Add("@fechaRecep", MySqlDbType.Date).Value = Me.fechaRecep
             sqlcomando.Parameters.Add("@fechaLimite", MySqlDbType.Date).Value = Me.fechaLimite
             sqlcomando.Parameters.Add("@idEstado", MySqlDbType.UInt64).Value = Me.idEstado
+            capaDatos.cargarDatos(sqlcomando)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Cliente")
+            Return False
+        End Try
+    End Function
+    Public Function cambiarEstado()
+        Try
+            Dim comandoSQL As String = "UPDATE serviciotecnico SET estado = @estado, notaTecnico = @notaTecnico WHERE idReparacion = @idReparacion"
+            Dim sqlcomando As MySqlCommand = New MySqlCommand(comandoSQL)
+            sqlcomando.Parameters.Add("@idReparacion", MySqlDbType.UInt64).Value = Me.idReparacion
+            sqlcomando.Parameters.Add("@estado", MySqlDbType.UInt64).Value = Me.idEstado
+            sqlcomando.Parameters.Add("@notaTecnico", MySqlDbType.VarChar).Value = Me.notaTecnico
             capaDatos.cargarDatos(sqlcomando)
             Return True
         Catch ex As Exception

@@ -113,5 +113,16 @@ WindowsApp1
 Puse esta porcion de codigo en un procedimiento ya que quiero que se ejecute lo mismo al realizar dos acciones. Al presionar enter se ejecutaria esto, y al darle al boton agregar con el mouse
  </summary>
 </member>
+<member name="M:WindowsApp1.frmMovimientoDeStock.#ctor(System.UInt16)">
+ <summary>
+ Paso el parametro de la cantidad de un producto que hay en stock hacia el formulario cantida, para poder establecer una validacion a la hora de que el usuario introduzca la cantidad que desea vender. Si es mas de la que hay en stock va a salir un mensaje de error
+ </summary>
+ <param name="cantidadProducto">Cantidad de productos en stock</param>
+</member>
+<member name="M:WindowsApp1.frmMovimientoDeStock.aceptar">
+ <summary>
+Puse esta porcion de codigo en un procedimiento ya que quiero que se ejecute lo mismo al realizar dos acciones. Al presionar enter se ejecutaria esto, y al darle al boton agregar con el mouse
+ </summary>
+</member>
 </members>
 </doc>

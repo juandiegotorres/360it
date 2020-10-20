@@ -271,7 +271,7 @@ Partial Class frmNuevaReparacion
         Me.dtEntrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtEntrega.Location = New System.Drawing.Point(192, 420)
         Me.dtEntrega.Name = "dtEntrega"
-        Me.dtEntrega.Size = New System.Drawing.Size(159, 31)
+        Me.dtEntrega.Size = New System.Drawing.Size(157, 31)
         Me.dtEntrega.TabIndex = 7
         '
         'Label6
@@ -302,7 +302,7 @@ Partial Class frmNuevaReparacion
         Me.dtRecepcion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtRecepcion.Location = New System.Drawing.Point(190, 360)
         Me.dtRecepcion.Name = "dtRecepcion"
-        Me.dtRecepcion.Size = New System.Drawing.Size(161, 31)
+        Me.dtRecepcion.Size = New System.Drawing.Size(159, 31)
         Me.dtRecepcion.TabIndex = 6
         '
         'Label1
