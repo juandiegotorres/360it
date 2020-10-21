@@ -24,40 +24,40 @@ Partial Class frmPrincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnWEB = New System.Windows.Forms.Button()
         Me.panelCost = New System.Windows.Forms.Panel()
+        Me.btnProveedores = New System.Windows.Forms.Button()
+        Me.btnNotas = New System.Windows.Forms.Button()
+        Me.btnServTecnico = New System.Windows.Forms.Button()
+        Me.btnProductos = New System.Windows.Forms.Button()
+        Me.btnClientes = New System.Windows.Forms.Button()
+        Me.pnlSubMenuVentas = New System.Windows.Forms.Panel()
+        Me.btnHistorialVentas = New System.Windows.Forms.Button()
+        Me.btnCaja = New System.Windows.Forms.Button()
+        Me.btnCuentaCorriente = New System.Windows.Forms.Button()
+        Me.btnVender = New System.Windows.Forms.Button()
+        Me.btnVentas = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnWEB = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCuentaCorriente = New System.Windows.Forms.Button()
-        Me.btnServTecnico = New System.Windows.Forms.Button()
-        Me.btnProveedores = New System.Windows.Forms.Button()
-        Me.btnStock = New System.Windows.Forms.Button()
-        Me.btnCuentas = New System.Windows.Forms.Button()
-        Me.btnClientes = New System.Windows.Forms.Button()
-        Me.btnVentas = New System.Windows.Forms.Button()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnAgrandar = New System.Windows.Forms.PictureBox()
         Me.btnAchicar = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        Me.pnlSubMenuVentas.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlContenedor.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnAgrandar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnAchicar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,92 +65,234 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnCuentaCorriente)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.btnServTecnico)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnWEB)
         Me.Panel1.Controls.Add(Me.panelCost)
         Me.Panel1.Controls.Add(Me.btnProveedores)
-        Me.Panel1.Controls.Add(Me.btnStock)
-        Me.Panel1.Controls.Add(Me.btnCuentas)
+        Me.Panel1.Controls.Add(Me.btnNotas)
+        Me.Panel1.Controls.Add(Me.btnServTecnico)
+        Me.Panel1.Controls.Add(Me.btnProductos)
         Me.Panel1.Controls.Add(Me.btnClientes)
+        Me.Panel1.Controls.Add(Me.pnlSubMenuVentas)
         Me.Panel1.Controls.Add(Me.btnVentas)
+        Me.Panel1.Controls.Add(Me.Panel5)
+        Me.Panel1.Controls.Add(Me.btnWEB)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(209, 703)
         Me.Panel1.TabIndex = 0
         '
-        'Label5
+        'panelCost
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(183, 235)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(19, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "F4"
+        Me.panelCost.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.panelCost.Location = New System.Drawing.Point(0, 101)
+        Me.panelCost.Name = "panelCost"
+        Me.panelCost.Size = New System.Drawing.Size(8, 45)
+        Me.panelCost.TabIndex = 31
+        Me.panelCost.Visible = False
         '
-        'Label7
+        'btnProveedores
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(183, 332)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(19, 13)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "F6"
+        Me.btnProveedores.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnProveedores.FlatAppearance.BorderSize = 0
+        Me.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProveedores.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProveedores.ForeColor = System.Drawing.Color.White
+        Me.btnProveedores.Image = Global.WindowsApp1.My.Resources.Resources.baseline_local_shipping_white_18dp
+        Me.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnProveedores.Location = New System.Drawing.Point(0, 488)
+        Me.btnProveedores.Name = "btnProveedores"
+        Me.btnProveedores.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnProveedores.Size = New System.Drawing.Size(209, 45)
+        Me.btnProveedores.TabIndex = 35
+        Me.btnProveedores.Text = "     Proveedores"
+        Me.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnProveedores.UseVisualStyleBackColor = True
         '
-        'Label6
+        'btnNotas
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(183, 282)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(19, 13)
-        Me.Label6.TabIndex = 9
-        Me.Label6.Text = "F5"
+        Me.btnNotas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnNotas.FlatAppearance.BorderSize = 0
+        Me.btnNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNotas.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNotas.ForeColor = System.Drawing.Color.White
+        Me.btnNotas.Image = Global.WindowsApp1.My.Resources.Resources.baseline_comment_white_18dp
+        Me.btnNotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNotas.Location = New System.Drawing.Point(0, 443)
+        Me.btnNotas.Name = "btnNotas"
+        Me.btnNotas.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnNotas.Size = New System.Drawing.Size(209, 45)
+        Me.btnNotas.TabIndex = 42
+        Me.btnNotas.Text = "     Notas"
+        Me.btnNotas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNotas.UseVisualStyleBackColor = True
         '
-        'Label4
+        'btnServTecnico
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(183, 188)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(19, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "F3"
+        Me.btnServTecnico.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnServTecnico.FlatAppearance.BorderSize = 0
+        Me.btnServTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnServTecnico.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnServTecnico.ForeColor = System.Drawing.Color.White
+        Me.btnServTecnico.Image = CType(resources.GetObject("btnServTecnico.Image"), System.Drawing.Image)
+        Me.btnServTecnico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnServTecnico.Location = New System.Drawing.Point(0, 398)
+        Me.btnServTecnico.Name = "btnServTecnico"
+        Me.btnServTecnico.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnServTecnico.Size = New System.Drawing.Size(209, 45)
+        Me.btnServTecnico.TabIndex = 41
+        Me.btnServTecnico.Text = "     Serv. Técnico"
+        Me.btnServTecnico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnServTecnico.UseVisualStyleBackColor = True
         '
-        'Label3
+        'btnProductos
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(183, 138)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(19, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "F2"
+        Me.btnProductos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnProductos.FlatAppearance.BorderSize = 0
+        Me.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProductos.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProductos.ForeColor = System.Drawing.Color.White
+        Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
+        Me.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnProductos.Location = New System.Drawing.Point(0, 353)
+        Me.btnProductos.Name = "btnProductos"
+        Me.btnProductos.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnProductos.Size = New System.Drawing.Size(209, 45)
+        Me.btnProductos.TabIndex = 36
+        Me.btnProductos.Text = "     Productos"
+        Me.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnProductos.UseVisualStyleBackColor = True
         '
-        'Label2
+        'btnClientes
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(183, 88)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(19, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "F1"
+        Me.btnClientes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnClientes.FlatAppearance.BorderSize = 0
+        Me.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClientes.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClientes.ForeColor = System.Drawing.Color.White
+        Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
+        Me.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnClientes.Location = New System.Drawing.Point(0, 308)
+        Me.btnClientes.Name = "btnClientes"
+        Me.btnClientes.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnClientes.Size = New System.Drawing.Size(209, 45)
+        Me.btnClientes.TabIndex = 33
+        Me.btnClientes.Text = "     Clientes"
+        Me.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClientes.UseVisualStyleBackColor = True
+        '
+        'pnlSubMenuVentas
+        '
+        Me.pnlSubMenuVentas.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.pnlSubMenuVentas.Controls.Add(Me.btnHistorialVentas)
+        Me.pnlSubMenuVentas.Controls.Add(Me.btnCaja)
+        Me.pnlSubMenuVentas.Controls.Add(Me.btnCuentaCorriente)
+        Me.pnlSubMenuVentas.Controls.Add(Me.btnVender)
+        Me.pnlSubMenuVentas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlSubMenuVentas.Location = New System.Drawing.Point(0, 146)
+        Me.pnlSubMenuVentas.Margin = New System.Windows.Forms.Padding(0)
+        Me.pnlSubMenuVentas.Name = "pnlSubMenuVentas"
+        Me.pnlSubMenuVentas.Padding = New System.Windows.Forms.Padding(28, 0, 0, 0)
+        Me.pnlSubMenuVentas.Size = New System.Drawing.Size(209, 162)
+        Me.pnlSubMenuVentas.TabIndex = 32
+        Me.pnlSubMenuVentas.Visible = False
+        '
+        'btnHistorialVentas
+        '
+        Me.btnHistorialVentas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnHistorialVentas.FlatAppearance.BorderSize = 0
+        Me.btnHistorialVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHistorialVentas.Font = New System.Drawing.Font("Poppins", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistorialVentas.ForeColor = System.Drawing.Color.White
+        Me.btnHistorialVentas.Image = Global.WindowsApp1.My.Resources.Resources.baseline_history_white_18dpx28
+        Me.btnHistorialVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnHistorialVentas.Location = New System.Drawing.Point(28, 120)
+        Me.btnHistorialVentas.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.btnHistorialVentas.Name = "btnHistorialVentas"
+        Me.btnHistorialVentas.Size = New System.Drawing.Size(181, 40)
+        Me.btnHistorialVentas.TabIndex = 32
+        Me.btnHistorialVentas.Text = "     Historial"
+        Me.btnHistorialVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnHistorialVentas.UseVisualStyleBackColor = True
+        '
+        'btnCaja
+        '
+        Me.btnCaja.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCaja.FlatAppearance.BorderSize = 0
+        Me.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCaja.Font = New System.Drawing.Font("Poppins", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCaja.ForeColor = System.Drawing.Color.White
+        Me.btnCaja.Image = Global.WindowsApp1.My.Resources.Resources.caja36dpx28
+        Me.btnCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCaja.Location = New System.Drawing.Point(28, 80)
+        Me.btnCaja.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.btnCaja.Name = "btnCaja"
+        Me.btnCaja.Size = New System.Drawing.Size(181, 40)
+        Me.btnCaja.TabIndex = 36
+        Me.btnCaja.Text = "     Caja"
+        Me.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCaja.UseVisualStyleBackColor = True
+        '
+        'btnCuentaCorriente
+        '
+        Me.btnCuentaCorriente.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCuentaCorriente.FlatAppearance.BorderSize = 0
+        Me.btnCuentaCorriente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCuentaCorriente.Font = New System.Drawing.Font("Poppins", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCuentaCorriente.ForeColor = System.Drawing.Color.White
+        Me.btnCuentaCorriente.Image = Global.WindowsApp1.My.Resources.Resources.ctacorriente36dpx28
+        Me.btnCuentaCorriente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCuentaCorriente.Location = New System.Drawing.Point(28, 40)
+        Me.btnCuentaCorriente.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.btnCuentaCorriente.Name = "btnCuentaCorriente"
+        Me.btnCuentaCorriente.Size = New System.Drawing.Size(181, 40)
+        Me.btnCuentaCorriente.TabIndex = 31
+        Me.btnCuentaCorriente.Text = "     Ctas. Corriente"
+        Me.btnCuentaCorriente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCuentaCorriente.UseVisualStyleBackColor = True
+        '
+        'btnVender
+        '
+        Me.btnVender.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnVender.FlatAppearance.BorderSize = 0
+        Me.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVender.Font = New System.Drawing.Font("Poppins", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVender.ForeColor = System.Drawing.Color.White
+        Me.btnVender.Image = Global.WindowsApp1.My.Resources.Resources.vender36dpx28
+        Me.btnVender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVender.Location = New System.Drawing.Point(28, 0)
+        Me.btnVender.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.btnVender.Name = "btnVender"
+        Me.btnVender.Size = New System.Drawing.Size(181, 40)
+        Me.btnVender.TabIndex = 30
+        Me.btnVender.Text = "     Vender"
+        Me.btnVender.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnVender.UseVisualStyleBackColor = True
+        '
+        'btnVentas
+        '
+        Me.btnVentas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnVentas.FlatAppearance.BorderSize = 0
+        Me.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVentas.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVentas.ForeColor = System.Drawing.Color.White
+        Me.btnVentas.Image = CType(resources.GetObject("btnVentas.Image"), System.Drawing.Image)
+        Me.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVentas.Location = New System.Drawing.Point(0, 101)
+        Me.btnVentas.Name = "btnVentas"
+        Me.btnVentas.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnVentas.Size = New System.Drawing.Size(209, 45)
+        Me.btnVentas.TabIndex = 29
+        Me.btnVentas.Text = "     Ventas"
+        Me.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnVentas.UseVisualStyleBackColor = True
+        '
+        'Panel5
+        '
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(209, 101)
+        Me.Panel5.TabIndex = 6
         '
         'btnWEB
         '
@@ -163,15 +305,6 @@ Partial Class frmPrincipal
         Me.btnWEB.TabIndex = 5
         Me.btnWEB.Text = "WEB"
         Me.btnWEB.UseVisualStyleBackColor = True
-        '
-        'panelCost
-        '
-        Me.panelCost.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.panelCost.Location = New System.Drawing.Point(2, 57)
-        Me.panelCost.Name = "panelCost"
-        Me.panelCost.Size = New System.Drawing.Size(8, 44)
-        Me.panelCost.TabIndex = 3
-        Me.panelCost.Visible = False
         '
         'Panel2
         '
@@ -200,6 +333,16 @@ Partial Class frmPrincipal
         Me.Panel4.Size = New System.Drawing.Size(100, 54)
         Me.Panel4.TabIndex = 2
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -222,6 +365,19 @@ Partial Class frmPrincipal
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(1025, 650)
         Me.pnlContenedor.TabIndex = 5
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(209, 114)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(613, 282)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
         '
         'btnMinimizar
         '
@@ -248,141 +404,6 @@ Partial Class frmPrincipal
         Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnCerrar.TabIndex = 6
         Me.btnCerrar.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 1)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
-        '
-        'btnCuentaCorriente
-        '
-        Me.btnCuentaCorriente.FlatAppearance.BorderSize = 0
-        Me.btnCuentaCorriente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCuentaCorriente.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCuentaCorriente.ForeColor = System.Drawing.Color.White
-        Me.btnCuentaCorriente.Image = Global.WindowsApp1.My.Resources.Resources.baseline_request_quote_white_18dp
-        Me.btnCuentaCorriente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCuentaCorriente.Location = New System.Drawing.Point(5, 351)
-        Me.btnCuentaCorriente.Name = "btnCuentaCorriente"
-        Me.btnCuentaCorriente.Size = New System.Drawing.Size(189, 44)
-        Me.btnCuentaCorriente.TabIndex = 12
-        Me.btnCuentaCorriente.Text = "     Cta Corriente"
-        Me.btnCuentaCorriente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCuentaCorriente.UseVisualStyleBackColor = True
-        '
-        'btnServTecnico
-        '
-        Me.btnServTecnico.FlatAppearance.BorderSize = 0
-        Me.btnServTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnServTecnico.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnServTecnico.ForeColor = System.Drawing.Color.White
-        Me.btnServTecnico.Image = CType(resources.GetObject("btnServTecnico.Image"), System.Drawing.Image)
-        Me.btnServTecnico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnServTecnico.Location = New System.Drawing.Point(5, 204)
-        Me.btnServTecnico.Name = "btnServTecnico"
-        Me.btnServTecnico.Size = New System.Drawing.Size(189, 44)
-        Me.btnServTecnico.TabIndex = 10
-        Me.btnServTecnico.Text = "     Serv. Técnico"
-        Me.btnServTecnico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnServTecnico.UseVisualStyleBackColor = True
-        '
-        'btnProveedores
-        '
-        Me.btnProveedores.FlatAppearance.BorderSize = 0
-        Me.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProveedores.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProveedores.ForeColor = System.Drawing.Color.White
-        Me.btnProveedores.Image = CType(resources.GetObject("btnProveedores.Image"), System.Drawing.Image)
-        Me.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnProveedores.Location = New System.Drawing.Point(5, 301)
-        Me.btnProveedores.Name = "btnProveedores"
-        Me.btnProveedores.Size = New System.Drawing.Size(189, 44)
-        Me.btnProveedores.TabIndex = 0
-        Me.btnProveedores.Text = "     Proveedores"
-        Me.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnProveedores.UseVisualStyleBackColor = True
-        '
-        'btnStock
-        '
-        Me.btnStock.FlatAppearance.BorderSize = 0
-        Me.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnStock.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStock.ForeColor = System.Drawing.Color.White
-        Me.btnStock.Image = CType(resources.GetObject("btnStock.Image"), System.Drawing.Image)
-        Me.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnStock.Location = New System.Drawing.Point(5, 251)
-        Me.btnStock.Name = "btnStock"
-        Me.btnStock.Size = New System.Drawing.Size(189, 44)
-        Me.btnStock.TabIndex = 0
-        Me.btnStock.Text = "     Stock"
-        Me.btnStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnStock.UseVisualStyleBackColor = True
-        '
-        'btnCuentas
-        '
-        Me.btnCuentas.FlatAppearance.BorderSize = 0
-        Me.btnCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCuentas.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCuentas.ForeColor = System.Drawing.Color.White
-        Me.btnCuentas.Image = CType(resources.GetObject("btnCuentas.Image"), System.Drawing.Image)
-        Me.btnCuentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCuentas.Location = New System.Drawing.Point(5, 157)
-        Me.btnCuentas.Name = "btnCuentas"
-        Me.btnCuentas.Size = New System.Drawing.Size(189, 44)
-        Me.btnCuentas.TabIndex = 0
-        Me.btnCuentas.Text = "     Facturación"
-        Me.btnCuentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCuentas.UseVisualStyleBackColor = True
-        '
-        'btnClientes
-        '
-        Me.btnClientes.FlatAppearance.BorderSize = 0
-        Me.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClientes.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClientes.ForeColor = System.Drawing.Color.White
-        Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
-        Me.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnClientes.Location = New System.Drawing.Point(5, 107)
-        Me.btnClientes.Name = "btnClientes"
-        Me.btnClientes.Size = New System.Drawing.Size(189, 44)
-        Me.btnClientes.TabIndex = 0
-        Me.btnClientes.Text = "     Clientes"
-        Me.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnClientes.UseVisualStyleBackColor = True
-        '
-        'btnVentas
-        '
-        Me.btnVentas.FlatAppearance.BorderSize = 0
-        Me.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVentas.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVentas.ForeColor = System.Drawing.Color.White
-        Me.btnVentas.Image = CType(resources.GetObject("btnVentas.Image"), System.Drawing.Image)
-        Me.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnVentas.Location = New System.Drawing.Point(5, 57)
-        Me.btnVentas.Name = "btnVentas"
-        Me.btnVentas.Size = New System.Drawing.Size(189, 44)
-        Me.btnVentas.TabIndex = 0
-        Me.btnVentas.Text = "     Ventas"
-        Me.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnVentas.UseVisualStyleBackColor = True
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(209, 114)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(613, 282)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
         '
         'btnAgrandar
         '
@@ -415,6 +436,7 @@ Partial Class frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1234, 703)
         Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.btnCerrar)
@@ -434,14 +456,14 @@ Partial Class frmPrincipal
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.pnlSubMenuVentas.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlContenedor.ResumeLayout(False)
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnAgrandar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnAchicar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -453,27 +475,26 @@ Partial Class frmPrincipal
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btnVentas As Button
-    Friend WithEvents btnProveedores As Button
-    Friend WithEvents btnStock As Button
-    Friend WithEvents btnCuentas As Button
-    Friend WithEvents btnClientes As Button
-    Friend WithEvents panelCost As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnWEB As Button
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents btnServTecnico As Button
     Friend WithEvents btnCerrar As PictureBox
     Friend WithEvents btnAgrandar As PictureBox
     Friend WithEvents btnAchicar As PictureBox
     Friend WithEvents btnMinimizar As PictureBox
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents pnlSubMenuVentas As Panel
+    Friend WithEvents btnHistorialVentas As Button
+    Friend WithEvents btnCaja As Button
+    Friend WithEvents btnVender As Button
+    Friend WithEvents panelCost As Panel
+    Friend WithEvents btnVentas As Button
     Friend WithEvents btnCuentaCorriente As Button
+    Friend WithEvents btnClientes As Button
+    Friend WithEvents btnServTecnico As Button
+    Friend WithEvents btnProveedores As Button
+    Friend WithEvents btnProductos As Button
+    Friend WithEvents btnNotas As Button
 End Class

@@ -106,34 +106,34 @@
     <Compile Include="Cuentas\frmCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\Form1.Designer.vb">
+    <Compile Include="Vender\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\Form1.vb">
+    <Compile Include="Vender\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\frmCargarCuentaCorriente.Designer.vb">
+    <Compile Include="Vender\frmCargarCuentaCorriente.Designer.vb">
       <DependentUpon>frmCargarCuentaCorriente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\frmCargarCuentaCorriente.vb">
+    <Compile Include="Vender\frmCargarCuentaCorriente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\frmFacturacion.Designer.vb">
-      <DependentUpon>frmFacturacion.vb</DependentUpon>
+    <Compile Include="Vender\frmVender.Designer.vb">
+      <DependentUpon>frmVender.vb</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\frmFacturacion.vb">
+    <Compile Include="Vender\frmVender.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\frmCantidad.Designer.vb">
+    <Compile Include="Vender\frmCantidad.Designer.vb">
       <DependentUpon>frmCantidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\frmCantidad.vb">
+    <Compile Include="Vender\frmCantidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\frmVentaRealizada.Designer.vb">
+    <Compile Include="Vender\frmVentaRealizada.Designer.vb">
       <DependentUpon>frmVentaRealizada.vb</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\frmVentaRealizada.vb">
+    <Compile Include="Vender\frmVentaRealizada.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Localidades\frmLocalidades.Designer.vb">
@@ -260,19 +260,19 @@
     <EmbeddedResource Include="Cuentas\frmCuentas.resx">
       <DependentUpon>frmCuentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturacion\Form1.resx">
+    <EmbeddedResource Include="Vender\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturacion\frmCargarCuentaCorriente.resx">
+    <EmbeddedResource Include="Vender\frmCargarCuentaCorriente.resx">
       <DependentUpon>frmCargarCuentaCorriente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturacion\frmFacturacion.resx">
-      <DependentUpon>frmFacturacion.vb</DependentUpon>
+    <EmbeddedResource Include="Vender\frmVender.resx">
+      <DependentUpon>frmVender.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturacion\frmCantidad.resx">
+    <EmbeddedResource Include="Vender\frmCantidad.resx">
       <DependentUpon>frmCantidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturacion\frmVentaRealizada.resx">
+    <EmbeddedResource Include="Vender\frmVentaRealizada.resx">
       <DependentUpon>frmVentaRealizada.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Localidades\frmLocalidades.resx">
@@ -392,6 +392,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico" />
+    <None Include="Resources\baseline_comment_white_18dp.png" />
+    <None Include="Resources\baseline_local_shipping_white_18dp.png" />
+    <None Include="Resources\vender36dpx28.png" />
+    <None Include="Resources\caja36dpx28.png" />
+    <None Include="Resources\ctacorriente36dpx28.png" />
+    <None Include="Resources\baseline_request_page_white_18dp.png" />
+    <None Include="Resources\ctacorriente_18dpx28.png" />
+    <None Include="Resources\baseline_history_white_18dpx28.png" />
     <None Include="Resources\baseline_request_quote_white_18dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

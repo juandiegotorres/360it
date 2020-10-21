@@ -1,4 +1,4 @@
-﻿Public Class frmFacturacion
+﻿Public Class frmVender
 
     'Instancio la clae ventas
     Public eVenta As New Entidades.Venta

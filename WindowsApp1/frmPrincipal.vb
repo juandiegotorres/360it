@@ -39,45 +39,45 @@ Public Class frmPrincipal
         End With
 
     End Sub
-    Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
-        panelCost.Height = btnClientes.Height
-        panelCost.Top = btnClientes.Top
-        abrirForm(frmClientes)
-    End Sub
-    Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
-        panelCost.Visible = True
-        panelCost.Height = btnVentas.Height
-        panelCost.Top = btnVentas.Top
-        abrirForm(frmHistorialVentas)
-    End Sub
+    'Private Sub btnClientes_Click(sender As Object, e As EventArgs)
+    '    panelCost.Height = btnClientes.Height
+    '    panelCost.Top = btnClientes.Top
+    '    abrirForm(frmClientes)
+    'End Sub
+    'Private Sub btnVentas_Click(sender As Object, e As EventArgs)
+    '    panelCost.Visible = True
+    '    panelCost.Height = btnVentas.Height
+    '    panelCost.Top = btnVentas.Top
+    '    abrirForm(frmHistorialVentas)
+    'End Sub
 
 
-    Private Sub btnCuentas_Click(sender As Object, e As EventArgs) Handles btnCuentas.Click
-        panelCost.Visible = True
-        panelCost.Height = btnCuentas.Height
-        panelCost.Top = btnCuentas.Top
-        abrirForm(frmFacturacion)
-    End Sub
+    'Private Sub btnCuentas_Click(sender As Object, e As EventArgs)
+    '    panelCost.Visible = True
+    '    panelCost.Height = btnCuentas.Height
+    '    panelCost.Top = btnCuentas.Top
+    '    abrirForm(frmFacturacion)
+    'End Sub
 
-    Private Sub btnStock_Click(sender As Object, e As EventArgs) Handles btnStock.Click
-        panelCost.Visible = True
-        panelCost.Height = btnStock.Height
-        panelCost.Top = btnStock.Top
-        abrirForm(frmProductos)
-    End Sub
+    'Private Sub btnProductos_Click(sender As Object, e As EventArgs)
+    '    panelCost.Visible = True
+    '    panelCost.Height = btnProductos.Height
+    '    panelCost.Top = btnProductos.Top
+    '    abrirForm(frmProductos)
+    'End Sub
 
-    Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
-        panelCost.Visible = True
-        panelCost.Height = btnProveedores.Height
-        panelCost.Top = btnProveedores.Top
-        abrirForm(frmProveedores)
-    End Sub
-    Private Sub btnServTecnico_Click(sender As Object, e As EventArgs) Handles btnServTecnico.Click
-        panelCost.Visible = True
-        panelCost.Height = btnServTecnico.Height
-        panelCost.Top = btnServTecnico.Top
-        abrirForm(frmServTecnico)
-    End Sub
+    'Private Sub btnProveedores_Click(sender As Object, e As EventArgs)
+    '    panelCost.Visible = True
+    '    panelCost.Height = btnProveedores.Height
+    '    panelCost.Top = btnProveedores.Top
+    '    abrirForm(frmProveedores)
+    'End Sub
+    'Private Sub btnServTecnico_Click(sender As Object, e As EventArgs)
+    '    panelCost.Visible = True
+    '    panelCost.Height = btnServTecnico.Height
+    '    panelCost.Top = btnServTecnico.Top
+    '    abrirForm(frmServTecnico)
+    'End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Maximized
@@ -90,15 +90,19 @@ Public Class frmPrincipal
     Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
             Case Keys.F1
-                Call btnVentas_Click(btnVentas, e)
+               ' Call btnVentas_Click(btnVentas, e)
             Case Keys.F2
-                Call btnClientes_Click(btnClientes, e)
+               ' Call btnClientes_Click(btnClientes, e)
             Case Keys.F3
-                Call btnCuentas_Click(btnCuentas, e)
+                'Call btnCuentas_Click(btnCuentas, e)
             Case Keys.F4
-                Call btnStock_Click(btnStock, e)
+                'Call btnServTecnico_Click(btnServTecnico, e)
             Case Keys.F5
-                Call btnProveedores_Click(btnProveedores, e)
+                'Call btnProductos_Click(btnProductos, e)
+            Case Keys.F6
+                'Call btnProveedores_Click(btnProveedores, e)
+            Case Keys.F7
+                Call btnCuentaCorriente_Click(btnCuentaCorriente, e)
             Case Keys.Escape
                 Call btnCerrar_Click(btnCerrar, e)
         End Select
@@ -144,10 +148,96 @@ Public Class frmPrincipal
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
+    Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs)
         panelCost.Visible = True
         panelCost.Height = btnCuentaCorriente.Height
         panelCost.Top = btnCuentaCorriente.Top
         abrirForm(frmCuentasCorriente)
+    End Sub
+
+    Private Sub customizarDesign()
+        pnlSubMenuVentas.Visible = False
+    End Sub
+
+    Private Sub btnVentas_Click_1(sender As Object, e As EventArgs) Handles btnVentas.Click
+        panelCost.Visible = True
+        panelCost.Height = btnVentas.Height
+        panelCost.Top = btnVentas.Top
+        If pnlSubMenuVentas.Visible = True Then
+            pnlSubMenuVentas.Visible = False
+        Else
+            pnlSubMenuVentas.Visible = True
+        End If
+    End Sub
+
+    Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
+        panelCost.Visible = True
+        panelCost.Height = btnVentas.Height
+        panelCost.Top = btnVentas.Top
+        btnVender.BackColor = Color.Orange
+        setColor(btnVender)
+        abrirForm(frmVender)
+    End Sub
+    Private Sub btnCuentaCorriente_Click_1(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
+        panelCost.Visible = True
+        panelCost.Height = btnVentas.Height
+        panelCost.Top = btnVentas.Top
+        setColor(btnCuentaCorriente)
+        abrirForm(frmCuentasCorriente)
+    End Sub
+    Private Sub btnCaja_Click(sender As Object, e As EventArgs) Handles btnCaja.Click
+        panelCost.Visible = True
+        panelCost.Height = btnVentas.Height
+        panelCost.Top = btnVentas.Top
+        'abrirForm()
+        setColor(btnCaja)
+    End Sub
+
+    Private Sub btnHistorialVentas_Click(sender As Object, e As EventArgs) Handles btnHistorialVentas.Click
+        panelCost.Visible = True
+        panelCost.Height = btnVentas.Height
+        panelCost.Top = btnVentas.Top
+        setColor(btnHistorialVentas)
+        abrirForm(frmHistorialVentas)
+    End Sub
+
+    Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+        panelCost.Visible = True
+        panelCost.Height = btnClientes.Height
+        panelCost.Top = btnClientes.Top
+        abrirForm(frmClientes)
+    End Sub
+    Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
+        panelCost.Visible = True
+        panelCost.Height = btnProductos.Height
+        panelCost.Top = btnProductos.Top
+        abrirForm(frmProductos)
+    End Sub
+
+    Private Sub btnServTecnico_Click(sender As Object, e As EventArgs) Handles btnServTecnico.Click
+        panelCost.Visible = True
+        panelCost.Height = btnServTecnico.Height
+        panelCost.Top = btnServTecnico.Top
+        abrirForm(frmServTecnico)
+    End Sub
+    Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+        panelCost.Visible = True
+        panelCost.Height = btnProveedores.Height
+        panelCost.Top = btnProveedores.Top
+        abrirForm(frmProveedores)
+    End Sub
+    Public Sub setColor(ByVal boton As Button)
+        Dim btn As Button
+        For Each btn In pnlSubMenuVentas.Controls
+            btn.BackColor = Color.FromArgb(100, 100, 100)
+        Next
+        boton.BackColor = Color.FromArgb(255, 156, 0)
+    End Sub
+
+    Private Sub panelCost_LocationChanged(sender As Object, e As EventArgs) Handles panelCost.LocationChanged
+        Dim btn As Button
+        For Each btn In pnlSubMenuVentas.Controls
+            btn.BackColor = Color.FromArgb(100, 100, 100)
+        Next
     End Sub
 End Class

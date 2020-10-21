@@ -19,7 +19,7 @@
         dgvProductos.DataSource = bsProductos
     End Sub
 
-    Private Sub btnAgregar_Click_2(sender As Object, e As EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click_2(sender As Object, e As EventArgs)
         frmPrincipal.Hide()
         Dim nuevoProducto As New frmNuevoProducto
         nuevoProducto.ShowDialog()
@@ -29,7 +29,7 @@
         End If
     End Sub
 
-    Private Sub btnBaja_Click(sender As Object, e As EventArgs) Handles btnBaja.Click
+    Private Sub btnBaja_Click(sender As Object, e As EventArgs)
         eProducto.idProducto = dgvProductos.CurrentRow.Cells("id").Value
         If MsgBox("¿Desea dar de baja este producto?", MsgBoxStyle.YesNo, "Productos") = MsgBoxResult.Yes Then
             eProducto.bajaProducto()
@@ -37,7 +37,7 @@
         End If
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs)
         Dim modificarProducto As New frmNuevoProducto
         modificarProducto.eProducto.idProducto = dgvProductos.CurrentRow.Cells("id").Value
         frmPrincipal.Hide()
