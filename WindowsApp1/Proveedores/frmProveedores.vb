@@ -19,9 +19,9 @@
 
         If producto = True Then
             picCerrar.Visible = True
-            btnAgregarSeleccionar.Text = "Aceptar"
+            ' btnAgregarSeleccionar.Text = "Aceptar"
             btnModificar.Visible = False
-            btnBajaCancelar.Text = "Cancelar"
+            ' btnBajaCancelar.Text = "Cancelar"
             pnlHeader.Visible = True
         End If
     End Sub
@@ -74,6 +74,19 @@
     'End Sub
 
 
+
+
+
+    Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        filtroBS = "nombreProveedor like '%" & txtBuscar.Text & "%'"
+        bsProveedores.Filter = filtroBS
+    End Sub
+
+    Private Sub dgvProveedores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick
+        eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idProveedor").Value
+        actualizarRubros()
+    End Sub
+
     Private Sub btnAgregarSeleccionar_Click(sender As Object, e As EventArgs) Handles btnAgregarSeleccionar.Click
         If producto = True Then
             If dgvProveedores.CurrentRow.Selected = False Then
@@ -93,20 +106,7 @@
         End If
     End Sub
 
-    Private Sub btnBajaCancelar_Click(sender As Object, e As EventArgs) Handles btnBajaCancelar.Click
-        If producto = True Then
-            Me.Close()
-            frmNuevoProducto.Show()
-        Else
-            If MsgBox("¿Desea dar de baja este proveedor?", MsgBoxStyle.YesNo, "Proveedores") = MsgBoxResult.Yes Then
-                eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
-                eProveedor.bajaProveedor()
-                actualizarProveedores()
-            End If
-        End If
-    End Sub
-
-    Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim modificarProveedor As New frmNuevoProveedor
         frmPrincipal.Hide()
         modificarProveedor.eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
@@ -120,13 +120,16 @@
         frmPrincipal.Show()
     End Sub
 
-    Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        filtroBS = "nombreProveedor like '%" & txtBuscar.Text & "%'"
-        bsProveedores.Filter = filtroBS
-    End Sub
-
-    Private Sub dgvProveedores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick
-        eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idProveedor").Value
-        actualizarRubros()
+    Private Sub btnBajaCancelar_Click(sender As Object, e As EventArgs) Handles btnBajaCancelar.Click
+        If producto = True Then
+            Me.Close()
+            frmNuevoProducto.Show()
+        Else
+            If MsgBox("¿Desea dar de baja este proveedor?", MsgBoxStyle.YesNo, "Proveedores") = MsgBoxResult.Yes Then
+                eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
+                eProveedor.bajaProveedor()
+                actualizarProveedores()
+            End If
+        End If
     End Sub
 End Class

@@ -189,7 +189,7 @@ Public Class frmPrincipal
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
-        'abrirForm()
+        abrirForm(frmCaja)
         setColor(btnCaja)
     End Sub
 

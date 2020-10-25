@@ -22,10 +22,8 @@ Partial Class frmCargarCuentaCorriente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCargarCuentaCorriente))
         Me.pnlHeader = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.txtNombreCliente = New System.Windows.Forms.TextBox()
@@ -36,11 +34,10 @@ Partial Class frmCargarCuentaCorriente
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.cbFormPago = New System.Windows.Forms.ComboBox()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.pnlHeader.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlHeader
@@ -61,30 +58,19 @@ Partial Class frmCargarCuentaCorriente
         Me.Panel3.Size = New System.Drawing.Size(75, 77)
         Me.Panel3.TabIndex = 2
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 38
-        Me.PictureBox1.TabStop = False
-        '
         'Label1
         '
-        Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(118, 15)
+        Me.Label1.Location = New System.Drawing.Point(0, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(307, 44)
+        Me.Label1.Size = New System.Drawing.Size(475, 44)
         Me.Label1.TabIndex = 39
         Me.Label1.Text = "Cuenta corriente"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnClientes
         '
-        Me.btnClientes.Location = New System.Drawing.Point(399, 88)
+        Me.btnClientes.Location = New System.Drawing.Point(399, 71)
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.Size = New System.Drawing.Size(56, 31)
         Me.btnClientes.TabIndex = 52
@@ -93,8 +79,9 @@ Partial Class frmCargarCuentaCorriente
         '
         'txtNombreCliente
         '
+        Me.txtNombreCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNombreCliente.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCliente.Location = New System.Drawing.Point(132, 88)
+        Me.txtNombreCliente.Location = New System.Drawing.Point(132, 71)
         Me.txtNombreCliente.MaxLength = 60
         Me.txtNombreCliente.Name = "txtNombreCliente"
         Me.txtNombreCliente.ReadOnly = True
@@ -105,7 +92,7 @@ Partial Class frmCargarCuentaCorriente
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(24, 91)
+        Me.Label4.Location = New System.Drawing.Point(24, 74)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(93, 26)
         Me.Label4.TabIndex = 51
@@ -113,8 +100,9 @@ Partial Class frmCargarCuentaCorriente
         '
         'txtCuotas
         '
+        Me.txtCuotas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCuotas.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCuotas.Location = New System.Drawing.Point(132, 144)
+        Me.txtCuotas.Location = New System.Drawing.Point(132, 127)
         Me.txtCuotas.MaxLength = 2
         Me.txtCuotas.Name = "txtCuotas"
         Me.txtCuotas.Size = New System.Drawing.Size(90, 31)
@@ -126,7 +114,7 @@ Partial Class frmCargarCuentaCorriente
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 147)
+        Me.Label2.Location = New System.Drawing.Point(24, 130)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(91, 26)
         Me.Label2.TabIndex = 54
@@ -134,8 +122,9 @@ Partial Class frmCargarCuentaCorriente
         '
         'txtEntrega
         '
+        Me.txtEntrega.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEntrega.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEntrega.Location = New System.Drawing.Point(132, 202)
+        Me.txtEntrega.Location = New System.Drawing.Point(132, 185)
         Me.txtEntrega.MaxLength = 60
         Me.txtEntrega.Name = "txtEntrega"
         Me.txtEntrega.Size = New System.Drawing.Size(132, 31)
@@ -147,7 +136,7 @@ Partial Class frmCargarCuentaCorriente
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(24, 205)
+        Me.Label3.Location = New System.Drawing.Point(24, 188)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(102, 26)
         Me.Label3.TabIndex = 56
@@ -168,46 +157,40 @@ Partial Class frmCargarCuentaCorriente
         '
         'btnGuardar
         '
+        Me.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGuardar.FlatAppearance.BorderSize = 2
+        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(184, 309)
+        Me.btnGuardar.Location = New System.Drawing.Point(150, 5)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(150, 5, 150, 15)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(110, 41)
+        Me.btnGuardar.Size = New System.Drawing.Size(175, 43)
         Me.btnGuardar.TabIndex = 59
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'Label13
+        'TableLayoutPanel1
         '
-        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(24, 255)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(144, 26)
-        Me.Label13.TabIndex = 64
-        Me.Label13.Text = "Forma pago:"
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 0, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 246)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(475, 63)
+        Me.TableLayoutPanel1.TabIndex = 65
         '
-        'cbFormPago
-        '
-        Me.cbFormPago.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cbFormPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbFormPago.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbFormPago.FormattingEnabled = True
-        Me.cbFormPago.Location = New System.Drawing.Point(174, 252)
-        Me.cbFormPago.Name = "cbFormPago"
-        Me.cbFormPago.Size = New System.Drawing.Size(207, 34)
-        Me.cbFormPago.TabIndex = 63
-        '
-        'frmCuentaCorriente
+        'frmCargarCuentaCorriente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(475, 362)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.cbFormPago)
-        Me.Controls.Add(Me.btnGuardar)
+        Me.ClientSize = New System.Drawing.Size(475, 309)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.txtEntrega)
         Me.Controls.Add(Me.Label3)
@@ -217,15 +200,14 @@ Partial Class frmCargarCuentaCorriente
         Me.Controls.Add(Me.txtNombreCliente)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.pnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmCuentaCorriente"
+        Me.Name = "frmCargarCuentaCorriente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmCuentaCorriente"
         Me.pnlHeader.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -233,7 +215,6 @@ Partial Class frmCargarCuentaCorriente
 
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnClientes As Button
     Friend WithEvents txtNombreCliente As TextBox
@@ -244,6 +225,5 @@ Partial Class frmCargarCuentaCorriente
     Friend WithEvents Label3 As Label
     Friend WithEvents btnCerrar As PictureBox
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents Label13 As Label
-    Friend WithEvents cbFormPago As ComboBox
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class

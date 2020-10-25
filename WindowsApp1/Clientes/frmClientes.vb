@@ -9,8 +9,10 @@
         If reparacion = True Then
             piccerrar.visible = True
             btnAgregarSeleccionar.Text = "Seleccionar"
+            btnAgregarSeleccionar.Image = My.Resources.seleccionar
             btnModificar.Visible = False
             btnBajaCancelar.Text = "Cancelar"
+            btnBajaCancelar.Image = My.Resources.cancelar
             pnlHeader.Visible = True
         End If
         dgvClientes.ClearSelection()
@@ -50,6 +52,14 @@
 
 
 
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        filtroBS = "nombreApel like '%" & txtBuscar.Text & "%'"
+        bsClientes.Filter = filtroBS
+        ' dgvClientes.ClearSelection()
+    End Sub
+
+
     Private Sub btnAgregarSeleccionar_Click(sender As Object, e As EventArgs) Handles btnAgregarSeleccionar.Click
         If reparacion = True Then
             If dgvClientes.CurrentRow.Selected = False Then
@@ -87,13 +97,7 @@
         End If
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        filtroBS = "nombreApel like '%" & txtBuscar.Text & "%'"
-        bsClientes.Filter = filtroBS
-        ' dgvClientes.ClearSelection()
-    End Sub
-
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         If dgvClientes.CurrentRow.Selected = False Then
             MsgBox("No hay ningun cliente seleccionado", MsgBoxStyle.MsgBoxHelp, "Clientes")
         Else
@@ -111,6 +115,4 @@
             frmPrincipal.Show()
         End If
     End Sub
-
-
 End Class

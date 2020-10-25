@@ -26,7 +26,6 @@ Partial Class frmPrincipal
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.panelCost = New System.Windows.Forms.Panel()
         Me.btnProveedores = New System.Windows.Forms.Button()
-        Me.btnNotas = New System.Windows.Forms.Button()
         Me.btnServTecnico = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
         Me.btnClientes = New System.Windows.Forms.Button()
@@ -67,7 +66,6 @@ Partial Class frmPrincipal
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Panel1.Controls.Add(Me.panelCost)
         Me.Panel1.Controls.Add(Me.btnProveedores)
-        Me.Panel1.Controls.Add(Me.btnNotas)
         Me.Panel1.Controls.Add(Me.btnServTecnico)
         Me.Panel1.Controls.Add(Me.btnProductos)
         Me.Panel1.Controls.Add(Me.btnClientes)
@@ -99,7 +97,7 @@ Partial Class frmPrincipal
         Me.btnProveedores.ForeColor = System.Drawing.Color.White
         Me.btnProveedores.Image = Global.WindowsApp1.My.Resources.Resources.baseline_local_shipping_white_18dp
         Me.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnProveedores.Location = New System.Drawing.Point(0, 488)
+        Me.btnProveedores.Location = New System.Drawing.Point(0, 443)
         Me.btnProveedores.Name = "btnProveedores"
         Me.btnProveedores.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
         Me.btnProveedores.Size = New System.Drawing.Size(209, 45)
@@ -107,24 +105,6 @@ Partial Class frmPrincipal
         Me.btnProveedores.Text = "     Proveedores"
         Me.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnProveedores.UseVisualStyleBackColor = True
-        '
-        'btnNotas
-        '
-        Me.btnNotas.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnNotas.FlatAppearance.BorderSize = 0
-        Me.btnNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNotas.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNotas.ForeColor = System.Drawing.Color.White
-        Me.btnNotas.Image = Global.WindowsApp1.My.Resources.Resources.baseline_comment_white_18dp
-        Me.btnNotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNotas.Location = New System.Drawing.Point(0, 443)
-        Me.btnNotas.Name = "btnNotas"
-        Me.btnNotas.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
-        Me.btnNotas.Size = New System.Drawing.Size(209, 45)
-        Me.btnNotas.TabIndex = 42
-        Me.btnNotas.Text = "     Notas"
-        Me.btnNotas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNotas.UseVisualStyleBackColor = True
         '
         'btnServTecnico
         '
@@ -496,5 +476,4 @@ Partial Class frmPrincipal
     Friend WithEvents btnServTecnico As Button
     Friend WithEvents btnProveedores As Button
     Friend WithEvents btnProductos As Button
-    Friend WithEvents btnNotas As Button
 End Class

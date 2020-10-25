@@ -27,6 +27,9 @@ Partial Class Form2
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.txtClienteCtaCorriente = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnBuscarFecha
@@ -88,11 +91,51 @@ Partial Class Form2
         Me.Label3.TabIndex = 41
         Me.Label3.Text = "Desde:"
         '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(0, 0)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton1.TabIndex = 46
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "RadioButton1"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton2.Location = New System.Drawing.Point(403, 70)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(49, 46)
+        Me.RadioButton2.TabIndex = 47
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "$"
+        Me.RadioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'txtClienteCtaCorriente
+        '
+        Me.txtClienteCtaCorriente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtClienteCtaCorriente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtClienteCtaCorriente.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtClienteCtaCorriente.Location = New System.Drawing.Point(0, 0)
+        Me.txtClienteCtaCorriente.Margin = New System.Windows.Forms.Padding(15, 8, 3, 3)
+        Me.txtClienteCtaCorriente.Name = "txtClienteCtaCorriente"
+        Me.txtClienteCtaCorriente.ReadOnly = True
+        Me.txtClienteCtaCorriente.Size = New System.Drawing.Size(1073, 26)
+        Me.txtClienteCtaCorriente.TabIndex = 48
+        Me.txtClienteCtaCorriente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtClienteCtaCorriente.Visible = False
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1073, 648)
+        Me.Controls.Add(Me.txtClienteCtaCorriente)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.btnBuscarFecha)
         Me.Controls.Add(Me.dtpHasta)
         Me.Controls.Add(Me.Label4)
@@ -110,4 +153,7 @@ Partial Class Form2
     Friend WithEvents Label4 As Label
     Friend WithEvents dtpDesde As DateTimePicker
     Friend WithEvents Label3 As Label
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents txtClienteCtaCorriente As TextBox
 End Class

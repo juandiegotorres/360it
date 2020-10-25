@@ -32,18 +32,26 @@ Partial Class frmEntrega
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbVenta = New System.Windows.Forms.ComboBox()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnAceptar
         '
+        Me.btnAceptar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAceptar.Enabled = False
+        Me.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAceptar.FlatAppearance.BorderSize = 2
+        Me.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(174, 200)
+        Me.btnAceptar.Location = New System.Drawing.Point(150, 10)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(150, 10, 150, 10)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(110, 41)
+        Me.btnAceptar.Size = New System.Drawing.Size(160, 42)
         Me.btnAceptar.TabIndex = 44
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
@@ -129,14 +137,27 @@ Partial Class frmEntrega
         Me.cbVenta.Size = New System.Drawing.Size(169, 34)
         Me.cbVenta.TabIndex = 46
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.btnAceptar, 0, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 190)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(460, 62)
+        Me.TableLayoutPanel1.TabIndex = 47
+        '
         'frmEntrega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(460, 252)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.cbVenta)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txtEntrega)
@@ -151,6 +172,7 @@ Partial Class frmEntrega
         Me.Text = "frmEntrega"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -164,4 +186,5 @@ Partial Class frmEntrega
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents cbVenta As ComboBox
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class

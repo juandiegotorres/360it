@@ -51,10 +51,15 @@
     <ApplicationIcon>pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\Desktop\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -100,10 +105,10 @@
     <Compile Include="Cuenta Corriente\frmEntrega.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cuentas\frmCuentas.Designer.vb">
-      <DependentUpon>frmCuentas.vb</DependentUpon>
+    <Compile Include="Caja\frmCaja.Designer.vb">
+      <DependentUpon>frmCaja.vb</DependentUpon>
     </Compile>
-    <Compile Include="Cuentas\frmCuentas.vb">
+    <Compile Include="Caja\frmCaja.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vender\Form1.Designer.vb">
@@ -257,8 +262,8 @@
     <EmbeddedResource Include="Cuenta Corriente\frmEntrega.resx">
       <DependentUpon>frmEntrega.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cuentas\frmCuentas.resx">
-      <DependentUpon>frmCuentas.vb</DependentUpon>
+    <EmbeddedResource Include="Caja\frmCaja.resx">
+      <DependentUpon>frmCaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vender\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -392,6 +397,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico" />
+    <None Include="Resources\detalles.png" />
+    <None Include="Resources\hand-money.png" />
+    <None Include="Resources\cancelar.png" />
+    <None Include="Resources\seleccionar.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\trash %281%29.png" />
+    <None Include="Resources\add %281%29.png" />
     <None Include="Resources\baseline_comment_white_18dp.png" />
     <None Include="Resources\baseline_local_shipping_white_18dp.png" />
     <None Include="Resources\vender36dpx28.png" />

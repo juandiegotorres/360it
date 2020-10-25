@@ -2,6 +2,7 @@
 Public Class Venta
     Dim tablaNumeroVenta As New DataTable
     Dim tablaCliente As New DataTable
+    Dim tablaCaja As New DataTable
     Private _nroVenta As UInt64
     Public Property nroVenta As UInt64
         Get
@@ -101,6 +102,15 @@ Public Class Venta
             _precioInicial = value
         End Set
     End Property
+    Private _nombreCliente As String
+    Public Property nombreCliente As String
+        Get
+            Return _nombreCliente
+        End Get
+        Set(value As String)
+            _nombreCliente = value
+        End Set
+    End Property
     Private _tipoDescuentoRecargo As String
     Public Property tipoDescuentoRecargo As String
         Set(value As String)
@@ -146,6 +156,15 @@ Public Class Venta
             _precioFinal = value
         End Set
     End Property
+    Private _total As Double
+    Public Property total As Double
+        Get
+            Return _total
+        End Get
+        Set(value As Double)
+            _total = value
+        End Set
+    End Property
 #Region "Metodos"
     Dim capaDatos As New CapaDeNegocios.cdDatosPrueba
     Public Sub verProductos(tabla As DataTable)
@@ -187,9 +206,10 @@ Public Class Venta
         Dim comando As MySqlCommand
         Dim strComando As String
         Try
-            strComando = "INSERT INTO ventas(fechaHora, formPago, activo) VALUES (@fechaHora, @formPago, '1');"
+            strComando = "INSERT INTO ventas(fechaHora, formPago, cuotas, activo) VALUES (@fechaHora, @formPago, @cuotas, '1');"
             comando = New MySqlCommand
             comando.CommandText = strComando
+            comando.Parameters.Add("@cuotas", MySqlDbType.Int16).Value = Me.cuotas
             comando.Parameters.Add("@formPago", MySqlDbType.Int16).Value = Me.idFormPago
             comando.Parameters.Add("@fechaHora", MySqlDbType.DateTime).Value = Me.fechaHora
             capaDatos.GuardarComando(comando)
@@ -313,6 +333,25 @@ Public Class Venta
         Catch ex As Exception
             MsgBox(ex.Message)
 
+        End Try
+    End Sub
+#End Region
+#Region "Caja"
+    Public Sub cajaDiaria(ByVal fechaElegida As Date)
+        Try
+            tablaCaja.Clear()
+            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT sum(precioFinal) as 'Total' FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta WHERE DATE(ventas.fechaHora) = @fecha")
+            comandoSQL.Parameters.Add("@fecha", MySqlDbType.Date).Value = fechaElegida
+            capaDatos.CargarDatos(tablaCaja, comandoSQL)
+            'Si no hay registro en la base de datos de esa fecha me va a devolver un valor null, y va a contar como que tiene un registro en la tabla por lo cual no puedo usar tablaCaja.Rows.Count. De esta forma pregunto si el primer registro de la primera columna es null
+            If tablaCaja(0)(0) Is DBNull.Value Then
+                _total = 0
+            Else
+                _total = tablaCaja.Rows(0).Item("Total").ToString()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Venta")
         End Try
     End Sub
 #End Region

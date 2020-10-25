@@ -28,6 +28,7 @@
         actualizarProductos()
         cargarFormPago()
         nroVenta()
+
     End Sub
 
     'Traigo los productos desde la base de datos mediante la instancia a la clase ventas
@@ -53,12 +54,20 @@
     Public Sub limpiarCarrito()
         dgvCarrito.Rows.Clear()
         rbDescuentoPorcentaje.Checked = True
+        cantidad = 0
+        cantidadSeleccionada = 0
         subtotal = 0
         total = 0
+        cantidades.Clear()
+        listaProductos.Clear()
+        precioProductos.Clear()
         txtTotal.Text = total.ToString("C2")
         txtSubtotal.Text = subtotal.ToString("C2")
         txtDescuento.Text = ""
         txtRecargo.Text = ""
+        txtClienteCtaCorriente.Text = ""
+        txtClienteCtaCorriente.Visible = False
+        btnCancelarCtaCorriente.Visible = False
         actualizarProductos()
     End Sub
     'Procedimiento para agregar un producto desde el datagrid de productos hacia el datagrid de ventas
@@ -69,6 +78,11 @@
             .ShowDialog()
             'Si introduzco una cantidad valida en el formulario cantidad, recien ahi lo agrega al datagrid de carrito/venta
             If .DialogResult = DialogResult.OK Then
+                'Si previamente hay algun descuento o recargo lo borro para la nueva venta
+                If dgvCarrito.Rows.Count = 0 Then
+                    txtDescuento.Text = ""
+                    txtRecargo.Text = ""
+                End If
                 For Each ROW As DataGridViewRow In dgvProductosLista.SelectedRows
                     idProducto = ROW.Cells("idProductoLista").Value
                     tipo = ROW.Cells("tipoProductoLista").Value.ToString
@@ -131,26 +145,19 @@
                 eVenta.precioFinal = total
                 eVenta.fechaHora = Date.Now
                 eVenta.idFormPago = cbFormPago.SelectedValue
+                If txtClienteCtaCorriente.Visible = False Then
+                    eVenta.cuotas = 0
+                End If
                 'Si se pudo guardar en la base de datos muestra un mensaje al usuario diciendo que se realizo la venta
                 If eVenta.detalleVenta() = True Then
-                    If txtTotal.Tag = 1 Then
+                    If txtClienteCtaCorriente.Visible = False Then
                         frmVentaRealizada.ShowDialog()
-                        limpiarCarrito()
-                        nroVenta()
-                    ElseIf txtTotal.Tag = 2 Then
-                        Dim ctaCorriente As New frmCargarCuentaCorriente()
-                        ctaCorriente.ShowDialog()
-                        If ctaCorriente.DialogResult = DialogResult.OK Then
-                            eVenta.idCliente = ctaCorriente.eVenta.idCliente
-                            eVenta.entregaDinero = ctaCorriente.eVenta.entregaDinero
-                            eVenta.cuotas = ctaCorriente.eVenta.cuotas
-                            eVenta.idFormPago = ctaCorriente.eVenta.idFormPago
-                            eVenta.ventaCuentaCorriente()
-                            frmVentaRealizada.ShowDialog()
-                            limpiarCarrito()
-                            nroVenta()
-                        End If
+                    ElseIf txtClienteCtaCorriente.Visible = True Then
+                        eVenta.ventaCuentaCorriente()
+                        frmVentaRealizada.ShowDialog()
                     End If
+                    limpiarCarrito()
+                    nroVenta()
                 End If
             End If
         Catch ex As Exception
@@ -158,10 +165,7 @@
         End Try
     End Sub
     Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
-        'Asigno el 1 para saber que es una venta corriente y asi poder mostrar el formulario de venta realizada correctamente
-        txtTotal.Tag = 1
         vender()
-
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -174,12 +178,23 @@
     End Sub
 
     Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
-        txtTotal.Tag = 2
-        vender()
+        If dgvCarrito.Rows.Count >= 1 Then
+            Dim ctaCorriente As New frmCargarCuentaCorriente()
+            ctaCorriente.ShowDialog()
+            If ctaCorriente.DialogResult = DialogResult.OK Then
+                eVenta.idCliente = ctaCorriente.eVenta.idCliente
+                eVenta.entregaDinero = ctaCorriente.eVenta.entregaDinero
+                eVenta.cuotas = ctaCorriente.eVenta.cuotas
+                txtClienteCtaCorriente.Visible = True
+                btnCancelarCtaCorriente.Visible = True
+                If eVenta.cuotas = 1 Then
+                    txtClienteCtaCorriente.Text = "Cliente: " & ctaCorriente.eVenta.nombreCliente & "  -  " & eVenta.cuotas & " Pago"
+                Else
+                    txtClienteCtaCorriente.Text = "Cliente: " & ctaCorriente.eVenta.nombreCliente & "  -  " & eVenta.cuotas & " Cuotas"
+                End If
+            End If
+        End If
     End Sub
-
-
-
 
 #Region "Text Changed Descuento y Recargo"
     Private Sub txtDescuento_TextChanged_1(sender As Object, e As EventArgs) Handles txtDescuento.TextChanged
@@ -223,6 +238,13 @@
                 txtTotal.Text = total.ToString("C2")
             End If
         End If
+    End Sub
+
+    Private Sub btnCancelarCtaCorriente_Click(sender As Object, e As EventArgs) Handles btnCancelarCtaCorriente.Click
+        txtClienteCtaCorriente.Text = ""
+        txtClienteCtaCorriente.Visible = False
+        btnCancelarCtaCorriente.Visible = False
+        cbFormPago.SelectedIndex = 0
     End Sub
 
     Private Sub txtRecargo_TextChanged_1(sender As Object, e As EventArgs) Handles txtRecargo.TextChanged
@@ -362,6 +384,14 @@
                 limpiarCarrito()
             End If
         End If
+    End Sub
+
+
+    Private Sub dgvProductosLista_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvProductosLista.KeyDown
+        Select Case e.KeyData
+            Case Keys.Enter
+                anidadirAlCarro()
+        End Select
     End Sub
 #End Region
 

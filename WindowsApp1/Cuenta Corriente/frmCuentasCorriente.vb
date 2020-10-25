@@ -12,7 +12,7 @@
         dgvCuentas.DataSource = tablaCuenta
         dgvCuentas.ClearSelection()
         corregirDataGrid()
-        txtResto.Text = debe + entrega
+        txtResto.Text = (debe + entrega).ToString("C2")
         If debe < 0 Then
             txtResto.ForeColor = Color.Red
         Else

@@ -174,7 +174,6 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\CapaDePresentacion.
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.exe
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.xml
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb
-C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmCuentas.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevaReparacion.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmServTecnico.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmEstado.resources
@@ -192,3 +191,5 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmMovi
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmDetalleReparacion.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmCambiarEstado.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmVender.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmCaja.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Guna.UI2.dll

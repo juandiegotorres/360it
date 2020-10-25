@@ -22,10 +22,10 @@ Partial Class frmServTecnico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -39,9 +39,6 @@ Partial Class frmServTecnico
         Me.cbEstado = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgvServTecnico = New System.Windows.Forms.DataGridView()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnVerDetalles = New System.Windows.Forms.Button()
-        Me.btnCambiarEstado = New System.Windows.Forms.Button()
         Me.idReparacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.articulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,6 +47,9 @@ Partial Class frmServTecnico
         Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaRecep = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaLimite = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnCambiarEstado = New System.Windows.Forms.Button()
+        Me.btnVerDetalles = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -83,15 +83,13 @@ Partial Class frmServTecnico
         '
         'TableLayoutPanel2
         '
-        Me.TableLayoutPanel2.ColumnCount = 5
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.38314!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.83567!))
+        Me.TableLayoutPanel2.ColumnCount = 3
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.24048!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.24048!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.13828!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnAgregar, 4, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnBaja, 3, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnModificar, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnAgregar, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnBaja, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnModificar, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(4, 534)
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 2, 18, 2)
@@ -104,13 +102,19 @@ Partial Class frmServTecnico
         'btnAgregar
         '
         Me.btnAgregar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregar.FlatAppearance.BorderSize = 2
+        Me.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Black
-        Me.btnAgregar.Location = New System.Drawing.Point(827, 10)
+        Me.btnAgregar.Image = Global.WindowsApp1.My.Resources.Resources.add__1_
+        Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAgregar.Location = New System.Drawing.Point(696, 10)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(10, 10, 0, 10)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(186, 44)
+        Me.btnAgregar.Size = New System.Drawing.Size(317, 44)
         Me.btnAgregar.TabIndex = 36
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
@@ -118,13 +122,19 @@ Partial Class frmServTecnico
         'btnBaja
         '
         Me.btnBaja.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnBaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBaja.FlatAppearance.BorderSize = 2
+        Me.btnBaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBaja.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBaja.ForeColor = System.Drawing.Color.Black
-        Me.btnBaja.Location = New System.Drawing.Point(622, 10)
+        Me.btnBaja.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.btnBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBaja.Location = New System.Drawing.Point(353, 10)
         Me.btnBaja.Margin = New System.Windows.Forms.Padding(10)
         Me.btnBaja.Name = "btnBaja"
-        Me.btnBaja.Size = New System.Drawing.Size(185, 44)
+        Me.btnBaja.Size = New System.Drawing.Size(323, 44)
         Me.btnBaja.TabIndex = 37
         Me.btnBaja.Text = "Baja"
         Me.btnBaja.UseVisualStyleBackColor = True
@@ -132,13 +142,19 @@ Partial Class frmServTecnico
         'btnModificar
         '
         Me.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnModificar.FlatAppearance.BorderSize = 2
+        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(417, 10)
+        Me.btnModificar.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModificar.Location = New System.Drawing.Point(10, 10)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(10)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(185, 44)
+        Me.btnModificar.Size = New System.Drawing.Size(323, 44)
         Me.btnModificar.TabIndex = 38
         Me.btnModificar.Text = "Modificación"
         Me.btnModificar.UseVisualStyleBackColor = True
@@ -229,7 +245,7 @@ Partial Class frmServTecnico
         Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 0, 1)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 140)
-        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -249,23 +265,23 @@ Partial Class frmServTecnico
         Me.dgvServTecnico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvServTecnico.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvServTecnico.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvServTecnico.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvServTecnico.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvServTecnico.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idReparacion, Me.estado, Me.articulo, Me.tipo, Me.marca, Me.modelo, Me.fechaRecep, Me.fechaLimite})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvServTecnico.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvServTecnico.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvServTecnico.EnableHeadersVisualStyles = False
         Me.dgvServTecnico.Location = New System.Drawing.Point(20, 5)
         Me.dgvServTecnico.Margin = New System.Windows.Forms.Padding(20, 5, 18, 10)
@@ -273,75 +289,22 @@ Partial Class frmServTecnico
         Me.dgvServTecnico.Name = "dgvServTecnico"
         Me.dgvServTecnico.ReadOnly = True
         Me.dgvServTecnico.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvServTecnico.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvServTecnico.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvServTecnico.RowHeadersVisible = False
         Me.dgvServTecnico.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        Me.dgvServTecnico.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.dgvServTecnico.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvServTecnico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvServTecnico.Size = New System.Drawing.Size(997, 327)
         Me.dgvServTecnico.TabIndex = 46
-        '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 3
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.51691!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.57971!))
-        Me.TableLayoutPanel6.Controls.Add(Me.btnCambiarEstado, 1, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.btnVerDetalles, 2, 0)
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 342)
-        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(1035, 50)
-        Me.TableLayoutPanel6.TabIndex = 47
-        '
-        'btnVerDetalles
-        '
-        Me.btnVerDetalles.BackColor = System.Drawing.Color.Transparent
-        Me.btnVerDetalles.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnVerDetalles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnVerDetalles.FlatAppearance.BorderSize = 2
-        Me.btnVerDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnVerDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVerDetalles.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVerDetalles.ForeColor = System.Drawing.Color.Black
-        Me.btnVerDetalles.Location = New System.Drawing.Point(826, 5)
-        Me.btnVerDetalles.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
-        Me.btnVerDetalles.Name = "btnVerDetalles"
-        Me.btnVerDetalles.Size = New System.Drawing.Size(191, 30)
-        Me.btnVerDetalles.TabIndex = 41
-        Me.btnVerDetalles.Text = "Ver detalles"
-        Me.btnVerDetalles.UseVisualStyleBackColor = False
-        '
-        'btnCambiarEstado
-        '
-        Me.btnCambiarEstado.BackColor = System.Drawing.Color.Transparent
-        Me.btnCambiarEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCambiarEstado.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnCambiarEstado.FlatAppearance.BorderSize = 2
-        Me.btnCambiarEstado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCambiarEstado.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCambiarEstado.ForeColor = System.Drawing.Color.Black
-        Me.btnCambiarEstado.Location = New System.Drawing.Point(620, 5)
-        Me.btnCambiarEstado.Margin = New System.Windows.Forms.Padding(5, 5, 10, 10)
-        Me.btnCambiarEstado.Name = "btnCambiarEstado"
-        Me.btnCambiarEstado.Size = New System.Drawing.Size(191, 30)
-        Me.btnCambiarEstado.TabIndex = 42
-        Me.btnCambiarEstado.Text = "Cambiar Estado"
-        Me.btnCambiarEstado.UseVisualStyleBackColor = False
         '
         'idReparacion
         '
@@ -402,6 +365,59 @@ Partial Class frmServTecnico
         Me.fechaLimite.HeaderText = "Fecha límite"
         Me.fechaLimite.Name = "fechaLimite"
         Me.fechaLimite.ReadOnly = True
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 3
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.51691!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.57971!))
+        Me.TableLayoutPanel6.Controls.Add(Me.btnCambiarEstado, 1, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.btnVerDetalles, 2, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 342)
+        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 1
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(1035, 50)
+        Me.TableLayoutPanel6.TabIndex = 47
+        '
+        'btnCambiarEstado
+        '
+        Me.btnCambiarEstado.BackColor = System.Drawing.Color.Transparent
+        Me.btnCambiarEstado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCambiarEstado.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCambiarEstado.FlatAppearance.BorderSize = 2
+        Me.btnCambiarEstado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCambiarEstado.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCambiarEstado.ForeColor = System.Drawing.Color.Black
+        Me.btnCambiarEstado.Location = New System.Drawing.Point(620, 5)
+        Me.btnCambiarEstado.Margin = New System.Windows.Forms.Padding(5, 5, 10, 10)
+        Me.btnCambiarEstado.Name = "btnCambiarEstado"
+        Me.btnCambiarEstado.Size = New System.Drawing.Size(191, 35)
+        Me.btnCambiarEstado.TabIndex = 42
+        Me.btnCambiarEstado.Text = "Cambiar Estado"
+        Me.btnCambiarEstado.UseVisualStyleBackColor = False
+        '
+        'btnVerDetalles
+        '
+        Me.btnVerDetalles.BackColor = System.Drawing.Color.Transparent
+        Me.btnVerDetalles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnVerDetalles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnVerDetalles.FlatAppearance.BorderSize = 2
+        Me.btnVerDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnVerDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVerDetalles.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerDetalles.ForeColor = System.Drawing.Color.Black
+        Me.btnVerDetalles.Location = New System.Drawing.Point(826, 5)
+        Me.btnVerDetalles.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
+        Me.btnVerDetalles.Name = "btnVerDetalles"
+        Me.btnVerDetalles.Size = New System.Drawing.Size(191, 35)
+        Me.btnVerDetalles.TabIndex = 41
+        Me.btnVerDetalles.Text = "Ver detalles"
+        Me.btnVerDetalles.UseVisualStyleBackColor = False
         '
         'frmServTecnico
         '

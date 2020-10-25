@@ -29,7 +29,7 @@ Partial Class frmProveedores
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
         Me.btnBajaCancelar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -53,7 +53,7 @@ Partial Class frmProveedores
         Me.formPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.horario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +66,7 @@ Partial Class frmProveedores
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.pnlHeader, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 0, 1)
@@ -84,36 +84,40 @@ Partial Class frmProveedores
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1035, 600)
         Me.TableLayoutPanel1.TabIndex = 30
         '
-        'TableLayoutPanel2
+        'TableLayoutPanel3
         '
-        Me.TableLayoutPanel2.ColumnCount = 5
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.38314!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.83567!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.24048!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.24048!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.13828!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnAgregarSeleccionar, 4, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnBajaCancelar, 3, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnModificar, 2, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(4, 534)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 2, 18, 2)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1013, 64)
-        Me.TableLayoutPanel2.TabIndex = 41
+        Me.TableLayoutPanel3.ColumnCount = 3
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.Controls.Add(Me.btnAgregarSeleccionar, 2, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.btnBajaCancelar, 1, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.btnModificar, 0, 0)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(10, 534)
+        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(10, 2, 16, 2)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 1
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1009, 64)
+        Me.TableLayoutPanel3.TabIndex = 47
         '
         'btnAgregarSeleccionar
         '
         Me.btnAgregarSeleccionar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAgregarSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregarSeleccionar.FlatAppearance.BorderSize = 2
+        Me.btnAgregarSeleccionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregarSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnAgregarSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregarSeleccionar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarSeleccionar.ForeColor = System.Drawing.Color.Black
-        Me.btnAgregarSeleccionar.Location = New System.Drawing.Point(827, 10)
-        Me.btnAgregarSeleccionar.Margin = New System.Windows.Forms.Padding(10, 10, 0, 10)
+        Me.btnAgregarSeleccionar.Image = Global.WindowsApp1.My.Resources.Resources.add__1_
+        Me.btnAgregarSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAgregarSeleccionar.Location = New System.Drawing.Point(682, 10)
+        Me.btnAgregarSeleccionar.Margin = New System.Windows.Forms.Padding(10)
         Me.btnAgregarSeleccionar.Name = "btnAgregarSeleccionar"
-        Me.btnAgregarSeleccionar.Size = New System.Drawing.Size(186, 44)
+        Me.btnAgregarSeleccionar.Size = New System.Drawing.Size(317, 44)
         Me.btnAgregarSeleccionar.TabIndex = 36
         Me.btnAgregarSeleccionar.Text = "Agregar"
         Me.btnAgregarSeleccionar.UseVisualStyleBackColor = True
@@ -121,13 +125,19 @@ Partial Class frmProveedores
         'btnBajaCancelar
         '
         Me.btnBajaCancelar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnBajaCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBajaCancelar.FlatAppearance.BorderSize = 2
+        Me.btnBajaCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBajaCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnBajaCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBajaCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBajaCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnBajaCancelar.Location = New System.Drawing.Point(622, 10)
+        Me.btnBajaCancelar.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.btnBajaCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBajaCancelar.Location = New System.Drawing.Point(346, 10)
         Me.btnBajaCancelar.Margin = New System.Windows.Forms.Padding(10)
         Me.btnBajaCancelar.Name = "btnBajaCancelar"
-        Me.btnBajaCancelar.Size = New System.Drawing.Size(185, 44)
+        Me.btnBajaCancelar.Size = New System.Drawing.Size(316, 44)
         Me.btnBajaCancelar.TabIndex = 37
         Me.btnBajaCancelar.Text = "Baja"
         Me.btnBajaCancelar.UseVisualStyleBackColor = True
@@ -135,13 +145,19 @@ Partial Class frmProveedores
         'btnModificar
         '
         Me.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnModificar.FlatAppearance.BorderSize = 2
+        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(417, 10)
+        Me.btnModificar.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModificar.Location = New System.Drawing.Point(10, 10)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(10)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(185, 44)
+        Me.btnModificar.Size = New System.Drawing.Size(316, 44)
         Me.btnModificar.TabIndex = 38
         Me.btnModificar.Text = "Modificación"
         Me.btnModificar.UseVisualStyleBackColor = True
@@ -418,7 +434,7 @@ Partial Class frmProveedores
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmProveedores"
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
@@ -432,10 +448,6 @@ Partial Class frmProveedores
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents btnAgregarSeleccionar As Button
-    Friend WithEvents btnBajaCancelar As Button
-    Friend WithEvents btnModificar As Button
     Friend WithEvents pnlHeader As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtBuscar As TextBox
@@ -455,4 +467,8 @@ Partial Class frmProveedores
     Friend WithEvents direccion As DataGridViewTextBoxColumn
     Friend WithEvents formPago As DataGridViewTextBoxColumn
     Friend WithEvents horario As DataGridViewTextBoxColumn
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents btnAgregarSeleccionar As Button
+    Friend WithEvents btnBajaCancelar As Button
+    Friend WithEvents btnModificar As Button
 End Class
