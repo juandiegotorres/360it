@@ -39,45 +39,6 @@ Public Class frmPrincipal
         End With
 
     End Sub
-    'Private Sub btnClientes_Click(sender As Object, e As EventArgs)
-    '    panelCost.Height = btnClientes.Height
-    '    panelCost.Top = btnClientes.Top
-    '    abrirForm(frmClientes)
-    'End Sub
-    'Private Sub btnVentas_Click(sender As Object, e As EventArgs)
-    '    panelCost.Visible = True
-    '    panelCost.Height = btnVentas.Height
-    '    panelCost.Top = btnVentas.Top
-    '    abrirForm(frmHistorialVentas)
-    'End Sub
-
-
-    'Private Sub btnCuentas_Click(sender As Object, e As EventArgs)
-    '    panelCost.Visible = True
-    '    panelCost.Height = btnCuentas.Height
-    '    panelCost.Top = btnCuentas.Top
-    '    abrirForm(frmFacturacion)
-    'End Sub
-
-    'Private Sub btnProductos_Click(sender As Object, e As EventArgs)
-    '    panelCost.Visible = True
-    '    panelCost.Height = btnProductos.Height
-    '    panelCost.Top = btnProductos.Top
-    '    abrirForm(frmProductos)
-    'End Sub
-
-    'Private Sub btnProveedores_Click(sender As Object, e As EventArgs)
-    '    panelCost.Visible = True
-    '    panelCost.Height = btnProveedores.Height
-    '    panelCost.Top = btnProveedores.Top
-    '    abrirForm(frmProveedores)
-    'End Sub
-    'Private Sub btnServTecnico_Click(sender As Object, e As EventArgs)
-    '    panelCost.Visible = True
-    '    panelCost.Height = btnServTecnico.Height
-    '    panelCost.Top = btnServTecnico.Top
-    '    abrirForm(frmServTecnico)
-    'End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Maximized

@@ -3,6 +3,7 @@ Public Class Venta
     Dim tablaNumeroVenta As New DataTable
     Dim tablaCliente As New DataTable
     Dim tablaCaja As New DataTable
+    Dim tablaMovimientos As New DataTable
     Private _nroVenta As UInt64
     Public Property nroVenta As UInt64
         Get
@@ -163,6 +164,24 @@ Public Class Venta
         End Get
         Set(value As Double)
             _total = value
+        End Set
+    End Property
+    Private _totalCtaCorriente As Double
+    Public Property totalCtaCorriente As Double
+        Get
+            Return _totalCtaCorriente
+        End Get
+        Set(value As Double)
+            _totalCtaCorriente = value
+        End Set
+    End Property
+    Private _totalMovimientos As Double
+    Public Property totalMovimientos As Double
+        Get
+            Return _totalMovimientos
+        End Get
+        Set(value As Double)
+            _totalMovimientos = value
         End Set
     End Property
 #Region "Metodos"
@@ -343,13 +362,49 @@ Public Class Venta
             Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT sum(precioFinal) as 'Total' FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta WHERE DATE(ventas.fechaHora) = @fecha")
             comandoSQL.Parameters.Add("@fecha", MySqlDbType.Date).Value = fechaElegida
             capaDatos.CargarDatos(tablaCaja, comandoSQL)
-            'Si no hay registro en la base de datos de esa fecha me va a devolver un valor null, y va a contar como que tiene un registro en la tabla por lo cual no puedo usar tablaCaja.Rows.Count. De esta forma pregunto si el primer registro de la primera columna es null
-            If tablaCaja(0)(0) Is DBNull.Value Then
+            'Si no hay registro en la base de datos de esa fecha me va a devolver un valor null, y va a contar como que tiene un registro en la tabla por lo cual no puedo usar tablaCaja.Rows.Count. De esta forma pregunto si el primer registro de la primera columna es null. De todas formas me aseguro que por si algun caso la tabla viene vacia cuente las columnas
+            If tablaCaja(0)(0) Is DBNull.Value Or tablaCaja.Rows.Count = 0 Then
                 _total = 0
             Else
                 _total = tablaCaja.Rows(0).Item("Total").ToString()
             End If
 
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Venta")
+        End Try
+    End Sub
+    Public Sub cajaDiariaCtaCorriente(ByRef tabla As DataTable, ByVal fechaElegida As Date)
+        Try
+            tablaCaja.Clear()
+            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT clientes.nombreApel, clientes.telefono FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta JOIN movimientos on ventas.idVenta = movimientos.venta JOIN cuentascorriente ON movimientos.cuentacorriente = cuentascorriente.idCuenta JOIN clientes ON cuentascorriente.cliente = clientes.idcliente WHERE DATE(ventas.fechaHora) = @fecha group by nombreApel")
+            comandoSQL.Parameters.Add("@fecha", MySqlDbType.Date).Value = fechaElegida
+            capaDatos.CargarDatos(tabla, comandoSQL)
+            comandoSQL.CommandText = "SELECT sum(detalleventa.precioFinal) as 'Total' FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta JOIN movimientos on ventas.idVenta = movimientos.venta JOIN cuentascorriente ON movimientos.cuentacorriente = cuentascorriente.idCuenta JOIN clientes ON cuentascorriente.cliente = clientes.idcliente WHERE DATE(ventas.fechaHora) = @fecha"
+            capaDatos.CargarDatos(tablaCaja, comandoSQL)
+            'Si no hay registro en la base de datos de esa fecha me va a devolver un valor null, y va a contar como que tiene un registro en la tabla por lo cual no puedo usar tablaCaja.Rows.Count. De esta forma pregunto si el primer registro de la primera columna es null. De todas formas me aseguro que por si algun caso la tabla viene vacia cuente las columnas
+            If tablaCaja(0)(0) Is DBNull.Value Or tablaCaja.Rows.Count = 0 Then
+                _totalCtaCorriente = 0
+            Else
+                _totalCtaCorriente = tablaCaja.Rows(0).Item("Total").ToString()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Venta")
+        End Try
+    End Sub
+    Public Sub movimientosDia(ByRef tabla As DataTable, ByVal fechaElegida As Date)
+        Try
+            tablaMovimientos.Clear()
+            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT clientes.nombreApel, sum(movimientos.monto) as 'Total' FROM movimientos JOIN cuentascorriente ON movimientos.cuentacorriente = cuentascorriente.idCuenta JOIN clientes ON cuentascorriente.cliente = clientes.idcliente WHERE tipoMovimiento = 'C' and DATE(movimientos.fechaMovimiento) = @fecha group by nombreApel")
+            comandoSQL.Parameters.Add("@fecha", MySqlDbType.Date).Value = fechaElegida
+            capaDatos.CargarDatos(tabla, comandoSQL)
+            comandoSQL.CommandText = "SELECT sum(movimientos.monto) as 'Total' FROM movimientos WHERE tipoMovimiento = 'C' and DATE(movimientos.fechaMovimiento) = @fecha"
+            capaDatos.CargarDatos(tablaMovimientos, comandoSQL)
+            'Si no hay registro en la base de datos de esa fecha me va a devolver un valor null, y va a contar como que tiene un registro en la tabla por lo cual no puedo usar tablaCaja.Rows.Count. De esta forma pregunto si el primer registro de la primera columna es null. De todas formas me aseguro que por si algun caso la tabla viene vacia cuente las columnas
+            If tablaMovimientos(0)(0) Is DBNull.Value Or tablaMovimientos.Rows.Count = 0 Then
+                _totalMovimientos = 0
+            Else
+                _totalMovimientos = tablaMovimientos.Rows(0).Item("Total").ToString()
+            End If
         Catch ex As Exception
             MsgBox(ex.Message, "Entidad Venta")
         End Try

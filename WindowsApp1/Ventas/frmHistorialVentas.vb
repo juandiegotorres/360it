@@ -9,6 +9,7 @@
         eVenta.cargarHistorial(tablaHistorial)
         dgvHistorialVentas.DataSource = tablaHistorial
         TableLayoutPanel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        
 
     End Sub
 
