@@ -48,26 +48,26 @@ Public Class frmPrincipal
         System.Diagnostics.Process.Start("www.infoandina.com")
     End Sub
 
-    Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        Select Case e.KeyCode
-            Case Keys.F1
-               ' Call btnVentas_Click(btnVentas, e)
-            Case Keys.F2
-               ' Call btnClientes_Click(btnClientes, e)
-            Case Keys.F3
-                'Call btnCuentas_Click(btnCuentas, e)
-            Case Keys.F4
-                'Call btnServTecnico_Click(btnServTecnico, e)
-            Case Keys.F5
-                'Call btnProductos_Click(btnProductos, e)
-            Case Keys.F6
-                'Call btnProveedores_Click(btnProveedores, e)
-            Case Keys.F7
-                Call btnCuentaCorriente_Click(btnCuentaCorriente, e)
-            Case Keys.Escape
-                Call btnCerrar_Click(btnCerrar, e)
-        End Select
-    End Sub
+    'Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+    '    Select Case e.KeyCode
+    '        Case Keys.F1
+    '           ' Call btnVentas_Click(btnVentas, e)
+    '        Case Keys.F2
+    '           ' Call btnClientes_Click(btnClientes, e)
+    '        Case Keys.F3
+    '            'Call btnCuentas_Click(btnCuentas, e)
+    '        Case Keys.F4
+    '            'Call btnServTecnico_Click(btnServTecnico, e)
+    '        Case Keys.F5
+    '            'Call btnProductos_Click(btnProductos, e)
+    '        Case Keys.F6
+    '            'Call btnProveedores_Click(btnProveedores, e)
+    '        Case Keys.F7
+    '            Call btnCuentaCorriente_Click(btnCuentaCorriente, e)
+    '        Case Keys.Escape
+    '            Call btnCerrar_Click(btnCerrar, e)
+    '    End Select
+    'End Sub
     'Poder mover la ventana con el mouse, porque el form no tiene bordes
     Private Sub frmPrincipal_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
         ReleaseCapture()

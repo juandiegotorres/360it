@@ -84,11 +84,11 @@
         actualizarReparaciones()
     End Sub
 
-    Private Sub dgvServTecnico_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServTecnico.CellContentClick
+    Private Sub dgvServTecnico_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 
-    Private Sub btnVerDetalles_Click(sender As Object, e As EventArgs) Handles btnVerDetalles.Click
+    Private Sub btnVerDetalles_Click(sender As Object, e As EventArgs)
         If dgvServTecnico.SelectedRows.Count = 1 Then
             id_Reparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
             Dim detallesReparacion As New frmDetalleReparacion(id_Reparacion)
@@ -96,7 +96,7 @@
         End If
     End Sub
 
-    Private Sub btnCambiarEstado_Click(sender As Object, e As EventArgs) Handles btnCambiarEstado.Click
+    Private Sub btnCambiarEstado_Click(sender As Object, e As EventArgs) 
         If dgvServTecnico.SelectedRows.Count = 1 Then
             id_Reparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
             id_Estado = dgvServTecnico.CurrentRow.Cells("estado").Value

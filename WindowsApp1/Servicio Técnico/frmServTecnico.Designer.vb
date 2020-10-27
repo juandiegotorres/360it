@@ -37,27 +37,29 @@ Partial Class frmServTecnico
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbEstado = New System.Windows.Forms.ComboBox()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgvServTecnico = New System.Windows.Forms.DataGridView()
-        Me.idReparacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.articulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaRecep = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaLimite = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnCambiarEstado = New System.Windows.Forms.Button()
+        Me.fechaRecep = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.articulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idReparacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnVerDetalles = New System.Windows.Forms.Button()
+        Me.btnCambiarEstado = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
         CType(Me.dgvServTecnico, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel6.SuspendLayout()
+        Me.TableLayoutPanel8.SuspendLayout()
+        Me.TableLayoutPanel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -237,21 +239,21 @@ Partial Class frmServTecnico
         Me.cbEstado.Size = New System.Drawing.Size(156, 26)
         Me.cbEstado.TabIndex = 40
         '
-        'TableLayoutPanel5
+        'TableLayoutPanel7
         '
-        Me.TableLayoutPanel5.ColumnCount = 1
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.dgvServTecnico, 0, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 0, 1)
-        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 140)
-        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 2
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(1035, 392)
-        Me.TableLayoutPanel5.TabIndex = 47
+        Me.TableLayoutPanel7.ColumnCount = 2
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178.0!))
+        Me.TableLayoutPanel7.Controls.Add(Me.TableLayoutPanel8, 0, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.dgvServTecnico, 0, 0)
+        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.RowCount = 1
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(1035, 392)
+        Me.TableLayoutPanel7.TabIndex = 48
         '
         'dgvServTecnico
         '
@@ -303,8 +305,59 @@ Partial Class frmServTecnico
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         Me.dgvServTecnico.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvServTecnico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvServTecnico.Size = New System.Drawing.Size(997, 327)
-        Me.dgvServTecnico.TabIndex = 46
+        Me.dgvServTecnico.Size = New System.Drawing.Size(819, 377)
+        Me.dgvServTecnico.TabIndex = 47
+        '
+        'fechaLimite
+        '
+        Me.fechaLimite.DataPropertyName = "fechaLimite"
+        Me.fechaLimite.HeaderText = "Fecha límite"
+        Me.fechaLimite.Name = "fechaLimite"
+        Me.fechaLimite.ReadOnly = True
+        '
+        'fechaRecep
+        '
+        Me.fechaRecep.DataPropertyName = "fechaRecep"
+        Me.fechaRecep.HeaderText = "Fecha de Recepción"
+        Me.fechaRecep.Name = "fechaRecep"
+        Me.fechaRecep.ReadOnly = True
+        '
+        'modelo
+        '
+        Me.modelo.DataPropertyName = "modelo"
+        Me.modelo.HeaderText = "Modelo"
+        Me.modelo.Name = "modelo"
+        Me.modelo.ReadOnly = True
+        '
+        'marca
+        '
+        Me.marca.DataPropertyName = "marca"
+        Me.marca.HeaderText = "Marca"
+        Me.marca.Name = "marca"
+        Me.marca.ReadOnly = True
+        '
+        'tipo
+        '
+        Me.tipo.DataPropertyName = "tipo"
+        Me.tipo.HeaderText = "idArticulo"
+        Me.tipo.Name = "tipo"
+        Me.tipo.ReadOnly = True
+        Me.tipo.Visible = False
+        '
+        'articulo
+        '
+        Me.articulo.DataPropertyName = "tipoArticulo"
+        Me.articulo.HeaderText = "Artículo"
+        Me.articulo.Name = "articulo"
+        Me.articulo.ReadOnly = True
+        '
+        'estado
+        '
+        Me.estado.DataPropertyName = "estado"
+        Me.estado.HeaderText = "idEstado"
+        Me.estado.Name = "estado"
+        Me.estado.ReadOnly = True
+        Me.estado.Visible = False
         '
         'idReparacion
         '
@@ -315,91 +368,22 @@ Partial Class frmServTecnico
         Me.idReparacion.ReadOnly = True
         Me.idReparacion.Width = 50
         '
-        'estado
+        'TableLayoutPanel8
         '
-        Me.estado.DataPropertyName = "estado"
-        Me.estado.HeaderText = "idEstado"
-        Me.estado.Name = "estado"
-        Me.estado.ReadOnly = True
-        Me.estado.Visible = False
-        '
-        'articulo
-        '
-        Me.articulo.DataPropertyName = "tipoArticulo"
-        Me.articulo.HeaderText = "Artículo"
-        Me.articulo.Name = "articulo"
-        Me.articulo.ReadOnly = True
-        '
-        'tipo
-        '
-        Me.tipo.DataPropertyName = "tipo"
-        Me.tipo.HeaderText = "idArticulo"
-        Me.tipo.Name = "tipo"
-        Me.tipo.ReadOnly = True
-        Me.tipo.Visible = False
-        '
-        'marca
-        '
-        Me.marca.DataPropertyName = "marca"
-        Me.marca.HeaderText = "Marca"
-        Me.marca.Name = "marca"
-        Me.marca.ReadOnly = True
-        '
-        'modelo
-        '
-        Me.modelo.DataPropertyName = "modelo"
-        Me.modelo.HeaderText = "Modelo"
-        Me.modelo.Name = "modelo"
-        Me.modelo.ReadOnly = True
-        '
-        'fechaRecep
-        '
-        Me.fechaRecep.DataPropertyName = "fechaRecep"
-        Me.fechaRecep.HeaderText = "Fecha de Recepción"
-        Me.fechaRecep.Name = "fechaRecep"
-        Me.fechaRecep.ReadOnly = True
-        '
-        'fechaLimite
-        '
-        Me.fechaLimite.DataPropertyName = "fechaLimite"
-        Me.fechaLimite.HeaderText = "Fecha límite"
-        Me.fechaLimite.Name = "fechaLimite"
-        Me.fechaLimite.ReadOnly = True
-        '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 3
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.51691!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.57971!))
-        Me.TableLayoutPanel6.Controls.Add(Me.btnCambiarEstado, 1, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.btnVerDetalles, 2, 0)
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 342)
-        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(1035, 50)
-        Me.TableLayoutPanel6.TabIndex = 47
-        '
-        'btnCambiarEstado
-        '
-        Me.btnCambiarEstado.BackColor = System.Drawing.Color.Transparent
-        Me.btnCambiarEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCambiarEstado.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnCambiarEstado.FlatAppearance.BorderSize = 2
-        Me.btnCambiarEstado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCambiarEstado.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCambiarEstado.ForeColor = System.Drawing.Color.Black
-        Me.btnCambiarEstado.Location = New System.Drawing.Point(620, 5)
-        Me.btnCambiarEstado.Margin = New System.Windows.Forms.Padding(5, 5, 10, 10)
-        Me.btnCambiarEstado.Name = "btnCambiarEstado"
-        Me.btnCambiarEstado.Size = New System.Drawing.Size(191, 35)
-        Me.btnCambiarEstado.TabIndex = 42
-        Me.btnCambiarEstado.Text = "Cambiar Estado"
-        Me.btnCambiarEstado.UseVisualStyleBackColor = False
+        Me.TableLayoutPanel8.ColumnCount = 1
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel8.Controls.Add(Me.btnCambiarEstado, 0, 1)
+        Me.TableLayoutPanel8.Controls.Add(Me.btnVerDetalles, 0, 0)
+        Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel8.Location = New System.Drawing.Point(857, 0)
+        Me.TableLayoutPanel8.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
+        Me.TableLayoutPanel8.RowCount = 3
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(178, 392)
+        Me.TableLayoutPanel8.TabIndex = 48
         '
         'btnVerDetalles
         '
@@ -409,15 +393,47 @@ Partial Class frmServTecnico
         Me.btnVerDetalles.FlatAppearance.BorderSize = 2
         Me.btnVerDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnVerDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVerDetalles.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerDetalles.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVerDetalles.ForeColor = System.Drawing.Color.Black
-        Me.btnVerDetalles.Location = New System.Drawing.Point(826, 5)
+        Me.btnVerDetalles.Location = New System.Drawing.Point(5, 5)
         Me.btnVerDetalles.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
         Me.btnVerDetalles.Name = "btnVerDetalles"
-        Me.btnVerDetalles.Size = New System.Drawing.Size(191, 35)
-        Me.btnVerDetalles.TabIndex = 41
+        Me.btnVerDetalles.Size = New System.Drawing.Size(155, 32)
+        Me.btnVerDetalles.TabIndex = 44
         Me.btnVerDetalles.Text = "Ver detalles"
         Me.btnVerDetalles.UseVisualStyleBackColor = False
+        '
+        'btnCambiarEstado
+        '
+        Me.btnCambiarEstado.BackColor = System.Drawing.Color.Transparent
+        Me.btnCambiarEstado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCambiarEstado.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCambiarEstado.FlatAppearance.BorderSize = 2
+        Me.btnCambiarEstado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCambiarEstado.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCambiarEstado.ForeColor = System.Drawing.Color.Black
+        Me.btnCambiarEstado.Location = New System.Drawing.Point(5, 52)
+        Me.btnCambiarEstado.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
+        Me.btnCambiarEstado.Name = "btnCambiarEstado"
+        Me.btnCambiarEstado.Size = New System.Drawing.Size(155, 32)
+        Me.btnCambiarEstado.TabIndex = 45
+        Me.btnCambiarEstado.Text = "Cambiar Estado"
+        Me.btnCambiarEstado.UseVisualStyleBackColor = False
+        '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.ColumnCount = 1
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel7, 0, 0)
+        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 140)
+        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 1
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(1035, 392)
+        Me.TableLayoutPanel5.TabIndex = 47
         '
         'frmServTecnico
         '
@@ -435,9 +451,10 @@ Partial Class frmServTecnico
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel7.ResumeLayout(False)
         CType(Me.dgvServTecnico, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel8.ResumeLayout(False)
+        Me.TableLayoutPanel5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -454,10 +471,11 @@ Partial Class frmServTecnico
     Friend WithEvents Label2 As Label
     Friend WithEvents cbEstado As ComboBox
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Public WithEvents dgvServTecnico As DataGridView
-    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
     Friend WithEvents btnCambiarEstado As Button
     Friend WithEvents btnVerDetalles As Button
+    Public WithEvents dgvServTecnico As DataGridView
     Friend WithEvents idReparacion As DataGridViewTextBoxColumn
     Friend WithEvents estado As DataGridViewTextBoxColumn
     Friend WithEvents articulo As DataGridViewTextBoxColumn

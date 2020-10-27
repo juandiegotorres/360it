@@ -24,7 +24,7 @@
 
     End Sub
 
-    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -70,7 +70,7 @@
                 restablecerControles()
             End If
         Else
-                MsgBox("Sucedió un problema al agregar la localidad", MsgBoxStyle.Critical, "Localidades")
+            MsgBox("Sucedió un problema al agregar la localidad", MsgBoxStyle.Critical, "Localidades")
         End If
     End Sub
     Public Function guardarLocalidad() As Boolean
@@ -98,5 +98,9 @@
         lblNombre.Visible = False
         btnGuardarLoc.Visible = False
         btnCancelarLoc.Visible = False
+    End Sub
+
+    Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
+        Me.Close()
     End Sub
 End Class

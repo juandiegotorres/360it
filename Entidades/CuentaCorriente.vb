@@ -47,14 +47,19 @@ Public Class CuentaCorriente
         End Set
     End Property
 #Region "Metodos"
-    Public Sub verCuentaCliente(ByVal tabla As DataTable)
+    Public Function verCuentaCliente(ByVal tabla As DataTable)
         Try
             Dim consultaSQL As String = "CALL verMovimientoCuenta(" & _idCliente & ")"
             capaDatos.llenarDatos(tabla, consultaSQL)
+            If tabla.Rows.Count = 0 Then
+                Return False
+            Else
+                Return True
+            End If
         Catch ex As Exception
             MsgBox(ex.Message, "Cuentas Corriente")
         End Try
-    End Sub
+    End Function
     Public Sub cargarVentasCliente(ByVal tabla As DataTable)
         Try
             Dim consultaSQL As String = "SELECT venta FROM movimientos WHERE cuentacorriente = '" & _idCtaCorriente & "' GROUP BY venta"

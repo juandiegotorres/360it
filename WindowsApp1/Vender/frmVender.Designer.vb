@@ -33,6 +33,7 @@ Partial Class frmVender
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.cbBuscador = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.dgvProductosLista = New System.Windows.Forms.DataGridView()
         Me.idProductoLista = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,7 +44,7 @@ Partial Class frmVender
         Me.precioCostoLista = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioVentaLista = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cbBuscarCategoria = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -110,10 +111,11 @@ Partial Class frmVender
         'gbProductos
         '
         gbProductos.CausesValidation = False
+        gbProductos.Controls.Add(Me.cbBuscador)
         gbProductos.Controls.Add(Me.Label12)
         gbProductos.Controls.Add(Me.dgvProductosLista)
         gbProductos.Controls.Add(Me.cbBuscarCategoria)
-        gbProductos.Controls.Add(Me.TextBox1)
+        gbProductos.Controls.Add(Me.txtBuscar)
         gbProductos.Controls.Add(Me.Label2)
         gbProductos.Controls.Add(Me.btnAgregar)
         gbProductos.Dock = System.Windows.Forms.DockStyle.Fill
@@ -127,6 +129,18 @@ Partial Class frmVender
         gbProductos.TabIndex = 16
         gbProductos.TabStop = False
         gbProductos.Text = "         "
+        '
+        'cbBuscador
+        '
+        Me.cbBuscador.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbBuscador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbBuscador.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbBuscador.FormattingEnabled = True
+        Me.cbBuscador.Items.AddRange(New Object() {"Tipo", "Modelo", "Marca"})
+        Me.cbBuscador.Location = New System.Drawing.Point(315, 30)
+        Me.cbBuscador.Name = "cbBuscador"
+        Me.cbBuscador.Size = New System.Drawing.Size(155, 26)
+        Me.cbBuscador.TabIndex = 55
         '
         'Label12
         '
@@ -185,7 +199,7 @@ Partial Class frmVender
         Me.dgvProductosLista.RowHeadersVisible = False
         Me.dgvProductosLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProductosLista.Size = New System.Drawing.Size(459, 339)
-        Me.dgvProductosLista.TabIndex = 21
+        Me.dgvProductosLista.TabIndex = 1
         '
         'idProductoLista
         '
@@ -251,15 +265,16 @@ Partial Class frmVender
         Me.cbBuscarCategoria.Size = New System.Drawing.Size(149, 26)
         Me.cbBuscarCategoria.TabIndex = 20
         '
-        'TextBox1
+        'txtBuscar
         '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(77, 30)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(274, 26)
-        Me.TextBox1.TabIndex = 19
+        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(77, 30)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(232, 26)
+        Me.txtBuscar.TabIndex = 0
         '
         'Label2
         '
@@ -974,7 +989,7 @@ Partial Class frmVender
     Friend WithEvents precioCostoLista As DataGridViewTextBoxColumn
     Friend WithEvents precioVentaLista As DataGridViewTextBoxColumn
     Friend WithEvents cbBuscarCategoria As ComboBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnAgregar As Button
     Friend WithEvents Label1 As Label
@@ -1022,4 +1037,5 @@ Partial Class frmVender
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents btnCancelarCtaCorriente As Button
     Friend WithEvents txtClienteCtaCorriente As TextBox
+    Friend WithEvents cbBuscador As ComboBox
 End Class

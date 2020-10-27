@@ -21,7 +21,7 @@
             eCliente.modificarCliente()
             txtNomApel.Text = eCliente.nombApel
             txtTelefono.Text = eCliente.telefono
-            txtDireccion.Text = eCliente.telefono
+            txtDireccion.Text = eCliente.direccion
             cbProvincias.SelectedValue = eCliente.idProvincia
             txtLocalidad.Text = eCliente.nombLocalidad
         Else
@@ -81,10 +81,13 @@
             eCliente.direccion = txtDireccion.Text
             eCliente.idProvincia = cbProvincias.SelectedValue
             If _modificar = False Then
+                eCliente.fechaCreacion = Date.Now
+                eCliente.fechaModificacion = Date.Now
                 eCliente.guardarCliente()
                 MsgBox("Cliente guardado", MsgBoxStyle.Information, "Clientes")
                 Me.DialogResult = DialogResult.OK
             Else
+                eCliente.fechaModificacion = Date.Now
                 eCliente.guardarClienteModif()
                 MsgBox("Cliente modificado", MsgBoxStyle.Information, "Clientes")
                 Me.DialogResult = DialogResult.OK

@@ -111,6 +111,12 @@
     <Compile Include="Caja\frmCaja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Productos\frmCambiarPrecios.Designer.vb">
+      <DependentUpon>frmCambiarPrecios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\frmCambiarPrecios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vender\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\frmCaja.resx">
       <DependentUpon>frmCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\frmCambiarPrecios.resx">
+      <DependentUpon>frmCambiarPrecios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vender\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

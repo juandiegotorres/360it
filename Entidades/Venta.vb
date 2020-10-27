@@ -298,10 +298,9 @@ Public Class Venta
             Dim consultarCliente As String = "SELECT idCuenta FROM cuentasCorriente WHERE cliente ='" & _idCliente & "'"
             capaDatos.llenarDatos(tablaCliente, consultarCliente)
             If tablaCliente.Rows.Count = 0 Then
-                Dim consultaSQL2 As String = "INSERT INTO cuentascorriente(cliente, cuotas, montoRestante) VALUES (@idCliente, @cuotas, '0')"
+                Dim consultaSQL2 As String = "INSERT INTO cuentascorriente(cliente) VALUES (@idCliente)"
                 Dim sqlComando1 As MySqlCommand = New MySqlCommand(consultaSQL2)
                 sqlComando1.Parameters.Add("@idCliente", MySqlDbType.Int64).Value = Me.idCliente
-                sqlComando1.Parameters.Add("@cuotas", MySqlDbType.UInt16).Value = Me.cuotas
                 capaDatos.cargarDatos(sqlComando1)
                 insertarMovimiento()
             Else

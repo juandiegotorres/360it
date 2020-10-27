@@ -16,12 +16,13 @@
         actualizarProveedores()
         eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
         actualizarRubros()
-
         If producto = True Then
             picCerrar.Visible = True
-            ' btnAgregarSeleccionar.Text = "Aceptar"
+            btnAgregarSeleccionar.Text = "Aceptar"
+            btnAgregarSeleccionar.Image = My.Resources.seleccionar
             btnModificar.Visible = False
-            ' btnBajaCancelar.Text = "Cancelar"
+            btnBajaCancelar.Text = "Cancelar"
+            btnBajaCancelar.Image = My.Resources.cancelar
             pnlHeader.Visible = True
         End If
     End Sub
@@ -101,6 +102,7 @@
             Dim nuevoProveedor As New frmNuevoProveedor
             nuevoProveedor.ShowDialog()
             If nuevoProveedor.DialogResult = DialogResult.OK Then
+                actualizarProveedores()
                 frmPrincipal.Show()
             End If
         End If

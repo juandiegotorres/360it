@@ -175,7 +175,7 @@
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        Me.Close()
+        Me.DialogResult = DialogResult.Cancel
         frmPrincipal.Show()
     End Sub
 

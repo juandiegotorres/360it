@@ -120,7 +120,7 @@ Partial Class frmNuevoProducto
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(136, 43)
-        Me.btnGuardar.TabIndex = 28
+        Me.btnGuardar.TabIndex = 11
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
@@ -147,7 +147,7 @@ Partial Class frmNuevoProducto
         Me.txtCantidad.Location = New System.Drawing.Point(151, 339)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(78, 31)
-        Me.txtCantidad.TabIndex = 36
+        Me.txtCantidad.TabIndex = 5
         '
         'txtProveedor
         '
@@ -166,7 +166,7 @@ Partial Class frmNuevoProducto
         Me.txtModelo.MaxLength = 25
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(237, 31)
-        Me.txtModelo.TabIndex = 24
+        Me.txtModelo.TabIndex = 1
         '
         'Label6
         '
@@ -215,7 +215,7 @@ Partial Class frmNuevoProducto
         Me.txtMarca.MaxLength = 45
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(291, 31)
-        Me.txtMarca.TabIndex = 23
+        Me.txtMarca.TabIndex = 0
         '
         'Label7
         '
@@ -234,7 +234,7 @@ Partial Class frmNuevoProducto
         Me.txtPrecioCosto.MaxLength = 25
         Me.txtPrecioCosto.Name = "txtPrecioCosto"
         Me.txtPrecioCosto.Size = New System.Drawing.Size(88, 31)
-        Me.txtPrecioCosto.TabIndex = 38
+        Me.txtPrecioCosto.TabIndex = 6
         '
         'Label8
         '
@@ -253,7 +253,7 @@ Partial Class frmNuevoProducto
         Me.txtPrecioVenta.MaxLength = 25
         Me.txtPrecioVenta.Name = "txtPrecioVenta"
         Me.txtPrecioVenta.Size = New System.Drawing.Size(88, 31)
-        Me.txtPrecioVenta.TabIndex = 40
+        Me.txtPrecioVenta.TabIndex = 9
         '
         'chbPorcentaje
         '
@@ -262,7 +262,7 @@ Partial Class frmNuevoProducto
         Me.chbPorcentaje.Location = New System.Drawing.Point(181, 426)
         Me.chbPorcentaje.Name = "chbPorcentaje"
         Me.chbPorcentaje.Size = New System.Drawing.Size(272, 19)
-        Me.chbPorcentaje.TabIndex = 41
+        Me.chbPorcentaje.TabIndex = 7
         Me.chbPorcentaje.Text = "Utilizar porcentaje para calcular el precio final"
         Me.chbPorcentaje.UseVisualStyleBackColor = True
         '
@@ -274,7 +274,7 @@ Partial Class frmNuevoProducto
         Me.txtPorcentaje.Name = "txtPorcentaje"
         Me.txtPorcentaje.ReadOnly = True
         Me.txtPorcentaje.Size = New System.Drawing.Size(50, 31)
-        Me.txtPorcentaje.TabIndex = 42
+        Me.txtPorcentaje.TabIndex = 8
         '
         'Label9
         '
@@ -326,7 +326,7 @@ Partial Class frmNuevoProducto
         Me.txtDescripcion.MaxLength = 60
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(264, 31)
-        Me.txtDescripcion.TabIndex = 47
+        Me.txtDescripcion.TabIndex = 10
         '
         'Label13
         '
@@ -343,7 +343,7 @@ Partial Class frmNuevoProducto
         Me.btnProveedores.Location = New System.Drawing.Point(418, 287)
         Me.btnProveedores.Name = "btnProveedores"
         Me.btnProveedores.Size = New System.Drawing.Size(38, 31)
-        Me.btnProveedores.TabIndex = 49
+        Me.btnProveedores.TabIndex = 4
         Me.btnProveedores.Text = "..."
         Me.btnProveedores.UseVisualStyleBackColor = True
         '
@@ -354,7 +354,7 @@ Partial Class frmNuevoProducto
         Me.txtTipo.MaxLength = 25
         Me.txtTipo.Name = "txtTipo"
         Me.txtTipo.Size = New System.Drawing.Size(249, 31)
-        Me.txtTipo.TabIndex = 50
+        Me.txtTipo.TabIndex = 2
         '
         'Label11
         '
@@ -384,7 +384,7 @@ Partial Class frmNuevoProducto
         Me.cbCategorias.Location = New System.Drawing.Point(152, 235)
         Me.cbCategorias.Name = "cbCategorias"
         Me.cbCategorias.Size = New System.Drawing.Size(219, 34)
-        Me.cbCategorias.TabIndex = 52
+        Me.cbCategorias.TabIndex = 3
         '
         'TableLayoutPanel1
         '

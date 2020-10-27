@@ -25,7 +25,6 @@ Partial Class frmLocalidades
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLocalidades))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvLocalidades = New System.Windows.Forms.DataGridView()
@@ -34,7 +33,6 @@ Partial Class frmLocalidades
         Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.btnNuevaLocalidad = New System.Windows.Forms.Button()
@@ -42,8 +40,9 @@ Partial Class frmLocalidades
         Me.txtNuevaLoc = New System.Windows.Forms.TextBox()
         Me.btnGuardarLoc = New System.Windows.Forms.Button()
         Me.btnCancelarLoc = New System.Windows.Forms.Button()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
         CType(Me.dgvLocalidades, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -138,30 +137,18 @@ Partial Class frmLocalidades
         Me.Label3.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(17, 70)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 22)
+        Me.Label3.Size = New System.Drawing.Size(168, 22)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Buscar:"
+        Me.Label3.Text = "Buscar por nombre:"
         '
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(91, 71)
+        Me.txtBuscar.Location = New System.Drawing.Point(188, 71)
         Me.txtBuscar.MaxLength = 25
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(230, 23)
         Me.txtBuscar.TabIndex = 5
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnCerrar.Image = CType(resources.GetObject("btnCerrar.Image"), System.Drawing.Image)
-        Me.btnCerrar.Location = New System.Drawing.Point(588, 10)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(34, 34)
-        Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.btnCerrar.TabIndex = 6
-        Me.btnCerrar.TabStop = False
         '
         'btnCancelar
         '
@@ -263,11 +250,27 @@ Partial Class frmLocalidades
         Me.btnCancelarLoc.UseVisualStyleBackColor = True
         Me.btnCancelarLoc.Visible = False
         '
+        'picCerrar
+        '
+        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.picCerrar.Location = New System.Drawing.Point(595, 12)
+        Me.picCerrar.Margin = New System.Windows.Forms.Padding(0)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(27, 26)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCerrar.TabIndex = 42
+        Me.picCerrar.TabStop = False
+        Me.picCerrar.Visible = False
+        '
         'frmLocalidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(622, 397)
+        Me.Controls.Add(Me.picCerrar)
         Me.Controls.Add(Me.btnCancelarLoc)
         Me.Controls.Add(Me.btnGuardarLoc)
         Me.Controls.Add(Me.txtNuevaLoc)
@@ -280,13 +283,12 @@ Partial Class frmLocalidades
         Me.Controls.Add(Me.dgvLocalidades)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnCerrar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmLocalidades"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmLocalidades"
         CType(Me.dgvLocalidades, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -296,7 +298,6 @@ Partial Class frmLocalidades
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents btnCerrar As PictureBox
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnAceptar As Button
     Friend WithEvents idLocalidad As DataGridViewTextBoxColumn
@@ -308,4 +309,5 @@ Partial Class frmLocalidades
     Friend WithEvents txtNuevaLoc As TextBox
     Friend WithEvents btnGuardarLoc As Button
     Friend WithEvents btnCancelarLoc As Button
+    Friend WithEvents picCerrar As PictureBox
 End Class

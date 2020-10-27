@@ -118,9 +118,8 @@ Public Class Producto
 #Region "Metodos"
 
     Public Sub categorias(ByRef tabla As DataTable)
-        Dim consultaSQL As String = "SELECT * FROM categorias"
+        Dim consultaSQL As String = "SELECT idcategoria, nombCategoria FROM categorias WHERE activo = 1 ORDER BY destacado DESC"
         capaDatos.llenarDatos(tabla, consultaSQL)
-
     End Sub
     Public Sub recuperarProductos(ByVal tabla As DataTable)
         Dim consultaSQL As String = "SELECT * FROM vistaproductos"
@@ -219,6 +218,28 @@ Public Class Producto
             Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
             sqlComando.Parameters.Add("@producto", MySqlDbType.Int64).Value = Me.idProducto
             sqlComando.Parameters.Add("@cantidad", MySqlDbType.Int64).Value = Me.cantidad
+            capaDatos.cargarDatos(sqlComando)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Productos")
+
+        End Try
+    End Sub
+    Public Sub aumentarPrecio(ByVal porcentaje As Double)
+        Try
+            Dim consultaSQL As String = "UPDATE productos SET precioVenta = (precioVenta * @porcentaje)"
+            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+            sqlComando.Parameters.Add("@porcentaje", MySqlDbType.Double).Value = porcentaje
+            capaDatos.cargarDatos(sqlComando)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Productos")
+
+        End Try
+    End Sub
+    Public Sub disminuirPrecio(ByVal porcentaje As Double)
+        Try
+            Dim consultaSQL As String = "UPDATE productos SET precioVenta = (precioVenta * @porcentaje)"
+            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+            sqlComando.Parameters.Add("@porcentaje", MySqlDbType.Double).Value = porcentaje
             capaDatos.cargarDatos(sqlComando)
         Catch ex As Exception
             MsgBox(ex.Message, "Productos")

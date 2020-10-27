@@ -8,16 +8,20 @@
         entrega = 0
         txtResto.Text = 0
         tablaCuenta.Clear()
-        eCuentaCorriente.verCuentaCliente(tablaCuenta)
-        dgvCuentas.DataSource = tablaCuenta
-        dgvCuentas.ClearSelection()
-        corregirDataGrid()
-        txtResto.Text = (debe + entrega).ToString("C2")
-        If debe < 0 Then
-            txtResto.ForeColor = Color.Red
+        If eCuentaCorriente.verCuentaCliente(tablaCuenta) = True Then
+            dgvCuentas.DataSource = tablaCuenta
+            dgvCuentas.ClearSelection()
+            corregirDataGrid()
+            txtResto.Text = (debe + entrega).ToString("C2")
+            If debe < 0 Then
+                txtResto.ForeColor = Color.Red
+            Else
+                txtResto.ForeColor = Color.Green
+            End If
         Else
-            txtResto.ForeColor = Color.Green
+            MsgBox("Este Cliente no posee cuenta corriente", MsgBoxStyle.Information, "Cuentas Corriente")
         End If
+
     End Sub
     Public Sub calcularResto()
         For i = 0 To dgvCuentas.Rows.Count - 1
@@ -60,7 +64,6 @@
 
     Private Sub picClientes_Click(sender As Object, e As EventArgs) Handles picClientes.Click
         Dim clientes As New frmClientes
-        frmPrincipal.Hide()
         With clientes
             .reparacion = True
             .ShowDialog()
@@ -72,7 +75,6 @@
             If .DialogResult = DialogResult.Cancel Then
                 txtNombreCliente.Text = ""
             End If
-            frmPrincipal.Show()
         End With
     End Sub
 

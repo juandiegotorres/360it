@@ -22,20 +22,17 @@ Partial Class frmProductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
         Me.btnBajaCancelar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
@@ -45,7 +42,7 @@ Partial Class frmProductos
         Me.categoriaid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idproveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,16 +50,28 @@ Partial Class frmProductos
         Me.precioCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSinStock = New System.Windows.Forms.Button()
+        Me.btnDisminuir = New System.Windows.Forms.Button()
+        Me.btnAumentarPrecio = New System.Windows.Forms.Button()
         Me.btnQuitar = New System.Windows.Forms.Button()
         Me.btnAgregarStock = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.lblBuscar = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbBuscador = New System.Windows.Forms.ComboBox()
+        Me.cbCategorias = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -70,9 +79,9 @@ Partial Class frmProductos
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel6, 0, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(10, 10, 11, 10)
@@ -164,37 +173,6 @@ Partial Class frmProductos
         Me.btnModificar.Text = "Modificación"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.txtBuscar)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(4, 104)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(424, 33)
-        Me.Panel1.TabIndex = 43
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(154, 8)
-        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(200, 23)
-        Me.txtBuscar.TabIndex = 44
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(12, 7)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(134, 22)
-        Me.Label2.TabIndex = 44
-        Me.Label2.Text = "Buscar modelo:"
-        '
         'TableLayoutPanel3
         '
         Me.TableLayoutPanel3.ColumnCount = 2
@@ -253,24 +231,24 @@ Partial Class frmProductos
         Me.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvProductos.CausesValidation = False
         Me.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.marca, Me.categoriaid, Me.idproveedor, Me.modelo, Me.tipoProducto, Me.nombCategoria, Me.nombreProveedor, Me.cantidad, Me.descripcion, Me.precioCosto, Me.precioVenta})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.marca, Me.categoriaid, Me.idproveedor, Me.modelo, Me.Tipo, Me.nombCategoria, Me.nombreProveedor, Me.cantidad, Me.descripcion, Me.precioCosto, Me.precioVenta})
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle10
         Me.dgvProductos.EnableHeadersVisualStyles = False
         Me.dgvProductos.Location = New System.Drawing.Point(20, 5)
         Me.dgvProductos.Margin = New System.Windows.Forms.Padding(20, 5, 18, 10)
@@ -278,18 +256,18 @@ Partial Class frmProductos
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         Me.dgvProductos.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.dgvProductos.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.dgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        Me.dgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProductos.Size = New System.Drawing.Size(817, 375)
         Me.dgvProductos.TabIndex = 46
@@ -332,12 +310,12 @@ Partial Class frmProductos
         Me.modelo.Name = "modelo"
         Me.modelo.ReadOnly = True
         '
-        'tipoProducto
+        'Tipo
         '
-        Me.tipoProducto.DataPropertyName = "tipoProducto"
-        Me.tipoProducto.HeaderText = "Tipo"
-        Me.tipoProducto.Name = "tipoProducto"
-        Me.tipoProducto.ReadOnly = True
+        Me.Tipo.DataPropertyName = "tipoProducto"
+        Me.Tipo.HeaderText = "Tipo"
+        Me.Tipo.Name = "Tipo"
+        Me.Tipo.ReadOnly = True
         '
         'nombCategoria
         '
@@ -370,8 +348,8 @@ Partial Class frmProductos
         'precioCosto
         '
         Me.precioCosto.DataPropertyName = "precioCosto"
-        DataGridViewCellStyle2.Format = "C2"
-        Me.precioCosto.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Format = "C2"
+        Me.precioCosto.DefaultCellStyle = DataGridViewCellStyle8
         Me.precioCosto.HeaderText = "Precio Costo"
         Me.precioCosto.Name = "precioCosto"
         Me.precioCosto.ReadOnly = True
@@ -379,8 +357,8 @@ Partial Class frmProductos
         'precioVenta
         '
         Me.precioVenta.DataPropertyName = "precioVenta"
-        DataGridViewCellStyle3.Format = "C2"
-        Me.precioVenta.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Format = "C2"
+        Me.precioVenta.DefaultCellStyle = DataGridViewCellStyle9
         Me.precioVenta.HeaderText = "Precio Venta"
         Me.precioVenta.Name = "precioVenta"
         Me.precioVenta.ReadOnly = True
@@ -389,38 +367,58 @@ Partial Class frmProductos
         '
         Me.TableLayoutPanel5.ColumnCount = 1
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.btnSinStock, 0, 2)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnDisminuir, 0, 3)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnAumentarPrecio, 0, 2)
         Me.TableLayoutPanel5.Controls.Add(Me.btnQuitar, 0, 1)
         Me.TableLayoutPanel5.Controls.Add(Me.btnAgregarStock, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(855, 0)
         Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 4
+        Me.TableLayoutPanel5.RowCount = 5
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(178, 390)
         Me.TableLayoutPanel5.TabIndex = 47
         '
-        'btnSinStock
+        'btnDisminuir
         '
-        Me.btnSinStock.BackColor = System.Drawing.Color.Transparent
-        Me.btnSinStock.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSinStock.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSinStock.FlatAppearance.BorderSize = 2
-        Me.btnSinStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnSinStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSinStock.Font = New System.Drawing.Font("Poppins SemiBold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSinStock.ForeColor = System.Drawing.Color.Black
-        Me.btnSinStock.Location = New System.Drawing.Point(5, 99)
-        Me.btnSinStock.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
-        Me.btnSinStock.Name = "btnSinStock"
-        Me.btnSinStock.Size = New System.Drawing.Size(155, 59)
-        Me.btnSinStock.TabIndex = 42
-        Me.btnSinStock.Text = "Productos sin Stock primero"
-        Me.btnSinStock.UseVisualStyleBackColor = False
+        Me.btnDisminuir.BackColor = System.Drawing.Color.Transparent
+        Me.btnDisminuir.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDisminuir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDisminuir.FlatAppearance.BorderSize = 2
+        Me.btnDisminuir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnDisminuir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDisminuir.Font = New System.Drawing.Font("Poppins SemiBold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisminuir.ForeColor = System.Drawing.Color.Black
+        Me.btnDisminuir.Location = New System.Drawing.Point(5, 146)
+        Me.btnDisminuir.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
+        Me.btnDisminuir.Name = "btnDisminuir"
+        Me.btnDisminuir.Size = New System.Drawing.Size(155, 32)
+        Me.btnDisminuir.TabIndex = 43
+        Me.btnDisminuir.Text = "Disminuir precio"
+        Me.btnDisminuir.UseVisualStyleBackColor = False
+        '
+        'btnAumentarPrecio
+        '
+        Me.btnAumentarPrecio.BackColor = System.Drawing.Color.Transparent
+        Me.btnAumentarPrecio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAumentarPrecio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAumentarPrecio.FlatAppearance.BorderSize = 2
+        Me.btnAumentarPrecio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnAumentarPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAumentarPrecio.Font = New System.Drawing.Font("Poppins SemiBold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAumentarPrecio.ForeColor = System.Drawing.Color.Black
+        Me.btnAumentarPrecio.Location = New System.Drawing.Point(5, 99)
+        Me.btnAumentarPrecio.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
+        Me.btnAumentarPrecio.Name = "btnAumentarPrecio"
+        Me.btnAumentarPrecio.Size = New System.Drawing.Size(155, 32)
+        Me.btnAumentarPrecio.TabIndex = 42
+        Me.btnAumentarPrecio.Text = "Aumentar precio"
+        Me.btnAumentarPrecio.UseVisualStyleBackColor = False
         '
         'btnQuitar
         '
@@ -458,6 +456,116 @@ Partial Class frmProductos
         Me.btnAgregarStock.Text = "Agregar Stock"
         Me.btnAgregarStock.UseVisualStyleBackColor = False
         '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.11036!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.88964!))
+        Me.TableLayoutPanel6.Controls.Add(Me.Panel1, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Panel2, 1, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(1, 102)
+        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(1)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 1
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(1033, 37)
+        Me.TableLayoutPanel6.TabIndex = 47
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.txtBuscar)
+        Me.Panel1.Controls.Add(Me.lblBuscar)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(435, 37)
+        Me.Panel1.TabIndex = 44
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(92, 6)
+        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(325, 27)
+        Me.txtBuscar.TabIndex = 44
+        '
+        'lblBuscar
+        '
+        Me.lblBuscar.AutoSize = True
+        Me.lblBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBuscar.ForeColor = System.Drawing.Color.Black
+        Me.lblBuscar.Location = New System.Drawing.Point(16, 9)
+        Me.lblBuscar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBuscar.Name = "lblBuscar"
+        Me.lblBuscar.Size = New System.Drawing.Size(68, 22)
+        Me.lblBuscar.TabIndex = 44
+        Me.lblBuscar.Text = "Buscar:"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.cbBuscador)
+        Me.Panel2.Controls.Add(Me.cbCategorias)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(435, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(598, 37)
+        Me.Panel2.TabIndex = 45
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(46, 8)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(99, 22)
+        Me.Label4.TabIndex = 55
+        Me.Label4.Text = "Buscar por:"
+        '
+        'cbBuscador
+        '
+        Me.cbBuscador.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbBuscador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbBuscador.Font = New System.Drawing.Font("Montserrat", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbBuscador.FormattingEnabled = True
+        Me.cbBuscador.Items.AddRange(New Object() {"Tipo", "Modelo", "Marca"})
+        Me.cbBuscador.Location = New System.Drawing.Point(152, 6)
+        Me.cbBuscador.Name = "cbBuscador"
+        Me.cbBuscador.Size = New System.Drawing.Size(155, 29)
+        Me.cbBuscador.TabIndex = 54
+        '
+        'cbCategorias
+        '
+        Me.cbCategorias.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbCategorias.BackColor = System.Drawing.SystemColors.Window
+        Me.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCategorias.Font = New System.Drawing.Font("Montserrat", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCategorias.FormattingEnabled = True
+        Me.cbCategorias.Location = New System.Drawing.Point(425, 6)
+        Me.cbCategorias.Name = "cbCategorias"
+        Me.cbCategorias.Size = New System.Drawing.Size(155, 29)
+        Me.cbCategorias.TabIndex = 53
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(319, 9)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(99, 22)
+        Me.Label3.TabIndex = 45
+        Me.Label3.Text = "Categorías:"
+        '
         'frmProductos
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -469,43 +577,53 @@ Partial Class frmProductos
         Me.Text = "frmProductos"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents dgvProductos As DataGridView
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents btnAgregarStock As Button
+    Friend WithEvents btnQuitar As Button
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents btnAgregarSeleccionar As Button
+    Friend WithEvents btnBajaCancelar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents lblBuscar As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cbBuscador As ComboBox
+    Friend WithEvents cbCategorias As ComboBox
+    Friend WithEvents Label4 As Label
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents marca As DataGridViewTextBoxColumn
     Friend WithEvents categoriaid As DataGridViewTextBoxColumn
     Friend WithEvents idproveedor As DataGridViewTextBoxColumn
     Friend WithEvents modelo As DataGridViewTextBoxColumn
-    Friend WithEvents tipoProducto As DataGridViewTextBoxColumn
+    Friend WithEvents Tipo As DataGridViewTextBoxColumn
     Friend WithEvents nombCategoria As DataGridViewTextBoxColumn
     Friend WithEvents nombreProveedor As DataGridViewTextBoxColumn
     Friend WithEvents cantidad As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents precioCosto As DataGridViewTextBoxColumn
     Friend WithEvents precioVenta As DataGridViewTextBoxColumn
-    Friend WithEvents btnAgregarStock As Button
-    Friend WithEvents btnQuitar As Button
-    Friend WithEvents btnSinStock As Button
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents btnAgregarSeleccionar As Button
-    Friend WithEvents btnBajaCancelar As Button
-    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnAumentarPrecio As Button
+    Friend WithEvents btnDisminuir As Button
 End Class

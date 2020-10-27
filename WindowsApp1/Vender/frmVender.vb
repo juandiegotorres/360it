@@ -4,18 +4,14 @@
     Public eVenta As New Entidades.Venta
     'defino las variables para poder guardar los datos del dgv productos para pasarlos hacia el carrito
     Dim idProducto, idProductoCarro As UInt64
-    Dim tipo, marca, modelo As String
+    Dim tipo, marca, modelo, filtroBS, filtroElegido As String
     'defino una variable para poder establecer la cantidad de un producto, para asi poder pasarsela al formulario cantidad. Y defino otra para guardar el resultado del formulario
     Dim cantidad, cantidadSeleccionada As UInt16
-    Dim precioCosto, precioVenta, precioTotal, subtotal, total, descuento, recargo As Double
-
+    Dim precioCosto, precioVenta, precioTotal, subtotal, total, descuento, recargo, precioProductoIndividual As Double
     'Creo la tabla que va a contener los productos en stock para llenar el datagrid
-    Dim tablaProductos As New DataTable
-    Dim tablaFormPago As New DataTable
-    Dim listaProductos As New List(Of UInt16)
-    Dim cantidades As New List(Of UInt16)
-    Dim precioProductos As New List(Of UInt16)
-    Dim precioProductoIndividual As Double
+    Dim tablaProductos, tablaBuscador, tablaFormPago As New DataTable
+    Dim listaProductos, cantidades, precioProductos As New List(Of UInt16)
+    Dim bsProductos As New BindingSource
     Private Sub frmFacturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnEliminarDGV.UseColumnTextForButtonValue = True
         btnEliminarDGV.Text = "Eliminar"
@@ -28,14 +24,17 @@
         actualizarProductos()
         cargarFormPago()
         nroVenta()
-
+        comboBoxBuscarPor()
     End Sub
 
     'Traigo los productos desde la base de datos mediante la instancia a la clase ventas
     Public Sub actualizarProductos()
+        txtBuscar.Text = ""
+        filtroBS = ""
         tablaProductos.Clear()
         eVenta.verProductos(tablaProductos)
-        dgvProductosLista.DataSource = tablaProductos
+        bsProductos.DataSource = tablaProductos
+        dgvProductosLista.DataSource = bsProductos
     End Sub
     'Cargo el combobox de la forma de pago
     Public Sub cargarFormPago()
@@ -44,6 +43,21 @@
         cbFormPago.DataSource = tablaFormPago
         cbFormPago.DisplayMember = "nombFormaPago"
         cbFormPago.ValueMember = "idformpago"
+    End Sub
+    Public Sub comboBoxBuscarPor()
+        'Creo una tabla para poder tener dos valores dentro del combobox, uno es el que yo voy a mostrar y otro contiene el nombre identificatorio que coincide con el de la base de datos para poder buscar
+        tablaBuscador.Clear()
+        'agrego las columnas
+        tablaBuscador.Columns.Add("nombre")
+        tablaBuscador.Columns.Add("nombreDB")
+        'agrego las 3 filas que necesito con sus respectivos nombres de la base de datos
+        tablaBuscador.Rows.Add("Tipo", "tipoProducto")
+        tablaBuscador.Rows.Add("Modelo", "modelo")
+        tablaBuscador.Rows.Add("Marca", "marca")
+        cbBuscador.DataSource = tablaBuscador
+        cbBuscador.DisplayMember = "nombre"
+        cbBuscador.ValueMember = "nombreDB"
+        cbBuscador.SelectedIndex = 0
     End Sub
     'Cargo el numero de ventas realizadas en total en el textbox
     Public Sub nroVenta()
@@ -79,6 +93,8 @@
             'Si introduzco una cantidad valida en el formulario cantidad, recien ahi lo agrega al datagrid de carrito/venta
             If .DialogResult = DialogResult.OK Then
                 'Si previamente hay algun descuento o recargo lo borro para la nueva venta
+                txtBuscar.Text = ""
+                filtroBS = ""
                 If dgvCarrito.Rows.Count = 0 Then
                     txtDescuento.Text = ""
                     txtRecargo.Text = ""
@@ -177,6 +193,13 @@
         anidadirAlCarro()
     End Sub
 
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        'asigno el valor que habia agregado en la tabla anteriormente para asi poder filtrar el datagrid
+        filtroElegido = cbBuscador.SelectedValue
+        filtroBS = filtroElegido & " like '%" & txtBuscar.Text & "%'"
+        bsProductos.Filter = filtroBS
+    End Sub
+
     Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
         If dgvCarrito.Rows.Count >= 1 Then
             Dim ctaCorriente As New frmCargarCuentaCorriente()
@@ -206,12 +229,12 @@
                 txtTotal.Text = total.ToString("C2")
             Else
                 'Si el monto de descuento se pasa del monto a pagar el text box se pone en rojo
-                If CInt(txtDescuento.Text) > subtotal Then
+                If CDbl(txtDescuento.Text) > subtotal Then
                     txtDescuento.BackColor = Color.FromArgb(255, 122, 122)
                     txtTotal.Text = subtotal.ToString("C2")
                 Else
                     'De la otra forma se va descontando a medida que vamos presionando los numeros
-                    descuento = CInt(txtDescuento.Text)
+                    descuento = CDbl(txtDescuento.Text)
                     total = subtotal
                     If descuento > subtotal Then
                         total = 0
@@ -327,7 +350,7 @@
 
 #End Region
 #Region "Key Press/Down"
-    Private Sub txtDescuento_KeyPress(sender As Object, e As KeyPressEventArgs)
+    Private Sub txtDescuento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescuento.KeyPress
         'Este evento me permite solo introducir numeros y comas en el recargo. Y tambien solo se va a poder escribir si hay algun producto en el carro
         If Char.IsNumber(e.KeyChar) And total <> 0 Then
             e.Handled = False
@@ -342,7 +365,7 @@
 
     End Sub
 
-    Private Sub txtRecargo_KeyPress(sender As Object, e As KeyPressEventArgs)
+    Private Sub txtRecargo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRecargo.KeyPress
         'Este evento me permite solo introducir numeros y comas en el recargo. Y tambien solo se va a poder escribir si hay algun producto en el carro
         If Char.IsNumber(e.KeyChar) And total <> 0 Then
             e.Handled = False
@@ -355,10 +378,17 @@
             e.Handled = True
         End If
     End Sub
-    Private Sub txtDescuento_KeyDown(sender As Object, e As KeyEventArgs)
+
+    Private Sub txtDescuento_KeyDown(sender As Object, e As KeyEventArgs) Handles txtDescuento.KeyDown
         'Si yo presiono la tecla de borrar se va a borrar todo el contenido del textbox. Esto lo hago porque yo voy haciendo los calculos del total mientras el usuario esta escribiendo, y no puedo hacerlo a la inversa de deshacerlo mientras el usuario esta borrando por lo que borro de una sola vez. Lo podria hacer pero no tengo ganas xD
         If e.KeyCode = Keys.Back Then
             txtDescuento.Text = ""
+        End If
+    End Sub
+
+    Private Sub txtRecargo_KeyDown(sender As Object, e As KeyEventArgs) Handles txtRecargo.KeyDown
+        'Si yo presiono la tecla de borrar se va a borrar todo el contenido del textbox. Esto lo hago porque yo voy haciendo los calculos del total mientras el usuario esta escribiendo, y no puedo hacerlo a la inversa de deshacerlo mientras el usuario esta borrando por lo que borro de una sola vez. Lo podria hacer pero no tengo ganas xD
+        If e.KeyCode = Keys.Back Then
             txtRecargo.Text = ""
         End If
     End Sub
@@ -393,6 +423,10 @@
                 anidadirAlCarro()
         End Select
     End Sub
+
+
+
+
 #End Region
 
 End Class
