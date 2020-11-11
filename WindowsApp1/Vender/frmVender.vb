@@ -288,9 +288,9 @@
                 total = subtotal
                 txtTotal.Text = total.ToString("C2")
             Else
-                descuento = CInt(txtRecargo.Text)
+                recargo = CInt(txtRecargo.Text)
                 total = subtotal
-                total = total + ((total * descuento) / 100)
+                total = total + ((total * recargo) / 100)
                 txtTotal.Text = total.ToString("C2")
             End If
         End If
@@ -422,6 +422,11 @@
             Case Keys.Enter
                 anidadirAlCarro()
         End Select
+    End Sub
+
+    Private Sub cbBuscador_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbBuscador.SelectedValueChanged
+        txtBuscar.Text = ""
+        txtBuscar.Focus()
     End Sub
 
 

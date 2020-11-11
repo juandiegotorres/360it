@@ -98,19 +98,16 @@
                 Me.DialogResult = DialogResult.OK
             End If
         Else
-            frmPrincipal.Hide()
             Dim nuevoProveedor As New frmNuevoProveedor
             nuevoProveedor.ShowDialog()
             If nuevoProveedor.DialogResult = DialogResult.OK Then
                 actualizarProveedores()
-                frmPrincipal.Show()
             End If
         End If
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim modificarProveedor As New frmNuevoProveedor
-        frmPrincipal.Hide()
         modificarProveedor.eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
         With modificarProveedor
             .modificar = True
@@ -119,8 +116,8 @@
                 actualizarProveedores()
             End If
         End With
-        frmPrincipal.Show()
     End Sub
+
 
     Private Sub btnBajaCancelar_Click(sender As Object, e As EventArgs) Handles btnBajaCancelar.Click
         If producto = True Then

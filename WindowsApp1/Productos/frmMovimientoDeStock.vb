@@ -26,23 +26,24 @@
         If quitar = True Then
             btnAgregar.Visible = False
             btnQuitar.Visible = True
-        End If
-        If cantidadProductos = 1 Then
-            lblDisponibilidad.Text = "Queda " & cantidadProductos & " producto en stock"
-            txtCantidad.Text = "1"
-        ElseIf cantidadProductos = 0 Then
-            lblDisponibilidad.Text = "Este producto no tiene stock"
-            lblDisponibilidad.ForeColor = Color.Red
-            txtCantidad.Enabled = False
-        ElseIf cantidadProductos > 9999 Then
-            lblDisponibilidad.Text = "LLegó al límite máximo de productos"
-            lblDisponibilidad.ForeColor = Color.Red
-            txtCantidad.Enabled = False
-            btnAgregar.Enabled = False
-            btnQuitar.Enabled = False
-        Else
-            lblDisponibilidad.Text = "Quedan " & cantidadProductos & " productos en stock"
-            txtCantidad.Text = "1"
+
+            If cantidadProductos = 1 Then
+                lblDisponibilidad.Text = "Queda " & cantidadProductos & " producto en stock"
+                txtCantidad.Text = "1"
+            ElseIf cantidadProductos = 0 Then
+                lblDisponibilidad.Text = "Este producto no tiene stock"
+                lblDisponibilidad.ForeColor = Color.Red
+                txtCantidad.Enabled = False
+            ElseIf cantidadProductos > 9999 Then
+                lblDisponibilidad.Text = "LLegó al límite máximo de productos"
+                lblDisponibilidad.ForeColor = Color.Red
+                txtCantidad.Enabled = False
+                btnAgregar.Enabled = False
+                btnQuitar.Enabled = False
+            Else
+                lblDisponibilidad.Text = "Quedan " & cantidadProductos & " productos en stock"
+                txtCantidad.Text = "1"
+            End If
         End If
     End Sub
     'Accion al cerrar el formulario
@@ -52,7 +53,9 @@
 
     'Como el formulario se muestra sobre el formulario padre y ambos tienen el mismo color de fondo dibujo un borde para diferenciarlo
     Private Sub frmCantidad_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-        ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Solid)
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click

@@ -33,7 +33,9 @@ Public Class frmCantidad
 
     'Como el formulario se muestra sobre el formulario padre y ambos tienen el mismo color de fondo dibujo un borde para diferenciarlo
     Private Sub frmCantidad_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-        ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Solid)
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click

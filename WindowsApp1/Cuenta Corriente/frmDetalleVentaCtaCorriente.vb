@@ -21,7 +21,9 @@
     End Sub
 
     Private Sub frmDetalleVenta_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-        ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Solid)
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
     End Sub
 
     Private Sub frmDetalleVenta_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -53,4 +55,7 @@
         btnCerrar.Select()
     End Sub
 
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class

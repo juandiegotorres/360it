@@ -130,6 +130,7 @@ Partial Class frmCambiarEstado
         Me.Controls.Add(Me.pnlHeader)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "frmCambiarEstado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmCambiarEstado"

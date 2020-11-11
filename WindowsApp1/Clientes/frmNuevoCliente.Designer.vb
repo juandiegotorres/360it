@@ -26,7 +26,7 @@ Partial Class frmNuevoCliente
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.txtNomApel = New System.Windows.Forms.TextBox()
         Me.cbProvincias = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -70,33 +70,34 @@ Partial Class frmNuevoCliente
         '
         Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnCerrar.Image = CType(resources.GetObject("btnCerrar.Image"), System.Drawing.Image)
-        Me.btnCerrar.Location = New System.Drawing.Point(481, 12)
+        Me.btnCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.btnCerrar.Location = New System.Drawing.Point(489, 12)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(34, 34)
-        Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.btnCerrar.Size = New System.Drawing.Size(27, 26)
+        Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnCerrar.TabIndex = 5
         Me.btnCerrar.TabStop = False
         '
-        'Label1
+        'lblTitulo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(138, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(285, 44)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Agregar cliente"
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.lblTitulo.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Location = New System.Drawing.Point(138, 12)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(285, 44)
+        Me.lblTitulo.TabIndex = 6
+        Me.lblTitulo.Text = "Agregar cliente"
         '
         'txtNomApel
         '
+        Me.txtNomApel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNomApel.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNomApel.Location = New System.Drawing.Point(148, 87)
+        Me.txtNomApel.Location = New System.Drawing.Point(148, 88)
         Me.txtNomApel.MaxLength = 45
         Me.txtNomApel.Name = "txtNomApel"
         Me.txtNomApel.Size = New System.Drawing.Size(291, 31)
-        Me.txtNomApel.TabIndex = 1
+        Me.txtNomApel.TabIndex = 0
         '
         'cbProvincias
         '
@@ -106,7 +107,7 @@ Partial Class frmNuevoCliente
         Me.cbProvincias.Location = New System.Drawing.Point(148, 243)
         Me.cbProvincias.Name = "cbProvincias"
         Me.cbProvincias.Size = New System.Drawing.Size(219, 34)
-        Me.cbProvincias.TabIndex = 4
+        Me.cbProvincias.TabIndex = 3
         '
         'Label2
         '
@@ -160,24 +161,27 @@ Partial Class frmNuevoCliente
         '
         'txtTelefono
         '
+        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelefono.Location = New System.Drawing.Point(148, 139)
         Me.txtTelefono.MaxLength = 25
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(237, 31)
-        Me.txtTelefono.TabIndex = 2
+        Me.txtTelefono.TabIndex = 1
         '
         'txtDireccion
         '
+        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDireccion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDireccion.Location = New System.Drawing.Point(147, 191)
         Me.txtDireccion.MaxLength = 60
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(264, 31)
-        Me.txtDireccion.TabIndex = 3
+        Me.txtDireccion.TabIndex = 2
         '
         'txtLocalidad
         '
+        Me.txtLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtLocalidad.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLocalidad.Location = New System.Drawing.Point(147, 298)
         Me.txtLocalidad.Name = "txtLocalidad"
@@ -195,11 +199,11 @@ Partial Class frmNuevoCliente
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancelar.Location = New System.Drawing.Point(362, 5)
+        Me.btnCancelar.Location = New System.Drawing.Point(344, 5)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(136, 43)
-        Me.btnCancelar.TabIndex = 7
+        Me.btnCancelar.Size = New System.Drawing.Size(128, 43)
+        Me.btnCancelar.TabIndex = 5
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -212,10 +216,10 @@ Partial Class frmNuevoCliente
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(190, 5)
+        Me.btnGuardar.Location = New System.Drawing.Point(181, 5)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(136, 43)
+        Me.btnGuardar.Size = New System.Drawing.Size(127, 43)
         Me.btnGuardar.TabIndex = 6
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -232,8 +236,8 @@ Partial Class frmNuevoCliente
         Me.btnLimpiar.Location = New System.Drawing.Point(18, 5)
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(136, 43)
-        Me.btnLimpiar.TabIndex = 8
+        Me.btnLimpiar.Size = New System.Drawing.Size(127, 43)
+        Me.btnLimpiar.TabIndex = 7
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -242,7 +246,7 @@ Partial Class frmNuevoCliente
         Me.btnLocalidades.Location = New System.Drawing.Point(400, 298)
         Me.btnLocalidades.Name = "btnLocalidades"
         Me.btnLocalidades.Size = New System.Drawing.Size(38, 31)
-        Me.btnLocalidades.TabIndex = 5
+        Me.btnLocalidades.TabIndex = 4
         Me.btnLocalidades.Text = "..."
         Me.btnLocalidades.UseVisualStyleBackColor = True
         '
@@ -255,12 +259,12 @@ Partial Class frmNuevoCliente
         Me.TableLayoutPanel1.Controls.Add(Me.btnCancelar, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnLimpiar, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 365)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 360)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(516, 63)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(490, 63)
         Me.TableLayoutPanel1.TabIndex = 23
         '
         'frmNuevoCliente
@@ -280,11 +284,12 @@ Partial Class frmNuevoCliente
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cbProvincias)
         Me.Controls.Add(Me.txtNomApel)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "frmNuevoCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmNuevoCliente"
@@ -299,7 +304,7 @@ Partial Class frmNuevoCliente
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnCerrar As PictureBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTitulo As Label
     Friend WithEvents txtNomApel As TextBox
     Friend WithEvents cbProvincias As ComboBox
     Friend WithEvents Label2 As Label

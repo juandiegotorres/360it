@@ -155,11 +155,39 @@ Public Class Proveedor
             MsgBox(ex.Message, "Entidad Proveedor")
         End Try
     End Sub
-    Private Sub eliminarRubroPago()
-        Dim consultaSQL As String = "DELETE FROM pagoxproveedor WHERE proveedor = '" & _idProveedor & "'"
-        capaDatos.cargarDatos(consultaSQL)
-        consultaSQL = "DELETE FROM rubroxproveedor WHERE numproveedor = '" & _idProveedor & "'"
-        capaDatos.cargarDatos(consultaSQL)
+
+    Public Sub actualizarPagosYRubros()
+        Dim consultaSQL As String = "DELETE FROM pagoxproveedor WHERE proveedor = @idProveedor"
+        Dim comandoSQL As MySqlCommand = New MySqlCommand(consultaSQL)
+        comandoSQL.Parameters.Add("@idProveedor", MySqlDbType.VarChar).Value = Me.idProveedor
+        capaDatos.cargarDatos(comandoSQL)
+        consultaSQL = "DELETE FROM rubroxproveedor WHERE numproveedor = @idProveedor"
+        comandoSQL.CommandText = consultaSQL
+        capaDatos.cargarDatos(comandoSQL)
+        Try
+            For i = 0 To Me.rubro.Count - 1
+                consultaSQL = "INSERT INTO rubroxproveedor(rubro,numproveedor) VALUES (@rubro, @idProveedor)"
+                comandoSQL.CommandText = consultaSQL
+                If i = 0 Then
+                    comandoSQL.Parameters.Add("@rubro", MySqlDbType.Int16).Value = Me.rubro.Item(i)
+                Else
+                    comandoSQL.Parameters("@rubro").Value = Me.rubro.Item(i)
+                End If
+                capaDatos.cargarDatos(comandoSQL)
+            Next
+            For i = 0 To Me.formPago.Count - 1
+                consultaSQL = "INSERT INTO pagoxproveedor(pago,proveedor) VALUES (@pago, @idProveedor)"
+                comandoSQL.CommandText = consultaSQL
+                If i = 0 Then
+                    comandoSQL.Parameters.Add("@pago", MySqlDbType.Int16).Value = Me.formPago.Item(i)
+                Else
+                    comandoSQL.Parameters("@pago").Value = Me.formPago.Item(i)
+                End If
+                capaDatos.cargarDatos(comandoSQL)
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
     Public Sub guardarProveedorModif()
         Try
@@ -174,8 +202,7 @@ Public Class Proveedor
             comandoSQL.Parameters.Add("@horario", MySqlDbType.VarChar).Value = Me.horario
             comandoSQL.Parameters.Add("@idproveedor", MySqlDbType.Int64).Value = Me.idProveedor
             capaDatos.cargarDatos(comandoSQL)
-            eliminarRubroPago()
-            guardarCheckedListBox()
+            actualizarPagosYRubros()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

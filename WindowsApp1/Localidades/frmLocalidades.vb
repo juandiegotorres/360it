@@ -103,4 +103,19 @@
     Private Sub picCerrar_Click(sender As Object, e As EventArgs) Handles picCerrar.Click
         Me.Close()
     End Sub
+
+    Private Sub frmLocalidades_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Enter
+                Call BtnAceptar_Click(btnAceptar, e)
+            Case Keys.Escape
+                Call BtnCancelar_Click(btnCancelar, e)
+        End Select
+    End Sub
+
+    Private Sub frmLocalidades_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
+    End Sub
 End Class

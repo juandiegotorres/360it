@@ -315,9 +315,9 @@ Partial Class frmVender
         Me.Label1.Location = New System.Drawing.Point(21, 29)
         Me.Label1.Margin = New System.Windows.Forms.Padding(21, 9, 4, 2)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(448, 71)
+        Me.Label1.Size = New System.Drawing.Size(272, 71)
         Me.Label1.TabIndex = 12
-        Me.Label1.Text = "FACTURACIÓN"
+        Me.Label1.Text = "VENDER"
         '
         'xd
         '
@@ -577,6 +577,7 @@ Partial Class frmVender
         Me.txtRecargo.Name = "txtRecargo"
         Me.txtRecargo.Size = New System.Drawing.Size(93, 28)
         Me.txtRecargo.TabIndex = 61
+        Me.txtRecargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtDescuento
         '
@@ -591,6 +592,7 @@ Partial Class frmVender
         Me.txtDescuento.Name = "txtDescuento"
         Me.txtDescuento.Size = New System.Drawing.Size(93, 28)
         Me.txtDescuento.TabIndex = 59
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'rbRecargoPorcentaje
         '

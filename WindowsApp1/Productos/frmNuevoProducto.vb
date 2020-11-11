@@ -16,6 +16,7 @@
     Private Sub frmNuevoProducto_Load(sender As Object, e As EventArgs) Handles Me.Load
         cargarCategorias()
         If modificar = True Then
+            lblTitulo.Text = "Modificar Producto"
             eProducto.modificarProducto()
             txtMarca.Text = eProducto.marca
             txtModelo.Text = eProducto.modelo
@@ -105,7 +106,6 @@
 
     Private Sub BtnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
         Dim proveedores As New frmProveedores
-        Me.Hide()
         With proveedores
             .producto = True
             .ShowDialog()
@@ -113,7 +113,6 @@
                 eProducto.idProveedor = proveedores.eProveedor.idProveedor
                 eProducto.nombProveedor = proveedores.eProveedor.nombre
                 txtProveedor.Text = eProducto.nombProveedor
-                Me.Show()
             End If
         End With
 
@@ -181,6 +180,21 @@
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         limpiarCampos()
+    End Sub
+
+    Private Sub frmNuevoProducto_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Enter
+                Call BtnGuardar_Click(btnGuardar, e)
+            Case Keys.Escape
+                Call BtnCancelar_Click(btnCancelar, e)
+        End Select
+    End Sub
+
+    Private Sub frmNuevoProducto_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
     End Sub
 
 

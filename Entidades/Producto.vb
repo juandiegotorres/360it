@@ -224,23 +224,40 @@ Public Class Producto
 
         End Try
     End Sub
-    Public Sub aumentarPrecio(ByVal porcentaje As Double)
+    Public Sub aumentarPrecio(ByVal porcentaje As Double, ByVal todos As Boolean)
         Try
-            Dim consultaSQL As String = "UPDATE productos SET precioVenta = (precioVenta * @porcentaje)"
-            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
-            sqlComando.Parameters.Add("@porcentaje", MySqlDbType.Double).Value = porcentaje
-            capaDatos.cargarDatos(sqlComando)
+            If todos = True Then
+                Dim consultaSQL As String = "UPDATE productos SET precioVenta = (precioVenta * @porcentaje)"
+                Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+                sqlComando.Parameters.Add("@porcentaje", MySqlDbType.Double).Value = porcentaje
+                capaDatos.cargarDatos(sqlComando)
+            Else
+                Dim consultaSQL As String = "UPDATE productos SET precioVenta = (precioVenta * @porcentaje) WHERE idProducto = @id"
+                Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+                sqlComando.Parameters.Add("@porcentaje", MySqlDbType.Double).Value = porcentaje
+                sqlComando.Parameters.Add("@id", MySqlDbType.Double).Value = Me.idProducto
+                capaDatos.cargarDatos(sqlComando)
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message, "Productos")
 
         End Try
     End Sub
-    Public Sub disminuirPrecio(ByVal porcentaje As Double)
+    Public Sub disminuirPrecio(ByVal porcentaje As Double, ByVal todos As Boolean)
         Try
-            Dim consultaSQL As String = "UPDATE productos SET precioVenta = (precioVenta * @porcentaje)"
-            Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
-            sqlComando.Parameters.Add("@porcentaje", MySqlDbType.Double).Value = porcentaje
-            capaDatos.cargarDatos(sqlComando)
+            If todos = True Then
+                Dim consultaSQL As String = "UPDATE productos SET precioVenta = (precioVenta * @porcentaje)"
+                Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+                sqlComando.Parameters.Add("@porcentaje", MySqlDbType.Double).Value = porcentaje
+                capaDatos.cargarDatos(sqlComando)
+            Else
+                Dim consultaSQL As String = "UPDATE productos SET precioVenta = (precioVenta * @porcentaje) WHERE idProducto = @id"
+                Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
+                sqlComando.Parameters.Add("@porcentaje", MySqlDbType.Double).Value = porcentaje
+                sqlComando.Parameters.Add("@id", MySqlDbType.Double).Value = Me.idProducto
+                capaDatos.cargarDatos(sqlComando)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message, "Productos")
 

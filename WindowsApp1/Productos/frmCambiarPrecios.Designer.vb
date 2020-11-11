@@ -30,6 +30,7 @@ Partial Class frmCambiarPrecios
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.pnlHeader = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.chbTodosLosProductos = New System.Windows.Forms.CheckBox()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,7 +39,7 @@ Partial Class frmCambiarPrecios
         Me.btnDisminuir.Enabled = False
         Me.btnDisminuir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDisminuir.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDisminuir.Location = New System.Drawing.Point(137, 177)
+        Me.btnDisminuir.Location = New System.Drawing.Point(142, 186)
         Me.btnDisminuir.Name = "btnDisminuir"
         Me.btnDisminuir.Size = New System.Drawing.Size(110, 41)
         Me.btnDisminuir.TabIndex = 56
@@ -50,7 +51,7 @@ Partial Class frmCambiarPrecios
         '
         Me.lblAlerta.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAlerta.ForeColor = System.Drawing.Color.Red
-        Me.lblAlerta.Location = New System.Drawing.Point(12, 64)
+        Me.lblAlerta.Location = New System.Drawing.Point(8, 137)
         Me.lblAlerta.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAlerta.Name = "lblAlerta"
         Me.lblAlerta.Size = New System.Drawing.Size(367, 45)
@@ -58,13 +59,14 @@ Partial Class frmCambiarPrecios
         Me.lblAlerta.Text = "El precio de todos los productos aumentará el porcentaje que introduzcas aquí ¡Cu" &
     "idado!"
         Me.lblAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblAlerta.Visible = False
         '
         'btnAumentar
         '
         Me.btnAumentar.Enabled = False
         Me.btnAumentar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAumentar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAumentar.Location = New System.Drawing.Point(137, 177)
+        Me.btnAumentar.Location = New System.Drawing.Point(142, 186)
         Me.btnAumentar.Name = "btnAumentar"
         Me.btnAumentar.Size = New System.Drawing.Size(110, 41)
         Me.btnAumentar.TabIndex = 53
@@ -75,7 +77,7 @@ Partial Class frmCambiarPrecios
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Montserrat SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(46, 126)
+        Me.Label2.Location = New System.Drawing.Point(59, 79)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(156, 26)
         Me.Label2.TabIndex = 52
@@ -84,7 +86,7 @@ Partial Class frmCambiarPrecios
         'txtPorcentaje
         '
         Me.txtPorcentaje.Font = New System.Drawing.Font("Montserrat", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPorcentaje.Location = New System.Drawing.Point(201, 123)
+        Me.txtPorcentaje.Location = New System.Drawing.Point(214, 76)
         Me.txtPorcentaje.MaxLength = 2
         Me.txtPorcentaje.Name = "txtPorcentaje"
         Me.txtPorcentaje.Size = New System.Drawing.Size(120, 33)
@@ -122,11 +124,23 @@ Partial Class frmCambiarPrecios
         Me.Label1.Text = "Cambio de precios"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'chbTodosLosProductos
+        '
+        Me.chbTodosLosProductos.AutoSize = True
+        Me.chbTodosLosProductos.Font = New System.Drawing.Font("Montserrat Medium", 8.249999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chbTodosLosProductos.Location = New System.Drawing.Point(92, 118)
+        Me.chbTodosLosProductos.Name = "chbTodosLosProductos"
+        Me.chbTodosLosProductos.Size = New System.Drawing.Size(222, 19)
+        Me.chbTodosLosProductos.TabIndex = 57
+        Me.chbTodosLosProductos.Text = "Aplicar a todos los productos"
+        Me.chbTodosLosProductos.UseVisualStyleBackColor = True
+        '
         'frmCambiarPrecios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(392, 229)
+        Me.ClientSize = New System.Drawing.Size(392, 239)
+        Me.Controls.Add(Me.chbTodosLosProductos)
         Me.Controls.Add(Me.txtPorcentaje)
         Me.Controls.Add(Me.lblAlerta)
         Me.Controls.Add(Me.Label2)
@@ -154,4 +168,5 @@ Partial Class frmCambiarPrecios
     Friend WithEvents btnCerrar As PictureBox
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents chbTodosLosProductos As CheckBox
 End Class

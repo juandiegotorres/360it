@@ -164,10 +164,10 @@ Partial Class frmCargarCuentaCorriente
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(150, 5)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(150, 5, 150, 15)
+        Me.btnGuardar.Location = New System.Drawing.Point(150, 15)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(150, 15, 150, 5)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(175, 43)
+        Me.btnGuardar.Size = New System.Drawing.Size(155, 43)
         Me.btnGuardar.TabIndex = 59
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -177,12 +177,11 @@ Partial Class frmCargarCuentaCorriente
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 246)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 235)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(475, 63)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(455, 63)
         Me.TableLayoutPanel1.TabIndex = 65
         '
         'frmCargarCuentaCorriente
@@ -202,6 +201,7 @@ Partial Class frmCargarCuentaCorriente
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "frmCargarCuentaCorriente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmCuentaCorriente"

@@ -18,6 +18,7 @@
     Private Sub frmNuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenarCB()
         If modificar = True Then
+            lblTitulo.Text = "Modificar Cliente"
             eCliente.modificarCliente()
             txtNomApel.Text = eCliente.nombApel
             txtTelefono.Text = eCliente.telefono
@@ -141,6 +142,21 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub frmNuevoCliente_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Enter
+                Call btnGuardar_Click(btnGuardar, e)
+            Case Keys.Escape
+                Call BtnCancelar_Click(btnCancelar, e)
+        End Select
+    End Sub
+
+    Private Sub frmNuevoCliente_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
     End Sub
 
 

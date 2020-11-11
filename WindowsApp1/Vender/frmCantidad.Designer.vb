@@ -88,7 +88,7 @@ Partial Class frmCantidad
         Me.btnAgregar.Enabled = False
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(137, 168)
+        Me.btnAgregar.Location = New System.Drawing.Point(139, 168)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(110, 41)
         Me.btnAgregar.TabIndex = 35

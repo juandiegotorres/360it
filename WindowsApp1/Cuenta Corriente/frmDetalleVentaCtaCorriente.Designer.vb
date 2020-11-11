@@ -22,14 +22,14 @@ Partial Class frmDetalleVentaCtaCorriente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDetalleVentaCtaCorriente))
         Me.pnlHeader = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -92,6 +92,7 @@ Partial Class frmDetalleVentaCtaCorriente
         '
         'txtIDVenta
         '
+        Me.txtIDVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtIDVenta.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIDVenta.Location = New System.Drawing.Point(138, 80)
         Me.txtIDVenta.MaxLength = 45
@@ -122,23 +123,23 @@ Partial Class frmDetalleVentaCtaCorriente
         Me.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvProductos.CausesValidation = False
         Me.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProducto, Me.marca, Me.modelo, Me.cantidad, Me.precio})
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgvProductos.EnableHeadersVisualStyles = False
         Me.dgvProductos.Location = New System.Drawing.Point(24, 168)
         Me.dgvProductos.Margin = New System.Windows.Forms.Padding(20, 5, 18, 0)
@@ -146,14 +147,14 @@ Partial Class frmDetalleVentaCtaCorriente
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         Me.dgvProductos.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvProductos.RowHeadersVisible = False
         Me.dgvProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -163,8 +164,8 @@ Partial Class frmDetalleVentaCtaCorriente
         'idProducto
         '
         Me.idProducto.DataPropertyName = "producto"
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.idProducto.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.idProducto.DefaultCellStyle = DataGridViewCellStyle2
         Me.idProducto.HeaderText = "    ID"
         Me.idProducto.Name = "idProducto"
         Me.idProducto.ReadOnly = True
@@ -173,8 +174,8 @@ Partial Class frmDetalleVentaCtaCorriente
         'marca
         '
         Me.marca.DataPropertyName = "marca"
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.marca.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.marca.DefaultCellStyle = DataGridViewCellStyle3
         Me.marca.HeaderText = "    Marca"
         Me.marca.Name = "marca"
         Me.marca.ReadOnly = True
@@ -183,8 +184,8 @@ Partial Class frmDetalleVentaCtaCorriente
         'modelo
         '
         Me.modelo.DataPropertyName = "modelo"
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.modelo.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.modelo.DefaultCellStyle = DataGridViewCellStyle4
         Me.modelo.HeaderText = "      Modelo"
         Me.modelo.Name = "modelo"
         Me.modelo.ReadOnly = True
@@ -193,8 +194,8 @@ Partial Class frmDetalleVentaCtaCorriente
         'cantidad
         '
         Me.cantidad.DataPropertyName = "cantidad"
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle5
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
         Me.cantidad.ReadOnly = True
@@ -203,9 +204,9 @@ Partial Class frmDetalleVentaCtaCorriente
         'precio
         '
         Me.precio.DataPropertyName = "precioProducto"
-        DataGridViewCellStyle22.Format = "C2"
-        DataGridViewCellStyle22.NullValue = Nothing
-        Me.precio.DefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle6.Format = "C2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.precio.DefaultCellStyle = DataGridViewCellStyle6
         Me.precio.HeaderText = "Precio unitario"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
@@ -233,6 +234,7 @@ Partial Class frmDetalleVentaCtaCorriente
         '
         'txtSubtotal
         '
+        Me.txtSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSubtotal.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSubtotal.Location = New System.Drawing.Point(355, 513)
         Me.txtSubtotal.MaxLength = 45
@@ -254,6 +256,7 @@ Partial Class frmDetalleVentaCtaCorriente
         '
         'txtDescuento
         '
+        Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDescuento.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescuento.Location = New System.Drawing.Point(158, 466)
         Me.txtDescuento.MaxLength = 45
@@ -265,6 +268,7 @@ Partial Class frmDetalleVentaCtaCorriente
         '
         'txtRecargo
         '
+        Me.txtRecargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRecargo.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRecargo.Location = New System.Drawing.Point(400, 466)
         Me.txtRecargo.MaxLength = 45
@@ -277,6 +281,7 @@ Partial Class frmDetalleVentaCtaCorriente
         'txtTotal
         '
         Me.txtTotal.BackColor = System.Drawing.Color.Moccasin
+        Me.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTotal.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotal.Location = New System.Drawing.Point(355, 560)
         Me.txtTotal.MaxLength = 45
@@ -318,6 +323,7 @@ Partial Class frmDetalleVentaCtaCorriente
         '
         'txtFormaPago
         '
+        Me.txtFormaPago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFormaPago.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFormaPago.Location = New System.Drawing.Point(213, 419)
         Me.txtFormaPago.MaxLength = 45
@@ -329,6 +335,7 @@ Partial Class frmDetalleVentaCtaCorriente
         '
         'txtFecha
         '
+        Me.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFecha.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFecha.Location = New System.Drawing.Point(350, 82)
         Me.txtFecha.MaxLength = 45

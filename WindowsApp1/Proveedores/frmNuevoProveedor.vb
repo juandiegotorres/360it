@@ -21,9 +21,7 @@
         'clbRubro.SelectionMode = SelectionMode.None
         If _modificar = True Then
             eProveedor.modificarProveedor()
-
             lblTitulo.Text = "Modificar Proveedor"
-
             txtNombre.Text = eProveedor.nombre
             txtCBU.Text = eProveedor.cbu
             txtDireccion.Text = eProveedor.direccion
@@ -120,35 +118,73 @@
         Next
     End Sub
 
-
+    Public Function comprobarFormPago()
+        For i = 0 To clbFormPago.Items.Count - 1
+            If clbFormPago.GetItemChecked(i) Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+    Public Function comprobarRubros()
+        For i = 0 To clbRubro.Items.Count - 1
+            If clbRubro.GetItemChecked(i) Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
-            eProveedor.nombre = txtNombre.Text
-            eProveedor.telefono = txtTelefono.Text
-            eProveedor.cbu = txtCBU.Text
-            eProveedor.direccion = txtDireccion.Text
-            eProveedor.horario = txtHorario.Text
-            guardarCLB(clbFormPago, listaPago)
-            eProveedor.formPago = listaPago
-            guardarCLB(clbRubro, listaRubro)
-            eProveedor.rubro = listaRubro
-            If _modificar = False Then
-                eProveedor.nuevoProveedor()
-                MsgBox("Proveedor guardado con éxito", MsgBoxStyle.Information, "Nuevo proveedor")
-                Me.DialogResult = DialogResult.OK
-            Else
-                eProveedor.guardarProveedorModif()
-                MsgBox("Proveedor modificado con éxito", MsgBoxStyle.Information, "Modificar proveedor")
-                Me.DialogResult = DialogResult.OK
+            If comprobarDatos() = True Then
+                If comprobarFormPago() = False Then
+                    MsgBox("Tiene que seleccionar al menos una forma de pago", MsgBoxStyle.Exclamation, "Proveedor")
+                    Exit Sub
+                End If
+                If comprobarRubros() = False Then
+                    MsgBox("Tiene que seleccionar al menos una rubro", MsgBoxStyle.Exclamation, "Proveedor")
+                    Exit Sub
+                End If
+                eProveedor.nombre = txtNombre.Text
+                eProveedor.telefono = txtTelefono.Text
+                eProveedor.cbu = txtCBU.Text
+                eProveedor.direccion = txtDireccion.Text
+                eProveedor.horario = txtHorario.Text
+                guardarCLB(clbFormPago, listaPago)
+                eProveedor.formPago = listaPago
+                guardarCLB(clbRubro, listaRubro)
+                eProveedor.rubro = listaRubro
+                If _modificar = False Then
+                    eProveedor.nuevoProveedor()
+                    MsgBox("Proveedor guardado con éxito", MsgBoxStyle.Information, "Nuevo proveedor")
+                    Me.DialogResult = DialogResult.OK
+                Else
+                    eProveedor.guardarProveedorModif()
+                    MsgBox("Proveedor modificado con éxito", MsgBoxStyle.Information, "Modificar proveedor")
+                    Me.DialogResult = DialogResult.OK
+                End If
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
-
     End Sub
+    Public Function comprobarDatos()
+        Dim _control As Control
+        For Each _control In Me.Controls
+            If TypeOf _control Is TextBox Then
+                If _control.Text = "" Then
+                    MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Proveedores")
+                    Return False
+                    If TypeOf _control Is RichTextBox Then
+                        MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Proveedores")
+                        Return False
+                    End If
+                End If
+            End If
+        Next
+        Return True
+    End Function
 #Region "KEYPRESS"
     Private Sub txtCBU_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCBU.KeyPress
         If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
@@ -164,6 +200,21 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub frmNuevoProveedor_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Enter
+                Call BtnGuardar_Click(btnGuardar, e)
+            Case Keys.Escape
+                Call BtnCancelar_Click(btnCancelar, e)
+        End Select
+    End Sub
+
+    Private Sub frmNuevoProveedor_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
     End Sub
 
 #End Region

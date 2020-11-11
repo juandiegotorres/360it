@@ -29,10 +29,14 @@ Partial Class frmCuentasCorriente
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnDetalleVenta = New System.Windows.Forms.Button()
+        Me.btnEntregaDeDinero = New System.Windows.Forms.Button()
+        Me.btnEliminarMovimiento = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.picClientes = New System.Windows.Forms.PictureBox()
         Me.txtNombreCliente = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgvCuentas = New System.Windows.Forms.DataGridView()
@@ -49,20 +53,16 @@ Partial Class frmCuentasCorriente
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtResto = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnEntregaDeDinero = New System.Windows.Forms.Button()
-        Me.btnEliminarMovimiento = New System.Windows.Forms.Button()
-        Me.picClientes = New System.Windows.Forms.PictureBox()
-        Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.picClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.picClientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -121,9 +121,49 @@ Partial Class frmCuentasCorriente
         Me.btnDetalleVenta.Margin = New System.Windows.Forms.Padding(10, 10, 0, 10)
         Me.btnDetalleVenta.Name = "btnDetalleVenta"
         Me.btnDetalleVenta.Size = New System.Drawing.Size(311, 44)
-        Me.btnDetalleVenta.TabIndex = 36
+        Me.btnDetalleVenta.TabIndex = 1
         Me.btnDetalleVenta.Text = "Detalle Venta"
         Me.btnDetalleVenta.UseVisualStyleBackColor = True
+        '
+        'btnEntregaDeDinero
+        '
+        Me.btnEntregaDeDinero.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnEntregaDeDinero.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEntregaDeDinero.FlatAppearance.BorderSize = 2
+        Me.btnEntregaDeDinero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEntregaDeDinero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnEntregaDeDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntregaDeDinero.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEntregaDeDinero.ForeColor = System.Drawing.Color.Black
+        Me.btnEntregaDeDinero.Image = Global.WindowsApp1.My.Resources.Resources.hand_money
+        Me.btnEntregaDeDinero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEntregaDeDinero.Location = New System.Drawing.Point(348, 10)
+        Me.btnEntregaDeDinero.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnEntregaDeDinero.Name = "btnEntregaDeDinero"
+        Me.btnEntregaDeDinero.Size = New System.Drawing.Size(318, 44)
+        Me.btnEntregaDeDinero.TabIndex = 2
+        Me.btnEntregaDeDinero.Text = "Entrega de Dinero"
+        Me.btnEntregaDeDinero.UseVisualStyleBackColor = True
+        '
+        'btnEliminarMovimiento
+        '
+        Me.btnEliminarMovimiento.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnEliminarMovimiento.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEliminarMovimiento.FlatAppearance.BorderSize = 2
+        Me.btnEliminarMovimiento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEliminarMovimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnEliminarMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminarMovimiento.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminarMovimiento.ForeColor = System.Drawing.Color.Black
+        Me.btnEliminarMovimiento.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.btnEliminarMovimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEliminarMovimiento.Location = New System.Drawing.Point(10, 10)
+        Me.btnEliminarMovimiento.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnEliminarMovimiento.Name = "btnEliminarMovimiento"
+        Me.btnEliminarMovimiento.Size = New System.Drawing.Size(318, 44)
+        Me.btnEliminarMovimiento.TabIndex = 3
+        Me.btnEliminarMovimiento.Text = "Eliminar"
+        Me.btnEliminarMovimiento.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -136,6 +176,19 @@ Partial Class frmCuentasCorriente
         Me.Panel1.Size = New System.Drawing.Size(488, 39)
         Me.Panel1.TabIndex = 43
         '
+        'picClientes
+        '
+        Me.picClientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picClientes.Image = Global.WindowsApp1.My.Resources.Resources.pngtree_find_search_view_glass_blue_dotted_line_line_icon_png_image_1622078
+        Me.picClientes.Location = New System.Drawing.Point(449, 2)
+        Me.picClientes.Name = "picClientes"
+        Me.picClientes.Size = New System.Drawing.Size(35, 35)
+        Me.picClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picClientes.TabIndex = 45
+        Me.picClientes.TabStop = False
+        '
         'txtNombreCliente
         '
         Me.txtNombreCliente.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -147,7 +200,7 @@ Partial Class frmCuentasCorriente
         Me.txtNombreCliente.Name = "txtNombreCliente"
         Me.txtNombreCliente.ReadOnly = True
         Me.txtNombreCliente.Size = New System.Drawing.Size(297, 27)
-        Me.txtNombreCliente.TabIndex = 44
+        Me.txtNombreCliente.TabIndex = 0
         Me.txtNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -179,6 +232,21 @@ Partial Class frmCuentasCorriente
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1016, 79)
         Me.TableLayoutPanel3.TabIndex = 44
+        '
+        'picCerrar
+        '
+        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.picCerrar.Location = New System.Drawing.Point(989, 0)
+        Me.picCerrar.Margin = New System.Windows.Forms.Padding(0)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(27, 26)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCerrar.TabIndex = 41
+        Me.picCerrar.TabStop = False
+        Me.picCerrar.Visible = False
         '
         'Label1
         '
@@ -363,7 +431,7 @@ Partial Class frmCuentasCorriente
         Me.txtResto.ReadOnly = True
         Me.txtResto.Size = New System.Drawing.Size(167, 27)
         Me.txtResto.TabIndex = 2
-        Me.txtResto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtResto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
         '
@@ -375,74 +443,6 @@ Partial Class frmCuentasCorriente
         Me.Label3.Size = New System.Drawing.Size(78, 26)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Resto: "
-        '
-        'btnEntregaDeDinero
-        '
-        Me.btnEntregaDeDinero.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnEntregaDeDinero.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEntregaDeDinero.FlatAppearance.BorderSize = 2
-        Me.btnEntregaDeDinero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEntregaDeDinero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnEntregaDeDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEntregaDeDinero.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEntregaDeDinero.ForeColor = System.Drawing.Color.Black
-        Me.btnEntregaDeDinero.Image = Global.WindowsApp1.My.Resources.Resources.hand_money
-        Me.btnEntregaDeDinero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEntregaDeDinero.Location = New System.Drawing.Point(348, 10)
-        Me.btnEntregaDeDinero.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnEntregaDeDinero.Name = "btnEntregaDeDinero"
-        Me.btnEntregaDeDinero.Size = New System.Drawing.Size(318, 44)
-        Me.btnEntregaDeDinero.TabIndex = 37
-        Me.btnEntregaDeDinero.Text = "Entrega de Dinero"
-        Me.btnEntregaDeDinero.UseVisualStyleBackColor = True
-        '
-        'btnEliminarMovimiento
-        '
-        Me.btnEliminarMovimiento.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnEliminarMovimiento.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEliminarMovimiento.FlatAppearance.BorderSize = 2
-        Me.btnEliminarMovimiento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEliminarMovimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnEliminarMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminarMovimiento.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarMovimiento.ForeColor = System.Drawing.Color.Black
-        Me.btnEliminarMovimiento.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.btnEliminarMovimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEliminarMovimiento.Location = New System.Drawing.Point(10, 10)
-        Me.btnEliminarMovimiento.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnEliminarMovimiento.Name = "btnEliminarMovimiento"
-        Me.btnEliminarMovimiento.Size = New System.Drawing.Size(318, 44)
-        Me.btnEliminarMovimiento.TabIndex = 38
-        Me.btnEliminarMovimiento.Text = "Eliminar"
-        Me.btnEliminarMovimiento.UseVisualStyleBackColor = True
-        '
-        'picClientes
-        '
-        Me.picClientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picClientes.Image = Global.WindowsApp1.My.Resources.Resources.pngtree_find_search_view_glass_blue_dotted_line_line_icon_png_image_1622078
-        Me.picClientes.Location = New System.Drawing.Point(449, 2)
-        Me.picClientes.Name = "picClientes"
-        Me.picClientes.Size = New System.Drawing.Size(35, 35)
-        Me.picClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picClientes.TabIndex = 45
-        Me.picClientes.TabStop = False
-        '
-        'picCerrar
-        '
-        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.picCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
-        Me.picCerrar.Location = New System.Drawing.Point(989, 0)
-        Me.picCerrar.Margin = New System.Windows.Forms.Padding(0)
-        Me.picCerrar.Name = "picCerrar"
-        Me.picCerrar.Size = New System.Drawing.Size(27, 26)
-        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picCerrar.TabIndex = 41
-        Me.picCerrar.TabStop = False
-        Me.picCerrar.Visible = False
         '
         'frmCuentasCorriente
         '
@@ -457,15 +457,15 @@ Partial Class frmCuentasCorriente
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.picClientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel4.ResumeLayout(False)
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.picClientes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

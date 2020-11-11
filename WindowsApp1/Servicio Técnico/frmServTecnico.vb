@@ -41,20 +41,18 @@
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        frmPrincipal.Hide()
         Dim nuevaReparacion As New frmNuevaReparacion
         nuevaReparacion.ShowDialog()
         If nuevaReparacion.DialogResult = DialogResult.OK Then
             actualizarReparaciones()
         End If
-        frmPrincipal.Show()
-
     End Sub
 
     Private Sub btnBaja_Click(sender As Object, e As EventArgs) Handles btnBaja.Click
         If dgvServTecnico.CurrentRow.Selected = False Then
             MsgBox("No hay ninguna reparacion seleccionada", MsgBoxStyle.Information, "Servicio Técnico")
         Else
+            eServTec.idReparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
             If MsgBox("¿Desea dar de baja esta reparación?", MsgBoxStyle.YesNo, "Servicio Técnico") = MsgBoxResult.Yes Then
                 eServTec.bajaReparacion()
                 actualizarReparaciones()
@@ -68,7 +66,6 @@
         Else
             Dim modificarReparacion As New frmNuevaReparacion
             modificarReparacion.eServTecnico.idReparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
-            frmPrincipal.Hide()
             With modificarReparacion
                 .modificar = True
                 .ShowDialog()
@@ -76,7 +73,6 @@
                     actualizarReparaciones()
                 End If
             End With
-            frmPrincipal.Show()
         End If
     End Sub
 
@@ -88,7 +84,7 @@
 
     End Sub
 
-    Private Sub btnVerDetalles_Click(sender As Object, e As EventArgs)
+    Private Sub btnVerDetalles_Click_1(sender As Object, e As EventArgs) Handles btnVerDetalles.Click
         If dgvServTecnico.SelectedRows.Count = 1 Then
             id_Reparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
             Dim detallesReparacion As New frmDetalleReparacion(id_Reparacion)
@@ -96,7 +92,7 @@
         End If
     End Sub
 
-    Private Sub btnCambiarEstado_Click(sender As Object, e As EventArgs) 
+    Private Sub btnCambiarEstado_Click_1(sender As Object, e As EventArgs) Handles btnCambiarEstado.Click
         If dgvServTecnico.SelectedRows.Count = 1 Then
             id_Reparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
             id_Estado = dgvServTecnico.CurrentRow.Cells("estado").Value

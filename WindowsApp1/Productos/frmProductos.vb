@@ -72,7 +72,6 @@
     End Sub
 
     Private Sub btnAgregarSeleccionar_Click(sender As Object, e As EventArgs) Handles btnAgregarSeleccionar.Click
-        frmPrincipal.Hide()
         Dim nuevoProducto As New frmNuevoProducto
         nuevoProducto.ShowDialog()
         If nuevoProducto.DialogResult = DialogResult.OK Then
@@ -94,6 +93,7 @@
 
     Private Sub btnAumentarPrecio_Click(sender As Object, e As EventArgs) Handles btnAumentarPrecio.Click
         Dim aumentarPrecio As New frmCambiarPrecios
+        aumentarPrecio.idProd = dgvProductos.CurrentRow.Cells("id").Value
         aumentarPrecio.disminuir = False
         aumentarPrecio.ShowDialog()
         If aumentarPrecio.DialogResult = DialogResult.OK Then
@@ -103,6 +103,7 @@
 
     Private Sub btnDisminuir_Click(sender As Object, e As EventArgs) Handles btnDisminuir.Click
         Dim disminuirPrecio As New frmCambiarPrecios
+        disminuirPrecio.idProd = dgvProductos.CurrentRow.Cells("id").Value
         disminuirPrecio.disminuir = True
         disminuirPrecio.ShowDialog()
         If disminuirPrecio.DialogResult = DialogResult.OK Then
@@ -113,8 +114,6 @@
     Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim modificarProducto As New frmNuevoProducto
         modificarProducto.eProducto.idProducto = dgvProductos.CurrentRow.Cells("id").Value
-        frmPrincipal.Hide()
-
         With modificarProducto
             .modificar = True
             .ShowDialog()
@@ -122,7 +121,6 @@
                 actualizarProductos()
             End If
         End With
-        frmPrincipal.Show()
     End Sub
 
     'Private Sub btnSinStock_Click(sender As Object, e As EventArgs) Handles btnSinStock.Click
@@ -179,4 +177,8 @@
 
     End Sub
 
+    Private Sub cbBuscador_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbBuscador.SelectedValueChanged
+        txtBuscar.Text = ""
+        txtBuscar.Focus()
+    End Sub
 End Class

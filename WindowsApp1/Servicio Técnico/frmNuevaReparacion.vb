@@ -6,6 +6,7 @@
         estadoReparacion()
         dtEntrega.Value = Today.AddDays(3)
         If modificar = True Then
+            lblTitulo.Text = "Modificar Reparación"
             eServTecnico.modificarReparacion()
             txtNombreCliente.Text = eServTecnico.nombreCliente
             cbTipoArticulo.SelectedValue = eServTecnico.idTipo
@@ -161,5 +162,18 @@
 
     End Sub
 
+    Private Sub frmNuevaReparacion_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Enter
+                Call btnGuardar_Click(btnGuardar, e)
+            Case Keys.Escape
+                Call btnCancelar_Click(btnCancelar, e)
+        End Select
+    End Sub
 
+    Private Sub frmNuevaReparacion_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
+    End Sub
 End Class

@@ -226,7 +226,7 @@ Partial Class frmNuevoProveedor
         Me.btnLimpiar.Location = New System.Drawing.Point(18, 5)
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(135, 43)
+        Me.btnLimpiar.Size = New System.Drawing.Size(128, 43)
         Me.btnLimpiar.TabIndex = 32
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
@@ -240,10 +240,10 @@ Partial Class frmNuevoProveedor
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(189, 5)
+        Me.btnGuardar.Location = New System.Drawing.Point(182, 5)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(135, 43)
+        Me.btnGuardar.Size = New System.Drawing.Size(128, 43)
         Me.btnGuardar.TabIndex = 30
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -257,10 +257,10 @@ Partial Class frmNuevoProveedor
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(360, 5)
+        Me.btnCancelar.Location = New System.Drawing.Point(346, 5)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(138, 43)
+        Me.btnCancelar.Size = New System.Drawing.Size(128, 43)
         Me.btnCancelar.TabIndex = 31
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -274,12 +274,11 @@ Partial Class frmNuevoProveedor
         Me.TableLayoutPanel1.Controls.Add(Me.btnCancelar, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnLimpiar, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 1, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 607)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 600)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(516, 63)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(492, 63)
         Me.TableLayoutPanel1.TabIndex = 33
         '
         'frmNuevoProveedor
@@ -306,6 +305,7 @@ Partial Class frmNuevoProveedor
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblTitulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "frmNuevoProveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmNuevoProveedor"

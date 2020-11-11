@@ -22,9 +22,9 @@ Partial Class frmClientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
         Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,23 +66,23 @@ Partial Class frmClientes
         Me.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvClientes.CausesValidation = False
         Me.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvClientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvClientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.idLocalidad, Me.provincia, Me.nombreApel, Me.telefono, Me.direccion, Me.nombLocalidad})
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvClientes.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvClientes.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgvClientes.EnableHeadersVisualStyles = False
         Me.dgvClientes.Location = New System.Drawing.Point(20, 145)
         Me.dgvClientes.Margin = New System.Windows.Forms.Padding(20, 5, 18, 10)
@@ -90,19 +90,19 @@ Partial Class frmClientes
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.ReadOnly = True
         Me.dgvClientes.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvClientes.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvClientes.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvClientes.RowHeadersVisible = False
         Me.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvClientes.Size = New System.Drawing.Size(981, 338)
-        Me.dgvClientes.TabIndex = 40
+        Me.dgvClientes.TabIndex = 0
         '
         'idCliente
         '
@@ -214,7 +214,7 @@ Partial Class frmClientes
         Me.btnAgregarSeleccionar.Margin = New System.Windows.Forms.Padding(10)
         Me.btnAgregarSeleccionar.Name = "btnAgregarSeleccionar"
         Me.btnAgregarSeleccionar.Size = New System.Drawing.Size(311, 44)
-        Me.btnAgregarSeleccionar.TabIndex = 36
+        Me.btnAgregarSeleccionar.TabIndex = 2
         Me.btnAgregarSeleccionar.Text = "Agregar"
         Me.btnAgregarSeleccionar.UseVisualStyleBackColor = True
         '
@@ -234,7 +234,7 @@ Partial Class frmClientes
         Me.btnBajaCancelar.Margin = New System.Windows.Forms.Padding(10)
         Me.btnBajaCancelar.Name = "btnBajaCancelar"
         Me.btnBajaCancelar.Size = New System.Drawing.Size(311, 44)
-        Me.btnBajaCancelar.TabIndex = 37
+        Me.btnBajaCancelar.TabIndex = 3
         Me.btnBajaCancelar.Text = "Baja"
         Me.btnBajaCancelar.UseVisualStyleBackColor = True
         '
@@ -254,7 +254,7 @@ Partial Class frmClientes
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(311, 44)
-        Me.btnModificar.TabIndex = 38
+        Me.btnModificar.TabIndex = 4
         Me.btnModificar.Text = "Modificación"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
@@ -281,7 +281,7 @@ Partial Class frmClientes
         Me.Panel1.Location = New System.Drawing.Point(20, 104)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(20, 3, 4, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(435, 33)
+        Me.Panel1.Size = New System.Drawing.Size(521, 33)
         Me.Panel1.TabIndex = 43
         '
         'txtBuscar
@@ -289,11 +289,11 @@ Partial Class frmClientes
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtBuscar.Location = New System.Drawing.Point(176, 3)
+        Me.txtBuscar.Location = New System.Drawing.Point(253, 3)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(255, 27)
-        Me.txtBuscar.TabIndex = 44
+        Me.txtBuscar.TabIndex = 1
         '
         'Label2
         '
@@ -303,9 +303,9 @@ Partial Class frmClientes
         Me.Label2.Location = New System.Drawing.Point(4, 4)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(166, 22)
+        Me.Label2.Size = New System.Drawing.Size(248, 22)
         Me.Label2.TabIndex = 44
-        Me.Label2.Text = "Buscar por apellido:"
+        Me.Label2.Text = "Buscar por nombre y apellido:"
         '
         'TableLayoutPanel3
         '

@@ -51,7 +51,7 @@ Partial Class frmEntrega
         Me.btnAceptar.Location = New System.Drawing.Point(150, 10)
         Me.btnAceptar.Margin = New System.Windows.Forms.Padding(150, 10, 150, 10)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(160, 42)
+        Me.btnAceptar.Size = New System.Drawing.Size(136, 42)
         Me.btnAceptar.TabIndex = 44
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
@@ -142,12 +142,11 @@ Partial Class frmEntrega
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.btnAceptar, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 190)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 186)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(460, 62)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(436, 62)
         Me.TableLayoutPanel1.TabIndex = 47
         '
         'frmEntrega

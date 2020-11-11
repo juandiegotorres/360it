@@ -45,6 +45,7 @@ Partial Class frmMovimientoDeStock
         Me.lblDisponibilidad.TabIndex = 46
         Me.lblDisponibilidad.Text = "No dispones de esa cantidad de unidades"
         Me.lblDisponibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblDisponibilidad.Visible = False
         '
         'lblError
         '
@@ -80,9 +81,9 @@ Partial Class frmMovimientoDeStock
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 13)
+        Me.Label1.Location = New System.Drawing.Point(12, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(392, 44)
+        Me.Label1.Size = New System.Drawing.Size(368, 44)
         Me.Label1.TabIndex = 40
         Me.Label1.Text = "Productos"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -114,7 +115,7 @@ Partial Class frmMovimientoDeStock
         Me.btnQuitar.Enabled = False
         Me.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnQuitar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuitar.Location = New System.Drawing.Point(137, 169)
+        Me.btnQuitar.Location = New System.Drawing.Point(144, 169)
         Me.btnQuitar.Name = "btnQuitar"
         Me.btnQuitar.Size = New System.Drawing.Size(110, 41)
         Me.btnQuitar.TabIndex = 47
@@ -127,7 +128,7 @@ Partial Class frmMovimientoDeStock
         Me.btnAgregar.Enabled = False
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(137, 169)
+        Me.btnAgregar.Location = New System.Drawing.Point(144, 169)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(110, 41)
         Me.btnAgregar.TabIndex = 44

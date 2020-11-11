@@ -7,7 +7,7 @@
     Private Sub FrmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarClientes()
         If reparacion = True Then
-            piccerrar.visible = True
+            picCerrar.Visible = True
             btnAgregarSeleccionar.Text = "Seleccionar"
             btnAgregarSeleccionar.Image = My.Resources.seleccionar
             btnBajaCancelar.Text = "Cancelar"
@@ -102,7 +102,9 @@
     Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         'Si el form se abre desde cuenta corriente o reparacion u otro lado voy a dejar este boton(modificar) para agregar un cliente tambien, ya que el originario va a esta ocupado con la opcion de seleccionar 
         If reparacion = True Then
+            Me.Hide()
             agregarCliente()
+            Me.Show()
         Else
 
             If dgvClientes.CurrentRow.Selected = False Then
@@ -110,8 +112,6 @@
             Else
                 Dim modificarCliente As New frmNuevoCliente
                 modificarCliente.eCliente.idCliente = dgvClientes.CurrentRow.Cells("idCliente").Value
-                frmPrincipal.Hide()
-
                 With modificarCliente
                     .modificar = True
                     .ShowDialog()
@@ -119,10 +119,18 @@
                         actualizarClientes()
                     End If
                 End With
-                frmPrincipal.Show()
             End If
         End If
     End Sub
 
+    Private Sub frmClientes_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Solid)
+        'MyBase.OnPaintBackground(e)
+        'Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        'e.Graphics.DrawRectangle(Pens.Black, rect)
+    End Sub
 
+    Private Sub picCerrar_Click_1(sender As Object, e As EventArgs) Handles picCerrar.Click
+        Me.Close()
+    End Sub
 End Class

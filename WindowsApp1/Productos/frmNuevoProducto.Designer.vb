@@ -23,7 +23,7 @@ Partial Class frmNuevoProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNuevoProducto))
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnLimpiar = New System.Windows.Forms.Button()
@@ -59,16 +59,16 @@ Partial Class frmNuevoProducto
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblTitulo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(128, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(323, 44)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Agregar producto"
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.lblTitulo.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Location = New System.Drawing.Point(128, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(323, 44)
+        Me.lblTitulo.TabIndex = 10
+        Me.lblTitulo.Text = "Agregar producto"
         '
         'PictureBox1
         '
@@ -102,7 +102,7 @@ Partial Class frmNuevoProducto
         Me.btnLimpiar.Location = New System.Drawing.Point(18, 5)
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(136, 43)
+        Me.btnLimpiar.Size = New System.Drawing.Size(128, 43)
         Me.btnLimpiar.TabIndex = 30
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
@@ -116,10 +116,10 @@ Partial Class frmNuevoProducto
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(190, 5)
+        Me.btnGuardar.Location = New System.Drawing.Point(182, 5)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(136, 43)
+        Me.btnGuardar.Size = New System.Drawing.Size(128, 43)
         Me.btnGuardar.TabIndex = 11
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -133,10 +133,10 @@ Partial Class frmNuevoProducto
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(362, 5)
+        Me.btnCancelar.Location = New System.Drawing.Point(346, 5)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(137, 43)
+        Me.btnCancelar.Size = New System.Drawing.Size(130, 43)
         Me.btnCancelar.TabIndex = 29
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -395,12 +395,11 @@ Partial Class frmNuevoProducto
         Me.TableLayoutPanel1.Controls.Add(Me.btnCancelar, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnLimpiar, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 585)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(11, 579)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(517, 63)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(494, 63)
         Me.TableLayoutPanel1.TabIndex = 54
         '
         'frmNuevoProducto
@@ -436,8 +435,9 @@ Partial Class frmNuevoProducto
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.lblPorcentaje)
         Me.Controls.Add(Me.chbPorcentaje)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblTitulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "frmNuevoProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " "
@@ -448,7 +448,7 @@ Partial Class frmNuevoProducto
 
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTitulo As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnLimpiar As Button

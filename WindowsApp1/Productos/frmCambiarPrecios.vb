@@ -2,7 +2,7 @@
     Dim porcentajeCambio As Double
     Dim e_producto As New Entidades.Producto
     Public disminuir As Boolean
-
+    Public idProd As UInt16
     Private Sub txtPorcentaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPorcentaje.KeyPress
         'Este evento me permite solo introducir numeros y comas en el recargo. Y tambien solo se va a poder escribir si hay algun producto en el carro
         If Char.IsNumber(e.KeyChar) Then
@@ -25,6 +25,7 @@
             btnAumentar.Visible = False
             btnDisminuir.Visible = True
         End If
+        e_producto.idProducto = idProd
         porcentajeCambio = 0
     End Sub
 
@@ -33,7 +34,10 @@
     End Sub
 
     Private Sub frmCambiarPrecios_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-        ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Solid)
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
+        'ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Solid)
     End Sub
 
     Private Sub txtPorcentaje_TextChanged(sender As Object, e As EventArgs) Handles txtPorcentaje.TextChanged
@@ -48,12 +52,24 @@
     Public Sub aceptar()
         If txtPorcentaje.Text = "0" Or LTrim(txtPorcentaje.Text) = "" Then
             MsgBox("Introduzca un porcentaje válido", MsgBoxStyle.Exclamation, "Precios")
+            Exit Sub
         ElseIf disminuir = True Then
             porcentajeCambio = (100 - CInt(txtPorcentaje.Text)) / 100
-            e_producto.disminuirPrecio(porcentajeCambio)
+            If chbTodosLosProductos.Checked = True Then
+                'Si el checkbox para cambiar los precios de todos los productos esta seleccionado, le voy a mandar por parametros 'true' para que el programa sepa que debe cambiar todos los precios.
+                e_producto.disminuirPrecio(porcentajeCambio, True)
+            Else
+                'de la otra forma si no esta marcado el checkbox mando false para modificar solo un producto
+                e_producto.disminuirPrecio(porcentajeCambio, False)
+            End If
         Else
             porcentajeCambio = (CInt(txtPorcentaje.Text) / 100) + 1
-            e_producto.aumentarPrecio(porcentajeCambio)
+            If chbTodosLosProductos.Checked = True Then
+                'Hago lo mismo que explique arriba
+                e_producto.aumentarPrecio(porcentajeCambio, True)
+            Else
+                e_producto.aumentarPrecio(porcentajeCambio, False)
+            End If
         End If
         MsgBox("Tarea Completada", MsgBoxStyle.Information, "Cambio de precios | Productos")
         Me.DialogResult = DialogResult.OK
@@ -71,5 +87,13 @@
             Case Keys.Escape
                 Me.DialogResult = DialogResult.Cancel
         End Select
+    End Sub
+
+    Private Sub chbTodosLosProductos_CheckedChanged(sender As Object, e As EventArgs) Handles chbTodosLosProductos.CheckedChanged
+        If chbTodosLosProductos.Checked = True Then
+            lblAlerta.Visible = True
+        Else
+            lblAlerta.Visible = False
+        End If
     End Sub
 End Class
