@@ -62,7 +62,7 @@ Partial Class frmCantidad
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(380, 44)
         Me.Label1.TabIndex = 31
-        Me.Label1.Text = "Facturación"
+        Me.Label1.Text = "Vender"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtCantidad

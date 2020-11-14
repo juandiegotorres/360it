@@ -48,6 +48,7 @@ Partial Class frmPrincipal
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.btnAgrandar = New System.Windows.Forms.PictureBox()
         Me.btnAchicar = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.pnlSubMenuVentas.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -64,6 +65,7 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.panelCost)
         Me.Panel1.Controls.Add(Me.btnProveedores)
         Me.Panel1.Controls.Add(Me.btnServTecnico)
@@ -412,6 +414,18 @@ Partial Class frmPrincipal
         Me.btnAchicar.TabIndex = 8
         Me.btnAchicar.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(52, 629)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(84, 28)
+        Me.Button1.TabIndex = 42
+        Me.Button1.Text = "WEB"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -476,4 +490,5 @@ Partial Class frmPrincipal
     Friend WithEvents btnServTecnico As Button
     Friend WithEvents btnProveedores As Button
     Friend WithEvents btnProductos As Button
+    Friend WithEvents Button1 As Button
 End Class

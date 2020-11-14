@@ -201,4 +201,8 @@ Public Class frmPrincipal
             btn.BackColor = Color.FromArgb(100, 100, 100)
         Next
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        frmOpciones.Show()
+    End Sub
 End Class
