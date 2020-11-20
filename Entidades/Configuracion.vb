@@ -211,4 +211,89 @@ Public Class Configuracion
         End Try
     End Sub
 #End Region
+#Region "Localidades"
+    Private _idLocalidad As UInt32
+    Public Property idlocalidad As UInt32
+        Set(value As UInt32)
+            _idLocalidad = value
+        End Set
+        Get
+            Return _idLocalidad
+        End Get
+    End Property
+    Private _idProvincia As UInt32
+    Public Property idProvincia As UInt32
+        Set(value As UInt32)
+            _idProvincia = value
+        End Set
+        Get
+            Return _idProvincia
+        End Get
+    End Property
+    Private _nombreLocalidad As String
+    Public Property nombreLocalidad As String
+        Set(value As String)
+            _nombreLocalidad = value
+        End Set
+        Get
+            Return _nombreLocalidad
+        End Get
+    End Property
+    Public Sub traerProvincias(ByRef tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "SELECT * FROM provincias"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Sub traerLocalidades(ByRef tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "SELECT localidades.idlocalidad, localidades.nombLocalidad, localidades.provincia, localidades.activo, provincias.nombProvincia FROM localidades JOIN provincias ON localidades.provincia = provincias.idprovincia"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Function darDeBajaLocalidad()
+        Try
+            Dim consultaSQL As String = "UPDATE localidades SET activo = 0 WHERE idlocalidad = '" & _idLocalidad & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    Public Function darDeAltaLocalidad()
+        Try
+            Dim consultaSQL As String = "UPDATE localidades SET activo = 1 WHERE idlocalidad = '" & _idLocalidad & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    Public Function localidadEditada()
+        Try
+            Dim consultaSQL As String = "UPDATE localidades SET nombLocalidad = '" & _nombreLocalidad & "', provincia = '" & _idProvincia & "' WHERE idlocalidad = '" & _idLocalidad & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    Public Function agregarLocalidad()
+        Try
+            Dim consultaSQL As String = "INSERT INTO localidades(nombLocalidad, provincia, activo) VALUES ('" & _nombreLocalidad & "','" & _idProvincia & "','1')"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+#End Region
 End Class

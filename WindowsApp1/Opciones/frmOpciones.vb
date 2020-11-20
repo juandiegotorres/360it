@@ -1,23 +1,39 @@
 ﻿Public Class frmOpciones
     Dim eConfiguracion As New Entidades.Configuracion
-    Dim tablaFormPago, tablaCategorias As New DataTable
+    Dim tablaFormPago, tablaCategorias, tablaLocalidades, tablaProvincias As New DataTable
     Private Sub frmOpciones_Load(sender As Object, e As EventArgs) Handles Me.Load
         cargarFormPago()
         cargarCategorias()
+        cargarLocalidades()
         pnlEditar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        pnlEditarLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
     End Sub
     Public Sub cargarFormPago()
         tablaFormPago.Clear()
         eConfiguracion.traerFormasDePago(tablaFormPago)
         dgvFormPago.DataSource = tablaFormPago
     End Sub
-
     Public Sub cargarCategorias()
         tablaCategorias.Clear()
         eConfiguracion.traerCategorias(tablaCategorias)
         dgvCategorias.DataSource = tablaCategorias
     End Sub
+    Public Sub cargarLocalidades()
+        tablaLocalidades.Clear()
+        eConfiguracion.traerLocalidades(tablaLocalidades)
+        dgvLocalidades.DataSource = tablaLocalidades
+    End Sub
+    Public Sub cargarProvincias()
+        tablaProvincias.Clear()
+        eConfiguracion.traerProvincias(tablaProvincias)
+        With cbProvincias
+            .DataSource = tablaProvincias
+            .DisplayMember = "nombprovincia"
+            .ValueMember = "idprovincia"
+        End With
+    End Sub
+
 #Region "Form Pago"
     Private Sub btnDarBaja_Click(sender As Object, e As EventArgs) Handles btnDarBaja.Click
         If dgvFormPago.CurrentRow.Cells("activo").Value = 0 Then
@@ -211,6 +227,7 @@
         txtNombreCategoria.Text = ""
     End Sub
 
+
     Private Sub btnDestacarCategoria_Click(sender As Object, e As EventArgs) Handles btnDestacarCategoria.Click
         If dgvCategorias.CurrentRow.Cells("destacadoCategoria").Value = 1 Then
             MsgBox("Esta categoría ya se encuentra destacada", MsgBoxStyle.Exclamation, "Configuraciones")
@@ -219,6 +236,93 @@
             If eConfiguracion.destacarCategoria = True Then
                 cargarCategorias()
                 MsgBox("Categoría destacada con éxito", MsgBoxStyle.Information, "Configuraciones")
+            End If
+        End If
+    End Sub
+
+
+#End Region
+#Region "Localidades"
+    Dim idProvincia As UInt16
+
+
+
+    Private Sub btnBajaLocalidad_Click(sender As Object, e As EventArgs) Handles btnBajaLocalidad.Click
+        If dgvLocalidades.CurrentRow.Cells("activoLocalidad").Value = 0 Then
+            MsgBox("Esta localidad ya se encuentra dada de baja", MsgBoxStyle.Exclamation, "Configuraciones")
+        Else
+            eConfiguracion.idlocalidad = dgvLocalidades.CurrentRow.Cells("idlocalidad").Value
+            If eConfiguracion.darDeBajaLocalidad = True Then
+                cargarLocalidades()
+                MsgBox("Localidad dada de baja con éxito", MsgBoxStyle.Information, "Configuraciones")
+            End If
+        End If
+    End Sub
+
+
+    Private Sub btnAltaLocalidad_Click(sender As Object, e As EventArgs) Handles btnAltaLocalidad.Click
+        If dgvLocalidades.CurrentRow.Cells("activoLocalidad").Value = 1 Then
+            MsgBox("Esta localidad ya se encuentra activa", MsgBoxStyle.Exclamation, "Configuraciones")
+        Else
+            eConfiguracion.idlocalidad = dgvLocalidades.CurrentRow.Cells("idlocalidad").Value
+            If eConfiguracion.darDeAltaLocalidad = True Then
+                cargarLocalidades()
+                MsgBox("Localidad dada de alta con éxito", MsgBoxStyle.Information, "Configuraciones")
+            End If
+        End If
+    End Sub
+
+    Private Sub btnCancelarLoc_Click(sender As Object, e As EventArgs) Handles btnCancelarLoc.Click
+        pnlEditarLocalidad.Visible = False
+        txtNombreLocalidad.Text = ""
+        cbProvincias.SelectedIndex = 6
+    End Sub
+
+    Private Sub btnEditarLocalidad_Click(sender As Object, e As EventArgs) Handles btnEditarLocalidad.Click
+        cargarProvincias()
+        pnlEditarLocalidad.Visible = True
+        txtNombreLocalidad.Enabled = True
+        eConfiguracion.idlocalidad = dgvLocalidades.CurrentRow.Cells("idlocalidad").Value
+        idProvincia = dgvLocalidades.CurrentRow.Cells("provincia").Value
+        eConfiguracion.nombreLocalidad = dgvLocalidades.CurrentRow.Cells("nombLocalidad").Value
+        lblEditarAgregarLoc.Text = "Editar"
+        cbProvincias.SelectedValue = idProvincia
+        txtNombreLocalidad.Text = eConfiguracion.nombreLocalidad
+        'Numero de tag para realizar la opcion de editar
+        txtNombreLocalidad.Tag = 2
+    End Sub
+
+    Private Sub btnNuevaLocalidad_Click(sender As Object, e As EventArgs) Handles btnNuevaLocalidad.Click
+        pnlEditarLocalidad.Visible = True
+        lblEditarAgregarLoc.Text = "Agregar"
+        idProvincia = dgvLocalidades.CurrentRow.Cells("provincia").Value
+        txtNombreLocalidad.Text = ""
+        txtNombreLocalidad.Enabled = True
+        txtNombreLocalidad.Tag = 1
+        cargarProvincias()
+        cbProvincias.SelectedIndex = 6
+    End Sub
+    Private Sub btnGuardarLocalidad_Click(sender As Object, e As EventArgs) Handles btnGuardarLocalidad.Click
+        If txtNombreLocalidad.Tag = 1 Then
+            If LTrim(txtNombreLocalidad.Text) <> "" Then
+                eConfiguracion.nombreLocalidad = txtNombreLocalidad.Text
+                eConfiguracion.idProvincia = idProvincia
+                eConfiguracion.agregarLocalidad()
+                MsgBox("Localidad agregada con éxito", MsgBoxStyle.Information, "Configuraciones")
+                cargarLocalidades()
+                txtNombreLocalidad.Text = ""
+                pnlEditarLocalidad.Visible = False
+            End If
+        End If
+        If txtNombreLocalidad.Tag = 2 Then
+            If LTrim(txtNombreLocalidad.Text) <> "" Then
+                eConfiguracion.nombreLocalidad = txtNombreLocalidad.Text
+                eConfiguracion.idProvincia = idProvincia
+                eConfiguracion.localidadEditada()
+                cargarLocalidades()
+                MsgBox("Localidad editada con éxito", MsgBoxStyle.Information, "Configuraciones")
+                txtNombreLocalidad.Text = ""
+                pnlEditarLocalidad.Visible = False
             End If
         End If
     End Sub

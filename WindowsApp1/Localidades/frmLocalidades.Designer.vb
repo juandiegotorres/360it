@@ -28,9 +28,6 @@ Partial Class frmLocalidades
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvLocalidades = New System.Windows.Forms.DataGridView()
-        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -41,6 +38,10 @@ Partial Class frmLocalidades
         Me.btnGuardarLoc = New System.Windows.Forms.Button()
         Me.btnCancelarLoc = New System.Windows.Forms.Button()
         Me.picCerrar = New System.Windows.Forms.PictureBox()
+        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvLocalidades, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,7 +84,7 @@ Partial Class frmLocalidades
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvLocalidades.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLocalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLocalidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idLocalidad, Me.nombLocalidad, Me.provincia})
+        Me.dgvLocalidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idLocalidad, Me.nombLocalidad, Me.provincia, Me.activo})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -106,30 +107,6 @@ Partial Class frmLocalidades
         Me.dgvLocalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLocalidades.Size = New System.Drawing.Size(575, 181)
         Me.dgvLocalidades.TabIndex = 2
-        '
-        'idLocalidad
-        '
-        Me.idLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.idLocalidad.DataPropertyName = "idLocalidad"
-        Me.idLocalidad.HeaderText = "ID "
-        Me.idLocalidad.Name = "idLocalidad"
-        Me.idLocalidad.ReadOnly = True
-        '
-        'nombLocalidad
-        '
-        Me.nombLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nombLocalidad.DataPropertyName = "nombLocalidad"
-        Me.nombLocalidad.HeaderText = "Nombre"
-        Me.nombLocalidad.Name = "nombLocalidad"
-        Me.nombLocalidad.ReadOnly = True
-        '
-        'provincia
-        '
-        Me.provincia.DataPropertyName = "provincia"
-        Me.provincia.HeaderText = "ID Provincia"
-        Me.provincia.Name = "provincia"
-        Me.provincia.ReadOnly = True
-        Me.provincia.Visible = False
         '
         'Label3
         '
@@ -265,6 +242,38 @@ Partial Class frmLocalidades
         Me.picCerrar.TabStop = False
         Me.picCerrar.Visible = False
         '
+        'idLocalidad
+        '
+        Me.idLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.idLocalidad.DataPropertyName = "idLocalidad"
+        Me.idLocalidad.HeaderText = "ID "
+        Me.idLocalidad.Name = "idLocalidad"
+        Me.idLocalidad.ReadOnly = True
+        '
+        'nombLocalidad
+        '
+        Me.nombLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.nombLocalidad.DataPropertyName = "nombLocalidad"
+        Me.nombLocalidad.HeaderText = "Nombre"
+        Me.nombLocalidad.Name = "nombLocalidad"
+        Me.nombLocalidad.ReadOnly = True
+        '
+        'provincia
+        '
+        Me.provincia.DataPropertyName = "provincia"
+        Me.provincia.HeaderText = "ID Provincia"
+        Me.provincia.Name = "provincia"
+        Me.provincia.ReadOnly = True
+        Me.provincia.Visible = False
+        '
+        'activo
+        '
+        Me.activo.DataPropertyName = "activo"
+        Me.activo.HeaderText = "Activo"
+        Me.activo.Name = "activo"
+        Me.activo.ReadOnly = True
+        Me.activo.Visible = False
+        '
         'frmLocalidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -301,9 +310,6 @@ Partial Class frmLocalidades
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnAceptar As Button
-    Friend WithEvents idLocalidad As DataGridViewTextBoxColumn
-    Friend WithEvents nombLocalidad As DataGridViewTextBoxColumn
-    Friend WithEvents provincia As DataGridViewTextBoxColumn
     Public WithEvents dgvLocalidades As DataGridView
     Friend WithEvents btnNuevaLocalidad As Button
     Friend WithEvents lblNombre As Label
@@ -311,4 +317,8 @@ Partial Class frmLocalidades
     Friend WithEvents btnGuardarLoc As Button
     Friend WithEvents btnCancelarLoc As Button
     Friend WithEvents picCerrar As PictureBox
+    Friend WithEvents idLocalidad As DataGridViewTextBoxColumn
+    Friend WithEvents nombLocalidad As DataGridViewTextBoxColumn
+    Friend WithEvents provincia As DataGridViewTextBoxColumn
+    Friend WithEvents activo As DataGridViewTextBoxColumn
 End Class
