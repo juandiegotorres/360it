@@ -22,15 +22,24 @@ Partial Class frmOpciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.tabConfiguraciones = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -93,6 +102,56 @@ Partial Class frmOpciones
         Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombProvincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.activoLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.pnlEditarRubro = New System.Windows.Forms.Panel()
+        Me.btnCancelarRubro = New System.Windows.Forms.Button()
+        Me.btnGuardarRubro = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtNombreRubro = New System.Windows.Forms.TextBox()
+        Me.lblEditarAgregarRub = New System.Windows.Forms.Label()
+        Me.btnAgregarRubro = New System.Windows.Forms.Button()
+        Me.btnAltaRubro = New System.Windows.Forms.Button()
+        Me.btnBajaRubro = New System.Windows.Forms.Button()
+        Me.btnEditarRubro = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.dgvRubros = New System.Windows.Forms.DataGridView()
+        Me.idrubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.activoRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.pnlEditarArticulo = New System.Windows.Forms.Panel()
+        Me.btnCancelarArt = New System.Windows.Forms.Button()
+        Me.btnGuardarArticulo = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtNombreArticulo = New System.Windows.Forms.TextBox()
+        Me.lblEditarAgregarArt = New System.Windows.Forms.Label()
+        Me.btnAgregarArticulo = New System.Windows.Forms.Button()
+        Me.btnAltaArticulo = New System.Windows.Forms.Button()
+        Me.btnBajaArticulo = New System.Windows.Forms.Button()
+        Me.btnEditarArticulo = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.dgvTipoArticulos = New System.Windows.Forms.DataGridView()
+        Me.idtipoarticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.activoTipoArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.pnlEditarEstado = New System.Windows.Forms.Panel()
+        Me.btnCancelarEstado = New System.Windows.Forms.Button()
+        Me.btnGuardarEstado = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtNombreEstado = New System.Windows.Forms.TextBox()
+        Me.lblAgregarEditarEst = New System.Windows.Forms.Label()
+        Me.btnAgregarEstado = New System.Windows.Forms.Button()
+        Me.btnDestacarEstado = New System.Windows.Forms.Button()
+        Me.btnAltaEstado = New System.Windows.Forms.Button()
+        Me.btnBajaEstado = New System.Windows.Forms.Button()
+        Me.btnEditarEstado = New System.Windows.Forms.Button()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.dgvEstados = New System.Windows.Forms.DataGridView()
+        Me.idestado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.destacadoEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.activoEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.tabConfiguraciones.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -104,6 +163,15 @@ Partial Class frmOpciones
         Me.TabPage2.SuspendLayout()
         Me.pnlEditarLocalidad.SuspendLayout()
         CType(Me.dgvLocalidades, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        Me.pnlEditarRubro.SuspendLayout()
+        CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage5.SuspendLayout()
+        Me.pnlEditarArticulo.SuspendLayout()
+        CType(Me.dgvTipoArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage6.SuspendLayout()
+        Me.pnlEditarEstado.SuspendLayout()
+        CType(Me.dgvEstados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -125,6 +193,9 @@ Partial Class frmOpciones
         Me.tabConfiguraciones.Controls.Add(Me.TabPage1)
         Me.tabConfiguraciones.Controls.Add(Me.TabPage3)
         Me.tabConfiguraciones.Controls.Add(Me.TabPage2)
+        Me.tabConfiguraciones.Controls.Add(Me.TabPage4)
+        Me.tabConfiguraciones.Controls.Add(Me.TabPage5)
+        Me.tabConfiguraciones.Controls.Add(Me.TabPage6)
         Me.tabConfiguraciones.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabConfiguraciones.Location = New System.Drawing.Point(190, 3)
         Me.tabConfiguraciones.Name = "tabConfiguraciones"
@@ -148,7 +219,7 @@ Partial Class frmOpciones
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(878, 565)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Form. Pago"
+        Me.TabPage1.Text = "Formas de Pago"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'pnlEditar
@@ -315,30 +386,30 @@ Partial Class frmOpciones
         Me.dgvFormPago.AllowUserToDeleteRows = False
         Me.dgvFormPago.AllowUserToResizeRows = False
         Me.dgvFormPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvFormPago.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFormPago.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvFormPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvFormPago.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idformpago, Me.nombFormaPago, Me.destacado, Me.recargo, Me.activo})
         Me.dgvFormPago.Location = New System.Drawing.Point(45, 61)
         Me.dgvFormPago.Name = "dgvFormPago"
         Me.dgvFormPago.ReadOnly = True
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvFormPago.RowHeadersDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFormPago.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvFormPago.RowHeadersVisible = False
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgvFormPago.RowsDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvFormPago.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvFormPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvFormPago.Size = New System.Drawing.Size(584, 198)
         Me.dgvFormPago.TabIndex = 0
@@ -528,30 +599,30 @@ Partial Class frmOpciones
         Me.dgvCategorias.AllowUserToDeleteRows = False
         Me.dgvCategorias.AllowUserToResizeRows = False
         Me.dgvCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCategorias.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCategorias.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCategorias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idcategoria, Me.nombCategoria, Me.destacadoCategoria, Me.activoCategoria})
         Me.dgvCategorias.Location = New System.Drawing.Point(45, 61)
         Me.dgvCategorias.Name = "dgvCategorias"
         Me.dgvCategorias.ReadOnly = True
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCategorias.RowHeadersDefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCategorias.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvCategorias.RowHeadersVisible = False
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgvCategorias.RowsDefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvCategorias.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCategorias.Size = New System.Drawing.Size(584, 198)
         Me.dgvCategorias.TabIndex = 0
@@ -745,30 +816,30 @@ Partial Class frmOpciones
         Me.dgvLocalidades.AllowUserToDeleteRows = False
         Me.dgvLocalidades.AllowUserToResizeRows = False
         Me.dgvLocalidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLocalidades.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLocalidades.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvLocalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLocalidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idLocalidad, Me.nombLocalidad, Me.provincia, Me.nombProvincia, Me.activoLocalidad})
         Me.dgvLocalidades.Location = New System.Drawing.Point(45, 61)
         Me.dgvLocalidades.Name = "dgvLocalidades"
         Me.dgvLocalidades.ReadOnly = True
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLocalidades.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLocalidades.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvLocalidades.RowHeadersVisible = False
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgvLocalidades.RowsDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvLocalidades.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvLocalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLocalidades.Size = New System.Drawing.Size(584, 312)
         Me.dgvLocalidades.TabIndex = 9
@@ -808,6 +879,588 @@ Partial Class frmOpciones
         Me.activoLocalidad.Name = "activoLocalidad"
         Me.activoLocalidad.ReadOnly = True
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.pnlEditarRubro)
+        Me.TabPage4.Controls.Add(Me.btnAgregarRubro)
+        Me.TabPage4.Controls.Add(Me.btnAltaRubro)
+        Me.TabPage4.Controls.Add(Me.btnBajaRubro)
+        Me.TabPage4.Controls.Add(Me.btnEditarRubro)
+        Me.TabPage4.Controls.Add(Me.Label11)
+        Me.TabPage4.Controls.Add(Me.dgvRubros)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage4.TabIndex = 4
+        Me.TabPage4.Text = "Rubros"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'pnlEditarRubro
+        '
+        Me.pnlEditarRubro.Controls.Add(Me.btnCancelarRubro)
+        Me.pnlEditarRubro.Controls.Add(Me.btnGuardarRubro)
+        Me.pnlEditarRubro.Controls.Add(Me.Label6)
+        Me.pnlEditarRubro.Controls.Add(Me.txtNombreRubro)
+        Me.pnlEditarRubro.Controls.Add(Me.lblEditarAgregarRub)
+        Me.pnlEditarRubro.Location = New System.Drawing.Point(45, 265)
+        Me.pnlEditarRubro.Name = "pnlEditarRubro"
+        Me.pnlEditarRubro.Size = New System.Drawing.Size(584, 66)
+        Me.pnlEditarRubro.TabIndex = 16
+        Me.pnlEditarRubro.Visible = False
+        '
+        'btnCancelarRubro
+        '
+        Me.btnCancelarRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelarRubro.Location = New System.Drawing.Point(547, 34)
+        Me.btnCancelarRubro.Name = "btnCancelarRubro"
+        Me.btnCancelarRubro.Size = New System.Drawing.Size(34, 25)
+        Me.btnCancelarRubro.TabIndex = 7
+        Me.btnCancelarRubro.Text = "X"
+        Me.btnCancelarRubro.UseVisualStyleBackColor = True
+        '
+        'btnGuardarRubro
+        '
+        Me.btnGuardarRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarRubro.Location = New System.Drawing.Point(451, 34)
+        Me.btnGuardarRubro.Name = "btnGuardarRubro"
+        Me.btnGuardarRubro.Size = New System.Drawing.Size(90, 25)
+        Me.btnGuardarRubro.TabIndex = 6
+        Me.btnGuardarRubro.Text = "Guardar"
+        Me.btnGuardarRubro.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(7, 38)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(57, 16)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "Nombre"
+        '
+        'txtNombreRubro
+        '
+        Me.txtNombreRubro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombreRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreRubro.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txtNombreRubro.Location = New System.Drawing.Point(70, 36)
+        Me.txtNombreRubro.MaxLength = 45
+        Me.txtNombreRubro.Name = "txtNombreRubro"
+        Me.txtNombreRubro.Size = New System.Drawing.Size(200, 22)
+        Me.txtNombreRubro.TabIndex = 1
+        '
+        'lblEditarAgregarRub
+        '
+        Me.lblEditarAgregarRub.AutoSize = True
+        Me.lblEditarAgregarRub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblEditarAgregarRub.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblEditarAgregarRub.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEditarAgregarRub.Location = New System.Drawing.Point(257, 1)
+        Me.lblEditarAgregarRub.Name = "lblEditarAgregarRub"
+        Me.lblEditarAgregarRub.Size = New System.Drawing.Size(59, 22)
+        Me.lblEditarAgregarRub.TabIndex = 0
+        Me.lblEditarAgregarRub.Text = "Editar"
+        '
+        'btnAgregarRubro
+        '
+        Me.btnAgregarRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarRubro.Location = New System.Drawing.Point(648, 61)
+        Me.btnAgregarRubro.Name = "btnAgregarRubro"
+        Me.btnAgregarRubro.Size = New System.Drawing.Size(196, 28)
+        Me.btnAgregarRubro.TabIndex = 15
+        Me.btnAgregarRubro.Text = "Agregar nuevo"
+        Me.btnAgregarRubro.UseVisualStyleBackColor = True
+        '
+        'btnAltaRubro
+        '
+        Me.btnAltaRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAltaRubro.Location = New System.Drawing.Point(648, 163)
+        Me.btnAltaRubro.Name = "btnAltaRubro"
+        Me.btnAltaRubro.Size = New System.Drawing.Size(196, 28)
+        Me.btnAltaRubro.TabIndex = 13
+        Me.btnAltaRubro.Text = "Dar de Alta"
+        Me.btnAltaRubro.UseVisualStyleBackColor = True
+        '
+        'btnBajaRubro
+        '
+        Me.btnBajaRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBajaRubro.Location = New System.Drawing.Point(648, 129)
+        Me.btnBajaRubro.Name = "btnBajaRubro"
+        Me.btnBajaRubro.Size = New System.Drawing.Size(196, 28)
+        Me.btnBajaRubro.TabIndex = 12
+        Me.btnBajaRubro.Text = "Dar de baja"
+        Me.btnBajaRubro.UseVisualStyleBackColor = True
+        '
+        'btnEditarRubro
+        '
+        Me.btnEditarRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditarRubro.Location = New System.Drawing.Point(648, 95)
+        Me.btnEditarRubro.Name = "btnEditarRubro"
+        Me.btnEditarRubro.Size = New System.Drawing.Size(196, 28)
+        Me.btnEditarRubro.TabIndex = 11
+        Me.btnEditarRubro.Text = "Editar nombre"
+        Me.btnEditarRubro.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(41, 21)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(71, 24)
+        Me.Label11.TabIndex = 10
+        Me.Label11.Text = "Rubros"
+        '
+        'dgvRubros
+        '
+        Me.dgvRubros.AllowUserToAddRows = False
+        Me.dgvRubros.AllowUserToDeleteRows = False
+        Me.dgvRubros.AllowUserToResizeRows = False
+        Me.dgvRubros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRubros.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        Me.dgvRubros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRubros.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idrubro, Me.nombRubro, Me.activoRubro})
+        Me.dgvRubros.Location = New System.Drawing.Point(45, 61)
+        Me.dgvRubros.Name = "dgvRubros"
+        Me.dgvRubros.ReadOnly = True
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRubros.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.dgvRubros.RowHeadersVisible = False
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvRubros.RowsDefaultCellStyle = DataGridViewCellStyle12
+        Me.dgvRubros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvRubros.Size = New System.Drawing.Size(584, 198)
+        Me.dgvRubros.TabIndex = 9
+        '
+        'idrubro
+        '
+        Me.idrubro.DataPropertyName = "idrubro"
+        Me.idrubro.HeaderText = "ID"
+        Me.idrubro.Name = "idrubro"
+        Me.idrubro.ReadOnly = True
+        '
+        'nombRubro
+        '
+        Me.nombRubro.DataPropertyName = "nombRubro"
+        Me.nombRubro.HeaderText = "Nombre"
+        Me.nombRubro.Name = "nombRubro"
+        Me.nombRubro.ReadOnly = True
+        '
+        'activoRubro
+        '
+        Me.activoRubro.DataPropertyName = "activo"
+        Me.activoRubro.HeaderText = "Activo"
+        Me.activoRubro.Name = "activoRubro"
+        Me.activoRubro.ReadOnly = True
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.pnlEditarArticulo)
+        Me.TabPage5.Controls.Add(Me.btnAgregarArticulo)
+        Me.TabPage5.Controls.Add(Me.btnAltaArticulo)
+        Me.TabPage5.Controls.Add(Me.btnBajaArticulo)
+        Me.TabPage5.Controls.Add(Me.btnEditarArticulo)
+        Me.TabPage5.Controls.Add(Me.Label13)
+        Me.TabPage5.Controls.Add(Me.dgvTipoArticulos)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage5.TabIndex = 5
+        Me.TabPage5.Text = "Tipos de Articulo"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'pnlEditarArticulo
+        '
+        Me.pnlEditarArticulo.Controls.Add(Me.btnCancelarArt)
+        Me.pnlEditarArticulo.Controls.Add(Me.btnGuardarArticulo)
+        Me.pnlEditarArticulo.Controls.Add(Me.Label10)
+        Me.pnlEditarArticulo.Controls.Add(Me.txtNombreArticulo)
+        Me.pnlEditarArticulo.Controls.Add(Me.lblEditarAgregarArt)
+        Me.pnlEditarArticulo.Location = New System.Drawing.Point(45, 265)
+        Me.pnlEditarArticulo.Name = "pnlEditarArticulo"
+        Me.pnlEditarArticulo.Size = New System.Drawing.Size(584, 66)
+        Me.pnlEditarArticulo.TabIndex = 23
+        Me.pnlEditarArticulo.Visible = False
+        '
+        'btnCancelarArt
+        '
+        Me.btnCancelarArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelarArt.Location = New System.Drawing.Point(547, 34)
+        Me.btnCancelarArt.Name = "btnCancelarArt"
+        Me.btnCancelarArt.Size = New System.Drawing.Size(34, 25)
+        Me.btnCancelarArt.TabIndex = 7
+        Me.btnCancelarArt.Text = "X"
+        Me.btnCancelarArt.UseVisualStyleBackColor = True
+        '
+        'btnGuardarArticulo
+        '
+        Me.btnGuardarArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarArticulo.Location = New System.Drawing.Point(451, 34)
+        Me.btnGuardarArticulo.Name = "btnGuardarArticulo"
+        Me.btnGuardarArticulo.Size = New System.Drawing.Size(90, 25)
+        Me.btnGuardarArticulo.TabIndex = 6
+        Me.btnGuardarArticulo.Text = "Guardar"
+        Me.btnGuardarArticulo.UseVisualStyleBackColor = True
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(7, 38)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(57, 16)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "Nombre"
+        '
+        'txtNombreArticulo
+        '
+        Me.txtNombreArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombreArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreArticulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txtNombreArticulo.Location = New System.Drawing.Point(70, 36)
+        Me.txtNombreArticulo.MaxLength = 45
+        Me.txtNombreArticulo.Name = "txtNombreArticulo"
+        Me.txtNombreArticulo.Size = New System.Drawing.Size(200, 22)
+        Me.txtNombreArticulo.TabIndex = 1
+        '
+        'lblEditarAgregarArt
+        '
+        Me.lblEditarAgregarArt.AutoSize = True
+        Me.lblEditarAgregarArt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblEditarAgregarArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblEditarAgregarArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEditarAgregarArt.Location = New System.Drawing.Point(257, 1)
+        Me.lblEditarAgregarArt.Name = "lblEditarAgregarArt"
+        Me.lblEditarAgregarArt.Size = New System.Drawing.Size(59, 22)
+        Me.lblEditarAgregarArt.TabIndex = 0
+        Me.lblEditarAgregarArt.Text = "Editar"
+        '
+        'btnAgregarArticulo
+        '
+        Me.btnAgregarArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarArticulo.Location = New System.Drawing.Point(648, 61)
+        Me.btnAgregarArticulo.Name = "btnAgregarArticulo"
+        Me.btnAgregarArticulo.Size = New System.Drawing.Size(196, 28)
+        Me.btnAgregarArticulo.TabIndex = 22
+        Me.btnAgregarArticulo.Text = "Agregar nuevo"
+        Me.btnAgregarArticulo.UseVisualStyleBackColor = True
+        '
+        'btnAltaArticulo
+        '
+        Me.btnAltaArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAltaArticulo.Location = New System.Drawing.Point(648, 163)
+        Me.btnAltaArticulo.Name = "btnAltaArticulo"
+        Me.btnAltaArticulo.Size = New System.Drawing.Size(196, 28)
+        Me.btnAltaArticulo.TabIndex = 21
+        Me.btnAltaArticulo.Text = "Dar de Alta"
+        Me.btnAltaArticulo.UseVisualStyleBackColor = True
+        '
+        'btnBajaArticulo
+        '
+        Me.btnBajaArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBajaArticulo.Location = New System.Drawing.Point(648, 129)
+        Me.btnBajaArticulo.Name = "btnBajaArticulo"
+        Me.btnBajaArticulo.Size = New System.Drawing.Size(196, 28)
+        Me.btnBajaArticulo.TabIndex = 20
+        Me.btnBajaArticulo.Text = "Dar de baja"
+        Me.btnBajaArticulo.UseVisualStyleBackColor = True
+        '
+        'btnEditarArticulo
+        '
+        Me.btnEditarArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditarArticulo.Location = New System.Drawing.Point(648, 95)
+        Me.btnEditarArticulo.Name = "btnEditarArticulo"
+        Me.btnEditarArticulo.Size = New System.Drawing.Size(196, 28)
+        Me.btnEditarArticulo.TabIndex = 19
+        Me.btnEditarArticulo.Text = "Editar nombre"
+        Me.btnEditarArticulo.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(41, 21)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(152, 24)
+        Me.Label13.TabIndex = 18
+        Me.Label13.Text = "Tipos de Artículo"
+        '
+        'dgvTipoArticulos
+        '
+        Me.dgvTipoArticulos.AllowUserToAddRows = False
+        Me.dgvTipoArticulos.AllowUserToDeleteRows = False
+        Me.dgvTipoArticulos.AllowUserToResizeRows = False
+        Me.dgvTipoArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvTipoArticulos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        Me.dgvTipoArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTipoArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idtipoarticulo, Me.tipoArticulo, Me.activoTipoArticulo})
+        Me.dgvTipoArticulos.Location = New System.Drawing.Point(45, 61)
+        Me.dgvTipoArticulos.Name = "dgvTipoArticulos"
+        Me.dgvTipoArticulos.ReadOnly = True
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvTipoArticulos.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
+        Me.dgvTipoArticulos.RowHeadersVisible = False
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvTipoArticulos.RowsDefaultCellStyle = DataGridViewCellStyle15
+        Me.dgvTipoArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvTipoArticulos.Size = New System.Drawing.Size(584, 198)
+        Me.dgvTipoArticulos.TabIndex = 17
+        '
+        'idtipoarticulo
+        '
+        Me.idtipoarticulo.DataPropertyName = "id"
+        Me.idtipoarticulo.HeaderText = "ID"
+        Me.idtipoarticulo.Name = "idtipoarticulo"
+        Me.idtipoarticulo.ReadOnly = True
+        '
+        'tipoArticulo
+        '
+        Me.tipoArticulo.DataPropertyName = "tipoArticulo"
+        Me.tipoArticulo.HeaderText = "Nombre"
+        Me.tipoArticulo.Name = "tipoArticulo"
+        Me.tipoArticulo.ReadOnly = True
+        '
+        'activoTipoArticulo
+        '
+        Me.activoTipoArticulo.DataPropertyName = "activo"
+        Me.activoTipoArticulo.HeaderText = "Activo"
+        Me.activoTipoArticulo.Name = "activoTipoArticulo"
+        Me.activoTipoArticulo.ReadOnly = True
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.pnlEditarEstado)
+        Me.TabPage6.Controls.Add(Me.btnAgregarEstado)
+        Me.TabPage6.Controls.Add(Me.btnDestacarEstado)
+        Me.TabPage6.Controls.Add(Me.btnAltaEstado)
+        Me.TabPage6.Controls.Add(Me.btnBajaEstado)
+        Me.TabPage6.Controls.Add(Me.btnEditarEstado)
+        Me.TabPage6.Controls.Add(Me.Label15)
+        Me.TabPage6.Controls.Add(Me.dgvEstados)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage6.TabIndex = 6
+        Me.TabPage6.Text = "Estados"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'pnlEditarEstado
+        '
+        Me.pnlEditarEstado.Controls.Add(Me.btnCancelarEstado)
+        Me.pnlEditarEstado.Controls.Add(Me.btnGuardarEstado)
+        Me.pnlEditarEstado.Controls.Add(Me.Label12)
+        Me.pnlEditarEstado.Controls.Add(Me.txtNombreEstado)
+        Me.pnlEditarEstado.Controls.Add(Me.lblAgregarEditarEst)
+        Me.pnlEditarEstado.Location = New System.Drawing.Point(45, 265)
+        Me.pnlEditarEstado.Name = "pnlEditarEstado"
+        Me.pnlEditarEstado.Size = New System.Drawing.Size(584, 66)
+        Me.pnlEditarEstado.TabIndex = 16
+        Me.pnlEditarEstado.Visible = False
+        '
+        'btnCancelarEstado
+        '
+        Me.btnCancelarEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelarEstado.Location = New System.Drawing.Point(547, 34)
+        Me.btnCancelarEstado.Name = "btnCancelarEstado"
+        Me.btnCancelarEstado.Size = New System.Drawing.Size(34, 25)
+        Me.btnCancelarEstado.TabIndex = 7
+        Me.btnCancelarEstado.Text = "X"
+        Me.btnCancelarEstado.UseVisualStyleBackColor = True
+        '
+        'btnGuardarEstado
+        '
+        Me.btnGuardarEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarEstado.Location = New System.Drawing.Point(451, 34)
+        Me.btnGuardarEstado.Name = "btnGuardarEstado"
+        Me.btnGuardarEstado.Size = New System.Drawing.Size(90, 25)
+        Me.btnGuardarEstado.TabIndex = 6
+        Me.btnGuardarEstado.Text = "Guardar"
+        Me.btnGuardarEstado.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(7, 38)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(57, 16)
+        Me.Label12.TabIndex = 3
+        Me.Label12.Text = "Nombre"
+        '
+        'txtNombreEstado
+        '
+        Me.txtNombreEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombreEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreEstado.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txtNombreEstado.Location = New System.Drawing.Point(70, 36)
+        Me.txtNombreEstado.MaxLength = 45
+        Me.txtNombreEstado.Name = "txtNombreEstado"
+        Me.txtNombreEstado.Size = New System.Drawing.Size(200, 22)
+        Me.txtNombreEstado.TabIndex = 1
+        '
+        'lblAgregarEditarEst
+        '
+        Me.lblAgregarEditarEst.AutoSize = True
+        Me.lblAgregarEditarEst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblAgregarEditarEst.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblAgregarEditarEst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAgregarEditarEst.Location = New System.Drawing.Point(257, 1)
+        Me.lblAgregarEditarEst.Name = "lblAgregarEditarEst"
+        Me.lblAgregarEditarEst.Size = New System.Drawing.Size(59, 22)
+        Me.lblAgregarEditarEst.TabIndex = 0
+        Me.lblAgregarEditarEst.Text = "Editar"
+        '
+        'btnAgregarEstado
+        '
+        Me.btnAgregarEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarEstado.Location = New System.Drawing.Point(648, 61)
+        Me.btnAgregarEstado.Name = "btnAgregarEstado"
+        Me.btnAgregarEstado.Size = New System.Drawing.Size(196, 28)
+        Me.btnAgregarEstado.TabIndex = 15
+        Me.btnAgregarEstado.Text = "Agregar nuevo"
+        Me.btnAgregarEstado.UseVisualStyleBackColor = True
+        '
+        'btnDestacarEstado
+        '
+        Me.btnDestacarEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDestacarEstado.Location = New System.Drawing.Point(648, 197)
+        Me.btnDestacarEstado.Name = "btnDestacarEstado"
+        Me.btnDestacarEstado.Size = New System.Drawing.Size(196, 28)
+        Me.btnDestacarEstado.TabIndex = 14
+        Me.btnDestacarEstado.Text = "Destacar"
+        Me.btnDestacarEstado.UseVisualStyleBackColor = True
+        '
+        'btnAltaEstado
+        '
+        Me.btnAltaEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAltaEstado.Location = New System.Drawing.Point(648, 163)
+        Me.btnAltaEstado.Name = "btnAltaEstado"
+        Me.btnAltaEstado.Size = New System.Drawing.Size(196, 28)
+        Me.btnAltaEstado.TabIndex = 13
+        Me.btnAltaEstado.Text = "Dar de Alta"
+        Me.btnAltaEstado.UseVisualStyleBackColor = True
+        '
+        'btnBajaEstado
+        '
+        Me.btnBajaEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBajaEstado.Location = New System.Drawing.Point(648, 129)
+        Me.btnBajaEstado.Name = "btnBajaEstado"
+        Me.btnBajaEstado.Size = New System.Drawing.Size(196, 28)
+        Me.btnBajaEstado.TabIndex = 12
+        Me.btnBajaEstado.Text = "Dar de baja"
+        Me.btnBajaEstado.UseVisualStyleBackColor = True
+        '
+        'btnEditarEstado
+        '
+        Me.btnEditarEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditarEstado.Location = New System.Drawing.Point(648, 95)
+        Me.btnEditarEstado.Name = "btnEditarEstado"
+        Me.btnEditarEstado.Size = New System.Drawing.Size(196, 28)
+        Me.btnEditarEstado.TabIndex = 11
+        Me.btnEditarEstado.Text = "Editar nombre"
+        Me.btnEditarEstado.UseVisualStyleBackColor = True
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(41, 21)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(77, 24)
+        Me.Label15.TabIndex = 10
+        Me.Label15.Text = "Estados"
+        '
+        'dgvEstados
+        '
+        Me.dgvEstados.AllowUserToAddRows = False
+        Me.dgvEstados.AllowUserToDeleteRows = False
+        Me.dgvEstados.AllowUserToResizeRows = False
+        Me.dgvEstados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvEstados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
+        Me.dgvEstados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEstados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idestado, Me.nombreEstado, Me.destacadoEstado, Me.activoEstado})
+        Me.dgvEstados.Location = New System.Drawing.Point(45, 61)
+        Me.dgvEstados.Name = "dgvEstados"
+        Me.dgvEstados.ReadOnly = True
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvEstados.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
+        Me.dgvEstados.RowHeadersVisible = False
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvEstados.RowsDefaultCellStyle = DataGridViewCellStyle18
+        Me.dgvEstados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvEstados.Size = New System.Drawing.Size(584, 198)
+        Me.dgvEstados.TabIndex = 9
+        '
+        'idestado
+        '
+        Me.idestado.DataPropertyName = "id"
+        Me.idestado.HeaderText = "ID"
+        Me.idestado.Name = "idestado"
+        Me.idestado.ReadOnly = True
+        '
+        'nombreEstado
+        '
+        Me.nombreEstado.DataPropertyName = "nombreEstado"
+        Me.nombreEstado.HeaderText = "Nombre"
+        Me.nombreEstado.Name = "nombreEstado"
+        Me.nombreEstado.ReadOnly = True
+        '
+        'destacadoEstado
+        '
+        Me.destacadoEstado.DataPropertyName = "destacado"
+        Me.destacadoEstado.HeaderText = "Destacado"
+        Me.destacadoEstado.Name = "destacadoEstado"
+        Me.destacadoEstado.ReadOnly = True
+        '
+        'activoEstado
+        '
+        Me.activoEstado.DataPropertyName = "activo"
+        Me.activoEstado.HeaderText = "Activo"
+        Me.activoEstado.Name = "activoEstado"
+        Me.activoEstado.ReadOnly = True
+        '
         'frmOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -834,6 +1487,21 @@ Partial Class frmOpciones
         Me.pnlEditarLocalidad.ResumeLayout(False)
         Me.pnlEditarLocalidad.PerformLayout()
         CType(Me.dgvLocalidades, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
+        Me.pnlEditarRubro.ResumeLayout(False)
+        Me.pnlEditarRubro.PerformLayout()
+        CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
+        Me.pnlEditarArticulo.ResumeLayout(False)
+        Me.pnlEditarArticulo.PerformLayout()
+        CType(Me.dgvTipoArticulos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
+        Me.pnlEditarEstado.ResumeLayout(False)
+        Me.pnlEditarEstado.PerformLayout()
+        CType(Me.dgvEstados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -900,4 +1568,54 @@ Partial Class frmOpciones
     Friend WithEvents activoLocalidad As DataGridViewTextBoxColumn
     Friend WithEvents cbProvincias As ComboBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents pnlEditarRubro As Panel
+    Friend WithEvents btnCancelarRubro As Button
+    Friend WithEvents btnGuardarRubro As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtNombreRubro As TextBox
+    Friend WithEvents lblEditarAgregarRub As Label
+    Friend WithEvents btnAgregarRubro As Button
+    Friend WithEvents btnAltaRubro As Button
+    Friend WithEvents btnBajaRubro As Button
+    Friend WithEvents btnEditarRubro As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents dgvRubros As DataGridView
+    Friend WithEvents idrubro As DataGridViewTextBoxColumn
+    Friend WithEvents nombRubro As DataGridViewTextBoxColumn
+    Friend WithEvents activoRubro As DataGridViewTextBoxColumn
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents pnlEditarArticulo As Panel
+    Friend WithEvents btnCancelarArt As Button
+    Friend WithEvents btnGuardarArticulo As Button
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtNombreArticulo As TextBox
+    Friend WithEvents lblEditarAgregarArt As Label
+    Friend WithEvents btnAgregarArticulo As Button
+    Friend WithEvents btnAltaArticulo As Button
+    Friend WithEvents btnBajaArticulo As Button
+    Friend WithEvents btnEditarArticulo As Button
+    Friend WithEvents Label13 As Label
+    Friend WithEvents dgvTipoArticulos As DataGridView
+    Friend WithEvents idtipoarticulo As DataGridViewTextBoxColumn
+    Friend WithEvents tipoArticulo As DataGridViewTextBoxColumn
+    Friend WithEvents activoTipoArticulo As DataGridViewTextBoxColumn
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents pnlEditarEstado As Panel
+    Friend WithEvents btnCancelarEstado As Button
+    Friend WithEvents btnGuardarEstado As Button
+    Friend WithEvents Label12 As Label
+    Friend WithEvents txtNombreEstado As TextBox
+    Friend WithEvents lblAgregarEditarEst As Label
+    Friend WithEvents btnAgregarEstado As Button
+    Friend WithEvents btnDestacarEstado As Button
+    Friend WithEvents btnAltaEstado As Button
+    Friend WithEvents btnBajaEstado As Button
+    Friend WithEvents btnEditarEstado As Button
+    Friend WithEvents Label15 As Label
+    Friend WithEvents dgvEstados As DataGridView
+    Friend WithEvents idestado As DataGridViewTextBoxColumn
+    Friend WithEvents nombreEstado As DataGridViewTextBoxColumn
+    Friend WithEvents destacadoEstado As DataGridViewTextBoxColumn
+    Friend WithEvents activoEstado As DataGridViewTextBoxColumn
 End Class

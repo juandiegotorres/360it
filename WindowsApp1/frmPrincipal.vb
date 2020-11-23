@@ -2,6 +2,7 @@
 Imports System.Runtime.InteropServices
 
 Public Class frmPrincipal
+    Public colorGeneral As Color
 
     'Importar archivos para poder mover el form con el mouse, ya que no tiene bordes
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
@@ -12,7 +13,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub abrirForm(ByVal formulario As Form)
-
+        colorGeneral = Color.FromArgb(124, 231, 45)
         Dim formHijo As Form = TryCast(formulario, Form)
         formHijo.TopLevel = False
         formHijo.FormBorderStyle = FormBorderStyle.None

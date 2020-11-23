@@ -296,4 +296,212 @@ Public Class Configuracion
         End Try
     End Function
 #End Region
+#Region "Rubros"
+    Private _idRubro As UInt16
+    Public Property idRubro As UInt16
+        Set(value As UInt16)
+            _idRubro = value
+        End Set
+        Get
+            Return _idRubro
+        End Get
+    End Property
+    Private _nombreRubro As String
+    Public Property nombreRubro As String
+        Set(value As String)
+            _nombreRubro = value
+        End Set
+        Get
+            Return _nombreRubro
+        End Get
+    End Property
+    Public Sub traerRubros(ByRef tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "Select * from rubros"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+    Public Function darDeBajaRubro()
+        Try
+            Dim consultaSQL As String = "UPDATE rubros SET activo = 0 WHERE idrubro = '" & _idRubro & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    Public Function darDeAltaRubro()
+        Try
+            Dim consultaSQL As String = "UPDATE rubros SET activo = 1 WHERE idrubro = '" & _idRubro & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+
+    Public Sub nombreEditadoRubro()
+        Try
+            Dim consultaSQL As String = "UPDATE rubros SET nombRubro = '" & _nombreRubro & "' WHERE idrubro = '" & _idRubro & "'"
+            capaDatos.cargarDatos(consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+    Public Sub agregarRubro()
+        Try
+            Dim consultaSQL As String = "INSERT INTO rubros(nombRubro, activo) VALUES ('" & _nombreRubro & "','1')"
+            capaDatos.cargarDatos(consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+#End Region
+#Region "Tipos de Articulo"
+    Private _idTipoArticulo As UInt16
+    Public Property idTipoArticulo As UInt16
+        Set(value As UInt16)
+            _idTipoArticulo = value
+        End Set
+        Get
+            Return _idTipoArticulo
+        End Get
+    End Property
+    Private _nombreArticulo As String
+    Public Property nombreArticulo As String
+        Set(value As String)
+            _nombreArticulo = value
+        End Set
+        Get
+            Return _nombreArticulo
+        End Get
+    End Property
+    Public Sub traerTipoArticulos(ByRef tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "Select * from tipoarticulo"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+    Public Function darDeBajaTipoArticulo()
+        Try
+            Dim consultaSQL As String = "UPDATE tipoarticulo SET activo = 0 WHERE id = '" & _idTipoArticulo & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    Public Function darDeAltaTipoArticulo()
+        Try
+            Dim consultaSQL As String = "UPDATE tipoarticulo SET activo = 1 WHERE id = '" & _idTipoArticulo & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+
+    Public Sub nombreEditadoTipoArticulo()
+        Try
+            Dim consultaSQL As String = "UPDATE tipoarticulo SET tipoArticulo = '" & _nombreArticulo & "' WHERE id = '" & _idTipoArticulo & "'"
+            capaDatos.cargarDatos(consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+    Public Sub agregarTipoArticulo()
+        Try
+            Dim consultaSQL As String = "INSERT INTO tipoarticulo(tipoArticulo, activo) VALUES ('" & _nombreArticulo & "','1')"
+            capaDatos.cargarDatos(consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+#End Region
+#Region "Estados"
+    Private _idEstado As UInt16
+    Public Property idEstado As UInt16
+        Set(value As UInt16)
+            _idEstado = value
+        End Set
+        Get
+            Return _idEstado
+        End Get
+    End Property
+    Private _nombreEstado As String
+    Public Property nombreEstado As String
+        Set(value As String)
+            _nombreEstado = value
+        End Set
+        Get
+            Return _nombreEstado
+        End Get
+    End Property
+    Public Sub traerEstados(ByRef tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "Select * from estado"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+    Public Function darDeBajaEstado()
+        Try
+            Dim consultaSQL As String = "UPDATE estado SET activo = 0 WHERE id = '" & _idEstado & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    Public Function darDeAltaEstado()
+        Try
+            Dim consultaSQL As String = "UPDATE estado SET activo = 1 WHERE id = '" & _idEstado & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    Public Function destacarEstado()
+        Try
+            'Primero saco el que estaba destacado antes 
+            Dim consultaSQL As String = "UPDATE estado SET destacado = 0 WHERE destacado = '1'"
+            capaDatos.cargarDatos(consultaSQL)
+            consultaSQL = "UPDATE estado SET destacado = 1 WHERE id = '" & _idEstado & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+
+    Public Sub nombreEditadoEstado()
+        Try
+            Dim consultaSQL As String = "UPDATE estado SET nombreEstado = '" & _nombreEstado & "' WHERE id = '" & _idEstado & "'"
+            capaDatos.cargarDatos(consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+    Public Sub agregarEstado()
+        Try
+            Dim consultaSQL As String = "INSERT INTO estado(nombreEstado , destacado, activo) VALUES ('" & _nombreEstado & "', '0', '1')"
+            capaDatos.cargarDatos(consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+#End Region
 End Class
