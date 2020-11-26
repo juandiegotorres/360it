@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class Configuracion
+Public Class Opcion
     Dim capaDatos As New CapaDeNegocios.cdDatosPrueba
+#Region "Opciones Generales"
 #Region "Form Pago"
     Private _idFormPago As UInt16
     Public Property idFormPago As UInt16
@@ -29,15 +30,6 @@ Public Class Configuracion
             Return _recargo
         End Get
     End Property
-    'Private _activo As UInt16
-    'Public Property activo As UInt16
-    '    Set(value As UInt16)
-    '        _activo = value
-    '    End Set
-    '    Get
-    '        Return _activo
-    '    End Get
-    'End Property
     Public Sub traerFormasDePago(ByRef tabla As DataTable)
         Try
             Dim consultaSQL As String = "Select * from formpago"
@@ -504,4 +496,56 @@ Public Class Configuracion
         End Try
     End Sub
 #End Region
+#End Region
+#Region "Bajas"
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="tablaDB"></param>
+    ''' Hace referencia a la tabla de donde se van a extraer los datos desde la base de datos ej. clientes, productos, etc
+    ''' <param name="condiciones"></param>
+    ''' Hace referencia a que voy a traer desde la tabla seleccionada. Ej. nombre, telefono, direccion, etc
+    ''' <param name="tabla"></param>
+    ''' La tabla donde se van  a llenar los datos para luego mostrarlos en el datagrid
+    Public Sub traerDatosGeneral(ByVal tablaDB As String, ByVal condiciones As String, ByRef tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "SELECT " & condiciones & " FROM " & tablaDB & " WHERE activo = 0"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+        End Try
+    End Sub
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="tabla"></param>
+    ''' Hace referencia a la tabla de donde se van a extraer los datos desde la base de datos ej. clientes, productos, etc
+    ''' <param name="columna"></param>
+    ''' Hace referencia al nombre de la clave principal
+    ''' <param name="id"></param>
+    ''' hace referencia al numero del id
+    ''' <returns></returns>
+    Public Function bajaGeneral(ByVal tabla As String, ByVal columna As String, ByVal id As UInt64)
+        Try
+            Dim consultaSQL As String = "UPDATE " & tabla & " SET activo = 0 WHERE " & columna & " = '" & id & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    Public Function altaGeneral(ByVal tablaDB As String, ByVal columna As String, ByVal id As UInt64)
+        Try
+            Dim consultaSQL As String = "UPDATE " & tablaDB & " SET activo = 1 WHERE " & columna & " = '" & id & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Configuraciones")
+            Return False
+        End Try
+    End Function
+    ''↑↑↑↑ Los parametros son los mismos para las dos funciones ↑↑↑↑↑
+#End Region
+
 End Class

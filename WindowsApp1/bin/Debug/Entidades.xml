@@ -28,5 +28,28 @@ Entidades
  </summary>
  <param name="tabla"></param>
 </member>
+<member name="M:Entidades.Opcion.traerDatosGeneral(System.String,System.String,System.Data.DataTable@)">
+ <summary>
+ 
+ </summary>
+ <param name="tablaDB"></param>
+ Hace referencia a la tabla de donde se van a extraer los datos desde la base de datos ej. clientes, productos, etc
+ <param name="condiciones"></param>
+ Hace referencia a que voy a traer desde la tabla seleccionada. Ej. nombre, telefono, direccion, etc
+ <param name="tabla"></param>
+ La tabla donde se van  a llenar los datos para luego mostrarlos en el datagrid
+</member>
+<member name="M:Entidades.Opcion.bajaGeneral(System.String,System.String,System.UInt64)">
+ <summary>
+ 
+ </summary>
+ <param name="tabla"></param>
+ Hace referencia a la tabla de donde se van a extraer los datos desde la base de datos ej. clientes, productos, etc
+ <param name="columna"></param>
+ Hace referencia al nombre de la clave principal
+ <param name="id"></param>
+ hace referencia al numero del id
+ <returns></returns>
+</member>
 </members>
 </doc>

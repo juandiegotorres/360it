@@ -1,6 +1,7 @@
 ﻿Public Class frmOpciones
-    Dim eConfiguracion As New Entidades.Configuracion
-    Dim tablaFormPago, tablaCategorias, tablaLocalidades, tablaProvincias, tablaRubros, tablaTiposArticulo, tablaEstados As New DataTable
+    Dim eConfiguracion As New Entidades.Opcion
+    Dim idGeneral As UInt64
+    Dim tablaFormPago, tablaCategorias, tablaLocalidades, tablaProvincias, tablaRubros, tablaTiposArticulo, tablaEstados, tablaClientes, tablaProductos, tablaProveedores, tablaServTec, tablaVentas As New DataTable
     Private Sub frmOpciones_Load(sender As Object, e As EventArgs) Handles Me.Load
         cargarFormPago()
         cargarCategorias()
@@ -8,6 +9,15 @@
         cargarRubros()
         cargarTiposArticulo()
         cargarEstados()
+        'Clientes
+        cargarDatosBajas(tablaClientes, dgvClientes, "clientes", "*")
+        'Productos
+        cargarDatosBajas(tablaProductos, dgvProductos, "productos", "*")
+        'Proveedores
+        cargarDatosBajas(tablaProveedores, dgvProveedores, "proveedores", "*")
+        'Serv Tecnico
+        cargarDatosBajas(tablaServTec, dgvServTec, "serviciotecnico", "*")
+
         pnlEditar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -15,6 +25,37 @@
         pnlEditarRubro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
     End Sub
+    Public Sub cargarDatosBajas(ByRef tabla As DataTable, ByRef datagrid As DataGridView, ByVal tablaDB As String, ByVal condiciones As String)
+        tabla.Clear()
+        eConfiguracion.traerDatosGeneral(tablaDB, condiciones, tabla)
+        datagrid.DataSource = tabla
+    End Sub
+    Public Sub cargarClientes()
+        tablaClientes.Clear()
+        eConfiguracion.traerDatosGeneral("clientes", "*", tablaClientes)
+        dgvClientes.DataSource = tablaClientes
+    End Sub
+    Public Sub cargarProductos()
+        tablaProductos.Clear()
+        eConfiguracion.traerDatosGeneral("productos", "*", tablaProductos)
+        dgvProductos.DataSource = tablaProductos
+    End Sub
+    Public Sub cargarProveedores()
+        tablaProveedores.Clear()
+        eConfiguracion.traerDatosGeneral("proveedores", "*", tablaProveedores)
+        dgvProductos.DataSource = tablaProveedores
+    End Sub
+    Public Sub cargarServTec()
+        tablaServTec.Clear()
+        eConfiguracion.traerDatosGeneral("serviciotecnico", "*", tablaServTec)
+        dgvServTec.DataSource = tablaServTec
+    End Sub
+
+    'Public Sub cargarDatosGeneral(ByRef tabla As DataTable, ByRef datagrid As DataGridView, ByVal nombreProcedimiento As MethodInvoker)
+    '    tabla.Clear()
+    '    eConfiguracion.----(tablaFormPago)
+    '    dgvFormPago.DataSource = tablaFormPago
+    'End Sub
     Public Sub cargarFormPago()
         tablaFormPago.Clear()
         eConfiguracion.traerFormasDePago(tablaFormPago)
@@ -61,6 +102,8 @@
         End If
         If dgvFormPago.CurrentRow.Cells("activo").Value = 0 Then
             MsgBox("Esta forma de pago ya se encuentra dada de baja", MsgBoxStyle.Exclamation, "Configuraciones")
+        ElseIf dgvFormPago.CurrentRow.Cells("destacado").Value = 1 Then
+            MsgBox("No se puede dar de baja un elemento destacado", MsgBoxStyle.Exclamation, "Configuraciones")
         Else
             eConfiguracion.idFormPago = dgvFormPago.CurrentRow.Cells("idFormPago").Value
             If eConfiguracion.darDeBajaPago = True Then
@@ -214,6 +257,8 @@
         End If
         If dgvCategorias.CurrentRow.Cells("activoCategoria").Value = 0 Then
             MsgBox("Esta categoría ya se encuentra dada de baja", MsgBoxStyle.Exclamation, "Configuraciones")
+        ElseIf dgvCategorias.CurrentRow.Cells("destacadoCategoria").Value = 1 Then
+            MsgBox("No se puede dar de baja un elemento destacado", MsgBoxStyle.Exclamation, "Configuraciones")
         Else
             eConfiguracion.idCategoria = dgvCategorias.CurrentRow.Cells("idcategoria").Value
             If eConfiguracion.darDeBajaCategoria = True Then
@@ -548,6 +593,7 @@
 
     End Sub
 
+
     Private Sub pnlEditarArticulo_LostFocus(sender As Object, e As EventArgs) Handles pnlEditarArticulo.LostFocus
         Call btnCancelarArt_Click(btnCancelarArt, e)
     End Sub
@@ -557,7 +603,6 @@
 
     End Sub
 
-
 #End Region
 #Region "Estados"
     Private Sub btnAgregarEstado_Click(sender As Object, e As EventArgs) Handles btnAgregarEstado.Click
@@ -566,6 +611,18 @@
         txtNombreEstado.Text = ""
         txtNombreEstado.Enabled = True
         txtNombreEstado.Tag = 1
+    End Sub
+
+
+    Private Sub btnBajas_Click(sender As Object, e As EventArgs) Handles btnBajas.Click
+        tabConfiguraciones.Visible = False
+        tabBajas.Visible = True
+    End Sub
+
+
+    Private Sub btnOpcionesGenerales_Click(sender As Object, e As EventArgs) Handles btnOpcionesGenerales.Click
+        tabBajas.Visible = False
+        tabConfiguraciones.Visible = True
     End Sub
 
 
@@ -586,6 +643,8 @@
         End If
         If dgvEstados.CurrentRow.Cells("activoEstado").Value = 0 Then
             MsgBox("Este estado ya se encuentra dado de baja", MsgBoxStyle.Exclamation, "Configuraciones")
+        ElseIf dgvEstados.CurrentRow.Cells("destacadoEstado").Value = 1 Then
+            MsgBox("No se puede dar de baja un elemento destacado", MsgBoxStyle.Exclamation, "Configuraciones")
         Else
             eConfiguracion.idEstado = dgvEstados.CurrentRow.Cells("idestado").Value
             If eConfiguracion.darDeBajaEstado = True Then
@@ -652,6 +711,55 @@
     Private Sub btnCancelarEstado_Click(sender As Object, e As EventArgs) Handles btnCancelarEstado.Click
         pnlEditarEstado.Visible = False
         txtNombreEstado.Text = ""
+    End Sub
+#End Region
+#Region "BAJAS(Botones)"
+    Private Sub btnAltaCliente_Click(sender As Object, e As EventArgs) Handles btnAltaCliente.Click
+        idGeneral = 0
+        idGeneral = dgvClientes.CurrentRow.Cells("idcliente").Value
+        If eConfiguracion.altaGeneral("clientes", "idcliente", idGeneral) = True Then
+            cargarDatosBajas(tablaClientes, dgvClientes, "clientes", "*")
+            MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+        Else
+            MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+        End If
+    End Sub
+
+    Private Sub btnAltaProducto_Click(sender As Object, e As EventArgs) Handles btnAltaProducto.Click
+        idGeneral = 0
+        idGeneral = dgvProductos.CurrentRow.Cells("idProducto").Value
+        If eConfiguracion.altaGeneral("productos", "idProducto", idGeneral) = True Then
+            cargarDatosBajas(tablaProductos, dgvProductos, "productos", "*")
+            MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+        Else
+            MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+        End If
+    End Sub
+    Private Sub btnAltaProveedor_Click(sender As Object, e As EventArgs) Handles btnAltaProveedor.Click
+        idGeneral = 0
+        idGeneral = dgvProveedores.CurrentRow.Cells("idproveedor").Value
+        If eConfiguracion.altaGeneral("proveedores", "idproveedor", idGeneral) = True Then
+            cargarDatosBajas(tablaProveedores, dgvProveedores, "proveedores", "*")
+            MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+        Else
+            MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+        End If
+
+    End Sub
+
+    Private Sub btnAltaServTec_Click(sender As Object, e As EventArgs) Handles btnAltaServTec.Click
+        idGeneral = 0
+        idGeneral = dgvServTec.CurrentRow.Cells("idReparacion").Value
+        If eConfiguracion.altaGeneral("serviciotecnico", "idReparacion", idGeneral) = True Then
+            cargarDatosBajas(tablaServTec, dgvServTec, "serviciotecnico", "*")
+            MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+        Else
+            MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+        End If
+    End Sub
+
+    Private Sub btnAltaVenta_Click(sender As Object, e As EventArgs) Handles btnAltaVenta.Click
+        idGeneral = 0
     End Sub
 #End Region
 End Class
