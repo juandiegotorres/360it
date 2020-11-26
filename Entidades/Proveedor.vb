@@ -80,11 +80,11 @@ Public Class Proveedor
     Dim capaDatos As New CapaDeNegocios.cdDatosPrueba
 
     Public Sub recuperarRubro(ByVal tabla As DataTable)
-        Dim consultaSQL As String = "SELECT * FROM rubros"
+        Dim consultaSQL As String = "SELECT * FROM rubros WHERE activo = 1"
         capaDatos.llenarDatos(tabla, consultaSQL)
     End Sub
     Public Sub recuperarFormPago(ByVal tabla As DataTable)
-        Dim consultaSQL As String = "SELECT * FROM formPago"
+        Dim consultaSQL As String = "SELECT idformpago, nombFormaPago FROM formpago WHERE activo = 1 ORDER BY destacado DESC"
         capaDatos.llenarDatos(tabla, consultaSQL)
     End Sub
     Public Sub nuevoProveedor()

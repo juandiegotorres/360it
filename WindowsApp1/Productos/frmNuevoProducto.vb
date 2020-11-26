@@ -61,11 +61,17 @@
     Public Function comprobarDatos()
         Dim _control As Control
         For Each _control In Me.Controls
+            If TypeOf _control Is ComboBox Then
+                If String.IsNullOrEmpty(cbCategorias.SelectedValue) Then
+                    MsgBox("Parece que no hay ninguna categoría. Intente agregando una desde las opciones.", MsgBoxStyle.Exclamation, "Productos")
+                    Return False
+                End If
+            End If
             If TypeOf _control Is TextBox Then
                 If _control Is txtDescripcion Then
                 ElseIf _control Is txtPorcentaje Then
                 Else
-                    If _control.Text = "" Then
+                    If LTrim(_control.Text = "") Then
                         MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Productos")
                         Return False
                     End If

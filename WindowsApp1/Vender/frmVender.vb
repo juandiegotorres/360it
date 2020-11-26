@@ -128,52 +128,57 @@
     Public Sub vender()
         Try
             'Al vender verifico si el carrito no esta vacio
-            If dgvCarrito.Rows.Count > 0 Then
-                For i = 0 To dgvCarrito.Rows.Count - 1
-                    'lleno las listas con los ids de los productos vendidos y su cantidad
-                    idProductoCarro = dgvCarrito.Rows(i).Cells("idProductoCarrito").Value
-                    listaProductos.Add(idProductoCarro)
-                    precioProductoIndividual = dgvCarrito.Rows(i).Cells("precioVentaCarrito").Value
-                    precioProductos.Add(precioProductoIndividual)
-                    cantidad = dgvCarrito.Rows(i).Cells("cantidadCarrito").Value
-                    cantidades.Add(cantidad)
-                Next
-                If LTrim(txtDescuento.Text) = "" And LTrim(txtRecargo.Text) = "" Then
-                    'Si el descuento o recargo se hace en monto de dinero establezco la S de Sin recargo/descuento
-                    eVenta.tipoDescuentoRecargo = "S"
-                Else
-                    If rbDescuentoPlata.Checked = True Or rbRecargoPlata.Checked = True Then
-                        'Si el descuento o recargo se hace en monto de dinero establezco la D de Dinero
-                        eVenta.tipoDescuentoRecargo = "D"
-                    ElseIf rbRecargoPorcentaje.Checked = True Or rbDescuentoPorcentaje.Checked = True Then
-                        'Si el descuento o recargo se hace en monto de dinero establezco la P de Porcentaje
-                        eVenta.tipoDescuentoRecargo = "P"
+            If String.IsNullOrEmpty(cbFormPago.SelectedValue) Then
+                MsgBox("Parece que no hay ninguna forma de pago cargada. Trate agregando una desde las opciones.", MsgBoxStyle.Exclamation, "Vender")
+                limpiarCarrito()
+            Else
+                If dgvCarrito.Rows.Count > 0 Then
+                    For i = 0 To dgvCarrito.Rows.Count - 1
+                        'lleno las listas con los ids de los productos vendidos y su cantidad
+                        idProductoCarro = dgvCarrito.Rows(i).Cells("idProductoCarrito").Value
+                        listaProductos.Add(idProductoCarro)
+                        precioProductoIndividual = dgvCarrito.Rows(i).Cells("precioVentaCarrito").Value
+                        precioProductos.Add(precioProductoIndividual)
+                        cantidad = dgvCarrito.Rows(i).Cells("cantidadCarrito").Value
+                        cantidades.Add(cantidad)
+                    Next
+                    If LTrim(txtDescuento.Text) = "" And LTrim(txtRecargo.Text) = "" Then
+                        'Si el descuento o recargo se hace en monto de dinero establezco la S de Sin recargo/descuento
+                        eVenta.tipoDescuentoRecargo = "S"
+                    Else
+                        If rbDescuentoPlata.Checked = True Or rbRecargoPlata.Checked = True Then
+                            'Si el descuento o recargo se hace en monto de dinero establezco la D de Dinero
+                            eVenta.tipoDescuentoRecargo = "D"
+                        ElseIf rbRecargoPorcentaje.Checked = True Or rbDescuentoPorcentaje.Checked = True Then
+                            'Si el descuento o recargo se hace en monto de dinero establezco la P de Porcentaje
+                            eVenta.tipoDescuentoRecargo = "P"
+                        End If
                     End If
-                End If
-                eVenta.idProductos = listaProductos
-                eVenta.precioProductos = precioProductos
-                eVenta.cantidad = cantidades
-                subtotal = CInt(txtSubtotal.Text)
-                eVenta.precioInicial = subtotal
-                eVenta.descuento = descuento
-                eVenta.recargo = recargo
-                total = CInt(txtTotal.Text)
-                eVenta.precioFinal = total
-                eVenta.fechaHora = Date.Now
-                eVenta.idFormPago = cbFormPago.SelectedValue
-                If txtClienteCtaCorriente.Visible = False Then
-                    eVenta.cuotas = 0
-                End If
-                'Si se pudo guardar en la base de datos muestra un mensaje al usuario diciendo que se realizo la venta
-                If eVenta.detalleVenta() = True Then
+                    eVenta.idProductos = listaProductos
+                    eVenta.precioProductos = precioProductos
+                    eVenta.cantidad = cantidades
+                    subtotal = CInt(txtSubtotal.Text)
+                    eVenta.precioInicial = subtotal
+                    eVenta.descuento = descuento
+                    eVenta.recargo = recargo
+                    total = CInt(txtTotal.Text)
+                    eVenta.precioFinal = total
+                    eVenta.fechaHora = Date.Now
+                    eVenta.idFormPago = cbFormPago.SelectedValue
                     If txtClienteCtaCorriente.Visible = False Then
-                        frmVentaRealizada.ShowDialog()
-                    ElseIf txtClienteCtaCorriente.Visible = True Then
-                        eVenta.ventaCuentaCorriente()
-                        frmVentaRealizada.ShowDialog()
+                        eVenta.cuotas = 0
                     End If
-                    limpiarCarrito()
-                    nroVenta()
+                    'Si se pudo guardar en la base de datos muestra un mensaje al usuario diciendo que se realizo la venta
+                    If eVenta.detalleVenta() = True Then
+                        If txtClienteCtaCorriente.Visible = False Then
+                            frmVentaRealizada.ShowDialog()
+                        ElseIf txtClienteCtaCorriente.Visible = True Then
+                            eVenta.ventaCuentaCorriente()
+                            frmVentaRealizada.ShowDialog()
+                        End If
+                        limpiarCarrito()
+                        nroVenta()
+                    End If
                 End If
             End If
         Catch ex As Exception

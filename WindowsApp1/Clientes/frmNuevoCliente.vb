@@ -46,13 +46,9 @@
         Dim _control As Control
         For Each _control In Me.Controls
             If TypeOf _control Is TextBox Then
-                If _control.Text = "" Then
+                If LTrim(_control.Text) = "" Then
                     MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Clientes")
                     Return False
-                    If TypeOf _control Is RichTextBox Then
-                        MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Clientes")
-                        Return False
-                    End If
                 End If
             End If
         Next

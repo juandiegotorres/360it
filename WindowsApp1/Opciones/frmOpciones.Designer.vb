@@ -185,7 +185,7 @@ Partial Class frmOpciones
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1079, 597)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1066, 583)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'tabConfiguraciones
@@ -197,10 +197,10 @@ Partial Class frmOpciones
         Me.tabConfiguraciones.Controls.Add(Me.TabPage5)
         Me.tabConfiguraciones.Controls.Add(Me.TabPage6)
         Me.tabConfiguraciones.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tabConfiguraciones.Location = New System.Drawing.Point(190, 3)
+        Me.tabConfiguraciones.Location = New System.Drawing.Point(188, 3)
         Me.tabConfiguraciones.Name = "tabConfiguraciones"
         Me.tabConfiguraciones.SelectedIndex = 0
-        Me.tabConfiguraciones.Size = New System.Drawing.Size(886, 591)
+        Me.tabConfiguraciones.Size = New System.Drawing.Size(875, 577)
         Me.tabConfiguraciones.TabIndex = 0
         '
         'TabPage1
@@ -217,7 +217,7 @@ Partial Class frmOpciones
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage1.Size = New System.Drawing.Size(867, 551)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Formas de Pago"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -231,28 +231,28 @@ Partial Class frmOpciones
         Me.pnlEditar.Controls.Add(Me.Label2)
         Me.pnlEditar.Controls.Add(Me.txtNombre)
         Me.pnlEditar.Controls.Add(Me.lblEditarAgregar)
-        Me.pnlEditar.Location = New System.Drawing.Point(45, 265)
+        Me.pnlEditar.Location = New System.Drawing.Point(45, 394)
         Me.pnlEditar.Name = "pnlEditar"
-        Me.pnlEditar.Size = New System.Drawing.Size(584, 66)
+        Me.pnlEditar.Size = New System.Drawing.Size(336, 151)
         Me.pnlEditar.TabIndex = 8
         Me.pnlEditar.Visible = False
         '
         'btnCancelar
         '
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(547, 34)
+        Me.btnCancelar.Location = New System.Drawing.Point(179, 110)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(34, 25)
+        Me.btnCancelar.Size = New System.Drawing.Size(95, 25)
         Me.btnCancelar.TabIndex = 7
-        Me.btnCancelar.Text = "X"
+        Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
         Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(451, 34)
+        Me.btnGuardar.Location = New System.Drawing.Point(74, 110)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(90, 25)
+        Me.btnGuardar.Size = New System.Drawing.Size(95, 25)
         Me.btnGuardar.TabIndex = 6
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -261,7 +261,7 @@ Partial Class frmOpciones
         '
         Me.txtRecargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRecargo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRecargo.Location = New System.Drawing.Point(356, 36)
+        Me.txtRecargo.Location = New System.Drawing.Point(74, 71)
         Me.txtRecargo.MaxLength = 2
         Me.txtRecargo.Name = "txtRecargo"
         Me.txtRecargo.Size = New System.Drawing.Size(78, 22)
@@ -271,7 +271,7 @@ Partial Class frmOpciones
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(289, 38)
+        Me.Label3.Location = New System.Drawing.Point(7, 73)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 16)
         Me.Label3.TabIndex = 4
@@ -292,7 +292,7 @@ Partial Class frmOpciones
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txtNombre.Location = New System.Drawing.Point(70, 36)
+        Me.txtNombre.Location = New System.Drawing.Point(74, 36)
         Me.txtNombre.MaxLength = 45
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(200, 22)
@@ -304,7 +304,7 @@ Partial Class frmOpciones
         Me.lblEditarAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblEditarAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblEditarAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEditarAgregar.Location = New System.Drawing.Point(257, 1)
+        Me.lblEditarAgregar.Location = New System.Drawing.Point(138, 0)
         Me.lblEditarAgregar.Name = "lblEditarAgregar"
         Me.lblEditarAgregar.Size = New System.Drawing.Size(59, 22)
         Me.lblEditarAgregar.TabIndex = 0
@@ -312,6 +312,8 @@ Partial Class frmOpciones
         '
         'btnAgregar
         '
+        Me.btnAgregar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.Location = New System.Drawing.Point(648, 61)
         Me.btnAgregar.Name = "btnAgregar"
@@ -322,6 +324,8 @@ Partial Class frmOpciones
         '
         'btnEditarRecargo
         '
+        Me.btnEditarRecargo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEditarRecargo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditarRecargo.Location = New System.Drawing.Point(648, 129)
         Me.btnEditarRecargo.Name = "btnEditarRecargo"
@@ -332,6 +336,8 @@ Partial Class frmOpciones
         '
         'btnDestacar
         '
+        Me.btnDestacar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDestacar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDestacar.Location = New System.Drawing.Point(648, 231)
         Me.btnDestacar.Name = "btnDestacar"
@@ -342,6 +348,8 @@ Partial Class frmOpciones
         '
         'btnDarAlta
         '
+        Me.btnDarAlta.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDarAlta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDarAlta.Location = New System.Drawing.Point(648, 197)
         Me.btnDarAlta.Name = "btnDarAlta"
@@ -352,6 +360,8 @@ Partial Class frmOpciones
         '
         'btnDarBaja
         '
+        Me.btnDarBaja.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDarBaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDarBaja.Location = New System.Drawing.Point(648, 163)
         Me.btnDarBaja.Name = "btnDarBaja"
@@ -362,6 +372,8 @@ Partial Class frmOpciones
         '
         'btnEditarNombre
         '
+        Me.btnEditarNombre.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEditarNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditarNombre.Location = New System.Drawing.Point(648, 95)
         Me.btnEditarNombre.Name = "btnEditarNombre"
@@ -411,7 +423,7 @@ Partial Class frmOpciones
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.dgvFormPago.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvFormPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvFormPago.Size = New System.Drawing.Size(584, 198)
+        Me.dgvFormPago.Size = New System.Drawing.Size(584, 312)
         Me.dgvFormPago.TabIndex = 0
         '
         'idformpago
@@ -462,7 +474,7 @@ Partial Class frmOpciones
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage3.Size = New System.Drawing.Size(867, 551)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Categorías"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -474,28 +486,28 @@ Partial Class frmOpciones
         Me.pnlEditarCategoria.Controls.Add(Me.Label5)
         Me.pnlEditarCategoria.Controls.Add(Me.txtNombreCategoria)
         Me.pnlEditarCategoria.Controls.Add(Me.lblEditarAgregarCat)
-        Me.pnlEditarCategoria.Location = New System.Drawing.Point(45, 265)
+        Me.pnlEditarCategoria.Location = New System.Drawing.Point(45, 394)
         Me.pnlEditarCategoria.Name = "pnlEditarCategoria"
-        Me.pnlEditarCategoria.Size = New System.Drawing.Size(584, 66)
+        Me.pnlEditarCategoria.Size = New System.Drawing.Size(336, 126)
         Me.pnlEditarCategoria.TabIndex = 8
         Me.pnlEditarCategoria.Visible = False
         '
         'btnCancelarCat
         '
         Me.btnCancelarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarCat.Location = New System.Drawing.Point(547, 34)
+        Me.btnCancelarCat.Location = New System.Drawing.Point(175, 82)
         Me.btnCancelarCat.Name = "btnCancelarCat"
-        Me.btnCancelarCat.Size = New System.Drawing.Size(34, 25)
+        Me.btnCancelarCat.Size = New System.Drawing.Size(95, 25)
         Me.btnCancelarCat.TabIndex = 7
-        Me.btnCancelarCat.Text = "X"
+        Me.btnCancelarCat.Text = "Cancelar"
         Me.btnCancelarCat.UseVisualStyleBackColor = True
         '
         'btnGuardarCategoria
         '
         Me.btnGuardarCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarCategoria.Location = New System.Drawing.Point(451, 34)
+        Me.btnGuardarCategoria.Location = New System.Drawing.Point(70, 82)
         Me.btnGuardarCategoria.Name = "btnGuardarCategoria"
-        Me.btnGuardarCategoria.Size = New System.Drawing.Size(90, 25)
+        Me.btnGuardarCategoria.Size = New System.Drawing.Size(95, 25)
         Me.btnGuardarCategoria.TabIndex = 6
         Me.btnGuardarCategoria.Text = "Guardar"
         Me.btnGuardarCategoria.UseVisualStyleBackColor = True
@@ -527,7 +539,7 @@ Partial Class frmOpciones
         Me.lblEditarAgregarCat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblEditarAgregarCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblEditarAgregarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEditarAgregarCat.Location = New System.Drawing.Point(257, 1)
+        Me.lblEditarAgregarCat.Location = New System.Drawing.Point(138, 0)
         Me.lblEditarAgregarCat.Name = "lblEditarAgregarCat"
         Me.lblEditarAgregarCat.Size = New System.Drawing.Size(59, 22)
         Me.lblEditarAgregarCat.TabIndex = 0
@@ -624,7 +636,7 @@ Partial Class frmOpciones
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.dgvCategorias.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCategorias.Size = New System.Drawing.Size(584, 198)
+        Me.dgvCategorias.Size = New System.Drawing.Size(584, 312)
         Me.dgvCategorias.TabIndex = 0
         '
         'idcategoria
@@ -667,7 +679,7 @@ Partial Class frmOpciones
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage2.Size = New System.Drawing.Size(867, 551)
         Me.TabPage2.TabIndex = 3
         Me.TabPage2.Text = "Localidades"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -891,7 +903,7 @@ Partial Class frmOpciones
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage4.Size = New System.Drawing.Size(867, 551)
         Me.TabPage4.TabIndex = 4
         Me.TabPage4.Text = "Rubros"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -903,28 +915,28 @@ Partial Class frmOpciones
         Me.pnlEditarRubro.Controls.Add(Me.Label6)
         Me.pnlEditarRubro.Controls.Add(Me.txtNombreRubro)
         Me.pnlEditarRubro.Controls.Add(Me.lblEditarAgregarRub)
-        Me.pnlEditarRubro.Location = New System.Drawing.Point(45, 265)
+        Me.pnlEditarRubro.Location = New System.Drawing.Point(45, 394)
         Me.pnlEditarRubro.Name = "pnlEditarRubro"
-        Me.pnlEditarRubro.Size = New System.Drawing.Size(584, 66)
+        Me.pnlEditarRubro.Size = New System.Drawing.Size(336, 126)
         Me.pnlEditarRubro.TabIndex = 16
         Me.pnlEditarRubro.Visible = False
         '
         'btnCancelarRubro
         '
         Me.btnCancelarRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarRubro.Location = New System.Drawing.Point(547, 34)
+        Me.btnCancelarRubro.Location = New System.Drawing.Point(175, 82)
         Me.btnCancelarRubro.Name = "btnCancelarRubro"
-        Me.btnCancelarRubro.Size = New System.Drawing.Size(34, 25)
+        Me.btnCancelarRubro.Size = New System.Drawing.Size(95, 25)
         Me.btnCancelarRubro.TabIndex = 7
-        Me.btnCancelarRubro.Text = "X"
+        Me.btnCancelarRubro.Text = "Cancelar"
         Me.btnCancelarRubro.UseVisualStyleBackColor = True
         '
         'btnGuardarRubro
         '
         Me.btnGuardarRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarRubro.Location = New System.Drawing.Point(451, 34)
+        Me.btnGuardarRubro.Location = New System.Drawing.Point(70, 82)
         Me.btnGuardarRubro.Name = "btnGuardarRubro"
-        Me.btnGuardarRubro.Size = New System.Drawing.Size(90, 25)
+        Me.btnGuardarRubro.Size = New System.Drawing.Size(95, 25)
         Me.btnGuardarRubro.TabIndex = 6
         Me.btnGuardarRubro.Text = "Guardar"
         Me.btnGuardarRubro.UseVisualStyleBackColor = True
@@ -956,7 +968,7 @@ Partial Class frmOpciones
         Me.lblEditarAgregarRub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblEditarAgregarRub.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblEditarAgregarRub.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEditarAgregarRub.Location = New System.Drawing.Point(257, 1)
+        Me.lblEditarAgregarRub.Location = New System.Drawing.Point(138, 0)
         Me.lblEditarAgregarRub.Name = "lblEditarAgregarRub"
         Me.lblEditarAgregarRub.Size = New System.Drawing.Size(59, 22)
         Me.lblEditarAgregarRub.TabIndex = 0
@@ -1043,7 +1055,7 @@ Partial Class frmOpciones
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.dgvRubros.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.dgvRubros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRubros.Size = New System.Drawing.Size(584, 198)
+        Me.dgvRubros.Size = New System.Drawing.Size(584, 312)
         Me.dgvRubros.TabIndex = 9
         '
         'idrubro
@@ -1079,7 +1091,7 @@ Partial Class frmOpciones
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage5.Size = New System.Drawing.Size(867, 551)
         Me.TabPage5.TabIndex = 5
         Me.TabPage5.Text = "Tipos de Articulo"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1091,28 +1103,28 @@ Partial Class frmOpciones
         Me.pnlEditarArticulo.Controls.Add(Me.Label10)
         Me.pnlEditarArticulo.Controls.Add(Me.txtNombreArticulo)
         Me.pnlEditarArticulo.Controls.Add(Me.lblEditarAgregarArt)
-        Me.pnlEditarArticulo.Location = New System.Drawing.Point(45, 265)
+        Me.pnlEditarArticulo.Location = New System.Drawing.Point(45, 394)
         Me.pnlEditarArticulo.Name = "pnlEditarArticulo"
-        Me.pnlEditarArticulo.Size = New System.Drawing.Size(584, 66)
+        Me.pnlEditarArticulo.Size = New System.Drawing.Size(336, 126)
         Me.pnlEditarArticulo.TabIndex = 23
         Me.pnlEditarArticulo.Visible = False
         '
         'btnCancelarArt
         '
         Me.btnCancelarArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarArt.Location = New System.Drawing.Point(547, 34)
+        Me.btnCancelarArt.Location = New System.Drawing.Point(175, 82)
         Me.btnCancelarArt.Name = "btnCancelarArt"
-        Me.btnCancelarArt.Size = New System.Drawing.Size(34, 25)
+        Me.btnCancelarArt.Size = New System.Drawing.Size(95, 25)
         Me.btnCancelarArt.TabIndex = 7
-        Me.btnCancelarArt.Text = "X"
+        Me.btnCancelarArt.Text = "Cancelar"
         Me.btnCancelarArt.UseVisualStyleBackColor = True
         '
         'btnGuardarArticulo
         '
         Me.btnGuardarArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarArticulo.Location = New System.Drawing.Point(451, 34)
+        Me.btnGuardarArticulo.Location = New System.Drawing.Point(70, 82)
         Me.btnGuardarArticulo.Name = "btnGuardarArticulo"
-        Me.btnGuardarArticulo.Size = New System.Drawing.Size(90, 25)
+        Me.btnGuardarArticulo.Size = New System.Drawing.Size(95, 25)
         Me.btnGuardarArticulo.TabIndex = 6
         Me.btnGuardarArticulo.Text = "Guardar"
         Me.btnGuardarArticulo.UseVisualStyleBackColor = True
@@ -1144,7 +1156,7 @@ Partial Class frmOpciones
         Me.lblEditarAgregarArt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblEditarAgregarArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblEditarAgregarArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEditarAgregarArt.Location = New System.Drawing.Point(257, 1)
+        Me.lblEditarAgregarArt.Location = New System.Drawing.Point(138, 0)
         Me.lblEditarAgregarArt.Name = "lblEditarAgregarArt"
         Me.lblEditarAgregarArt.Size = New System.Drawing.Size(59, 22)
         Me.lblEditarAgregarArt.TabIndex = 0
@@ -1231,7 +1243,7 @@ Partial Class frmOpciones
         DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.dgvTipoArticulos.RowsDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvTipoArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTipoArticulos.Size = New System.Drawing.Size(584, 198)
+        Me.dgvTipoArticulos.Size = New System.Drawing.Size(584, 312)
         Me.dgvTipoArticulos.TabIndex = 17
         '
         'idtipoarticulo
@@ -1268,7 +1280,7 @@ Partial Class frmOpciones
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(878, 565)
+        Me.TabPage6.Size = New System.Drawing.Size(867, 551)
         Me.TabPage6.TabIndex = 6
         Me.TabPage6.Text = "Estados"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -1280,28 +1292,28 @@ Partial Class frmOpciones
         Me.pnlEditarEstado.Controls.Add(Me.Label12)
         Me.pnlEditarEstado.Controls.Add(Me.txtNombreEstado)
         Me.pnlEditarEstado.Controls.Add(Me.lblAgregarEditarEst)
-        Me.pnlEditarEstado.Location = New System.Drawing.Point(45, 265)
+        Me.pnlEditarEstado.Location = New System.Drawing.Point(45, 394)
         Me.pnlEditarEstado.Name = "pnlEditarEstado"
-        Me.pnlEditarEstado.Size = New System.Drawing.Size(584, 66)
+        Me.pnlEditarEstado.Size = New System.Drawing.Size(336, 126)
         Me.pnlEditarEstado.TabIndex = 16
         Me.pnlEditarEstado.Visible = False
         '
         'btnCancelarEstado
         '
         Me.btnCancelarEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarEstado.Location = New System.Drawing.Point(547, 34)
+        Me.btnCancelarEstado.Location = New System.Drawing.Point(175, 82)
         Me.btnCancelarEstado.Name = "btnCancelarEstado"
-        Me.btnCancelarEstado.Size = New System.Drawing.Size(34, 25)
+        Me.btnCancelarEstado.Size = New System.Drawing.Size(95, 25)
         Me.btnCancelarEstado.TabIndex = 7
-        Me.btnCancelarEstado.Text = "X"
+        Me.btnCancelarEstado.Text = "Cancelar"
         Me.btnCancelarEstado.UseVisualStyleBackColor = True
         '
         'btnGuardarEstado
         '
         Me.btnGuardarEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarEstado.Location = New System.Drawing.Point(451, 34)
+        Me.btnGuardarEstado.Location = New System.Drawing.Point(70, 82)
         Me.btnGuardarEstado.Name = "btnGuardarEstado"
-        Me.btnGuardarEstado.Size = New System.Drawing.Size(90, 25)
+        Me.btnGuardarEstado.Size = New System.Drawing.Size(95, 25)
         Me.btnGuardarEstado.TabIndex = 6
         Me.btnGuardarEstado.Text = "Guardar"
         Me.btnGuardarEstado.UseVisualStyleBackColor = True
@@ -1333,7 +1345,7 @@ Partial Class frmOpciones
         Me.lblAgregarEditarEst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblAgregarEditarEst.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblAgregarEditarEst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAgregarEditarEst.Location = New System.Drawing.Point(257, 1)
+        Me.lblAgregarEditarEst.Location = New System.Drawing.Point(138, 0)
         Me.lblAgregarEditarEst.Name = "lblAgregarEditarEst"
         Me.lblAgregarEditarEst.Size = New System.Drawing.Size(59, 22)
         Me.lblAgregarEditarEst.TabIndex = 0
@@ -1430,7 +1442,7 @@ Partial Class frmOpciones
         DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.dgvEstados.RowsDefaultCellStyle = DataGridViewCellStyle18
         Me.dgvEstados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvEstados.Size = New System.Drawing.Size(584, 198)
+        Me.dgvEstados.Size = New System.Drawing.Size(584, 312)
         Me.dgvEstados.TabIndex = 9
         '
         'idestado
@@ -1465,7 +1477,7 @@ Partial Class frmOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1079, 597)
+        Me.ClientSize = New System.Drawing.Size(1066, 583)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "frmOpciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -1,6 +1,7 @@
 ﻿Public Class frmLocalidades
     Dim bsLocalidades As New BindingSource
     Public eLocalidad As New Entidades.Localidad
+    Dim tablaLocalidades As New DataTable
     Private _idProvincia As UInt16
     Public Property idProvincia As UInt16
         Set(value As UInt16)
@@ -11,17 +12,23 @@
         End Get
     End Property
     Private Sub frmLocalidades_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        actualizarDatos()
+        cargarLocalidades()
     End Sub
 
-    Private Sub actualizarDatos()
-        Dim tablaLocalidades As New DataTable
+    Private Sub cargarLocalidades()
+        tablaLocalidades.Clear()
         eLocalidad.idProvincia = _idProvincia
         eLocalidad.traerLocalidades(tablaLocalidades)
-        bsLocalidades.DataSource = tablaLocalidades
-        dgvLocalidades.DataSource = bsLocalidades
-        dgvLocalidades.ClearSelection()
-
+        If tablaLocalidades.Rows.Count = 0 Then
+            MsgBox("Esta provincia parece no tener ninguna localidad asociada. Intente agregar una en la siguiente ventana o desde las opciones.", MsgBoxStyle.Exclamation, "Localidades")
+            dgvLocalidades.Enabled = False
+            btnAceptar.Enabled = False
+        Else
+            bsLocalidades.DataSource = tablaLocalidades
+            dgvLocalidades.DataSource = bsLocalidades
+            dgvLocalidades.Enabled = True
+            btnAceptar.Enabled = True
+        End If
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs)
@@ -65,7 +72,7 @@
 
     Private Sub BtnGuardarLoc_Click(sender As Object, e As EventArgs) Handles btnGuardarLoc.Click
         If guardarLocalidad() = True Then
-            actualizarDatos()
+            cargarLocalidades()
             If MsgBox("Localidad agregada", MsgBoxStyle.Information, "Localidades") = MsgBoxResult.Ok Then
                 restablecerControles()
             End If

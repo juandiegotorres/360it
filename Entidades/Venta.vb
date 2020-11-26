@@ -204,7 +204,7 @@ Public Class Venta
     End Sub
     Public Sub cargarFormasPago(tabla As DataTable)
         Try
-            Dim consultaSQL As String = "SELECT * FROM formpago ORDER BY destacado DESC"
+            Dim consultaSQL As String = "SELECT * FROM formpago WHERE activo = 1 ORDER BY destacado DESC"
             capaDatos.llenarDatos(tabla, consultaSQL)
         Catch ex As Exception
             MsgBox(ex.Message, "Entidad Ventas")

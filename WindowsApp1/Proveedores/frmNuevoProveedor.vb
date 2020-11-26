@@ -139,11 +139,11 @@
         Try
             If comprobarDatos() = True Then
                 If comprobarFormPago() = False Then
-                    MsgBox("Tiene que seleccionar al menos una forma de pago", MsgBoxStyle.Exclamation, "Proveedor")
+                    MsgBox("Tiene que seleccionar al menos una forma de pago. Si la lista está vacía, intente agregar una forma de pago desde las opciones.", MsgBoxStyle.Exclamation, "Proveedor")
                     Exit Sub
                 End If
                 If comprobarRubros() = False Then
-                    MsgBox("Tiene que seleccionar al menos una rubro", MsgBoxStyle.Exclamation, "Proveedor")
+                    MsgBox("Tiene que seleccionar al menos un rubro. Si la lista está vacía, intente agregar un rubro desde las opciones.", MsgBoxStyle.Exclamation, "Proveedor")
                     Exit Sub
                 End If
                 eProveedor.nombre = txtNombre.Text
@@ -173,13 +173,9 @@
         Dim _control As Control
         For Each _control In Me.Controls
             If TypeOf _control Is TextBox Then
-                If _control.Text = "" Then
+                If LTrim(_control.Text) = "" Then
                     MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Proveedores")
                     Return False
-                    If TypeOf _control Is RichTextBox Then
-                        MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Proveedores")
-                        Return False
-                    End If
                 End If
             End If
         Next

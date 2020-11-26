@@ -206,4 +206,8 @@ Public Class frmPrincipal
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         frmOpciones.Show()
     End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        abrirForm(prueba)
+    End Sub
 End Class

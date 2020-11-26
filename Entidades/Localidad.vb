@@ -30,7 +30,7 @@
     Dim capaDatos As New CapaDeNegocios.cdDatosPrueba
     Public Sub traerLocalidades(ByRef tabla As DataTable)
         Try
-            Dim consultaSQL As String = "SELECT * FROM localidades WHERE provincia = '" & _idProvincia & "'"
+            Dim consultaSQL As String = "SELECT * FROM localidades WHERE provincia = '" & _idProvincia & "' AND activo = 1 or 2"
             capaDatos.llenarDatos(tabla, consultaSQL)
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -38,10 +38,10 @@
     End Sub
     Public Sub nuevaLocalidad()
         Try
-            Dim consultaSQL As String = "INSERT INTO localidades (nombLocalidad, provincia) VALUES ('" & _nombLocalidad & "','" & _idProvincia & "')"
+            Dim consultaSQL As String = "INSERT INTO localidades (nombLocalidad, provincia, activo) VALUES ('" & _nombLocalidad & "','" & _idProvincia & "', '1')"
             capaDatos.cargarDatos(consultaSQL)
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 #End Region

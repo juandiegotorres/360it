@@ -291,6 +291,8 @@
         End If
         If dgvLocalidades.CurrentRow.Cells("activoLocalidad").Value = 0 Then
             MsgBox("Esta localidad ya se encuentra dada de baja", MsgBoxStyle.Exclamation, "Configuraciones")
+        ElseIf dgvLocalidades.CurrentRow.Cells("activoLocalidad").Value = 2 Then
+            MsgBox("Esta localidad no se puede dar de baja, es la localidad por defecto", MsgBoxStyle.Exclamation, "Configuraciones")
         Else
             eConfiguracion.idlocalidad = dgvLocalidades.CurrentRow.Cells("idlocalidad").Value
             If eConfiguracion.darDeBajaLocalidad = True Then
@@ -305,7 +307,7 @@
         If pnlEditarLocalidad.Visible = True Then
             Call btnCancelarLoc_Click(btnCancelarLoc, e)
         End If
-        If dgvLocalidades.CurrentRow.Cells("activoLocalidad").Value = 1 Then
+        If dgvLocalidades.CurrentRow.Cells("activoLocalidad").Value = 1 Or 2 Then
             MsgBox("Esta localidad ya se encuentra activa", MsgBoxStyle.Exclamation, "Configuraciones")
         Else
             eConfiguracion.idlocalidad = dgvLocalidades.CurrentRow.Cells("idlocalidad").Value
@@ -565,6 +567,7 @@
         txtNombreEstado.Enabled = True
         txtNombreEstado.Tag = 1
     End Sub
+
 
     Private Sub btnEditarEstado_Click(sender As Object, e As EventArgs) Handles btnEditarEstado.Click
         pnlEditarEstado.Visible = True

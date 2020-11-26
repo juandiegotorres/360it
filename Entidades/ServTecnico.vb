@@ -173,7 +173,7 @@ Public Class ServTecnico
     End Sub
     Public Sub estadoReparacion(ByRef tabla As DataTable)
         Try
-            Dim consultaSQL As String = "SELECT * FROM estado WHERE activo = 1"
+            Dim consultaSQL As String = "SELECT * FROM estado WHERE activo = 1 ORDER BY destacado DESC"
             capaDatos.llenarDatos(tabla, consultaSQL)
         Catch ex As Exception
             MsgBox(ex.Message, "Servicio Técnico")

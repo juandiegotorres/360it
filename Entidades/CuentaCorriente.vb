@@ -58,6 +58,7 @@ Public Class CuentaCorriente
             End If
         Catch ex As Exception
             MsgBox(ex.Message, "Cuentas Corriente")
+            Return False
         End Try
     End Function
     Public Sub cargarVentasCliente(ByVal tabla As DataTable)
