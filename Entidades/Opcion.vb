@@ -525,10 +525,13 @@ Public Class Opcion
     ''' <param name="id"></param>
     ''' hace referencia al numero del id
     ''' <returns></returns>
-    Public Function bajaGeneral(ByVal tabla As String, ByVal columna As String, ByVal id As UInt64)
+    Public Function altaGeneralTodos(ByVal tabla As String, ByVal columna As String, ByVal listaIDs As List(Of UInt64))
         Try
-            Dim consultaSQL As String = "UPDATE " & tabla & " SET activo = 0 WHERE " & columna & " = '" & id & "'"
-            capaDatos.cargarDatos(consultaSQL)
+            Dim consultaSQL As String
+            For i = 0 To listaIDs.Count - 1
+                consultaSQL = "UPDATE " & tabla & " SET activo = 1 WHERE " & columna & " = '" & listaIDs(i) & "'"
+                capaDatos.cargarDatos(consultaSQL)
+            Next
             Return True
         Catch ex As Exception
             MsgBox(ex.Message, "Configuraciones")

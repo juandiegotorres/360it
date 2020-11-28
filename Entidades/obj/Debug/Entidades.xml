@@ -39,7 +39,7 @@ Entidades
  <param name="tabla"></param>
  La tabla donde se van  a llenar los datos para luego mostrarlos en el datagrid
 </member>
-<member name="M:Entidades.Opcion.bajaGeneral(System.String,System.String,System.UInt64)">
+<member name="M:Entidades.Opcion.altaGeneralTodos(System.String,System.String,System.Collections.Generic.List{System.UInt64})">
  <summary>
  
  </summary>
