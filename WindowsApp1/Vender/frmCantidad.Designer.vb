@@ -24,7 +24,7 @@ Partial Class frmCantidad
     Private Sub InitializeComponent()
         Me.pnlHeader = New System.Windows.Forms.Panel()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -55,15 +55,15 @@ Partial Class frmCantidad
         Me.btnCerrar.TabIndex = 30
         Me.btnCerrar.TabStop = False
         '
-        'Label1
+        'lblTitulo
         '
-        Me.Label1.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(380, 44)
-        Me.Label1.TabIndex = 31
-        Me.Label1.Text = "Vender"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTitulo.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Location = New System.Drawing.Point(3, 12)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(380, 44)
+        Me.lblTitulo.TabIndex = 31
+        Me.lblTitulo.Text = "Vender"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtCantidad
         '
@@ -131,7 +131,7 @@ Partial Class frmCantidad
         Me.Controls.Add(Me.txtCantidad)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.pnlHeader)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblTitulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.ImeMode = System.Windows.Forms.ImeMode.[On]
         Me.KeyPreview = True
@@ -147,7 +147,7 @@ Partial Class frmCantidad
 
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents btnCerrar As PictureBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTitulo As Label
     Friend WithEvents txtCantidad As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnAgregar As Button

@@ -2,28 +2,37 @@
 Public Class frmCantidad
     Dim cantidadProductos As UInt16
     Public cantidadSeleccionada As UInt16
+    Dim agregar As Boolean
     ''' <summary>
     ''' Paso el parametro de la cantidad de un producto que hay en stock hacia el formulario cantida, para poder establecer una validacion a la hora de que el usuario introduzca la cantidad que desea vender. Si es mas de la que hay en stock va a salir un mensaje de error
     ''' </summary>
     ''' <param name="cantidadProducto">Cantidad de productos en stock</param>
-    Public Sub New(ByVal cantidadProducto As UInt16)
+    Public Sub New(ByVal cantidadProducto As UInt16, ByVal agregar As Boolean)
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
+        Me.agregar = agregar
         Me.cantidadProductos = cantidadProducto
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
     'Al cargar el formulario muestro un mensaje al usuario de cuanta cantidad de un producto le queda, para recordarle
     Private Sub frmCantidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If cantidadProductos = 1 Then
-            lblDisponibilidad.Text = "Solo queda " & cantidadProductos & " producto en stock"
-            txtCantidad.Text = "1"
-        ElseIf cantidadProductos = 0 Then
-            lblDisponibilidad.Text = "No hay mas stock de este producto"
-            lblDisponibilidad.ForeColor = Color.Red
-            txtCantidad.Enabled = False
-        Else
-            lblDisponibilidad.Text = "Quedan " & cantidadProductos & " productos en stock"
-            txtCantidad.Text = "1"
+        If agregar = True Then
+            lblTitulo.Text = "Vender"
+            If cantidadProductos = 1 Then
+                lblDisponibilidad.Text = "Solo queda " & cantidadProductos & " producto en stock"
+                txtCantidad.Text = "1"
+            ElseIf cantidadProductos = 0 Then
+                lblDisponibilidad.Text = "No hay mas stock de este producto"
+                lblDisponibilidad.ForeColor = Color.Red
+                txtCantidad.Enabled = False
+            Else
+                lblDisponibilidad.Text = "Quedan " & cantidadProductos & " productos en stock"
+                txtCantidad.Text = "1"
+            End If
+        ElseIf agregar = False Then
+            lblTitulo.Text = "Quitar"
+            lblDisponibilidad.Text = "Solo puede quitar " & cantidadProductos & " productos"
+            txtCantidad.Text = cantidadProductos
         End If
     End Sub
     'Accion al cerrar el formulario
@@ -45,24 +54,46 @@ Public Class frmCantidad
     '''Puse esta porcion de codigo en un procedimiento ya que quiero que se ejecute lo mismo al realizar dos acciones. Al presionar enter se ejecutaria esto, y al darle al boton agregar con el mouse
     ''' </summary>
     Public Function aceptar()
-        If LTrim(txtCantidad.Text) = "" Then
-            Return False
-        Else
-            cantidadSeleccionada = txtCantidad.Text
-            If cantidadSeleccionada > cantidadProductos Then
-                lblError.Visible = True
-                lblError.Text = "No dispones de esa cantidad de unidades"
-                txtCantidad.Text = ""
-                txtCantidad.Select()
-            ElseIf cantidadSeleccionada = 0 Then
-                lblError.Visible = True
-                lblError.Text = "Debe seleccionar al menos una unidad"
+        If agregar = True Then
+            If LTrim(txtCantidad.Text) = "" Then
+                Return False
             Else
                 cantidadSeleccionada = txtCantidad.Text
-                Me.DialogResult = DialogResult.OK
+                If cantidadSeleccionada > cantidadProductos Then
+                    lblError.Visible = True
+                    lblError.Text = "No dispones de esa cantidad de unidades"
+                    txtCantidad.Text = ""
+                    txtCantidad.Select()
+                ElseIf cantidadSeleccionada = 0 Then
+                    lblError.Visible = True
+                    lblError.Text = "Debe seleccionar al menos una unidad"
+                Else
+                    cantidadSeleccionada = txtCantidad.Text
+                    Me.DialogResult = DialogResult.OK
+                End If
+                Return True
             End If
-            Return True
+        ElseIf agregar = False Then
+            If LTrim(txtCantidad.Text) = "" Then
+                Return False
+            Else
+                cantidadSeleccionada = txtCantidad.Text
+                If cantidadSeleccionada > cantidadProductos Then
+                    lblError.Visible = True
+                    lblError.Text = "No dispones de esa cantidad de unidades"
+                    txtCantidad.Text = ""
+                    txtCantidad.Select()
+                ElseIf cantidadSeleccionada = 0 Then
+                    lblError.Visible = True
+                    lblError.Text = "Debe seleccionar al menos una unidad"
+                Else
+                    cantidadSeleccionada = txtCantidad.Text
+                    Me.DialogResult = DialogResult.OK
+                End If
+                Return True
+            End If
         End If
+
     End Function
 
 

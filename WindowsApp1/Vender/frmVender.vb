@@ -6,10 +6,10 @@
     Dim idProducto, idProductoCarro As UInt64
     Dim tipo, marca, modelo, filtroBS, filtroElegido As String
     'defino una variable para poder establecer la cantidad de un producto, para asi poder pasarsela al formulario cantidad. Y defino otra para guardar el resultado del formulario
-    Dim cantidad, cantidadSeleccionada As UInt16
+    Dim cantidad, cantidadSeleccionada, cantidadTotalCarrito As UInt16
     Dim precioCosto, precioVenta, precioTotal, subtotal, total, descuento, recargo, precioProductoIndividual As Double
     'Creo la tabla que va a contener los productos en stock para llenar el datagrid
-    Dim tablaProductos, tablaBuscador, tablaFormPago As New DataTable
+    Dim tablaProductos, tablaBuscador, tablaFormPago, tablaRecargos As New DataTable
     Dim listaProductos, cantidades, precioProductos As New List(Of UInt16)
     Dim bsProductos As New BindingSource
     Private Sub frmFacturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -22,11 +22,16 @@
         txtSubtotal.Text = subtotal.ToString("C2")
         txtTotal.Text = total.ToString("C2")
         actualizarProductos()
+        cargarRecargos()
         cargarFormPago()
         nroVenta()
         comboBoxBuscarPor()
     End Sub
-
+    'Traigo los recargos para que a la hora del usuario elija la forma de pago automaticamente se aplique el recargo.
+    Public Sub cargarRecargos()
+        tablaRecargos.Clear()
+        eVenta.cargarRecargos(tablaRecargos)
+    End Sub
     'Traigo los productos desde la base de datos mediante la instancia a la clase ventas
     Public Sub actualizarProductos()
         txtBuscar.Text = ""
@@ -40,9 +45,9 @@
     Public Sub cargarFormPago()
         tablaFormPago.Clear()
         eVenta.cargarFormasPago(tablaFormPago)
-        cbFormPago.DataSource = tablaFormPago
         cbFormPago.DisplayMember = "nombFormaPago"
         cbFormPago.ValueMember = "idformpago"
+        cbFormPago.DataSource = tablaFormPago
     End Sub
     Public Sub comboBoxBuscarPor()
         'Creo una tabla para poder tener dos valores dentro del combobox, uno es el que yo voy a mostrar y otro contiene el nombre identificatorio que coincide con el de la base de datos para poder buscar
@@ -82,42 +87,79 @@
         txtClienteCtaCorriente.Text = ""
         txtClienteCtaCorriente.Visible = False
         btnCancelarCtaCorriente.Visible = False
+        rbRecargoPorcentaje.Enabled = True
+        rbRecargoPlata.Enabled = True
+        rbDescuentoPlata.Enabled = True
+        rbDescuentoPorcentaje.Enabled = True
+        rbDescuentoPorcentaje.Checked = True
+        cbFormPago_SelectedValueChanged(cbFormPago, System.EventArgs.Empty)
         actualizarProductos()
+        cbFormPago.Enabled = False
     End Sub
+
+    Public Function productoRepetido(ByRef cantidadAAgregar As UInt64)
+        If dgvCarrito.Rows.Count > 0 Then
+            For i = 0 To dgvCarrito.Rows.Count - 1
+                If dgvCarrito.Rows(i).Cells("idProductoCarrito").Value = dgvProductosLista.CurrentRow.Cells("idProductoLista").Value Then
+                    dgvCarrito.Rows(i).Cells("cantidadCarrito").Value = dgvCarrito.Rows(i).Cells("cantidadCarrito").Value + cantidadAAgregar
+                    cantidadTotalCarrito = dgvCarrito.Rows(i).Cells("cantidadCarrito").Value
+                    dgvCarrito.Rows(i).Cells("precioTotalCarrito").Value = cantidadTotalCarrito * dgvCarrito.Rows(i).Cells("precioVentaCarrito").Value
+                    Return True
+                End If
+            Next
+            Return False
+        Else
+            Return False
+        End If
+    End Function
+
+
+
     'Procedimiento para agregar un producto desde el datagrid de productos hacia el datagrid de ventas
     Public Sub anidadirAlCarro()
+        'Si previamente hay algun descuento o recargo lo borro para la nueva venta
+        txtBuscar.Text = ""
+        filtroBS = ""
+        If dgvCarrito.Rows.Count = 0 Then
+            txtDescuento.Text = ""
+            txtRecargo.Text = ""
+            Call cbFormPago_SelectedValueChanged(cbFormPago, System.EventArgs.Empty)
+        End If
         cantidad = dgvProductosLista.CurrentRow.Cells("cantidadProductoLista").Value
-        Dim seleccionarCantidad As New frmCantidad(cantidad)
+        Dim seleccionarCantidad As New frmCantidad(cantidad, True)
         With seleccionarCantidad
             .ShowDialog()
             'Si introduzco una cantidad valida en el formulario cantidad, recien ahi lo agrega al datagrid de carrito/venta
             If .DialogResult = DialogResult.OK Then
-                'Si previamente hay algun descuento o recargo lo borro para la nueva venta
-                txtBuscar.Text = ""
-                filtroBS = ""
-                If dgvCarrito.Rows.Count = 0 Then
-                    txtDescuento.Text = ""
-                    txtRecargo.Text = ""
+                cantidadSeleccionada = seleccionarCantidad.cantidadSeleccionada
+                If productoRepetido(cantidadSeleccionada) = False Then
+                    For Each ROW As DataGridViewRow In dgvProductosLista.SelectedRows
+                        idProducto = ROW.Cells("idProductoLista").Value
+                        tipo = ROW.Cells("tipoProductoLista").Value.ToString
+                        marca = ROW.Cells("marcaProductoLista").Value.ToString
+                        modelo = ROW.Cells("modeloProductoLista").Value.ToString
+                        precioCosto = ROW.Cells("precioCostoLista").Value
+                        precioVenta = ROW.Cells("precioVentaLista").Value
+                        'Asigno el valor desde el formulario cantidad
+                        cantidadSeleccionada = seleccionarCantidad.cantidadSeleccionada
+                        ROW.Cells("cantidadProductoLista").Value = cantidad - cantidadSeleccionada
+                        'agrego los datos seleccionados al datagrid  de ventas
+                        precioTotal = precioVenta * cantidadSeleccionada
+                        dgvCarrito.Rows.Add(idProducto, tipo, marca, modelo, cantidadSeleccionada, precioTotal, precioVenta)
+                    Next
+                Else
+                    dgvProductosLista.CurrentRow.Cells("cantidadProductoLista").Value = cantidad - cantidadSeleccionada
+
                 End If
-                For Each ROW As DataGridViewRow In dgvProductosLista.SelectedRows
-                    idProducto = ROW.Cells("idProductoLista").Value
-                    tipo = ROW.Cells("tipoProductoLista").Value.ToString
-                    marca = ROW.Cells("marcaProductoLista").Value.ToString
-                    modelo = ROW.Cells("modeloProductoLista").Value.ToString
-                    precioCosto = ROW.Cells("precioCostoLista").Value
-                    precioVenta = ROW.Cells("precioVentaLista").Value
-                    'Asigno el valor desde el formulario cantidad
-                    cantidadSeleccionada = seleccionarCantidad.cantidadSeleccionada
-                    ROW.Cells("cantidadProductoLista").Value = cantidad - cantidadSeleccionada
-                    'agrego los datos seleccionados al datagrid  de ventas
-                    precioTotal = precioVenta * cantidadSeleccionada
-                    dgvCarrito.Rows.Add(idProducto, tipo, marca, modelo, cantidadSeleccionada, precioTotal, precioVenta)
-                    subtotal = precioTotal + subtotal
-                    total = subtotal
-                    txtSubtotal.Text = subtotal.ToString("C2")
-                    txtTotal.Text = total.ToString("C2")
-                    dgvCarrito.ClearSelection()
-                Next
+                subtotal = precioTotal + subtotal
+                total = subtotal
+                txtSubtotal.Text = subtotal.ToString("C2")
+                txtTotal.Text = total.ToString("C2")
+                'Si tengo alguna forma de pago que tiene un recargo precargado esto llama a al evento de txtrecargo y actualiza el monto total con el recargo
+                Call txtRecargo_TextChanged_1(txtRecargo, System.EventArgs.Empty)
+                'Habilito desde aqui el combobox para que el usuario no pueda cambiar el valor si no hay ningun producto cargado en el carrito
+                cbFormPago.Enabled = True
+                dgvCarrito.ClearSelection()
             End If
         End With
     End Sub
@@ -127,11 +169,12 @@
     End Sub
     Public Sub vender()
         Try
-            'Al vender verifico si el carrito no esta vacio
+            'Esto pregunta si hay alguna forma de pago anteriormente
             If String.IsNullOrEmpty(cbFormPago.SelectedValue) Then
                 MsgBox("Parece que no hay ninguna forma de pago cargada. Trate agregando una desde las opciones.", MsgBoxStyle.Exclamation, "Vender")
                 limpiarCarrito()
             Else
+                'Al vender verifico si el carrito no esta vacio
                 If dgvCarrito.Rows.Count > 0 Then
                     For i = 0 To dgvCarrito.Rows.Count - 1
                         'lleno las listas con los ids de los productos vendidos y su cantidad
@@ -216,9 +259,9 @@
                 txtClienteCtaCorriente.Visible = True
                 btnCancelarCtaCorriente.Visible = True
                 If eVenta.cuotas = 1 Then
-                    txtClienteCtaCorriente.Text = "Cliente: " & ctaCorriente.eVenta.nombreCliente & "  -  " & eVenta.cuotas & " Pago"
+                    txtClienteCtaCorriente.Text = ctaCorriente.eVenta.nombreCliente & "  -  " & eVenta.cuotas & " Pago"
                 Else
-                    txtClienteCtaCorriente.Text = "Cliente: " & ctaCorriente.eVenta.nombreCliente & "  -  " & eVenta.cuotas & " Cuotas"
+                    txtClienteCtaCorriente.Text = ctaCorriente.eVenta.nombreCliente & "  -  " & eVenta.cuotas & " Cuotas"
                 End If
             End If
         End If
@@ -406,8 +449,25 @@
             'Selecciono el id del producto y lo guardo en una variable al igual que la cantidad que yo habia elegido anteriormente
             idProductoCarro = dgvCarrito.CurrentRow.Cells("idProductoCarrito").Value
             cantidadSeleccionada = dgvCarrito.CurrentRow.Cells("cantidadCarrito").Value
-            'Elimino la fila del datagrid carrito
-            dgvCarrito.Rows.Remove(dgvCarrito.CurrentRow)
+            'Si solo es un producto lo elimino directamente
+            If cantidadSeleccionada = 1 Then
+                dgvCarrito.Rows.Remove(dgvCarrito.CurrentRow)
+            Else
+                'Instancio el formulario cantidad y le paso la cantidad de productos que tengo en el carrito y le paso el valor false que diferencia de agregar o quitar unidades
+                Dim cantidadAQuitar As New frmCantidad(cantidadSeleccionada, False)
+                cantidadAQuitar.ShowDialog()
+                If cantidadAQuitar.DialogResult = DialogResult.OK Then
+                    'Asigno la cantidad que elegi en el formulario
+                    cantidadSeleccionada = cantidadAQuitar.cantidadSeleccionada
+                    'Pregunto si el numero que elegi en el formulario es igual a la cantidad de productos que tengo en el carrito directamente lo elimino
+                    If dgvCarrito.CurrentRow.Cells("cantidadCarrito").Value = cantidadSeleccionada Then
+                        dgvCarrito.Rows.Remove(dgvCarrito.CurrentRow)
+                    Else
+                        'Sino le resto la cantidad elegida a la celda cantidad del producto
+                        dgvCarrito.CurrentRow.Cells("cantidadCarrito").Value = (dgvCarrito.CurrentRow.Cells("cantidadCarrito").Value - cantidadSeleccionada)
+                    End If
+                End If
+            End If
             'Este for lo utilizo para volver a poner la cantidad en la lista de productos, ya que cuando yo agrego un producto carrito resto la cantidad de la lista de productos. Esto me permite volver a ponerlo como estaba antes. Mediante el id del producto busco y vuelvo a sumar la cantidad 
             For i = 0 To dgvProductosLista.Rows.Count - 1
                 If idProductoCarro = dgvProductosLista.Rows(i).Cells("idProductoLista").Value Then
@@ -432,6 +492,43 @@
     Private Sub cbBuscador_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbBuscador.SelectedValueChanged
         txtBuscar.Text = ""
         txtBuscar.Focus()
+    End Sub
+
+    Private Sub cbFormPago_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbFormPago.SelectedValueChanged
+        'En esta parte establezco los recargos fijos que tiene cada forma de pago
+        'Recorro la tabla con el id de la forma de pago y el recargo
+        For i = 0 To tablaRecargos.Rows.Count - 1
+            'Los comparo con el valor seleccionado en el combobox de la forma de pago
+            If cbFormPago.SelectedValue = tablaRecargos.Rows(i).Item("idformpago") Then
+                'Si coinciden y el recargo es mayor que 0 lo establezco automaticamente. Tambien deshabilito todos los controles respectivos para que el usuario no lo pueda modificar
+                If tablaRecargos.Rows(i).Item("recargo") > 0 Then
+                    rbRecargoPorcentaje.Checked = True
+                    rbRecargoPlata.Checked = False
+                    rbDescuentoPlata.Checked = False
+                    rbDescuentoPorcentaje.Checked = False
+                    txtRecargo.Text = CInt(tablaRecargos.Rows(i).Item("recargo"))
+                    txtRecargo.Enabled = False
+                    txtDescuento.Enabled = False
+                    rbRecargoPorcentaje.Enabled = False
+                    rbRecargoPlata.Enabled = False
+                    rbDescuentoPlata.Enabled = False
+                    rbDescuentoPorcentaje.Enabled = False
+                    'Si el recargo es de 0 habilito todos los controles para el uso normal
+                Else
+                    rbRecargoPorcentaje.Enabled = True
+                    rbRecargoPlata.Enabled = True
+                    rbDescuentoPlata.Enabled = True
+                    rbDescuentoPorcentaje.Enabled = True
+                    rbRecargoPorcentaje.Checked = False
+                    rbRecargoPlata.Checked = False
+                    rbDescuentoPlata.Checked = True
+                    rbDescuentoPorcentaje.Checked = False
+                    txtRecargo.Text = ""
+                    txtRecargo.Enabled = False
+                    txtDescuento.Enabled = True
+                End If
+            End If
+        Next
     End Sub
 
 

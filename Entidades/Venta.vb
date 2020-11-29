@@ -210,6 +210,14 @@ Public Class Venta
             MsgBox(ex.Message, "Entidad Ventas")
         End Try
     End Sub
+    Public Sub cargarRecargos(tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "SELECT idformpago, recargo FROM formpago WHERE activo = 1 ORDER BY destacado DESC"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Ventas")
+        End Try
+    End Sub
     Public Sub calcularNumeroVenta()
         Try
             tablaNumeroVenta.Clear()

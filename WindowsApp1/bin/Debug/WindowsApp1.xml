@@ -177,7 +177,7 @@ WindowsApp1
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="M:WindowsApp1.frmCantidad.#ctor(System.UInt16)">
+<member name="M:WindowsApp1.frmCantidad.#ctor(System.UInt16,System.Boolean)">
  <summary>
  Paso el parametro de la cantidad de un producto que hay en stock hacia el formulario cantida, para poder establecer una validacion a la hora de que el usuario introduzca la cantidad que desea vender. Si es mas de la que hay en stock va a salir un mensaje de error
  </summary>
