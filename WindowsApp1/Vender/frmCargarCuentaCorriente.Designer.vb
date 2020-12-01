@@ -73,7 +73,7 @@ Partial Class frmCargarCuentaCorriente
         Me.btnClientes.Location = New System.Drawing.Point(399, 71)
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.Size = New System.Drawing.Size(56, 31)
-        Me.btnClientes.TabIndex = 52
+        Me.btnClientes.TabIndex = 0
         Me.btnClientes.Text = "..."
         Me.btnClientes.UseVisualStyleBackColor = True
         '
@@ -106,7 +106,7 @@ Partial Class frmCargarCuentaCorriente
         Me.txtCuotas.MaxLength = 2
         Me.txtCuotas.Name = "txtCuotas"
         Me.txtCuotas.Size = New System.Drawing.Size(90, 31)
-        Me.txtCuotas.TabIndex = 53
+        Me.txtCuotas.TabIndex = 1
         Me.txtCuotas.Text = "1"
         Me.txtCuotas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -128,7 +128,7 @@ Partial Class frmCargarCuentaCorriente
         Me.txtEntrega.MaxLength = 60
         Me.txtEntrega.Name = "txtEntrega"
         Me.txtEntrega.Size = New System.Drawing.Size(132, 31)
-        Me.txtEntrega.TabIndex = 55
+        Me.txtEntrega.TabIndex = 2
         Me.txtEntrega.Text = "0"
         Me.txtEntrega.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -168,7 +168,7 @@ Partial Class frmCargarCuentaCorriente
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(150, 15, 150, 5)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(155, 43)
-        Me.btnGuardar.TabIndex = 59
+        Me.btnGuardar.TabIndex = 3
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '

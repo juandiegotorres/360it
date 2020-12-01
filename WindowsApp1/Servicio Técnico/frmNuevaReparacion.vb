@@ -5,6 +5,7 @@
         tipoArticulo()
         estadoReparacion()
         dtEntrega.Value = Today.AddDays(3)
+        dtEntrega.MinDate = Today
         If modificar = True Then
             lblTitulo.Text = "Modificar Reparación"
             eServTecnico.modificarReparacion()
@@ -14,6 +15,7 @@
             txtModelo.Text = eServTecnico.modelo
             cbEstado.SelectedValue = eServTecnico.idEstado
             dtRecepcion.Value = eServTecnico.fechaRecep
+            dtEntrega.MinDate = eServTecnico.fechaLimite
             dtEntrega.Value = eServTecnico.fechaLimite
             If eServTecnico.accesorios = "Sin accesorios" Then
                 txtAccesorios.Text = ""
@@ -173,10 +175,15 @@
 
     Private Sub frmNuevaReparacion_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
+            Case (Keys.Control + Keys.L)
+                Call btnLimpiar_Click(btnLimpiar, e)
             Case Keys.Enter
                 Call btnGuardar_Click(btnGuardar, e)
             Case Keys.Escape
                 Call btnCancelar_Click(btnCancelar, e)
+            Case Keys.Up
+                e.Handled = True
+                Me.SelectNextControl(Me.ActiveControl, False, True, True, True)
         End Select
     End Sub
 

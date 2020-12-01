@@ -13,6 +13,7 @@
     End Property
     Private Sub frmLocalidades_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarLocalidades()
+        dgvLocalidades.Select()
     End Sub
 
     Private Sub cargarLocalidades()
@@ -113,6 +114,8 @@
 
     Private Sub frmLocalidades_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
+            Case (Keys.Control + Keys.B)
+                txtBuscar.Select()
             Case Keys.Enter
                 Call BtnAceptar_Click(btnAceptar, e)
             Case Keys.Escape

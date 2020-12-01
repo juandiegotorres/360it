@@ -141,11 +141,16 @@
     End Sub
 
     Private Sub frmNuevoCliente_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        Select Case e.KeyCode
+        Select Case e.KeyData
+            Case (Keys.Control + Keys.L)
+                Call btnLimpiar_Click(btnLimpiar, e)
             Case Keys.Enter
                 Call btnGuardar_Click(btnGuardar, e)
             Case Keys.Escape
                 Call BtnCancelar_Click(btnCancelar, e)
+            Case Keys.Up
+                e.Handled = True
+                Me.SelectNextControl(Me.ActiveControl, False, True, True, True)
         End Select
     End Sub
 

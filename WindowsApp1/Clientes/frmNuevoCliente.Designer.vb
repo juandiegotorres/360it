@@ -94,7 +94,7 @@ Partial Class frmNuevoCliente
         Me.txtNomApel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNomApel.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNomApel.Location = New System.Drawing.Point(148, 88)
-        Me.txtNomApel.MaxLength = 45
+        Me.txtNomApel.MaxLength = 44
         Me.txtNomApel.Name = "txtNomApel"
         Me.txtNomApel.Size = New System.Drawing.Size(291, 31)
         Me.txtNomApel.TabIndex = 0
@@ -164,7 +164,7 @@ Partial Class frmNuevoCliente
         Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelefono.Location = New System.Drawing.Point(148, 139)
-        Me.txtTelefono.MaxLength = 25
+        Me.txtTelefono.MaxLength = 24
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(237, 31)
         Me.txtTelefono.TabIndex = 1
@@ -174,7 +174,7 @@ Partial Class frmNuevoCliente
         Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDireccion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDireccion.Location = New System.Drawing.Point(147, 191)
-        Me.txtDireccion.MaxLength = 60
+        Me.txtDireccion.MaxLength = 59
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(264, 31)
         Me.txtDireccion.TabIndex = 2

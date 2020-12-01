@@ -99,7 +99,7 @@ Partial Class frmNuevaReparacion
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(147, 43)
-        Me.btnLimpiar.TabIndex = 56
+        Me.btnLimpiar.TabIndex = 12
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -133,7 +133,7 @@ Partial Class frmNuevaReparacion
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(147, 43)
-        Me.btnCancelar.TabIndex = 55
+        Me.btnCancelar.TabIndex = 11
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -141,7 +141,7 @@ Partial Class frmNuevaReparacion
         '
         Me.txtMarca.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMarca.Location = New System.Drawing.Point(192, 193)
-        Me.txtMarca.MaxLength = 25
+        Me.txtMarca.MaxLength = 44
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(291, 31)
         Me.txtMarca.TabIndex = 3
@@ -209,7 +209,7 @@ Partial Class frmNuevaReparacion
         '
         Me.txtModelo.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtModelo.Location = New System.Drawing.Point(192, 246)
-        Me.txtModelo.MaxLength = 25
+        Me.txtModelo.MaxLength = 44
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(291, 31)
         Me.txtModelo.TabIndex = 4
@@ -252,7 +252,7 @@ Partial Class frmNuevaReparacion
         Me.txtAccesorios.Multiline = True
         Me.txtAccesorios.Name = "txtAccesorios"
         Me.txtAccesorios.Size = New System.Drawing.Size(341, 60)
-        Me.txtAccesorios.TabIndex = 8
+        Me.txtAccesorios.TabIndex = 9
         '
         'txtDescripcion
         '
@@ -262,7 +262,7 @@ Partial Class frmNuevaReparacion
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(341, 96)
-        Me.txtDescripcion.TabIndex = 9
+        Me.txtDescripcion.TabIndex = 10
         '
         'Label12
         '
@@ -352,7 +352,7 @@ Partial Class frmNuevaReparacion
         Me.chbSinFecha.Location = New System.Drawing.Point(192, 457)
         Me.chbSinFecha.Name = "chbSinFecha"
         Me.chbSinFecha.Size = New System.Drawing.Size(139, 19)
-        Me.chbSinFecha.TabIndex = 99
+        Me.chbSinFecha.TabIndex = 8
         Me.chbSinFecha.Text = "Sin fecha de entrega"
         Me.chbSinFecha.UseVisualStyleBackColor = True
         '

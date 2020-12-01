@@ -129,12 +129,6 @@
     <Compile Include="prueba.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vender\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vender\Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Vender\frmCargarCuentaCorriente.Designer.vb">
       <DependentUpon>frmCargarCuentaCorriente.vb</DependentUpon>
     </Compile>
@@ -291,9 +285,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vender\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vender\frmCargarCuentaCorriente.resx">
       <DependentUpon>frmCargarCuentaCorriente.vb</DependentUpon>

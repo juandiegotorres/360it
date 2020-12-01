@@ -52,7 +52,7 @@ Partial Class frmEntrega
         Me.btnAceptar.Margin = New System.Windows.Forms.Padding(150, 10, 150, 10)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(136, 42)
-        Me.btnAceptar.TabIndex = 44
+        Me.btnAceptar.TabIndex = 2
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
@@ -72,7 +72,7 @@ Partial Class frmEntrega
         Me.txtEntrega.Location = New System.Drawing.Point(198, 88)
         Me.txtEntrega.Name = "txtEntrega"
         Me.txtEntrega.Size = New System.Drawing.Size(169, 33)
-        Me.txtEntrega.TabIndex = 41
+        Me.txtEntrega.TabIndex = 0
         '
         'Label1
         '
@@ -135,7 +135,7 @@ Partial Class frmEntrega
         Me.cbVenta.Location = New System.Drawing.Point(198, 136)
         Me.cbVenta.Name = "cbVenta"
         Me.cbVenta.Size = New System.Drawing.Size(169, 34)
-        Me.cbVenta.TabIndex = 46
+        Me.cbVenta.TabIndex = 1
         '
         'TableLayoutPanel1
         '

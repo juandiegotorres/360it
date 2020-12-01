@@ -8,6 +8,8 @@
         entrega = 0
         txtResto.Text = 0
         tablaCuenta.Clear()
+        dgvCuentas.Select()
+
         If eCuentaCorriente.verCuentaCliente(tablaCuenta) = True Then
             dgvCuentas.DataSource = tablaCuenta
             dgvCuentas.ClearSelection()
@@ -130,5 +132,18 @@
 
     Private Sub dgvCuentas_ColumnHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvCuentas.ColumnHeaderMouseClick
         corregirDataGrid()
+    End Sub
+
+    Private Sub frmCuentasCorriente_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyData
+            Case (Keys.Control + Keys.B)
+                picClientes_Click(picClientes, e)
+            Case Keys.F10
+                Call btnDetalleVenta_Click(btnDetalleVenta, e)
+            Case Keys.F11
+                Call btnEntregaDeDinero_Click(btnEntregaDeDinero, e)
+            Case Keys.F12
+                Call btnEliminarMovimiento_Click(btnEliminarMovimiento, e)
+        End Select
     End Sub
 End Class

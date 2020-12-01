@@ -9,7 +9,7 @@
         'eServTec.idEstado = idEstadoArticulo
         estadoArticulo()
         actualizarReparaciones()
-
+        dgvServTecnico.Select()
     End Sub
     Public Sub cambiarFecha()
         For i As Integer = 0 To dgvServTecnico.Rows.Count - 1
@@ -102,5 +102,22 @@
                 actualizarReparaciones()
             End If
         End If
+    End Sub
+
+    Private Sub btnAgregar_MouseHover(sender As Object, e As EventArgs) Handles btnAgregar.MouseHover
+        ttAyuda.SetToolTip(btnAgregar, "Introduzca los centavos con una coma. Ej: '22,50'")
+        ttAyuda.ToolTipTitle = "Precio"
+        ttAyuda.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub frmServTecnico_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyData
+            Case Keys.F10
+                Call btnAgregar_Click(btnAgregar, e)
+            Case Keys.F11
+                Call btnBaja_Click(btnBaja, e)
+            Case Keys.F12
+                Call btnModificar_Click_1(btnModificar, e)
+        End Select
     End Sub
 End Class

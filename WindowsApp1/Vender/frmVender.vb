@@ -26,6 +26,7 @@
         cargarFormPago()
         nroVenta()
         comboBoxBuscarPor()
+        dgvProductosLista.Select()
     End Sub
     'Traigo los recargos para que a la hora del usuario elija la forma de pago automaticamente se aplique el recargo.
     Public Sub cargarRecargos()
@@ -149,7 +150,6 @@
                     Next
                 Else
                     dgvProductosLista.CurrentRow.Cells("cantidadProductoLista").Value = cantidad - cantidadSeleccionada
-
                 End If
                 subtotal = precioTotal + subtotal
                 total = subtotal
@@ -229,7 +229,15 @@
         End Try
     End Sub
     Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
-        vender()
+        If dgvCarrito.Rows.Count = 0 Then
+            MsgBox("El carrito esta vacío", MsgBoxStyle.Exclamation, "Vender")
+        Else
+            If MsgBox("¿Desea realizar esta venta?", MsgBoxStyle.YesNo Or MsgBoxStyle.Information, "Vender") = MsgBoxResult.Yes Then
+                vender()
+            End If
+        End If
+
+
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -530,6 +538,22 @@
             End If
         Next
     End Sub
+
+    Private Sub frmVender_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyData
+            Case (Keys.Control + Keys.B)
+                txtBuscar.Select()
+            Case Keys.F10
+                Call btnVender_Click(btnVender, e)
+            Case Keys.F11
+                Call btnCuentaCorriente_Click(btnCuentaCorriente, e)
+            Case (Keys.Control + Keys.L)
+                Call btnLimpiar_Click(btnLimpiar, e)
+            Case (Keys.Control + Keys.A)
+                Call btnAgregar_Click(btnAgregar, e)
+        End Select
+    End Sub
+
 
 
 

@@ -93,28 +93,28 @@ Partial Class frmNuevoProveedor
         '
         Me.txtNombre.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.Location = New System.Drawing.Point(174, 85)
-        Me.txtNombre.MaxLength = 45
+        Me.txtNombre.MaxLength = 44
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(323, 31)
-        Me.txtNombre.TabIndex = 17
+        Me.txtNombre.TabIndex = 0
         '
         'txtDireccion
         '
         Me.txtDireccion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDireccion.Location = New System.Drawing.Point(175, 193)
-        Me.txtDireccion.MaxLength = 45
+        Me.txtDireccion.MaxLength = 44
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(264, 31)
-        Me.txtDireccion.TabIndex = 19
+        Me.txtDireccion.TabIndex = 2
         '
         'txtTelefono
         '
         Me.txtTelefono.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelefono.Location = New System.Drawing.Point(175, 140)
-        Me.txtTelefono.MaxLength = 20
+        Me.txtTelefono.MaxLength = 19
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(237, 31)
-        Me.txtTelefono.TabIndex = 18
+        Me.txtTelefono.TabIndex = 1
         '
         'Label4
         '
@@ -150,10 +150,10 @@ Partial Class frmNuevoProveedor
         '
         Me.txtCBU.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCBU.Location = New System.Drawing.Point(174, 246)
-        Me.txtCBU.MaxLength = 45
+        Me.txtCBU.MaxLength = 44
         Me.txtCBU.Name = "txtCBU"
         Me.txtCBU.Size = New System.Drawing.Size(237, 31)
-        Me.txtCBU.TabIndex = 23
+        Me.txtCBU.TabIndex = 3
         '
         'Label6
         '
@@ -173,7 +173,7 @@ Partial Class frmNuevoProveedor
         Me.clbRubro.Location = New System.Drawing.Point(174, 299)
         Me.clbRubro.Name = "clbRubro"
         Me.clbRubro.Size = New System.Drawing.Size(238, 92)
-        Me.clbRubro.TabIndex = 25
+        Me.clbRubro.TabIndex = 4
         '
         'Label7
         '
@@ -193,7 +193,7 @@ Partial Class frmNuevoProveedor
         Me.clbFormPago.Location = New System.Drawing.Point(175, 407)
         Me.clbFormPago.Name = "clbFormPago"
         Me.clbFormPago.Size = New System.Drawing.Size(238, 92)
-        Me.clbFormPago.TabIndex = 27
+        Me.clbFormPago.TabIndex = 5
         '
         'Label8
         '
@@ -209,10 +209,10 @@ Partial Class frmNuevoProveedor
         '
         Me.txtHorario.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHorario.Location = New System.Drawing.Point(174, 523)
-        Me.txtHorario.MaxLength = 45
+        Me.txtHorario.MaxLength = 59
         Me.txtHorario.Name = "txtHorario"
         Me.txtHorario.Size = New System.Drawing.Size(281, 31)
-        Me.txtHorario.TabIndex = 29
+        Me.txtHorario.TabIndex = 6
         '
         'btnLimpiar
         '
@@ -227,7 +227,7 @@ Partial Class frmNuevoProveedor
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(128, 43)
-        Me.btnLimpiar.TabIndex = 32
+        Me.btnLimpiar.TabIndex = 9
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -244,7 +244,7 @@ Partial Class frmNuevoProveedor
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(128, 43)
-        Me.btnGuardar.TabIndex = 30
+        Me.btnGuardar.TabIndex = 8
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
@@ -261,7 +261,7 @@ Partial Class frmNuevoProveedor
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(128, 43)
-        Me.btnCancelar.TabIndex = 31
+        Me.btnCancelar.TabIndex = 7
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '

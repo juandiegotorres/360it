@@ -71,7 +71,7 @@ Partial Class frmCantidad
         Me.txtCantidad.Location = New System.Drawing.Point(147, 91)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(169, 33)
-        Me.txtCantidad.TabIndex = 32
+        Me.txtCantidad.TabIndex = 0
         '
         'Label2
         '
@@ -91,7 +91,7 @@ Partial Class frmCantidad
         Me.btnAgregar.Location = New System.Drawing.Point(139, 168)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(110, 41)
-        Me.btnAgregar.TabIndex = 35
+        Me.btnAgregar.TabIndex = 1
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '

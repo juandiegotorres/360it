@@ -49,26 +49,36 @@ Public Class frmPrincipal
         System.Diagnostics.Process.Start("www.infoandina.com")
     End Sub
 
-    'Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-    '    Select Case e.KeyCode
-    '        Case Keys.F1
-    '           ' Call btnVentas_Click(btnVentas, e)
-    '        Case Keys.F2
-    '           ' Call btnClientes_Click(btnClientes, e)
-    '        Case Keys.F3
-    '            'Call btnCuentas_Click(btnCuentas, e)
-    '        Case Keys.F4
-    '            'Call btnServTecnico_Click(btnServTecnico, e)
-    '        Case Keys.F5
-    '            'Call btnProductos_Click(btnProductos, e)
-    '        Case Keys.F6
-    '            'Call btnProveedores_Click(btnProveedores, e)
-    '        Case Keys.F7
-    '            Call btnCuentaCorriente_Click(btnCuentaCorriente, e)
-    '        Case Keys.Escape
-    '            Call btnCerrar_Click(btnCerrar, e)
-    '    End Select
-    'End Sub
+    Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.F1
+                Call btnVender_Click(btnVender, e)
+                pnlSubMenuVentas.Visible = True
+            Case Keys.F2
+                Call btnCuentaCorriente_Click(btnCuentaCorriente, e)
+                pnlSubMenuVentas.Visible = True
+            Case Keys.F3
+                Call btnCaja_Click(btnCaja, e)
+                pnlSubMenuVentas.Visible = True
+            Case Keys.F4
+                Call btnHistorialVentas_Click(btnHistorialVentas, e)
+                pnlSubMenuVentas.Visible = True
+            Case Keys.F5
+                pnlSubMenuVentas.Visible = False
+                Call btnClientes_Click(btnClientes, e)
+            Case Keys.F6
+                pnlSubMenuVentas.Visible = False
+                Call btnProductos_Click(btnProductos, e)
+            Case Keys.F7
+                pnlSubMenuVentas.Visible = False
+                Call btnServTecnico_Click(btnServTecnico, e)
+            Case Keys.F8
+                pnlSubMenuVentas.Visible = False
+                Call btnProveedores_Click(btnProveedores, e)
+            Case Keys.Escape
+                Call btnCerrar_Click(btnCerrar, e)
+        End Select
+    End Sub
     'Poder mover la ventana con el mouse, porque el form no tiene bordes
     Private Sub frmPrincipal_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
         ReleaseCapture()
@@ -110,12 +120,6 @@ Public Class frmPrincipal
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs)
-        panelCost.Visible = True
-        panelCost.Height = btnCuentaCorriente.Height
-        panelCost.Top = btnCuentaCorriente.Top
-        abrirForm(frmCuentasCorriente)
-    End Sub
 
     Private Sub customizarDesign()
         pnlSubMenuVentas.Visible = False
@@ -140,13 +144,7 @@ Public Class frmPrincipal
         setColor(btnVender)
         abrirForm(frmVender)
     End Sub
-    Private Sub btnCuentaCorriente_Click_1(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
-        panelCost.Visible = True
-        panelCost.Height = btnVentas.Height
-        panelCost.Top = btnVentas.Top
-        setColor(btnCuentaCorriente)
-        abrirForm(frmCuentasCorriente)
-    End Sub
+
     Private Sub btnCaja_Click(sender As Object, e As EventArgs) Handles btnCaja.Click
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
@@ -209,5 +207,13 @@ Public Class frmPrincipal
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         abrirForm(prueba)
+    End Sub
+
+    Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
+        panelCost.Visible = True
+        panelCost.Height = btnVentas.Height
+        panelCost.Top = btnVentas.Top
+        setColor(btnCuentaCorriente)
+        abrirForm(frmCuentasCorriente)
     End Sub
 End Class

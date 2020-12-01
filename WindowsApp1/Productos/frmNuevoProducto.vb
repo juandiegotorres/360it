@@ -190,10 +190,15 @@
 
     Private Sub frmNuevoProducto_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
+            Case (Keys.Control + Keys.L)
+                Call BtnLimpiar_Click(btnLimpiar, e)
             Case Keys.Enter
                 Call BtnGuardar_Click(btnGuardar, e)
             Case Keys.Escape
                 Call BtnCancelar_Click(btnCancelar, e)
+            Case Keys.Up
+                e.Handled = True
+                Me.SelectNextControl(Me.ActiveControl, False, True, True, True)
         End Select
     End Sub
 

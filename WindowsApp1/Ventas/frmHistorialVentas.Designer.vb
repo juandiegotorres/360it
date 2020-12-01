@@ -22,15 +22,15 @@ Partial Class frmHistorialVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
@@ -187,23 +187,23 @@ Partial Class frmHistorialVentas
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvHistorialVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvHistorialVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvHistorialVentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvHistorialVentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvHistorialVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVenta, Me.fecha, Me.hora, Me.articulos, Me.monto, Me.fechaHora})
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvHistorialVentas.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvHistorialVentas.DefaultCellStyle = DataGridViewCellStyle16
         Me.dgvHistorialVentas.EnableHeadersVisualStyles = False
         Me.dgvHistorialVentas.Location = New System.Drawing.Point(20, 5)
         Me.dgvHistorialVentas.Margin = New System.Windows.Forms.Padding(20, 5, 18, 10)
@@ -211,19 +211,19 @@ Partial Class frmHistorialVentas
         Me.dgvHistorialVentas.Name = "dgvHistorialVentas"
         Me.dgvHistorialVentas.ReadOnly = True
         Me.dgvHistorialVentas.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvHistorialVentas.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvHistorialVentas.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.dgvHistorialVentas.RowHeadersVisible = False
         Me.dgvHistorialVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        Me.dgvHistorialVentas.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
+        Me.dgvHistorialVentas.RowsDefaultCellStyle = DataGridViewCellStyle18
         Me.dgvHistorialVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvHistorialVentas.Size = New System.Drawing.Size(693, 344)
         Me.dgvHistorialVentas.TabIndex = 46
@@ -231,8 +231,8 @@ Partial Class frmHistorialVentas
         'idVenta
         '
         Me.idVenta.DataPropertyName = "venta"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.idVenta.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.idVenta.DefaultCellStyle = DataGridViewCellStyle11
         Me.idVenta.HeaderText = "Venta"
         Me.idVenta.Name = "idVenta"
         Me.idVenta.ReadOnly = True
@@ -240,8 +240,8 @@ Partial Class frmHistorialVentas
         'fecha
         '
         Me.fecha.DataPropertyName = "Fecha"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.fecha.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.fecha.DefaultCellStyle = DataGridViewCellStyle12
         Me.fecha.HeaderText = "Fecha"
         Me.fecha.Name = "fecha"
         Me.fecha.ReadOnly = True
@@ -249,8 +249,8 @@ Partial Class frmHistorialVentas
         'hora
         '
         Me.hora.DataPropertyName = "Hora"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.hora.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.hora.DefaultCellStyle = DataGridViewCellStyle13
         Me.hora.HeaderText = "Hora"
         Me.hora.Name = "hora"
         Me.hora.ReadOnly = True
@@ -258,8 +258,8 @@ Partial Class frmHistorialVentas
         'articulos
         '
         Me.articulos.DataPropertyName = "articulos"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.articulos.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.articulos.DefaultCellStyle = DataGridViewCellStyle14
         Me.articulos.HeaderText = "Artículos"
         Me.articulos.Name = "articulos"
         Me.articulos.ReadOnly = True
@@ -267,9 +267,9 @@ Partial Class frmHistorialVentas
         'monto
         '
         Me.monto.DataPropertyName = "precioFinal"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle6.Format = "C2"
-        Me.monto.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle15.Format = "C2"
+        Me.monto.DefaultCellStyle = DataGridViewCellStyle15
         Me.monto.HeaderText = "Monto"
         Me.monto.Name = "monto"
         Me.monto.ReadOnly = True
@@ -351,7 +351,7 @@ Partial Class frmHistorialVentas
         Me.btnResetear.Location = New System.Drawing.Point(3, 0)
         Me.btnResetear.Name = "btnResetear"
         Me.btnResetear.Size = New System.Drawing.Size(259, 34)
-        Me.btnResetear.TabIndex = 48
+        Me.btnResetear.TabIndex = 3
         Me.btnResetear.TabStop = True
         Me.btnResetear.Text = "Resetear"
         Me.btnResetear.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -386,7 +386,7 @@ Partial Class frmHistorialVentas
         Me.btnBuscarFecha.Margin = New System.Windows.Forms.Padding(15, 10, 15, 10)
         Me.btnBuscarFecha.Name = "btnBuscarFecha"
         Me.btnBuscarFecha.Size = New System.Drawing.Size(235, 31)
-        Me.btnBuscarFecha.TabIndex = 46
+        Me.btnBuscarFecha.TabIndex = 2
         Me.btnBuscarFecha.Text = "Buscar Fecha"
         Me.btnBuscarFecha.UseVisualStyleBackColor = True
         '
@@ -428,7 +428,7 @@ Partial Class frmHistorialVentas
         Me.dtpHasta.Margin = New System.Windows.Forms.Padding(8, 6, 20, 3)
         Me.dtpHasta.Name = "dtpHasta"
         Me.dtpHasta.Size = New System.Drawing.Size(160, 27)
-        Me.dtpHasta.TabIndex = 46
+        Me.dtpHasta.TabIndex = 1
         '
         'TableLayoutPanel11
         '
@@ -471,7 +471,7 @@ Partial Class frmHistorialVentas
         Me.dtpDesde.Margin = New System.Windows.Forms.Padding(8, 6, 20, 3)
         Me.dtpDesde.Name = "dtpDesde"
         Me.dtpDesde.Size = New System.Drawing.Size(160, 27)
-        Me.dtpDesde.TabIndex = 43
+        Me.dtpDesde.TabIndex = 0
         '
         'Label2
         '
@@ -528,7 +528,7 @@ Partial Class frmHistorialVentas
         Me.btnDetalleVenta.Margin = New System.Windows.Forms.Padding(15, 15, 15, 10)
         Me.btnDetalleVenta.Name = "btnDetalleVenta"
         Me.btnDetalleVenta.Size = New System.Drawing.Size(235, 31)
-        Me.btnDetalleVenta.TabIndex = 39
+        Me.btnDetalleVenta.TabIndex = 4
         Me.btnDetalleVenta.Text = "Detalle Venta"
         Me.btnDetalleVenta.UseVisualStyleBackColor = False
         '

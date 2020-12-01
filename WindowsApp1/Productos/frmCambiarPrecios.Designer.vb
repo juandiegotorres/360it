@@ -69,7 +69,7 @@ Partial Class frmCambiarPrecios
         Me.btnAumentar.Location = New System.Drawing.Point(142, 186)
         Me.btnAumentar.Name = "btnAumentar"
         Me.btnAumentar.Size = New System.Drawing.Size(110, 41)
-        Me.btnAumentar.TabIndex = 53
+        Me.btnAumentar.TabIndex = 2
         Me.btnAumentar.Text = "Aumentar"
         Me.btnAumentar.UseVisualStyleBackColor = True
         '
@@ -90,7 +90,7 @@ Partial Class frmCambiarPrecios
         Me.txtPorcentaje.MaxLength = 2
         Me.txtPorcentaje.Name = "txtPorcentaje"
         Me.txtPorcentaje.Size = New System.Drawing.Size(120, 33)
-        Me.txtPorcentaje.TabIndex = 51
+        Me.txtPorcentaje.TabIndex = 0
         '
         'btnCerrar
         '
@@ -117,7 +117,7 @@ Partial Class frmCambiarPrecios
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(4, 18)
+        Me.Label1.Location = New System.Drawing.Point(4, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(384, 44)
         Me.Label1.TabIndex = 50
@@ -131,7 +131,7 @@ Partial Class frmCambiarPrecios
         Me.chbTodosLosProductos.Location = New System.Drawing.Point(92, 118)
         Me.chbTodosLosProductos.Name = "chbTodosLosProductos"
         Me.chbTodosLosProductos.Size = New System.Drawing.Size(222, 19)
-        Me.chbTodosLosProductos.TabIndex = 57
+        Me.chbTodosLosProductos.TabIndex = 1
         Me.chbTodosLosProductos.Text = "Aplicar a todos los productos"
         Me.chbTodosLosProductos.UseVisualStyleBackColor = True
         '

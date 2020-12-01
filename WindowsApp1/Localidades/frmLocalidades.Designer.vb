@@ -28,6 +28,10 @@ Partial Class frmLocalidades
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvLocalidades = New System.Windows.Forms.DataGridView()
+        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -38,10 +42,6 @@ Partial Class frmLocalidades
         Me.btnGuardarLoc = New System.Windows.Forms.Button()
         Me.btnCancelarLoc = New System.Windows.Forms.Button()
         Me.picCerrar = New System.Windows.Forms.PictureBox()
-        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvLocalidades, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -106,7 +106,39 @@ Partial Class frmLocalidades
         Me.dgvLocalidades.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvLocalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLocalidades.Size = New System.Drawing.Size(575, 181)
-        Me.dgvLocalidades.TabIndex = 2
+        Me.dgvLocalidades.TabIndex = 0
+        '
+        'idLocalidad
+        '
+        Me.idLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.idLocalidad.DataPropertyName = "idLocalidad"
+        Me.idLocalidad.HeaderText = "ID "
+        Me.idLocalidad.Name = "idLocalidad"
+        Me.idLocalidad.ReadOnly = True
+        '
+        'nombLocalidad
+        '
+        Me.nombLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.nombLocalidad.DataPropertyName = "nombLocalidad"
+        Me.nombLocalidad.HeaderText = "Nombre"
+        Me.nombLocalidad.Name = "nombLocalidad"
+        Me.nombLocalidad.ReadOnly = True
+        '
+        'provincia
+        '
+        Me.provincia.DataPropertyName = "provincia"
+        Me.provincia.HeaderText = "ID Provincia"
+        Me.provincia.Name = "provincia"
+        Me.provincia.ReadOnly = True
+        Me.provincia.Visible = False
+        '
+        'activo
+        '
+        Me.activo.DataPropertyName = "activo"
+        Me.activo.HeaderText = "Activo"
+        Me.activo.Name = "activo"
+        Me.activo.ReadOnly = True
+        Me.activo.Visible = False
         '
         'Label3
         '
@@ -125,7 +157,7 @@ Partial Class frmLocalidades
         Me.txtBuscar.MaxLength = 25
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(230, 23)
-        Me.txtBuscar.TabIndex = 0
+        Me.txtBuscar.TabIndex = 1
         '
         'btnCancelar
         '
@@ -136,10 +168,10 @@ Partial Class frmLocalidades
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(466, 348)
+        Me.btnCancelar.Location = New System.Drawing.Point(310, 348)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(132, 37)
-        Me.btnCancelar.TabIndex = 8
+        Me.btnCancelar.TabIndex = 9
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -152,10 +184,10 @@ Partial Class frmLocalidades
         Me.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(310, 348)
+        Me.btnAceptar.Location = New System.Drawing.Point(466, 348)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(132, 37)
-        Me.btnAceptar.TabIndex = 9
+        Me.btnAceptar.TabIndex = 8
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
@@ -170,7 +202,7 @@ Partial Class frmLocalidades
         Me.btnNuevaLocalidad.Location = New System.Drawing.Point(482, 71)
         Me.btnNuevaLocalidad.Name = "btnNuevaLocalidad"
         Me.btnNuevaLocalidad.Size = New System.Drawing.Size(114, 25)
-        Me.btnNuevaLocalidad.TabIndex = 1
+        Me.btnNuevaLocalidad.TabIndex = 2
         Me.btnNuevaLocalidad.Text = "Nueva Localidad"
         Me.btnNuevaLocalidad.UseVisualStyleBackColor = True
         '
@@ -189,7 +221,7 @@ Partial Class frmLocalidades
         '
         Me.txtNuevaLoc.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNuevaLoc.Location = New System.Drawing.Point(107, 304)
-        Me.txtNuevaLoc.MaxLength = 25
+        Me.txtNuevaLoc.MaxLength = 44
         Me.txtNuevaLoc.Name = "txtNuevaLoc"
         Me.txtNuevaLoc.Size = New System.Drawing.Size(335, 23)
         Me.txtNuevaLoc.TabIndex = 12
@@ -242,38 +274,6 @@ Partial Class frmLocalidades
         Me.picCerrar.TabStop = False
         Me.picCerrar.Visible = False
         '
-        'idLocalidad
-        '
-        Me.idLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.idLocalidad.DataPropertyName = "idLocalidad"
-        Me.idLocalidad.HeaderText = "ID "
-        Me.idLocalidad.Name = "idLocalidad"
-        Me.idLocalidad.ReadOnly = True
-        '
-        'nombLocalidad
-        '
-        Me.nombLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nombLocalidad.DataPropertyName = "nombLocalidad"
-        Me.nombLocalidad.HeaderText = "Nombre"
-        Me.nombLocalidad.Name = "nombLocalidad"
-        Me.nombLocalidad.ReadOnly = True
-        '
-        'provincia
-        '
-        Me.provincia.DataPropertyName = "provincia"
-        Me.provincia.HeaderText = "ID Provincia"
-        Me.provincia.Name = "provincia"
-        Me.provincia.ReadOnly = True
-        Me.provincia.Visible = False
-        '
-        'activo
-        '
-        Me.activo.DataPropertyName = "activo"
-        Me.activo.HeaderText = "Activo"
-        Me.activo.Name = "activo"
-        Me.activo.ReadOnly = True
-        Me.activo.Visible = False
-        '
         'frmLocalidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -286,12 +286,12 @@ Partial Class frmLocalidades
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.btnNuevaLocalidad)
         Me.Controls.Add(Me.btnAceptar)
-        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dgvLocalidades)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnCancelar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
         Me.Name = "frmLocalidades"

@@ -73,10 +73,10 @@ Partial Class frmMovimientoDeStock
         '
         Me.txtCantidad.Font = New System.Drawing.Font("Montserrat", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCantidad.Location = New System.Drawing.Point(152, 91)
-        Me.txtCantidad.MaxLength = 7
+        Me.txtCantidad.MaxLength = 4
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(169, 33)
-        Me.txtCantidad.TabIndex = 41
+        Me.txtCantidad.TabIndex = 0
         '
         'Label1
         '
@@ -118,7 +118,7 @@ Partial Class frmMovimientoDeStock
         Me.btnQuitar.Location = New System.Drawing.Point(144, 169)
         Me.btnQuitar.Name = "btnQuitar"
         Me.btnQuitar.Size = New System.Drawing.Size(110, 41)
-        Me.btnQuitar.TabIndex = 47
+        Me.btnQuitar.TabIndex = 1
         Me.btnQuitar.Text = "Quitar"
         Me.btnQuitar.UseVisualStyleBackColor = True
         Me.btnQuitar.Visible = False

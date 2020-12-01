@@ -145,6 +145,7 @@ Partial Class frmNuevoProducto
         '
         Me.txtCantidad.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCantidad.Location = New System.Drawing.Point(151, 339)
+        Me.txtCantidad.MaxLength = 4
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(78, 31)
         Me.txtCantidad.TabIndex = 5
@@ -163,7 +164,7 @@ Partial Class frmNuevoProducto
         '
         Me.txtModelo.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtModelo.Location = New System.Drawing.Point(151, 131)
-        Me.txtModelo.MaxLength = 25
+        Me.txtModelo.MaxLength = 44
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(237, 31)
         Me.txtModelo.TabIndex = 1
@@ -212,7 +213,7 @@ Partial Class frmNuevoProducto
         '
         Me.txtMarca.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMarca.Location = New System.Drawing.Point(151, 79)
-        Me.txtMarca.MaxLength = 45
+        Me.txtMarca.MaxLength = 44
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(291, 31)
         Me.txtMarca.TabIndex = 0
@@ -231,7 +232,7 @@ Partial Class frmNuevoProducto
         '
         Me.txtPrecioCosto.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrecioCosto.Location = New System.Drawing.Point(181, 391)
-        Me.txtPrecioCosto.MaxLength = 25
+        Me.txtPrecioCosto.MaxLength = 11
         Me.txtPrecioCosto.Name = "txtPrecioCosto"
         Me.txtPrecioCosto.Size = New System.Drawing.Size(88, 31)
         Me.txtPrecioCosto.TabIndex = 6
@@ -250,7 +251,7 @@ Partial Class frmNuevoProducto
         '
         Me.txtPrecioVenta.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrecioVenta.Location = New System.Drawing.Point(181, 454)
-        Me.txtPrecioVenta.MaxLength = 25
+        Me.txtPrecioVenta.MaxLength = 11
         Me.txtPrecioVenta.Name = "txtPrecioVenta"
         Me.txtPrecioVenta.Size = New System.Drawing.Size(88, 31)
         Me.txtPrecioVenta.TabIndex = 9
@@ -323,7 +324,7 @@ Partial Class frmNuevoProducto
         '
         Me.txtDescripcion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.Location = New System.Drawing.Point(176, 510)
-        Me.txtDescripcion.MaxLength = 60
+        Me.txtDescripcion.MaxLength = 99
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(264, 31)
         Me.txtDescripcion.TabIndex = 10
@@ -351,7 +352,7 @@ Partial Class frmNuevoProducto
         '
         Me.txtTipo.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTipo.Location = New System.Drawing.Point(151, 183)
-        Me.txtTipo.MaxLength = 25
+        Me.txtTipo.MaxLength = 44
         Me.txtTipo.Name = "txtTipo"
         Me.txtTipo.Size = New System.Drawing.Size(249, 31)
         Me.txtTipo.TabIndex = 2

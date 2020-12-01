@@ -83,7 +83,7 @@ Partial Class frmCambiarEstado
         Me.cbEstado.Location = New System.Drawing.Point(170, 75)
         Me.cbEstado.Name = "cbEstado"
         Me.cbEstado.Size = New System.Drawing.Size(281, 34)
-        Me.cbEstado.TabIndex = 79
+        Me.cbEstado.TabIndex = 0
         '
         'Label2
         '
@@ -103,7 +103,7 @@ Partial Class frmCambiarEstado
         Me.txtNotaTecnico.Multiline = True
         Me.txtNotaTecnico.Name = "txtNotaTecnico"
         Me.txtNotaTecnico.Size = New System.Drawing.Size(382, 178)
-        Me.txtNotaTecnico.TabIndex = 82
+        Me.txtNotaTecnico.TabIndex = 1
         '
         'btnGuardar
         '
@@ -112,7 +112,7 @@ Partial Class frmCambiarEstado
         Me.btnGuardar.Location = New System.Drawing.Point(204, 378)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(110, 41)
-        Me.btnGuardar.TabIndex = 83
+        Me.btnGuardar.TabIndex = 2
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '

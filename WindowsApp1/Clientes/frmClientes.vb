@@ -6,6 +6,7 @@
     Public ctaCorriente As Boolean
     Private Sub FrmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarClientes()
+        dgvClientes.Select()
         If reparacion = True Then
             picCerrar.Visible = True
             btnAgregarSeleccionar.Text = "Seleccionar"
@@ -132,5 +133,27 @@
 
     Private Sub picCerrar_Click_1(sender As Object, e As EventArgs) Handles picCerrar.Click
         Me.Close()
+    End Sub
+
+    Private Sub frmClientes_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyData
+            Case (Keys.Control + Keys.B)
+                txtBuscar.Select()
+            Case Keys.F10
+                Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
+            Case Keys.F11
+                Call btnBajaCancelar_Click(btnBajaCancelar, e)
+            Case Keys.F12
+                Call btnModificar_Click_1(btnModificar, e)
+        End Select
+    End Sub
+
+    Private Sub dgvClientes_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvClientes.KeyDown
+        Select Case e.KeyData
+            Case Keys.Enter
+                If reparacion = True Then
+                    Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
+                End If
+        End Select
     End Sub
 End Class

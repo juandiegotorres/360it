@@ -14,6 +14,7 @@
         comboBoxBuscarPor()
         cbCategorias.SelectedIndex = 0
         cbBuscador.SelectedIndex = 0
+        dgvProductos.Select()
     End Sub
     Public Sub comboBoxBuscarPor()
         'Creo una tabla para poder tener dos valores dentro del combobox, uno es el que yo voy a mostrar y otro contiene el nombre identificatorio que coincide con el de la base de datos para poder buscar
@@ -181,4 +182,18 @@
         txtBuscar.Text = ""
         txtBuscar.Focus()
     End Sub
+
+    Private Sub frmProductos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyData
+            Case (Keys.Control + Keys.B)
+                txtBuscar.Select()
+            Case Keys.F10
+                Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
+            Case Keys.F11
+                Call btnBajaCancelar_Click(btnBajaCancelar, e)
+            Case Keys.F12
+                Call btnModificar_Click_1(btnModificar, e)
+        End Select
+    End Sub
+
 End Class

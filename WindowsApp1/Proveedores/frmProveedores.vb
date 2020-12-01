@@ -16,6 +16,7 @@
         actualizarProveedores()
         eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
         actualizarRubros()
+        dgvProveedores.Select()
         If producto = True Then
             picCerrar.Visible = True
             btnAgregarSeleccionar.Text = "Aceptar"
@@ -130,5 +131,28 @@
                 actualizarProveedores()
             End If
         End If
+    End Sub
+
+    Private Sub frmProveedores_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyData
+            Case (Keys.Control + Keys.B)
+                txtBuscar.Select()
+            Case Keys.F10
+                Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
+            Case Keys.F11
+                Call btnBajaCancelar_Click(btnBajaCancelar, e)
+            Case Keys.F12
+                Call btnModificar_Click(btnModificar, e)
+        End Select
+    End Sub
+
+    Private Sub dgvProveedores_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvProveedores.KeyDown
+        Select Case e.KeyData
+            Case Keys.Enter
+                If producto = True Then
+                    Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
+                End If
+        End Select
+
     End Sub
 End Class

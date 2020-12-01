@@ -24,6 +24,7 @@ Partial Class frmPrincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.panelCost = New System.Windows.Forms.Panel()
         Me.btnProveedores = New System.Windows.Forms.Button()
@@ -49,7 +50,6 @@ Partial Class frmPrincipal
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.btnAgrandar = New System.Windows.Forms.PictureBox()
         Me.btnAchicar = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.pnlSubMenuVentas.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -82,6 +82,18 @@ Partial Class frmPrincipal
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(209, 703)
         Me.Panel1.TabIndex = 0
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(52, 595)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(84, 28)
+        Me.Button2.TabIndex = 43
+        Me.Button2.Text = "WEB"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -428,18 +440,6 @@ Partial Class frmPrincipal
         Me.btnAchicar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnAchicar.TabIndex = 8
         Me.btnAchicar.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(52, 595)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(84, 28)
-        Me.Button2.TabIndex = 43
-        Me.Button2.Text = "WEB"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'frmPrincipal
         '
