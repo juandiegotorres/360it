@@ -278,10 +278,11 @@ Partial Class frmClientes
         '
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(20, 104)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(20, 3, 4, 3)
+        Me.Panel1.Location = New System.Drawing.Point(4, 104)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(521, 33)
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Panel1.Size = New System.Drawing.Size(555, 33)
         Me.Panel1.TabIndex = 43
         '
         'txtBuscar
@@ -289,7 +290,7 @@ Partial Class frmClientes
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtBuscar.Location = New System.Drawing.Point(253, 3)
+        Me.txtBuscar.Location = New System.Drawing.Point(265, 3)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(255, 27)
@@ -300,7 +301,7 @@ Partial Class frmClientes
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(4, 4)
+        Me.Label2.Location = New System.Drawing.Point(14, 4)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(248, 22)

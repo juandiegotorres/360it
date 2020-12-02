@@ -35,6 +35,9 @@ Partial Class frmServTecnico
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.lblBuscar = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbEstado = New System.Windows.Forms.ComboBox()
@@ -57,6 +60,7 @@ Partial Class frmServTecnico
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
@@ -195,8 +199,9 @@ Partial Class frmServTecnico
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.02898!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.97102!))
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel2, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Panel1, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 101)
@@ -206,6 +211,38 @@ Partial Class frmServTecnico
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(1035, 39)
         Me.TableLayoutPanel4.TabIndex = 46
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.txtBuscar)
+        Me.Panel2.Controls.Add(Me.lblBuscar)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(434, 37)
+        Me.Panel2.TabIndex = 45
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(144, 6)
+        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(131, 27)
+        Me.txtBuscar.TabIndex = 44
+        '
+        'lblBuscar
+        '
+        Me.lblBuscar.AutoSize = True
+        Me.lblBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBuscar.ForeColor = System.Drawing.Color.Black
+        Me.lblBuscar.Location = New System.Drawing.Point(16, 9)
+        Me.lblBuscar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBuscar.Name = "lblBuscar"
+        Me.lblBuscar.Size = New System.Drawing.Size(121, 22)
+        Me.lblBuscar.TabIndex = 44
+        Me.lblBuscar.Text = "Buscar por ID:"
         '
         'Panel1
         '
@@ -452,6 +489,8 @@ Partial Class frmServTecnico
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
@@ -488,4 +527,7 @@ Partial Class frmServTecnico
     Friend WithEvents fechaRecep As DataGridViewTextBoxColumn
     Friend WithEvents fechaLimite As DataGridViewTextBoxColumn
     Friend WithEvents ttAyuda As ToolTip
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents lblBuscar As Label
 End Class

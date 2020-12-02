@@ -155,4 +155,9 @@
         End Select
 
     End Sub
+
+    Private Sub btnProductosAsociados_Click(sender As Object, e As EventArgs) Handles btnProductosAsociados.Click
+        Dim productosXproveedor As New frmProductosAsociados(dgvProveedores.CurrentRow.Cells("idProveedor").Value)
+        productosXproveedor.Show()
+    End Sub
 End Class

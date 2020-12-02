@@ -125,6 +125,10 @@ Public Class Producto
         Dim consultaSQL As String = "SELECT * FROM vistaproductos"
         capaDatos.llenarDatos(tabla, consultaSQL)
     End Sub
+    Public Sub recuperarProductosXProveedor(ByVal tabla As DataTable, ByRef idProveedor As UInt64)
+        Dim consultaSQL As String = "SELECT * FROM vistaproductos WHERE proveedor = '" & idProveedor & "'"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+    End Sub
     Public Sub nuevoProducto()
         Try
             Dim consultaSQL As String = "INSERT INTO productos(categoria, tipoProducto, marca, modelo, descripcion, proveedor, cantidad, precioCosto, precioVenta, activo) VALUES (@categoria,@tipoProducto,@marca,@modelo,@descripcion,@proveedor,@cantidad,@precioCosto,@precioVenta,'1')"

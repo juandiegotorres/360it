@@ -123,6 +123,12 @@
     <Compile Include="Productos\frmCambiarPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Proveedores\frmProductosAsociados.Designer.vb">
+      <DependentUpon>frmProductosAsociados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores\frmProductosAsociados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="prueba.Designer.vb">
       <DependentUpon>prueba.vb</DependentUpon>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\frmCambiarPrecios.resx">
       <DependentUpon>frmCambiarPrecios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\frmProductosAsociados.resx">
+      <DependentUpon>frmProductosAsociados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>

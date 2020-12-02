@@ -1,8 +1,9 @@
 ﻿Public Class frmServTecnico
     Dim eServTec As New Entidades.ServTecnico
-    Dim fechaLim As String
-    Dim id_Reparacion As UInt64
-    Dim id_Estado As UInt16
+    Dim fechaLim, filtroBS As String
+    Dim id_Reparacion, id_Estado As UInt64
+    Dim bsReparaciones As New BindingSource
+    Dim tablaBuscador, tablaReparaciones As New DataTable
 
     Private Sub frmServTecnico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'idEstadoArticulo = 1
@@ -27,14 +28,13 @@
         cbEstado.SelectedValue = 1
     End Sub
     Public Sub actualizarReparaciones()
-        Dim tablaReparaciones As New DataTable
+        tablaReparaciones.Clear()
         eServTec.traerReparaciones(tablaReparaciones, cbEstado.SelectedValue)
-        dgvServTecnico.DataSource = tablaReparaciones
+        bsReparaciones.DataSource = tablaReparaciones
+        dgvServTecnico.DataSource = bsReparaciones
         cambiarFecha()
         dgvServTecnico.ClearSelection()
     End Sub
-
-
 
     Private Sub dgvServTecnico_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         eServTec.fechaLimite = dgvServTecnico.CurrentRow.Cells("fechaLimite").Value
@@ -92,6 +92,11 @@
         End If
     End Sub
 
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        filtroBS = "CONVERT(idReparacion, 'System.String') like '" & txtBuscar.Text & "%'"
+        bsReparaciones.Filter = filtroBS
+    End Sub
+
     Private Sub btnCambiarEstado_Click_1(sender As Object, e As EventArgs) Handles btnCambiarEstado.Click
         If dgvServTecnico.SelectedRows.Count = 1 Then
             id_Reparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
@@ -112,6 +117,8 @@
 
     Private Sub frmServTecnico_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyData
+            Case (Keys.Control + Keys.B)
+                txtBuscar.Select()
             Case Keys.F10
                 Call btnAgregar_Click(btnAgregar, e)
             Case Keys.F11

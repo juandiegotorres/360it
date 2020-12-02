@@ -127,7 +127,7 @@ Partial Class frmPrincipal
         Me.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnProveedores.Location = New System.Drawing.Point(0, 443)
         Me.btnProveedores.Name = "btnProveedores"
-        Me.btnProveedores.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnProveedores.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnProveedores.Size = New System.Drawing.Size(209, 45)
         Me.btnProveedores.TabIndex = 35
         Me.btnProveedores.Text = "     Proveedores"
@@ -145,7 +145,7 @@ Partial Class frmPrincipal
         Me.btnServTecnico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnServTecnico.Location = New System.Drawing.Point(0, 398)
         Me.btnServTecnico.Name = "btnServTecnico"
-        Me.btnServTecnico.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnServTecnico.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnServTecnico.Size = New System.Drawing.Size(209, 45)
         Me.btnServTecnico.TabIndex = 41
         Me.btnServTecnico.Text = "     Serv. Técnico"
@@ -163,7 +163,7 @@ Partial Class frmPrincipal
         Me.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnProductos.Location = New System.Drawing.Point(0, 353)
         Me.btnProductos.Name = "btnProductos"
-        Me.btnProductos.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnProductos.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnProductos.Size = New System.Drawing.Size(209, 45)
         Me.btnProductos.TabIndex = 36
         Me.btnProductos.Text = "     Productos"
@@ -181,7 +181,7 @@ Partial Class frmPrincipal
         Me.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnClientes.Location = New System.Drawing.Point(0, 308)
         Me.btnClientes.Name = "btnClientes"
-        Me.btnClientes.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnClientes.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnClientes.Size = New System.Drawing.Size(209, 45)
         Me.btnClientes.TabIndex = 33
         Me.btnClientes.Text = "     Clientes"
@@ -287,7 +287,7 @@ Partial Class frmPrincipal
         Me.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVentas.Location = New System.Drawing.Point(0, 101)
         Me.btnVentas.Name = "btnVentas"
-        Me.btnVentas.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnVentas.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnVentas.Size = New System.Drawing.Size(209, 45)
         Me.btnVentas.TabIndex = 29
         Me.btnVentas.Text = "     Ventas"

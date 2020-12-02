@@ -15,19 +15,27 @@
             txtModelo.Text = eServTecnico.modelo
             cbEstado.SelectedValue = eServTecnico.idEstado
             dtRecepcion.Value = eServTecnico.fechaRecep
-            dtEntrega.MinDate = eServTecnico.fechaLimite
-            dtEntrega.Value = eServTecnico.fechaLimite
+            'Cuando tengo una reparacion que no tiene fecha limite en la base de datos la almaceno con la fecha 1/1/2000 para poder luego corregirla en el datagrid
+            'Si la reparacion no tiene fecha de entrega marco el checkbox y pongo una fecha acorde
+            If eServTecnico.fechaLimite.ToString = #1/1/2000 12:00:00 AM# Then
+                dtEntrega.MinDate = eServTecnico.fechaRecep
+                dtEntrega.Value = Today.AddDays(3)
+                chbSinFecha.Checked = True
+            Else
+                dtEntrega.MinDate = eServTecnico.fechaRecep
+                dtEntrega.Value = eServTecnico.fechaLimite
+            End If
             If eServTecnico.accesorios = "Sin accesorios" Then
-                txtAccesorios.Text = ""
-            Else
-                txtAccesorios.Text = eServTecnico.accesorios
+                    txtAccesorios.Text = ""
+                Else
+                    txtAccesorios.Text = eServTecnico.accesorios
+                End If
+                If eServTecnico.descripcion = "Sin descripción" Then
+                    txtDescripcion.Text = ""
+                Else
+                    txtDescripcion.Text = eServTecnico.descripcion
+                End If
             End If
-            If eServTecnico.descripcion = "Sin descripción" Then
-                txtDescripcion.Text = ""
-            Else
-                txtDescripcion.Text = eServTecnico.descripcion
-            End If
-        End If
     End Sub
     Public Function comprobarAccesoriosYDescripcion()
         If Trim(txtAccesorios.Text) = "" Then
@@ -125,8 +133,11 @@
     Private Sub chbSinFecha_CheckedChanged(sender As Object, e As EventArgs) Handles chbSinFecha.CheckedChanged
         If chbSinFecha.Checked = True Then
             dtEntrega.Enabled = False
-
+        ElseIf chbSinFecha.Checked = False And modificar = True Then
+            dtEntrega.MinDate = eServTecnico.fechaRecep
+            dtEntrega.Enabled = True
         Else
+            dtEntrega.MinDate = Today
             dtEntrega.Enabled = True
             dtEntrega.Value = Today.AddDays(3)
         End If
