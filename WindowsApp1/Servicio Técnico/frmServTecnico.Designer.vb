@@ -29,9 +29,6 @@ Partial Class frmServTecnico
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.btnBaja = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
@@ -56,6 +53,10 @@ Partial Class frmServTecnico
         Me.fechaRecep = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaLimite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ttAyuda = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnImprimirEtiqueta = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnBaja = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -106,66 +107,6 @@ Partial Class frmServTecnico
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(1013, 64)
         Me.TableLayoutPanel2.TabIndex = 41
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAgregar.FlatAppearance.BorderSize = 2
-        Me.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.ForeColor = System.Drawing.Color.Black
-        Me.btnAgregar.Image = Global.WindowsApp1.My.Resources.Resources.add__1_
-        Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgregar.Location = New System.Drawing.Point(696, 10)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(10, 10, 0, 10)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(317, 44)
-        Me.btnAgregar.TabIndex = 36
-        Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
-        'btnBaja
-        '
-        Me.btnBaja.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnBaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBaja.FlatAppearance.BorderSize = 2
-        Me.btnBaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBaja.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBaja.ForeColor = System.Drawing.Color.Black
-        Me.btnBaja.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.btnBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBaja.Location = New System.Drawing.Point(353, 10)
-        Me.btnBaja.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnBaja.Name = "btnBaja"
-        Me.btnBaja.Size = New System.Drawing.Size(323, 44)
-        Me.btnBaja.TabIndex = 37
-        Me.btnBaja.Text = "Baja"
-        Me.btnBaja.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnModificar.FlatAppearance.BorderSize = 2
-        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModificar.Location = New System.Drawing.Point(10, 10)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(323, 44)
-        Me.btnModificar.TabIndex = 38
-        Me.btnModificar.Text = "Modificación"
-        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel3
         '
@@ -312,16 +253,18 @@ Partial Class frmServTecnico
         '
         Me.TableLayoutPanel8.ColumnCount = 1
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel8.Controls.Add(Me.btnImprimirEtiqueta, 0, 2)
         Me.TableLayoutPanel8.Controls.Add(Me.btnCambiarEstado, 0, 1)
         Me.TableLayoutPanel8.Controls.Add(Me.btnVerDetalles, 0, 0)
         Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel8.Location = New System.Drawing.Point(857, 0)
         Me.TableLayoutPanel8.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
-        Me.TableLayoutPanel8.RowCount = 3
+        Me.TableLayoutPanel8.RowCount = 4
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
-        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13.0!))
         Me.TableLayoutPanel8.Size = New System.Drawing.Size(178, 392)
         Me.TableLayoutPanel8.TabIndex = 48
         '
@@ -474,6 +417,84 @@ Partial Class frmServTecnico
         Me.fechaLimite.Name = "fechaLimite"
         Me.fechaLimite.ReadOnly = True
         '
+        'btnImprimirEtiqueta
+        '
+        Me.btnImprimirEtiqueta.BackColor = System.Drawing.Color.Transparent
+        Me.btnImprimirEtiqueta.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnImprimirEtiqueta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnImprimirEtiqueta.FlatAppearance.BorderSize = 2
+        Me.btnImprimirEtiqueta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnImprimirEtiqueta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirEtiqueta.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImprimirEtiqueta.ForeColor = System.Drawing.Color.Black
+        Me.btnImprimirEtiqueta.Location = New System.Drawing.Point(5, 99)
+        Me.btnImprimirEtiqueta.Margin = New System.Windows.Forms.Padding(5, 5, 18, 10)
+        Me.btnImprimirEtiqueta.Name = "btnImprimirEtiqueta"
+        Me.btnImprimirEtiqueta.Size = New System.Drawing.Size(155, 32)
+        Me.btnImprimirEtiqueta.TabIndex = 46
+        Me.btnImprimirEtiqueta.Text = "Imprimir Etiqueta"
+        Me.btnImprimirEtiqueta.UseVisualStyleBackColor = False
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregar.FlatAppearance.BorderSize = 2
+        Me.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.ForeColor = System.Drawing.Color.Black
+        Me.btnAgregar.Image = Global.WindowsApp1.My.Resources.Resources.add__1_
+        Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAgregar.Location = New System.Drawing.Point(696, 10)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(10, 10, 0, 10)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(317, 44)
+        Me.btnAgregar.TabIndex = 36
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'btnBaja
+        '
+        Me.btnBaja.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnBaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBaja.FlatAppearance.BorderSize = 2
+        Me.btnBaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBaja.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBaja.ForeColor = System.Drawing.Color.Black
+        Me.btnBaja.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.btnBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBaja.Location = New System.Drawing.Point(353, 10)
+        Me.btnBaja.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnBaja.Name = "btnBaja"
+        Me.btnBaja.Size = New System.Drawing.Size(323, 44)
+        Me.btnBaja.TabIndex = 37
+        Me.btnBaja.Text = "Baja"
+        Me.btnBaja.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnModificar.FlatAppearance.BorderSize = 2
+        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModificar.Location = New System.Drawing.Point(10, 10)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(323, 44)
+        Me.btnModificar.TabIndex = 38
+        Me.btnModificar.Text = "Modificación"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
         'frmServTecnico
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -530,4 +551,5 @@ Partial Class frmServTecnico
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents lblBuscar As Label
+    Friend WithEvents btnImprimirEtiqueta As Button
 End Class

@@ -195,3 +195,6 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmCamb
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmOpciones.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.prueba.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmProductosAsociados.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmEtiqueta.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml

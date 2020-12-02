@@ -54,6 +54,7 @@
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\..\Desktop\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -133,6 +134,12 @@
       <DependentUpon>prueba.vb</DependentUpon>
     </Compile>
     <Compile Include="prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio Técnico\frmEtiqueta.Designer.vb">
+      <DependentUpon>frmEtiqueta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio Técnico\frmEtiqueta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vender\frmCargarCuentaCorriente.Designer.vb">
@@ -295,6 +302,9 @@
     <EmbeddedResource Include="prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Servicio Técnico\frmEtiqueta.resx">
+      <DependentUpon>frmEtiqueta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vender\frmCargarCuentaCorriente.resx">
       <DependentUpon>frmCargarCuentaCorriente.vb</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +434,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico" />
+    <None Include="Resources\6GxBTL0h_4x.jpg" />
     <None Include="Resources\detalles.png" />
     <None Include="Resources\hand-money.png" />
     <None Include="Resources\cancelar.png" />

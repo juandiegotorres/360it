@@ -262,5 +262,13 @@ Public Class ServTecnico
         sqlcomando.Parameters.Add("@idReparacion", MySqlDbType.UInt64).Value = Me.idReparacion
         capaDatos.cargarDatos(sqlcomando)
     End Sub
+    Public Sub generarEtiqueta(ByVal tabla As DataTable, ByRef idReparacion As UInt64)
+        Try
+            Dim consultaSQL As String = "SELECT idReparacion, marca, modelo, date(fechaRecep) as fechaRecep, clientes.nombreApel, tipoarticulo.tipoArticulo FROM serviciotecnico JOIN clientes ON serviciotecnico.cliente = clientes.idcliente JOIN tipoarticulo ON serviciotecnico.tipo = tipoarticulo.id WHERE idReparacion = '" & idReparacion & "'"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+        End Try
+    End Sub
 #End Region
 End Class

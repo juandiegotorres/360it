@@ -4,6 +4,8 @@
     Dim id_Reparacion, id_Estado As UInt64
     Dim bsReparaciones As New BindingSource
     Dim tablaBuscador, tablaReparaciones As New DataTable
+    Dim idReparacion_ As UInt64
+
 
     Private Sub frmServTecnico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'idEstadoArticulo = 1
@@ -95,6 +97,12 @@
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         filtroBS = "CONVERT(idReparacion, 'System.String') like '" & txtBuscar.Text & "%'"
         bsReparaciones.Filter = filtroBS
+    End Sub
+
+    Private Sub btnImprimirEtiqueta_Click(sender As Object, e As EventArgs) Handles btnImprimirEtiqueta.Click
+        idReparacion_ = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
+        Dim generarEtiqueta As New frmEtiqueta(idReparacion_)
+        generarEtiqueta.Show()
     End Sub
 
     Private Sub btnCambiarEstado_Click_1(sender As Object, e As EventArgs) Handles btnCambiarEstado.Click
