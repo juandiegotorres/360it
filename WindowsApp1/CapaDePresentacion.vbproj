@@ -48,7 +48,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico</ApplicationIcon>
+    <ApplicationIcon>Z-Icono\pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2">
@@ -433,7 +433,7 @@
     <None Include="Resources\pngtree-find-search-view-glass-blue-dotted-line-line-icon-png-image_1622078.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico" />
+    <Content Include="Z-Icono\pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico" />
     <None Include="Resources\6GxBTL0h_4x.jpg" />
     <None Include="Resources\detalles.png" />
     <None Include="Resources\hand-money.png" />

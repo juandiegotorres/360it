@@ -270,5 +270,13 @@ Public Class ServTecnico
             MsgBox(ex.Message, "Servicio Técnico")
         End Try
     End Sub
+    Public Sub generarEtiquetaNuevaReparacion(ByVal tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "SELECT max(idReparacion) as idReparacion, marca, modelo, date(fechaRecep) as fechaRecep, clientes.nombreApel, tipoarticulo.tipoArticulo FROM serviciotecnico JOIN clientes ON serviciotecnico.cliente = clientes.idcliente JOIN tipoarticulo ON serviciotecnico.tipo = tipoarticulo.id"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Servicio Técnico")
+        End Try
+    End Sub
 #End Region
 End Class

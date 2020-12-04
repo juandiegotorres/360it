@@ -27,8 +27,6 @@ Partial Class frmNuevaReparacion
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtMarca = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -52,16 +50,22 @@ Partial Class frmNuevaReparacion
         Me.Label8 = New System.Windows.Forms.Label()
         Me.chbSinFecha = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnGuardarEImprimir = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel1.Location = New System.Drawing.Point(0, -2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(686, 10)
+        Me.Panel1.Size = New System.Drawing.Size(1119, 10)
         Me.Panel1.TabIndex = 8
         '
         'PictureBox1
@@ -77,14 +81,14 @@ Partial Class frmNuevaReparacion
         '
         'lblTitulo
         '
-        Me.lblTitulo.AutoSize = True
         Me.lblTitulo.BackColor = System.Drawing.Color.Transparent
         Me.lblTitulo.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.Location = New System.Drawing.Point(138, 10)
+        Me.lblTitulo.Location = New System.Drawing.Point(118, 13)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(352, 44)
+        Me.lblTitulo.Size = New System.Drawing.Size(912, 44)
         Me.lblTitulo.TabIndex = 10
         Me.lblTitulo.Text = "Agregar reparación"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnLimpiar
         '
@@ -98,44 +102,10 @@ Partial Class frmNuevaReparacion
         Me.btnLimpiar.Location = New System.Drawing.Point(18, 5)
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(147, 43)
+        Me.btnLimpiar.Size = New System.Drawing.Size(237, 44)
         Me.btnLimpiar.TabIndex = 12
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnGuardar.FlatAppearance.BorderSize = 2
-        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(201, 5)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(147, 43)
-        Me.btnGuardar.TabIndex = 54
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnCancelar.FlatAppearance.BorderSize = 2
-        Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(384, 5)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(147, 43)
-        Me.btnCancelar.TabIndex = 11
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'txtMarca
         '
@@ -247,28 +217,28 @@ Partial Class frmNuevaReparacion
         'txtAccesorios
         '
         Me.txtAccesorios.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAccesorios.Location = New System.Drawing.Point(190, 483)
+        Me.txtAccesorios.Location = New System.Drawing.Point(736, 155)
         Me.txtAccesorios.MaxLength = 99
         Me.txtAccesorios.Multiline = True
         Me.txtAccesorios.Name = "txtAccesorios"
-        Me.txtAccesorios.Size = New System.Drawing.Size(341, 60)
+        Me.txtAccesorios.Size = New System.Drawing.Size(341, 95)
         Me.txtAccesorios.TabIndex = 9
         '
         'txtDescripcion
         '
         Me.txtDescripcion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcion.Location = New System.Drawing.Point(190, 573)
+        Me.txtDescripcion.Location = New System.Drawing.Point(736, 289)
         Me.txtDescripcion.MaxLength = 149
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(341, 96)
+        Me.txtDescripcion.Size = New System.Drawing.Size(341, 111)
         Me.txtDescripcion.TabIndex = 10
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(37, 576)
+        Me.Label12.Location = New System.Drawing.Point(583, 289)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(144, 26)
         Me.Label12.TabIndex = 90
@@ -278,7 +248,7 @@ Partial Class frmNuevaReparacion
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(37, 486)
+        Me.Label4.Location = New System.Drawing.Point(583, 158)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(132, 26)
         Me.Label4.TabIndex = 89
@@ -289,7 +259,7 @@ Partial Class frmNuevaReparacion
         Me.dtEntrega.CalendarFont = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtEntrega.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtEntrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtEntrega.Location = New System.Drawing.Point(192, 420)
+        Me.dtEntrega.Location = New System.Drawing.Point(738, 87)
         Me.dtEntrega.Name = "dtEntrega"
         Me.dtEntrega.Size = New System.Drawing.Size(157, 31)
         Me.dtEntrega.TabIndex = 7
@@ -298,7 +268,7 @@ Partial Class frmNuevaReparacion
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(42, 440)
+        Me.Label6.Location = New System.Drawing.Point(588, 112)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(96, 26)
         Me.Label6.TabIndex = 97
@@ -308,7 +278,7 @@ Partial Class frmNuevaReparacion
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(37, 414)
+        Me.Label7.Location = New System.Drawing.Point(583, 86)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(120, 26)
         Me.Label7.TabIndex = 96
@@ -349,7 +319,7 @@ Partial Class frmNuevaReparacion
         '
         Me.chbSinFecha.AutoSize = True
         Me.chbSinFecha.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chbSinFecha.Location = New System.Drawing.Point(192, 457)
+        Me.chbSinFecha.Location = New System.Drawing.Point(738, 129)
         Me.chbSinFecha.Name = "chbSinFecha"
         Me.chbSinFecha.Size = New System.Drawing.Size(139, 19)
         Me.chbSinFecha.TabIndex = 8
@@ -358,25 +328,94 @@ Partial Class frmNuevaReparacion
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.ColumnCount = 4
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.btnGuardarEImprimir, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnLimpiar, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnCancelar, 2, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 685)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnCancelar, 1, 0)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 431)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(549, 63)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1093, 64)
         Me.TableLayoutPanel1.TabIndex = 100
+        '
+        'btnGuardarEImprimir
+        '
+        Me.btnGuardarEImprimir.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnGuardarEImprimir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGuardarEImprimir.FlatAppearance.BorderSize = 2
+        Me.btnGuardarEImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGuardarEImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnGuardarEImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardarEImprimir.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarEImprimir.Location = New System.Drawing.Point(564, 5)
+        Me.btnGuardarEImprimir.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
+        Me.btnGuardarEImprimir.Name = "btnGuardarEImprimir"
+        Me.btnGuardarEImprimir.Size = New System.Drawing.Size(237, 44)
+        Me.btnGuardarEImprimir.TabIndex = 56
+        Me.btnGuardarEImprimir.Text = "Guardar e Imprimir"
+        Me.btnGuardarEImprimir.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGuardar.FlatAppearance.BorderSize = 2
+        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.Location = New System.Drawing.Point(291, 5)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(237, 44)
+        Me.btnGuardar.TabIndex = 55
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCancelar.FlatAppearance.BorderSize = 2
+        Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.Location = New System.Drawing.Point(837, 5)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(238, 44)
+        Me.btnCancelar.TabIndex = 54
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.btnCerrar.Location = New System.Drawing.Point(1091, 11)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(27, 26)
+        Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnCerrar.TabIndex = 101
+        Me.btnCerrar.TabStop = False
         '
         'frmNuevaReparacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(573, 753)
+        Me.ClientSize = New System.Drawing.Size(1119, 498)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.chbSinFecha)
         Me.Controls.Add(Me.dtEntrega)
@@ -410,6 +449,7 @@ Partial Class frmNuevaReparacion
         Me.Text = "frmNuevaReparacion"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
+        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -418,8 +458,6 @@ Partial Class frmNuevaReparacion
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblTitulo As Label
     Friend WithEvents btnLimpiar As Button
-    Friend WithEvents btnGuardar As Button
-    Friend WithEvents btnCancelar As Button
     Friend WithEvents txtMarca As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -443,4 +481,8 @@ Partial Class frmNuevaReparacion
     Friend WithEvents Label8 As Label
     Friend WithEvents chbSinFecha As CheckBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents btnGuardarEImprimir As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnCerrar As PictureBox
 End Class

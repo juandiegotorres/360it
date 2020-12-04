@@ -55,8 +55,10 @@ Partial Class frmNuevoProducto
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cbCategorias = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnCerrar = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -403,11 +405,25 @@ Partial Class frmNuevoProducto
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(494, 63)
         Me.TableLayoutPanel1.TabIndex = 54
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.btnCerrar.Location = New System.Drawing.Point(489, 13)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(27, 26)
+        Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnCerrar.TabIndex = 55
+        Me.btnCerrar.TabStop = False
+        '
         'frmNuevoProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(517, 648)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cbCategorias)
@@ -444,6 +460,7 @@ Partial Class frmNuevoProducto
         Me.Text = " "
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
+        CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -481,4 +498,5 @@ Partial Class frmNuevoProducto
     Friend WithEvents Label5 As Label
     Friend WithEvents cbCategorias As ComboBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents btnCerrar As PictureBox
 End Class

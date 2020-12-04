@@ -7,6 +7,7 @@
         dtEntrega.Value = Today.AddDays(3)
         dtEntrega.MinDate = Today
         If modificar = True Then
+            btnGuardarEImprimir.Enabled = False
             lblTitulo.Text = "Modificar Reparación"
             eServTecnico.modificarReparacion()
             txtNombreCliente.Text = eServTecnico.nombreCliente
@@ -26,16 +27,16 @@
                 dtEntrega.Value = eServTecnico.fechaLimite
             End If
             If eServTecnico.accesorios = "Sin accesorios" Then
-                    txtAccesorios.Text = ""
-                Else
-                    txtAccesorios.Text = eServTecnico.accesorios
-                End If
-                If eServTecnico.descripcion = "Sin descripción" Then
-                    txtDescripcion.Text = ""
-                Else
-                    txtDescripcion.Text = eServTecnico.descripcion
-                End If
+                txtAccesorios.Text = ""
+            Else
+                txtAccesorios.Text = eServTecnico.accesorios
             End If
+            If eServTecnico.descripcion = "Sin descripción" Then
+                txtDescripcion.Text = ""
+            Else
+                txtDescripcion.Text = eServTecnico.descripcion
+            End If
+        End If
     End Sub
     Public Function comprobarAccesoriosYDescripcion()
         If Trim(txtAccesorios.Text) = "" Then
@@ -106,7 +107,6 @@
     End Sub
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
         Dim clientes As New frmClientes
-        Me.Hide()
         With clientes
             .reparacion = True
             .ShowDialog()
@@ -117,7 +117,6 @@
             If .DialogResult = DialogResult.Cancel Then
                 txtNombreCliente.Text = ""
             End If
-            Me.Show()
         End With
     End Sub
 
@@ -151,6 +150,27 @@
         End If
         Return True
     End Function
+
+    Private Sub frmNuevaReparacion_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case (Keys.Control + Keys.L)
+                Call btnLimpiar_Click(btnLimpiar, e)
+            Case Keys.Enter
+                Call btnGuardar_Click(btnGuardar, e)
+            Case Keys.Escape
+                Call btnCancelar_Click(btnCancelar, e)
+            Case Keys.Up
+                e.Handled = True
+                Me.SelectNextControl(Me.ActiveControl, False, True, True, True)
+        End Select
+    End Sub
+
+    Private Sub frmNuevaReparacion_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        MyBase.OnPaintBackground(e)
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+        e.Graphics.DrawRectangle(Pens.Black, rect)
+    End Sub
+
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If comprobarDatos() And controlDeFechas() And comprobarAccesoriosYDescripcion() Then
             eServTecnico.idTipo = cbTipoArticulo.SelectedValue
@@ -173,34 +193,46 @@
                 End If
             Else
                 If eServTecnico.guardarReparacionModificada() Then
-                    MsgBox("Reparación modificada", MsgBoxStyle.Information, "Servicio Técnico")
+                    MsgBox("Reparación modificada", MsgBoxStyle.Information, "Modificar Reparación")
                     Me.DialogResult = DialogResult.OK
                     frmPrincipal.Show()
                 Else
-                    MsgBox("Sucedión un problema y no pudimos modificar la reparación por favor intente de nuevo", MsgBoxStyle.Critical, "ModificarReparación")
+                    MsgBox("Sucedión un problema y no pudimos modificar la reparación por favor intente de nuevo", MsgBoxStyle.Critical, "Modificar Reparación")
                 End If
             End If
         End If
 
     End Sub
 
-    Private Sub frmNuevaReparacion_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        Select Case e.KeyCode
-            Case (Keys.Control + Keys.L)
-                Call btnLimpiar_Click(btnLimpiar, e)
-            Case Keys.Enter
-                Call btnGuardar_Click(btnGuardar, e)
-            Case Keys.Escape
-                Call btnCancelar_Click(btnCancelar, e)
-            Case Keys.Up
-                e.Handled = True
-                Me.SelectNextControl(Me.ActiveControl, False, True, True, True)
-        End Select
+    Private Sub btnGuardarEImprimir_Click(sender As Object, e As EventArgs) Handles btnGuardarEImprimir.Click
+        If comprobarDatos() And controlDeFechas() And comprobarAccesoriosYDescripcion() Then
+            eServTecnico.idTipo = cbTipoArticulo.SelectedValue
+            eServTecnico.marca = txtMarca.Text
+            eServTecnico.modelo = txtModelo.Text
+            eServTecnico.idEstado = cbEstado.SelectedValue
+            eServTecnico.fechaRecep = dtRecepcion.Value
+            If chbSinFecha.Checked = False Then
+                eServTecnico.fechaLimite = dtEntrega.Value
+            Else
+                eServTecnico.fechaLimite = #01/01/2000 12:00:00AM#
+            End If
+            If modificar = False Then
+                If eServTecnico.nuevaReparacion() Then
+                    MsgBox("Reparación agregada", MsgBoxStyle.Information, "Nueva Reparacion")
+                    Dim generarEtiqueta As New frmEtiqueta(0, True)
+                    generarEtiqueta.Show()
+                    Me.DialogResult = DialogResult.OK
+                    frmPrincipal.Show()
+                Else
+                    MsgBox("Sucedión un problema y no pudimos guardar la reparación por favor intente de nuevo", MsgBoxStyle.Critical, "Nueva Reparación")
+                End If
+
+            End If
+        End If
+
     End Sub
 
-    Private Sub frmNuevaReparacion_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-        MyBase.OnPaintBackground(e)
-        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
-        e.Graphics.DrawRectangle(Pens.Black, rect)
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

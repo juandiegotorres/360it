@@ -21,31 +21,14 @@
                 txtResto.ForeColor = Color.Green
             End If
         Else
-            MsgBox("Este Cliente no posee cuenta corriente", MsgBoxStyle.Information, "Cuentas Corriente")
+            MsgBox("Este cliente no posee cuenta corriente", MsgBoxStyle.Information, "Cuentas Corriente")
         End If
 
     End Sub
-    Public Sub calcularResto()
-        For i = 0 To dgvCuentas.Rows.Count - 1
-            If dgvCuentas.Rows(i).Cells("tipoMovimiento").Value = "D" Then
-                dgvCuentas.Rows(i).Cells("tipoMovimiento").Value = "DÉBITO"
-                dgvCuentas.Rows(i).Cells("tipoMovimiento").Style.ForeColor = Color.Red
-                dgvCuentas.Rows(i).Cells("monto").Style.ForeColor = Color.Red
-                dgvCuentas.Rows(i).Cells("monto").Value = -Math.Abs(dgvCuentas.Rows(i).Cells("monto").Value)
-            Else
-                dgvCuentas.Rows(i).Cells("tipoMovimiento").Value = "CRÉDITO"
-                dgvCuentas.Rows(i).Cells("tipoMovimiento").Style.ForeColor = Color.Green
-                dgvCuentas.Rows(i).Cells("monto").Style.ForeColor = Color.Green
-                dgvCuentas.Rows(i).Cells("monto").Value = +Math.Abs(dgvCuentas.Rows(i).Cells("monto").Value)
 
-                'xd = "+$" & dgvCuentas.Rows(i).Cells("monton").Value
-                'dgvCuentas.Rows(i).Cells("monton").Value = xd
-            End If
-        Next
-    End Sub
     Public Sub corregirDataGrid()
         For i = 0 To dgvCuentas.Rows.Count - 1
-            If dgvCuentas.Rows(i).Cells("tipoMovimiento").Value = "D" Then
+            If dgvCuentas.Rows(i).Cells("tipoMovimiento").Value = "D" Or dgvCuentas.Rows(i).Cells("tipoMovimiento").Value = "DÉBITO" Then
                 dgvCuentas.Rows(i).Cells("tipoMovimiento").Value = "DÉBITO"
                 dgvCuentas.Rows(i).Cells("tipoMovimiento").Style.ForeColor = Color.Red
                 dgvCuentas.Rows(i).Cells("monto").Style.ForeColor = Color.Red
@@ -95,9 +78,6 @@
         entrega = 0
     End Sub
 
-    Private Sub dgvCuentas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCuentas.CellClick
-
-    End Sub
 
     Private Sub btnEntregaDeDinero_Click(sender As Object, e As EventArgs) Handles btnEntregaDeDinero.Click
         If dgvCuentas.Rows.Count >= 1 Then

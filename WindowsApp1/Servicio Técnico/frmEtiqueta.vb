@@ -1,11 +1,16 @@
-﻿Public Class frmEtiqueta
+﻿Imports System.Drawing.Printing
+Imports Microsoft.VisualBasic.PowerPacks.Printing
+Public Class frmEtiqueta
+
     Dim idReparacion As UInt64
+    Dim nuevaReparacion As Boolean
     Dim eServTec As New Entidades.ServTecnico
     Dim tablaInformacion As New DataTable
-    Public Sub New(ByRef idReparacion_ As UInt64)
+    Public Sub New(ByRef idReparacion_ As UInt64, ByRef nuevaReparacion_ As Boolean)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
+        nuevaReparacion = nuevaReparacion_
         idReparacion = idReparacion_
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
@@ -23,18 +28,28 @@
     Private Sub frmEtiqueta_Load(sender As Object, e As EventArgs) Handles Me.Load
         timerImprimir.Start()
         lblID.Select()
-        eServTec.generarEtiqueta(tablaInformacion, idReparacion)
-        lblTipoArticulo.Text = "Tipo: " & tablaInformacion.Rows(0).Item("tipoArticulo").ToString
-        lblMarca.Text = "Marca: " & tablaInformacion.Rows(0).Item("marca").ToString
-        lblModelo.Text = "Modelo: " & tablaInformacion.Rows(0).Item("modelo").ToString
-        lblFechaRecepcion.Text = "Fecha: " & CDate(tablaInformacion.Rows(0).Item("fechaRecep").ToString)
-        lblCliente.Text = "Cliente: " & tablaInformacion.Rows(0).Item("nombreApel").ToString
-        lblID.Text = "ID REPARACIÓN: " & tablaInformacion.Rows(0).Item("idReparacion").ToString
+        If nuevaReparacion = True Then
+            tablaInformacion.Clear()
+            eServTec.generarEtiquetaNuevaReparacion(tablaInformacion)
+        ElseIf nuevaReparacion = False Then
+            tablaInformacion.Clear()
+            eServTec.generarEtiqueta(tablaInformacion, idReparacion)
+        End If
+        If tablaInformacion.Rows.Count = 1 Then
+            lblTipoArticulo.Text = "Tipo: " & tablaInformacion.Rows(0).Item("tipoArticulo").ToString
+            lblMarca.Text = "Marca: " & tablaInformacion.Rows(0).Item("marca").ToString
+            lblModelo.Text = "Modelo: " & tablaInformacion.Rows(0).Item("modelo").ToString
+            lblFechaRecepcion.Text = "Fecha: " & CDate(tablaInformacion.Rows(0).Item("fechaRecep").ToString)
+            lblCliente.Text = "Cliente: " & tablaInformacion.Rows(0).Item("nombreApel").ToString
+            lblID.Text = "ID REPARACIÓN: " & tablaInformacion.Rows(0).Item("idReparacion").ToString
+        End If
     End Sub
 
     Private Sub timerImprimir_Tick(sender As Object, e As EventArgs) Handles timerImprimir.Tick
         timerImprimir.Stop()
-        imprimirEtiqueta.Print()
+        Me.imprimirEtiqueta.PrintAction = Printing.PrintAction.PrintToPreview
+        imprimirEtiqueta.PrinterSettings.DefaultPageSettings.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
+        imprimirEtiqueta.Print(Me, PrintForm.PrintOption.ClientAreaOnly)
         Me.Dispose()
     End Sub
 

@@ -101,7 +101,7 @@
 
     Private Sub btnImprimirEtiqueta_Click(sender As Object, e As EventArgs) Handles btnImprimirEtiqueta.Click
         idReparacion_ = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
-        Dim generarEtiqueta As New frmEtiqueta(idReparacion_)
+        Dim generarEtiqueta As New frmEtiqueta(idReparacion_, False)
         generarEtiqueta.Show()
     End Sub
 

@@ -202,6 +202,14 @@ Public Class Venta
             MsgBox(ex.Message, "Entidad Ventas")
         End Try
     End Sub
+    Public Sub cargarHistorialCtaCorriente(tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "SELECT * FROM vistahistorialctacorriente"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message, "Entidad Ventas")
+        End Try
+    End Sub
     Public Sub cargarFormasPago(tabla As DataTable)
         Try
             Dim consultaSQL As String = "SELECT * FROM formpago WHERE activo = 1 ORDER BY destacado DESC"
@@ -352,6 +360,18 @@ Public Class Venta
     Public Sub ventaPorFechas(ByRef tabla As DataTable, ByRef fechaDesde As Date, ByRef fechaHasta As Date)
         Try
             Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT * FROM vistahistorialventas WHERE date(fechaHora) >= @fechaDesde and date(fechaHora) <= @fechaHasta")
+            comandoSQL.Parameters.Add("@fechaDesde", MySqlDbType.Date).Value = fechaDesde
+            comandoSQL.Parameters.Add("@fechaHasta", MySqlDbType.Date).Value = fechaHasta
+            capaDatos.CargarDatos(tabla, comandoSQL)
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+    End Sub
+    Public Sub ventaCtaCorrientePorFechas(ByRef tabla As DataTable, ByRef fechaDesde As Date, ByRef fechaHasta As Date)
+        Try
+            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT * FROM vistahistorialctacorriente WHERE date(fechaHora) >= @fechaDesde and date(fechaHora) <= @fechaHasta")
             comandoSQL.Parameters.Add("@fechaDesde", MySqlDbType.Date).Value = fechaDesde
             comandoSQL.Parameters.Add("@fechaHasta", MySqlDbType.Date).Value = fechaHasta
             capaDatos.CargarDatos(tabla, comandoSQL)
