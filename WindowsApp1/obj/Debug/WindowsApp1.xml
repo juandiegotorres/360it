@@ -142,6 +142,11 @@ WindowsApp1
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApp1.My.Resources.Resources.floppy_disk">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApp1.My.Resources.Resources.hand_money">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

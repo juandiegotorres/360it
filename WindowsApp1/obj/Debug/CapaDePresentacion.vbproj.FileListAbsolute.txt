@@ -198,3 +198,5 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmProd
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmEtiqueta.resources
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNotas.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmNuevaNota.resources

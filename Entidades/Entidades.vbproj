@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.vb" />
+    <Compile Include="Nota.vb" />
     <Compile Include="Opcion.vb" />
     <Compile Include="CuentaCorriente.vb" />
     <Compile Include="Localidad.vb" />

@@ -206,7 +206,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        abrirForm(prueba)
+        abrirForm(frmNotas)
     End Sub
 
     Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click

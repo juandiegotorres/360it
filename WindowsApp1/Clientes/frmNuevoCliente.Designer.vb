@@ -24,7 +24,6 @@ Partial Class frmNuevoCliente
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNuevoCliente))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.txtNomApel = New System.Windows.Forms.TextBox()
@@ -42,9 +41,10 @@ Partial Class frmNuevoCliente
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnLocalidades = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -54,17 +54,6 @@ Partial Class frmNuevoCliente
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(516, 12)
         Me.Panel1.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
         '
         'btnCerrar
         '
@@ -267,6 +256,17 @@ Partial Class frmNuevoCliente
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(490, 63)
         Me.TableLayoutPanel1.TabIndex = 23
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
         'frmNuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -293,16 +293,15 @@ Partial Class frmNuevoCliente
         Me.Name = "frmNuevoCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmNuevoCliente"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnCerrar As PictureBox
     Friend WithEvents lblTitulo As Label
     Friend WithEvents txtNomApel As TextBox
@@ -320,4 +319,5 @@ Partial Class frmNuevoCliente
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnLocalidades As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

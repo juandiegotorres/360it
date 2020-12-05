@@ -17,7 +17,6 @@
         eVenta.cargarHistorialCtaCorriente(tablaHistorialCtaCorriente)
         dgvHistCtaCorriente.DataSource = tablaHistorialCtaCorriente
         TableLayoutPanel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-
     End Sub
 
 
@@ -74,6 +73,7 @@
         btnResetear.Visible = False
     End Sub
 
+
     Private Sub btnDetalleVenta_Click(sender As Object, e As EventArgs) Handles btnDetalleVenta.Click
         Dim detalleVenta As New frmDetalleVentaCtaCorriente
         With detalleVenta
@@ -81,6 +81,11 @@
                 .e_Venta.idVenta = dgvHistorialVentas.CurrentRow.Cells("idVenta").Value
                 .ShowDialog()
             End If
+            If dgvHistCtaCorriente.SelectedRows.Count = 1 Then
+                .e_Venta.idVenta = dgvHistCtaCorriente.CurrentRow.Cells("idVentaCta").Value
+                .ShowDialog()
+            End If
         End With
     End Sub
+
 End Class

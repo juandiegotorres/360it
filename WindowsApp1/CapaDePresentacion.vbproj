@@ -112,6 +112,18 @@
     <Compile Include="Caja\frmCaja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Notas\frmNotas.Designer.vb">
+      <DependentUpon>frmNotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Notas\frmNotas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas\frmNuevaNota.Designer.vb">
+      <DependentUpon>frmNuevaNota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Notas\frmNuevaNota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Opciones\frmOpciones.Designer.vb">
       <DependentUpon>frmOpciones.vb</DependentUpon>
     </Compile>
@@ -290,6 +302,12 @@
     <EmbeddedResource Include="Caja\frmCaja.resx">
       <DependentUpon>frmCaja.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Notas\frmNotas.resx">
+      <DependentUpon>frmNotas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas\frmNuevaNota.resx">
+      <DependentUpon>frmNuevaNota.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Opciones\frmOpciones.resx">
       <DependentUpon>frmOpciones.vb</DependentUpon>
     </EmbeddedResource>
@@ -433,6 +451,7 @@
     <None Include="Resources\pngtree-find-search-view-glass-blue-dotted-line-line-icon-png-image_1622078.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\floppy-disk.png" />
     <Content Include="Z-Icono\pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico" />
     <None Include="Resources\6GxBTL0h_4x.jpg" />
     <None Include="Resources\detalles.png" />
