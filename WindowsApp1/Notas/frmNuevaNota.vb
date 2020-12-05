@@ -1,10 +1,33 @@
 ﻿Public Class frmNuevaNota
     Dim eNotas As New Entidades.Nota
+    Dim idNota As UInt64
+    Dim modificar As Boolean
+    Dim tablaNota As New DataTable
+    Dim rbColor As RadioButton
+    Dim nombreColor As String
+    Public Sub New(Optional ByRef _idNota As UInt64 = 0, Optional ByRef _modificar As Boolean = False)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+        idNota = _idNota
+        modificar = _modificar
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
     Private Sub frmNuevaNota_Load(sender As Object, e As EventArgs) Handles Me.Load
-        lblFecha.Text = CDate(Today)
-        txtNota.Select()
+        If modificar = True Then
+            eNotas.traerNotaModificar(tablaNota, idNota)
+            If tablaNota.Rows.Count = 1 Then
+                txtNota.Text = tablaNota.Rows(0).Item("nota").ToString
+                lblFecha.Text = tablaNota.Rows(0).Item("fecha").ToString
+                nombreColor = "color" & tablaNota.Rows(0).Item("color").ToString
+                rbColor = GroupBox1.Controls.Item(nombreColor)
+                rbColor.Checked = True
+            End If
+        ElseIf modificar = False Then
+            lblFecha.Text = CDate(Today)
+            txtNota.Select()
+        End If
         lblCaracteres.Text = Len(txtNota.Text) & "/" & txtNota.MaxLength
-        'lblCaracteres.Text = "240/240"
     End Sub
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
@@ -23,7 +46,6 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Trim(txtNota.Text) <> "" Then
             eNotas.nota = txtNota.Text
-            eNotas.fecha = CDate(Today)
             If color1.Checked = True Then
                 eNotas.color = 1
             End If
@@ -39,11 +61,22 @@
             If color5.Checked = True Then
                 eNotas.color = 5
             End If
-            If eNotas.nuevaNota = True Then
-                MsgBox("Nota agregada", MsgBoxStyle.Information, "Notas")
-                Me.DialogResult = DialogResult.OK
-            Else
-                MsgBox("Sucedió un problema, intente nuevamente", MsgBoxStyle.Critical, "Notas")
+            If modificar = False Then
+                eNotas.fecha = CDate(Today)
+                If eNotas.nuevaNota = True Then
+                    MsgBox("Nota agregada", MsgBoxStyle.Information, "Notas")
+                    Me.DialogResult = DialogResult.OK
+                Else
+                    MsgBox("Sucedió un problema, intente nuevamente", MsgBoxStyle.Critical, "Notas")
+                End If
+            ElseIf modificar = True Then
+                eNotas.idNota = idNota
+                If eNotas.guardarNotaModificada = True Then
+                    MsgBox("Nota modificada", MsgBoxStyle.Information, "Notas")
+                    Me.DialogResult = DialogResult.OK
+                Else
+                    MsgBox("Sucedió un problema, intente nuevamente", MsgBoxStyle.Critical, "Notas")
+                End If
             End If
         End If
     End Sub

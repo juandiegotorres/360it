@@ -27,105 +27,105 @@ Partial Class frmNotas
         Me.panelnota4 = New System.Windows.Forms.Panel()
         Me.nota4 = New System.Windows.Forms.TextBox()
         Me.headernota4 = New System.Windows.Forms.Panel()
+        Me.picGuardar4 = New System.Windows.Forms.PictureBox()
         Me.fecha4 = New System.Windows.Forms.Label()
+        Me.picEditar4 = New System.Windows.Forms.PictureBox()
+        Me.picEliminar4 = New System.Windows.Forms.PictureBox()
         Me.panelnota5 = New System.Windows.Forms.Panel()
         Me.nota5 = New System.Windows.Forms.TextBox()
         Me.headernota5 = New System.Windows.Forms.Panel()
+        Me.picGuardar5 = New System.Windows.Forms.PictureBox()
         Me.fecha5 = New System.Windows.Forms.Label()
+        Me.picEditar5 = New System.Windows.Forms.PictureBox()
+        Me.picEliminar5 = New System.Windows.Forms.PictureBox()
         Me.panelnota3 = New System.Windows.Forms.Panel()
         Me.nota3 = New System.Windows.Forms.TextBox()
         Me.headernota3 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.fecha3 = New System.Windows.Forms.Label()
+        Me.picEditar3 = New System.Windows.Forms.PictureBox()
+        Me.picEliminar3 = New System.Windows.Forms.PictureBox()
         Me.panelnota1 = New System.Windows.Forms.Panel()
         Me.nota1 = New System.Windows.Forms.TextBox()
         Me.headernota1 = New System.Windows.Forms.Panel()
+        Me.picGuardar1 = New System.Windows.Forms.PictureBox()
         Me.fecha1 = New System.Windows.Forms.Label()
+        Me.picEditar1 = New System.Windows.Forms.PictureBox()
+        Me.picEliminar1 = New System.Windows.Forms.PictureBox()
         Me.panelnota2 = New System.Windows.Forms.Panel()
         Me.nota2 = New System.Windows.Forms.TextBox()
         Me.headernota2 = New System.Windows.Forms.Panel()
+        Me.picGuardar2 = New System.Windows.Forms.PictureBox()
         Me.fecha2 = New System.Windows.Forms.Label()
+        Me.picEditar2 = New System.Windows.Forms.PictureBox()
+        Me.picEliminar2 = New System.Windows.Forms.PictureBox()
         Me.panelnota8 = New System.Windows.Forms.Panel()
         Me.nota8 = New System.Windows.Forms.TextBox()
         Me.headernota8 = New System.Windows.Forms.Panel()
+        Me.picGuardar8 = New System.Windows.Forms.PictureBox()
         Me.fecha8 = New System.Windows.Forms.Label()
+        Me.picEditar8 = New System.Windows.Forms.PictureBox()
+        Me.picEliminar8 = New System.Windows.Forms.PictureBox()
         Me.panelnota7 = New System.Windows.Forms.Panel()
         Me.nota7 = New System.Windows.Forms.TextBox()
         Me.headernota7 = New System.Windows.Forms.Panel()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.fecha7 = New System.Windows.Forms.Label()
+        Me.picEditar7 = New System.Windows.Forms.PictureBox()
+        Me.picEliminar7 = New System.Windows.Forms.PictureBox()
         Me.panelnota6 = New System.Windows.Forms.Panel()
         Me.nota6 = New System.Windows.Forms.TextBox()
         Me.headernota6 = New System.Windows.Forms.Panel()
-        Me.fecha6 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.picGuardar4 = New System.Windows.Forms.PictureBox()
-        Me.picEditar4 = New System.Windows.Forms.PictureBox()
-        Me.picEliminar4 = New System.Windows.Forms.PictureBox()
-        Me.picGuardar5 = New System.Windows.Forms.PictureBox()
-        Me.picEditar5 = New System.Windows.Forms.PictureBox()
-        Me.picEliminar5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.picEditar3 = New System.Windows.Forms.PictureBox()
-        Me.picEliminar3 = New System.Windows.Forms.PictureBox()
-        Me.picGuardar1 = New System.Windows.Forms.PictureBox()
-        Me.picEditar1 = New System.Windows.Forms.PictureBox()
-        Me.picEliminar1 = New System.Windows.Forms.PictureBox()
-        Me.picGuardar2 = New System.Windows.Forms.PictureBox()
-        Me.picEditar2 = New System.Windows.Forms.PictureBox()
-        Me.picEliminar2 = New System.Windows.Forms.PictureBox()
-        Me.picGuardar8 = New System.Windows.Forms.PictureBox()
-        Me.picEditar8 = New System.Windows.Forms.PictureBox()
-        Me.picEliminar8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.picEditar7 = New System.Windows.Forms.PictureBox()
-        Me.picEliminar7 = New System.Windows.Forms.PictureBox()
         Me.picGuardar6 = New System.Windows.Forms.PictureBox()
+        Me.fecha6 = New System.Windows.Forms.Label()
         Me.picEditar6 = New System.Windows.Forms.PictureBox()
         Me.picEliminar6 = New System.Windows.Forms.PictureBox()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.panelnota4.SuspendLayout()
         Me.headernota4.SuspendLayout()
-        Me.panelnota5.SuspendLayout()
-        Me.headernota5.SuspendLayout()
-        Me.panelnota3.SuspendLayout()
-        Me.headernota3.SuspendLayout()
-        Me.panelnota1.SuspendLayout()
-        Me.headernota1.SuspendLayout()
-        Me.panelnota2.SuspendLayout()
-        Me.headernota2.SuspendLayout()
-        Me.panelnota8.SuspendLayout()
-        Me.headernota8.SuspendLayout()
-        Me.panelnota7.SuspendLayout()
-        Me.headernota7.SuspendLayout()
-        Me.panelnota6.SuspendLayout()
-        Me.headernota6.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.picGuardar4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEditar4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelnota5.SuspendLayout()
+        Me.headernota5.SuspendLayout()
         CType(Me.picGuardar5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEditar5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelnota3.SuspendLayout()
+        Me.headernota3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEditar3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelnota1.SuspendLayout()
+        Me.headernota1.SuspendLayout()
         CType(Me.picGuardar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEditar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelnota2.SuspendLayout()
+        Me.headernota2.SuspendLayout()
         CType(Me.picGuardar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEditar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelnota8.SuspendLayout()
+        Me.headernota8.SuspendLayout()
         CType(Me.picGuardar8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEditar8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelnota7.SuspendLayout()
+        Me.headernota7.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEditar7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelnota6.SuspendLayout()
+        Me.headernota6.SuspendLayout()
         CType(Me.picGuardar6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEditar6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -180,9 +180,10 @@ Partial Class frmNotas
         Me.panelnota4.Controls.Add(Me.nota4)
         Me.panelnota4.Controls.Add(Me.headernota4)
         Me.panelnota4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota4.Location = New System.Drawing.Point(744, 3)
+        Me.panelnota4.Location = New System.Drawing.Point(751, 3)
+        Me.panelnota4.Margin = New System.Windows.Forms.Padding(10, 3, 10, 10)
         Me.panelnota4.Name = "panelnota4"
-        Me.panelnota4.Size = New System.Drawing.Size(242, 196)
+        Me.panelnota4.Size = New System.Drawing.Size(228, 189)
         Me.panelnota4.TabIndex = 9
         '
         'nota4
@@ -195,7 +196,7 @@ Partial Class frmNotas
         Me.nota4.Multiline = True
         Me.nota4.Name = "nota4"
         Me.nota4.ReadOnly = True
-        Me.nota4.Size = New System.Drawing.Size(242, 161)
+        Me.nota4.Size = New System.Drawing.Size(228, 154)
         Me.nota4.TabIndex = 1
         '
         'headernota4
@@ -208,8 +209,20 @@ Partial Class frmNotas
         Me.headernota4.Dock = System.Windows.Forms.DockStyle.Top
         Me.headernota4.Location = New System.Drawing.Point(0, 0)
         Me.headernota4.Name = "headernota4"
-        Me.headernota4.Size = New System.Drawing.Size(242, 35)
+        Me.headernota4.Size = New System.Drawing.Size(228, 35)
         Me.headernota4.TabIndex = 0
+        '
+        'picGuardar4
+        '
+        Me.picGuardar4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picGuardar4.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.picGuardar4.Location = New System.Drawing.Point(123, 0)
+        Me.picGuardar4.Name = "picGuardar4"
+        Me.picGuardar4.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.picGuardar4.Size = New System.Drawing.Size(35, 35)
+        Me.picGuardar4.TabIndex = 4
+        Me.picGuardar4.TabStop = False
+        Me.picGuardar4.Visible = False
         '
         'fecha4
         '
@@ -224,15 +237,38 @@ Partial Class frmNotas
         Me.fecha4.TabIndex = 2
         Me.fecha4.Text = "Fecha1"
         '
+        'picEditar4
+        '
+        Me.picEditar4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEditar4.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.picEditar4.Location = New System.Drawing.Point(158, 0)
+        Me.picEditar4.Name = "picEditar4"
+        Me.picEditar4.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEditar4.Size = New System.Drawing.Size(35, 35)
+        Me.picEditar4.TabIndex = 1
+        Me.picEditar4.TabStop = False
+        '
+        'picEliminar4
+        '
+        Me.picEliminar4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEliminar4.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.picEliminar4.Location = New System.Drawing.Point(193, 0)
+        Me.picEliminar4.Name = "picEliminar4"
+        Me.picEliminar4.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEliminar4.Size = New System.Drawing.Size(35, 35)
+        Me.picEliminar4.TabIndex = 0
+        Me.picEliminar4.TabStop = False
+        '
         'panelnota5
         '
         Me.panelnota5.BackColor = System.Drawing.Color.Moccasin
         Me.panelnota5.Controls.Add(Me.nota5)
         Me.panelnota5.Controls.Add(Me.headernota5)
         Me.panelnota5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota5.Location = New System.Drawing.Point(3, 205)
+        Me.panelnota5.Location = New System.Drawing.Point(10, 205)
+        Me.panelnota5.Margin = New System.Windows.Forms.Padding(10, 3, 10, 10)
         Me.panelnota5.Name = "panelnota5"
-        Me.panelnota5.Size = New System.Drawing.Size(241, 197)
+        Me.panelnota5.Size = New System.Drawing.Size(227, 190)
         Me.panelnota5.TabIndex = 8
         '
         'nota5
@@ -245,7 +281,7 @@ Partial Class frmNotas
         Me.nota5.Multiline = True
         Me.nota5.Name = "nota5"
         Me.nota5.ReadOnly = True
-        Me.nota5.Size = New System.Drawing.Size(241, 162)
+        Me.nota5.Size = New System.Drawing.Size(227, 155)
         Me.nota5.TabIndex = 1
         '
         'headernota5
@@ -258,8 +294,20 @@ Partial Class frmNotas
         Me.headernota5.Dock = System.Windows.Forms.DockStyle.Top
         Me.headernota5.Location = New System.Drawing.Point(0, 0)
         Me.headernota5.Name = "headernota5"
-        Me.headernota5.Size = New System.Drawing.Size(241, 35)
+        Me.headernota5.Size = New System.Drawing.Size(227, 35)
         Me.headernota5.TabIndex = 0
+        '
+        'picGuardar5
+        '
+        Me.picGuardar5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picGuardar5.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.picGuardar5.Location = New System.Drawing.Point(122, 0)
+        Me.picGuardar5.Name = "picGuardar5"
+        Me.picGuardar5.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.picGuardar5.Size = New System.Drawing.Size(35, 35)
+        Me.picGuardar5.TabIndex = 4
+        Me.picGuardar5.TabStop = False
+        Me.picGuardar5.Visible = False
         '
         'fecha5
         '
@@ -274,15 +322,38 @@ Partial Class frmNotas
         Me.fecha5.TabIndex = 2
         Me.fecha5.Text = "Fecha2"
         '
+        'picEditar5
+        '
+        Me.picEditar5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEditar5.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.picEditar5.Location = New System.Drawing.Point(157, 0)
+        Me.picEditar5.Name = "picEditar5"
+        Me.picEditar5.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEditar5.Size = New System.Drawing.Size(35, 35)
+        Me.picEditar5.TabIndex = 1
+        Me.picEditar5.TabStop = False
+        '
+        'picEliminar5
+        '
+        Me.picEliminar5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEliminar5.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.picEliminar5.Location = New System.Drawing.Point(192, 0)
+        Me.picEliminar5.Name = "picEliminar5"
+        Me.picEliminar5.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEliminar5.Size = New System.Drawing.Size(35, 35)
+        Me.picEliminar5.TabIndex = 0
+        Me.picEliminar5.TabStop = False
+        '
         'panelnota3
         '
         Me.panelnota3.BackColor = System.Drawing.Color.Moccasin
         Me.panelnota3.Controls.Add(Me.nota3)
         Me.panelnota3.Controls.Add(Me.headernota3)
         Me.panelnota3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota3.Location = New System.Drawing.Point(497, 3)
+        Me.panelnota3.Location = New System.Drawing.Point(504, 3)
+        Me.panelnota3.Margin = New System.Windows.Forms.Padding(10, 3, 10, 10)
         Me.panelnota3.Name = "panelnota3"
-        Me.panelnota3.Size = New System.Drawing.Size(241, 196)
+        Me.panelnota3.Size = New System.Drawing.Size(227, 189)
         Me.panelnota3.TabIndex = 7
         '
         'nota3
@@ -295,7 +366,7 @@ Partial Class frmNotas
         Me.nota3.Multiline = True
         Me.nota3.Name = "nota3"
         Me.nota3.ReadOnly = True
-        Me.nota3.Size = New System.Drawing.Size(241, 161)
+        Me.nota3.Size = New System.Drawing.Size(227, 154)
         Me.nota3.TabIndex = 1
         '
         'headernota3
@@ -308,8 +379,20 @@ Partial Class frmNotas
         Me.headernota3.Dock = System.Windows.Forms.DockStyle.Top
         Me.headernota3.Location = New System.Drawing.Point(0, 0)
         Me.headernota3.Name = "headernota3"
-        Me.headernota3.Size = New System.Drawing.Size(241, 35)
+        Me.headernota3.Size = New System.Drawing.Size(227, 35)
         Me.headernota3.TabIndex = 0
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox2.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.PictureBox2.Location = New System.Drawing.Point(122, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.PictureBox2.Size = New System.Drawing.Size(35, 35)
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
         '
         'fecha3
         '
@@ -324,15 +407,38 @@ Partial Class frmNotas
         Me.fecha3.TabIndex = 2
         Me.fecha3.Text = "Fecha3"
         '
+        'picEditar3
+        '
+        Me.picEditar3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEditar3.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.picEditar3.Location = New System.Drawing.Point(157, 0)
+        Me.picEditar3.Name = "picEditar3"
+        Me.picEditar3.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEditar3.Size = New System.Drawing.Size(35, 35)
+        Me.picEditar3.TabIndex = 1
+        Me.picEditar3.TabStop = False
+        '
+        'picEliminar3
+        '
+        Me.picEliminar3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEliminar3.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.picEliminar3.Location = New System.Drawing.Point(192, 0)
+        Me.picEliminar3.Name = "picEliminar3"
+        Me.picEliminar3.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEliminar3.Size = New System.Drawing.Size(35, 35)
+        Me.picEliminar3.TabIndex = 0
+        Me.picEliminar3.TabStop = False
+        '
         'panelnota1
         '
         Me.panelnota1.BackColor = System.Drawing.Color.Firebrick
         Me.panelnota1.Controls.Add(Me.nota1)
         Me.panelnota1.Controls.Add(Me.headernota1)
         Me.panelnota1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota1.Location = New System.Drawing.Point(3, 3)
+        Me.panelnota1.Location = New System.Drawing.Point(10, 3)
+        Me.panelnota1.Margin = New System.Windows.Forms.Padding(10, 3, 10, 10)
         Me.panelnota1.Name = "panelnota1"
-        Me.panelnota1.Size = New System.Drawing.Size(241, 196)
+        Me.panelnota1.Size = New System.Drawing.Size(227, 189)
         Me.panelnota1.TabIndex = 6
         '
         'nota1
@@ -346,7 +452,7 @@ Partial Class frmNotas
         Me.nota1.Multiline = True
         Me.nota1.Name = "nota1"
         Me.nota1.ReadOnly = True
-        Me.nota1.Size = New System.Drawing.Size(241, 161)
+        Me.nota1.Size = New System.Drawing.Size(227, 154)
         Me.nota1.TabIndex = 1
         '
         'headernota1
@@ -359,8 +465,20 @@ Partial Class frmNotas
         Me.headernota1.Dock = System.Windows.Forms.DockStyle.Top
         Me.headernota1.Location = New System.Drawing.Point(0, 0)
         Me.headernota1.Name = "headernota1"
-        Me.headernota1.Size = New System.Drawing.Size(241, 35)
+        Me.headernota1.Size = New System.Drawing.Size(227, 35)
         Me.headernota1.TabIndex = 0
+        '
+        'picGuardar1
+        '
+        Me.picGuardar1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picGuardar1.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.picGuardar1.Location = New System.Drawing.Point(122, 0)
+        Me.picGuardar1.Name = "picGuardar1"
+        Me.picGuardar1.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.picGuardar1.Size = New System.Drawing.Size(35, 35)
+        Me.picGuardar1.TabIndex = 4
+        Me.picGuardar1.TabStop = False
+        Me.picGuardar1.Visible = False
         '
         'fecha1
         '
@@ -375,15 +493,38 @@ Partial Class frmNotas
         Me.fecha1.TabIndex = 2
         Me.fecha1.Text = "Fecha4"
         '
+        'picEditar1
+        '
+        Me.picEditar1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEditar1.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.picEditar1.Location = New System.Drawing.Point(157, 0)
+        Me.picEditar1.Name = "picEditar1"
+        Me.picEditar1.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEditar1.Size = New System.Drawing.Size(35, 35)
+        Me.picEditar1.TabIndex = 1
+        Me.picEditar1.TabStop = False
+        '
+        'picEliminar1
+        '
+        Me.picEliminar1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEliminar1.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.picEliminar1.Location = New System.Drawing.Point(192, 0)
+        Me.picEliminar1.Name = "picEliminar1"
+        Me.picEliminar1.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEliminar1.Size = New System.Drawing.Size(35, 35)
+        Me.picEliminar1.TabIndex = 0
+        Me.picEliminar1.TabStop = False
+        '
         'panelnota2
         '
         Me.panelnota2.BackColor = System.Drawing.Color.Moccasin
         Me.panelnota2.Controls.Add(Me.nota2)
         Me.panelnota2.Controls.Add(Me.headernota2)
         Me.panelnota2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota2.Location = New System.Drawing.Point(250, 3)
+        Me.panelnota2.Location = New System.Drawing.Point(257, 3)
+        Me.panelnota2.Margin = New System.Windows.Forms.Padding(10, 3, 10, 10)
         Me.panelnota2.Name = "panelnota2"
-        Me.panelnota2.Size = New System.Drawing.Size(241, 196)
+        Me.panelnota2.Size = New System.Drawing.Size(227, 189)
         Me.panelnota2.TabIndex = 10
         '
         'nota2
@@ -396,7 +537,7 @@ Partial Class frmNotas
         Me.nota2.Multiline = True
         Me.nota2.Name = "nota2"
         Me.nota2.ReadOnly = True
-        Me.nota2.Size = New System.Drawing.Size(241, 161)
+        Me.nota2.Size = New System.Drawing.Size(227, 154)
         Me.nota2.TabIndex = 1
         '
         'headernota2
@@ -409,8 +550,20 @@ Partial Class frmNotas
         Me.headernota2.Dock = System.Windows.Forms.DockStyle.Top
         Me.headernota2.Location = New System.Drawing.Point(0, 0)
         Me.headernota2.Name = "headernota2"
-        Me.headernota2.Size = New System.Drawing.Size(241, 35)
+        Me.headernota2.Size = New System.Drawing.Size(227, 35)
         Me.headernota2.TabIndex = 0
+        '
+        'picGuardar2
+        '
+        Me.picGuardar2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picGuardar2.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.picGuardar2.Location = New System.Drawing.Point(122, 0)
+        Me.picGuardar2.Name = "picGuardar2"
+        Me.picGuardar2.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.picGuardar2.Size = New System.Drawing.Size(35, 35)
+        Me.picGuardar2.TabIndex = 4
+        Me.picGuardar2.TabStop = False
+        Me.picGuardar2.Visible = False
         '
         'fecha2
         '
@@ -425,15 +578,38 @@ Partial Class frmNotas
         Me.fecha2.TabIndex = 2
         Me.fecha2.Text = "Fecha5"
         '
+        'picEditar2
+        '
+        Me.picEditar2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEditar2.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.picEditar2.Location = New System.Drawing.Point(157, 0)
+        Me.picEditar2.Name = "picEditar2"
+        Me.picEditar2.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEditar2.Size = New System.Drawing.Size(35, 35)
+        Me.picEditar2.TabIndex = 1
+        Me.picEditar2.TabStop = False
+        '
+        'picEliminar2
+        '
+        Me.picEliminar2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEliminar2.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.picEliminar2.Location = New System.Drawing.Point(192, 0)
+        Me.picEliminar2.Name = "picEliminar2"
+        Me.picEliminar2.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEliminar2.Size = New System.Drawing.Size(35, 35)
+        Me.picEliminar2.TabIndex = 0
+        Me.picEliminar2.TabStop = False
+        '
         'panelnota8
         '
         Me.panelnota8.BackColor = System.Drawing.Color.Moccasin
         Me.panelnota8.Controls.Add(Me.nota8)
         Me.panelnota8.Controls.Add(Me.headernota8)
         Me.panelnota8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota8.Location = New System.Drawing.Point(744, 205)
+        Me.panelnota8.Location = New System.Drawing.Point(751, 205)
+        Me.panelnota8.Margin = New System.Windows.Forms.Padding(10, 3, 10, 10)
         Me.panelnota8.Name = "panelnota8"
-        Me.panelnota8.Size = New System.Drawing.Size(242, 197)
+        Me.panelnota8.Size = New System.Drawing.Size(228, 190)
         Me.panelnota8.TabIndex = 13
         '
         'nota8
@@ -446,7 +622,7 @@ Partial Class frmNotas
         Me.nota8.Multiline = True
         Me.nota8.Name = "nota8"
         Me.nota8.ReadOnly = True
-        Me.nota8.Size = New System.Drawing.Size(242, 162)
+        Me.nota8.Size = New System.Drawing.Size(228, 155)
         Me.nota8.TabIndex = 1
         '
         'headernota8
@@ -459,8 +635,20 @@ Partial Class frmNotas
         Me.headernota8.Dock = System.Windows.Forms.DockStyle.Top
         Me.headernota8.Location = New System.Drawing.Point(0, 0)
         Me.headernota8.Name = "headernota8"
-        Me.headernota8.Size = New System.Drawing.Size(242, 35)
+        Me.headernota8.Size = New System.Drawing.Size(228, 35)
         Me.headernota8.TabIndex = 0
+        '
+        'picGuardar8
+        '
+        Me.picGuardar8.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picGuardar8.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.picGuardar8.Location = New System.Drawing.Point(123, 0)
+        Me.picGuardar8.Name = "picGuardar8"
+        Me.picGuardar8.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.picGuardar8.Size = New System.Drawing.Size(35, 35)
+        Me.picGuardar8.TabIndex = 4
+        Me.picGuardar8.TabStop = False
+        Me.picGuardar8.Visible = False
         '
         'fecha8
         '
@@ -475,15 +663,38 @@ Partial Class frmNotas
         Me.fecha8.TabIndex = 2
         Me.fecha8.Text = "Fecha6"
         '
+        'picEditar8
+        '
+        Me.picEditar8.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEditar8.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.picEditar8.Location = New System.Drawing.Point(158, 0)
+        Me.picEditar8.Name = "picEditar8"
+        Me.picEditar8.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEditar8.Size = New System.Drawing.Size(35, 35)
+        Me.picEditar8.TabIndex = 1
+        Me.picEditar8.TabStop = False
+        '
+        'picEliminar8
+        '
+        Me.picEliminar8.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEliminar8.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.picEliminar8.Location = New System.Drawing.Point(193, 0)
+        Me.picEliminar8.Name = "picEliminar8"
+        Me.picEliminar8.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEliminar8.Size = New System.Drawing.Size(35, 35)
+        Me.picEliminar8.TabIndex = 0
+        Me.picEliminar8.TabStop = False
+        '
         'panelnota7
         '
         Me.panelnota7.BackColor = System.Drawing.Color.Moccasin
         Me.panelnota7.Controls.Add(Me.nota7)
         Me.panelnota7.Controls.Add(Me.headernota7)
         Me.panelnota7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota7.Location = New System.Drawing.Point(497, 205)
+        Me.panelnota7.Location = New System.Drawing.Point(504, 205)
+        Me.panelnota7.Margin = New System.Windows.Forms.Padding(10, 3, 10, 10)
         Me.panelnota7.Name = "panelnota7"
-        Me.panelnota7.Size = New System.Drawing.Size(241, 197)
+        Me.panelnota7.Size = New System.Drawing.Size(227, 190)
         Me.panelnota7.TabIndex = 11
         '
         'nota7
@@ -496,7 +707,7 @@ Partial Class frmNotas
         Me.nota7.Multiline = True
         Me.nota7.Name = "nota7"
         Me.nota7.ReadOnly = True
-        Me.nota7.Size = New System.Drawing.Size(241, 162)
+        Me.nota7.Size = New System.Drawing.Size(227, 155)
         Me.nota7.TabIndex = 1
         '
         'headernota7
@@ -509,8 +720,20 @@ Partial Class frmNotas
         Me.headernota7.Dock = System.Windows.Forms.DockStyle.Top
         Me.headernota7.Location = New System.Drawing.Point(0, 0)
         Me.headernota7.Name = "headernota7"
-        Me.headernota7.Size = New System.Drawing.Size(241, 35)
+        Me.headernota7.Size = New System.Drawing.Size(227, 35)
         Me.headernota7.TabIndex = 0
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox6.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.PictureBox6.Location = New System.Drawing.Point(122, 0)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.PictureBox6.Size = New System.Drawing.Size(35, 35)
+        Me.PictureBox6.TabIndex = 4
+        Me.PictureBox6.TabStop = False
+        Me.PictureBox6.Visible = False
         '
         'fecha7
         '
@@ -525,15 +748,38 @@ Partial Class frmNotas
         Me.fecha7.TabIndex = 2
         Me.fecha7.Text = "fecha7"
         '
+        'picEditar7
+        '
+        Me.picEditar7.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEditar7.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.picEditar7.Location = New System.Drawing.Point(157, 0)
+        Me.picEditar7.Name = "picEditar7"
+        Me.picEditar7.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEditar7.Size = New System.Drawing.Size(35, 35)
+        Me.picEditar7.TabIndex = 1
+        Me.picEditar7.TabStop = False
+        '
+        'picEliminar7
+        '
+        Me.picEliminar7.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEliminar7.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.picEliminar7.Location = New System.Drawing.Point(192, 0)
+        Me.picEliminar7.Name = "picEliminar7"
+        Me.picEliminar7.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEliminar7.Size = New System.Drawing.Size(35, 35)
+        Me.picEliminar7.TabIndex = 0
+        Me.picEliminar7.TabStop = False
+        '
         'panelnota6
         '
         Me.panelnota6.BackColor = System.Drawing.Color.Moccasin
         Me.panelnota6.Controls.Add(Me.nota6)
         Me.panelnota6.Controls.Add(Me.headernota6)
         Me.panelnota6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota6.Location = New System.Drawing.Point(250, 205)
+        Me.panelnota6.Location = New System.Drawing.Point(257, 205)
+        Me.panelnota6.Margin = New System.Windows.Forms.Padding(10, 3, 10, 10)
         Me.panelnota6.Name = "panelnota6"
-        Me.panelnota6.Size = New System.Drawing.Size(241, 197)
+        Me.panelnota6.Size = New System.Drawing.Size(227, 190)
         Me.panelnota6.TabIndex = 12
         '
         'nota6
@@ -546,7 +792,7 @@ Partial Class frmNotas
         Me.nota6.Multiline = True
         Me.nota6.Name = "nota6"
         Me.nota6.ReadOnly = True
-        Me.nota6.Size = New System.Drawing.Size(241, 162)
+        Me.nota6.Size = New System.Drawing.Size(227, 155)
         Me.nota6.TabIndex = 1
         '
         'headernota6
@@ -559,8 +805,20 @@ Partial Class frmNotas
         Me.headernota6.Dock = System.Windows.Forms.DockStyle.Top
         Me.headernota6.Location = New System.Drawing.Point(0, 0)
         Me.headernota6.Name = "headernota6"
-        Me.headernota6.Size = New System.Drawing.Size(241, 35)
+        Me.headernota6.Size = New System.Drawing.Size(227, 35)
         Me.headernota6.TabIndex = 0
+        '
+        'picGuardar6
+        '
+        Me.picGuardar6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picGuardar6.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.picGuardar6.Location = New System.Drawing.Point(122, 0)
+        Me.picGuardar6.Name = "picGuardar6"
+        Me.picGuardar6.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.picGuardar6.Size = New System.Drawing.Size(35, 35)
+        Me.picGuardar6.TabIndex = 4
+        Me.picGuardar6.TabStop = False
+        Me.picGuardar6.Visible = False
         '
         'fecha6
         '
@@ -574,6 +832,28 @@ Partial Class frmNotas
         Me.fecha6.Size = New System.Drawing.Size(70, 22)
         Me.fecha6.TabIndex = 2
         Me.fecha6.Text = "Fecha8"
+        '
+        'picEditar6
+        '
+        Me.picEditar6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEditar6.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.picEditar6.Location = New System.Drawing.Point(157, 0)
+        Me.picEditar6.Name = "picEditar6"
+        Me.picEditar6.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEditar6.Size = New System.Drawing.Size(35, 35)
+        Me.picEditar6.TabIndex = 1
+        Me.picEditar6.TabStop = False
+        '
+        'picEliminar6
+        '
+        Me.picEliminar6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.picEliminar6.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.picEliminar6.Location = New System.Drawing.Point(192, 0)
+        Me.picEliminar6.Name = "picEliminar6"
+        Me.picEliminar6.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.picEliminar6.Size = New System.Drawing.Size(35, 35)
+        Me.picEliminar6.TabIndex = 0
+        Me.picEliminar6.TabStop = False
         '
         'TableLayoutPanel3
         '
@@ -591,292 +871,6 @@ Partial Class frmNotas
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1019, 85)
         Me.TableLayoutPanel3.TabIndex = 44
         Me.TableLayoutPanel3.Tag = "0"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label1.Font = New System.Drawing.Font("Montserrat", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(21, 9)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(21, 9, 4, 2)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(227, 74)
-        Me.Label1.TabIndex = 33
-        Me.Label1.Text = "NOTAS"
-        '
-        'picGuardar4
-        '
-        Me.picGuardar4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picGuardar4.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.picGuardar4.Location = New System.Drawing.Point(137, 0)
-        Me.picGuardar4.Name = "picGuardar4"
-        Me.picGuardar4.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.picGuardar4.Size = New System.Drawing.Size(35, 35)
-        Me.picGuardar4.TabIndex = 4
-        Me.picGuardar4.TabStop = False
-        Me.picGuardar4.Visible = False
-        '
-        'picEditar4
-        '
-        Me.picEditar4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEditar4.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.picEditar4.Location = New System.Drawing.Point(172, 0)
-        Me.picEditar4.Name = "picEditar4"
-        Me.picEditar4.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEditar4.Size = New System.Drawing.Size(35, 35)
-        Me.picEditar4.TabIndex = 1
-        Me.picEditar4.TabStop = False
-        '
-        'picEliminar4
-        '
-        Me.picEliminar4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEliminar4.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.picEliminar4.Location = New System.Drawing.Point(207, 0)
-        Me.picEliminar4.Name = "picEliminar4"
-        Me.picEliminar4.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEliminar4.Size = New System.Drawing.Size(35, 35)
-        Me.picEliminar4.TabIndex = 0
-        Me.picEliminar4.TabStop = False
-        '
-        'picGuardar5
-        '
-        Me.picGuardar5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picGuardar5.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.picGuardar5.Location = New System.Drawing.Point(136, 0)
-        Me.picGuardar5.Name = "picGuardar5"
-        Me.picGuardar5.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.picGuardar5.Size = New System.Drawing.Size(35, 35)
-        Me.picGuardar5.TabIndex = 4
-        Me.picGuardar5.TabStop = False
-        Me.picGuardar5.Visible = False
-        '
-        'picEditar5
-        '
-        Me.picEditar5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEditar5.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.picEditar5.Location = New System.Drawing.Point(171, 0)
-        Me.picEditar5.Name = "picEditar5"
-        Me.picEditar5.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEditar5.Size = New System.Drawing.Size(35, 35)
-        Me.picEditar5.TabIndex = 1
-        Me.picEditar5.TabStop = False
-        '
-        'picEliminar5
-        '
-        Me.picEliminar5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEliminar5.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.picEliminar5.Location = New System.Drawing.Point(206, 0)
-        Me.picEliminar5.Name = "picEliminar5"
-        Me.picEliminar5.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEliminar5.Size = New System.Drawing.Size(35, 35)
-        Me.picEliminar5.TabIndex = 0
-        Me.picEliminar5.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.PictureBox2.Location = New System.Drawing.Point(136, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.PictureBox2.Size = New System.Drawing.Size(35, 35)
-        Me.PictureBox2.TabIndex = 4
-        Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
-        '
-        'picEditar3
-        '
-        Me.picEditar3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEditar3.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.picEditar3.Location = New System.Drawing.Point(171, 0)
-        Me.picEditar3.Name = "picEditar3"
-        Me.picEditar3.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEditar3.Size = New System.Drawing.Size(35, 35)
-        Me.picEditar3.TabIndex = 1
-        Me.picEditar3.TabStop = False
-        '
-        'picEliminar3
-        '
-        Me.picEliminar3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEliminar3.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.picEliminar3.Location = New System.Drawing.Point(206, 0)
-        Me.picEliminar3.Name = "picEliminar3"
-        Me.picEliminar3.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEliminar3.Size = New System.Drawing.Size(35, 35)
-        Me.picEliminar3.TabIndex = 0
-        Me.picEliminar3.TabStop = False
-        '
-        'picGuardar1
-        '
-        Me.picGuardar1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picGuardar1.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.picGuardar1.Location = New System.Drawing.Point(136, 0)
-        Me.picGuardar1.Name = "picGuardar1"
-        Me.picGuardar1.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.picGuardar1.Size = New System.Drawing.Size(35, 35)
-        Me.picGuardar1.TabIndex = 4
-        Me.picGuardar1.TabStop = False
-        Me.picGuardar1.Visible = False
-        '
-        'picEditar1
-        '
-        Me.picEditar1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEditar1.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.picEditar1.Location = New System.Drawing.Point(171, 0)
-        Me.picEditar1.Name = "picEditar1"
-        Me.picEditar1.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEditar1.Size = New System.Drawing.Size(35, 35)
-        Me.picEditar1.TabIndex = 1
-        Me.picEditar1.TabStop = False
-        '
-        'picEliminar1
-        '
-        Me.picEliminar1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEliminar1.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.picEliminar1.Location = New System.Drawing.Point(206, 0)
-        Me.picEliminar1.Name = "picEliminar1"
-        Me.picEliminar1.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEliminar1.Size = New System.Drawing.Size(35, 35)
-        Me.picEliminar1.TabIndex = 0
-        Me.picEliminar1.TabStop = False
-        '
-        'picGuardar2
-        '
-        Me.picGuardar2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picGuardar2.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.picGuardar2.Location = New System.Drawing.Point(136, 0)
-        Me.picGuardar2.Name = "picGuardar2"
-        Me.picGuardar2.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.picGuardar2.Size = New System.Drawing.Size(35, 35)
-        Me.picGuardar2.TabIndex = 4
-        Me.picGuardar2.TabStop = False
-        Me.picGuardar2.Visible = False
-        '
-        'picEditar2
-        '
-        Me.picEditar2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEditar2.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.picEditar2.Location = New System.Drawing.Point(171, 0)
-        Me.picEditar2.Name = "picEditar2"
-        Me.picEditar2.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEditar2.Size = New System.Drawing.Size(35, 35)
-        Me.picEditar2.TabIndex = 1
-        Me.picEditar2.TabStop = False
-        '
-        'picEliminar2
-        '
-        Me.picEliminar2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEliminar2.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.picEliminar2.Location = New System.Drawing.Point(206, 0)
-        Me.picEliminar2.Name = "picEliminar2"
-        Me.picEliminar2.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEliminar2.Size = New System.Drawing.Size(35, 35)
-        Me.picEliminar2.TabIndex = 0
-        Me.picEliminar2.TabStop = False
-        '
-        'picGuardar8
-        '
-        Me.picGuardar8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picGuardar8.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.picGuardar8.Location = New System.Drawing.Point(137, 0)
-        Me.picGuardar8.Name = "picGuardar8"
-        Me.picGuardar8.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.picGuardar8.Size = New System.Drawing.Size(35, 35)
-        Me.picGuardar8.TabIndex = 4
-        Me.picGuardar8.TabStop = False
-        Me.picGuardar8.Visible = False
-        '
-        'picEditar8
-        '
-        Me.picEditar8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEditar8.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.picEditar8.Location = New System.Drawing.Point(172, 0)
-        Me.picEditar8.Name = "picEditar8"
-        Me.picEditar8.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEditar8.Size = New System.Drawing.Size(35, 35)
-        Me.picEditar8.TabIndex = 1
-        Me.picEditar8.TabStop = False
-        '
-        'picEliminar8
-        '
-        Me.picEliminar8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEliminar8.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.picEliminar8.Location = New System.Drawing.Point(207, 0)
-        Me.picEliminar8.Name = "picEliminar8"
-        Me.picEliminar8.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEliminar8.Size = New System.Drawing.Size(35, 35)
-        Me.picEliminar8.TabIndex = 0
-        Me.picEliminar8.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox6.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.PictureBox6.Location = New System.Drawing.Point(136, 0)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.PictureBox6.Size = New System.Drawing.Size(35, 35)
-        Me.PictureBox6.TabIndex = 4
-        Me.PictureBox6.TabStop = False
-        Me.PictureBox6.Visible = False
-        '
-        'picEditar7
-        '
-        Me.picEditar7.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEditar7.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.picEditar7.Location = New System.Drawing.Point(171, 0)
-        Me.picEditar7.Name = "picEditar7"
-        Me.picEditar7.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEditar7.Size = New System.Drawing.Size(35, 35)
-        Me.picEditar7.TabIndex = 1
-        Me.picEditar7.TabStop = False
-        '
-        'picEliminar7
-        '
-        Me.picEliminar7.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEliminar7.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.picEliminar7.Location = New System.Drawing.Point(206, 0)
-        Me.picEliminar7.Name = "picEliminar7"
-        Me.picEliminar7.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEliminar7.Size = New System.Drawing.Size(35, 35)
-        Me.picEliminar7.TabIndex = 0
-        Me.picEliminar7.TabStop = False
-        '
-        'picGuardar6
-        '
-        Me.picGuardar6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picGuardar6.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.picGuardar6.Location = New System.Drawing.Point(136, 0)
-        Me.picGuardar6.Name = "picGuardar6"
-        Me.picGuardar6.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.picGuardar6.Size = New System.Drawing.Size(35, 35)
-        Me.picGuardar6.TabIndex = 4
-        Me.picGuardar6.TabStop = False
-        Me.picGuardar6.Visible = False
-        '
-        'picEditar6
-        '
-        Me.picEditar6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEditar6.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.picEditar6.Location = New System.Drawing.Point(171, 0)
-        Me.picEditar6.Name = "picEditar6"
-        Me.picEditar6.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEditar6.Size = New System.Drawing.Size(35, 35)
-        Me.picEditar6.TabIndex = 1
-        Me.picEditar6.TabStop = False
-        '
-        'picEliminar6
-        '
-        Me.picEliminar6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.picEliminar6.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.picEliminar6.Location = New System.Drawing.Point(206, 0)
-        Me.picEliminar6.Name = "picEliminar6"
-        Me.picEliminar6.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.picEliminar6.Size = New System.Drawing.Size(35, 35)
-        Me.picEliminar6.TabIndex = 0
-        Me.picEliminar6.TabStop = False
         '
         'btnAgregarSeleccionar
         '
@@ -898,6 +892,20 @@ Partial Class frmNotas
         Me.btnAgregarSeleccionar.Text = "Nueva Nota"
         Me.btnAgregarSeleccionar.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label1.Font = New System.Drawing.Font("Montserrat", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(21, 9)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(21, 9, 4, 2)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(227, 74)
+        Me.Label1.TabIndex = 33
+        Me.Label1.Text = "NOTAS"
+        '
         'frmNotas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -913,60 +921,60 @@ Partial Class frmNotas
         Me.panelnota4.PerformLayout()
         Me.headernota4.ResumeLayout(False)
         Me.headernota4.PerformLayout()
+        CType(Me.picGuardar4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEditar4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEliminar4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota5.ResumeLayout(False)
         Me.panelnota5.PerformLayout()
         Me.headernota5.ResumeLayout(False)
         Me.headernota5.PerformLayout()
+        CType(Me.picGuardar5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEditar5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEliminar5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota3.ResumeLayout(False)
         Me.panelnota3.PerformLayout()
         Me.headernota3.ResumeLayout(False)
         Me.headernota3.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEditar3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEliminar3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota1.ResumeLayout(False)
         Me.panelnota1.PerformLayout()
         Me.headernota1.ResumeLayout(False)
         Me.headernota1.PerformLayout()
+        CType(Me.picGuardar1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEditar1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEliminar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota2.ResumeLayout(False)
         Me.panelnota2.PerformLayout()
         Me.headernota2.ResumeLayout(False)
         Me.headernota2.PerformLayout()
+        CType(Me.picGuardar2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEditar2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEliminar2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota8.ResumeLayout(False)
         Me.panelnota8.PerformLayout()
         Me.headernota8.ResumeLayout(False)
         Me.headernota8.PerformLayout()
+        CType(Me.picGuardar8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEditar8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEliminar8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota7.ResumeLayout(False)
         Me.panelnota7.PerformLayout()
         Me.headernota7.ResumeLayout(False)
         Me.headernota7.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEditar7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEliminar7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota6.ResumeLayout(False)
         Me.panelnota6.PerformLayout()
         Me.headernota6.ResumeLayout(False)
         Me.headernota6.PerformLayout()
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel3.PerformLayout()
-        CType(Me.picGuardar4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEditar4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEliminar4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picGuardar5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEditar5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEliminar5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEditar3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEliminar3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picGuardar1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEditar1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEliminar1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picGuardar2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEditar2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEliminar2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picGuardar8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEditar8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEliminar8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEditar7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEliminar7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picGuardar6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picEditar6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picEliminar6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

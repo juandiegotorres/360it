@@ -80,6 +80,7 @@
                     'Voy a asignar el ID al tag por si el usario desea dar de baja la nota poder identificarla
                     txt.Tag = tablaNotas.Rows(numeroDePanel - 1).Item("idnota").ToString
                     colorPanel(tablaNotas.Rows(numeroDePanel - 1).Item("color").ToString, _control, txt)
+                    _control.Visible = True
                 Else
                     'Si hay menos de 8 notas voy a esconder los paneles sobrantes
                     _control.Visible = False
@@ -91,6 +92,13 @@
     Public Sub eliminarNota(ByRef id As Integer)
         If MsgBox("¿Desea dar de baja esta nota?", MsgBoxStyle.YesNo, "Notas") = MsgBoxResult.Yes Then
             eNotas.bajaNota(id)
+            cargarNotas()
+        End If
+    End Sub
+    Public Sub modificarNota(ByRef id As Integer)
+        Dim mdfNota As New frmNuevaNota(id, True)
+        mdfNota.ShowDialog()
+        If mdfNota.DialogResult = DialogResult.OK Then
             cargarNotas()
         End If
     End Sub
@@ -119,18 +127,46 @@
     End Sub
 
     Private Sub btnAgregarSeleccionar_Click(sender As Object, e As EventArgs) Handles btnAgregarSeleccionar.Click
-        frmNuevaNota.ShowDialog()
-        If frmNuevaNota.DialogResult = DialogResult.OK Then
+        Dim nuevaNota As New frmNuevaNota
+        nuevaNota.ShowDialog()
+        If nuevaNota.DialogResult = DialogResult.OK Then
             cargarNotas()
         End If
     End Sub
-
     Private Sub picEliminar7_Click(sender As Object, e As EventArgs) Handles picEliminar7.Click
         eliminarNota(nota7.Tag)
 
     End Sub
 
+
     Private Sub picEliminar8_Click(sender As Object, e As EventArgs) Handles picEliminar8.Click
         eliminarNota(nota8.Tag)
+    End Sub
+
+
+    Private Sub picEditar1_Click(sender As Object, e As EventArgs) Handles picEditar1.Click
+        modificarNota(nota1.Tag)
+    End Sub
+    Private Sub picEditar2_Click(sender As Object, e As EventArgs) Handles picEditar2.Click
+        modificarNota(nota2.Tag)
+    End Sub
+    Private Sub picEditar3_Click(sender As Object, e As EventArgs) Handles picEditar3.Click
+        modificarNota(nota3.Tag)
+    End Sub
+
+    Private Sub picEditar4_Click(sender As Object, e As EventArgs) Handles picEditar4.Click
+        modificarNota(nota4.Tag)
+    End Sub
+    Private Sub picEditar5_Click(sender As Object, e As EventArgs) Handles picEditar5.Click
+        modificarNota(nota5.Tag)
+    End Sub
+    Private Sub picEditar6_Click(sender As Object, e As EventArgs) Handles picEditar6.Click
+        modificarNota(nota6.Tag)
+    End Sub
+    Private Sub picEditar7_Click(sender As Object, e As EventArgs) Handles picEditar7.Click
+        modificarNota(nota7.Tag)
+    End Sub
+    Private Sub picEditar8_Click(sender As Object, e As EventArgs) Handles picEditar8.Click
+        modificarNota(nota8.Tag)
     End Sub
 End Class

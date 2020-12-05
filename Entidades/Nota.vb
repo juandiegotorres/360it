@@ -67,4 +67,26 @@ Public Class Nota
             Return False
         End Try
     End Function
+    Public Sub traerNotaModificar(ByVal tabla As DataTable, ByRef id As UInt64)
+        Try
+            Dim consultaSQL As String = "SELECT * FROM notas WHERE idnota = " & id
+            eCapaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Function guardarNotaModificada()
+        Try
+            Dim ComandoSQL As String = "UPDATE notas SET nota = @nota, color = @color WHERE idnota = @id"
+            Dim sqlcomando As MySqlCommand = New MySqlCommand(ComandoSQL)
+            sqlcomando.Parameters.Add("@id", MySqlDbType.Int64).Value = Me.idNota
+            sqlcomando.Parameters.Add("@nota", MySqlDbType.VarChar).Value = Me.nota
+            sqlcomando.Parameters.Add("@color", MySqlDbType.Int16).Value = Me.color
+            eCapaDatos.cargarDatos(sqlcomando)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
 End Class
