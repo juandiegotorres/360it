@@ -24,7 +24,7 @@ Partial Class frmPrincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnNotas = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.panelCost = New System.Windows.Forms.Panel()
         Me.btnProveedores = New System.Windows.Forms.Button()
@@ -66,7 +66,7 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.btnNotas)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.panelCost)
         Me.Panel1.Controls.Add(Me.btnProveedores)
@@ -83,28 +83,34 @@ Partial Class frmPrincipal
         Me.Panel1.Size = New System.Drawing.Size(209, 703)
         Me.Panel1.TabIndex = 0
         '
-        'Button2
+        'btnNotas
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(52, 595)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(84, 28)
-        Me.Button2.TabIndex = 43
-        Me.Button2.Text = "WEB"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnNotas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnNotas.FlatAppearance.BorderSize = 0
+        Me.btnNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNotas.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNotas.ForeColor = System.Drawing.Color.White
+        Me.btnNotas.Image = CType(resources.GetObject("btnNotas.Image"), System.Drawing.Image)
+        Me.btnNotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNotas.Location = New System.Drawing.Point(0, 488)
+        Me.btnNotas.Name = "btnNotas"
+        Me.btnNotas.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnNotas.Size = New System.Drawing.Size(209, 45)
+        Me.btnNotas.TabIndex = 44
+        Me.btnNotas.Text = "     Notas"
+        Me.btnNotas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNotas.UseVisualStyleBackColor = True
         '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(52, 629)
+        Me.Button1.Location = New System.Drawing.Point(28, 629)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 28)
+        Me.Button1.Size = New System.Drawing.Size(155, 28)
         Me.Button1.TabIndex = 42
-        Me.Button1.Text = "WEB"
+        Me.Button1.Text = "OPCIONES"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'panelCost
@@ -307,9 +313,9 @@ Partial Class frmPrincipal
         Me.btnWEB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnWEB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnWEB.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnWEB.Location = New System.Drawing.Point(52, 663)
+        Me.btnWEB.Location = New System.Drawing.Point(28, 663)
         Me.btnWEB.Name = "btnWEB"
-        Me.btnWEB.Size = New System.Drawing.Size(84, 28)
+        Me.btnWEB.Size = New System.Drawing.Size(155, 28)
         Me.btnWEB.TabIndex = 5
         Me.btnWEB.Text = "WEB"
         Me.btnWEB.UseVisualStyleBackColor = True
@@ -506,5 +512,5 @@ Partial Class frmPrincipal
     Friend WithEvents btnProductos As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnNotas As Button
 End Class

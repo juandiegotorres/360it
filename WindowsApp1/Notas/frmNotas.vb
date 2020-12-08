@@ -1,6 +1,7 @@
 ﻿Public Class frmNotas
     'El formulario Notas esta estructurado con tres tablelayoutpanel, de los cuales 1 tiene el titulo, otro la paginacion y el de en medio (TableLayoutPanel2) contiene las notas, este esta dividido en 4 columnas y dos filas de las cuales cada una tiene un dos paneles (uno contenedor y otro header), un textbox dentro del panel contenedor y tres imagenes y un label en el panel header. Todos los controles situados dentro del panel tienen el mismo nombre cambiando su numero identificador al final (nota1,2,3, etc | fecha1,2,3 etc | headernota1,2,3, etc)
     Dim eNotas As New Entidades.Nota
+    Dim cantidadNotas, cantidadPaginas, paginaActual, a As UInt32
     Dim tablaNotas As New DataTable
     Dim _control As Control
     Dim _control2 As Control
@@ -9,7 +10,13 @@
     Dim nombreLabel, numeroDePanel, nombreTextbox As String
     Dim numeroDeFilas As Integer
     Private Sub frmNotas_Load(sender As Object, e As EventArgs) Handles Me.Load
-        cargarNotas()
+
+        paginaActual = 1
+        If cantidadPaginas = paginaActual Then
+            linkSiguiente.Enabled = False
+        End If
+
+        cargarNotas(0)
     End Sub
     Public Sub colorPanelHeader(ByRef idColor As UInt16, ByRef panelHeader As Panel)
         Select Case idColor
@@ -49,9 +56,14 @@
                 txtNota.BackColor = Color.Thistle
         End Select
     End Sub
-    Public Sub cargarNotas()
+    Public Sub cargarNotas(ByRef offset As UInt32)
         tablaNotas.Clear()
-        eNotas.traerNotas(tablaNotas)
+        eNotas.contarNotas(tablaNotas)
+        cantidadNotas = tablaNotas.Rows(0).Item("cantidad").ToString
+        'Redondea el resultado hacia arriba
+        cantidadPaginas = Math.Ceiling(cantidadNotas / 8)
+        tablaNotas.Clear()
+        eNotas.traerNotas(tablaNotas, offset)
         numeroDeFilas = tablaNotas.Rows.Count
         For Each _control In TableLayoutPanel2.Controls
             If TypeOf _control Is Panel Then
@@ -92,14 +104,21 @@
     Public Sub eliminarNota(ByRef id As Integer)
         If MsgBox("¿Desea dar de baja esta nota?", MsgBoxStyle.YesNo, "Notas") = MsgBoxResult.Yes Then
             eNotas.bajaNota(id)
-            cargarNotas()
+            cargarNotas(0)
+            paginaActual = 1
+            If paginaActual < cantidadPaginas Then
+                linkSiguiente.Enabled = True
+            End If
+            pag1.BackColor = Color.DarkOrange
+            pag2.BackColor = Color.Transparent
+            pag3.BackColor = Color.Transparent
         End If
     End Sub
     Public Sub modificarNota(ByRef id As Integer)
         Dim mdfNota As New frmNuevaNota(id, True)
         mdfNota.ShowDialog()
         If mdfNota.DialogResult = DialogResult.OK Then
-            cargarNotas()
+            cargarNotas(0)
         End If
     End Sub
     Private Sub picEliminar1_Click(sender As Object, e As EventArgs) Handles picEliminar1.Click
@@ -130,12 +149,11 @@
         Dim nuevaNota As New frmNuevaNota
         nuevaNota.ShowDialog()
         If nuevaNota.DialogResult = DialogResult.OK Then
-            cargarNotas()
+            cargarNotas(0)
         End If
     End Sub
     Private Sub picEliminar7_Click(sender As Object, e As EventArgs) Handles picEliminar7.Click
         eliminarNota(nota7.Tag)
-
     End Sub
 
 
@@ -157,12 +175,73 @@
     Private Sub picEditar4_Click(sender As Object, e As EventArgs) Handles picEditar4.Click
         modificarNota(nota4.Tag)
     End Sub
+
     Private Sub picEditar5_Click(sender As Object, e As EventArgs) Handles picEditar5.Click
         modificarNota(nota5.Tag)
     End Sub
     Private Sub picEditar6_Click(sender As Object, e As EventArgs) Handles picEditar6.Click
         modificarNota(nota6.Tag)
     End Sub
+    Private Sub linkAnterior_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkAnterior.LinkClicked
+        paginaActual = paginaActual - 1
+        If paginaActual = 1 Then
+            If paginaActual = cantidadPaginas Then
+                linkSiguiente.Enabled = False
+            Else
+                linkSiguiente.Enabled = True
+            End If
+            linkAnterior.Enabled = False
+            pag1.BackColor = Color.DarkOrange
+            pag2.BackColor = Color.Transparent
+            pag1.Text = "1"
+            cargarNotas(0)
+        End If
+        If paginaActual = 2 Then
+            pag2.BackColor = Color.DarkOrange
+            pag1.BackColor = Color.Transparent
+            pag3.BackColor = Color.Transparent
+            pag2.Text = "2"
+            linkAnterior.Enabled = True
+            cargarNotas(8)
+        ElseIf paginaActual = 3 Then
+            pag2.BackColor = Color.Transparent
+            pag1.Text = "1"
+            pag2.Text = "2"
+            pag3.Text = "3"
+            pag3.BackColor = Color.DarkOrange
+            linkAnterior.Enabled = True
+            cargarNotas(16)
+        ElseIf paginaActual > 3 Then
+            pag1.Text = CInt(pag1.Text) - 1
+            pag2.Text = CInt(pag2.Text) - 1
+            pag3.Text = CInt(pag3.Text) - 1
+            cargarNotas(paginaActual * 8)
+        End If
+    End Sub
+    Private Sub linkSiguiente_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkSiguiente.LinkClicked
+        paginaActual = paginaActual + 1
+        If paginaActual = cantidadPaginas Then
+            linkSiguiente.Enabled = False
+        End If
+        If paginaActual = 2 Then
+            pag2.BackColor = Color.DarkOrange
+            pag1.BackColor = Color.Transparent
+            linkAnterior.Enabled = True
+            cargarNotas(8)
+        ElseIf paginaActual = 3 Then
+            pag2.BackColor = Color.Transparent
+            pag3.BackColor = Color.DarkOrange
+            linkAnterior.Enabled = True
+            cargarNotas(16)
+        ElseIf paginaActual > 3 Then
+            pag1.Text = pag2.Text
+            pag2.Text = pag3.Text
+            pag3.Text = paginaActual
+            linkAnterior.Enabled = True
+            cargarNotas(8 * paginaActual)
+        End If
+    End Sub
+
     Private Sub picEditar7_Click(sender As Object, e As EventArgs) Handles picEditar7.Click
         modificarNota(nota7.Tag)
     End Sub

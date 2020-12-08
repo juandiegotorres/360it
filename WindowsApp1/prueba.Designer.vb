@@ -38,6 +38,11 @@ Partial Class prueba
         Me.picEditar8 = New System.Windows.Forms.PictureBox()
         Me.picEliminar8 = New System.Windows.Forms.PictureBox()
         Me.panelnota3 = New System.Windows.Forms.Panel()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
+        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.nota3 = New System.Windows.Forms.TextBox()
         Me.panelnota5 = New System.Windows.Forms.Panel()
         Me.nota5 = New System.Windows.Forms.TextBox()
@@ -84,11 +89,6 @@ Partial Class prueba
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.panelnota6.SuspendLayout()
         Me.headernota6.SuspendLayout()
@@ -101,6 +101,9 @@ Partial Class prueba
         CType(Me.picEditar8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelnota3.SuspendLayout()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelnota5.SuspendLayout()
         Me.headernota5.SuspendLayout()
         CType(Me.picGuardar5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,9 +135,6 @@ Partial Class prueba
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -346,6 +346,66 @@ Partial Class prueba
         Me.panelnota3.Name = "panelnota3"
         Me.panelnota3.Size = New System.Drawing.Size(260, 231)
         Me.panelnota3.TabIndex = 13
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox12.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox12.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
+        Me.PictureBox12.Location = New System.Drawing.Point(155, 0)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.PictureBox12.Size = New System.Drawing.Size(35, 35)
+        Me.PictureBox12.TabIndex = 17
+        Me.PictureBox12.TabStop = False
+        Me.PictureBox12.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(10, 5)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(10, 5, 3, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(70, 22)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Fecha8"
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox13.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox13.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.PictureBox13.Location = New System.Drawing.Point(190, 0)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.PictureBox13.Size = New System.Drawing.Size(35, 35)
+        Me.PictureBox13.TabIndex = 15
+        Me.PictureBox13.TabStop = False
+        '
+        'PictureBox14
+        '
+        Me.PictureBox14.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox14.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox14.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.PictureBox14.Location = New System.Drawing.Point(225, 0)
+        Me.PictureBox14.Name = "PictureBox14"
+        Me.PictureBox14.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
+        Me.PictureBox14.Size = New System.Drawing.Size(35, 35)
+        Me.PictureBox14.TabIndex = 14
+        Me.PictureBox14.TabStop = False
+        '
+        'Panel11
+        '
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel11.Location = New System.Drawing.Point(0, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(260, 35)
+        Me.Panel11.TabIndex = 18
         '
         'nota3
         '
@@ -882,66 +942,6 @@ Partial Class prueba
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox12
-        '
-        Me.PictureBox12.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox12.Image = Global.WindowsApp1.My.Resources.Resources.floppy_disk
-        Me.PictureBox12.Location = New System.Drawing.Point(155, 0)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.PictureBox12.Size = New System.Drawing.Size(35, 35)
-        Me.PictureBox12.TabIndex = 17
-        Me.PictureBox12.TabStop = False
-        Me.PictureBox12.Visible = False
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(10, 5)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(10, 5, 3, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(70, 22)
-        Me.Label6.TabIndex = 16
-        Me.Label6.Text = "Fecha8"
-        '
-        'PictureBox13
-        '
-        Me.PictureBox13.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox13.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox13.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.PictureBox13.Location = New System.Drawing.Point(190, 0)
-        Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.PictureBox13.Size = New System.Drawing.Size(35, 35)
-        Me.PictureBox13.TabIndex = 15
-        Me.PictureBox13.TabStop = False
-        '
-        'PictureBox14
-        '
-        Me.PictureBox14.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox14.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox14.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.PictureBox14.Location = New System.Drawing.Point(225, 0)
-        Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Padding = New System.Windows.Forms.Padding(6, 5, 0, 0)
-        Me.PictureBox14.Size = New System.Drawing.Size(35, 35)
-        Me.PictureBox14.TabIndex = 14
-        Me.PictureBox14.TabStop = False
-        '
-        'Panel11
-        '
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(260, 35)
-        Me.Panel11.TabIndex = 18
-        '
         'prueba
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -967,6 +967,9 @@ Partial Class prueba
         CType(Me.picEliminar8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota3.ResumeLayout(False)
         Me.panelnota3.PerformLayout()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelnota5.ResumeLayout(False)
         Me.panelnota5.PerformLayout()
         Me.headernota5.ResumeLayout(False)
@@ -1012,9 +1015,6 @@ Partial Class prueba
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

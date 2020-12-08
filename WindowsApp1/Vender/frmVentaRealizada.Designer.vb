@@ -36,13 +36,13 @@ Partial Class frmVentaRealizada
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(120, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(222, 44)
         Me.Label1.TabIndex = 36
-        Me.Label1.Text = "Facturación"
+        Me.Label1.Text = "Vender"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'pnlHeader
         '
@@ -106,9 +106,9 @@ Partial Class frmVentaRealizada
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.pnlHeader)
+        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmVentaRealizada"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

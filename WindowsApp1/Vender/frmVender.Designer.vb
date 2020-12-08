@@ -65,7 +65,6 @@ Partial Class frmVender
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtRecargo = New System.Windows.Forms.TextBox()
-        Me.txtDescuento = New System.Windows.Forms.TextBox()
         Me.rbRecargoPorcentaje = New System.Windows.Forms.RadioButton()
         Me.rbRecargoPlata = New System.Windows.Forms.RadioButton()
         Me.rbDescuentoPorcentaje = New System.Windows.Forms.RadioButton()
@@ -92,6 +91,7 @@ Partial Class frmVender
         Me.txtNroVenta = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtDescuento = New System.Windows.Forms.TextBox()
         gbProductos = New System.Windows.Forms.GroupBox()
         gbProductos.SuspendLayout()
         CType(Me.dgvProductosLista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -551,8 +551,8 @@ Partial Class frmVender
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.txtRecargo)
         Me.Panel1.Controls.Add(Me.txtDescuento)
+        Me.Panel1.Controls.Add(Me.txtRecargo)
         Me.Panel1.Controls.Add(Me.rbRecargoPorcentaje)
         Me.Panel1.Controls.Add(Me.rbRecargoPlata)
         Me.Panel1.Controls.Add(Me.rbDescuentoPorcentaje)
@@ -579,22 +579,6 @@ Partial Class frmVender
         Me.txtRecargo.Size = New System.Drawing.Size(93, 28)
         Me.txtRecargo.TabIndex = 61
         Me.txtRecargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtDescuento
-        '
-        Me.txtDescuento.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescuento.BackColor = System.Drawing.SystemColors.Window
-        Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDescuento.Enabled = False
-        Me.txtDescuento.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescuento.Location = New System.Drawing.Point(109, 12)
-        Me.txtDescuento.MaxLength = 9
-        Me.txtDescuento.Name = "txtDescuento"
-        Me.txtDescuento.Size = New System.Drawing.Size(93, 28)
-        Me.txtDescuento.TabIndex = 59
-        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'rbRecargoPorcentaje
         '
@@ -951,6 +935,21 @@ Partial Class frmVender
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Venta"
         '
+        'txtDescuento
+        '
+        Me.txtDescuento.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescuento.Enabled = False
+        Me.txtDescuento.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescuento.Location = New System.Drawing.Point(109, 12)
+        Me.txtDescuento.MaxLength = 9
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.Size = New System.Drawing.Size(93, 28)
+        Me.txtDescuento.TabIndex = 67
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'frmVender
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1008,7 +1007,6 @@ Partial Class frmVender
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtRecargo As TextBox
-    Friend WithEvents txtDescuento As TextBox
     Friend WithEvents rbRecargoPorcentaje As RadioButton
     Friend WithEvents rbRecargoPlata As RadioButton
     Friend WithEvents rbDescuentoPorcentaje As RadioButton
@@ -1043,4 +1041,5 @@ Partial Class frmVender
     Friend WithEvents btnCancelarCtaCorriente As Button
     Friend WithEvents txtClienteCtaCorriente As TextBox
     Friend WithEvents cbBuscador As ComboBox
+    Friend WithEvents txtDescuento As TextBox
 End Class

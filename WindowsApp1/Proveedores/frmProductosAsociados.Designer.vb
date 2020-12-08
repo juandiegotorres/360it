@@ -229,7 +229,6 @@ Partial Class frmProductosAsociados
         Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picCerrar.TabIndex = 48
         Me.picCerrar.TabStop = False
-        Me.picCerrar.Visible = False
         '
         'frmProductosAsociados
         '

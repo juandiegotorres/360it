@@ -3,7 +3,7 @@
     Public eProducto As New Entidades.Producto
     Dim bsProductos As New BindingSource
     Dim filtroBS, filtroElegido As String
-    Dim tablaProductos, tablaCategorias, tablaBuscador As New DataTable
+    Dim tablaProductos, tablaCategorias, tablaBuscador, tablaProductosPocoStock As New DataTable
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs)
         frmNuevoProducto.Show()
     End Sub
@@ -47,7 +47,10 @@
         txtBuscar.Text = ""
         filtroBS = ""
         tablaProductos.Clear()
+        tablaProductosPocoStock.Clear()
         eProducto.recuperarProductos(tablaProductos)
+        eProducto.productosPocoStock(tablaProductosPocoStock)
+        dgvProductosPocoStock.DataSource = tablaProductosPocoStock
         bsProductos.DataSource = tablaProductos
         dgvProductos.DataSource = bsProductos
     End Sub
@@ -86,10 +89,18 @@
 
     Private Sub btnBajaCancelar_Click(sender As Object, e As EventArgs) Handles btnBajaCancelar.Click
         eProducto.idProducto = dgvProductos.CurrentRow.Cells("id").Value
-        If MsgBox("¿Desea dar de baja este producto?", MsgBoxStyle.YesNo, "Productos") = MsgBoxResult.Yes Then
-            eProducto.bajaProducto()
-            actualizarProductos()
+        If dgvProductos.CurrentRow.Cells("cantidad").Value >= 1 Then
+            If MsgBox("Está a punto de dar de baja un producto con stock ¿Desea hacerlo de todas formas?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Productos") = MsgBoxResult.Yes Then
+                eProducto.bajaProducto()
+                actualizarProductos()
+            End If
+        Else
+            If MsgBox("¿Desea dar de baja este producto?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Productos") = MsgBoxResult.Yes Then
+                eProducto.bajaProducto()
+                actualizarProductos()
+            End If
         End If
+
     End Sub
 
     Private Sub btnAumentarPrecio_Click(sender As Object, e As EventArgs) Handles btnAumentarPrecio.Click

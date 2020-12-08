@@ -47,6 +47,20 @@ Public Class CuentaCorriente
         End Set
     End Property
 #Region "Metodos"
+    Public Function filtrarVentasCliente(ByRef tabla As DataTable)
+        Try
+            Dim consultaSQL As String = "Select movimientos.venta, concat_ws(' - ', movimientos.venta, date_format(fechaMovimiento, '%d/%m/%y')) as 'ventaFecha' from clientes inner join cuentascorriente on clientes.idcliente = cuentascorriente.cliente inner join movimientos on cuentascorriente.idCuenta = movimientos.cuentacorriente inner join ventas ON movimientos.venta = ventas.idventa WHERE cuentascorriente.cliente = '" & _idCliente & "' group by venta order by fechaMovimiento DESC"
+            capaDatos.llenarDatos(tabla, consultaSQL)
+            If tabla.Rows.Count = 0 Then
+                Return False
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, "Cuentas Corriente")
+            Return False
+        End Try
+    End Function
     Public Function verCuentaCliente(ByVal tabla As DataTable)
         Try
             Dim consultaSQL As String = "CALL verMovimientoCuenta(" & _idCliente & ")"

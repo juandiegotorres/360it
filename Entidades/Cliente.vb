@@ -19,6 +19,15 @@ Public Class Cliente
             _nombApel = value
         End Set
     End Property
+    Private _dni As String
+    Public Property dni As String
+        Set(value As String)
+            _dni = value
+        End Set
+        Get
+            Return _dni
+        End Get
+    End Property
     Private _idLocalidad As UInt16
     Public Property idLocalidad As UInt16
         Get
@@ -107,9 +116,10 @@ Public Class Cliente
     End Sub
     Public Sub guardarCliente()
         Try
-            Dim comandoSQL As String = "Insert into clientes(nombreapel, direccion, localidad, provincia, telefono, fechaCreacion, fechaModificacion, activo) VALUES (@nombreApel,@direccion,@localidad,@provincia,@telefono, @fechaCreacion, @fechaModificacion,'1')"
+            Dim comandoSQL As String = "Insert into clientes(nombreapel, dni, direccion, localidad, provincia, telefono, fechaCreacion, fechaModificacion, activo) VALUES (@nombreApel,@dni,@direccion,@localidad,@provincia,@telefono, @fechaCreacion, @fechaModificacion,'1')"
             Dim sqlcomando As MySqlCommand = New MySqlCommand(comandoSQL)
             sqlcomando.Parameters.Add("@nombreApel", MySqlDbType.VarChar).Value = Me.nombApel
+            sqlcomando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = Me.dni
             sqlcomando.Parameters.Add("@direccion", MySqlDbType.VarChar).Value = Me.direccion
             sqlcomando.Parameters.Add("@localidad", MySqlDbType.Int16).Value = Me.idLocalidad
             sqlcomando.Parameters.Add("@provincia", MySqlDbType.Int16).Value = Me.idProvincia
@@ -149,6 +159,7 @@ Public Class Cliente
             capaDatosPrueba.llenarDatos(tabla, consultaSQL)
             If tabla.Rows.Count = 1 Then
                 _nombApel = tabla.Rows(0).Item("nombreApel").ToString
+                _dni = tabla.Rows(0).Item("dni").ToString
                 _telefono = tabla.Rows(0).Item("telefono").ToString
                 _direccion = tabla.Rows(0).Item("direccion").ToString
                 _idProvincia = tabla.Rows(0).Item("provincia").ToString
@@ -161,9 +172,10 @@ Public Class Cliente
     End Sub
     Public Sub guardarClienteModif()
         Try
-            Dim comandoSQL As String = "UPDATE clientes SET nombreApel =  @nombreApel, direccion = @direccion, localidad = @localidad, provincia = @provincia, telefono = @telefono, fechaModificacion = @fechaModificacion WHERE idCliente = '" & _idCliente & "'"
+            Dim comandoSQL As String = "UPDATE clientes SET nombreApel =  @nombreApel, dni = @dni, direccion = @direccion, localidad = @localidad, provincia = @provincia, telefono = @telefono, fechaModificacion = @fechaModificacion WHERE idCliente = '" & _idCliente & "'"
             Dim sqlcomando As MySqlCommand = New MySqlCommand(comandoSQL)
             sqlcomando.Parameters.Add("@nombreApel", MySqlDbType.VarChar).Value = Me.nombApel
+            sqlcomando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = Me.dni
             sqlcomando.Parameters.Add("@direccion", MySqlDbType.VarChar).Value = Me.direccion
             sqlcomando.Parameters.Add("@localidad", MySqlDbType.Int16).Value = Me.idLocalidad
             sqlcomando.Parameters.Add("@provincia", MySqlDbType.Int16).Value = Me.idProvincia

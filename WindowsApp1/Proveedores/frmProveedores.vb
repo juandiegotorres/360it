@@ -4,6 +4,7 @@
 
     Public eProveedor As New Entidades.Proveedor
     Private _producto As Boolean
+    Dim tablaRubros, tablaFormPago As New DataTable
     Public Property producto As Boolean
         Set(value As Boolean)
             _producto = value
@@ -14,10 +15,10 @@
     End Property
     Private Sub FrmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarProveedores()
-        eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
-        actualizarRubros()
+        actualizarRubrosYFormPago()
         dgvProveedores.Select()
         If producto = True Then
+            btnProductosAsociados.Visible = False
             picCerrar.Visible = True
             btnAgregarSeleccionar.Text = "Aceptar"
             btnAgregarSeleccionar.Image = My.Resources.seleccionar
@@ -37,28 +38,19 @@
     End Sub
     'Dim a As UInt16 = dgvProveedores.Width
     Public Sub actualizarRubros()
-        Dim tabla As New DataTable
-        eProveedor.verRubrosProveedor(tabla)
-        dgvRubros.DataSource = tabla
+        tablaRubros.Clear()
+        eProveedor.verRubrosProveedor(tablaRubros)
+        dgvRubros.DataSource = tablaRubros
         dgvRubros.ClearSelection()
     End Sub
+    Public Sub actualizarFormPago()
+        tablaFormPago.Clear()
+        eProveedor.verFormPagoProveedor(tablaFormPago)
+        dgvFormPago.DataSource = tablaFormPago
+        dgvFormPago.ClearSelection()
+    End Sub
 
-    'Private Sub BtnVerRubros_Click(sender As Object, e As EventArgs)
-    '    If dgvRubros.Visible = False Then
-    '        eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
-    '        dgvProveedores.Width = 790%
-    '        dgvRubros.Visible = True
-    '        btnOcultarRubros.Visible = True
-    '        actualizarRubros()
-    '    Else
-    '        eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
-    '        dgvProveedores.Width = 1000%
-    '        dgvRubros.Visible = False
-    '        btnOcultarRubros.Visible = False
 
-    '    End If
-
-    'End Sub
 
     Private Sub picCerrar_Click(sender As Object, e As EventArgs)
         Me.Close()
@@ -66,27 +58,18 @@
     End Sub
 
 
-    'Private Sub BtnAgregar2_Click(sender As Object, e As EventArgs)
-    '    frmPrincipal.Hide()
-    '    Dim nuevoProovedor As New frmNuevoProveedor
-    '    nuevoProovedor.ShowDialog()
-    '    If nuevoProovedor.DialogResult = DialogResult.OK Then
-    '        frmPrincipal.Show()
-    '    End If
-    'End Sub
-
-
-
-
-
     Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         filtroBS = "nombreProveedor like '%" & txtBuscar.Text & "%'"
         bsProveedores.Filter = filtroBS
     End Sub
-
-    Private Sub dgvProveedores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick
+    Public Sub actualizarRubrosYFormPago()
         eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idProveedor").Value
         actualizarRubros()
+        actualizarFormPago()
+    End Sub
+
+    Private Sub dgvProveedores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick
+        actualizarRubrosYFormPago()
     End Sub
 
     Private Sub btnAgregarSeleccionar_Click(sender As Object, e As EventArgs) Handles btnAgregarSeleccionar.Click
@@ -115,6 +98,7 @@
             .ShowDialog()
             If DialogResult.OK Then
                 actualizarProveedores()
+                actualizarRubrosYFormPago()
             End If
         End With
     End Sub
@@ -125,10 +109,11 @@
             Me.Close()
             frmNuevoProducto.Show()
         Else
-            If MsgBox("¿Desea dar de baja este proveedor?", MsgBoxStyle.YesNo, "Proveedores") = MsgBoxResult.Yes Then
+            If MsgBox("¿Desea dar de baja este proveedor?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Proveedores") = MsgBoxResult.Yes Then
                 eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
                 eProveedor.bajaProveedor()
                 actualizarProveedores()
+                actualizarRubrosYFormPago()
             End If
         End If
     End Sub
@@ -160,4 +145,5 @@
         Dim productosXproveedor As New frmProductosAsociados(dgvProveedores.CurrentRow.Cells("idProveedor").Value)
         productosXproveedor.Show()
     End Sub
+
 End Class

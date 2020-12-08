@@ -91,7 +91,7 @@
             If dgvClientes.CurrentRow.Selected = False Then
                 MsgBox("No hay ningun cliente seleccionado", MsgBoxStyle.Information, "Clientes")
             Else
-                If MsgBox("¿Desea dar de baja este cliente?", MsgBoxStyle.YesNo, "Clientes") = MsgBoxResult.Yes Then
+                If MsgBox("¿Desea dar de baja este cliente?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Clientes") = MsgBoxResult.Yes Then
                     eCliente.idCliente = dgvClientes.CurrentRow.Cells("idcliente").Value
                     eCliente.bajaCliente()
                     actualizarClientes()

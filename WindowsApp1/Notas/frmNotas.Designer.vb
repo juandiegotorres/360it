@@ -83,6 +83,12 @@ Partial Class frmNotas
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pag1 = New System.Windows.Forms.Label()
+        Me.pag2 = New System.Windows.Forms.Label()
+        Me.pag3 = New System.Windows.Forms.Label()
+        Me.linkSiguiente = New System.Windows.Forms.LinkLabel()
+        Me.linkAnterior = New System.Windows.Forms.LinkLabel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.panelnota4.SuspendLayout()
@@ -126,6 +132,7 @@ Partial Class frmNotas
         CType(Me.picEditar6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEliminar6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -134,6 +141,7 @@ Partial Class frmNotas
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 4)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(10, 10, 11, 10)
@@ -906,6 +914,78 @@ Partial Class frmNotas
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "NOTAS"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.linkAnterior)
+        Me.Panel1.Controls.Add(Me.linkSiguiente)
+        Me.Panel1.Controls.Add(Me.pag3)
+        Me.Panel1.Controls.Add(Me.pag2)
+        Me.Panel1.Controls.Add(Me.pag1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 524)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1019, 37)
+        Me.Panel1.TabIndex = 46
+        '
+        'pag1
+        '
+        Me.pag1.AutoSize = True
+        Me.pag1.BackColor = System.Drawing.Color.DarkOrange
+        Me.pag1.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pag1.Location = New System.Drawing.Point(475, 4)
+        Me.pag1.Name = "pag1"
+        Me.pag1.Size = New System.Drawing.Size(19, 26)
+        Me.pag1.TabIndex = 0
+        Me.pag1.Text = "1"
+        '
+        'pag2
+        '
+        Me.pag2.AutoSize = True
+        Me.pag2.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pag2.Location = New System.Drawing.Point(500, 4)
+        Me.pag2.Name = "pag2"
+        Me.pag2.Size = New System.Drawing.Size(23, 26)
+        Me.pag2.TabIndex = 1
+        Me.pag2.Text = "2"
+        '
+        'pag3
+        '
+        Me.pag3.AutoSize = True
+        Me.pag3.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pag3.Location = New System.Drawing.Point(529, 4)
+        Me.pag3.Name = "pag3"
+        Me.pag3.Size = New System.Drawing.Size(23, 26)
+        Me.pag3.TabIndex = 2
+        Me.pag3.Text = "3"
+        '
+        'linkSiguiente
+        '
+        Me.linkSiguiente.ActiveLinkColor = System.Drawing.Color.DarkOrange
+        Me.linkSiguiente.AutoSize = True
+        Me.linkSiguiente.Font = New System.Drawing.Font("Montserrat Medium", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.linkSiguiente.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.linkSiguiente.Location = New System.Drawing.Point(577, 9)
+        Me.linkSiguiente.Name = "linkSiguiente"
+        Me.linkSiguiente.Size = New System.Drawing.Size(81, 18)
+        Me.linkSiguiente.TabIndex = 4
+        Me.linkSiguiente.TabStop = True
+        Me.linkSiguiente.Text = "Siguiente"
+        '
+        'linkAnterior
+        '
+        Me.linkAnterior.ActiveLinkColor = System.Drawing.Color.DarkOrange
+        Me.linkAnterior.AutoSize = True
+        Me.linkAnterior.Enabled = False
+        Me.linkAnterior.Font = New System.Drawing.Font("Montserrat Medium", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.linkAnterior.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.linkAnterior.Location = New System.Drawing.Point(382, 10)
+        Me.linkAnterior.Name = "linkAnterior"
+        Me.linkAnterior.Size = New System.Drawing.Size(70, 18)
+        Me.linkAnterior.TabIndex = 5
+        Me.linkAnterior.TabStop = True
+        Me.linkAnterior.Text = "Anterior"
+        '
         'frmNotas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -975,6 +1055,8 @@ Partial Class frmNotas
         CType(Me.picEliminar6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1040,4 +1122,10 @@ Partial Class frmNotas
     Friend WithEvents picEditar1 As PictureBox
     Friend WithEvents picEliminar1 As PictureBox
     Friend WithEvents btnAgregarSeleccionar As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents linkAnterior As LinkLabel
+    Friend WithEvents linkSiguiente As LinkLabel
+    Friend WithEvents pag3 As Label
+    Friend WithEvents pag2 As Label
+    Friend WithEvents pag1 As Label
 End Class

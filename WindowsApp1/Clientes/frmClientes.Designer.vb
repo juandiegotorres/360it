@@ -26,13 +26,6 @@ Partial Class frmClientes
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
-        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreApel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
@@ -45,6 +38,14 @@ Partial Class frmClientes
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreApel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -74,7 +75,7 @@ Partial Class frmClientes
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         Me.dgvClientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.idLocalidad, Me.provincia, Me.nombreApel, Me.telefono, Me.direccion, Me.nombLocalidad})
+        Me.dgvClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.idLocalidad, Me.provincia, Me.nombreApel, Me.dni, Me.telefono, Me.direccion, Me.nombLocalidad})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -103,60 +104,6 @@ Partial Class frmClientes
         Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvClientes.Size = New System.Drawing.Size(981, 338)
         Me.dgvClientes.TabIndex = 0
-        '
-        'idCliente
-        '
-        Me.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.idCliente.DataPropertyName = "idCliente"
-        Me.idCliente.HeaderText = "ID "
-        Me.idCliente.Name = "idCliente"
-        Me.idCliente.ReadOnly = True
-        Me.idCliente.Visible = False
-        '
-        'idLocalidad
-        '
-        Me.idLocalidad.DataPropertyName = "localidad"
-        Me.idLocalidad.HeaderText = "ID Localidad"
-        Me.idLocalidad.Name = "idLocalidad"
-        Me.idLocalidad.ReadOnly = True
-        Me.idLocalidad.Visible = False
-        '
-        'provincia
-        '
-        Me.provincia.DataPropertyName = "provincia"
-        Me.provincia.HeaderText = "ID Provincia"
-        Me.provincia.Name = "provincia"
-        Me.provincia.ReadOnly = True
-        Me.provincia.Visible = False
-        '
-        'nombreApel
-        '
-        Me.nombreApel.DataPropertyName = "nombreApel"
-        Me.nombreApel.HeaderText = "Nombre y Apellido"
-        Me.nombreApel.Name = "nombreApel"
-        Me.nombreApel.ReadOnly = True
-        '
-        'telefono
-        '
-        Me.telefono.DataPropertyName = "telefono"
-        Me.telefono.HeaderText = "Teléfono"
-        Me.telefono.Name = "telefono"
-        Me.telefono.ReadOnly = True
-        '
-        'direccion
-        '
-        Me.direccion.DataPropertyName = "direccion"
-        Me.direccion.HeaderText = "Dirección"
-        Me.direccion.Name = "direccion"
-        Me.direccion.ReadOnly = True
-        '
-        'nombLocalidad
-        '
-        Me.nombLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nombLocalidad.DataPropertyName = "nombLocalidad"
-        Me.nombLocalidad.HeaderText = "Localidad"
-        Me.nombLocalidad.Name = "nombLocalidad"
-        Me.nombLocalidad.ReadOnly = True
         '
         'TableLayoutPanel1
         '
@@ -352,6 +299,67 @@ Partial Class frmClientes
         Me.Label1.TabIndex = 40
         Me.Label1.Text = "CLIENTES"
         '
+        'idCliente
+        '
+        Me.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.idCliente.DataPropertyName = "idCliente"
+        Me.idCliente.HeaderText = "ID "
+        Me.idCliente.Name = "idCliente"
+        Me.idCliente.ReadOnly = True
+        Me.idCliente.Visible = False
+        '
+        'idLocalidad
+        '
+        Me.idLocalidad.DataPropertyName = "localidad"
+        Me.idLocalidad.HeaderText = "ID Localidad"
+        Me.idLocalidad.Name = "idLocalidad"
+        Me.idLocalidad.ReadOnly = True
+        Me.idLocalidad.Visible = False
+        '
+        'provincia
+        '
+        Me.provincia.DataPropertyName = "provincia"
+        Me.provincia.HeaderText = "ID Provincia"
+        Me.provincia.Name = "provincia"
+        Me.provincia.ReadOnly = True
+        Me.provincia.Visible = False
+        '
+        'nombreApel
+        '
+        Me.nombreApel.DataPropertyName = "nombreApel"
+        Me.nombreApel.HeaderText = "Nombre y Apellido"
+        Me.nombreApel.Name = "nombreApel"
+        Me.nombreApel.ReadOnly = True
+        '
+        'dni
+        '
+        Me.dni.DataPropertyName = "dni"
+        Me.dni.HeaderText = "DNI"
+        Me.dni.Name = "dni"
+        Me.dni.ReadOnly = True
+        '
+        'telefono
+        '
+        Me.telefono.DataPropertyName = "telefono"
+        Me.telefono.HeaderText = "Teléfono"
+        Me.telefono.Name = "telefono"
+        Me.telefono.ReadOnly = True
+        '
+        'direccion
+        '
+        Me.direccion.DataPropertyName = "direccion"
+        Me.direccion.HeaderText = "Dirección"
+        Me.direccion.Name = "direccion"
+        Me.direccion.ReadOnly = True
+        '
+        'nombLocalidad
+        '
+        Me.nombLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.nombLocalidad.DataPropertyName = "nombLocalidad"
+        Me.nombLocalidad.HeaderText = "Localidad"
+        Me.nombLocalidad.Name = "nombLocalidad"
+        Me.nombLocalidad.ReadOnly = True
+        '
         'frmClientes
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -376,13 +384,6 @@ Partial Class frmClientes
 
     End Sub
     Friend WithEvents dgvClientes As DataGridView
-    Friend WithEvents idCliente As DataGridViewTextBoxColumn
-    Friend WithEvents idLocalidad As DataGridViewTextBoxColumn
-    Friend WithEvents provincia As DataGridViewTextBoxColumn
-    Friend WithEvents nombreApel As DataGridViewTextBoxColumn
-    Friend WithEvents telefono As DataGridViewTextBoxColumn
-    Friend WithEvents direccion As DataGridViewTextBoxColumn
-    Friend WithEvents nombLocalidad As DataGridViewTextBoxColumn
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtBuscar As TextBox
@@ -395,4 +396,12 @@ Partial Class frmClientes
     Friend WithEvents btnAgregarSeleccionar As Button
     Friend WithEvents btnBajaCancelar As Button
     Friend WithEvents btnModificar As Button
+    Friend WithEvents idCliente As DataGridViewTextBoxColumn
+    Friend WithEvents idLocalidad As DataGridViewTextBoxColumn
+    Friend WithEvents provincia As DataGridViewTextBoxColumn
+    Friend WithEvents nombreApel As DataGridViewTextBoxColumn
+    Friend WithEvents dni As DataGridViewTextBoxColumn
+    Friend WithEvents telefono As DataGridViewTextBoxColumn
+    Friend WithEvents direccion As DataGridViewTextBoxColumn
+    Friend WithEvents nombLocalidad As DataGridViewTextBoxColumn
 End Class

@@ -21,6 +21,7 @@
             lblTitulo.Text = "Modificar Cliente"
             eCliente.modificarCliente()
             txtNomApel.Text = eCliente.nombApel
+            txtDNI.Text = eCliente.dni
             txtTelefono.Text = eCliente.telefono
             txtDireccion.Text = eCliente.direccion
             cbProvincias.SelectedValue = eCliente.idProvincia
@@ -77,6 +78,7 @@
             eCliente.telefono = txtTelefono.Text
             eCliente.direccion = txtDireccion.Text
             eCliente.idProvincia = cbProvincias.SelectedValue
+            eCliente.dni = txtDNI.Text
             If _modificar = False Then
                 eCliente.fechaCreacion = Date.Now
                 eCliente.fechaModificacion = Date.Now
@@ -158,6 +160,14 @@
         MyBase.OnPaintBackground(e)
         Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
         e.Graphics.DrawRectangle(Pens.Black, rect)
+    End Sub
+
+    Private Sub txtDNI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDNI.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 
 

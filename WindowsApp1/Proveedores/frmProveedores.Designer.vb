@@ -28,43 +28,48 @@ Partial Class frmProveedores
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
+        Me.btnBajaCancelar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.pnlHeader = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgvProveedores = New System.Windows.Forms.DataGridView()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnProductosAsociados = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.dgvFormPago = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvRubros = New System.Windows.Forms.DataGridView()
+        Me.rubros = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idrubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cbu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.formPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.horario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.dgvRubros = New System.Windows.Forms.DataGridView()
-        Me.rubros = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idrubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnProductosAsociados = New System.Windows.Forms.Button()
-        Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
-        Me.btnBajaCancelar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel6.SuspendLayout()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvFormPago, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -106,6 +111,66 @@ Partial Class frmProveedores
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1009, 64)
         Me.TableLayoutPanel3.TabIndex = 47
+        '
+        'btnAgregarSeleccionar
+        '
+        Me.btnAgregarSeleccionar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAgregarSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregarSeleccionar.FlatAppearance.BorderSize = 2
+        Me.btnAgregarSeleccionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregarSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnAgregarSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarSeleccionar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarSeleccionar.ForeColor = System.Drawing.Color.Black
+        Me.btnAgregarSeleccionar.Image = Global.WindowsApp1.My.Resources.Resources.add__1_
+        Me.btnAgregarSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAgregarSeleccionar.Location = New System.Drawing.Point(682, 10)
+        Me.btnAgregarSeleccionar.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnAgregarSeleccionar.Name = "btnAgregarSeleccionar"
+        Me.btnAgregarSeleccionar.Size = New System.Drawing.Size(317, 44)
+        Me.btnAgregarSeleccionar.TabIndex = 36
+        Me.btnAgregarSeleccionar.Text = "Agregar"
+        Me.btnAgregarSeleccionar.UseVisualStyleBackColor = True
+        '
+        'btnBajaCancelar
+        '
+        Me.btnBajaCancelar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnBajaCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBajaCancelar.FlatAppearance.BorderSize = 2
+        Me.btnBajaCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBajaCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnBajaCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBajaCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBajaCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btnBajaCancelar.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
+        Me.btnBajaCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBajaCancelar.Location = New System.Drawing.Point(346, 10)
+        Me.btnBajaCancelar.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnBajaCancelar.Name = "btnBajaCancelar"
+        Me.btnBajaCancelar.Size = New System.Drawing.Size(316, 44)
+        Me.btnBajaCancelar.TabIndex = 37
+        Me.btnBajaCancelar.Text = "Baja"
+        Me.btnBajaCancelar.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnModificar.FlatAppearance.BorderSize = 2
+        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Image = Global.WindowsApp1.My.Resources.Resources.edit
+        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModificar.Location = New System.Drawing.Point(10, 10)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(316, 44)
+        Me.btnModificar.TabIndex = 38
+        Me.btnModificar.Text = "Modificación"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'pnlHeader
         '
@@ -183,6 +248,21 @@ Partial Class frmProveedores
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "PROVEEDORES"
         '
+        'picCerrar
+        '
+        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.picCerrar.Location = New System.Drawing.Point(1005, 0)
+        Me.picCerrar.Margin = New System.Windows.Forms.Padding(0)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(27, 26)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCerrar.TabIndex = 41
+        Me.picCerrar.TabStop = False
+        Me.picCerrar.Visible = False
+        '
         'TableLayoutPanel5
         '
         Me.TableLayoutPanel5.ColumnCount = 2
@@ -218,7 +298,7 @@ Partial Class frmProveedores
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvProveedores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProveedor, Me.nombre, Me.telefono, Me.cbu, Me.direccion, Me.formPago, Me.horario})
+        Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProveedor, Me.nombre, Me.telefono, Me.cbu, Me.direccion, Me.horario})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -241,6 +321,169 @@ Partial Class frmProveedores
         Me.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProveedores.Size = New System.Drawing.Size(800, 371)
         Me.dgvProveedores.TabIndex = 34
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 1
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.btnProductosAsociados, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel6, 0, 0)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(832, 0)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(197, 386)
+        Me.TableLayoutPanel2.TabIndex = 35
+        '
+        'btnProductosAsociados
+        '
+        Me.btnProductosAsociados.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnProductosAsociados.BackColor = System.Drawing.Color.Transparent
+        Me.btnProductosAsociados.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnProductosAsociados.FlatAppearance.BorderSize = 2
+        Me.btnProductosAsociados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnProductosAsociados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProductosAsociados.Font = New System.Drawing.Font("Poppins SemiBold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProductosAsociados.ForeColor = System.Drawing.Color.Black
+        Me.btnProductosAsociados.Location = New System.Drawing.Point(14, 316)
+        Me.btnProductosAsociados.Margin = New System.Windows.Forms.Padding(14, 5, 24, 10)
+        Me.btnProductosAsociados.Name = "btnProductosAsociados"
+        Me.btnProductosAsociados.Size = New System.Drawing.Size(159, 60)
+        Me.btnProductosAsociados.TabIndex = 46
+        Me.btnProductosAsociados.Text = "Productos asociados"
+        Me.btnProductosAsociados.UseVisualStyleBackColor = False
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 1
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.dgvFormPago, 0, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.dgvRubros, 0, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 2
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.47541!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.52459!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(191, 305)
+        Me.TableLayoutPanel6.TabIndex = 47
+        '
+        'dgvFormPago
+        '
+        Me.dgvFormPago.AllowUserToAddRows = False
+        Me.dgvFormPago.AllowUserToDeleteRows = False
+        Me.dgvFormPago.AllowUserToOrderColumns = True
+        Me.dgvFormPago.AllowUserToResizeRows = False
+        Me.dgvFormPago.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvFormPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvFormPago.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvFormPago.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFormPago.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvFormPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvFormPago.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1})
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvFormPago.DefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvFormPago.EnableHeadersVisualStyles = False
+        Me.dgvFormPago.Location = New System.Drawing.Point(14, 162)
+        Me.dgvFormPago.Margin = New System.Windows.Forms.Padding(14, 5, 24, 10)
+        Me.dgvFormPago.MultiSelect = False
+        Me.dgvFormPago.Name = "dgvFormPago"
+        Me.dgvFormPago.ReadOnly = True
+        Me.dgvFormPago.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvFormPago.RowHeadersVisible = False
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        Me.dgvFormPago.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvFormPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvFormPago.Size = New System.Drawing.Size(153, 133)
+        Me.dgvFormPago.TabIndex = 42
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "nombFormaPago"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Formas de Pago"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'dgvRubros
+        '
+        Me.dgvRubros.AllowUserToAddRows = False
+        Me.dgvRubros.AllowUserToDeleteRows = False
+        Me.dgvRubros.AllowUserToOrderColumns = True
+        Me.dgvRubros.AllowUserToResizeRows = False
+        Me.dgvRubros.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvRubros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvRubros.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvRubros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRubros.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.dgvRubros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRubros.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rubros, Me.idrubro})
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRubros.DefaultCellStyle = DataGridViewCellStyle8
+        Me.dgvRubros.EnableHeadersVisualStyles = False
+        Me.dgvRubros.Location = New System.Drawing.Point(14, 5)
+        Me.dgvRubros.Margin = New System.Windows.Forms.Padding(14, 5, 24, 10)
+        Me.dgvRubros.MultiSelect = False
+        Me.dgvRubros.Name = "dgvRubros"
+        Me.dgvRubros.ReadOnly = True
+        Me.dgvRubros.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvRubros.RowHeadersVisible = False
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        Me.dgvRubros.RowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.dgvRubros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvRubros.Size = New System.Drawing.Size(153, 142)
+        Me.dgvRubros.TabIndex = 41
+        '
+        'rubros
+        '
+        Me.rubros.DataPropertyName = "nombRubro"
+        Me.rubros.HeaderText = "Rubros"
+        Me.rubros.Name = "rubros"
+        Me.rubros.ReadOnly = True
+        '
+        'idrubro
+        '
+        Me.idrubro.DataPropertyName = "idRubro"
+        Me.idrubro.HeaderText = "idRubro"
+        Me.idrubro.Name = "idrubro"
+        Me.idrubro.ReadOnly = True
+        Me.idrubro.Visible = False
         '
         'idProveedor
         '
@@ -278,206 +521,12 @@ Partial Class frmProveedores
         Me.direccion.Name = "direccion"
         Me.direccion.ReadOnly = True
         '
-        'formPago
-        '
-        Me.formPago.DataPropertyName = "pagos"
-        Me.formPago.HeaderText = "Pago"
-        Me.formPago.Name = "formPago"
-        Me.formPago.ReadOnly = True
-        Me.formPago.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
         'horario
         '
         Me.horario.DataPropertyName = "horario"
         Me.horario.HeaderText = "Horario"
         Me.horario.Name = "horario"
         Me.horario.ReadOnly = True
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.dgvRubros, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel6, 0, 1)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(832, 0)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.31579!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.68421!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(197, 386)
-        Me.TableLayoutPanel2.TabIndex = 35
-        '
-        'dgvRubros
-        '
-        Me.dgvRubros.AllowUserToAddRows = False
-        Me.dgvRubros.AllowUserToDeleteRows = False
-        Me.dgvRubros.AllowUserToOrderColumns = True
-        Me.dgvRubros.AllowUserToResizeRows = False
-        Me.dgvRubros.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvRubros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvRubros.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvRubros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRubros.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvRubros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRubros.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rubros, Me.idrubro})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRubros.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvRubros.EnableHeadersVisualStyles = False
-        Me.dgvRubros.Location = New System.Drawing.Point(14, 5)
-        Me.dgvRubros.Margin = New System.Windows.Forms.Padding(14, 5, 24, 10)
-        Me.dgvRubros.MultiSelect = False
-        Me.dgvRubros.Name = "dgvRubros"
-        Me.dgvRubros.ReadOnly = True
-        Me.dgvRubros.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvRubros.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.dgvRubros.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvRubros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRubros.Size = New System.Drawing.Size(159, 260)
-        Me.dgvRubros.TabIndex = 39
-        '
-        'rubros
-        '
-        Me.rubros.DataPropertyName = "nombRubro"
-        Me.rubros.HeaderText = "Rubros"
-        Me.rubros.Name = "rubros"
-        Me.rubros.ReadOnly = True
-        '
-        'idrubro
-        '
-        Me.idrubro.DataPropertyName = "idRubro"
-        Me.idrubro.HeaderText = "idRubro"
-        Me.idrubro.Name = "idrubro"
-        Me.idrubro.ReadOnly = True
-        Me.idrubro.Visible = False
-        '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 1
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.btnProductosAsociados, 0, 1)
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 275)
-        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 2
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.53153!))
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.46847!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(197, 111)
-        Me.TableLayoutPanel6.TabIndex = 40
-        '
-        'btnProductosAsociados
-        '
-        Me.btnProductosAsociados.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnProductosAsociados.BackColor = System.Drawing.Color.Transparent
-        Me.btnProductosAsociados.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnProductosAsociados.FlatAppearance.BorderSize = 2
-        Me.btnProductosAsociados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnProductosAsociados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProductosAsociados.Font = New System.Drawing.Font("Poppins SemiBold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProductosAsociados.ForeColor = System.Drawing.Color.Black
-        Me.btnProductosAsociados.Location = New System.Drawing.Point(14, 40)
-        Me.btnProductosAsociados.Margin = New System.Windows.Forms.Padding(14, 5, 24, 10)
-        Me.btnProductosAsociados.Name = "btnProductosAsociados"
-        Me.btnProductosAsociados.Size = New System.Drawing.Size(159, 61)
-        Me.btnProductosAsociados.TabIndex = 45
-        Me.btnProductosAsociados.Text = "Productos asociados"
-        Me.btnProductosAsociados.UseVisualStyleBackColor = False
-        '
-        'btnAgregarSeleccionar
-        '
-        Me.btnAgregarSeleccionar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAgregarSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAgregarSeleccionar.FlatAppearance.BorderSize = 2
-        Me.btnAgregarSeleccionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAgregarSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnAgregarSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarSeleccionar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarSeleccionar.ForeColor = System.Drawing.Color.Black
-        Me.btnAgregarSeleccionar.Image = Global.WindowsApp1.My.Resources.Resources.add__1_
-        Me.btnAgregarSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgregarSeleccionar.Location = New System.Drawing.Point(682, 10)
-        Me.btnAgregarSeleccionar.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnAgregarSeleccionar.Name = "btnAgregarSeleccionar"
-        Me.btnAgregarSeleccionar.Size = New System.Drawing.Size(317, 44)
-        Me.btnAgregarSeleccionar.TabIndex = 36
-        Me.btnAgregarSeleccionar.Text = "Agregar"
-        Me.btnAgregarSeleccionar.UseVisualStyleBackColor = True
-        '
-        'btnBajaCancelar
-        '
-        Me.btnBajaCancelar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnBajaCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBajaCancelar.FlatAppearance.BorderSize = 2
-        Me.btnBajaCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBajaCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnBajaCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBajaCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBajaCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnBajaCancelar.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.btnBajaCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBajaCancelar.Location = New System.Drawing.Point(346, 10)
-        Me.btnBajaCancelar.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnBajaCancelar.Name = "btnBajaCancelar"
-        Me.btnBajaCancelar.Size = New System.Drawing.Size(316, 44)
-        Me.btnBajaCancelar.TabIndex = 37
-        Me.btnBajaCancelar.Text = "Baja"
-        Me.btnBajaCancelar.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnModificar.FlatAppearance.BorderSize = 2
-        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Image = Global.WindowsApp1.My.Resources.Resources.edit
-        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModificar.Location = New System.Drawing.Point(10, 10)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(316, 44)
-        Me.btnModificar.TabIndex = 38
-        Me.btnModificar.Text = "Modificación"
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
-        'picCerrar
-        '
-        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.picCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
-        Me.picCerrar.Location = New System.Drawing.Point(1005, 0)
-        Me.picCerrar.Margin = New System.Windows.Forms.Padding(0)
-        Me.picCerrar.Name = "picCerrar"
-        Me.picCerrar.Size = New System.Drawing.Size(27, 26)
-        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picCerrar.TabIndex = 41
-        Me.picCerrar.TabStop = False
-        Me.picCerrar.Visible = False
         '
         'frmProveedores
         '
@@ -496,12 +545,13 @@ Partial Class frmProveedores
         Me.Panel1.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
-        CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel6.ResumeLayout(False)
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvFormPago, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -516,21 +566,22 @@ Partial Class frmProveedores
     Friend WithEvents Label4 As Label
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents dgvProveedores As DataGridView
-    Friend WithEvents idProveedor As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents telefono As DataGridViewTextBoxColumn
-    Friend WithEvents cbu As DataGridViewTextBoxColumn
-    Friend WithEvents direccion As DataGridViewTextBoxColumn
-    Friend WithEvents formPago As DataGridViewTextBoxColumn
-    Friend WithEvents horario As DataGridViewTextBoxColumn
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents btnAgregarSeleccionar As Button
     Friend WithEvents btnBajaCancelar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents btnProductosAsociados As Button
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Public WithEvents dgvFormPago As DataGridView
     Public WithEvents dgvRubros As DataGridView
     Friend WithEvents rubros As DataGridViewTextBoxColumn
     Friend WithEvents idrubro As DataGridViewTextBoxColumn
-    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents btnProductosAsociados As Button
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents idProveedor As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents telefono As DataGridViewTextBoxColumn
+    Friend WithEvents cbu As DataGridViewTextBoxColumn
+    Friend WithEvents direccion As DataGridViewTextBoxColumn
+    Friend WithEvents horario As DataGridViewTextBoxColumn
 End Class

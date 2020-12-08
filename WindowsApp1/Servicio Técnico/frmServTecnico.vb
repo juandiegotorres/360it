@@ -55,7 +55,7 @@
             MsgBox("No hay ninguna reparacion seleccionada", MsgBoxStyle.Information, "Servicio Técnico")
         Else
             eServTec.idReparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
-            If MsgBox("¿Desea dar de baja esta reparación?", MsgBoxStyle.YesNo, "Servicio Técnico") = MsgBoxResult.Yes Then
+            If MsgBox("¿Desea dar de baja esta reparación?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Servicio Técnico") = MsgBoxResult.Yes Then
                 eServTec.bajaReparacion()
                 actualizarReparaciones()
             End If

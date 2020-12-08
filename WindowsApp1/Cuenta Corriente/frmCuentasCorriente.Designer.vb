@@ -31,10 +31,6 @@ Partial Class frmCuentasCorriente
         Me.btnDetalleVenta = New System.Windows.Forms.Button()
         Me.btnEntregaDeDinero = New System.Windows.Forms.Button()
         Me.btnEliminarMovimiento = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.picClientes = New System.Windows.Forms.PictureBox()
-        Me.txtNombreCliente = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -53,16 +49,26 @@ Partial Class frmCuentasCorriente
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtResto = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.picClientes = New System.Windows.Forms.PictureBox()
+        Me.txtNombreCliente = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.cbVentas = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.picClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.picClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -70,9 +76,9 @@ Partial Class frmCuentasCorriente
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel6, 0, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(10, 10, 11, 10)
@@ -164,59 +170,6 @@ Partial Class frmCuentasCorriente
         Me.btnEliminarMovimiento.TabIndex = 3
         Me.btnEliminarMovimiento.Text = "Eliminar"
         Me.btnEliminarMovimiento.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.picClientes)
-        Me.Panel1.Controls.Add(Me.txtNombreCliente)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(0, 101)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(488, 39)
-        Me.Panel1.TabIndex = 43
-        '
-        'picClientes
-        '
-        Me.picClientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picClientes.Image = Global.WindowsApp1.My.Resources.Resources.pngtree_find_search_view_glass_blue_dotted_line_line_icon_png_image_1622078
-        Me.picClientes.Location = New System.Drawing.Point(449, 2)
-        Me.picClientes.Name = "picClientes"
-        Me.picClientes.Size = New System.Drawing.Size(35, 35)
-        Me.picClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picClientes.TabIndex = 45
-        Me.picClientes.TabStop = False
-        '
-        'txtNombreCliente
-        '
-        Me.txtNombreCliente.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtNombreCliente.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCliente.Location = New System.Drawing.Point(147, 6)
-        Me.txtNombreCliente.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.txtNombreCliente.Name = "txtNombreCliente"
-        Me.txtNombreCliente.ReadOnly = True
-        Me.txtNombreCliente.Size = New System.Drawing.Size(297, 27)
-        Me.txtNombreCliente.TabIndex = 0
-        Me.txtNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(16, 9)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(127, 22)
-        Me.Label2.TabIndex = 44
-        Me.Label2.Text = "Buscar cliente:"
         '
         'TableLayoutPanel3
         '
@@ -444,6 +397,113 @@ Partial Class frmCuentasCorriente
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Resto: "
         '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.Panel1, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Panel3, 1, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 101)
+        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 1
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(1019, 39)
+        Me.TableLayoutPanel6.TabIndex = 46
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.picClientes)
+        Me.Panel1.Controls.Add(Me.txtNombreCliente)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(489, 39)
+        Me.Panel1.TabIndex = 44
+        '
+        'picClientes
+        '
+        Me.picClientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picClientes.Image = Global.WindowsApp1.My.Resources.Resources.pngtree_find_search_view_glass_blue_dotted_line_line_icon_png_image_1622078
+        Me.picClientes.Location = New System.Drawing.Point(449, 2)
+        Me.picClientes.Name = "picClientes"
+        Me.picClientes.Size = New System.Drawing.Size(36, 35)
+        Me.picClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picClientes.TabIndex = 45
+        Me.picClientes.TabStop = False
+        '
+        'txtNombreCliente
+        '
+        Me.txtNombreCliente.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtNombreCliente.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreCliente.Location = New System.Drawing.Point(147, 6)
+        Me.txtNombreCliente.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.txtNombreCliente.Name = "txtNombreCliente"
+        Me.txtNombreCliente.ReadOnly = True
+        Me.txtNombreCliente.Size = New System.Drawing.Size(298, 27)
+        Me.txtNombreCliente.TabIndex = 0
+        Me.txtNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(16, 9)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(127, 22)
+        Me.Label2.TabIndex = 44
+        Me.Label2.Text = "Buscar cliente:"
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.cbVentas)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(572, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(447, 39)
+        Me.Panel3.TabIndex = 45
+        '
+        'cbVentas
+        '
+        Me.cbVentas.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbVentas.BackColor = System.Drawing.SystemColors.Window
+        Me.cbVentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbVentas.Font = New System.Drawing.Font("Montserrat", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbVentas.FormattingEnabled = True
+        Me.cbVentas.Location = New System.Drawing.Point(254, 7)
+        Me.cbVentas.Name = "cbVentas"
+        Me.cbVentas.Size = New System.Drawing.Size(175, 29)
+        Me.cbVentas.TabIndex = 54
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(187, 10)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(60, 22)
+        Me.Label4.TabIndex = 45
+        Me.Label4.Text = "Venta:"
+        '
         'frmCuentasCorriente
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -456,9 +516,6 @@ Partial Class frmCuentasCorriente
         Me.Text = "frmCuentasCorriente"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.picClientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -467,6 +524,12 @@ Partial Class frmCuentasCorriente
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.picClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -476,12 +539,9 @@ Partial Class frmCuentasCorriente
     Friend WithEvents btnDetalleVenta As Button
     Friend WithEvents btnEntregaDeDinero As Button
     Friend WithEvents btnEliminarMovimiento As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtNombreCliente As TextBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents picCerrar As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents monton As DataGridViewTextBoxColumn
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents dgvCuentas As DataGridView
@@ -489,7 +549,6 @@ Partial Class frmCuentasCorriente
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txtResto As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents picClientes As PictureBox
     Friend WithEvents fechaMovimiento As DataGridViewTextBoxColumn
     Friend WithEvents tipoMovimiento As DataGridViewTextBoxColumn
     Friend WithEvents monto As DataGridViewTextBoxColumn
@@ -499,4 +558,12 @@ Partial Class frmCuentasCorriente
     Friend WithEvents cuentacorriente As DataGridViewTextBoxColumn
     Friend WithEvents idcliente As DataGridViewTextBoxColumn
     Friend WithEvents idMovimiento As DataGridViewTextBoxColumn
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents picClientes As PictureBox
+    Friend WithEvents txtNombreCliente As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents cbVentas As ComboBox
 End Class

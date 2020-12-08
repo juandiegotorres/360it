@@ -138,6 +138,10 @@ Public Class Proveedor
         Dim consultaSQL As String = "SELECT nombRubro FROM proveedores, rubroxproveedor, rubros WHERE proveedores.idproveedor = rubroxproveedor.numproveedor and rubroxproveedor.rubro = rubros.idrubro and idproveedor = '" & _idProveedor & "'"
         capaDatos.llenarDatos(tabla, consultaSQL)
     End Sub
+    Public Sub verFormPagoProveedor(ByVal tabla As DataTable)
+        Dim consultaSQL As String = "SELECT nombFormaPago FROM proveedores, pagoxproveedor, formpago WHERE proveedores.idproveedor = pagoxproveedor.proveedor and pagoxproveedor.pago = formpago.idformpago and idproveedor ='" & _idProveedor & "'"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+    End Sub
     Public Sub modificarProveedor()
         Try
             Dim consultaSQL As String = "SELECT * FROM vistaproveedores WHERE idProveedor ='" & _idProveedor & "'"

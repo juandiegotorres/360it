@@ -151,10 +151,7 @@
                 Else
                     dgvProductosLista.CurrentRow.Cells("cantidadProductoLista").Value = cantidad - cantidadSeleccionada
                 End If
-                subtotal = precioTotal + subtotal
-                total = subtotal
-                txtSubtotal.Text = subtotal.ToString("C2")
-                txtTotal.Text = total.ToString("C2")
+                calcularPrecio()
                 'Si tengo alguna forma de pago que tiene un recargo precargado esto llama a al evento de txtrecargo y actualiza el monto total con el recargo
                 Call txtRecargo_TextChanged_1(txtRecargo, System.EventArgs.Empty)
                 'Habilito desde aqui el combobox para que el usuario no pueda cambiar el valor si no hay ningun producto cargado en el carrito
@@ -162,6 +159,18 @@
                 dgvCarrito.ClearSelection()
             End If
         End With
+    End Sub
+    Public Sub calcularPrecio()
+        precioTotal = 0
+        precioVenta = 0
+        For i = 0 To dgvCarrito.Rows.Count - 1
+            precioVenta = dgvCarrito.Rows(i).Cells("precioTotalCarrito").Value
+            precioTotal += precioVenta
+        Next
+        subtotal = precioTotal
+        total = subtotal
+        txtSubtotal.Text = subtotal.ToString("C2")
+        txtTotal.Text = total.ToString("C2")
     End Sub
     'Al presionar el boton agregar se ejecuta el procedimiento de aniadir
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -244,6 +253,7 @@
         limpiarCarrito()
     End Sub
 
+
     'Al hacer doble click en la celda se agrega un producto al carrito tambien
     Private Sub dgvProductosLista_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductosLista.CellDoubleClick
         anidadirAlCarro()
@@ -276,11 +286,10 @@
     End Sub
 
 #Region "Text Changed Descuento y Recargo"
-    Private Sub txtDescuento_TextChanged_1(sender As Object, e As EventArgs) Handles txtDescuento.TextChanged
+    Private Sub txtDescuento_TextChanged(sender As Object, e As EventArgs) Handles txtDescuento.TextChanged
         If rbDescuentoPlata.Checked = True And rbDescuentoPorcentaje.Checked = False Then
             'Proceso para reestablecer el text box si esta vacio ya que cuando se pasa de monto se pone en color rojo y reestablece el total
             If LTrim(txtDescuento.Text) = "" Then
-                txtDescuento.BackColor = Color.White
                 total = subtotal
                 txtTotal.Text = total.ToString("C2")
             Else
@@ -318,6 +327,7 @@
             End If
         End If
     End Sub
+
 
     Private Sub btnCancelarCtaCorriente_Click(sender As Object, e As EventArgs) Handles btnCancelarCtaCorriente.Click
         txtClienteCtaCorriente.Text = ""
@@ -406,7 +416,7 @@
 
 #End Region
 #Region "Key Press/Down"
-    Private Sub txtDescuento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescuento.KeyPress
+    Private Sub txtDescuento_KeyPress(sender As Object, e As KeyPressEventArgs)
         'Este evento me permite solo introducir numeros y comas en el recargo. Y tambien solo se va a poder escribir si hay algun producto en el carro
         If Char.IsNumber(e.KeyChar) And total <> 0 Then
             e.Handled = False
@@ -435,7 +445,7 @@
         End If
     End Sub
 
-    Private Sub txtDescuento_KeyDown(sender As Object, e As KeyEventArgs) Handles txtDescuento.KeyDown
+    Private Sub txtDescuento_KeyDown(sender As Object, e As KeyEventArgs)
         'Si yo presiono la tecla de borrar se va a borrar todo el contenido del textbox. Esto lo hago porque yo voy haciendo los calculos del total mientras el usuario esta escribiendo, y no puedo hacerlo a la inversa de deshacerlo mientras el usuario esta borrando por lo que borro de una sola vez. Lo podria hacer pero no tengo ganas xD
         If e.KeyCode = Keys.Back Then
             txtDescuento.Text = ""
@@ -473,8 +483,11 @@
                     Else
                         'Sino le resto la cantidad elegida a la celda cantidad del producto
                         dgvCarrito.CurrentRow.Cells("cantidadCarrito").Value = (dgvCarrito.CurrentRow.Cells("cantidadCarrito").Value - cantidadSeleccionada)
+                        'Vuelvo a calcular el precio total dependiendo las cantidades que quedaron
+                        dgvCarrito.CurrentRow.Cells("precioTotalCarrito").Value = (dgvCarrito.CurrentRow.Cells("cantidadCarrito").Value * dgvCarrito.CurrentRow.Cells("precioVentaCarrito").Value)
                     End If
                 End If
+                calcularPrecio()
             End If
             'Este for lo utilizo para volver a poner la cantidad en la lista de productos, ya que cuando yo agrego un producto carrito resto la cantidad de la lista de productos. Esto me permite volver a ponerlo como estaba antes. Mediante el id del producto busco y vuelvo a sumar la cantidad 
             For i = 0 To dgvProductosLista.Rows.Count - 1
@@ -516,6 +529,7 @@
                     rbDescuentoPorcentaje.Checked = False
                     txtRecargo.Text = CInt(tablaRecargos.Rows(i).Item("recargo"))
                     txtRecargo.Enabled = False
+                    txtDescuento.Text = ""
                     txtDescuento.Enabled = False
                     rbRecargoPorcentaje.Enabled = False
                     rbRecargoPlata.Enabled = False
@@ -531,6 +545,7 @@
                     rbRecargoPlata.Checked = False
                     rbDescuentoPlata.Checked = True
                     rbDescuentoPorcentaje.Checked = False
+                    txtDescuento.Text = ""
                     txtRecargo.Text = ""
                     txtRecargo.Enabled = False
                     txtDescuento.Enabled = True

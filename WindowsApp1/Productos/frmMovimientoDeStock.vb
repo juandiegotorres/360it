@@ -26,7 +26,7 @@
         If quitar = True Then
             btnAgregar.Visible = False
             btnQuitar.Visible = True
-
+            lblDisponibilidad.Visible = True
             If cantidadProductos = 1 Then
                 lblDisponibilidad.Text = "Queda " & cantidadProductos & " producto en stock"
                 txtCantidad.Text = "1"
@@ -34,12 +34,6 @@
                 lblDisponibilidad.Text = "Este producto no tiene stock"
                 lblDisponibilidad.ForeColor = Color.Red
                 txtCantidad.Enabled = False
-            ElseIf cantidadProductos > 9999 Then
-                lblDisponibilidad.Text = "LLegó al límite máximo de productos"
-                lblDisponibilidad.ForeColor = Color.Red
-                txtCantidad.Enabled = False
-                btnAgregar.Enabled = False
-                btnQuitar.Enabled = False
             Else
                 lblDisponibilidad.Text = "Quedan " & cantidadProductos & " productos en stock"
                 txtCantidad.Text = "1"

@@ -37,14 +37,30 @@ Public Class Nota
             Return _color
         End Get
     End Property
-    Public Sub traerNotas(ByVal tabla As DataTable)
+    Public Sub contarNotas(ByVal tabla As DataTable)
         Try
-            Dim consultaSQL As String = "SELECT * FROM notas WHERE activo = 1 ORDER BY fecha DESC"
+            Dim consultaSQL As String = "SELECT COUNT(*) as 'cantidad' FROM notas WHERE activo = 1"
+            eCapaDatos.llenarDatos(tabla, consultaSQL)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Sub traerNotas(ByVal tabla As DataTable, ByRef offset As UInt32)
+        Try
+            Dim consultaSQL As String = "SELECT * FROM notas WHERE activo = 1 ORDER BY fecha DESC LIMIT 8 OFFSET " & offset
             eCapaDatos.llenarDatos(tabla, consultaSQL)
         Catch ex As Exception
             MsgBox(ex.Message, "Entidad Notas")
         End Try
     End Sub
+    'Public Sub siguientePagina(ByVal tabla As DataTable, ByRef offset As UInt32)
+    '    Try
+    '        Dim consultaSQL As String = "SELECT * FROM notas WHERE activo = 1 ORDER BY fecha DESC LIMIT 8 OFFSET "
+    '        eCapaDatos.llenarDatos(tabla, consultaSQL)
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message, "Entidad Notas")
+    '    End Try
+    'End Sub
     Public Sub bajaNota(ByRef id As UInteger)
         Try
             Dim consultaSQL As String = "UPDATE notas SET activo = 0 WHERE idnota = '" & id & "'"

@@ -125,6 +125,10 @@ Public Class Producto
         Dim consultaSQL As String = "SELECT * FROM vistaproductos"
         capaDatos.llenarDatos(tabla, consultaSQL)
     End Sub
+    Public Sub productosPocoStock(ByVal tabla As DataTable)
+        Dim consultaSQL As String = "SELECT * FROM vistaproductos WHERE cantidad >= 1 and cantidad <= 5"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+    End Sub
     Public Sub recuperarProductosXProveedor(ByVal tabla As DataTable, ByRef idProveedor As UInt64)
         Dim consultaSQL As String = "SELECT * FROM vistaproductos WHERE proveedor = '" & idProveedor & "'"
         capaDatos.llenarDatos(tabla, consultaSQL)

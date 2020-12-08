@@ -2,7 +2,7 @@
     Dim eConfiguracion As New Entidades.Opcion
     Dim idGeneral As UInt64
     Dim idGeneralTodos As New List(Of UInt64)
-    Dim tablaFormPago, tablaCategorias, tablaLocalidades, tablaProvincias, tablaRubros, tablaTiposArticulo, tablaEstados, tablaClientes, tablaProductos, tablaProveedores, tablaServTec, tablaVentas As New DataTable
+    Dim tablaFormPago, tablaCategorias, tablaLocalidades, tablaProvincias, tablaRubros, tablaTiposArticulo, tablaEstados, tablaClientes, tablaProductos, tablaProveedores, tablaServTec, tablaVentas, tablaNotas As New DataTable
     Private Sub frmOpciones_Load(sender As Object, e As EventArgs) Handles Me.Load
         cargarFormPago()
         cargarCategorias()
@@ -18,7 +18,8 @@
         cargarDatosBajas(tablaProveedores, dgvProveedores, "proveedores", "*")
         'Serv Tecnico
         cargarDatosBajas(tablaServTec, dgvServTec, "serviciotecnico", "*")
-
+        'Notas
+        cargarDatosBajas(tablaNotas, dgvNotas, "notas", "*")
         pnlEditar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -669,6 +670,7 @@
         End If
     End Sub
 
+
     Private Sub btnDestacarEstado_Click(sender As Object, e As EventArgs) Handles btnDestacarEstado.Click
         If pnlEditarEstado.Visible = True Then
             Call btnCancelarEstado_Click(btnCancelarEstado, e)
@@ -683,6 +685,7 @@
             End If
         End If
     End Sub
+
 
     Private Sub btnGuardarEstado_Click(sender As Object, e As EventArgs) Handles btnGuardarEstado.Click
         If txtNombreEstado.Tag = 1 Then
@@ -708,6 +711,12 @@
         End If
     End Sub
 
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        Me.Close()
+    End Sub
+
+
+
     Private Sub btnCancelarEstado_Click(sender As Object, e As EventArgs) Handles btnCancelarEstado.Click
         pnlEditarEstado.Visible = False
         txtNombreEstado.Text = ""
@@ -715,54 +724,70 @@
 #End Region
 #Region "BAJAS(Botones)"
     Private Sub btnAltaCliente_Click(sender As Object, e As EventArgs) Handles btnAltaCliente.Click
-        If dgvClientes.Rows.Count > 0 Then
-            idGeneral = 0
-            idGeneral = dgvClientes.CurrentRow.Cells("idcliente").Value
-            If eConfiguracion.altaGeneral("clientes", "idcliente", idGeneral) = True Then
-                cargarDatosBajas(tablaClientes, dgvClientes, "clientes", "*")
-                MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
-            Else
-                MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+        If dgvClientes.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
+            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+                idGeneral = 0
+                idGeneral = dgvClientes.CurrentRow.Cells("idcliente").Value
+                If eConfiguracion.altaGeneral("clientes", "idcliente", idGeneral) = True Then
+                    cargarDatosBajas(tablaClientes, dgvClientes, "clientes", "*")
+                    MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+                Else
+                    MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+                End If
             End If
         End If
     End Sub
 
     Private Sub btnAltaProducto_Click(sender As Object, e As EventArgs) Handles btnAltaProducto.Click
-        If dgvProductos.Rows.Count > 0 Then
-            idGeneral = 0
-            idGeneral = dgvProductos.CurrentRow.Cells("idProducto").Value
-            If eConfiguracion.altaGeneral("productos", "idProducto", idGeneral) = True Then
-                cargarDatosBajas(tablaProductos, dgvProductos, "productos", "*")
-                MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
-            Else
-                MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+        If dgvProductos.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
+            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+                idGeneral = 0
+                idGeneral = dgvProductos.CurrentRow.Cells("idProducto").Value
+                If eConfiguracion.altaGeneral("productos", "idProducto", idGeneral) = True Then
+                    cargarDatosBajas(tablaProductos, dgvProductos, "productos", "*")
+                    MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+                Else
+                    MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+                End If
             End If
         End If
     End Sub
 
     Private Sub btnAltaProveedor_Click(sender As Object, e As EventArgs) Handles btnAltaProveedor.Click
-        If dgvProductos.Rows.Count > 0 Then
-            idGeneral = 0
-            idGeneral = dgvProveedores.CurrentRow.Cells("idproveedor").Value
-            If eConfiguracion.altaGeneral("proveedores", "idproveedor", idGeneral) = True Then
-                cargarDatosBajas(tablaProveedores, dgvProveedores, "proveedores", "*")
-                MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
-            Else
-                MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+        If dgvProveedores.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
+            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+                idGeneral = 0
+                idGeneral = dgvProveedores.CurrentRow.Cells("idproveedor").Value
+                If eConfiguracion.altaGeneral("proveedores", "idproveedor", idGeneral) = True Then
+                    cargarDatosBajas(tablaProveedores, dgvProveedores, "proveedores", "*")
+                    MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+                Else
+                    MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+                End If
             End If
         End If
     End Sub
 
     Private Sub btnAltaServTec_Click(sender As Object, e As EventArgs) Handles btnAltaServTec.Click
-        If dgvServTec.Rows.Count > 0 Then
-            idGeneral = 0
-            idGeneral = dgvServTec.CurrentRow.Cells("idReparacion").Value
-            If dgvServTec.CurrentRow.Selected = True Then
-                If eConfiguracion.altaGeneral("serviciotecnico", "idReparacion", idGeneral) = True Then
-                    cargarDatosBajas(tablaServTec, dgvServTec, "serviciotecnico", "*")
-                    MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
-                Else
-                    MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+        If dgvServTec.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
+            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+                idGeneral = 0
+                idGeneral = dgvServTec.CurrentRow.Cells("idReparacion").Value
+                If dgvServTec.CurrentRow.Selected = True Then
+                    If eConfiguracion.altaGeneral("serviciotecnico", "idReparacion", idGeneral) = True Then
+                        cargarDatosBajas(tablaServTec, dgvServTec, "serviciotecnico", "*")
+                        MsgBox("Dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+                    Else
+                        MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+                    End If
                 End If
             End If
         End If
@@ -772,7 +797,7 @@
     End Sub
     Private Sub btnAltaClienteTodos_Click(sender As Object, e As EventArgs) Handles btnAltaClienteTodos.Click
         If dgvClientes.Rows.Count > 0 Then
-            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo, "Bajas") = MsgBoxResult.Yes Then
+            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvClientes.Rows.Count - 1
                     idGeneralTodos.Add(dgvClientes.Rows(i).Cells("idcliente").Value)
@@ -789,7 +814,7 @@
 
     Private Sub btnAltaProductosTodos_Click(sender As Object, e As EventArgs) Handles btnAltaProductosTodos.Click
         If dgvProductos.Rows.Count > 0 Then
-            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo, "Bajas") = MsgBoxResult.Yes Then
+            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvProductos.Rows.Count - 1
                     idGeneralTodos.Add(dgvProductos.Rows(i).Cells("idProducto").Value)
@@ -806,7 +831,7 @@
 
     Private Sub btnAltaProveedorTodos_Click(sender As Object, e As EventArgs) Handles btnAltaProveedorTodos.Click
         If dgvServTec.Rows.Count > 0 Then
-            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo, "Bajas") = MsgBoxResult.Yes Then
+            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvProveedores.Rows.Count - 1
                     idGeneralTodos.Add(dgvProveedores.Rows(i).Cells("idproveedor").Value)
@@ -823,7 +848,7 @@
 
     Private Sub btnAltaServTecTodos_Click(sender As Object, e As EventArgs) Handles btnAltaServTecTodos.Click
         If dgvServTec.Rows.Count > 0 Then
-            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo, "Bajas") = MsgBoxResult.Yes Then
+            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvServTec.Rows.Count - 1
                     idGeneralTodos.Add(dgvServTec.Rows(i).Cells("idReparacion").Value)
@@ -837,5 +862,41 @@
             End If
         End If
     End Sub
+    Private Sub btnAltaNota_Click(sender As Object, e As EventArgs) Handles btnAltaNota.Click
+        If dgvNotas.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
+            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+                idGeneral = 0
+                idGeneral = dgvNotas.CurrentRow.Cells("idnota").Value
+                If dgvNotas.CurrentRow.Selected = True Then
+                    If eConfiguracion.altaGeneral("notas", "idnota", idGeneral) = True Then
+                        cargarDatosBajas(tablaNotas, dgvNotas, "notas", "*")
+                        MsgBox("Dada de alta con éxito", MsgBoxStyle.Information, "Bajas")
+                    Else
+                        MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+                    End If
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub btnAltaNotasTodas_Click(sender As Object, e As EventArgs) Handles btnAltaNotasTodas.Click
+        If dgvNotas.Rows.Count > 0 Then
+            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+                idGeneralTodos.Clear()
+                For i = 0 To dgvNotas.Rows.Count - 1
+                    idGeneralTodos.Add(dgvNotas.Rows(i).Cells("idnota").Value)
+                Next
+                If eConfiguracion.altaGeneralTodos("notas", "idnota", idGeneralTodos) = True Then
+                    cargarDatosBajas(tablaNotas, dgvNotas, "notas", "*")
+                    MsgBox("Todos los elementos se han dado de alta con éxito", MsgBoxStyle.Information, "Bajas")
+                Else
+                    MsgBox("No se ha podido dar de alta", MsgBoxStyle.Information, "Bajas")
+                End If
+            End If
+        End If
+    End Sub
+
 #End Region
 End Class

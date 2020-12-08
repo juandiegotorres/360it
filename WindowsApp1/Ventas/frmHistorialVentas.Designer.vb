@@ -44,7 +44,6 @@ Partial Class frmHistorialVentas
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
@@ -65,8 +64,10 @@ Partial Class frmHistorialVentas
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel12 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel15 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnDetalleVentaCtaCorriente = New System.Windows.Forms.Button()
         Me.TableLayoutPanel13 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnDetalleVenta = New System.Windows.Forms.Button()
+        Me.btnDetalleVentaGeneral = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgvHistCtaCorriente = New System.Windows.Forms.DataGridView()
         Me.idVentaCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -84,6 +85,8 @@ Partial Class frmHistorialVentas
         Me.articulos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaHora = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
@@ -96,6 +99,7 @@ Partial Class frmHistorialVentas
         Me.TableLayoutPanel8.SuspendLayout()
         Me.TableLayoutPanel11.SuspendLayout()
         Me.TableLayoutPanel12.SuspendLayout()
+        Me.TableLayoutPanel15.SuspendLayout()
         Me.TableLayoutPanel13.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.dgvHistCtaCorriente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,8 +111,8 @@ Partial Class frmHistorialVentas
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(10, 10, 11, 10)
@@ -149,20 +153,6 @@ Partial Class frmHistorialVentas
         Me.Label1.Size = New System.Drawing.Size(673, 74)
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "HISTORIAL DE VENTAS"
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 101)
-        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1019, 39)
-        Me.TableLayoutPanel4.TabIndex = 46
         '
         'TableLayoutPanel5
         '
@@ -450,49 +440,83 @@ Partial Class frmHistorialVentas
         '
         Me.TableLayoutPanel12.ColumnCount = 1
         Me.TableLayoutPanel12.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel12.Controls.Add(Me.TableLayoutPanel13, 0, 1)
+        Me.TableLayoutPanel12.Controls.Add(Me.TableLayoutPanel15, 0, 1)
+        Me.TableLayoutPanel12.Controls.Add(Me.TableLayoutPanel13, 0, 0)
         Me.TableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel12.Location = New System.Drawing.Point(0, 317)
-        Me.TableLayoutPanel12.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel12.Location = New System.Drawing.Point(0, 297)
+        Me.TableLayoutPanel12.Margin = New System.Windows.Forms.Padding(0, 0, 0, 5)
         Me.TableLayoutPanel12.Name = "TableLayoutPanel12"
         Me.TableLayoutPanel12.RowCount = 2
-        Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.23077!))
-        Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.76923!))
-        Me.TableLayoutPanel12.Size = New System.Drawing.Size(274, 104)
+        Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.44248!))
+        Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.55752!))
+        Me.TableLayoutPanel12.Size = New System.Drawing.Size(274, 119)
         Me.TableLayoutPanel12.TabIndex = 49
+        '
+        'TableLayoutPanel15
+        '
+        Me.TableLayoutPanel15.ColumnCount = 1
+        Me.TableLayoutPanel15.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel15.Controls.Add(Me.btnDetalleVentaCtaCorriente, 0, 0)
+        Me.TableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel15.Location = New System.Drawing.Point(1, 61)
+        Me.TableLayoutPanel15.Margin = New System.Windows.Forms.Padding(1)
+        Me.TableLayoutPanel15.Name = "TableLayoutPanel15"
+        Me.TableLayoutPanel15.RowCount = 1
+        Me.TableLayoutPanel15.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel15.Size = New System.Drawing.Size(272, 57)
+        Me.TableLayoutPanel15.TabIndex = 2
+        '
+        'btnDetalleVentaCtaCorriente
+        '
+        Me.btnDetalleVentaCtaCorriente.BackColor = System.Drawing.Color.Transparent
+        Me.btnDetalleVentaCtaCorriente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDetalleVentaCtaCorriente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDetalleVentaCtaCorriente.FlatAppearance.BorderSize = 2
+        Me.btnDetalleVentaCtaCorriente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDetalleVentaCtaCorriente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnDetalleVentaCtaCorriente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetalleVentaCtaCorriente.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalleVentaCtaCorriente.ForeColor = System.Drawing.Color.Black
+        Me.btnDetalleVentaCtaCorriente.Location = New System.Drawing.Point(15, 10)
+        Me.btnDetalleVentaCtaCorriente.Margin = New System.Windows.Forms.Padding(15, 10, 15, 10)
+        Me.btnDetalleVentaCtaCorriente.Name = "btnDetalleVentaCtaCorriente"
+        Me.btnDetalleVentaCtaCorriente.Size = New System.Drawing.Size(242, 37)
+        Me.btnDetalleVentaCtaCorriente.TabIndex = 4
+        Me.btnDetalleVentaCtaCorriente.Text = "Detalle venta a cuenta corriente"
+        Me.btnDetalleVentaCtaCorriente.UseVisualStyleBackColor = False
         '
         'TableLayoutPanel13
         '
         Me.TableLayoutPanel13.ColumnCount = 1
         Me.TableLayoutPanel13.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel13.Controls.Add(Me.btnDetalleVenta, 0, 0)
+        Me.TableLayoutPanel13.Controls.Add(Me.btnDetalleVentaGeneral, 0, 0)
         Me.TableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel13.Location = New System.Drawing.Point(1, 47)
+        Me.TableLayoutPanel13.Location = New System.Drawing.Point(1, 1)
         Me.TableLayoutPanel13.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanel13.Name = "TableLayoutPanel13"
         Me.TableLayoutPanel13.RowCount = 1
         Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel13.Size = New System.Drawing.Size(272, 56)
-        Me.TableLayoutPanel13.TabIndex = 0
+        Me.TableLayoutPanel13.Size = New System.Drawing.Size(272, 58)
+        Me.TableLayoutPanel13.TabIndex = 1
         '
-        'btnDetalleVenta
+        'btnDetalleVentaGeneral
         '
-        Me.btnDetalleVenta.BackColor = System.Drawing.Color.Transparent
-        Me.btnDetalleVenta.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDetalleVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDetalleVenta.FlatAppearance.BorderSize = 2
-        Me.btnDetalleVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDetalleVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnDetalleVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDetalleVenta.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetalleVenta.ForeColor = System.Drawing.Color.Black
-        Me.btnDetalleVenta.Location = New System.Drawing.Point(15, 15)
-        Me.btnDetalleVenta.Margin = New System.Windows.Forms.Padding(15, 15, 15, 10)
-        Me.btnDetalleVenta.Name = "btnDetalleVenta"
-        Me.btnDetalleVenta.Size = New System.Drawing.Size(242, 31)
-        Me.btnDetalleVenta.TabIndex = 4
-        Me.btnDetalleVenta.Text = "Detalle Venta"
-        Me.btnDetalleVenta.UseVisualStyleBackColor = False
+        Me.btnDetalleVentaGeneral.BackColor = System.Drawing.Color.Transparent
+        Me.btnDetalleVentaGeneral.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDetalleVentaGeneral.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDetalleVentaGeneral.FlatAppearance.BorderSize = 2
+        Me.btnDetalleVentaGeneral.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDetalleVentaGeneral.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnDetalleVentaGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetalleVentaGeneral.Font = New System.Drawing.Font("Montserrat SemiBold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalleVentaGeneral.ForeColor = System.Drawing.Color.Black
+        Me.btnDetalleVentaGeneral.Location = New System.Drawing.Point(15, 20)
+        Me.btnDetalleVentaGeneral.Margin = New System.Windows.Forms.Padding(15, 20, 15, 0)
+        Me.btnDetalleVentaGeneral.Name = "btnDetalleVentaGeneral"
+        Me.btnDetalleVentaGeneral.Size = New System.Drawing.Size(242, 38)
+        Me.btnDetalleVentaGeneral.TabIndex = 4
+        Me.btnDetalleVentaGeneral.Text = "Detalle venta general"
+        Me.btnDetalleVentaGeneral.UseVisualStyleBackColor = False
         '
         'TableLayoutPanel2
         '
@@ -500,14 +524,15 @@ Partial Class frmHistorialVentas
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.dgvHistCtaCorriente, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.dgvHistorialVentas, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label5, 0, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 3
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.72107!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.27893!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(736, 421)
         Me.TableLayoutPanel2.TabIndex = 48
         '
@@ -540,7 +565,7 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvHistCtaCorriente.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvHistCtaCorriente.EnableHeadersVisualStyles = False
-        Me.dgvHistCtaCorriente.Location = New System.Drawing.Point(20, 222)
+        Me.dgvHistCtaCorriente.Location = New System.Drawing.Point(20, 225)
         Me.dgvHistCtaCorriente.Margin = New System.Windows.Forms.Padding(20, 0, 18, 15)
         Me.dgvHistCtaCorriente.MultiSelect = False
         Me.dgvHistCtaCorriente.Name = "dgvHistCtaCorriente"
@@ -560,7 +585,7 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
         Me.dgvHistCtaCorriente.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvHistCtaCorriente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvHistCtaCorriente.Size = New System.Drawing.Size(698, 184)
+        Me.dgvHistCtaCorriente.Size = New System.Drawing.Size(698, 181)
         Me.dgvHistCtaCorriente.TabIndex = 48
         '
         'idVentaCta
@@ -655,8 +680,8 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvHistorialVentas.DefaultCellStyle = DataGridViewCellStyle17
         Me.dgvHistorialVentas.EnableHeadersVisualStyles = False
-        Me.dgvHistorialVentas.Location = New System.Drawing.Point(20, 5)
-        Me.dgvHistorialVentas.Margin = New System.Windows.Forms.Padding(20, 5, 18, 15)
+        Me.dgvHistorialVentas.Location = New System.Drawing.Point(20, 0)
+        Me.dgvHistorialVentas.Margin = New System.Windows.Forms.Padding(20, 0, 18, 5)
         Me.dgvHistorialVentas.MultiSelect = False
         Me.dgvHistorialVentas.Name = "dgvHistorialVentas"
         Me.dgvHistorialVentas.ReadOnly = True
@@ -675,7 +700,7 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black
         Me.dgvHistorialVentas.RowsDefaultCellStyle = DataGridViewCellStyle19
         Me.dgvHistorialVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvHistorialVentas.Size = New System.Drawing.Size(698, 177)
+        Me.dgvHistorialVentas.Size = New System.Drawing.Size(698, 181)
         Me.dgvHistorialVentas.TabIndex = 47
         '
         'idVenta
@@ -740,6 +765,28 @@ Partial Class frmHistorialVentas
         Me.fechaHora.ReadOnly = True
         Me.fechaHora.Visible = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Montserrat Medium", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(18, 191)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(18, 5, 3, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(274, 25)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Ventas a cuenta corriente:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Montserrat Medium", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(18, 106)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(18, 5, 3, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(189, 25)
+        Me.Label6.TabIndex = 48
+        Me.Label6.Text = "Ventas generales:"
+        '
         'frmHistorialVentas
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -750,6 +797,7 @@ Partial Class frmHistorialVentas
         Me.Name = "frmHistorialVentas"
         Me.Text = "Form3"
         Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
@@ -765,8 +813,10 @@ Partial Class frmHistorialVentas
         Me.TableLayoutPanel11.ResumeLayout(False)
         Me.TableLayoutPanel11.PerformLayout()
         Me.TableLayoutPanel12.ResumeLayout(False)
+        Me.TableLayoutPanel15.ResumeLayout(False)
         Me.TableLayoutPanel13.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
         CType(Me.dgvHistCtaCorriente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvHistorialVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -776,7 +826,6 @@ Partial Class frmHistorialVentas
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Label1 As Label
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Public WithEvents dgvHistCtaCorriente As DataGridView
@@ -797,8 +846,6 @@ Partial Class frmHistorialVentas
     Friend WithEvents dtpDesde As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents TableLayoutPanel12 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel13 As TableLayoutPanel
-    Friend WithEvents btnDetalleVenta As Button
     Friend WithEvents rbAmbos As RadioButton
     Friend WithEvents rbCtaCorriente As RadioButton
     Friend WithEvents rbVenta As RadioButton
@@ -816,4 +863,10 @@ Partial Class frmHistorialVentas
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents TableLayoutPanel15 As TableLayoutPanel
+    Friend WithEvents btnDetalleVentaCtaCorriente As Button
+    Friend WithEvents TableLayoutPanel13 As TableLayoutPanel
+    Friend WithEvents btnDetalleVentaGeneral As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

@@ -205,9 +205,8 @@ Public Class frmPrincipal
         frmOpciones.Show()
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        abrirForm(frmNotas)
-    End Sub
+
+
 
     Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
         panelCost.Visible = True
@@ -215,5 +214,12 @@ Public Class frmPrincipal
         panelCost.Top = btnVentas.Top
         setColor(btnCuentaCorriente)
         abrirForm(frmCuentasCorriente)
+    End Sub
+
+    Private Sub btnNotas_Click(sender As Object, e As EventArgs) Handles btnNotas.Click
+        panelCost.Visible = True
+        panelCost.Height = btnNotas.Height
+        panelCost.Top = btnNotas.Top
+        abrirForm(frmNotas)
     End Sub
 End Class
