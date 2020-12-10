@@ -90,6 +90,7 @@ Partial Class frmNuevoCliente
         Me.txtNomApel.Name = "txtNomApel"
         Me.txtNomApel.Size = New System.Drawing.Size(291, 31)
         Me.txtNomApel.TabIndex = 0
+        Me.txtNomApel.Tag = "Nombre y Apellido"
         '
         'cbProvincias
         '
@@ -160,6 +161,7 @@ Partial Class frmNuevoCliente
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(237, 31)
         Me.txtTelefono.TabIndex = 2
+        Me.txtTelefono.Tag = "Teléfono"
         '
         'txtDireccion
         '
@@ -170,6 +172,7 @@ Partial Class frmNuevoCliente
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(264, 31)
         Me.txtDireccion.TabIndex = 3
+        Me.txtDireccion.Tag = "Dirección"
         '
         'txtLocalidad
         '
@@ -180,6 +183,7 @@ Partial Class frmNuevoCliente
         Me.txtLocalidad.ReadOnly = True
         Me.txtLocalidad.Size = New System.Drawing.Size(247, 31)
         Me.txtLocalidad.TabIndex = 22
+        Me.txtLocalidad.Tag = "Localidad"
         '
         'btnCancelar
         '
@@ -299,6 +303,7 @@ Partial Class frmNuevoCliente
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(237, 31)
         Me.txtDNI.TabIndex = 1
+        Me.txtDNI.Tag = "DNI"
         '
         'frmNuevoCliente
         '

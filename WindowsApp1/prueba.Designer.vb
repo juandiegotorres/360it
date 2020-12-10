@@ -22,6 +22,12 @@ Partial Class prueba
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.panelnota6 = New System.Windows.Forms.Panel()
         Me.nota6 = New System.Windows.Forms.TextBox()
@@ -89,6 +95,9 @@ Partial Class prueba
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.graficoProductos = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.graficoVentas = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.panelnota6.SuspendLayout()
         Me.headernota6.SuspendLayout()
@@ -135,6 +144,9 @@ Partial Class prueba
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel12.SuspendLayout()
+        CType(Me.graficoProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.graficoVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -143,6 +155,7 @@ Partial Class prueba
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel12, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.panelnota6, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.panelnota8, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.panelnota3, 0, 2)
@@ -170,7 +183,7 @@ Partial Class prueba
         Me.panelnota6.Controls.Add(Me.nota6)
         Me.panelnota6.Controls.Add(Me.headernota6)
         Me.panelnota6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelnota6.Location = New System.Drawing.Point(3, 544)
+        Me.panelnota6.Location = New System.Drawing.Point(269, 544)
         Me.panelnota6.Name = "panelnota6"
         Me.panelnota6.Size = New System.Drawing.Size(260, 119)
         Me.panelnota6.TabIndex = 15
@@ -942,6 +955,91 @@ Partial Class prueba
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'Panel12
+        '
+        Me.Panel12.Controls.Add(Me.graficoProductos)
+        Me.Panel12.Controls.Add(Me.graficoVentas)
+        Me.Panel12.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel12.Location = New System.Drawing.Point(3, 544)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(260, 119)
+        Me.Panel12.TabIndex = 47
+        '
+        'graficoProductos
+        '
+        Me.graficoProductos.BackColor = System.Drawing.Color.Transparent
+        Me.graficoProductos.BackSecondaryColor = System.Drawing.Color.White
+        ChartArea1.BackColor = System.Drawing.Color.Transparent
+        ChartArea1.Name = "ChartArea1"
+        Me.graficoProductos.ChartAreas.Add(ChartArea1)
+        Legend1.BackColor = System.Drawing.Color.Transparent
+        Legend1.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend1.IsTextAutoFit = False
+        Legend1.Name = "Legend1"
+        Me.graficoProductos.Legends.Add(Legend1)
+        Me.graficoProductos.Location = New System.Drawing.Point(620, 81)
+        Me.graficoProductos.Name = "graficoProductos"
+        Me.graficoProductos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+        Me.graficoProductos.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(4, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(105, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(152, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(0, Byte), Integer))}
+        Series1.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(248, Byte), Integer))
+        Series1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(248, Byte), Integer))
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
+        Series1.Color = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(248, Byte), Integer))
+        Series1.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series1.IsValueShownAsLabel = True
+        Series1.IsXValueIndexed = True
+        Series1.LabelBackColor = System.Drawing.Color.Transparent
+        Series1.LabelBorderColor = System.Drawing.Color.Transparent
+        Series1.LabelBorderWidth = 0
+        Series1.Legend = "Legend1"
+        Series1.Name = "Extras"
+        Series1.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(248, Byte), Integer))
+        Series1.XValueMember = "producto"
+        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+        Series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary
+        Series1.YValueMembers = "cantidad"
+        Series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
+        Me.graficoProductos.Series.Add(Series1)
+        Me.graficoProductos.Size = New System.Drawing.Size(335, 184)
+        Me.graficoProductos.TabIndex = 2
+        Me.graficoProductos.Text = "Uso de extras"
+        '
+        'graficoVentas
+        '
+        Me.graficoVentas.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.graficoVentas.BackColor = System.Drawing.Color.Transparent
+        Me.graficoVentas.BorderlineColor = System.Drawing.Color.Transparent
+        Me.graficoVentas.BorderlineWidth = 0
+        ChartArea2.BackColor = System.Drawing.Color.Transparent
+        ChartArea2.Name = "ChartArea1"
+        ChartArea2.ShadowColor = System.Drawing.Color.DimGray
+        Me.graficoVentas.ChartAreas.Add(ChartArea2)
+        Legend2.BackColor = System.Drawing.Color.Transparent
+        Legend2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend2.IsTextAutoFit = False
+        Legend2.Name = "Legend1"
+        Me.graficoVentas.Legends.Add(Legend2)
+        Me.graficoVentas.Location = New System.Drawing.Point(3, 26)
+        Me.graficoVentas.Name = "graficoVentas"
+        Series2.BackImageTransparentColor = System.Drawing.Color.Transparent
+        Series2.BackSecondaryColor = System.Drawing.Color.Transparent
+        Series2.BorderColor = System.Drawing.Color.Black
+        Series2.ChartArea = "ChartArea1"
+        Series2.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series2.IsValueShownAsLabel = True
+        Series2.IsXValueIndexed = True
+        Series2.Legend = "Legend1"
+        Series2.Name = "Ventas"
+        Series2.XValueMember = "nombreMes"
+        Series2.YValueMembers = "Cantidad"
+        Me.graficoVentas.Series.Add(Series2)
+        Me.graficoVentas.Size = New System.Drawing.Size(611, 77)
+        Me.graficoVentas.TabIndex = 1
+        Me.graficoVentas.Text = "Chart1"
+        '
         'prueba
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1015,6 +1113,9 @@ Partial Class prueba
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel12.ResumeLayout(False)
+        CType(Me.graficoProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.graficoVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1086,4 +1187,7 @@ Partial Class prueba
     Friend WithEvents PictureBox13 As PictureBox
     Friend WithEvents PictureBox14 As PictureBox
     Friend WithEvents Panel11 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents graficoProductos As DataVisualization.Charting.Chart
+    Friend WithEvents graficoVentas As DataVisualization.Charting.Chart
 End Class

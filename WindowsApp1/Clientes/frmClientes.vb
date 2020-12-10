@@ -56,8 +56,13 @@
 
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        filtroBS = "nombreApel like '%" & txtBuscar.Text & "%'"
-        bsClientes.Filter = filtroBS
+        If rbNombreApel.Checked = True Then
+            filtroBS = "nombreApel like '%" & txtBuscar.Text & "%'"
+            bsClientes.Filter = filtroBS
+        ElseIf rbDNI.Checked = True Then
+            filtroBS = "CONVERT(dni, 'System.String') like '%" & txtBuscar.Text & "%'"
+            bsClientes.Filter = filtroBS
+        End If
         ' dgvClientes.ClearSelection()
     End Sub
 
@@ -103,9 +108,7 @@
     Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         'Si el form se abre desde cuenta corriente o reparacion u otro lado voy a dejar este boton(modificar) para agregar un cliente tambien, ya que el originario va a esta ocupado con la opcion de seleccionar 
         If reparacion = True Then
-            Me.Hide()
             agregarCliente()
-            Me.Show()
         Else
 
             If dgvClientes.CurrentRow.Selected = False Then
@@ -155,5 +158,21 @@
                     Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
                 End If
         End Select
+    End Sub
+
+    Private Sub rbNombreApel_CheckedChanged(sender As Object, e As EventArgs) Handles rbNombreApel.CheckedChanged
+        txtBuscar.Text = ""
+        filtroBS = ""
+        bsClientes.Filter = filtroBS
+    End Sub
+
+    Private Sub rbDNI_CheckedChanged(sender As Object, e As EventArgs) Handles rbDNI.CheckedChanged
+        txtBuscar.Text = ""
+        filtroBS = ""
+        bsClientes.Filter = filtroBS
+    End Sub
+
+    Private Sub frmClientes_Disposed(sender As Object, e As EventArgs) Handles Me.Disposed
+        ' Me.Close()
     End Sub
 End Class

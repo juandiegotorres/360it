@@ -26,18 +26,6 @@ Partial Class frmClientes
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
-        Me.btnBajaCancelar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.pnlHeader = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.picCerrar = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,6 +34,21 @@ Partial Class frmClientes
         Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
+        Me.btnBajaCancelar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.pnlHeader = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.rbDNI = New System.Windows.Forms.RadioButton()
+        Me.rbNombreApel = New System.Windows.Forms.RadioButton()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -104,6 +107,67 @@ Partial Class frmClientes
         Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvClientes.Size = New System.Drawing.Size(981, 338)
         Me.dgvClientes.TabIndex = 0
+        '
+        'idCliente
+        '
+        Me.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.idCliente.DataPropertyName = "idCliente"
+        Me.idCliente.HeaderText = "ID "
+        Me.idCliente.Name = "idCliente"
+        Me.idCliente.ReadOnly = True
+        Me.idCliente.Visible = False
+        '
+        'idLocalidad
+        '
+        Me.idLocalidad.DataPropertyName = "localidad"
+        Me.idLocalidad.HeaderText = "ID Localidad"
+        Me.idLocalidad.Name = "idLocalidad"
+        Me.idLocalidad.ReadOnly = True
+        Me.idLocalidad.Visible = False
+        '
+        'provincia
+        '
+        Me.provincia.DataPropertyName = "provincia"
+        Me.provincia.HeaderText = "ID Provincia"
+        Me.provincia.Name = "provincia"
+        Me.provincia.ReadOnly = True
+        Me.provincia.Visible = False
+        '
+        'nombreApel
+        '
+        Me.nombreApel.DataPropertyName = "nombreApel"
+        Me.nombreApel.HeaderText = "Nombre y Apellido"
+        Me.nombreApel.Name = "nombreApel"
+        Me.nombreApel.ReadOnly = True
+        '
+        'dni
+        '
+        Me.dni.DataPropertyName = "dni"
+        Me.dni.HeaderText = "DNI"
+        Me.dni.Name = "dni"
+        Me.dni.ReadOnly = True
+        '
+        'telefono
+        '
+        Me.telefono.DataPropertyName = "telefono"
+        Me.telefono.HeaderText = "Teléfono"
+        Me.telefono.Name = "telefono"
+        Me.telefono.ReadOnly = True
+        '
+        'direccion
+        '
+        Me.direccion.DataPropertyName = "direccion"
+        Me.direccion.HeaderText = "Dirección"
+        Me.direccion.Name = "direccion"
+        Me.direccion.ReadOnly = True
+        '
+        'nombLocalidad
+        '
+        Me.nombLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.nombLocalidad.DataPropertyName = "nombLocalidad"
+        Me.nombLocalidad.HeaderText = "Localidad"
+        Me.nombLocalidad.Name = "nombLocalidad"
+        Me.nombLocalidad.ReadOnly = True
         '
         'TableLayoutPanel1
         '
@@ -202,7 +266,7 @@ Partial Class frmClientes
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(311, 44)
         Me.btnModificar.TabIndex = 4
-        Me.btnModificar.Text = "Modificación"
+        Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'pnlHeader
@@ -223,21 +287,45 @@ Partial Class frmClientes
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.rbDNI)
+        Me.Panel1.Controls.Add(Me.rbNombreApel)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(4, 104)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Panel1.Size = New System.Drawing.Size(555, 33)
+        Me.Panel1.Size = New System.Drawing.Size(615, 33)
         Me.Panel1.TabIndex = 43
+        '
+        'rbDNI
+        '
+        Me.rbDNI.AutoSize = True
+        Me.rbDNI.Location = New System.Drawing.Point(542, 6)
+        Me.rbDNI.Name = "rbDNI"
+        Me.rbDNI.Size = New System.Drawing.Size(52, 22)
+        Me.rbDNI.TabIndex = 46
+        Me.rbDNI.Text = "DNI"
+        Me.rbDNI.UseVisualStyleBackColor = True
+        '
+        'rbNombreApel
+        '
+        Me.rbNombreApel.AutoSize = True
+        Me.rbNombreApel.Checked = True
+        Me.rbNombreApel.Location = New System.Drawing.Point(374, 6)
+        Me.rbNombreApel.Name = "rbNombreApel"
+        Me.rbNombreApel.Size = New System.Drawing.Size(149, 22)
+        Me.rbNombreApel.TabIndex = 45
+        Me.rbNombreApel.TabStop = True
+        Me.rbNombreApel.Text = "Nombre y Apellido"
+        Me.rbNombreApel.UseVisualStyleBackColor = True
         '
         'txtBuscar
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtBuscar.Location = New System.Drawing.Point(265, 3)
+        Me.txtBuscar.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.txtBuscar.Location = New System.Drawing.Point(90, 3)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(255, 27)
@@ -251,9 +339,9 @@ Partial Class frmClientes
         Me.Label2.Location = New System.Drawing.Point(14, 4)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(248, 22)
+        Me.Label2.Size = New System.Drawing.Size(68, 22)
         Me.Label2.TabIndex = 44
-        Me.Label2.Text = "Buscar por nombre y apellido:"
+        Me.Label2.Text = "Buscar:"
         '
         'TableLayoutPanel3
         '
@@ -299,67 +387,6 @@ Partial Class frmClientes
         Me.Label1.TabIndex = 40
         Me.Label1.Text = "CLIENTES"
         '
-        'idCliente
-        '
-        Me.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.idCliente.DataPropertyName = "idCliente"
-        Me.idCliente.HeaderText = "ID "
-        Me.idCliente.Name = "idCliente"
-        Me.idCliente.ReadOnly = True
-        Me.idCliente.Visible = False
-        '
-        'idLocalidad
-        '
-        Me.idLocalidad.DataPropertyName = "localidad"
-        Me.idLocalidad.HeaderText = "ID Localidad"
-        Me.idLocalidad.Name = "idLocalidad"
-        Me.idLocalidad.ReadOnly = True
-        Me.idLocalidad.Visible = False
-        '
-        'provincia
-        '
-        Me.provincia.DataPropertyName = "provincia"
-        Me.provincia.HeaderText = "ID Provincia"
-        Me.provincia.Name = "provincia"
-        Me.provincia.ReadOnly = True
-        Me.provincia.Visible = False
-        '
-        'nombreApel
-        '
-        Me.nombreApel.DataPropertyName = "nombreApel"
-        Me.nombreApel.HeaderText = "Nombre y Apellido"
-        Me.nombreApel.Name = "nombreApel"
-        Me.nombreApel.ReadOnly = True
-        '
-        'dni
-        '
-        Me.dni.DataPropertyName = "dni"
-        Me.dni.HeaderText = "DNI"
-        Me.dni.Name = "dni"
-        Me.dni.ReadOnly = True
-        '
-        'telefono
-        '
-        Me.telefono.DataPropertyName = "telefono"
-        Me.telefono.HeaderText = "Teléfono"
-        Me.telefono.Name = "telefono"
-        Me.telefono.ReadOnly = True
-        '
-        'direccion
-        '
-        Me.direccion.DataPropertyName = "direccion"
-        Me.direccion.HeaderText = "Dirección"
-        Me.direccion.Name = "direccion"
-        Me.direccion.ReadOnly = True
-        '
-        'nombLocalidad
-        '
-        Me.nombLocalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nombLocalidad.DataPropertyName = "nombLocalidad"
-        Me.nombLocalidad.HeaderText = "Localidad"
-        Me.nombLocalidad.Name = "nombLocalidad"
-        Me.nombLocalidad.ReadOnly = True
-        '
         'frmClientes
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -404,4 +431,7 @@ Partial Class frmClientes
     Friend WithEvents telefono As DataGridViewTextBoxColumn
     Friend WithEvents direccion As DataGridViewTextBoxColumn
     Friend WithEvents nombLocalidad As DataGridViewTextBoxColumn
+    Friend WithEvents rbDNI As RadioButton
+    Friend WithEvents rbNombreApel As RadioButton
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

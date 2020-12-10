@@ -241,7 +241,8 @@
         If dgvCarrito.Rows.Count = 0 Then
             MsgBox("El carrito esta vacío", MsgBoxStyle.Exclamation, "Vender")
         Else
-            If MsgBox("¿Desea realizar esta venta?", MsgBoxStyle.YesNo Or MsgBoxStyle.Information, "Vender") = MsgBoxResult.Yes Then
+            frmModal.ShowDialog()
+            If frmModal.DialogResult = DialogResult.OK Then
                 vender()
             End If
         End If

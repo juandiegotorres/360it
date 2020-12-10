@@ -271,5 +271,9 @@ Public Class Producto
 
         End Try
     End Sub
+    Public Sub productoMasVendido(ByVal tabla As DataTable)
+        Dim consultaSQL As String = "SELECT sum(detalleventa.cantidad) as 'cantidad', concat_ws(' ', productos.marca, productos.modelo) as 'producto' FROM db_360.detalleventa JOIN productos WHERE detalleventa.producto = productos.idProducto group by producto order by cantidad desc limit 5"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+    End Sub
 #End Region
 End Class

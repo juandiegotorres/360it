@@ -24,6 +24,7 @@
             lblTitulo.Text = "Modificar Proveedor"
             txtNombre.Text = eProveedor.nombre
             txtCBU.Text = eProveedor.cbu
+            txtCuil.Text = eProveedor.cuil
             txtDireccion.Text = eProveedor.direccion
             txtTelefono.Text = eProveedor.telefono
             txtHorario.Text = eProveedor.horario
@@ -147,6 +148,7 @@
                     Exit Sub
                 End If
                 eProveedor.nombre = txtNombre.Text
+                eProveedor.cuil = txtCuil.Text
                 eProveedor.telefono = txtTelefono.Text
                 eProveedor.cbu = txtCBU.Text
                 eProveedor.direccion = txtDireccion.Text
@@ -174,7 +176,7 @@
         For Each _control In Me.Controls
             If TypeOf _control Is TextBox Then
                 If LTrim(_control.Text) = "" Then
-                    MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Proveedores")
+                    MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Proveedores")
                     Return False
                 End If
             End If
@@ -182,6 +184,7 @@
         Return True
     End Function
 #Region "KEYPRESS"
+
     Private Sub txtCBU_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCBU.KeyPress
         If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
@@ -216,6 +219,14 @@
         MyBase.OnPaintBackground(e)
         Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
         e.Graphics.DrawRectangle(Pens.Black, rect)
+    End Sub
+
+    Private Sub txtCuil_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCuil.KeyPress
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 
 #End Region

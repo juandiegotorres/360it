@@ -22,18 +22,18 @@ Partial Class frmProductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
@@ -47,16 +47,20 @@ Partial Class frmProductos
         Me.btnAumentarPrecio = New System.Windows.Forms.Button()
         Me.btnQuitar = New System.Windows.Forms.Button()
         Me.btnAgregarStock = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.lblBuscar = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.cbBuscador = New System.Windows.Forms.ComboBox()
-        Me.cbCategorias = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.dgvProductosPocoStock = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,30 +75,26 @@ Partial Class frmProductos
         Me.precioCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.dgvProductosPocoStock = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.lblBuscar = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbBuscador = New System.Windows.Forms.ComboBox()
+        Me.cbCategorias = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
+        CType(Me.dgvProductosPocoStock, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel6.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.TableLayoutPanel7.SuspendLayout()
-        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvProductosPocoStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -193,7 +193,7 @@ Partial Class frmProductos
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(316, 44)
         Me.btnModificar.TabIndex = 38
-        Me.btnModificar.Text = "Modificación"
+        Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel3
@@ -334,116 +334,6 @@ Partial Class frmProductos
         Me.btnAgregarStock.Text = "Agregar Stock"
         Me.btnAgregarStock.UseVisualStyleBackColor = False
         '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 2
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.11036!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.88964!))
-        Me.TableLayoutPanel6.Controls.Add(Me.Panel1, 0, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.Panel2, 1, 0)
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(1, 102)
-        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(1)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(1033, 37)
-        Me.TableLayoutPanel6.TabIndex = 47
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.txtBuscar)
-        Me.Panel1.Controls.Add(Me.lblBuscar)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(435, 37)
-        Me.Panel1.TabIndex = 44
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(92, 6)
-        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(325, 27)
-        Me.txtBuscar.TabIndex = 44
-        '
-        'lblBuscar
-        '
-        Me.lblBuscar.AutoSize = True
-        Me.lblBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBuscar.ForeColor = System.Drawing.Color.Black
-        Me.lblBuscar.Location = New System.Drawing.Point(16, 9)
-        Me.lblBuscar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblBuscar.Name = "lblBuscar"
-        Me.lblBuscar.Size = New System.Drawing.Size(68, 22)
-        Me.lblBuscar.TabIndex = 44
-        Me.lblBuscar.Text = "Buscar:"
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.cbBuscador)
-        Me.Panel2.Controls.Add(Me.cbCategorias)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(435, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(598, 37)
-        Me.Panel2.TabIndex = 45
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(46, 8)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 22)
-        Me.Label4.TabIndex = 55
-        Me.Label4.Text = "Buscar por:"
-        '
-        'cbBuscador
-        '
-        Me.cbBuscador.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cbBuscador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbBuscador.Font = New System.Drawing.Font("Montserrat", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbBuscador.FormattingEnabled = True
-        Me.cbBuscador.Items.AddRange(New Object() {"Tipo", "Modelo", "Marca"})
-        Me.cbBuscador.Location = New System.Drawing.Point(152, 6)
-        Me.cbBuscador.Name = "cbBuscador"
-        Me.cbBuscador.Size = New System.Drawing.Size(155, 29)
-        Me.cbBuscador.TabIndex = 54
-        '
-        'cbCategorias
-        '
-        Me.cbCategorias.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cbCategorias.BackColor = System.Drawing.SystemColors.Window
-        Me.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbCategorias.Font = New System.Drawing.Font("Montserrat", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbCategorias.FormattingEnabled = True
-        Me.cbCategorias.Location = New System.Drawing.Point(425, 6)
-        Me.cbCategorias.Name = "cbCategorias"
-        Me.cbCategorias.Size = New System.Drawing.Size(155, 29)
-        Me.cbCategorias.TabIndex = 53
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(319, 9)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 22)
-        Me.Label3.TabIndex = 45
-        Me.Label3.Text = "Categorías:"
-        '
         'TableLayoutPanel7
         '
         Me.TableLayoutPanel7.ColumnCount = 1
@@ -453,7 +343,7 @@ Partial Class frmProductos
         Me.TableLayoutPanel7.Controls.Add(Me.Label2, 0, 1)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 3
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.0!))
@@ -461,6 +351,151 @@ Partial Class frmProductos
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.0!))
         Me.TableLayoutPanel7.Size = New System.Drawing.Size(855, 390)
         Me.TableLayoutPanel7.TabIndex = 48
+        '
+        'dgvProductosPocoStock
+        '
+        Me.dgvProductosPocoStock.AllowUserToAddRows = False
+        Me.dgvProductosPocoStock.AllowUserToDeleteRows = False
+        Me.dgvProductosPocoStock.AllowUserToOrderColumns = True
+        Me.dgvProductosPocoStock.AllowUserToResizeRows = False
+        Me.dgvProductosPocoStock.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvProductosPocoStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvProductosPocoStock.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvProductosPocoStock.CausesValidation = False
+        Me.dgvProductosPocoStock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductosPocoStock.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvProductosPocoStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProductosPocoStock.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductosPocoStock.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvProductosPocoStock.EnableHeadersVisualStyles = False
+        Me.dgvProductosPocoStock.Location = New System.Drawing.Point(20, 269)
+        Me.dgvProductosPocoStock.Margin = New System.Windows.Forms.Padding(20, 5, 18, 0)
+        Me.dgvProductosPocoStock.MultiSelect = False
+        Me.dgvProductosPocoStock.Name = "dgvProductosPocoStock"
+        Me.dgvProductosPocoStock.ReadOnly = True
+        Me.dgvProductosPocoStock.RightToLeft = System.Windows.Forms.RightToLeft.No
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductosPocoStock.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvProductosPocoStock.RowHeadersVisible = False
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        Me.dgvProductosPocoStock.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvProductosPocoStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvProductosPocoStock.Size = New System.Drawing.Size(817, 121)
+        Me.dgvProductosPocoStock.TabIndex = 49
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "idProducto"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "idProducto"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "marca"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Marca"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "categoria"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "categoria"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Visible = False
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "proveedor"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "idproveedor"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Visible = False
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "modelo"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Modelo"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "tipoProducto"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "nombCategoria"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Categoría"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "nombreProveedor"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Proveedor"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "cantidad"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "descripcion"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "precioCosto"
+        DataGridViewCellStyle2.Format = "C2"
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Precio Costo"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "precioVenta"
+        DataGridViewCellStyle3.Format = "C2"
+        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Precio Venta"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
         '
         'dgvProductos
         '
@@ -618,150 +653,115 @@ Partial Class frmProductos
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "Productos próximos a quedarse sin stock:"
         '
-        'dgvProductosPocoStock
+        'TableLayoutPanel6
         '
-        Me.dgvProductosPocoStock.AllowUserToAddRows = False
-        Me.dgvProductosPocoStock.AllowUserToDeleteRows = False
-        Me.dgvProductosPocoStock.AllowUserToOrderColumns = True
-        Me.dgvProductosPocoStock.AllowUserToResizeRows = False
-        Me.dgvProductosPocoStock.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvProductosPocoStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvProductosPocoStock.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvProductosPocoStock.CausesValidation = False
-        Me.dgvProductosPocoStock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvProductosPocoStock.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvProductosPocoStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProductosPocoStock.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvProductosPocoStock.DefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvProductosPocoStock.EnableHeadersVisualStyles = False
-        Me.dgvProductosPocoStock.Location = New System.Drawing.Point(20, 269)
-        Me.dgvProductosPocoStock.Margin = New System.Windows.Forms.Padding(20, 5, 18, 0)
-        Me.dgvProductosPocoStock.MultiSelect = False
-        Me.dgvProductosPocoStock.Name = "dgvProductosPocoStock"
-        Me.dgvProductosPocoStock.ReadOnly = True
-        Me.dgvProductosPocoStock.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductosPocoStock.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvProductosPocoStock.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.dgvProductosPocoStock.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvProductosPocoStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProductosPocoStock.Size = New System.Drawing.Size(817, 121)
-        Me.dgvProductosPocoStock.TabIndex = 49
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.11036!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.88964!))
+        Me.TableLayoutPanel6.Controls.Add(Me.Panel1, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Panel2, 1, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(1, 102)
+        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(1)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 1
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(1033, 37)
+        Me.TableLayoutPanel6.TabIndex = 47
         '
-        'DataGridViewTextBoxColumn1
+        'Panel1
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "idProducto"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "idProducto"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
+        Me.Panel1.Controls.Add(Me.txtBuscar)
+        Me.Panel1.Controls.Add(Me.lblBuscar)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(435, 37)
+        Me.Panel1.TabIndex = 44
         '
-        'DataGridViewTextBoxColumn2
+        'txtBuscar
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "marca"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Marca"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.txtBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(92, 6)
+        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(325, 27)
+        Me.txtBuscar.TabIndex = 44
         '
-        'DataGridViewTextBoxColumn3
+        'lblBuscar
         '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "categoria"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "categoria"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Visible = False
+        Me.lblBuscar.AutoSize = True
+        Me.lblBuscar.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBuscar.ForeColor = System.Drawing.Color.Black
+        Me.lblBuscar.Location = New System.Drawing.Point(16, 9)
+        Me.lblBuscar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBuscar.Name = "lblBuscar"
+        Me.lblBuscar.Size = New System.Drawing.Size(68, 22)
+        Me.lblBuscar.TabIndex = 44
+        Me.lblBuscar.Text = "Buscar:"
         '
-        'DataGridViewTextBoxColumn4
+        'Panel2
         '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "proveedor"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "idproveedor"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Visible = False
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.cbBuscador)
+        Me.Panel2.Controls.Add(Me.cbCategorias)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(435, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(598, 37)
+        Me.Panel2.TabIndex = 45
         '
-        'DataGridViewTextBoxColumn5
+        'Label4
         '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "modelo"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Modelo"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(46, 8)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(99, 22)
+        Me.Label4.TabIndex = 55
+        Me.Label4.Text = "Buscar por:"
         '
-        'DataGridViewTextBoxColumn6
+        'cbBuscador
         '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "tipoProducto"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.cbBuscador.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbBuscador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbBuscador.Font = New System.Drawing.Font("Montserrat", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbBuscador.FormattingEnabled = True
+        Me.cbBuscador.Items.AddRange(New Object() {"Tipo", "Modelo", "Marca"})
+        Me.cbBuscador.Location = New System.Drawing.Point(152, 6)
+        Me.cbBuscador.Name = "cbBuscador"
+        Me.cbBuscador.Size = New System.Drawing.Size(155, 29)
+        Me.cbBuscador.TabIndex = 54
         '
-        'DataGridViewTextBoxColumn7
+        'cbCategorias
         '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "nombCategoria"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Categoría"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.cbCategorias.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbCategorias.BackColor = System.Drawing.SystemColors.Window
+        Me.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCategorias.Font = New System.Drawing.Font("Montserrat", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCategorias.FormattingEnabled = True
+        Me.cbCategorias.Location = New System.Drawing.Point(425, 6)
+        Me.cbCategorias.Name = "cbCategorias"
+        Me.cbCategorias.Size = New System.Drawing.Size(155, 29)
+        Me.cbCategorias.TabIndex = 53
         '
-        'DataGridViewTextBoxColumn8
+        'Label3
         '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "nombreProveedor"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Proveedor"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "cantidad"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Cantidad"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "descripcion"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Descripción"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "precioCosto"
-        DataGridViewCellStyle2.Format = "C2"
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Precio Costo"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "precioVenta"
-        DataGridViewCellStyle3.Format = "C2"
-        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Precio Venta"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(319, 9)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(99, 22)
+        Me.Label3.TabIndex = 45
+        Me.Label3.Text = "Categorías:"
         '
         'frmProductos
         '
@@ -779,15 +779,15 @@ Partial Class frmProductos
         Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel7.ResumeLayout(False)
+        Me.TableLayoutPanel7.PerformLayout()
+        CType(Me.dgvProductosPocoStock, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel6.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.TableLayoutPanel7.ResumeLayout(False)
-        Me.TableLayoutPanel7.PerformLayout()
-        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvProductosPocoStock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

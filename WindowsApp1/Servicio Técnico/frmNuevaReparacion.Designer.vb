@@ -115,6 +115,7 @@ Partial Class frmNuevaReparacion
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(291, 31)
         Me.txtMarca.TabIndex = 3
+        Me.txtMarca.Tag = "Marca"
         '
         'Label3
         '
@@ -145,6 +146,7 @@ Partial Class frmNuevaReparacion
         Me.txtNombreCliente.ReadOnly = True
         Me.txtNombreCliente.Size = New System.Drawing.Size(291, 31)
         Me.txtNombreCliente.TabIndex = 50
+        Me.txtNombreCliente.Tag = "Cliente"
         '
         'btnClientes
         '
@@ -183,6 +185,7 @@ Partial Class frmNuevaReparacion
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(291, 31)
         Me.txtModelo.TabIndex = 4
+        Me.txtModelo.Tag = "Modelo"
         '
         'Label9
         '
@@ -342,7 +345,7 @@ Partial Class frmNuevaReparacion
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1093, 64)
         Me.TableLayoutPanel1.TabIndex = 100
         '

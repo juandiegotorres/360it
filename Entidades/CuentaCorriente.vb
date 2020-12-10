@@ -49,7 +49,7 @@ Public Class CuentaCorriente
 #Region "Metodos"
     Public Function filtrarVentasCliente(ByRef tabla As DataTable)
         Try
-            Dim consultaSQL As String = "Select movimientos.venta, concat_ws(' - ', movimientos.venta, date_format(fechaMovimiento, '%d/%m/%y')) as 'ventaFecha' from clientes inner join cuentascorriente on clientes.idcliente = cuentascorriente.cliente inner join movimientos on cuentascorriente.idCuenta = movimientos.cuentacorriente inner join ventas ON movimientos.venta = ventas.idventa WHERE cuentascorriente.cliente = '" & _idCliente & "' group by venta order by fechaMovimiento DESC"
+            Dim consultaSQL As String = "Select movimientos.venta, concat_ws(' - ', movimientos.venta, date_format(fechaMovimiento, '%d/%m/%y')) as 'ventaFecha' from clientes inner join cuentascorriente on clientes.idcliente = cuentascorriente.cliente inner join movimientos on cuentascorriente.idCuenta = movimientos.cuentacorriente inner join ventas ON movimientos.venta = ventas.idventa WHERE cuentascorriente.cliente = '" & _idCliente & "' and ventas.activo = 1 group by venta order by fechaMovimiento DESC"
             capaDatos.llenarDatos(tabla, consultaSQL)
             If tabla.Rows.Count = 0 Then
                 Return False
@@ -85,7 +85,7 @@ Public Class CuentaCorriente
     End Sub
     Public Function entregaDinero()
         Try
-            Dim consultaSQL As String = "INSERT INTO movimientos(tipoMovimiento, monto, fechaMovimiento, cuentacorriente, venta) VALUES (@tipoMovimiento,@monto, @fechaMovimiento, @cuentacorriente, @venta)"
+            Dim consultaSQL As String = "INSERT INTO movimientos(tipoMovimiento, monto, fechaMovimiento, cuentacorriente, venta, activo) VALUES (@tipoMovimiento,@monto, @fechaMovimiento, @cuentacorriente, @venta, 1)"
             Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL)
             sqlComando.Parameters.Add("@tipoMovimiento", MySqlDbType.String).Value = "C"
             sqlComando.Parameters.Add("@monto", MySqlDbType.Float).Value = Me.entrega
@@ -107,5 +107,28 @@ Public Class CuentaCorriente
             MsgBox(ex.Message, "Entidad Cuenta Corriente")
         End Try
     End Sub
+    Public Function bajaVenta(ByRef idVenta_ As UInt64, ByRef Optional movimientos As Boolean = False)
+        Try
+            Dim consultaSQL As String = "UPDATE ventas SET activo = 0 WHERE idVenta = '" & idVenta_ & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            If movimientos = True Then
+                consultaSQL = "UPDATE movimientos SET activo = 0 WHERE idVenta = '" & idVenta_ & "'"
+            End If
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Ventas")
+            Return False
+        End Try
+    End Function
+    Public Function eliminarTodosLosMovimientos(ByRef idVenta_ As UInt64)
+        Try
+            Dim consultaSQL As String = "DELETE FROM movimientos WHERE venta = '" & idVenta_ & "' AND tipoMovimiento = 'C'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Cuentas Corriente")
+            Return False
+        End Try
+    End Function
 #End Region
 End Class

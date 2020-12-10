@@ -226,6 +226,16 @@ Public Class Venta
             MsgBox(ex.Message, "Entidad Ventas")
         End Try
     End Sub
+    Public Function bajaVenta(ByRef idVenta_ As UInt64)
+        Try
+            Dim consultaSQL As String = "UPDATE ventas SET activo = 0 WHERE idVenta = '" & idVenta_ & "'"
+            capaDatos.cargarDatos(consultaSQL)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message, "Ventas")
+            Return False
+        End Try
+    End Function
     Public Sub calcularNumeroVenta()
         Try
             tablaNumeroVenta.Clear()
@@ -289,7 +299,7 @@ Public Class Venta
     End Function
     Public Function insertarMovimiento()
         Try
-            Dim consultaSQL1 As String = "INSERT INTO movimientos(tipoMovimiento, monto, fechaMovimiento, cuentacorriente, venta) VALUES (@tipoMovimiento,@monto,@fecha,(SELECT idCuenta FROM cuentascorriente WHERE cliente = @idcliente), (SELECT max(idVenta) FROM ventas))"
+            Dim consultaSQL1 As String = "INSERT INTO movimientos(tipoMovimiento, monto, fechaMovimiento, cuentacorriente, venta, activo) VALUES (@tipoMovimiento,@monto,@fecha,(SELECT idCuenta FROM cuentascorriente WHERE cliente = @idcliente), (SELECT max(idVenta) FROM ventas),1)"
             Dim sqlComando As MySqlCommand = New MySqlCommand(consultaSQL1)
             sqlComando.Parameters.Add("@idCliente", MySqlDbType.Int64).Value = Me.idCliente
             sqlComando.Parameters.Add("@tipoMovimiento", MySqlDbType.VarChar).Value = "D"
@@ -386,7 +396,7 @@ Public Class Venta
     Public Sub cajaDiaria(ByVal fechaElegida As Date)
         Try
             tablaCaja.Clear()
-            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT sum(distinct(precioFinal)) as 'Total' FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta WHERE DATE(ventas.fechaHora) = @fecha")
+            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT sum(distinct(precioFinal)) as 'Total' FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta WHERE DATE(ventas.fechaHora) = @fecha AND ventas.activo = 1")
             comandoSQL.Parameters.Add("@fecha", MySqlDbType.Date).Value = fechaElegida
             capaDatos.CargarDatos(tablaCaja, comandoSQL)
             'Si no hay registro en la base de datos de esa fecha me va a devolver un valor null, y va a contar como que tiene un registro en la tabla por lo cual no puedo usar tablaCaja.Rows.Count. De esta forma pregunto si el primer registro de la primera columna es null. De todas formas me aseguro que por si algun caso la tabla viene vacia cuente las columnas
@@ -403,10 +413,10 @@ Public Class Venta
     Public Sub cajaDiariaCtaCorriente(ByRef tabla As DataTable, ByVal fechaElegida As Date)
         Try
             tablaCaja.Clear()
-            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT clientes.nombreApel, clientes.telefono FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta JOIN movimientos on ventas.idVenta = movimientos.venta JOIN cuentascorriente ON movimientos.cuentacorriente = cuentascorriente.idCuenta JOIN clientes ON cuentascorriente.cliente = clientes.idcliente WHERE DATE(ventas.fechaHora) = @fecha group by nombreApel")
+            Dim comandoSQL As MySqlCommand = New MySqlCommand("SELECT clientes.nombreApel, clientes.telefono FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta JOIN movimientos on ventas.idVenta = movimientos.venta JOIN cuentascorriente ON movimientos.cuentacorriente = cuentascorriente.idCuenta JOIN clientes ON cuentascorriente.cliente = clientes.idcliente WHERE DATE(ventas.fechaHora) = @fecha AND ventas.activo = 1 group by nombreApel")
             comandoSQL.Parameters.Add("@fecha", MySqlDbType.Date).Value = fechaElegida
             capaDatos.CargarDatos(tabla, comandoSQL)
-            comandoSQL.CommandText = "SELECT sum(distinct(detalleventa.precioFinal)) as 'Total' FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta JOIN movimientos on ventas.idVenta = movimientos.venta JOIN cuentascorriente ON movimientos.cuentacorriente = cuentascorriente.idCuenta JOIN clientes ON cuentascorriente.cliente = clientes.idcliente WHERE DATE(ventas.fechaHora) = @fecha"
+            comandoSQL.CommandText = "SELECT sum(distinct(detalleventa.precioFinal)) as 'Total' FROM detalleventa JOIN ventas ON detalleventa.venta = ventas.idVenta JOIN movimientos on ventas.idVenta = movimientos.venta JOIN cuentascorriente ON movimientos.cuentacorriente = cuentascorriente.idCuenta JOIN clientes ON cuentascorriente.cliente = clientes.idcliente WHERE DATE(ventas.fechaHora) = @fecha AND ventas.activo = 1"
             capaDatos.CargarDatos(tablaCaja, comandoSQL)
             'Si no hay registro en la base de datos de esa fecha me va a devolver un valor null, y va a contar como que tiene un registro en la tabla por lo cual no puedo usar tablaCaja.Rows.Count. De esta forma pregunto si el primer registro de la primera columna es null. De todas formas me aseguro que por si algun caso la tabla viene vacia cuente las columnas
             If tablaCaja(0)(0) Is DBNull.Value Or tablaCaja.Rows.Count = 0 Then
@@ -435,6 +445,24 @@ Public Class Venta
         Catch ex As Exception
             MsgBox(ex.Message, "Entidad Venta")
         End Try
+    End Sub
+
+#End Region
+#Region "REPORTES"
+    Public Sub reporteVentaXMes(ByVal tabla As DataTable)
+        Dim consultaSQL As String = "SELECT MONTH(fechaHora) as 'NroMes', count(idVenta) as 'Cantidad', meses.nombreMes from ventas, meses where month(fechaHora) = meses.idmes and date(fechaHora) >= DATE_sub(CURDATE(), INTERVAL 12 MONTH) and CURDATE() >= date(fechaHora)  GROUP BY MONTH(fechaHora) ORDER BY fechaHora"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+    End Sub
+
+    Public Sub reportesGenerales(ByVal tabla As DataTable)
+        Dim consultaSQL As String = "SELECT count(clientes.idcliente) as 'CantidadClientes' FROM clientes"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+        consultaSQL = "SELECT count(productos.idProducto) as 'CantidadProductos' FROM productos"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+        consultaSQL = "SELECT count(productos.idProducto) as 'bajoStock' FROM productos WHERE cantidad >=1 AND cantidad <= 5"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+        consultaSQL = "SELECT count(serviciotecnico.idReparacion) as 'articulosReparados' FROM serviciotecnico JOIN estado ON serviciotecnico.estado = estado.id WHERE estado.id = 3"
+        capaDatos.llenarDatos(tabla, consultaSQL)
     End Sub
 #End Region
 End Class

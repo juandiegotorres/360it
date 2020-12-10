@@ -22,89 +22,101 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.dgvRubros = New System.Windows.Forms.DataGridView()
-        Me.rubros = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idrubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dgvClientesFechas = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.dgvClientesFechas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'dgvRubros
+        'Label4
         '
-        Me.dgvRubros.AllowUserToAddRows = False
-        Me.dgvRubros.AllowUserToDeleteRows = False
-        Me.dgvRubros.AllowUserToOrderColumns = True
-        Me.dgvRubros.AllowUserToResizeRows = False
-        Me.dgvRubros.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvRubros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvRubros.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvRubros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRubros.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvRubros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRubros.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rubros, Me.idrubro})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRubros.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvRubros.EnableHeadersVisualStyles = False
-        Me.dgvRubros.Location = New System.Drawing.Point(318, 40)
-        Me.dgvRubros.Margin = New System.Windows.Forms.Padding(14, 5, 18, 10)
-        Me.dgvRubros.MultiSelect = False
-        Me.dgvRubros.Name = "dgvRubros"
-        Me.dgvRubros.ReadOnly = True
-        Me.dgvRubros.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvRubros.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.dgvRubros.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvRubros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRubros.Size = New System.Drawing.Size(165, 371)
-        Me.dgvRubros.TabIndex = 39
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(441, 250)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(335, 26)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Cantidad de ventas en un año:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'rubros
+        'Label3
         '
-        Me.rubros.DataPropertyName = "nombRubro"
-        Me.rubros.HeaderText = "Rubros"
-        Me.rubros.Name = "rubros"
-        Me.rubros.ReadOnly = True
+        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(49, 194)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(298, 26)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "5 Productos más vendidos:"
         '
-        'idrubro
+        'dgvClientesFechas
         '
-        Me.idrubro.DataPropertyName = "idRubro"
-        Me.idrubro.HeaderText = "idRubro"
-        Me.idrubro.Name = "idrubro"
-        Me.idrubro.ReadOnly = True
-        Me.idrubro.Visible = False
+        Me.dgvClientesFechas.AllowUserToAddRows = False
+        Me.dgvClientesFechas.AllowUserToDeleteRows = False
+        Me.dgvClientesFechas.AllowUserToResizeRows = False
+        Me.dgvClientesFechas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvClientesFechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvClientesFechas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
+        Me.dgvClientesFechas.Location = New System.Drawing.Point(5, 14)
+        Me.dgvClientesFechas.Name = "dgvClientesFechas"
+        Me.dgvClientesFechas.RowHeadersVisible = False
+        Me.dgvClientesFechas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvClientesFechas.Size = New System.Drawing.Size(790, 422)
+        Me.dgvClientesFechas.TabIndex = 4
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "nombreApel"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Nombre y Apellido"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "dni"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "DNI"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "fechaCreacion"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Fecha Creación"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "fechaModificacion"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha Modificación"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.dgvRubros)
+        Me.Controls.Add(Me.dgvClientesFechas)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Name = "Form1"
         Me.Text = "Form1"
-        CType(Me.dgvRubros, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvClientesFechas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Public WithEvents dgvRubros As Windows.Forms.DataGridView
-    Friend WithEvents rubros As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents idrubro As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label4 As Windows.Forms.Label
+    Friend WithEvents Label3 As Windows.Forms.Label
+    Friend WithEvents dgvClientesFechas As Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As Windows.Forms.DataGridViewTextBoxColumn
 End Class

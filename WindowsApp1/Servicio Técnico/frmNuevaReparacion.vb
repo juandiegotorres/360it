@@ -68,7 +68,7 @@
                 ElseIf _control Is txtAccesorios Then
                 Else
                     If LTrim(_control.Text) = "" Then
-                        MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Servicio Técnico")
+                        MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Servicio Técnico")
                         Return False
                     End If
                 End If

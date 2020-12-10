@@ -64,6 +64,7 @@ Partial Class frmVender
         Me.txtSubtotal = New System.Windows.Forms.TextBox()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtDescuento = New System.Windows.Forms.TextBox()
         Me.txtRecargo = New System.Windows.Forms.TextBox()
         Me.rbRecargoPorcentaje = New System.Windows.Forms.RadioButton()
         Me.rbRecargoPlata = New System.Windows.Forms.RadioButton()
@@ -91,7 +92,6 @@ Partial Class frmVender
         Me.txtNroVenta = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtDescuento = New System.Windows.Forms.TextBox()
         gbProductos = New System.Windows.Forms.GroupBox()
         gbProductos.SuspendLayout()
         CType(Me.dgvProductosLista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -565,6 +565,21 @@ Partial Class frmVender
         Me.Panel1.Size = New System.Drawing.Size(278, 81)
         Me.Panel1.TabIndex = 0
         '
+        'txtDescuento
+        '
+        Me.txtDescuento.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescuento.Enabled = False
+        Me.txtDescuento.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescuento.Location = New System.Drawing.Point(109, 12)
+        Me.txtDescuento.MaxLength = 9
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.Size = New System.Drawing.Size(93, 28)
+        Me.txtDescuento.TabIndex = 67
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'txtRecargo
         '
         Me.txtRecargo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -870,7 +885,7 @@ Partial Class frmVender
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle7.Format = "Eliminar"
         Me.btnEliminarDGV.DefaultCellStyle = DataGridViewCellStyle7
-        Me.btnEliminarDGV.HeaderText = "Eliminar"
+        Me.btnEliminarDGV.HeaderText = "Opciones"
         Me.btnEliminarDGV.Name = "btnEliminarDGV"
         Me.btnEliminarDGV.ReadOnly = True
         Me.btnEliminarDGV.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -934,21 +949,6 @@ Partial Class frmVender
         Me.Label11.Size = New System.Drawing.Size(70, 26)
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Venta"
-        '
-        'txtDescuento
-        '
-        Me.txtDescuento.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDescuento.Enabled = False
-        Me.txtDescuento.Font = New System.Drawing.Font("Montserrat", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescuento.Location = New System.Drawing.Point(109, 12)
-        Me.txtDescuento.MaxLength = 9
-        Me.txtDescuento.Name = "txtDescuento"
-        Me.txtDescuento.Size = New System.Drawing.Size(93, 28)
-        Me.txtDescuento.TabIndex = 67
-        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'frmVender
         '
@@ -1019,15 +1019,6 @@ Partial Class frmVender
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents btnVender As Button
     Public WithEvents dgvCarrito As DataGridView
-    Friend WithEvents idProductoCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents tipoCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents marcaCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents modeloCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents cantidadCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioTotalCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioVentaCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents precioCostoCarrito As DataGridViewTextBoxColumn
-    Friend WithEvents btnEliminarDGV As DataGridViewButtonColumn
     Friend WithEvents txtFecha As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtNroVenta As TextBox
@@ -1042,4 +1033,13 @@ Partial Class frmVender
     Friend WithEvents txtClienteCtaCorriente As TextBox
     Friend WithEvents cbBuscador As ComboBox
     Friend WithEvents txtDescuento As TextBox
+    Friend WithEvents idProductoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents tipoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents marcaCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents modeloCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents cantidadCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioTotalCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioVentaCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents precioCostoCarrito As DataGridViewTextBoxColumn
+    Friend WithEvents btnEliminarDGV As DataGridViewButtonColumn
 End Class

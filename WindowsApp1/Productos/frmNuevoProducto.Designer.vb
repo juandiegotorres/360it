@@ -151,6 +151,7 @@ Partial Class frmNuevoProducto
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(78, 31)
         Me.txtCantidad.TabIndex = 5
+        Me.txtCantidad.Tag = "Cantidad"
         '
         'txtProveedor
         '
@@ -161,6 +162,7 @@ Partial Class frmNuevoProducto
         Me.txtProveedor.ReadOnly = True
         Me.txtProveedor.Size = New System.Drawing.Size(261, 31)
         Me.txtProveedor.TabIndex = 25
+        Me.txtProveedor.Tag = "Proveedor"
         '
         'txtModelo
         '
@@ -170,6 +172,7 @@ Partial Class frmNuevoProducto
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(237, 31)
         Me.txtModelo.TabIndex = 1
+        Me.txtModelo.Tag = "Modelo"
         '
         'Label6
         '
@@ -219,6 +222,7 @@ Partial Class frmNuevoProducto
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(291, 31)
         Me.txtMarca.TabIndex = 0
+        Me.txtMarca.Tag = "Marca"
         '
         'Label7
         '
@@ -238,6 +242,7 @@ Partial Class frmNuevoProducto
         Me.txtPrecioCosto.Name = "txtPrecioCosto"
         Me.txtPrecioCosto.Size = New System.Drawing.Size(88, 31)
         Me.txtPrecioCosto.TabIndex = 6
+        Me.txtPrecioCosto.Tag = "Precio Costo"
         '
         'Label8
         '
@@ -257,6 +262,7 @@ Partial Class frmNuevoProducto
         Me.txtPrecioVenta.Name = "txtPrecioVenta"
         Me.txtPrecioVenta.Size = New System.Drawing.Size(88, 31)
         Me.txtPrecioVenta.TabIndex = 9
+        Me.txtPrecioVenta.Tag = "Precio Venta"
         '
         'chbPorcentaje
         '
@@ -358,6 +364,7 @@ Partial Class frmNuevoProducto
         Me.txtTipo.Name = "txtTipo"
         Me.txtTipo.Size = New System.Drawing.Size(249, 31)
         Me.txtTipo.TabIndex = 2
+        Me.txtTipo.Tag = "Tipo"
         '
         'Label11
         '

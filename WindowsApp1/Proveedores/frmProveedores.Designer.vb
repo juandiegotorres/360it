@@ -45,6 +45,13 @@ Partial Class frmProveedores
         Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgvProveedores = New System.Windows.Forms.DataGridView()
+        Me.idProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuil = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cbu = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnProductosAsociados = New System.Windows.Forms.Button()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
@@ -53,12 +60,6 @@ Partial Class frmProveedores
         Me.dgvRubros = New System.Windows.Forms.DataGridView()
         Me.rubros = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idrubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cbu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -169,7 +170,7 @@ Partial Class frmProveedores
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(316, 44)
         Me.btnModificar.TabIndex = 38
-        Me.btnModificar.Text = "Modificación"
+        Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'pnlHeader
@@ -291,14 +292,14 @@ Partial Class frmProveedores
         Me.dgvProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvProveedores.CausesValidation = False
         Me.dgvProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvProveedores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProveedor, Me.nombre, Me.telefono, Me.cbu, Me.direccion, Me.horario})
+        Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProveedor, Me.nombre, Me.cuil, Me.telefono, Me.cbu, Me.direccion, Me.horario})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -321,6 +322,56 @@ Partial Class frmProveedores
         Me.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProveedores.Size = New System.Drawing.Size(800, 371)
         Me.dgvProveedores.TabIndex = 34
+        '
+        'idProveedor
+        '
+        Me.idProveedor.DataPropertyName = "idProveedor"
+        Me.idProveedor.HeaderText = "ID"
+        Me.idProveedor.Name = "idProveedor"
+        Me.idProveedor.ReadOnly = True
+        Me.idProveedor.Visible = False
+        '
+        'nombre
+        '
+        Me.nombre.DataPropertyName = "nombreProveedor"
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        '
+        'cuil
+        '
+        Me.cuil.DataPropertyName = "cuil"
+        Me.cuil.HeaderText = "CUIL/CUIT"
+        Me.cuil.Name = "cuil"
+        Me.cuil.ReadOnly = True
+        '
+        'telefono
+        '
+        Me.telefono.DataPropertyName = "telefono"
+        Me.telefono.HeaderText = "Teléfono"
+        Me.telefono.Name = "telefono"
+        Me.telefono.ReadOnly = True
+        '
+        'cbu
+        '
+        Me.cbu.DataPropertyName = "cbu"
+        Me.cbu.HeaderText = "CBU"
+        Me.cbu.Name = "cbu"
+        Me.cbu.ReadOnly = True
+        '
+        'direccion
+        '
+        Me.direccion.DataPropertyName = "direccion"
+        Me.direccion.HeaderText = "Dirección"
+        Me.direccion.Name = "direccion"
+        Me.direccion.ReadOnly = True
+        '
+        'horario
+        '
+        Me.horario.DataPropertyName = "horario"
+        Me.horario.HeaderText = "Horario"
+        Me.horario.Name = "horario"
+        Me.horario.ReadOnly = True
         '
         'TableLayoutPanel2
         '
@@ -485,49 +536,6 @@ Partial Class frmProveedores
         Me.idrubro.ReadOnly = True
         Me.idrubro.Visible = False
         '
-        'idProveedor
-        '
-        Me.idProveedor.DataPropertyName = "idProveedor"
-        Me.idProveedor.HeaderText = "ID"
-        Me.idProveedor.Name = "idProveedor"
-        Me.idProveedor.ReadOnly = True
-        Me.idProveedor.Visible = False
-        '
-        'nombre
-        '
-        Me.nombre.DataPropertyName = "nombreProveedor"
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        '
-        'telefono
-        '
-        Me.telefono.DataPropertyName = "telefono"
-        Me.telefono.HeaderText = "Teléfono"
-        Me.telefono.Name = "telefono"
-        Me.telefono.ReadOnly = True
-        '
-        'cbu
-        '
-        Me.cbu.DataPropertyName = "cbu"
-        Me.cbu.HeaderText = "CBU"
-        Me.cbu.Name = "cbu"
-        Me.cbu.ReadOnly = True
-        '
-        'direccion
-        '
-        Me.direccion.DataPropertyName = "direccion"
-        Me.direccion.HeaderText = "Dirección"
-        Me.direccion.Name = "direccion"
-        Me.direccion.ReadOnly = True
-        '
-        'horario
-        '
-        Me.horario.DataPropertyName = "horario"
-        Me.horario.HeaderText = "Horario"
-        Me.horario.Name = "horario"
-        Me.horario.ReadOnly = True
-        '
         'frmProveedores
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -580,6 +588,7 @@ Partial Class frmProveedores
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents idProveedor As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents cuil As DataGridViewTextBoxColumn
     Friend WithEvents telefono As DataGridViewTextBoxColumn
     Friend WithEvents cbu As DataGridViewTextBoxColumn
     Friend WithEvents direccion As DataGridViewTextBoxColumn

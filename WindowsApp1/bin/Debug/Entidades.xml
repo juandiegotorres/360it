@@ -28,7 +28,7 @@ Entidades
  </summary>
  <param name="tabla"></param>
 </member>
-<member name="M:Entidades.Opcion.traerDatosGeneral(System.String,System.String,System.Data.DataTable@)">
+<member name="M:Entidades.Opcion.traerDatosGeneral(System.String,System.String,System.Data.DataTable@,System.Boolean@)">
  <summary>
  
  </summary>

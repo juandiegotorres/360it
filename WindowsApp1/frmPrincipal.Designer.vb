@@ -22,11 +22,13 @@ Partial Class frmPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnNotas = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.panelCost = New System.Windows.Forms.Panel()
+        Me.btnReportes = New System.Windows.Forms.Button()
+        Me.btnNotas = New System.Windows.Forms.Button()
+        Me.btnOpciones = New System.Windows.Forms.Button()
         Me.btnProveedores = New System.Windows.Forms.Button()
         Me.btnServTecnico = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
@@ -50,6 +52,7 @@ Partial Class frmPrincipal
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.btnAgrandar = New System.Windows.Forms.PictureBox()
         Me.btnAchicar = New System.Windows.Forms.PictureBox()
+        Me.ttAyuda = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.pnlSubMenuVentas.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -66,9 +69,10 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnNotas)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.panelCost)
+        Me.Panel1.Controls.Add(Me.btnReportes)
+        Me.Panel1.Controls.Add(Me.btnNotas)
+        Me.Panel1.Controls.Add(Me.btnOpciones)
         Me.Panel1.Controls.Add(Me.btnProveedores)
         Me.Panel1.Controls.Add(Me.btnServTecnico)
         Me.Panel1.Controls.Add(Me.btnProductos)
@@ -82,6 +86,32 @@ Partial Class frmPrincipal
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(209, 703)
         Me.Panel1.TabIndex = 0
+        '
+        'panelCost
+        '
+        Me.panelCost.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.panelCost.Location = New System.Drawing.Point(1, 101)
+        Me.panelCost.Name = "panelCost"
+        Me.panelCost.Size = New System.Drawing.Size(8, 45)
+        Me.panelCost.TabIndex = 47
+        '
+        'btnReportes
+        '
+        Me.btnReportes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnReportes.FlatAppearance.BorderSize = 0
+        Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReportes.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReportes.ForeColor = System.Drawing.Color.White
+        Me.btnReportes.Image = Global.WindowsApp1.My.Resources.Resources.baseline_insert_chart_outlined_white_18dp
+        Me.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReportes.Location = New System.Drawing.Point(0, 533)
+        Me.btnReportes.Name = "btnReportes"
+        Me.btnReportes.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnReportes.Size = New System.Drawing.Size(209, 45)
+        Me.btnReportes.TabIndex = 46
+        Me.btnReportes.Text = "     Reportes"
+        Me.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnReportes.UseVisualStyleBackColor = True
         '
         'btnNotas
         '
@@ -101,26 +131,20 @@ Partial Class frmPrincipal
         Me.btnNotas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnNotas.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnOpciones
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(28, 629)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(155, 28)
-        Me.Button1.TabIndex = 42
-        Me.Button1.Text = "OPCIONES"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'panelCost
-        '
-        Me.panelCost.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.panelCost.Location = New System.Drawing.Point(0, 101)
-        Me.panelCost.Name = "panelCost"
-        Me.panelCost.Size = New System.Drawing.Size(8, 45)
-        Me.panelCost.TabIndex = 31
-        Me.panelCost.Visible = False
+        Me.btnOpciones.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnOpciones.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnOpciones.FlatAppearance.BorderSize = 2
+        Me.btnOpciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOpciones.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOpciones.ForeColor = System.Drawing.Color.White
+        Me.btnOpciones.Location = New System.Drawing.Point(28, 629)
+        Me.btnOpciones.Name = "btnOpciones"
+        Me.btnOpciones.Size = New System.Drawing.Size(155, 28)
+        Me.btnOpciones.TabIndex = 42
+        Me.btnOpciones.Text = "OPCIONES"
+        Me.btnOpciones.UseVisualStyleBackColor = True
         '
         'btnProveedores
         '
@@ -208,7 +232,6 @@ Partial Class frmPrincipal
         Me.pnlSubMenuVentas.Padding = New System.Windows.Forms.Padding(28, 0, 0, 0)
         Me.pnlSubMenuVentas.Size = New System.Drawing.Size(209, 162)
         Me.pnlSubMenuVentas.TabIndex = 32
-        Me.pnlSubMenuVentas.Visible = False
         '
         'btnHistorialVentas
         '
@@ -311,8 +334,11 @@ Partial Class frmPrincipal
         'btnWEB
         '
         Me.btnWEB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnWEB.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnWEB.FlatAppearance.BorderSize = 2
         Me.btnWEB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnWEB.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnWEB.ForeColor = System.Drawing.Color.White
         Me.btnWEB.Location = New System.Drawing.Point(28, 663)
         Me.btnWEB.Name = "btnWEB"
         Me.btnWEB.Size = New System.Drawing.Size(155, 28)
@@ -386,7 +412,7 @@ Partial Class frmPrincipal
         Me.PictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Image = Global.WindowsApp1.My.Resources.Resources._56596621_377737822823172_5309388x685270056960_n
         Me.PictureBox3.Location = New System.Drawing.Point(209, 114)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(590, 250)
@@ -447,6 +473,13 @@ Partial Class frmPrincipal
         Me.btnAchicar.TabIndex = 8
         Me.btnAchicar.TabStop = False
         '
+        'ttAyuda
+        '
+        Me.ttAyuda.Active = False
+        Me.ttAyuda.AutoPopDelay = 5000
+        Me.ttAyuda.InitialDelay = 500
+        Me.ttAyuda.ReshowDelay = 1000
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -503,14 +536,16 @@ Partial Class frmPrincipal
     Friend WithEvents btnHistorialVentas As Button
     Friend WithEvents btnCaja As Button
     Friend WithEvents btnVender As Button
-    Friend WithEvents panelCost As Panel
     Friend WithEvents btnVentas As Button
     Friend WithEvents btnCuentaCorriente As Button
     Friend WithEvents btnClientes As Button
     Friend WithEvents btnServTecnico As Button
     Friend WithEvents btnProveedores As Button
     Friend WithEvents btnProductos As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnOpciones As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnNotas As Button
+    Friend WithEvents btnReportes As Button
+    Friend WithEvents panelCost As Panel
+    Friend WithEvents ttAyuda As ToolTip
 End Class

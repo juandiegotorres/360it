@@ -1,6 +1,8 @@
 ﻿Public Class frmHistorialVentas
     Dim eVenta As New Entidades.Venta
+    Dim eCuentaCorriente As New Entidades.CuentaCorriente
     Dim tablaHistorial, tablaHistorialCtaCorriente As New DataTable
+    Dim _id As UInt64
     Private Sub frmVentas_Load(sender As Object, e As EventArgs) Handles Me.Load
         cargarHistorial()
         cargarHistorialCtaCorriente()
@@ -93,6 +95,28 @@
         End With
     End Sub
 
+    Private Sub dgvHistorialVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHistorialVentas.CellContentClick
+        If e.ColumnIndex = 7 Then
+            If MsgBox("¿Desea dar de baja esta venta?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Historial de Ventas") = MsgBoxResult.Yes Then
+                If eVenta.bajaVenta(dgvHistorialVentas.CurrentRow.Cells("idVenta").Value) = True Then
+                    cargarHistorial()
+                End If
+            End If
+        End If
+    End Sub
 
-
+    Private Sub dgvHistCtaCorriente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHistCtaCorriente.CellContentClick
+        If e.ColumnIndex = 7 Then
+            If MsgBox("Esto dará de baja la venta y eliminará la(s) entrega(s) de dinero realizadas por el cliente ¿Desea continuar?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Cuentas Corriente") = MsgBoxResult.Yes Then
+                eCuentaCorriente.bajaVenta(dgvHistCtaCorriente.CurrentRow.Cells("idVentaCC").Value)
+                eCuentaCorriente.eliminarTodosLosMovimientos(dgvHistCtaCorriente.CurrentRow.Cells("idVentaCC").Value)
+                cargarHistorialCtaCorriente()
+            End If
+            'If MsgBox("¿Desea dar de baja esta venta a cuenta corriente?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Historial de Ventas") = MsgBoxResult.Yes Then
+            '    If eVenta.bajaVenta(dgvHistCtaCorriente.CurrentRow.Cells("idVentaCC").Value) = True Then
+            '        cargarHistorialCtaCorriente()
+            '    End If
+            'End If
+        End If
+    End Sub
 End Class

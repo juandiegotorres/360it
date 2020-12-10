@@ -507,9 +507,14 @@ Public Class Opcion
     ''' Hace referencia a que voy a traer desde la tabla seleccionada. Ej. nombre, telefono, direccion, etc
     ''' <param name="tabla"></param>
     ''' La tabla donde se van  a llenar los datos para luego mostrarlos en el datagrid
-    Public Sub traerDatosGeneral(ByVal tablaDB As String, ByVal condiciones As String, ByRef tabla As DataTable)
+    Public Sub traerDatosGeneral(ByVal tablaDB As String, ByVal condiciones As String, ByRef tabla As DataTable, ByRef Optional activo As Boolean = False)
         Try
-            Dim consultaSQL As String = "SELECT " & condiciones & " FROM " & tablaDB & " WHERE activo = 0"
+            Dim consultaSQL As String
+            If activo = True Then
+                consultaSQL = "SELECT " & condiciones & " FROM " & tablaDB
+            Else
+                consultaSQL = "SELECT " & condiciones & " FROM " & tablaDB & " WHERE activo = 0"
+            End If
             capaDatos.llenarDatos(tabla, consultaSQL)
         Catch ex As Exception
             MsgBox(ex.Message, "Configuraciones")

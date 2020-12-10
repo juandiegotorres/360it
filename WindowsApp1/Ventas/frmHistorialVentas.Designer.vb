@@ -70,13 +70,14 @@ Partial Class frmHistorialVentas
         Me.btnDetalleVentaGeneral = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgvHistCtaCorriente = New System.Windows.Forms.DataGridView()
-        Me.idVentaCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreApel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idVentaCC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn1 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.dgvHistorialVentas = New System.Windows.Forms.DataGridView()
         Me.idVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreApel1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,6 +86,7 @@ Partial Class frmHistorialVentas
         Me.articulos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaHora = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.opciones = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -540,11 +542,7 @@ Partial Class frmHistorialVentas
         '
         Me.dgvHistCtaCorriente.AllowUserToAddRows = False
         Me.dgvHistCtaCorriente.AllowUserToDeleteRows = False
-        Me.dgvHistCtaCorriente.AllowUserToOrderColumns = True
         Me.dgvHistCtaCorriente.AllowUserToResizeRows = False
-        Me.dgvHistCtaCorriente.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvHistCtaCorriente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvHistCtaCorriente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -555,7 +553,7 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvHistCtaCorriente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvHistCtaCorriente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVentaCta, Me.nombreApel, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
+        Me.dgvHistCtaCorriente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVentaCC, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewButtonColumn1})
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -564,9 +562,10 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvHistCtaCorriente.DefaultCellStyle = DataGridViewCellStyle8
+        Me.dgvHistCtaCorriente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvHistCtaCorriente.EnableHeadersVisualStyles = False
         Me.dgvHistCtaCorriente.Location = New System.Drawing.Point(20, 225)
-        Me.dgvHistCtaCorriente.Margin = New System.Windows.Forms.Padding(20, 0, 18, 15)
+        Me.dgvHistCtaCorriente.Margin = New System.Windows.Forms.Padding(20, 0, 18, 5)
         Me.dgvHistCtaCorriente.MultiSelect = False
         Me.dgvHistCtaCorriente.Name = "dgvHistCtaCorriente"
         Me.dgvHistCtaCorriente.ReadOnly = True
@@ -585,81 +584,102 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
         Me.dgvHistCtaCorriente.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvHistCtaCorriente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvHistCtaCorriente.Size = New System.Drawing.Size(698, 181)
+        Me.dgvHistCtaCorriente.Size = New System.Drawing.Size(698, 191)
         Me.dgvHistCtaCorriente.TabIndex = 48
         '
-        'idVentaCta
+        'idVentaCC
         '
-        Me.idVentaCta.DataPropertyName = "venta"
+        Me.idVentaCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.idVentaCC.DataPropertyName = "venta"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.idVentaCta.DefaultCellStyle = DataGridViewCellStyle2
-        Me.idVentaCta.HeaderText = "Venta"
-        Me.idVentaCta.Name = "idVentaCta"
-        Me.idVentaCta.ReadOnly = True
-        '
-        'nombreApel
-        '
-        Me.nombreApel.DataPropertyName = "nombreApel"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.nombreApel.DefaultCellStyle = DataGridViewCellStyle3
-        Me.nombreApel.HeaderText = "Cliente"
-        Me.nombreApel.Name = "nombreApel"
-        Me.nombreApel.ReadOnly = True
+        Me.idVentaCC.DefaultCellStyle = DataGridViewCellStyle2
+        Me.idVentaCC.FillWeight = 69.28934!
+        Me.idVentaCC.HeaderText = "Venta"
+        Me.idVentaCC.Name = "idVentaCC"
+        Me.idVentaCC.ReadOnly = True
         '
         'DataGridViewTextBoxColumn2
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Fecha"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Fecha"
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "nombreApel"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn2.FillWeight = 69.28934!
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Cliente"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Hora"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Hora"
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Fecha"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewTextBoxColumn3.FillWeight = 69.28934!
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Fecha"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
         'DataGridViewTextBoxColumn4
         '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "articulos"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Artículos"
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Hora"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridViewTextBoxColumn4.FillWeight = 69.28934!
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Hora"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
         'DataGridViewTextBoxColumn5
         '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "precioFinal"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle7.Format = "C2"
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle7
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Monto"
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "articulos"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridViewTextBoxColumn5.FillWeight = 69.28934!
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Artículos"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'DataGridViewTextBoxColumn6
         '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "fechaHora"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "FechaHora"
+        Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "precioFinal"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle7.Format = "C2"
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DataGridViewTextBoxColumn6.FillWeight = 69.28934!
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Monto"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Visible = False
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "fechaHora"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "FechaHora"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Visible = False
+        '
+        'DataGridViewButtonColumn1
+        '
+        Me.DataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewButtonColumn1.DataPropertyName = "fechaHora"
+        Me.DataGridViewButtonColumn1.FillWeight = 70.0!
+        Me.DataGridViewButtonColumn1.HeaderText = "Opciones"
+        Me.DataGridViewButtonColumn1.Name = "DataGridViewButtonColumn1"
+        Me.DataGridViewButtonColumn1.ReadOnly = True
+        Me.DataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewButtonColumn1.Text = "Dar de baja"
+        Me.DataGridViewButtonColumn1.UseColumnTextForButtonValue = True
         '
         'dgvHistorialVentas
         '
         Me.dgvHistorialVentas.AllowUserToAddRows = False
         Me.dgvHistorialVentas.AllowUserToDeleteRows = False
-        Me.dgvHistorialVentas.AllowUserToOrderColumns = True
         Me.dgvHistorialVentas.AllowUserToResizeRows = False
-        Me.dgvHistorialVentas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvHistorialVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvHistorialVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -670,7 +690,7 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvHistorialVentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvHistorialVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVenta, Me.nombreApel1, Me.fecha, Me.hora, Me.articulos, Me.monto, Me.fechaHora})
+        Me.dgvHistorialVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVenta, Me.nombreApel1, Me.fecha, Me.hora, Me.articulos, Me.monto, Me.fechaHora, Me.opciones})
         DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle17.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -679,6 +699,7 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvHistorialVentas.DefaultCellStyle = DataGridViewCellStyle17
+        Me.dgvHistorialVentas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvHistorialVentas.EnableHeadersVisualStyles = False
         Me.dgvHistorialVentas.Location = New System.Drawing.Point(20, 0)
         Me.dgvHistorialVentas.Margin = New System.Windows.Forms.Padding(20, 0, 18, 5)
@@ -705,15 +726,18 @@ Partial Class frmHistorialVentas
         '
         'idVenta
         '
+        Me.idVenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.idVenta.DataPropertyName = "venta"
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
         Me.idVenta.DefaultCellStyle = DataGridViewCellStyle12
+        Me.idVenta.FillWeight = 50.0!
         Me.idVenta.HeaderText = "Venta"
         Me.idVenta.Name = "idVenta"
         Me.idVenta.ReadOnly = True
         '
         'nombreApel1
         '
+        Me.nombreApel1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.nombreApel1.DataPropertyName = "nombreApel"
         Me.nombreApel1.HeaderText = "Cliente"
         Me.nombreApel1.Name = "nombreApel1"
@@ -722,48 +746,70 @@ Partial Class frmHistorialVentas
         '
         'fecha
         '
+        Me.fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.fecha.DataPropertyName = "Fecha"
         DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
         Me.fecha.DefaultCellStyle = DataGridViewCellStyle13
+        Me.fecha.FillWeight = 37.67741!
         Me.fecha.HeaderText = "Fecha"
         Me.fecha.Name = "fecha"
         Me.fecha.ReadOnly = True
         '
         'hora
         '
+        Me.hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.hora.DataPropertyName = "Hora"
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
         Me.hora.DefaultCellStyle = DataGridViewCellStyle14
+        Me.hora.FillWeight = 37.67741!
         Me.hora.HeaderText = "Hora"
         Me.hora.Name = "hora"
         Me.hora.ReadOnly = True
         '
         'articulos
         '
+        Me.articulos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.articulos.DataPropertyName = "articulos"
         DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
         Me.articulos.DefaultCellStyle = DataGridViewCellStyle15
+        Me.articulos.FillWeight = 37.67741!
         Me.articulos.HeaderText = "Artículos"
         Me.articulos.Name = "articulos"
         Me.articulos.ReadOnly = True
         '
         'monto
         '
+        Me.monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.monto.DataPropertyName = "precioFinal"
         DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
         DataGridViewCellStyle16.Format = "C2"
         Me.monto.DefaultCellStyle = DataGridViewCellStyle16
+        Me.monto.FillWeight = 37.67741!
         Me.monto.HeaderText = "Monto"
         Me.monto.Name = "monto"
         Me.monto.ReadOnly = True
         '
         'fechaHora
         '
+        Me.fechaHora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.fechaHora.DataPropertyName = "fechaHora"
         Me.fechaHora.HeaderText = "FechaHora"
         Me.fechaHora.Name = "fechaHora"
         Me.fechaHora.ReadOnly = True
         Me.fechaHora.Visible = False
+        '
+        'opciones
+        '
+        Me.opciones.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.opciones.DataPropertyName = "fechaHora"
+        Me.opciones.FillWeight = 63.58529!
+        Me.opciones.HeaderText = "Opciones"
+        Me.opciones.Name = "opciones"
+        Me.opciones.ReadOnly = True
+        Me.opciones.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.opciones.Text = "Dar de baja"
+        Me.opciones.UseColumnTextForButtonValue = True
+        Me.opciones.Width = 135
         '
         'Label5
         '
@@ -828,7 +874,6 @@ Partial Class frmHistorialVentas
     Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Public WithEvents dgvHistCtaCorriente As DataGridView
     Public WithEvents dgvHistorialVentas As DataGridView
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
@@ -849,6 +894,13 @@ Partial Class frmHistorialVentas
     Friend WithEvents rbAmbos As RadioButton
     Friend WithEvents rbCtaCorriente As RadioButton
     Friend WithEvents rbVenta As RadioButton
+    Friend WithEvents TableLayoutPanel15 As TableLayoutPanel
+    Friend WithEvents btnDetalleVentaCtaCorriente As Button
+    Friend WithEvents TableLayoutPanel13 As TableLayoutPanel
+    Friend WithEvents btnDetalleVentaGeneral As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Public WithEvents dgvHistCtaCorriente As DataGridView
     Friend WithEvents idVenta As DataGridViewTextBoxColumn
     Friend WithEvents nombreApel1 As DataGridViewTextBoxColumn
     Friend WithEvents fecha As DataGridViewTextBoxColumn
@@ -856,17 +908,13 @@ Partial Class frmHistorialVentas
     Friend WithEvents articulos As DataGridViewTextBoxColumn
     Friend WithEvents monto As DataGridViewTextBoxColumn
     Friend WithEvents fechaHora As DataGridViewTextBoxColumn
-    Friend WithEvents idVentaCta As DataGridViewTextBoxColumn
-    Friend WithEvents nombreApel As DataGridViewTextBoxColumn
+    Friend WithEvents opciones As DataGridViewButtonColumn
+    Friend WithEvents idVentaCC As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents TableLayoutPanel15 As TableLayoutPanel
-    Friend WithEvents btnDetalleVentaCtaCorriente As Button
-    Friend WithEvents TableLayoutPanel13 As TableLayoutPanel
-    Friend WithEvents btnDetalleVentaGeneral As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewButtonColumn1 As DataGridViewButtonColumn
 End Class

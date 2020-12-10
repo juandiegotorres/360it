@@ -4,6 +4,7 @@ Imports System.Runtime.InteropServices
 Public Class frmPrincipal
     Public colorGeneral As Color
 
+
     'Importar archivos para poder mover el form con el mouse, ya que no tiene bordes
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
@@ -13,6 +14,8 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub abrirForm(ByVal formulario As Form)
+        'Cerraro formulario actual
+
         colorGeneral = Color.FromArgb(124, 231, 45)
         Dim formHijo As Form = TryCast(formulario, Form)
         formHijo.TopLevel = False
@@ -20,6 +23,7 @@ Public Class frmPrincipal
         formHijo.Dock = DockStyle.Fill
         If Me.pnlContenedor.Controls.Count = 1 Then
             Me.pnlContenedor.Controls.RemoveAt(0)
+
         End If
         Me.pnlContenedor.Controls.Add(formHijo)
         Me.pnlContenedor.Tag = formHijo
@@ -40,12 +44,16 @@ Public Class frmPrincipal
         End With
 
     End Sub
-
+    Public Sub cerrarForm()
+        For Each form In pnlContenedor.Controls.OfType(Of Form).ToList()
+            form.Close()
+        Next
+    End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnWEB.Click
+    Private Sub btnWEB_Click(sender As Object, e As EventArgs) Handles btnWEB.Click
         System.Diagnostics.Process.Start("www.infoandina.com")
     End Sub
 
@@ -109,9 +117,8 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "360 IT") = MsgBoxResult.Yes Then
+        If MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo Or MsgBoxStyle.Information, "360 IT") = MsgBoxResult.Yes Then
             Me.Close()
-
         End If
     End Sub
 
@@ -126,6 +133,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnVentas_Click_1(sender As Object, e As EventArgs) Handles btnVentas.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
@@ -137,6 +145,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
@@ -146,6 +155,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnCaja_Click(sender As Object, e As EventArgs) Handles btnCaja.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
@@ -154,6 +164,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnHistorialVentas_Click(sender As Object, e As EventArgs) Handles btnHistorialVentas.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
@@ -162,12 +173,14 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnClientes.Height
         panelCost.Top = btnClientes.Top
         abrirForm(frmClientes)
     End Sub
     Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnProductos.Height
         panelCost.Top = btnProductos.Top
@@ -175,12 +188,14 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnServTecnico_Click(sender As Object, e As EventArgs) Handles btnServTecnico.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnServTecnico.Height
         panelCost.Top = btnServTecnico.Top
         abrirForm(frmServTecnico)
     End Sub
     Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnProveedores.Height
         panelCost.Top = btnProveedores.Top
@@ -194,21 +209,14 @@ Public Class frmPrincipal
         boton.BackColor = Color.FromArgb(255, 156, 0)
     End Sub
 
-    Private Sub panelCost_LocationChanged(sender As Object, e As EventArgs) Handles panelCost.LocationChanged
-        Dim btn As Button
-        For Each btn In pnlSubMenuVentas.Controls
-            btn.BackColor = Color.FromArgb(100, 100, 100)
-        Next
+
+    Private Sub btnOpciones_Click(sender As Object, e As EventArgs) Handles btnOpciones.Click
+        frmOpciones.ShowDialog()
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        frmOpciones.Show()
-    End Sub
-
-
 
 
     Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top
@@ -217,9 +225,26 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnNotas_Click(sender As Object, e As EventArgs) Handles btnNotas.Click
+        cerrarForm()
         panelCost.Visible = True
         panelCost.Height = btnNotas.Height
         panelCost.Top = btnNotas.Top
         abrirForm(frmNotas)
     End Sub
+
+    Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
+        cerrarForm()
+        panelCost.Visible = True
+        panelCost.Height = btnReportes.Height
+        panelCost.Top = btnReportes.Top
+        abrirForm(frmReportes)
+    End Sub
+
+    Private Sub panelCost_LocationChanged(sender As Object, e As EventArgs) Handles panelCost.LocationChanged
+        Dim btn As Button
+        For Each btn In pnlSubMenuVentas.Controls
+            btn.BackColor = Color.FromArgb(100, 100, 100)
+        Next
+    End Sub
+
 End Class

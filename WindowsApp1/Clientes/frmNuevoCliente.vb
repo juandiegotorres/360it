@@ -48,7 +48,7 @@
         For Each _control In Me.Controls
             If TypeOf _control Is TextBox Then
                 If LTrim(_control.Text) = "" Then
-                    MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Clientes")
+                    MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Clientes")
                     Return False
                 End If
             End If
@@ -163,7 +163,7 @@
     End Sub
 
     Private Sub txtDNI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDNI.KeyPress
-        If Char.IsNumber(e.KeyChar) Then
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
             e.Handled = True

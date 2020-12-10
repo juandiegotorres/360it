@@ -107,7 +107,11 @@
         If dgvCuentas.SelectedRows.Count = 1 Then
             Dim tipoMovimiento As String = dgvCuentas.CurrentRow.Cells("tipoMovimiento").Value.ToString
             If tipoMovimiento = "DÉBITO" Then
-                MsgBox("No se puede eliminar una venta", MsgBoxStyle.Exclamation, "Cuentas Corriente")
+                If MsgBox("Esto dará de baja la venta y eliminará la(s) entrega(s) de dinero realizadas por el cliente ¿Desea continuar?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Cuentas Corriente") = MsgBoxResult.Yes Then
+                    eCuentaCorriente.bajaVenta(dgvCuentas.CurrentRow.Cells("venta").Value)
+                    eCuentaCorriente.eliminarTodosLosMovimientos(dgvCuentas.CurrentRow.Cells("venta").Value)
+                    cargarCuentaCorriente()
+                End If
             Else
                 If MsgBox("¿Desea eliminar esta entrega de dinero?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Cuenta Corriente") = MsgBoxResult.Yes Then
                     eCuentaCorriente.idMovimiento = dgvCuentas.CurrentRow.Cells("idmovimiento").Value

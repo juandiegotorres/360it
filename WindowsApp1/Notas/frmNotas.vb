@@ -102,7 +102,7 @@
         Next
     End Sub
     Public Sub eliminarNota(ByRef id As Integer)
-        If MsgBox("¿Desea dar de baja esta nota?", MsgBoxStyle.YesNo, "Notas") = MsgBoxResult.Yes Then
+        If MsgBox("¿Desea dar de baja esta nota?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Notas") = MsgBoxResult.Yes Then
             eNotas.bajaNota(id)
             cargarNotas(0)
             paginaActual = 1

@@ -44,6 +44,8 @@ Partial Class frmNuevoProveedor
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.txtCuil = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -97,30 +99,33 @@ Partial Class frmNuevoProveedor
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(323, 31)
         Me.txtNombre.TabIndex = 0
+        Me.txtNombre.Tag = "Nombre"
         '
         'txtDireccion
         '
         Me.txtDireccion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(175, 193)
+        Me.txtDireccion.Location = New System.Drawing.Point(175, 244)
         Me.txtDireccion.MaxLength = 44
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(264, 31)
-        Me.txtDireccion.TabIndex = 2
+        Me.txtDireccion.TabIndex = 3
+        Me.txtDireccion.Tag = "Dirección"
         '
         'txtTelefono
         '
         Me.txtTelefono.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(175, 140)
+        Me.txtTelefono.Location = New System.Drawing.Point(175, 191)
         Me.txtTelefono.MaxLength = 19
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(237, 31)
-        Me.txtTelefono.TabIndex = 1
+        Me.txtTelefono.TabIndex = 2
+        Me.txtTelefono.Tag = "Teléfono"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(23, 195)
+        Me.Label4.Location = New System.Drawing.Point(23, 246)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(119, 26)
         Me.Label4.TabIndex = 21
@@ -130,7 +135,7 @@ Partial Class frmNuevoProveedor
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(23, 143)
+        Me.Label3.Location = New System.Drawing.Point(23, 194)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(108, 26)
         Me.Label3.TabIndex = 20
@@ -140,7 +145,7 @@ Partial Class frmNuevoProveedor
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(23, 246)
+        Me.Label5.Location = New System.Drawing.Point(23, 297)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(63, 26)
         Me.Label5.TabIndex = 22
@@ -149,17 +154,18 @@ Partial Class frmNuevoProveedor
         'txtCBU
         '
         Me.txtCBU.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCBU.Location = New System.Drawing.Point(174, 246)
-        Me.txtCBU.MaxLength = 44
+        Me.txtCBU.Location = New System.Drawing.Point(174, 297)
+        Me.txtCBU.MaxLength = 22
         Me.txtCBU.Name = "txtCBU"
         Me.txtCBU.Size = New System.Drawing.Size(237, 31)
-        Me.txtCBU.TabIndex = 3
+        Me.txtCBU.TabIndex = 4
+        Me.txtCBU.Tag = "CBU"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(23, 298)
+        Me.Label6.Location = New System.Drawing.Point(23, 349)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(82, 26)
         Me.Label6.TabIndex = 24
@@ -170,16 +176,16 @@ Partial Class frmNuevoProveedor
         Me.clbRubro.CheckOnClick = True
         Me.clbRubro.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.clbRubro.FormattingEnabled = True
-        Me.clbRubro.Location = New System.Drawing.Point(174, 299)
+        Me.clbRubro.Location = New System.Drawing.Point(174, 350)
         Me.clbRubro.Name = "clbRubro"
         Me.clbRubro.Size = New System.Drawing.Size(238, 92)
-        Me.clbRubro.TabIndex = 4
+        Me.clbRubro.TabIndex = 5
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(23, 407)
+        Me.Label7.Location = New System.Drawing.Point(23, 458)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(130, 52)
         Me.Label7.TabIndex = 26
@@ -190,16 +196,16 @@ Partial Class frmNuevoProveedor
         Me.clbFormPago.CheckOnClick = True
         Me.clbFormPago.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.clbFormPago.FormattingEnabled = True
-        Me.clbFormPago.Location = New System.Drawing.Point(175, 407)
+        Me.clbFormPago.Location = New System.Drawing.Point(175, 458)
         Me.clbFormPago.Name = "clbFormPago"
         Me.clbFormPago.Size = New System.Drawing.Size(238, 92)
-        Me.clbFormPago.TabIndex = 5
+        Me.clbFormPago.TabIndex = 6
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(22, 523)
+        Me.Label8.Location = New System.Drawing.Point(22, 574)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(95, 26)
         Me.Label8.TabIndex = 28
@@ -208,11 +214,12 @@ Partial Class frmNuevoProveedor
         'txtHorario
         '
         Me.txtHorario.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHorario.Location = New System.Drawing.Point(174, 523)
+        Me.txtHorario.Location = New System.Drawing.Point(174, 574)
         Me.txtHorario.MaxLength = 59
         Me.txtHorario.Name = "txtHorario"
         Me.txtHorario.Size = New System.Drawing.Size(281, 31)
-        Me.txtHorario.TabIndex = 6
+        Me.txtHorario.TabIndex = 7
+        Me.txtHorario.Tag = "Horario"
         '
         'btnLimpiar
         '
@@ -227,7 +234,7 @@ Partial Class frmNuevoProveedor
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(128, 43)
-        Me.btnLimpiar.TabIndex = 9
+        Me.btnLimpiar.TabIndex = 10
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -244,7 +251,7 @@ Partial Class frmNuevoProveedor
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(128, 43)
-        Me.btnGuardar.TabIndex = 8
+        Me.btnGuardar.TabIndex = 9
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
@@ -261,7 +268,7 @@ Partial Class frmNuevoProveedor
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(128, 43)
-        Me.btnCancelar.TabIndex = 7
+        Me.btnCancelar.TabIndex = 8
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -274,18 +281,40 @@ Partial Class frmNuevoProveedor
         Me.TableLayoutPanel1.Controls.Add(Me.btnCancelar, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnLimpiar, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 600)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 631)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(492, 63)
         Me.TableLayoutPanel1.TabIndex = 33
         '
+        'txtCuil
+        '
+        Me.txtCuil.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCuil.Location = New System.Drawing.Point(174, 138)
+        Me.txtCuil.MaxLength = 11
+        Me.txtCuil.Name = "txtCuil"
+        Me.txtCuil.Size = New System.Drawing.Size(214, 31)
+        Me.txtCuil.TabIndex = 1
+        Me.txtCuil.Tag = "CUIL/CUIT"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(22, 141)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(125, 26)
+        Me.Label1.TabIndex = 35
+        Me.Label1.Text = "CUIT/CUIL:"
+        '
         'frmNuevoProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(516, 670)
+        Me.ClientSize = New System.Drawing.Size(516, 697)
+        Me.Controls.Add(Me.txtCuil)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.txtHorario)
         Me.Controls.Add(Me.Label8)
@@ -337,4 +366,6 @@ Partial Class frmNuevoProveedor
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents txtCuil As TextBox
+    Friend WithEvents Label1 As Label
 End Class

@@ -72,7 +72,7 @@
                 ElseIf _control Is txtPorcentaje Then
                 Else
                     If LTrim(_control.Text = "") Then
-                        MsgBox("Faltan completar datos", MsgBoxStyle.Exclamation, "Productos")
+                        MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Productos")
                         Return False
                     End If
                 End If
