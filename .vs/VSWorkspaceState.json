@@ -1,4 +1,11 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\CapaDePresentacion",
+    "\\ClassLibrary1",
+    "\\ColoresNotas",
+    "\\Entidades"
+  ],
+  "SelectedNode": "\\360it.sln",
   "PreviewInSolutionExplorer": false
 }

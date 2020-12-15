@@ -3,7 +3,7 @@ Imports System.Runtime.InteropServices
 
 Public Class frmPrincipal
     Public colorGeneral As Color
-
+    Dim probarConexion As New CapaDeNegocios.cdDatosPrueba
 
     'Importar archivos para poder mover el form con el mouse, ya que no tiene bordes
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
@@ -37,6 +37,17 @@ Public Class frmPrincipal
         'panelCost.Top = btnVentas.Top
         'Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
         'Me.Bounds = Screen.GetWorkingArea(Me)
+        If probarConexion.AbrirConexion = False Then
+            Dim _control As Control
+            For Each _control In Panel1.Controls
+
+                If TypeOf _control Is Button Then
+                    _control.Enabled = False
+                End If
+            Next
+            btnOpciones.Enabled = True
+            btnWEB.Enabled = True
+        End If
         Me.WindowState = FormWindowState.Normal
         Me.StartPosition = FormStartPosition.Manual
         With Screen.PrimaryScreen.WorkingArea
@@ -224,7 +235,15 @@ Public Class frmPrincipal
 
 
     Private Sub btnOpciones_Click(sender As Object, e As EventArgs) Handles btnOpciones.Click
-        frmOpciones.ShowDialog()
+        'Si el boton ventas no esta habilitado significa que hay un error y no se puede conectar a la base de datos, de ese modo le indico al formulario opciones con el parametro errorDB, si es verdadero que solo deje habilitada las credenciales de la base de datos, si es false que cargue normalmente
+        If btnVentas.Enabled = False Then
+            Dim opciones As New frmOpciones(True)
+            opciones.Show()
+        Else
+            Dim opciones As New frmOpciones(False)
+            opciones.Show()
+        End If
+
     End Sub
 
 

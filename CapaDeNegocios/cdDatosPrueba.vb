@@ -4,34 +4,44 @@ Public Class cdDatosPrueba
     Dim conexion As New MySqlConnection
     Dim adaptador As New MySqlDataAdapter
     Dim comando As New MySqlCommand
-
-    Private Sub AbrirConexion()
+    Dim stringConexion As String
+    Public Function AbrirConexion()
         Try
             If Not conexion Is Nothing Then
                 If conexion.State = ConnectionState.Closed Then
                     If conexion.ConnectionString = Nothing Then
-                        conexion.ConnectionString = "server=localhost;user Id=root;password=basededatos1;database=db_360"
+                        stringConexion = "server=" & My.Settings.server & ";user Id=" & My.Settings.usuario & ";password=" & My.Settings.passwordDB & ";database=" & My.Settings.database & ""
+                        conexion.ConnectionString = stringConexion
                     End If
                     conexion.Open()
                 End If
             Else
+                'server=localhost;user Id=root;password=basededatos1;database=db_360
                 conexion = New MySqlConnection
-                conexion.ConnectionString = "server=localhost;user Id=root;password=basededatos1;database=db_360"
+                conexion.ConnectionString = "server=192.168.0.120;user Id=usuario;password=basededatos1;database=db_360"
                 conexion.Open()
             End If
+            Return True
         Catch ex As MySqlException
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Clase cdDatos")
+            Return False
         Catch e As Exception
             MsgBox(e.Message, MsgBoxStyle.Critical, "Clase cdDatos")
+            Return False
         End Try
-    End Sub
+    End Function
     Public Sub cargarDatos(ByRef consultaSQL As String)
         Try
             comando.CommandText = consultaSQL
             comando.Connection = conexion
-            AbrirConexion()
-            comando.ExecuteNonQuery()
-            CerrarConexion()
+            If AbrirConexion() = True Then
+                comando.ExecuteNonQuery()
+                CerrarConexion()
+            Else
+                MsgBox("No se pudo conectar con la base de datos", MsgBoxStyle.Critical, "360it")
+            End If
+
+
         Catch ex As Exception
             MsgBox(ex.Message, "Clase cdDatosPrueba")
         End Try
@@ -40,9 +50,13 @@ Public Class cdDatosPrueba
         Try
             ComandoSQL.Connection = conexion
             adaptador.SelectCommand = ComandoSQL
-            AbrirConexion()
-            ComandoSQL.ExecuteNonQuery()
-            CerrarConexion()
+            If AbrirConexion() = True Then
+                ComandoSQL.ExecuteNonQuery()
+                CerrarConexion()
+            Else
+                MsgBox("No se pudo conectar con la base de datos", MsgBoxStyle.Critical, "360it")
+            End If
+
         Catch ex As MySqlException
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Clase cdDatos")
         Catch ex As Exception
@@ -143,16 +157,20 @@ Public Class cdDatosPrueba
             cmComandoSql.Connection = conexion
             'Asignamos el comando al Objeto MySqlDataAdapter
             adaptador.SelectCommand = cmComandoSql
-            AbrirConexion()
-            'Llenamos la el DataTable con los datos obtenidos de la Base de Datos
-            adaptador.Fill(Tabla)
-            CerrarConexion()
-            'Pregunto si las filas de la tabla es mayor que 0 y devuelvo vedadero si hay datos y sino retorna falso
-            If Tabla.Rows.Count > 0 Then
-                Return True
+            If AbrirConexion() = True Then
+                'Llenamos la el DataTable con los datos obtenidos de la Base de Datos
+                adaptador.Fill(Tabla)
+                CerrarConexion()
+                'Pregunto si las filas de la tabla es mayor que 0 y devuelvo vedadero si hay datos y sino retorna falso
+                If Tabla.Rows.Count > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
             Else
-                Return False
+                MsgBox("No se pudo conectar con la base de datos", MsgBoxStyle.Critical, "360it")
             End If
+            Return True
         Catch ex As MySqlException
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Clase cdDatos")
             Return False
@@ -161,18 +179,39 @@ Public Class cdDatosPrueba
             Return False
         End Try
     End Function
+    Public Sub actualizarCredenciales(ByRef _server As String, ByRef _usuario As String, ByRef _passwordDB As String, ByRef _passwordEdit As String)
+        My.Settings.server = _server
+        My.Settings.usuario = _usuario
+        My.Settings.passwordDB = _passwordDB
+        My.Settings.Save()
+        My.Settings.Reload()
+
+    End Sub
+    Public Sub cargarCredenciales(ByRef _server As String, ByRef _usuario As String, ByRef _passwordDB As String, ByRef _database As String)
+        _server = My.Settings.server
+        _usuario = My.Settings.usuario
+        _passwordDB = My.Settings.passwordDB
+        _database = My.Settings.database
+    End Sub
+    Public Function comprobarPwdEditar(ByRef _passwordEditar As String)
+        If _passwordEditar = My.Settings.passwordEdit Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
     Public Sub llenarDatos(ByRef tabla As DataTable, ByRef consultaSQL As String)
         Try
             comando.CommandText = consultaSQL
             comando.Connection = conexion
             adaptador.SelectCommand = comando
+            If AbrirConexion() = True Then
+                adaptador.Fill(tabla)
+                CerrarConexion()
+            Else
+                MsgBox("No se pudo conectar con la base de datos", MsgBoxStyle.Critical, "360it")
+            End If
 
-            AbrirConexion()
-
-
-
-            adaptador.Fill(tabla)
-            CerrarConexion()
         Catch ex As Exception
             MsgBox(ex.Message, "Clase cdDatosPrueba")
         End Try

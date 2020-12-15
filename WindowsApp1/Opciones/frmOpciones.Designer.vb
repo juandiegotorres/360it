@@ -43,10 +43,7 @@ Partial Class frmOpciones
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnOpcionesGenerales = New System.Windows.Forms.Button()
-        Me.btnBajas = New System.Windows.Forms.Button()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnVolver = New System.Windows.Forms.Button()
         Me.tabConfiguraciones = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -242,6 +239,25 @@ Partial Class frmOpciones
         Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.activoNota = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pnlBD = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.chbMostrar = New System.Windows.Forms.CheckBox()
+        Me.btnCancelarDB = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnGuardarDB = New System.Windows.Forms.Button()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.txtBD = New System.Windows.Forms.TextBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtServer = New System.Windows.Forms.TextBox()
+        Me.btnOpcionesGenerales = New System.Windows.Forms.Button()
+        Me.btnBajas = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
+        Me.btnCredencialesDB = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -277,6 +293,9 @@ Partial Class frmOpciones
         CType(Me.dgvServTec, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
         CType(Me.dgvNotas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlBD.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -300,6 +319,7 @@ Partial Class frmOpciones
         Me.TableLayoutPanel2.Controls.Add(Me.btnOpcionesGenerales, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btnBajas, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnCredencialesDB, 0, 2)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(10, 3)
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(10, 3, 3, 10)
@@ -312,32 +332,6 @@ Partial Class frmOpciones
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(224, 573)
         Me.TableLayoutPanel2.TabIndex = 1
-        '
-        'btnOpcionesGenerales
-        '
-        Me.btnOpcionesGenerales.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnOpcionesGenerales.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOpcionesGenerales.Image = Global.WindowsApp1.My.Resources.Resources.gears__1_
-        Me.btnOpcionesGenerales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOpcionesGenerales.Location = New System.Drawing.Point(3, 3)
-        Me.btnOpcionesGenerales.Name = "btnOpcionesGenerales"
-        Me.btnOpcionesGenerales.Size = New System.Drawing.Size(218, 40)
-        Me.btnOpcionesGenerales.TabIndex = 0
-        Me.btnOpcionesGenerales.Text = "Opciones Generales"
-        Me.btnOpcionesGenerales.UseVisualStyleBackColor = True
-        '
-        'btnBajas
-        '
-        Me.btnBajas.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnBajas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBajas.Image = Global.WindowsApp1.My.Resources.Resources.delete
-        Me.btnBajas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBajas.Location = New System.Drawing.Point(3, 49)
-        Me.btnBajas.Name = "btnBajas"
-        Me.btnBajas.Size = New System.Drawing.Size(218, 40)
-        Me.btnBajas.TabIndex = 1
-        Me.btnBajas.Text = "Bajas"
-        Me.btnBajas.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel3
         '
@@ -352,19 +346,6 @@ Partial Class frmOpciones
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(224, 49)
         Me.TableLayoutPanel3.TabIndex = 2
-        '
-        'btnVolver
-        '
-        Me.btnVolver.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVolver.Image = Global.WindowsApp1.My.Resources.Resources.curve_arrow
-        Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnVolver.Location = New System.Drawing.Point(3, 3)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(218, 43)
-        Me.btnVolver.TabIndex = 2
-        Me.btnVolver.Text = "Volver"
-        Me.btnVolver.UseVisualStyleBackColor = True
         '
         'tabConfiguraciones
         '
@@ -2413,18 +2394,232 @@ Partial Class frmOpciones
         Me.activoNota.Name = "activoNota"
         Me.activoNota.Visible = False
         '
+        'pnlBD
+        '
+        Me.pnlBD.ColumnCount = 1
+        Me.pnlBD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.pnlBD.Controls.Add(Me.Panel1, 0, 0)
+        Me.pnlBD.Location = New System.Drawing.Point(240, 1)
+        Me.pnlBD.Name = "pnlBD"
+        Me.pnlBD.RowCount = 1
+        Me.pnlBD.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.pnlBD.Size = New System.Drawing.Size(889, 573)
+        Me.pnlBD.TabIndex = 10
+        Me.pnlBD.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.chbMostrar)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.btnCancelarDB)
+        Me.Panel1.Controls.Add(Me.btnEditar)
+        Me.Panel1.Controls.Add(Me.btnGuardarDB)
+        Me.Panel1.Controls.Add(Me.Label30)
+        Me.Panel1.Controls.Add(Me.txtBD)
+        Me.Panel1.Controls.Add(Me.Label29)
+        Me.Panel1.Controls.Add(Me.txtPassword)
+        Me.Panel1.Controls.Add(Me.Label28)
+        Me.Panel1.Controls.Add(Me.txtUsuario)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.txtServer)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(883, 567)
+        Me.Panel1.TabIndex = 0
+        '
+        'chbMostrar
+        '
+        Me.chbMostrar.AutoSize = True
+        Me.chbMostrar.Enabled = False
+        Me.chbMostrar.Location = New System.Drawing.Point(473, 130)
+        Me.chbMostrar.Name = "chbMostrar"
+        Me.chbMostrar.Size = New System.Drawing.Size(61, 17)
+        Me.chbMostrar.TabIndex = 12
+        Me.chbMostrar.Text = "Mostrar"
+        Me.chbMostrar.UseVisualStyleBackColor = True
+        '
+        'btnCancelarDB
+        '
+        Me.btnCancelarDB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelarDB.Location = New System.Drawing.Point(387, 230)
+        Me.btnCancelarDB.Name = "btnCancelarDB"
+        Me.btnCancelarDB.Size = New System.Drawing.Size(127, 32)
+        Me.btnCancelarDB.TabIndex = 10
+        Me.btnCancelarDB.Text = "Cancelar"
+        Me.btnCancelarDB.UseVisualStyleBackColor = True
+        '
+        'btnEditar
+        '
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.Location = New System.Drawing.Point(238, 230)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(127, 32)
+        Me.btnEditar.TabIndex = 9
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = True
+        '
+        'btnGuardarDB
+        '
+        Me.btnGuardarDB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarDB.Location = New System.Drawing.Point(92, 230)
+        Me.btnGuardarDB.Name = "btnGuardarDB"
+        Me.btnGuardarDB.Size = New System.Drawing.Size(127, 32)
+        Me.btnGuardarDB.TabIndex = 8
+        Me.btnGuardarDB.Text = "Guardar"
+        Me.btnGuardarDB.UseVisualStyleBackColor = True
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(85, 171)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(116, 20)
+        Me.Label30.TabIndex = 7
+        Me.Label30.Text = "Base de datos:"
+        '
+        'txtBD
+        '
+        Me.txtBD.Enabled = False
+        Me.txtBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBD.Location = New System.Drawing.Point(203, 168)
+        Me.txtBD.Name = "txtBD"
+        Me.txtBD.Size = New System.Drawing.Size(263, 26)
+        Me.txtBD.TabIndex = 6
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(85, 128)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(96, 20)
+        Me.Label29.TabIndex = 5
+        Me.Label29.Text = "Contraseña:"
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Enabled = False
+        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(203, 125)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(263, 26)
+        Me.txtPassword.TabIndex = 4
+        Me.txtPassword.UseSystemPasswordChar = True
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(85, 84)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(68, 20)
+        Me.Label28.TabIndex = 3
+        Me.Label28.Text = "Usuario:"
+        '
+        'txtUsuario
+        '
+        Me.txtUsuario.Enabled = False
+        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(173, 81)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(263, 26)
+        Me.txtUsuario.TabIndex = 2
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(85, 42)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(59, 20)
+        Me.Label19.TabIndex = 1
+        Me.Label19.Text = "Server:"
+        '
+        'txtServer
+        '
+        Me.txtServer.Enabled = False
+        Me.txtServer.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtServer.Location = New System.Drawing.Point(166, 39)
+        Me.txtServer.Name = "txtServer"
+        Me.txtServer.Size = New System.Drawing.Size(263, 26)
+        Me.txtServer.TabIndex = 0
+        '
+        'btnOpcionesGenerales
+        '
+        Me.btnOpcionesGenerales.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnOpcionesGenerales.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOpcionesGenerales.Image = Global.WindowsApp1.My.Resources.Resources.gears__1_
+        Me.btnOpcionesGenerales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnOpcionesGenerales.Location = New System.Drawing.Point(3, 3)
+        Me.btnOpcionesGenerales.Name = "btnOpcionesGenerales"
+        Me.btnOpcionesGenerales.Size = New System.Drawing.Size(218, 40)
+        Me.btnOpcionesGenerales.TabIndex = 0
+        Me.btnOpcionesGenerales.Text = "Opciones Generales"
+        Me.btnOpcionesGenerales.UseVisualStyleBackColor = True
+        '
+        'btnBajas
+        '
+        Me.btnBajas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnBajas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBajas.Image = Global.WindowsApp1.My.Resources.Resources.delete
+        Me.btnBajas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBajas.Location = New System.Drawing.Point(3, 49)
+        Me.btnBajas.Name = "btnBajas"
+        Me.btnBajas.Size = New System.Drawing.Size(218, 40)
+        Me.btnBajas.TabIndex = 1
+        Me.btnBajas.Text = "Bajas"
+        Me.btnBajas.UseVisualStyleBackColor = True
+        '
+        'btnVolver
+        '
+        Me.btnVolver.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVolver.Image = Global.WindowsApp1.My.Resources.Resources.curve_arrow
+        Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVolver.Location = New System.Drawing.Point(3, 3)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(218, 43)
+        Me.btnVolver.TabIndex = 2
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = True
+        '
+        'btnCredencialesDB
+        '
+        Me.btnCredencialesDB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCredencialesDB.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCredencialesDB.Image = Global.WindowsApp1.My.Resources.Resources.mysql
+        Me.btnCredencialesDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCredencialesDB.Location = New System.Drawing.Point(3, 95)
+        Me.btnCredencialesDB.Name = "btnCredencialesDB"
+        Me.btnCredencialesDB.Size = New System.Drawing.Size(218, 40)
+        Me.btnCredencialesDB.TabIndex = 3
+        Me.btnCredencialesDB.Text = "Credenciales BD"
+        Me.btnCredencialesDB.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WindowsApp1.My.Resources.Resources.logo_mysql_mysql_logo_png_images_are_download_crazypng_21
+        Me.PictureBox1.Location = New System.Drawing.Point(573, 39)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(158, 155)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 11
+        Me.PictureBox1.TabStop = False
+        '
         'frmOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1135, 586)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.pnlBD)
         Me.Controls.Add(Me.tabBajas)
         Me.Controls.Add(Me.tabConfiguraciones)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(1151, 625)
         Me.MinimumSize = New System.Drawing.Size(1151, 625)
         Me.Name = "frmOpciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -2482,6 +2677,10 @@ Partial Class frmOpciones
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
         CType(Me.dgvNotas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlBD.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2687,4 +2886,20 @@ Partial Class frmOpciones
     Friend WithEvents estado As DataGridViewTextBoxColumn
     Friend WithEvents notaTecnico As DataGridViewTextBoxColumn
     Friend WithEvents activoST As DataGridViewTextBoxColumn
+    Friend WithEvents btnCredencialesDB As Button
+    Friend WithEvents pnlBD As TableLayoutPanel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label30 As Label
+    Friend WithEvents txtBD As TextBox
+    Friend WithEvents Label29 As Label
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents txtServer As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnCancelarDB As Button
+    Friend WithEvents btnEditar As Button
+    Friend WithEvents btnGuardarDB As Button
+    Friend WithEvents chbMostrar As CheckBox
 End Class

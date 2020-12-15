@@ -91,6 +91,7 @@
     <Compile Include="Producto.vb" />
     <Compile Include="Proveedor.vb" />
     <Compile Include="ServTecnico.vb" />
+    <Compile Include="Settings.vb" />
     <Compile Include="Venta.vb" />
   </ItemGroup>
   <ItemGroup>

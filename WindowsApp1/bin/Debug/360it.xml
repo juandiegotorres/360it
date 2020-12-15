@@ -2,7 +2,7 @@
 <doc>
 <assembly>
 <name>
-WindowsApp1
+360it
 </name>
 </assembly>
 <members>
@@ -222,6 +222,11 @@ WindowsApp1
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApp1.My.Resources.Resources.logo_mysql_mysql_logo_png_images_are_download_crazypng_21">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApp1.My.Resources.Resources.maximize">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -233,6 +238,11 @@ WindowsApp1
 </summary>
 </member>
 <member name="P:WindowsApp1.My.Resources.Resources.minimize">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp1.My.Resources.Resources.mysql">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

@@ -527,8 +527,8 @@ Public Class Opcion
     ''' Hace referencia a la tabla de donde se van a extraer los datos desde la base de datos ej. clientes, productos, etc
     ''' <param name="columna"></param>
     ''' Hace referencia al nombre de la clave principal
-    ''' <param name="id"></param>
-    ''' hace referencia al numero del id
+    ''' <param name="listaIDs"></param>
+    ''' hace referencia a los numeros id
     ''' <returns></returns>
     Public Function altaGeneralTodos(ByVal tabla As String, ByVal columna As String, ByVal listaIDs As List(Of UInt64))
         Try

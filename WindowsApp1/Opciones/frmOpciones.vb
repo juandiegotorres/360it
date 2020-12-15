@@ -1,36 +1,77 @@
 ﻿Public Class frmOpciones
     Dim eConfiguracion As New Entidades.Opcion
+    Dim eCapaDatos As New CapaDeNegocios.cdDatosPrueba
+    Dim probarConexion As New CapaDeNegocios.cdDatosPrueba
     Dim idGeneral As UInt64
-    Dim nombreProducto, nombreReparacion As String
+    Dim nombreProducto, nombreReparacion, server, usuario, password, database As String
+    Dim errorDB As Boolean
     Dim idGeneralTodos As New List(Of UInt64)
     Dim tablaFormPago, tablaCategorias, tablaLocalidades, tablaProvincias, tablaRubros, tablaTiposArticulo, tablaEstados, tablaClientes, tablaProductos, tablaProveedores, tablaServTec, tablaVentas, tablaNotas, tablaClientesFEchas As New DataTable
+    Public Sub New(ByVal _errorDB As Boolean)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+        errorDB = _errorDB
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
     Private Sub frmOpciones_Load(sender As Object, e As EventArgs) Handles Me.Load
-        cargarFormPago()
-        cargarCategorias()
-        cargarLocalidades()
-        cargarRubros()
-        cargarTiposArticulo()
-        cargarEstados()
-        'Clientes
-        cargarDatosBajas(tablaClientes, dgvClientes, "clientes", "*")
-        'Productos
-        cargarDatosBajas(tablaProductos, dgvProductos, "productos", "*")
-        'Proveedores
-        cargarDatosBajas(tablaProveedores, dgvProveedores, "proveedores", "*")
-        'Serv Tecnico
-        cargarDatosBajas(tablaServTec, dgvServTec, "serviciotecnico", "*")
-        'Notas
-        cargarDatosBajas(tablaNotas, dgvNotas, "notas", "*")
-        'Clientes Fechas
-        cargarDatosBajas(tablaClientesFEchas, dgvClientesFechas, "clientes", "nombreApel, dni, fechaCreacion, fechaModificacion", True)
-        'Ventas 
-        'cargarDatosBajas(tablaVentas, dgvVentas, "ventas", "*")
+        cargarDatosBaseDeDatos()
+        If errorDB = True Then
+            btnOpcionesGenerales.Enabled = False
+            btnBajas.Enabled = False
+        Else
+            cargarFormPago()
+            cargarCategorias()
+            cargarLocalidades()
+            cargarRubros()
+            cargarTiposArticulo()
+            cargarEstados()
+            'Clientes
+            cargarDatosBajas(tablaClientes, dgvClientes, "clientes", "*")
+            'Productos
+            cargarDatosBajas(tablaProductos, dgvProductos, "productos", "*")
+            'Proveedores
+            cargarDatosBajas(tablaProveedores, dgvProveedores, "proveedores", "*")
+            'Serv Tecnico
+            cargarDatosBajas(tablaServTec, dgvServTec, "serviciotecnico", "*")
+            'Notas
+            cargarDatosBajas(tablaNotas, dgvNotas, "notas", "*")
+            'Clientes Fechas
+            cargarDatosBajas(tablaClientesFEchas, dgvClientesFechas, "clientes", "nombreApel, dni, fechaCreacion, fechaModificacion", True)
+            'Ventas 
+            'cargarDatosBajas(tablaVentas, dgvVentas, "ventas", "*")
+        End If
+
         pnlEditar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarRubro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+    End Sub
+
+    Private Sub btnBajas_Click(sender As Object, e As EventArgs) Handles btnBajas.Click
+        pnlBD.Visible = False
+        tabConfiguraciones.Visible = False
+        tabBajas.Visible = True
+    End Sub
+    Private Sub btnOpcionesGenerales_Click(sender As Object, e As EventArgs) Handles btnOpcionesGenerales.Click
+        pnlBD.Visible = False
+        tabBajas.Visible = False
+        tabConfiguraciones.Visible = True
+    End Sub
+    Private Sub btnCredencialesDB_Click(sender As Object, e As EventArgs) Handles btnCredencialesDB.Click
+        pnlBD.Visible = True
+        tabBajas.Visible = False
+        tabConfiguraciones.Visible = False
+    End Sub
+    Public Sub cargarDatosBaseDeDatos()
+        eCapaDatos.cargarCredenciales(server, usuario, password, database)
+        txtServer.Text = server
+        txtUsuario.Text = usuario
+        txtPassword.Text = password
+        txtBD.Text = database
     End Sub
     Public Sub cargarDatosBajas(ByRef tabla As DataTable, ByRef datagrid As DataGridView, ByVal tablaDB As String, ByVal condiciones As String, ByRef Optional activo As Boolean = False)
         tabla.Clear()
@@ -594,20 +635,6 @@
         txtNombreEstado.Tag = 1
     End Sub
 
-
-    Private Sub btnBajas_Click(sender As Object, e As EventArgs) Handles btnBajas.Click
-
-        tabConfiguraciones.Visible = False
-        tabBajas.Visible = True
-    End Sub
-
-
-    Private Sub btnOpcionesGenerales_Click(sender As Object, e As EventArgs) Handles btnOpcionesGenerales.Click
-
-        tabBajas.Visible = False
-        tabConfiguraciones.Visible = True
-    End Sub
-
     Private Sub btnEditarEstado_Click(sender As Object, e As EventArgs) Handles btnEditarEstado.Click
         habilitarDeshabilitarControles(pnlEditarEstado, True)
         eConfiguracion.idEstado = dgvEstados.CurrentRow.Cells("idestado").Value
@@ -715,6 +742,7 @@
         End If
     End Sub
 
+
     Private Sub btnAltaProducto_Click(sender As Object, e As EventArgs) Handles btnAltaProducto.Click
         If dgvProductos.Rows.Count = 0 Then
             MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
@@ -732,6 +760,8 @@
             End If
         End If
     End Sub
+
+
 
     Private Sub btnAltaProveedor_Click(sender As Object, e As EventArgs) Handles btnAltaProveedor.Click
         If dgvProveedores.Rows.Count = 0 Then
@@ -922,19 +952,52 @@
     '    End Sub
 
 #End Region
+#Region "BASE DE DATOS"
+    Private Sub btnGuardarDB_Click(sender As Object, e As EventArgs) Handles btnGuardarDB.Click
+        If txtServer.Enabled = True Then
+            If MsgBox("Si modifica estos datos será necesario reiniciar el software ¿Desea hacerlo?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Credenciales Base de Datos") = MsgBoxResult.Yes Then
+                eCapaDatos.actualizarCredenciales(txtServer.Text, txtUsuario.Text, txtPassword.Text, "myDB360")
+                Application.Restart()
+            Else
+                cargarDatosBaseDeDatos()
+                txtServer.Enabled = False
+                txtUsuario.Enabled = False
+                txtPassword.Enabled = False
+                chbMostrar.Enabled = False
+            End If
+        End If
+    End Sub
 
-    '    Private Sub dgvVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-    '        If e.ColumnIndex = 0 Then
-    '            Dim detalleVenta As New frmDetalles
-    '            With detalleVenta
-    '                If dgvVentas.SelectedRows.Count = 1 Then
-    '                    .e_Venta.idVenta = dgvVentas.CurrentRow.Cells("idVenta").Value
-    '                    .ShowDialog()
-    '                End If
-    '            End With
-    '        End If
-    '    End Sub
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        frmPassword.ShowDialog()
+        If frmPassword.DialogResult = DialogResult.OK Then
+            MsgBox("Sea cuidadoso con los datos que modifica, el programa podría quedar inutilizado", MsgBoxStyle.Exclamation, "Credenciales Base de Datos")
+            txtServer.Enabled = True
+            txtUsuario.Enabled = True
+            txtPassword.Enabled = True
+            chbMostrar.Enabled = True
+        End If
+    End Sub
 
+    Private Sub btnCancelarDB_Click(sender As Object, e As EventArgs) Handles btnCancelarDB.Click
+        If txtServer.Enabled = True Then
+            cargarDatosBaseDeDatos()
+            txtServer.Enabled = False
+            txtUsuario.Enabled = False
+            txtPassword.Enabled = False
+            chbMostrar.Enabled = False
+        End If
+    End Sub
+
+    Private Sub chbMostrar_CheckedChanged(sender As Object, e As EventArgs) Handles chbMostrar.CheckedChanged
+        If chbMostrar.Checked = True Then
+            txtPassword.UseSystemPasswordChar = False
+        Else
+            txtPassword.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+#End Region
     Private Sub dgvLocalidades_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLocalidades.CellClick
         habilitarDeshabilitarControles(pnlEditarLocalidad, False)
     End Sub

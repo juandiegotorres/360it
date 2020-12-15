@@ -8,12 +8,28 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>WindowsApp1.My.MyApplication</StartupObject>
     <RootNamespace>WindowsApp1</RootNamespace>
-    <AssemblyName>WindowsApp1</AssemblyName>
+    <AssemblyName>360it</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Juandi\Desktop\setup3\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,7 +38,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
+    <DocumentationFile>360it.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +48,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
+    <DocumentationFile>360it.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -49,6 +65,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Z-Icono\pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0D53575897B7D4FF689F290544685994BFB954C9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CapaDePresentacion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2">
@@ -135,6 +163,12 @@
       <DependentUpon>frmOpciones.vb</DependentUpon>
     </Compile>
     <Compile Include="Opciones\frmOpciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opciones\frmPassword.Designer.vb">
+      <DependentUpon>frmPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Opciones\frmPassword.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Productos\frmCambiarPrecios.Designer.vb">
@@ -333,6 +367,9 @@
     <EmbeddedResource Include="Opciones\frmOpciones.resx">
       <DependentUpon>frmOpciones.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Opciones\frmPassword.resx">
+      <DependentUpon>frmPassword.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\frmCambiarPrecios.resx">
       <DependentUpon>frmCambiarPrecios.vb</DependentUpon>
     </EmbeddedResource>
@@ -416,12 +453,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CapaDePresentacion_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\Settings.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
@@ -458,6 +496,10 @@
     <None Include="Resources\minimize.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDeNegocios\CapaDeNegocios.vbproj">
+      <Project>{7e8ea774-f9c6-4756-8b0b-6f3d505079ff}</Project>
+      <Name>CapaDeNegocios</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.vbproj">
       <Project>{f823b30e-b7c2-4131-be8c-ddab1123a37d}</Project>
       <Name>Entidades</Name>
@@ -497,6 +539,8 @@
     <None Include="Resources\itl.cat_orange-wallpaper_142494.jpg" />
     <None Include="Resources\Wallpaper.jpg" />
     <None Include="Resources\Wallpaper.png" />
+    <None Include="Resources\logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png" />
+    <None Include="Resources\mysql.png" />
     <Content Include="Z-Icono\pngtree-shop-store-market-building-shopping-flat-color-icon-vector-png-image_1653492.ico" />
     <None Include="Resources\6GxBTL0h_4x.jpg" />
     <None Include="Resources\detalles.png" />
@@ -515,6 +559,18 @@
     <None Include="Resources\ctacorriente_18dpx28.png" />
     <None Include="Resources\baseline_history_white_18dpx28.png" />
     <None Include="Resources\baseline_request_quote_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
