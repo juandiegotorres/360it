@@ -54,6 +54,8 @@ Partial Class frmNuevaReparacion
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +67,7 @@ Partial Class frmNuevaReparacion
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1119, 10)
+        Me.Panel1.Size = New System.Drawing.Size(1015, 10)
         Me.Panel1.TabIndex = 8
         '
         'PictureBox1
@@ -83,16 +85,17 @@ Partial Class frmNuevaReparacion
         '
         Me.lblTitulo.BackColor = System.Drawing.Color.Transparent
         Me.lblTitulo.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.Location = New System.Drawing.Point(118, 13)
+        Me.lblTitulo.Location = New System.Drawing.Point(118, 11)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(912, 44)
+        Me.lblTitulo.Size = New System.Drawing.Size(858, 44)
         Me.lblTitulo.TabIndex = 10
         Me.lblTitulo.Text = "Agregar reparación"
         Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnLimpiar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnLimpiar.FlatAppearance.BorderSize = 2
         Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -102,7 +105,7 @@ Partial Class frmNuevaReparacion
         Me.btnLimpiar.Location = New System.Drawing.Point(18, 5)
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(237, 44)
+        Me.btnLimpiar.Size = New System.Drawing.Size(216, 40)
         Me.btnLimpiar.TabIndex = 12
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
@@ -110,10 +113,10 @@ Partial Class frmNuevaReparacion
         'txtMarca
         '
         Me.txtMarca.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMarca.Location = New System.Drawing.Point(192, 193)
+        Me.txtMarca.Location = New System.Drawing.Point(201, 193)
         Me.txtMarca.MaxLength = 44
         Me.txtMarca.Name = "txtMarca"
-        Me.txtMarca.Size = New System.Drawing.Size(291, 31)
+        Me.txtMarca.Size = New System.Drawing.Size(267, 31)
         Me.txtMarca.TabIndex = 3
         Me.txtMarca.Tag = "Marca"
         '
@@ -123,9 +126,9 @@ Partial Class frmNuevaReparacion
         Me.Label3.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(37, 196)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 26)
+        Me.Label3.Size = New System.Drawing.Size(89, 26)
         Me.Label3.TabIndex = 58
-        Me.Label3.Text = "Marca:"
+        Me.Label3.Text = "Marca*:"
         '
         'Label2
         '
@@ -133,24 +136,24 @@ Partial Class frmNuevaReparacion
         Me.Label2.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(37, 86)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 26)
+        Me.Label2.Size = New System.Drawing.Size(102, 26)
         Me.Label2.TabIndex = 57
-        Me.Label2.Text = "Cliente:"
+        Me.Label2.Text = "Cliente*:"
         '
         'txtNombreCliente
         '
         Me.txtNombreCliente.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCliente.Location = New System.Drawing.Point(192, 87)
+        Me.txtNombreCliente.Location = New System.Drawing.Point(201, 86)
         Me.txtNombreCliente.MaxLength = 45
         Me.txtNombreCliente.Name = "txtNombreCliente"
         Me.txtNombreCliente.ReadOnly = True
-        Me.txtNombreCliente.Size = New System.Drawing.Size(291, 31)
+        Me.txtNombreCliente.Size = New System.Drawing.Size(267, 31)
         Me.txtNombreCliente.TabIndex = 50
         Me.txtNombreCliente.Tag = "Cliente"
         '
         'btnClientes
         '
-        Me.btnClientes.Location = New System.Drawing.Point(489, 87)
+        Me.btnClientes.Location = New System.Drawing.Point(471, 86)
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.Size = New System.Drawing.Size(44, 31)
         Me.btnClientes.TabIndex = 1
@@ -163,16 +166,16 @@ Partial Class frmNuevaReparacion
         Me.Label5.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(37, 143)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(149, 26)
+        Me.Label5.Size = New System.Drawing.Size(158, 26)
         Me.Label5.TabIndex = 78
-        Me.Label5.Text = "Tipo artículo:"
+        Me.Label5.Text = "Tipo artículo*:"
         '
         'cbTipoArticulo
         '
         Me.cbTipoArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipoArticulo.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbTipoArticulo.FormattingEnabled = True
-        Me.cbTipoArticulo.Location = New System.Drawing.Point(192, 140)
+        Me.cbTipoArticulo.Location = New System.Drawing.Point(201, 140)
         Me.cbTipoArticulo.Name = "cbTipoArticulo"
         Me.cbTipoArticulo.Size = New System.Drawing.Size(234, 34)
         Me.cbTipoArticulo.TabIndex = 2
@@ -180,10 +183,10 @@ Partial Class frmNuevaReparacion
         'txtModelo
         '
         Me.txtModelo.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtModelo.Location = New System.Drawing.Point(192, 246)
+        Me.txtModelo.Location = New System.Drawing.Point(201, 246)
         Me.txtModelo.MaxLength = 44
         Me.txtModelo.Name = "txtModelo"
-        Me.txtModelo.Size = New System.Drawing.Size(291, 31)
+        Me.txtModelo.Size = New System.Drawing.Size(267, 31)
         Me.txtModelo.TabIndex = 4
         Me.txtModelo.Tag = "Modelo"
         '
@@ -193,9 +196,9 @@ Partial Class frmNuevaReparacion
         Me.Label9.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(37, 249)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(95, 26)
+        Me.Label9.Size = New System.Drawing.Size(104, 26)
         Me.Label9.TabIndex = 86
-        Me.Label9.Text = "Modelo:"
+        Me.Label9.Text = "Modelo*:"
         '
         'Label10
         '
@@ -203,16 +206,16 @@ Partial Class frmNuevaReparacion
         Me.Label10.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(37, 302)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 26)
+        Me.Label10.Size = New System.Drawing.Size(99, 26)
         Me.Label10.TabIndex = 88
-        Me.Label10.Text = "Estado:"
+        Me.Label10.Text = "Estado*:"
         '
         'cbEstado
         '
         Me.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbEstado.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbEstado.FormattingEnabled = True
-        Me.cbEstado.Location = New System.Drawing.Point(192, 299)
+        Me.cbEstado.Location = New System.Drawing.Point(201, 299)
         Me.cbEstado.Name = "cbEstado"
         Me.cbEstado.Size = New System.Drawing.Size(234, 34)
         Me.cbEstado.TabIndex = 5
@@ -220,28 +223,28 @@ Partial Class frmNuevaReparacion
         'txtAccesorios
         '
         Me.txtAccesorios.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAccesorios.Location = New System.Drawing.Point(736, 155)
+        Me.txtAccesorios.Location = New System.Drawing.Point(682, 154)
         Me.txtAccesorios.MaxLength = 99
         Me.txtAccesorios.Multiline = True
         Me.txtAccesorios.Name = "txtAccesorios"
-        Me.txtAccesorios.Size = New System.Drawing.Size(341, 95)
+        Me.txtAccesorios.Size = New System.Drawing.Size(299, 95)
         Me.txtAccesorios.TabIndex = 9
         '
         'txtDescripcion
         '
         Me.txtDescripcion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcion.Location = New System.Drawing.Point(736, 289)
+        Me.txtDescripcion.Location = New System.Drawing.Point(682, 288)
         Me.txtDescripcion.MaxLength = 149
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(341, 111)
+        Me.txtDescripcion.Size = New System.Drawing.Size(299, 111)
         Me.txtDescripcion.TabIndex = 10
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(583, 289)
+        Me.Label12.Location = New System.Drawing.Point(529, 288)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(144, 26)
         Me.Label12.TabIndex = 90
@@ -251,7 +254,7 @@ Partial Class frmNuevaReparacion
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(583, 158)
+        Me.Label4.Location = New System.Drawing.Point(529, 157)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(132, 26)
         Me.Label4.TabIndex = 89
@@ -262,7 +265,7 @@ Partial Class frmNuevaReparacion
         Me.dtEntrega.CalendarFont = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtEntrega.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtEntrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtEntrega.Location = New System.Drawing.Point(738, 87)
+        Me.dtEntrega.Location = New System.Drawing.Point(684, 86)
         Me.dtEntrega.Name = "dtEntrega"
         Me.dtEntrega.Size = New System.Drawing.Size(157, 31)
         Me.dtEntrega.TabIndex = 7
@@ -271,17 +274,17 @@ Partial Class frmNuevaReparacion
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(588, 112)
+        Me.Label6.Location = New System.Drawing.Point(534, 111)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 26)
+        Me.Label6.Size = New System.Drawing.Size(104, 26)
         Me.Label6.TabIndex = 97
-        Me.Label6.Text = "entrega"
+        Me.Label6.Text = "entrega*"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(583, 86)
+        Me.Label7.Location = New System.Drawing.Point(529, 85)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(120, 26)
         Me.Label7.TabIndex = 96
@@ -304,9 +307,9 @@ Partial Class frmNuevaReparacion
         Me.Label1.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(42, 374)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(118, 26)
+        Me.Label1.Size = New System.Drawing.Size(126, 26)
         Me.Label1.TabIndex = 94
-        Me.Label1.Text = "recepción"
+        Me.Label1.Text = "recepción*"
         '
         'Label8
         '
@@ -322,7 +325,7 @@ Partial Class frmNuevaReparacion
         '
         Me.chbSinFecha.AutoSize = True
         Me.chbSinFecha.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chbSinFecha.Location = New System.Drawing.Point(738, 129)
+        Me.chbSinFecha.Location = New System.Drawing.Point(684, 124)
         Me.chbSinFecha.Name = "chbSinFecha"
         Me.chbSinFecha.Size = New System.Drawing.Size(139, 19)
         Me.chbSinFecha.TabIndex = 8
@@ -331,6 +334,7 @@ Partial Class frmNuevaReparacion
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TableLayoutPanel1.ColumnCount = 4
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
@@ -340,62 +344,65 @@ Partial Class frmNuevaReparacion
         Me.TableLayoutPanel1.Controls.Add(Me.btnGuardar, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnLimpiar, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnCancelar, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 431)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(2, 433)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1093, 64)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1009, 60)
         Me.TableLayoutPanel1.TabIndex = 100
         '
         'btnGuardarEImprimir
         '
-        Me.btnGuardarEImprimir.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnGuardarEImprimir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardarEImprimir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnGuardarEImprimir.FlatAppearance.BorderSize = 2
         Me.btnGuardarEImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnGuardarEImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnGuardarEImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardarEImprimir.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarEImprimir.Location = New System.Drawing.Point(564, 5)
+        Me.btnGuardarEImprimir.Location = New System.Drawing.Point(522, 5)
         Me.btnGuardarEImprimir.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnGuardarEImprimir.Name = "btnGuardarEImprimir"
-        Me.btnGuardarEImprimir.Size = New System.Drawing.Size(237, 44)
+        Me.btnGuardarEImprimir.Size = New System.Drawing.Size(216, 40)
         Me.btnGuardarEImprimir.TabIndex = 56
         Me.btnGuardarEImprimir.Text = "Guardar e Imprimir"
         Me.btnGuardarEImprimir.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
-        Me.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnGuardar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnGuardar.FlatAppearance.BorderSize = 2
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(291, 5)
+        Me.btnGuardar.Location = New System.Drawing.Point(270, 5)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(237, 44)
+        Me.btnGuardar.Size = New System.Drawing.Size(216, 40)
         Me.btnGuardar.TabIndex = 55
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
-        Me.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCancelar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnCancelar.FlatAppearance.BorderSize = 2
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(837, 5)
+        Me.btnCancelar.Location = New System.Drawing.Point(774, 5)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(18, 5, 18, 15)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(238, 44)
+        Me.btnCancelar.Size = New System.Drawing.Size(217, 40)
         Me.btnCancelar.TabIndex = 54
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -406,18 +413,40 @@ Partial Class frmNuevaReparacion
         Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
-        Me.btnCerrar.Location = New System.Drawing.Point(1091, 11)
+        Me.btnCerrar.Location = New System.Drawing.Point(987, 11)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(27, 26)
         Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnCerrar.TabIndex = 101
         Me.btnCerrar.TabStop = False
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(531, 183)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(61, 15)
+        Me.Label13.TabIndex = 102
+        Me.Label13.Text = "(opcional)"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(531, 314)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(61, 15)
+        Me.Label11.TabIndex = 103
+        Me.Label11.Text = "(opcional)"
+        '
         'frmNuevaReparacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1119, 498)
+        Me.ClientSize = New System.Drawing.Size(1015, 498)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.chbSinFecha)
@@ -488,4 +517,6 @@ Partial Class frmNuevaReparacion
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnCerrar As PictureBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label11 As Label
 End Class

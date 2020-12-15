@@ -61,9 +61,9 @@ Partial Class frmCargarCuentaCorriente
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Montserrat ExtraBold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 13)
+        Me.Label1.Location = New System.Drawing.Point(8, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(475, 44)
+        Me.Label1.Size = New System.Drawing.Size(455, 44)
         Me.Label1.TabIndex = 39
         Me.Label1.Text = "Cuenta corriente"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

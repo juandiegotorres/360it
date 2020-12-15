@@ -106,7 +106,7 @@ Partial Class frmClientes
         Me.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvClientes.Size = New System.Drawing.Size(981, 338)
-        Me.dgvClientes.TabIndex = 0
+        Me.dgvClientes.TabIndex = 2
         '
         'idCliente
         '

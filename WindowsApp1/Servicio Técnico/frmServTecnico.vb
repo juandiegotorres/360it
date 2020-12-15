@@ -1,6 +1,6 @@
 ﻿Public Class frmServTecnico
     Dim eServTec As New Entidades.ServTecnico
-    Dim fechaLim, filtroBS As String
+    Dim fechaLim, filtroBS, nombreEquipo As String
     Dim id_Reparacion, id_Estado As UInt64
     Dim bsReparaciones As New BindingSource
     Dim tablaBuscador, tablaReparaciones As New DataTable
@@ -51,11 +51,13 @@
     End Sub
 
     Private Sub btnBaja_Click(sender As Object, e As EventArgs) Handles btnBaja.Click
+
         If dgvServTecnico.CurrentRow.Selected = False Then
             MsgBox("No hay ninguna reparacion seleccionada", MsgBoxStyle.Information, "Servicio Técnico")
         Else
             eServTec.idReparacion = dgvServTecnico.CurrentRow.Cells("idReparacion").Value
-            If MsgBox("¿Desea dar de baja esta reparación?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Servicio Técnico") = MsgBoxResult.Yes Then
+            nombreEquipo = dgvServTecnico.CurrentRow.Cells("articulo").Value & " " & dgvServTecnico.CurrentRow.Cells("marca").Value & " " & dgvServTecnico.CurrentRow.Cells("modelo").Value
+            If MsgBox("¿Desea dar de baja la reparación del artículo '" & nombreEquipo & "'?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Servicio Técnico") = MsgBoxResult.Yes Then
                 eServTec.bajaReparacion()
                 actualizarReparaciones()
             End If
@@ -125,7 +127,7 @@
 
     Private Sub frmServTecnico_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyData
-            Case (Keys.Control + Keys.B)
+            Case (Keys.Alt + Keys.B)
                 txtBuscar.Select()
             Case Keys.F10
                 Call btnAgregar_Click(btnAgregar, e)

@@ -58,31 +58,43 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        Select Case e.KeyCode
+        Select Case e.KeyData
             Case Keys.F1
+                Call btnVentas_Click_1(btnVentas, e)
+            Case (Keys.Alt + Keys.D1)
                 Call btnVender_Click(btnVender, e)
                 pnlSubMenuVentas.Visible = True
-            Case Keys.F2
+            Case (Keys.Alt + Keys.D2)
                 Call btnCuentaCorriente_Click(btnCuentaCorriente, e)
                 pnlSubMenuVentas.Visible = True
-            Case Keys.F3
+            Case (Keys.Alt + Keys.D3)
                 Call btnCaja_Click(btnCaja, e)
                 pnlSubMenuVentas.Visible = True
-            Case Keys.F4
+            Case (Keys.Alt + Keys.D4)
                 Call btnHistorialVentas_Click(btnHistorialVentas, e)
                 pnlSubMenuVentas.Visible = True
-            Case Keys.F5
+            Case Keys.F2
                 pnlSubMenuVentas.Visible = False
                 Call btnClientes_Click(btnClientes, e)
-            Case Keys.F6
+            Case Keys.F3
                 pnlSubMenuVentas.Visible = False
                 Call btnProductos_Click(btnProductos, e)
-            Case Keys.F7
+            Case Keys.F4
                 pnlSubMenuVentas.Visible = False
                 Call btnServTecnico_Click(btnServTecnico, e)
-            Case Keys.F8
+            Case Keys.F5
                 pnlSubMenuVentas.Visible = False
                 Call btnProveedores_Click(btnProveedores, e)
+            Case Keys.F6
+                pnlSubMenuVentas.Visible = False
+                Call btnNotas_Click(btnNotas, e)
+            Case Keys.F7
+                pnlSubMenuVentas.Visible = False
+                Call btnReportes_Click(btnReportes, e)
+            Case (Keys.Alt + Keys.W)
+                Call btnWEB_Click(btnWEB, e)
+            Case (Keys.Alt + Keys.O)
+                Call btnOpciones_Click(btnOpciones, e)
             Case Keys.Escape
                 Call btnCerrar_Click(btnCerrar, e)
         End Select
@@ -134,6 +146,7 @@ Public Class frmPrincipal
 
     Private Sub btnVentas_Click_1(sender As Object, e As EventArgs) Handles btnVentas.Click
         cerrarForm()
+        pnlContenedor.Controls.Add(PictureBox3)
         panelCost.Visible = True
         panelCost.Height = btnVentas.Height
         panelCost.Top = btnVentas.Top

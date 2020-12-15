@@ -453,6 +453,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property itl_cat_orange_wallpaper_142494() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("itl.cat_orange-wallpaper_142494", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property maximize() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("maximize", resourceCulture)
@@ -516,6 +526,26 @@ Namespace My.Resources
         Friend ReadOnly Property vender36dpx28() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("vender36dpx28", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Wallpaper() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Wallpaper", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Wallpaper1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Wallpaper1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

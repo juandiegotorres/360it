@@ -88,6 +88,7 @@
         txtClienteCtaCorriente.Text = ""
         txtClienteCtaCorriente.Visible = False
         btnCancelarCtaCorriente.Visible = False
+        lblCtaCorriente.Visible = False
         rbRecargoPorcentaje.Enabled = True
         rbRecargoPlata.Enabled = True
         rbDescuentoPlata.Enabled = True
@@ -254,6 +255,14 @@
         limpiarCarrito()
     End Sub
 
+    Private Sub btnCancelarCtaCorriente_Click(sender As Object, e As EventArgs) Handles btnCancelarCtaCorriente.Click
+        txtClienteCtaCorriente.Text = ""
+        txtClienteCtaCorriente.Visible = False
+        btnCancelarCtaCorriente.Visible = False
+        lblCtaCorriente.Visible = False
+        cbFormPago.SelectedIndex = 0
+    End Sub
+
 
     'Al hacer doble click en la celda se agrega un producto al carrito tambien
     Private Sub dgvProductosLista_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductosLista.CellDoubleClick
@@ -277,6 +286,7 @@
                 eVenta.cuotas = ctaCorriente.eVenta.cuotas
                 txtClienteCtaCorriente.Visible = True
                 btnCancelarCtaCorriente.Visible = True
+                lblCtaCorriente.Visible = True
                 If eVenta.cuotas = 1 Then
                     txtClienteCtaCorriente.Text = ctaCorriente.eVenta.nombreCliente & "  -  " & eVenta.cuotas & " Pago"
                 Else
@@ -329,13 +339,6 @@
         End If
     End Sub
 
-
-    Private Sub btnCancelarCtaCorriente_Click(sender As Object, e As EventArgs) Handles btnCancelarCtaCorriente.Click
-        txtClienteCtaCorriente.Text = ""
-        txtClienteCtaCorriente.Visible = False
-        btnCancelarCtaCorriente.Visible = False
-        cbFormPago.SelectedIndex = 0
-    End Sub
 
     Private Sub txtRecargo_TextChanged_1(sender As Object, e As EventArgs) Handles txtRecargo.TextChanged
         'Suma del dinero al total dependiendo si es por monto de dinero o porcentaje
@@ -557,18 +560,24 @@
 
     Private Sub frmVender_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyData
-            Case (Keys.Control + Keys.B)
+            Case (Keys.Alt + Keys.B)
                 txtBuscar.Select()
             Case Keys.F10
                 Call btnVender_Click(btnVender, e)
             Case Keys.F11
                 Call btnCuentaCorriente_Click(btnCuentaCorriente, e)
-            Case (Keys.Control + Keys.L)
+            Case (Keys.Alt + Keys.L)
                 Call btnLimpiar_Click(btnLimpiar, e)
-            Case (Keys.Control + Keys.A)
-                Call btnAgregar_Click(btnAgregar, e)
         End Select
     End Sub
+
+    Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            anidadirAlCarro()
+        End If
+    End Sub
+
+
 
 
 

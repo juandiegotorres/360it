@@ -1,6 +1,7 @@
 ﻿Public Class frmOpciones
     Dim eConfiguracion As New Entidades.Opcion
     Dim idGeneral As UInt64
+    Dim nombreProducto, nombreReparacion As String
     Dim idGeneralTodos As New List(Of UInt64)
     Dim tablaFormPago, tablaCategorias, tablaLocalidades, tablaProvincias, tablaRubros, tablaTiposArticulo, tablaEstados, tablaClientes, tablaProductos, tablaProveedores, tablaServTec, tablaVentas, tablaNotas, tablaClientesFEchas As New DataTable
     Private Sub frmOpciones_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -23,7 +24,7 @@
         'Clientes Fechas
         cargarDatosBajas(tablaClientesFEchas, dgvClientesFechas, "clientes", "nombreApel, dni, fechaCreacion, fechaModificacion", True)
         'Ventas 
-        cargarDatosBajas(tablaVentas, dgvVentas, "ventas", "*")
+        'cargarDatosBajas(tablaVentas, dgvVentas, "ventas", "*")
         pnlEditar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         pnlEditarLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -701,7 +702,7 @@
         If dgvClientes.Rows.Count = 0 Then
             MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
         Else
-            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+            If MsgBox("¿Desea restaurar el cliente '" & dgvClientes.CurrentRow.Cells("nombreApel").Value & "'?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneral = 0
                 idGeneral = dgvClientes.CurrentRow.Cells("idcliente").Value
                 If eConfiguracion.altaGeneral("clientes", "idcliente", idGeneral) = True Then
@@ -718,7 +719,8 @@
         If dgvProductos.Rows.Count = 0 Then
             MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
         Else
-            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+            nombreProducto = dgvProductos.CurrentRow.Cells("tipoArticulo").Value & " " & dgvProductos.CurrentRow.Cells("marca") & " " & dgvProductos.CurrentRow.Cells("modelo").Value
+            If MsgBox("¿Desea restaurar el producto '" & nombreProducto & "'?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneral = 0
                 idGeneral = dgvProductos.CurrentRow.Cells("idProducto").Value
                 If eConfiguracion.altaGeneral("productos", "idProducto", idGeneral) = True Then
@@ -735,7 +737,7 @@
         If dgvProveedores.Rows.Count = 0 Then
             MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
         Else
-            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+            If MsgBox("¿Desea restaurar el proveedor '" & dgvProveedores.CurrentRow.Cells("nombreProveedor").Value & "'?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneral = 0
                 idGeneral = dgvProveedores.CurrentRow.Cells("idproveedor").Value
                 If eConfiguracion.altaGeneral("proveedores", "idproveedor", idGeneral) = True Then
@@ -752,7 +754,8 @@
         If dgvServTec.Rows.Count = 0 Then
             MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
         Else
-            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+            nombreReparacion = dgvServTec.CurrentRow.Cells("marcaST").Value & " " & dgvServTec.CurrentRow.Cells("modeloST").Value
+            If MsgBox("¿Desea restaurar el artículo '" & nombreReparacion & "'?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneral = 0
                 idGeneral = dgvServTec.CurrentRow.Cells("idReparacion").Value
                 If dgvServTec.CurrentRow.Selected = True Then
@@ -768,7 +771,9 @@
     End Sub
 
     Private Sub btnAltaClienteTodos_Click(sender As Object, e As EventArgs) Handles btnAltaClienteTodos.Click
-        If dgvClientes.Rows.Count > 0 Then
+        If dgvClientes.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
             If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvClientes.Rows.Count - 1
@@ -785,7 +790,9 @@
     End Sub
 
     Private Sub btnAltaProductosTodos_Click(sender As Object, e As EventArgs) Handles btnAltaProductosTodos.Click
-        If dgvProductos.Rows.Count > 0 Then
+        If dgvProductos.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
             If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvProductos.Rows.Count - 1
@@ -802,7 +809,9 @@
     End Sub
 
     Private Sub btnAltaProveedorTodos_Click(sender As Object, e As EventArgs) Handles btnAltaProveedorTodos.Click
-        If dgvServTec.Rows.Count > 0 Then
+        If dgvProveedores.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
             If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvProveedores.Rows.Count - 1
@@ -819,7 +828,9 @@
     End Sub
 
     Private Sub btnAltaServTecTodos_Click(sender As Object, e As EventArgs) Handles btnAltaServTecTodos.Click
-        If dgvServTec.Rows.Count > 0 Then
+        If dgvServTec.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
             If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvServTec.Rows.Count - 1
@@ -838,7 +849,7 @@
         If dgvNotas.Rows.Count = 0 Then
             MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
         Else
-            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+            If MsgBox("¿Desea restaurar esta nota?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneral = 0
                 idGeneral = dgvNotas.CurrentRow.Cells("idnota").Value
                 If dgvNotas.CurrentRow.Selected = True Then
@@ -854,7 +865,9 @@
     End Sub
 
     Private Sub btnAltaNotasTodas_Click(sender As Object, e As EventArgs) Handles btnAltaNotasTodas.Click
-        If dgvNotas.Rows.Count > 0 Then
+        If dgvNotas.Rows.Count = 0 Then
+            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+        Else
             If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
                 idGeneralTodos.Clear()
                 For i = 0 To dgvNotas.Rows.Count - 1
@@ -871,56 +884,56 @@
     End Sub
 
 
-    Private Sub btnAltaVenta_Click(sender As Object, e As EventArgs) Handles btnAltaVenta.Click
-        If dgvVentas.Rows.Count = 0 Then
-            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
-        Else
-            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
-                idGeneral = 0
-                idGeneral = dgvVentas.CurrentRow.Cells("idVenta").Value
-                If dgvVentas.CurrentRow.Selected = True Then
-                    eConfiguracion.altaGeneral("movimientos", "venta", idGeneral)
-                    If eConfiguracion.altaGeneral("ventas", "idVenta", idGeneral) = True Then
-                        cargarDatosBajas(tablaVentas, dgvVentas, "ventas", "*")
-                        MsgBox("Restaurado con éxito", MsgBoxStyle.Information, "Bajas")
-                    Else
-                        MsgBox("No se ha podidorestaurar", MsgBoxStyle.Information, "Bajas")
-                    End If
-                End If
-            End If
-        End If
-    End Sub
+    '    Private Sub btnAltaVenta_Click(sender As Object, e As EventArgs)
+    '        If dgvVentas.Rows.Count = 0 Then
+    '            MsgBox("No hay nada para restaurar", MsgBoxStyle.Critical, "Bajas")
+    '        Else
+    '            If MsgBox("¿Desea restaurar este elemento?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+    '                idGeneral = 0
+    '                idGeneral = dgvVentas.CurrentRow.Cells("idVenta").Value
+    '                If dgvVentas.CurrentRow.Selected = True Then
+    '                    eConfiguracion.altaGeneral("movimientos", "venta", idGeneral)
+    '                    If eConfiguracion.altaGeneral("ventas", "idVenta", idGeneral) = True Then
+    '                        cargarDatosBajas(tablaVentas, dgvVentas, "ventas", "*")
+    '                        MsgBox("Restaurado con éxito", MsgBoxStyle.Information, "Bajas")
+    '                    Else
+    '                        MsgBox("No se ha podidorestaurar", MsgBoxStyle.Information, "Bajas")
+    '                    End If
+    '                End If
+    '            End If
+    '        End If
+    '    End Sub
 
-    Private Sub btnAltaVentaTodos_Click(sender As Object, e As EventArgs) Handles btnAltaVentaTodos.Click
-        If dgvNotas.Rows.Count > 0 Then
-            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
-                idGeneralTodos.Clear()
-                For i = 0 To dgvVentas.Rows.Count - 1
-                    idGeneralTodos.Add(dgvVentas.Rows(i).Cells("idVenta").Value)
-                Next
-                If eConfiguracion.altaGeneralTodos("ventas", "idVenta", idGeneralTodos) = True Then
-                    cargarDatosBajas(tablaVentas, dgvVentas, "ventas", "*")
-                    MsgBox("Todos los elementos se han restaurado con éxito", MsgBoxStyle.Information, "Bajas")
-                Else
-                    MsgBox("No se ha podido restaurar", MsgBoxStyle.Information, "Bajas")
-                End If
-            End If
-        End If
-    End Sub
+    '    Private Sub btnAltaVentaTodos_Click(sender As Object, e As EventArgs)
+    '        If dgvNotas.Rows.Count > 0 Then
+    '            If MsgBox("¿Está seguro que desea realizar esta acción?", MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Bajas") = MsgBoxResult.Yes Then
+    '                idGeneralTodos.Clear()
+    '                For i = 0 To dgvVentas.Rows.Count - 1
+    '                    idGeneralTodos.Add(dgvVentas.Rows(i).Cells("idVenta").Value)
+    '                Next
+    '                If eConfiguracion.altaGeneralTodos("ventas", "idVenta", idGeneralTodos) = True Then
+    '                    cargarDatosBajas(tablaVentas, dgvVentas, "ventas", "*")
+    '                    MsgBox("Todos los elementos se han restaurado con éxito", MsgBoxStyle.Information, "Bajas")
+    '                Else
+    '                    MsgBox("No se ha podido restaurar", MsgBoxStyle.Information, "Bajas")
+    '                End If
+    '            End If
+    '        End If
+    '    End Sub
 
 #End Region
 
-    Private Sub dgvVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVentas.CellContentClick
-        If e.ColumnIndex = 0 Then
-            Dim detalleVenta As New frmDetalles
-            With detalleVenta
-                If dgvVentas.SelectedRows.Count = 1 Then
-                    .e_Venta.idVenta = dgvVentas.CurrentRow.Cells("idVenta").Value
-                    .ShowDialog()
-                End If
-            End With
-        End If
-    End Sub
+    '    Private Sub dgvVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    '        If e.ColumnIndex = 0 Then
+    '            Dim detalleVenta As New frmDetalles
+    '            With detalleVenta
+    '                If dgvVentas.SelectedRows.Count = 1 Then
+    '                    .e_Venta.idVenta = dgvVentas.CurrentRow.Cells("idVenta").Value
+    '                    .ShowDialog()
+    '                End If
+    '            End With
+    '        End If
+    '    End Sub
 
     Private Sub dgvLocalidades_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLocalidades.CellClick
         habilitarDeshabilitarControles(pnlEditarLocalidad, False)
@@ -940,5 +953,11 @@
 
     Private Sub dgvFormPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFormPago.CellClick
         habilitarDeshabilitarControles(pnlEditar, False)
+    End Sub
+
+    Private Sub frmOpciones_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
     End Sub
 End Class

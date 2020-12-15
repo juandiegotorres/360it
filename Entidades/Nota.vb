@@ -47,7 +47,7 @@ Public Class Nota
     End Sub
     Public Sub traerNotas(ByVal tabla As DataTable, ByRef offset As UInt32)
         Try
-            Dim consultaSQL As String = "SELECT * FROM notas WHERE activo = 1 ORDER BY fecha DESC LIMIT 8 OFFSET " & offset
+            Dim consultaSQL As String = "SELECT idnota, nota, date(fecha), color, activo FROM notas WHERE activo = 1 ORDER BY fecha DESC LIMIT 8 OFFSET " & offset
             eCapaDatos.llenarDatos(tabla, consultaSQL)
         Catch ex As Exception
             MsgBox(ex.Message, "Entidad Notas")
@@ -74,7 +74,7 @@ Public Class Nota
             Dim ComandoSQL As String = "INSERT INTO notas(nota,fecha,color,activo) VALUES(@nota, @fecha, @color, '1')"
             Dim sqlcomando As MySqlCommand = New MySqlCommand(ComandoSQL)
             sqlcomando.Parameters.Add("@nota", MySqlDbType.VarChar).Value = Me.nota
-            sqlcomando.Parameters.Add("@fecha", MySqlDbType.Date).Value = Me.fecha
+            sqlcomando.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = Me.fecha
             sqlcomando.Parameters.Add("@color", MySqlDbType.Int16).Value = Me.color
             eCapaDatos.cargarDatos(sqlcomando)
             Return True
@@ -93,10 +93,11 @@ Public Class Nota
     End Sub
     Public Function guardarNotaModificada()
         Try
-            Dim ComandoSQL As String = "UPDATE notas SET nota = @nota, color = @color WHERE idnota = @id"
+            Dim ComandoSQL As String = "UPDATE notas SET nota = @nota, color = @color, fecha = @fecha WHERE idnota = @id"
             Dim sqlcomando As MySqlCommand = New MySqlCommand(ComandoSQL)
             sqlcomando.Parameters.Add("@id", MySqlDbType.Int64).Value = Me.idNota
             sqlcomando.Parameters.Add("@nota", MySqlDbType.VarChar).Value = Me.nota
+            sqlcomando.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = Me.fecha
             sqlcomando.Parameters.Add("@color", MySqlDbType.Int16).Value = Me.color
             eCapaDatos.cargarDatos(sqlcomando)
             Return True

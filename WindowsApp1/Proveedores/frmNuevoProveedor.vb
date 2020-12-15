@@ -4,7 +4,7 @@
     Public eProveedor As New Entidades.Proveedor
     Dim listaRubro As New List(Of UInt16)
     Dim listaPago As New List(Of UInt16)
-
+    Dim contador As UInt64
     Private _modificar As Boolean
     Public Property modificar As Boolean
         Set(value As Boolean)
@@ -139,11 +139,21 @@
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
             If comprobarDatos() = True Then
-                If comprobarFormPago() = False Then
-                    MsgBox("Tiene que seleccionar al menos una forma de pago. Si la lista está vacía, intente agregar una forma de pago desde las opciones.", MsgBoxStyle.Exclamation, "Proveedor")
+                If Len(txtCuil.Text) <> 11 Then
+                    MsgBox("El campo CUIL debe tener 11 dígitos", MsgBoxStyle.Critical, "Nuevo Proveedor")
                     Exit Sub
                 End If
-                If comprobarRubros() = False Then
+                If Len(txtCBU.Text) <> 22 Then
+                    MsgBox("El campo CBU debe tener 22 dígitos", MsgBoxStyle.Critical, "Nuevo Proveedor")
+                    Exit Sub
+                End If
+                If comprobarFormPago() = False And comprobarRubros() = False Then
+                    MsgBox("Tiene que seleccionar al menos una forma de pago y un rubro.", MsgBoxStyle.Exclamation, "Proveedor")
+                    Exit Sub
+                ElseIf comprobarFormPago() = False Then
+                    MsgBox("Tiene que seleccionar al menos una forma de pago. Si la lista está vacía, intente agregar una forma de pago desde las opciones.", MsgBoxStyle.Exclamation, "Proveedor")
+                    Exit Sub
+                ElseIf comprobarRubros() = False Then
                     MsgBox("Tiene que seleccionar al menos un rubro. Si la lista está vacía, intente agregar un rubro desde las opciones.", MsgBoxStyle.Exclamation, "Proveedor")
                     Exit Sub
                 End If
@@ -172,17 +182,39 @@
         End Try
     End Sub
     Public Function comprobarDatos()
+        contador = 0
         Dim _control As Control
         For Each _control In Me.Controls
             If TypeOf _control Is TextBox Then
-                If LTrim(_control.Text) = "" Then
-                    MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Proveedores")
-                    Return False
+                If _control Is txtHorario Then
+                Else
+                    If LTrim(_control.Text) = "" Then
+                        'MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Clientes")
+                        _control.BackColor = Color.FromArgb(255, 178, 178)
+                        contador += 1
+                    End If
                 End If
             End If
         Next
-        Return True
+        If contador <> 0 Then
+            MsgBox("Los campos marcados de color rojo no pueden estar vacíos, completelos e intente de nuevo", MsgBoxStyle.Exclamation, "Nuevo Proveedor")
+            Return False
+        Else
+            Return True
+        End If
     End Function
+    'Public Function comprobarDatos()
+    '    Dim _control As Control
+    '    For Each _control In Me.Controls
+    '        If TypeOf _control Is TextBox Then
+    '            If LTrim(_control.Text) = "" Then
+    '                MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Proveedores")
+    '                Return False
+    '            End If
+    '        End If
+    '    Next
+    '    Return True
+    'End Function
 #Region "KEYPRESS"
 
     Private Sub txtCBU_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCBU.KeyPress
@@ -203,7 +235,7 @@
 
     Private Sub frmNuevoProveedor_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
-            Case (Keys.Control + Keys.L)
+            Case (Keys.Alt + Keys.L)
                 Call BtnLimpiar_Click(btnLimpiar, e)
             Case Keys.Enter
                 Call BtnGuardar_Click(btnGuardar, e)
@@ -229,6 +261,59 @@
         End If
     End Sub
 
+    Private Sub txtNombre_GotFocus(sender As Object, e As EventArgs) Handles txtNombre.GotFocus
+        txtNombre.BackColor = Color.White
+    End Sub
+    Private Sub txtNombre_LostFocus(sender As Object, e As EventArgs) Handles txtNombre.LostFocus
+        If LTrim(txtNombre.Text) = "" Then
+            txtNombre.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtCuil_GotFocus(sender As Object, e As EventArgs) Handles txtCuil.GotFocus
+        txtCuil.BackColor = Color.White
+    End Sub
+
+    Private Sub txtCuil_LostFocus(sender As Object, e As EventArgs) Handles txtCuil.LostFocus
+        If LTrim(txtCuil.Text) = "" Then
+            txtCuil.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtTelefono_GotFocus(sender As Object, e As EventArgs) Handles txtTelefono.GotFocus
+        txtTelefono.BackColor = Color.White
+    End Sub
+
+    Private Sub txtTelefono_LostFocus(sender As Object, e As EventArgs) Handles txtTelefono.LostFocus
+        If LTrim(txtTelefono.Text) = "" Then
+            txtTelefono.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtDireccion_GotFocus(sender As Object, e As EventArgs) Handles txtDireccion.GotFocus
+        txtDireccion.BackColor = Color.White
+    End Sub
+
+    Private Sub txtDireccion_LostFocus(sender As Object, e As EventArgs) Handles txtDireccion.LostFocus
+        If LTrim(txtDireccion.Text) = "" Then
+            txtDireccion.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtCBU_GotFocus(sender As Object, e As EventArgs) Handles txtCBU.GotFocus
+        txtCBU.BackColor = Color.White
+    End Sub
+
+    Private Sub txtCBU_LostFocus(sender As Object, e As EventArgs) Handles txtCBU.LostFocus
+        If LTrim(txtCBU.Text) = "" Then
+            txtCBU.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+
+
+
 #End Region
+
 
 End Class

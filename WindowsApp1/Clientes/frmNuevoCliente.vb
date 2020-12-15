@@ -8,7 +8,7 @@
             Return _modificar
         End Get
     End Property
-
+    Dim contador As Integer
     Public eCliente As New Entidades.Cliente
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
@@ -44,16 +44,23 @@
         End With
     End Sub
     Public Function comprobarDatos()
+        contador = 0
         Dim _control As Control
         For Each _control In Me.Controls
             If TypeOf _control Is TextBox Then
                 If LTrim(_control.Text) = "" Then
-                    MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Clientes")
-                    Return False
+                    'MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Clientes")
+                    _control.BackColor = Color.FromArgb(255, 178, 178)
+                    contador += 1
                 End If
             End If
         Next
-        Return True
+        If contador <> 0 Then
+            MsgBox("Los campos marcados de color rojo no pueden estar vacíos, completelos e intente de nuevo", MsgBoxStyle.Exclamation, "Nuevo Cliente")
+            Return False
+        Else
+            Return True
+        End If
     End Function
     Public Sub limpiarCampos()
         Dim txt As Control
@@ -74,24 +81,29 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If comprobarDatos() = True Then
-            eCliente.nombApel = txtNomApel.Text
-            eCliente.telefono = txtTelefono.Text
-            eCliente.direccion = txtDireccion.Text
-            eCliente.idProvincia = cbProvincias.SelectedValue
-            eCliente.dni = txtDNI.Text
-            If _modificar = False Then
-                eCliente.fechaCreacion = Date.Now
-                eCliente.fechaModificacion = Date.Now
-                eCliente.guardarCliente()
-                MsgBox("Cliente guardado", MsgBoxStyle.Information, "Clientes")
-                Me.DialogResult = DialogResult.OK
+            If Len(txtDNI.Text) <> 8 Then
+                MsgBox("El campo DNI debe tenere 8 dígitos", MsgBoxStyle.Critical, "Nuevo Cliente")
+                Exit Sub
             Else
-                eCliente.fechaModificacion = Date.Now
-                eCliente.guardarClienteModif()
-                MsgBox("Cliente modificado", MsgBoxStyle.Information, "Clientes")
-                Me.DialogResult = DialogResult.OK
+                eCliente.nombApel = txtNomApel.Text
+                eCliente.telefono = txtTelefono.Text
+                eCliente.direccion = txtDireccion.Text
+                eCliente.idProvincia = cbProvincias.SelectedValue
+                eCliente.dni = txtDNI.Text
+                If _modificar = False Then
+                    eCliente.fechaCreacion = Date.Now
+                    eCliente.fechaModificacion = Date.Now
+                    eCliente.guardarCliente()
+                    MsgBox("Cliente guardado", MsgBoxStyle.Information, "Clientes")
+                    Me.DialogResult = DialogResult.OK
+                Else
+                    eCliente.fechaModificacion = Date.Now
+                    eCliente.guardarClienteModif()
+                    MsgBox("Cliente modificado", MsgBoxStyle.Information, "Clientes")
+                    Me.DialogResult = DialogResult.OK
+                End If
+                frmClientes.Show()
             End If
-            frmClientes.Show()
         End If
     End Sub
 
@@ -144,7 +156,7 @@
 
     Private Sub frmNuevoCliente_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyData
-            Case (Keys.Control + Keys.L)
+            Case (Keys.Alt + Keys.L)
                 Call btnLimpiar_Click(btnLimpiar, e)
             Case Keys.Enter
                 Call btnGuardar_Click(btnGuardar, e)
@@ -170,6 +182,44 @@
         End If
     End Sub
 
+    Private Sub txtNomApel_GotFocus(sender As Object, e As EventArgs) Handles txtNomApel.GotFocus
+        txtNomApel.BackColor = Color.White
+    End Sub
+    Private Sub txtNomApel_LostFocus(sender As Object, e As EventArgs) Handles txtNomApel.LostFocus
+        If LTrim(txtNomApel.Text) = "" Then
+            txtNomApel.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtDNI_GotFocus(sender As Object, e As EventArgs) Handles txtDNI.GotFocus
+        txtDNI.BackColor = Color.White
+    End Sub
+    Private Sub txtDNI_LostFocus(sender As Object, e As EventArgs) Handles txtDNI.LostFocus
+        If LTrim(txtDNI.Text) = "" Then
+            txtDNI.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+
+    Private Sub txtTelefono_GotFocus(sender As Object, e As EventArgs) Handles txtTelefono.GotFocus
+        txtTelefono.BackColor = Color.White
+    End Sub
+
+    Private Sub txtTelefono_LostFocus(sender As Object, e As EventArgs) Handles txtTelefono.LostFocus
+        If LTrim(txtTelefono.Text) = "" Then
+            txtTelefono.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtDireccion_GotFocus(sender As Object, e As EventArgs) Handles txtDireccion.GotFocus
+        txtDireccion.BackColor = Color.White
+    End Sub
+
+    Private Sub txtDireccion_LostFocus(sender As Object, e As EventArgs) Handles txtDireccion.LostFocus
+        If LTrim(txtDireccion.Text) = "" Then
+            txtDireccion.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
 
 
 #End Region

@@ -22,15 +22,13 @@ Partial Class frmCuentasCorriente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnDetalleVenta = New System.Windows.Forms.Button()
-        Me.btnEntregaDeDinero = New System.Windows.Forms.Button()
-        Me.btnEliminarMovimiento = New System.Windows.Forms.Button()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -57,6 +55,7 @@ Partial Class frmCuentasCorriente
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.cbVentas = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnEntregaDeDinero = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -99,9 +98,8 @@ Partial Class frmCuentasCorriente
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.24048!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.24048!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.13828!))
+        Me.TableLayoutPanel2.Controls.Add(Me.btnEntregaDeDinero, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btnDetalleVenta, 2, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnEntregaDeDinero, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnEliminarMovimiento, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(4, 475)
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 2, 18, 2)
@@ -130,46 +128,6 @@ Partial Class frmCuentasCorriente
         Me.btnDetalleVenta.TabIndex = 1
         Me.btnDetalleVenta.Text = "Detalle Venta"
         Me.btnDetalleVenta.UseVisualStyleBackColor = True
-        '
-        'btnEntregaDeDinero
-        '
-        Me.btnEntregaDeDinero.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnEntregaDeDinero.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEntregaDeDinero.FlatAppearance.BorderSize = 2
-        Me.btnEntregaDeDinero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEntregaDeDinero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnEntregaDeDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEntregaDeDinero.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEntregaDeDinero.ForeColor = System.Drawing.Color.Black
-        Me.btnEntregaDeDinero.Image = Global.WindowsApp1.My.Resources.Resources.hand_money
-        Me.btnEntregaDeDinero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEntregaDeDinero.Location = New System.Drawing.Point(348, 10)
-        Me.btnEntregaDeDinero.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnEntregaDeDinero.Name = "btnEntregaDeDinero"
-        Me.btnEntregaDeDinero.Size = New System.Drawing.Size(318, 44)
-        Me.btnEntregaDeDinero.TabIndex = 2
-        Me.btnEntregaDeDinero.Text = "Entrega de Dinero"
-        Me.btnEntregaDeDinero.UseVisualStyleBackColor = True
-        '
-        'btnEliminarMovimiento
-        '
-        Me.btnEliminarMovimiento.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnEliminarMovimiento.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEliminarMovimiento.FlatAppearance.BorderSize = 2
-        Me.btnEliminarMovimiento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEliminarMovimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
-        Me.btnEliminarMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminarMovimiento.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarMovimiento.ForeColor = System.Drawing.Color.Black
-        Me.btnEliminarMovimiento.Image = Global.WindowsApp1.My.Resources.Resources.trash__1_
-        Me.btnEliminarMovimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEliminarMovimiento.Location = New System.Drawing.Point(10, 10)
-        Me.btnEliminarMovimiento.Margin = New System.Windows.Forms.Padding(10)
-        Me.btnEliminarMovimiento.Name = "btnEliminarMovimiento"
-        Me.btnEliminarMovimiento.Size = New System.Drawing.Size(318, 44)
-        Me.btnEliminarMovimiento.TabIndex = 3
-        Me.btnEliminarMovimiento.Text = "Eliminar"
-        Me.btnEliminarMovimiento.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel3
         '
@@ -244,23 +202,23 @@ Partial Class frmCuentasCorriente
         Me.dgvCuentas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvCuentas.CausesValidation = False
         Me.dgvCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.Moccasin
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fechaMovimiento, Me.tipoMovimiento, Me.monto, Me.cuotas, Me.montoRestante, Me.venta, Me.cuentacorriente, Me.idcliente, Me.idMovimiento})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle15
         Me.dgvCuentas.EnableHeadersVisualStyles = False
         Me.dgvCuentas.Location = New System.Drawing.Point(20, 5)
         Me.dgvCuentas.Margin = New System.Windows.Forms.Padding(20, 5, 18, 0)
@@ -268,14 +226,14 @@ Partial Class frmCuentasCorriente
         Me.dgvCuentas.Name = "dgvCuentas"
         Me.dgvCuentas.ReadOnly = True
         Me.dgvCuentas.RightToLeft = System.Windows.Forms.RightToLeft.No
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCuentas.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCuentas.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvCuentas.RowHeadersVisible = False
         Me.dgvCuentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgvCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -299,8 +257,8 @@ Partial Class frmCuentasCorriente
         'monto
         '
         Me.monto.DataPropertyName = "monto"
-        DataGridViewCellStyle2.Format = "C2"
-        Me.monto.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Format = "C2"
+        Me.monto.DefaultCellStyle = DataGridViewCellStyle14
         Me.monto.HeaderText = "Monto"
         Me.monto.Name = "monto"
         Me.monto.ReadOnly = True
@@ -504,6 +462,26 @@ Partial Class frmCuentasCorriente
         Me.Label4.TabIndex = 45
         Me.Label4.Text = "Venta:"
         '
+        'btnEntregaDeDinero
+        '
+        Me.btnEntregaDeDinero.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnEntregaDeDinero.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEntregaDeDinero.FlatAppearance.BorderSize = 2
+        Me.btnEntregaDeDinero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEntregaDeDinero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Moccasin
+        Me.btnEntregaDeDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntregaDeDinero.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEntregaDeDinero.ForeColor = System.Drawing.Color.Black
+        Me.btnEntregaDeDinero.Image = Global.WindowsApp1.My.Resources.Resources.hand_money
+        Me.btnEntregaDeDinero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEntregaDeDinero.Location = New System.Drawing.Point(10, 10)
+        Me.btnEntregaDeDinero.Margin = New System.Windows.Forms.Padding(10)
+        Me.btnEntregaDeDinero.Name = "btnEntregaDeDinero"
+        Me.btnEntregaDeDinero.Size = New System.Drawing.Size(318, 44)
+        Me.btnEntregaDeDinero.TabIndex = 3
+        Me.btnEntregaDeDinero.Text = "Entrega de Dinero"
+        Me.btnEntregaDeDinero.UseVisualStyleBackColor = True
+        '
         'frmCuentasCorriente
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -537,8 +515,6 @@ Partial Class frmCuentasCorriente
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents btnDetalleVenta As Button
-    Friend WithEvents btnEntregaDeDinero As Button
-    Friend WithEvents btnEliminarMovimiento As Button
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents picCerrar As PictureBox
     Friend WithEvents Label1 As Label
@@ -566,4 +542,5 @@ Partial Class frmCuentasCorriente
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents cbVentas As ComboBox
+    Friend WithEvents btnEntregaDeDinero As Button
 End Class

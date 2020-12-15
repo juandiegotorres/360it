@@ -77,7 +77,6 @@ Partial Class frmHistorialVentas
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewButtonColumn1 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.dgvHistorialVentas = New System.Windows.Forms.DataGridView()
         Me.idVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreApel1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -86,7 +85,6 @@ Partial Class frmHistorialVentas
         Me.articulos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaHora = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.opciones = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -553,7 +551,7 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvHistCtaCorriente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvHistCtaCorriente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVentaCC, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewButtonColumn1})
+        Me.dgvHistCtaCorriente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVentaCC, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -663,18 +661,6 @@ Partial Class frmHistorialVentas
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
         Me.DataGridViewTextBoxColumn7.Visible = False
         '
-        'DataGridViewButtonColumn1
-        '
-        Me.DataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewButtonColumn1.DataPropertyName = "fechaHora"
-        Me.DataGridViewButtonColumn1.FillWeight = 70.0!
-        Me.DataGridViewButtonColumn1.HeaderText = "Opciones"
-        Me.DataGridViewButtonColumn1.Name = "DataGridViewButtonColumn1"
-        Me.DataGridViewButtonColumn1.ReadOnly = True
-        Me.DataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewButtonColumn1.Text = "Dar de baja"
-        Me.DataGridViewButtonColumn1.UseColumnTextForButtonValue = True
-        '
         'dgvHistorialVentas
         '
         Me.dgvHistorialVentas.AllowUserToAddRows = False
@@ -690,7 +676,7 @@ Partial Class frmHistorialVentas
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvHistorialVentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvHistorialVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVenta, Me.nombreApel1, Me.fecha, Me.hora, Me.articulos, Me.monto, Me.fechaHora, Me.opciones})
+        Me.dgvHistorialVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVenta, Me.nombreApel1, Me.fecha, Me.hora, Me.articulos, Me.monto, Me.fechaHora})
         DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle17.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -798,19 +784,6 @@ Partial Class frmHistorialVentas
         Me.fechaHora.ReadOnly = True
         Me.fechaHora.Visible = False
         '
-        'opciones
-        '
-        Me.opciones.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.opciones.DataPropertyName = "fechaHora"
-        Me.opciones.FillWeight = 63.58529!
-        Me.opciones.HeaderText = "Opciones"
-        Me.opciones.Name = "opciones"
-        Me.opciones.ReadOnly = True
-        Me.opciones.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.opciones.Text = "Dar de baja"
-        Me.opciones.UseColumnTextForButtonValue = True
-        Me.opciones.Width = 135
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -901,14 +874,6 @@ Partial Class frmHistorialVentas
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Public WithEvents dgvHistCtaCorriente As DataGridView
-    Friend WithEvents idVenta As DataGridViewTextBoxColumn
-    Friend WithEvents nombreApel1 As DataGridViewTextBoxColumn
-    Friend WithEvents fecha As DataGridViewTextBoxColumn
-    Friend WithEvents hora As DataGridViewTextBoxColumn
-    Friend WithEvents articulos As DataGridViewTextBoxColumn
-    Friend WithEvents monto As DataGridViewTextBoxColumn
-    Friend WithEvents fechaHora As DataGridViewTextBoxColumn
-    Friend WithEvents opciones As DataGridViewButtonColumn
     Friend WithEvents idVentaCC As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
@@ -916,5 +881,11 @@ Partial Class frmHistorialVentas
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewButtonColumn1 As DataGridViewButtonColumn
+    Friend WithEvents idVenta As DataGridViewTextBoxColumn
+    Friend WithEvents nombreApel1 As DataGridViewTextBoxColumn
+    Friend WithEvents fecha As DataGridViewTextBoxColumn
+    Friend WithEvents hora As DataGridViewTextBoxColumn
+    Friend WithEvents articulos As DataGridViewTextBoxColumn
+    Friend WithEvents monto As DataGridViewTextBoxColumn
+    Friend WithEvents fechaHora As DataGridViewTextBoxColumn
 End Class

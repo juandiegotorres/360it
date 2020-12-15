@@ -4,6 +4,7 @@
     Dim porcentaje As Integer
     Public eProducto As New Entidades.Producto
     Private _modificar As Boolean
+    Dim contador As UInt64
     Public Property modificar As Boolean
         Set(value As Boolean)
             _modificar = value
@@ -59,27 +60,51 @@
     End Sub
 
     Public Function comprobarDatos()
+        contador = 0
         Dim _control As Control
         For Each _control In Me.Controls
-            If TypeOf _control Is ComboBox Then
-                If String.IsNullOrEmpty(cbCategorias.SelectedValue) Then
-                    MsgBox("Parece que no hay ninguna categoría. Intente agregando una desde las opciones.", MsgBoxStyle.Exclamation, "Productos")
-                    Return False
-                End If
-            End If
             If TypeOf _control Is TextBox Then
                 If _control Is txtDescripcion Then
                 ElseIf _control Is txtPorcentaje Then
                 Else
-                    If LTrim(_control.Text = "") Then
-                        MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Productos")
-                        Return False
+                    If LTrim(_control.Text) = "" Then
+                        'MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Clientes")
+                        _control.BackColor = Color.FromArgb(255, 178, 178)
+                        contador += 1
                     End If
                 End If
             End If
         Next
-        Return True
+        If contador <> 0 Then
+            MsgBox("Los campos marcados de color rojo no pueden estar vacíos, completelos e intente de nuevo", MsgBoxStyle.Exclamation, "Nuevo Producto")
+            Return False
+        Else
+            Return True
+        End If
     End Function
+
+    'Public Function comprobarDatos()
+    '    Dim _control As Control
+    '    For Each _control In Me.Controls
+    '        If TypeOf _control Is ComboBox Then
+    '            If String.IsNullOrEmpty(cbCategorias.SelectedValue) Then
+    '                MsgBox("Parece que no hay ninguna categoría. Intente agregando una desde las opciones.", MsgBoxStyle.Exclamation, "Productos")
+    '                Return False
+    '            End If
+    '        End If
+    '        If TypeOf _control Is TextBox Then
+    '            If _control Is txtDescripcion Then
+    '            ElseIf _control Is txtPorcentaje Then
+    '            Else
+    '                If LTrim(_control.Text = "") Then
+    '                    MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Productos")
+    '                    Return False
+    '                End If
+    '            End If
+    '        End If
+    '    Next
+    '    Return True
+    'End Function
 
     Public Sub limpiarCampos()
         Dim txt As Control
@@ -190,7 +215,7 @@
 
     Private Sub frmNuevoProducto_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
-            Case (Keys.Control + Keys.L)
+            Case (Keys.Alt + Keys.L)
                 Call BtnLimpiar_Click(btnLimpiar, e)
             Case Keys.Enter
                 Call BtnGuardar_Click(btnGuardar, e)
@@ -212,6 +237,70 @@
         Me.Close()
     End Sub
 
+    Private Sub txtProveedor_TextChanged(sender As Object, e As EventArgs) Handles txtProveedor.TextChanged
+        If LTrim(txtProveedor.Text) <> "" Then
+            txtProveedor.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtMarca_GotFocus(sender As Object, e As EventArgs) Handles txtMarca.GotFocus
+        txtMarca.BackColor = Color.White
+    End Sub
+
+    Private Sub txtMarca_LostFocus(sender As Object, e As EventArgs) Handles txtMarca.LostFocus
+        If LTrim(txtMarca.Text) = "" Then
+            txtMarca.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+
+    Private Sub txtModelo_GotFocus(sender As Object, e As EventArgs) Handles txtModelo.GotFocus
+        txtModelo.BackColor = Color.White
+    End Sub
+
+    Private Sub txtModelo_LostFocus(sender As Object, e As EventArgs) Handles txtModelo.LostFocus
+        If LTrim(txtModelo.Text) = "" Then
+            txtModelo.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtTipo_GotFocus(sender As Object, e As EventArgs) Handles txtTipo.GotFocus
+        txtTipo.BackColor = Color.White
+    End Sub
+
+    Private Sub txtTipo_LostFocus(sender As Object, e As EventArgs) Handles txtTipo.LostFocus
+        If LTrim(txtTipo.Text) = "" Then
+            txtTipo.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtCantidad_GotFocus(sender As Object, e As EventArgs) Handles txtCantidad.GotFocus
+        txtCantidad.BackColor = Color.White
+    End Sub
+
+    Private Sub txtCantidad_LostFocus(sender As Object, e As EventArgs) Handles txtCantidad.LostFocus
+        If LTrim(txtCantidad.Text) = "" Then
+            txtCantidad.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+    Private Sub txtPrecioCosto_GotFocus(sender As Object, e As EventArgs) Handles txtPrecioCosto.GotFocus
+        txtPrecioCosto.BackColor = Color.White
+    End Sub
+
+    Private Sub txtPrecioCosto_LostFocus(sender As Object, e As EventArgs) Handles txtPrecioCosto.LostFocus
+        If LTrim(txtPrecioCosto.Text) = "" Then
+            txtPrecioCosto.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+    Private Sub txtPrecioVenta_GotFocus(sender As Object, e As EventArgs) Handles txtPrecioVenta.GotFocus
+        txtPrecioVenta.BackColor = Color.White
+    End Sub
+
+    Private Sub txtPrecioVenta_LostFocus(sender As Object, e As EventArgs) Handles txtPrecioVenta.LostFocus
+        If LTrim(txtPrecioVenta.Text) = "" Then
+            txtPrecioVenta.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
 
 #End Region
 End Class

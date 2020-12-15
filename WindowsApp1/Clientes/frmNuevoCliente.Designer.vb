@@ -83,9 +83,10 @@ Partial Class frmNuevoCliente
         '
         'txtNomApel
         '
+        Me.txtNomApel.BackColor = System.Drawing.Color.White
         Me.txtNomApel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNomApel.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNomApel.Location = New System.Drawing.Point(148, 88)
+        Me.txtNomApel.Location = New System.Drawing.Point(158, 88)
         Me.txtNomApel.MaxLength = 44
         Me.txtNomApel.Name = "txtNomApel"
         Me.txtNomApel.Size = New System.Drawing.Size(291, 31)
@@ -97,7 +98,7 @@ Partial Class frmNuevoCliente
         Me.cbProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbProvincias.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProvincias.FormattingEnabled = True
-        Me.cbProvincias.Location = New System.Drawing.Point(148, 296)
+        Me.cbProvincias.Location = New System.Drawing.Point(158, 296)
         Me.cbProvincias.Name = "cbProvincias"
         Me.cbProvincias.Size = New System.Drawing.Size(219, 34)
         Me.cbProvincias.TabIndex = 4
@@ -108,9 +109,9 @@ Partial Class frmNuevoCliente
         Me.Label2.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(24, 77)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(98, 26)
+        Me.Label2.Size = New System.Drawing.Size(113, 26)
         Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Nombre"
+        Me.Label2.Text = "Nombre *"
         '
         'Label3
         '
@@ -118,9 +119,9 @@ Partial Class frmNuevoCliente
         Me.Label3.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(23, 194)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(108, 26)
+        Me.Label3.Size = New System.Drawing.Size(117, 26)
         Me.Label3.TabIndex = 16
-        Me.Label3.Text = "Teléfono:"
+        Me.Label3.Text = "Teléfono*:"
         '
         'Label4
         '
@@ -128,9 +129,9 @@ Partial Class frmNuevoCliente
         Me.Label4.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(23, 246)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(119, 26)
+        Me.Label4.Size = New System.Drawing.Size(127, 26)
         Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Dirección:"
+        Me.Label4.Text = "Dirección*:"
         '
         'Label5
         '
@@ -138,9 +139,9 @@ Partial Class frmNuevoCliente
         Me.Label5.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(24, 299)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(116, 26)
+        Me.Label5.Size = New System.Drawing.Size(124, 26)
         Me.Label5.TabIndex = 18
-        Me.Label5.Text = "Provincia:"
+        Me.Label5.Text = "Provincia*:"
         '
         'Label6
         '
@@ -148,15 +149,15 @@ Partial Class frmNuevoCliente
         Me.Label6.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(23, 350)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(113, 26)
+        Me.Label6.Size = New System.Drawing.Size(127, 26)
         Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Localidad"
+        Me.Label6.Text = "Localidad*:"
         '
         'txtTelefono
         '
         Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(148, 192)
+        Me.txtTelefono.Location = New System.Drawing.Point(158, 192)
         Me.txtTelefono.MaxLength = 24
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(237, 31)
@@ -167,7 +168,7 @@ Partial Class frmNuevoCliente
         '
         Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDireccion.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(148, 244)
+        Me.txtDireccion.Location = New System.Drawing.Point(158, 244)
         Me.txtDireccion.MaxLength = 59
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(264, 31)
@@ -178,7 +179,7 @@ Partial Class frmNuevoCliente
         '
         Me.txtLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtLocalidad.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLocalidad.Location = New System.Drawing.Point(148, 348)
+        Me.txtLocalidad.Location = New System.Drawing.Point(158, 348)
         Me.txtLocalidad.Name = "txtLocalidad"
         Me.txtLocalidad.ReadOnly = True
         Me.txtLocalidad.Size = New System.Drawing.Size(247, 31)
@@ -239,7 +240,7 @@ Partial Class frmNuevoCliente
         '
         'btnLocalidades
         '
-        Me.btnLocalidades.Location = New System.Drawing.Point(401, 348)
+        Me.btnLocalidades.Location = New System.Drawing.Point(411, 348)
         Me.btnLocalidades.Name = "btnLocalidades"
         Me.btnLocalidades.Size = New System.Drawing.Size(38, 31)
         Me.btnLocalidades.TabIndex = 5
@@ -290,15 +291,15 @@ Partial Class frmNuevoCliente
         Me.Label7.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(23, 142)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(57, 26)
+        Me.Label7.Size = New System.Drawing.Size(66, 26)
         Me.Label7.TabIndex = 25
-        Me.Label7.Text = "DNI:"
+        Me.Label7.Text = "DNI*:"
         '
         'txtDNI
         '
         Me.txtDNI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDNI.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDNI.Location = New System.Drawing.Point(148, 140)
+        Me.txtDNI.Location = New System.Drawing.Point(158, 140)
         Me.txtDNI.MaxLength = 8
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(237, 31)

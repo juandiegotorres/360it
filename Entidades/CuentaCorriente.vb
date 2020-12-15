@@ -10,6 +10,15 @@ Public Class CuentaCorriente
             _idCliente = value
         End Set
     End Property
+    Private _resto As Double
+    Public Property resto As Double
+        Get
+            Return _resto
+        End Get
+        Set(value As Double)
+            _resto = value
+        End Set
+    End Property
     Private _idMovimiento As UInt64
     Public Property idMovimiento As UInt64
         Get
@@ -130,5 +139,11 @@ Public Class CuentaCorriente
             Return False
         End Try
     End Function
+    Public Sub calcularRestoVenta(ByRef idVenta As UInt64)
+        Dim tabla As New DataTable
+        Dim consultaSQL As String = "CALL calcularResto(" & idVenta & ")"
+        capaDatos.llenarDatos(tabla, consultaSQL)
+        _resto = tabla.Rows(0).Item("total").ToString
+    End Sub
 #End Region
 End Class

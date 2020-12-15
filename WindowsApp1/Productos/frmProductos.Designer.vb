@@ -736,7 +736,7 @@ Partial Class frmProductos
         Me.cbBuscador.Location = New System.Drawing.Point(152, 6)
         Me.cbBuscador.Name = "cbBuscador"
         Me.cbBuscador.Size = New System.Drawing.Size(155, 29)
-        Me.cbBuscador.TabIndex = 54
+        Me.cbBuscador.TabIndex = 53
         '
         'cbCategorias
         '
@@ -748,7 +748,7 @@ Partial Class frmProductos
         Me.cbCategorias.Location = New System.Drawing.Point(425, 6)
         Me.cbCategorias.Name = "cbCategorias"
         Me.cbCategorias.Size = New System.Drawing.Size(155, 29)
-        Me.cbCategorias.TabIndex = 53
+        Me.cbCategorias.TabIndex = 54
         '
         'Label3
         '

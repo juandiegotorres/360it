@@ -61,8 +61,8 @@
             If color5.Checked = True Then
                 eNotas.color = 5
             End If
+            eNotas.fecha = Date.Now
             If modificar = False Then
-                eNotas.fecha = CDate(Today)
                 If eNotas.nuevaNota = True Then
                     MsgBox("Nota agregada", MsgBoxStyle.Information, "Notas")
                     Me.DialogResult = DialogResult.OK
@@ -99,5 +99,13 @@
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         color5.Checked = True
+    End Sub
+
+    Private Sub frmNuevaNota_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyData = Keys.Enter Then
+            Call btnGuardar_Click(btnGuardar, e)
+        ElseIf e.KeyData = Keys.Escape Then
+            Call btnCerrar_Click(btnCerrar, e)
+        End If
     End Sub
 End Class

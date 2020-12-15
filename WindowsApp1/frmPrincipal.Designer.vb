@@ -48,11 +48,11 @@ Partial Class frmPrincipal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.ttAyuda = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.btnAgrandar = New System.Windows.Forms.PictureBox()
         Me.btnAchicar = New System.Windows.Forms.PictureBox()
-        Me.ttAyuda = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.pnlSubMenuVentas.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -232,6 +232,7 @@ Partial Class frmPrincipal
         Me.pnlSubMenuVentas.Padding = New System.Windows.Forms.Padding(28, 0, 0, 0)
         Me.pnlSubMenuVentas.Size = New System.Drawing.Size(209, 162)
         Me.pnlSubMenuVentas.TabIndex = 32
+        Me.pnlSubMenuVentas.Visible = False
         '
         'btnHistorialVentas
         '
@@ -412,13 +413,19 @@ Partial Class frmPrincipal
         Me.PictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.Image = Global.WindowsApp1.My.Resources.Resources._56596621_377737822823172_5309388x685270056960_n
-        Me.PictureBox3.Location = New System.Drawing.Point(209, 114)
+        Me.PictureBox3.Image = Global.WindowsApp1.My.Resources.Resources.Wallpaper1
+        Me.PictureBox3.Location = New System.Drawing.Point(0, 48)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(590, 250)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.Size = New System.Drawing.Size(1025, 602)
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
+        '
+        'ttAyuda
+        '
+        Me.ttAyuda.Active = False
+        Me.ttAyuda.AutoPopDelay = 5000
+        Me.ttAyuda.InitialDelay = 500
+        Me.ttAyuda.ReshowDelay = 1000
         '
         'btnMinimizar
         '
@@ -472,13 +479,6 @@ Partial Class frmPrincipal
         Me.btnAchicar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnAchicar.TabIndex = 8
         Me.btnAchicar.TabStop = False
-        '
-        'ttAyuda
-        '
-        Me.ttAyuda.Active = False
-        Me.ttAyuda.AutoPopDelay = 5000
-        Me.ttAyuda.InitialDelay = 500
-        Me.ttAyuda.ReshowDelay = 1000
         '
         'frmPrincipal
         '

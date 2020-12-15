@@ -1,6 +1,7 @@
 ﻿Public Class frmNuevaReparacion
     Public eServTecnico As New Entidades.ServTecnico
     Public modificar As Boolean
+    Dim contador As UInt64
     Private Sub frmNuevaReparacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tipoArticulo()
         estadoReparacion()
@@ -52,29 +53,27 @@
         Return True
     End Function
     Public Function comprobarDatos()
+        contador = 0
         Dim _control As Control
         For Each _control In Me.Controls
-            If TypeOf _control Is ComboBox Then
-                If String.IsNullOrEmpty(cbTipoArticulo.SelectedValue) Then
-                    MsgBox("Parece que no hay ningún tipo de artículo a seleccionar. Intente agregando una desde las opciones.", MsgBoxStyle.Exclamation, "Servico Técnico")
-                    Return False
-                ElseIf String.IsNullOrEmpty(cbEstado.SelectedValue) Then
-                    MsgBox("Parece que no hay ningún estado a seleccionar. Intente agregando uno desde las opciones.", MsgBoxStyle.Exclamation, "Servico Técnico")
-                    Return False
-                End If
-            End If
             If TypeOf _control Is TextBox Then
-                If _control Is txtDescripcion Then
-                ElseIf _control Is txtAccesorios Then
+                If _control Is txtAccesorios Then
+                ElseIf _control Is txtDescripcion Then
                 Else
                     If LTrim(_control.Text) = "" Then
-                        MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Servicio Técnico")
-                        Return False
+                        'MsgBox("El campo '" & _control.Tag & "' no puede estar vacío", MsgBoxStyle.Exclamation, "Clientes")
+                        _control.BackColor = Color.FromArgb(255, 178, 178)
+                        contador += 1
                     End If
                 End If
             End If
         Next
-        Return True
+        If contador <> 0 Then
+            MsgBox("Los campos marcados de color rojo no pueden estar vacíos, completelos e intente de nuevo", MsgBoxStyle.Exclamation, "Nueva Reparación")
+            Return False
+        Else
+            Return True
+        End If
     End Function
     Public Sub limpiarCampos()
         Dim txt As Control
@@ -143,8 +142,11 @@
 
     End Sub
     Public Function controlDeFechas()
-        If (DateTime.Compare(dtRecepcion.Value, dtEntrega.Value) > 0) And chbSinFecha.Checked = False Then
-            MsgBox("La fecha de recepción no puede ser mayor que la de entrega", MsgBoxStyle.Critical, "Nueva Reparacón")
+        If dtRecepcion.Value.Date.ToString = dtEntrega.Value.Date.ToString Then
+            MsgBox("La fechas no pueden ser iguales", MsgBoxStyle.Critical, "Nueva Reparación")
+            Return False
+        ElseIf (DateTime.Compare(dtRecepcion.Value, dtEntrega.Value) > 0) And chbSinFecha.Checked = False Then
+            MsgBox("La fecha de recepción no puede ser mayor que la de entrega", MsgBoxStyle.Critical, "Nueva Reparación")
             dtEntrega.Value = Today
             Return False
         End If
@@ -153,15 +155,12 @@
 
     Private Sub frmNuevaReparacion_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
-            Case (Keys.Control + Keys.L)
+            Case (Keys.Alt + Keys.L)
                 Call btnLimpiar_Click(btnLimpiar, e)
             Case Keys.Enter
-                Call btnGuardar_Click(btnGuardar, e)
+                Call btnGuardarEImprimir_Click(btnGuardarEImprimir, e)
             Case Keys.Escape
                 Call btnCancelar_Click(btnCancelar, e)
-            Case Keys.Up
-                e.Handled = True
-                Me.SelectNextControl(Me.ActiveControl, False, True, True, True)
         End Select
     End Sub
 
@@ -234,5 +233,33 @@
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+    End Sub
+
+
+
+    Private Sub txtNombreCliente_TextChanged(sender As Object, e As EventArgs) Handles txtNombreCliente.TextChanged
+        If LTrim(txtNombreCliente.Text) <> "" Then
+            txtNombreCliente.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtMarca_GotFocus(sender As Object, e As EventArgs) Handles txtMarca.GotFocus
+        txtMarca.BackColor = Color.White
+    End Sub
+
+    Private Sub txtMarca_LostFocus(sender As Object, e As EventArgs) Handles txtMarca.LostFocus
+        If LTrim(txtMarca.Text) = "" Then
+            txtMarca.BackColor = Color.FromArgb(255, 178, 178)
+        End If
+    End Sub
+
+    Private Sub txtModelo_GotFocus(sender As Object, e As EventArgs) Handles txtModelo.GotFocus
+        txtModelo.BackColor = Color.White
+    End Sub
+
+    Private Sub txtModelo_LostFocus(sender As Object, e As EventArgs) Handles txtModelo.LostFocus
+        If LTrim(txtModelo.Text) = "" Then
+            txtModelo.BackColor = Color.FromArgb(255, 178, 178)
+        End If
     End Sub
 End Class

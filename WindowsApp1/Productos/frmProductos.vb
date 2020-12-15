@@ -2,7 +2,7 @@
     Dim cantidadProducto, idProducto As UInt16
     Public eProducto As New Entidades.Producto
     Dim bsProductos As New BindingSource
-    Dim filtroBS, filtroElegido As String
+    Dim filtroBS, filtroElegido, nombreProducto As String
     Dim tablaProductos, tablaCategorias, tablaBuscador, tablaProductosPocoStock As New DataTable
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs)
         frmNuevoProducto.Show()
@@ -89,13 +89,14 @@
 
     Private Sub btnBajaCancelar_Click(sender As Object, e As EventArgs) Handles btnBajaCancelar.Click
         eProducto.idProducto = dgvProductos.CurrentRow.Cells("id").Value
+        nombreProducto = dgvProductos.CurrentRow.Cells("marca").Value & " " & dgvProductos.CurrentRow.Cells("modelo").Value
         If dgvProductos.CurrentRow.Cells("cantidad").Value >= 1 Then
-            If MsgBox("Está a punto de dar de baja un producto con stock ¿Desea hacerlo de todas formas?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Productos") = MsgBoxResult.Yes Then
+            If MsgBox("Está a punto de dar de baja el producto '" & nombreProducto & "' que cuenta con stock ¿Desea hacerlo de todas formas?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Productos") = MsgBoxResult.Yes Then
                 eProducto.bajaProducto()
                 actualizarProductos()
             End If
         Else
-            If MsgBox("¿Desea dar de baja este producto?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Productos") = MsgBoxResult.Yes Then
+            If MsgBox("¿Desea dar de baja el producto '" & nombreProducto & "'?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Productos") = MsgBoxResult.Yes Then
                 eProducto.bajaProducto()
                 actualizarProductos()
             End If
@@ -179,6 +180,7 @@
 
     Private Sub cbCategorias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCategorias.SelectedIndexChanged
         'Filtrado por categorias
+        txtBuscar.Text = ""
         If cbCategorias.Text = "Todas" Then
             filtroBS = ""
             bsProductos.Filter = filtroBS
@@ -196,7 +198,7 @@
 
     Private Sub frmProductos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyData
-            Case (Keys.Control + Keys.B)
+            Case (Keys.Alt + Keys.B)
                 txtBuscar.Select()
             Case Keys.F10
                 Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)

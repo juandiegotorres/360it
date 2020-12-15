@@ -29,45 +29,45 @@ Partial Class frmReportes
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.picCerrar = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.graficoProductos = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.graficoVentas = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.lblCantidadProductos = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lblArticulosReparados = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.lblStockBajo = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblClientes = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblArticulosReparados = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.lblCantidadProductos = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.picCerrar = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.graficoProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.graficoVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.SuspendLayout()
@@ -109,6 +109,21 @@ Partial Class frmReportes
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1016, 79)
         Me.TableLayoutPanel3.TabIndex = 44
         '
+        'picCerrar
+        '
+        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
+        Me.picCerrar.Location = New System.Drawing.Point(989, 0)
+        Me.picCerrar.Margin = New System.Windows.Forms.Padding(0)
+        Me.picCerrar.Name = "picCerrar"
+        Me.picCerrar.Size = New System.Drawing.Size(27, 26)
+        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCerrar.TabIndex = 41
+        Me.picCerrar.TabStop = False
+        Me.picCerrar.Visible = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -132,7 +147,7 @@ Partial Class frmReportes
         Me.TableLayoutPanel4.Controls.Add(Me.graficoVentas, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 250)
-        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -237,6 +252,98 @@ Partial Class frmReportes
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(819, 77)
         Me.TableLayoutPanel2.TabIndex = 48
         '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel6.Controls.Add(Me.PictureBox4)
+        Me.Panel6.Controls.Add(Me.lblCantidadProductos)
+        Me.Panel6.Controls.Add(Me.Label8)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.ForeColor = System.Drawing.Color.Black
+        Me.Panel6.Location = New System.Drawing.Point(207, 3)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(198, 71)
+        Me.Panel6.TabIndex = 6
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox4.Image = Global.WindowsApp1.My.Resources.Resources.delivery_box
+        Me.PictureBox4.Location = New System.Drawing.Point(154, 31)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(37, 37)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 3
+        Me.PictureBox4.TabStop = False
+        '
+        'lblCantidadProductos
+        '
+        Me.lblCantidadProductos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblCantidadProductos.AutoSize = True
+        Me.lblCantidadProductos.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantidadProductos.Location = New System.Drawing.Point(15, 36)
+        Me.lblCantidadProductos.Name = "lblCantidadProductos"
+        Me.lblCantidadProductos.Size = New System.Drawing.Size(36, 26)
+        Me.lblCantidadProductos.TabIndex = 1
+        Me.lblCantidadProductos.Text = "20"
+        '
+        'Label8
+        '
+        Me.Label8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label8.Font = New System.Drawing.Font("Montserrat", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(0, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(198, 23)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "Número de productos"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.PictureBox2)
+        Me.Panel5.Controls.Add(Me.lblArticulosReparados)
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.ForeColor = System.Drawing.Color.Black
+        Me.Panel5.Location = New System.Drawing.Point(615, 3)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(201, 71)
+        Me.Panel5.TabIndex = 2
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.WindowsApp1.My.Resources.Resources.desktop
+        Me.PictureBox2.Location = New System.Drawing.Point(158, 31)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(37, 37)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 5
+        Me.PictureBox2.TabStop = False
+        '
+        'lblArticulosReparados
+        '
+        Me.lblArticulosReparados.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblArticulosReparados.AutoSize = True
+        Me.lblArticulosReparados.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArticulosReparados.Location = New System.Drawing.Point(15, 36)
+        Me.lblArticulosReparados.Name = "lblArticulosReparados"
+        Me.lblArticulosReparados.Size = New System.Drawing.Size(36, 26)
+        Me.lblArticulosReparados.TabIndex = 1
+        Me.lblArticulosReparados.Text = "20"
+        '
+        'Label9
+        '
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label9.Font = New System.Drawing.Font("Montserrat", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(0, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(201, 23)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "Artículos reparados"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.Moccasin
@@ -249,6 +356,17 @@ Partial Class frmReportes
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(198, 71)
         Me.Panel4.TabIndex = 1
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.Image = Global.WindowsApp1.My.Resources.Resources.warning
+        Me.PictureBox3.Location = New System.Drawing.Point(154, 31)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(37, 37)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 4
+        Me.PictureBox3.TabStop = False
         '
         'lblStockBajo
         '
@@ -285,6 +403,17 @@ Partial Class frmReportes
         Me.Panel3.Size = New System.Drawing.Size(198, 71)
         Me.Panel3.TabIndex = 0
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.WindowsApp1.My.Resources.Resources.customer__2_
+        Me.PictureBox1.Location = New System.Drawing.Point(154, 31)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(37, 37)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
         'lblClientes
         '
         Me.lblClientes.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -308,135 +437,6 @@ Partial Class frmReportes
         Me.Label5.Text = "Número de clientes"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label9
-        '
-        Me.Label9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label9.Font = New System.Drawing.Font("Montserrat", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(0, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(201, 23)
-        Me.Label9.TabIndex = 0
-        Me.Label9.Text = "Artículos reparados"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblArticulosReparados
-        '
-        Me.lblArticulosReparados.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblArticulosReparados.AutoSize = True
-        Me.lblArticulosReparados.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblArticulosReparados.Location = New System.Drawing.Point(15, 36)
-        Me.lblArticulosReparados.Name = "lblArticulosReparados"
-        Me.lblArticulosReparados.Size = New System.Drawing.Size(36, 26)
-        Me.lblArticulosReparados.TabIndex = 1
-        Me.lblArticulosReparados.Text = "20"
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.PictureBox2)
-        Me.Panel5.Controls.Add(Me.lblArticulosReparados)
-        Me.Panel5.Controls.Add(Me.Label9)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.ForeColor = System.Drawing.Color.Black
-        Me.Panel5.Location = New System.Drawing.Point(615, 3)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(201, 71)
-        Me.Panel5.TabIndex = 2
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.PictureBox4)
-        Me.Panel6.Controls.Add(Me.lblCantidadProductos)
-        Me.Panel6.Controls.Add(Me.Label8)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.ForeColor = System.Drawing.Color.Black
-        Me.Panel6.Location = New System.Drawing.Point(207, 3)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(198, 71)
-        Me.Panel6.TabIndex = 6
-        '
-        'lblCantidadProductos
-        '
-        Me.lblCantidadProductos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblCantidadProductos.AutoSize = True
-        Me.lblCantidadProductos.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantidadProductos.Location = New System.Drawing.Point(15, 36)
-        Me.lblCantidadProductos.Name = "lblCantidadProductos"
-        Me.lblCantidadProductos.Size = New System.Drawing.Size(36, 26)
-        Me.lblCantidadProductos.TabIndex = 1
-        Me.lblCantidadProductos.Text = "20"
-        '
-        'Label8
-        '
-        Me.Label8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label8.Font = New System.Drawing.Font("Montserrat", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(0, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(198, 23)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Número de productos"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'picCerrar
-        '
-        Me.picCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.picCerrar.Image = Global.WindowsApp1.My.Resources.Resources.close
-        Me.picCerrar.Location = New System.Drawing.Point(989, 0)
-        Me.picCerrar.Margin = New System.Windows.Forms.Padding(0)
-        Me.picCerrar.Name = "picCerrar"
-        Me.picCerrar.Size = New System.Drawing.Size(27, 26)
-        Me.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picCerrar.TabIndex = 41
-        Me.picCerrar.TabStop = False
-        Me.picCerrar.Visible = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox4.Image = Global.WindowsApp1.My.Resources.Resources.delivery_box
-        Me.PictureBox4.Location = New System.Drawing.Point(154, 31)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(37, 37)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 3
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.WindowsApp1.My.Resources.Resources.desktop
-        Me.PictureBox2.Location = New System.Drawing.Point(158, 31)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(37, 37)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 5
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.Image = Global.WindowsApp1.My.Resources.Resources.warning
-        Me.PictureBox3.Location = New System.Drawing.Point(154, 31)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(37, 37)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 4
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = Global.WindowsApp1.My.Resources.Resources.customer__2_
-        Me.PictureBox1.Location = New System.Drawing.Point(154, 31)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(37, 37)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
         'TableLayoutPanel5
         '
         Me.TableLayoutPanel5.ColumnCount = 2
@@ -452,6 +452,17 @@ Partial Class frmReportes
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(1013, 37)
         Me.TableLayoutPanel5.TabIndex = 49
         '
+        'Label4
+        '
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label4.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(406, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(604, 37)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Cantidad de ventas en los últimos 12 meses:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
         'Label3
         '
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
@@ -462,17 +473,6 @@ Partial Class frmReportes
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "5 Productos más vendidos:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'Label4
-        '
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Font = New System.Drawing.Font("Montserrat Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(406, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(604, 37)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Cantidad de ventas en un año:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'frmReportes
         '
@@ -487,22 +487,22 @@ Partial Class frmReportes
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel4.ResumeLayout(False)
         CType(Me.graficoProductos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.graficoVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        CType(Me.picCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.ResumeLayout(False)

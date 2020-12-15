@@ -84,11 +84,11 @@ Partial Class frmNotas
         Me.btnAgregarSeleccionar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.pag1 = New System.Windows.Forms.Label()
-        Me.pag2 = New System.Windows.Forms.Label()
-        Me.pag3 = New System.Windows.Forms.Label()
-        Me.linkSiguiente = New System.Windows.Forms.LinkLabel()
         Me.linkAnterior = New System.Windows.Forms.LinkLabel()
+        Me.linkSiguiente = New System.Windows.Forms.LinkLabel()
+        Me.pag3 = New System.Windows.Forms.Label()
+        Me.pag2 = New System.Windows.Forms.Label()
+        Me.pag1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.panelnota4.SuspendLayout()
@@ -882,7 +882,8 @@ Partial Class frmNotas
         '
         'btnAgregarSeleccionar
         '
-        Me.btnAgregarSeleccionar.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnAgregarSeleccionar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAgregarSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnAgregarSeleccionar.FlatAppearance.BorderSize = 2
         Me.btnAgregarSeleccionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -892,10 +893,10 @@ Partial Class frmNotas
         Me.btnAgregarSeleccionar.ForeColor = System.Drawing.Color.Black
         Me.btnAgregarSeleccionar.Image = Global.WindowsApp1.My.Resources.Resources.add__1_
         Me.btnAgregarSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgregarSeleccionar.Location = New System.Drawing.Point(759, 30)
-        Me.btnAgregarSeleccionar.Margin = New System.Windows.Forms.Padding(50, 30, 10, 10)
+        Me.btnAgregarSeleccionar.Location = New System.Drawing.Point(766, 30)
+        Me.btnAgregarSeleccionar.Margin = New System.Windows.Forms.Padding(66, 30, 26, 10)
         Me.btnAgregarSeleccionar.Name = "btnAgregarSeleccionar"
-        Me.btnAgregarSeleccionar.Size = New System.Drawing.Size(250, 45)
+        Me.btnAgregarSeleccionar.Size = New System.Drawing.Size(227, 45)
         Me.btnAgregarSeleccionar.TabIndex = 34
         Me.btnAgregarSeleccionar.Text = "Nueva Nota"
         Me.btnAgregarSeleccionar.UseVisualStyleBackColor = True
@@ -923,54 +924,10 @@ Partial Class frmNotas
         Me.Panel1.Controls.Add(Me.pag1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 524)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1019, 37)
         Me.Panel1.TabIndex = 46
-        '
-        'pag1
-        '
-        Me.pag1.AutoSize = True
-        Me.pag1.BackColor = System.Drawing.Color.DarkOrange
-        Me.pag1.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pag1.Location = New System.Drawing.Point(475, 4)
-        Me.pag1.Name = "pag1"
-        Me.pag1.Size = New System.Drawing.Size(19, 26)
-        Me.pag1.TabIndex = 0
-        Me.pag1.Text = "1"
-        '
-        'pag2
-        '
-        Me.pag2.AutoSize = True
-        Me.pag2.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pag2.Location = New System.Drawing.Point(500, 4)
-        Me.pag2.Name = "pag2"
-        Me.pag2.Size = New System.Drawing.Size(23, 26)
-        Me.pag2.TabIndex = 1
-        Me.pag2.Text = "2"
-        '
-        'pag3
-        '
-        Me.pag3.AutoSize = True
-        Me.pag3.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pag3.Location = New System.Drawing.Point(529, 4)
-        Me.pag3.Name = "pag3"
-        Me.pag3.Size = New System.Drawing.Size(23, 26)
-        Me.pag3.TabIndex = 2
-        Me.pag3.Text = "3"
-        '
-        'linkSiguiente
-        '
-        Me.linkSiguiente.ActiveLinkColor = System.Drawing.Color.DarkOrange
-        Me.linkSiguiente.AutoSize = True
-        Me.linkSiguiente.Font = New System.Drawing.Font("Montserrat Medium", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.linkSiguiente.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.linkSiguiente.Location = New System.Drawing.Point(577, 9)
-        Me.linkSiguiente.Name = "linkSiguiente"
-        Me.linkSiguiente.Size = New System.Drawing.Size(81, 18)
-        Me.linkSiguiente.TabIndex = 4
-        Me.linkSiguiente.TabStop = True
-        Me.linkSiguiente.Text = "Siguiente"
         '
         'linkAnterior
         '
@@ -985,6 +942,50 @@ Partial Class frmNotas
         Me.linkAnterior.TabIndex = 5
         Me.linkAnterior.TabStop = True
         Me.linkAnterior.Text = "Anterior"
+        '
+        'linkSiguiente
+        '
+        Me.linkSiguiente.ActiveLinkColor = System.Drawing.Color.DarkOrange
+        Me.linkSiguiente.AutoSize = True
+        Me.linkSiguiente.Font = New System.Drawing.Font("Montserrat Medium", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.linkSiguiente.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.linkSiguiente.Location = New System.Drawing.Point(577, 9)
+        Me.linkSiguiente.Name = "linkSiguiente"
+        Me.linkSiguiente.Size = New System.Drawing.Size(81, 18)
+        Me.linkSiguiente.TabIndex = 4
+        Me.linkSiguiente.TabStop = True
+        Me.linkSiguiente.Text = "Siguiente"
+        '
+        'pag3
+        '
+        Me.pag3.AutoSize = True
+        Me.pag3.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pag3.Location = New System.Drawing.Point(529, 4)
+        Me.pag3.Name = "pag3"
+        Me.pag3.Size = New System.Drawing.Size(23, 26)
+        Me.pag3.TabIndex = 2
+        Me.pag3.Text = "3"
+        '
+        'pag2
+        '
+        Me.pag2.AutoSize = True
+        Me.pag2.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pag2.Location = New System.Drawing.Point(500, 4)
+        Me.pag2.Name = "pag2"
+        Me.pag2.Size = New System.Drawing.Size(23, 26)
+        Me.pag2.TabIndex = 1
+        Me.pag2.Text = "2"
+        '
+        'pag1
+        '
+        Me.pag1.AutoSize = True
+        Me.pag1.BackColor = System.Drawing.Color.DarkOrange
+        Me.pag1.Font = New System.Drawing.Font("Montserrat SemiBold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pag1.Location = New System.Drawing.Point(475, 4)
+        Me.pag1.Name = "pag1"
+        Me.pag1.Size = New System.Drawing.Size(19, 26)
+        Me.pag1.TabIndex = 0
+        Me.pag1.Text = "1"
         '
         'frmNotas
         '

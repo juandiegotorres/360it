@@ -59,8 +59,14 @@
 
 
     Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        filtroBS = "nombreProveedor like '%" & txtBuscar.Text & "%'"
-        bsProveedores.Filter = filtroBS
+        If rbNombreApel.Checked = True Then
+            filtroBS = "nombreProveedor like '%" & txtBuscar.Text & "%'"
+            bsProveedores.Filter = filtroBS
+        ElseIf rbCuil.Checked = True Then
+            filtroBS = "CONVERT(cuil, 'System.String') like '%" & txtBuscar.Text & "%'"
+            bsProveedores.Filter = filtroBS
+        End If
+
     End Sub
     Public Sub actualizarRubrosYFormPago()
         eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idProveedor").Value
@@ -109,7 +115,7 @@
             Me.Close()
             frmNuevoProducto.Show()
         Else
-            If MsgBox("¿Desea dar de baja este proveedor?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Proveedores") = MsgBoxResult.Yes Then
+            If MsgBox("¿Desea dar de baja el proveedor '" & dgvProveedores.CurrentRow.Cells("nombre").Value & "'?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Proveedores") = MsgBoxResult.Yes Then
                 eProveedor.idProveedor = dgvProveedores.CurrentRow.Cells("idproveedor").Value
                 eProveedor.bajaProveedor()
                 actualizarProveedores()
@@ -120,7 +126,7 @@
 
     Private Sub frmProveedores_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyData
-            Case (Keys.Control + Keys.B)
+            Case (Keys.Alt + Keys.B)
                 txtBuscar.Select()
             Case Keys.F10
                 Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
@@ -139,6 +145,22 @@
                 End If
         End Select
 
+    End Sub
+
+    Private Sub picCerrar_Click_1(sender As Object, e As EventArgs) Handles picCerrar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub rbNombreApel_CheckedChanged(sender As Object, e As EventArgs) Handles rbNombreApel.CheckedChanged
+        txtBuscar.Text = ""
+        filtroBS = ""
+        bsProveedores.Filter = filtroBS
+    End Sub
+
+    Private Sub rbCuil_CheckedChanged(sender As Object, e As EventArgs) Handles rbCuil.CheckedChanged
+        txtBuscar.Text = ""
+        filtroBS = ""
+        bsProveedores.Filter = filtroBS
     End Sub
 
     Private Sub btnProductosAsociados_Click(sender As Object, e As EventArgs) Handles btnProductosAsociados.Click

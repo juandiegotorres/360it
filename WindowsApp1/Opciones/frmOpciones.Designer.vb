@@ -221,6 +221,7 @@ Partial Class frmOpciones
         Me.Label18 = New System.Windows.Forms.Label()
         Me.dgvServTec = New System.Windows.Forms.DataGridView()
         Me.idReparacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.marcaST = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.modeloST = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -231,17 +232,6 @@ Partial Class frmOpciones
         Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.notaTecnico = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.activoST = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TabPage12 = New System.Windows.Forms.TabPage()
-        Me.btnAltaVentaTodos = New System.Windows.Forms.Button()
-        Me.btnAltaVenta = New System.Windows.Forms.Button()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.dgvVentas = New System.Windows.Forms.DataGridView()
-        Me.idVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaHora = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.formPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuotas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.activoVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detalles = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.btnAltaNotasTodas = New System.Windows.Forms.Button()
         Me.btnAltaNota = New System.Windows.Forms.Button()
@@ -285,8 +275,6 @@ Partial Class frmOpciones
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage11.SuspendLayout()
         CType(Me.dgvServTec, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage12.SuspendLayout()
-        CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
         CType(Me.dgvNotas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -1828,7 +1816,6 @@ Partial Class frmOpciones
         Me.tabBajas.Controls.Add(Me.TabPage9)
         Me.tabBajas.Controls.Add(Me.TabPage10)
         Me.tabBajas.Controls.Add(Me.TabPage11)
-        Me.tabBajas.Controls.Add(Me.TabPage12)
         Me.tabBajas.Controls.Add(Me.TabPage7)
         Me.tabBajas.Location = New System.Drawing.Point(239, 0)
         Me.tabBajas.Name = "tabBajas"
@@ -2246,7 +2233,7 @@ Partial Class frmOpciones
         Me.dgvServTec.AllowUserToResizeRows = False
         Me.dgvServTec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvServTec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvServTec.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idReparacion, Me.cliente, Me.marcaST, Me.modeloST, Me.accesorios, Me.descripcionST, Me.fechaRecepcion, Me.fechaLimite, Me.estado, Me.notaTecnico, Me.activoST})
+        Me.dgvServTec.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idReparacion, Me.tipo, Me.cliente, Me.marcaST, Me.modeloST, Me.accesorios, Me.descripcionST, Me.fechaRecepcion, Me.fechaLimite, Me.estado, Me.notaTecnico, Me.activoST})
         Me.dgvServTec.Location = New System.Drawing.Point(45, 61)
         Me.dgvServTec.Name = "dgvServTec"
         Me.dgvServTec.RowHeadersVisible = False
@@ -2256,8 +2243,16 @@ Partial Class frmOpciones
         '
         'idReparacion
         '
+        Me.idReparacion.DataPropertyName = "idReparacion"
         Me.idReparacion.HeaderText = "ID"
         Me.idReparacion.Name = "idReparacion"
+        '
+        'tipo
+        '
+        Me.tipo.DataPropertyName = "tipo"
+        Me.tipo.HeaderText = "Tipo"
+        Me.tipo.Name = "tipo"
+        Me.tipo.Visible = False
         '
         'cliente
         '
@@ -2294,132 +2289,37 @@ Partial Class frmOpciones
         '
         'fechaRecepcion
         '
-        Me.fechaRecepcion.DataPropertyName = "fechaRecepcion"
+        Me.fechaRecepcion.DataPropertyName = "fechaRecep"
         Me.fechaRecepcion.HeaderText = "Fecha Recepción"
         Me.fechaRecepcion.Name = "fechaRecepcion"
         '
         'fechaLimite
         '
+        Me.fechaLimite.DataPropertyName = "fechaLimite"
         Me.fechaLimite.HeaderText = "Fecha Límite"
         Me.fechaLimite.Name = "fechaLimite"
         Me.fechaLimite.Visible = False
         '
         'estado
         '
+        Me.estado.DataPropertyName = "estado"
         Me.estado.HeaderText = "Estado"
         Me.estado.Name = "estado"
         Me.estado.Visible = False
         '
         'notaTecnico
         '
+        Me.notaTecnico.DataPropertyName = "notaTecnico"
         Me.notaTecnico.HeaderText = "Nota"
         Me.notaTecnico.Name = "notaTecnico"
         Me.notaTecnico.Visible = False
         '
         'activoST
         '
+        Me.activoST.DataPropertyName = "activo"
         Me.activoST.HeaderText = "Activo"
         Me.activoST.Name = "activoST"
         Me.activoST.Visible = False
-        '
-        'TabPage12
-        '
-        Me.TabPage12.Controls.Add(Me.btnAltaVentaTodos)
-        Me.TabPage12.Controls.Add(Me.btnAltaVenta)
-        Me.TabPage12.Controls.Add(Me.Label19)
-        Me.TabPage12.Controls.Add(Me.dgvVentas)
-        Me.TabPage12.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage12.Name = "TabPage12"
-        Me.TabPage12.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage12.Size = New System.Drawing.Size(882, 557)
-        Me.TabPage12.TabIndex = 4
-        Me.TabPage12.Text = "Ventas"
-        Me.TabPage12.UseVisualStyleBackColor = True
-        '
-        'btnAltaVentaTodos
-        '
-        Me.btnAltaVentaTodos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAltaVentaTodos.Location = New System.Drawing.Point(454, 496)
-        Me.btnAltaVentaTodos.Name = "btnAltaVentaTodos"
-        Me.btnAltaVentaTodos.Size = New System.Drawing.Size(291, 41)
-        Me.btnAltaVentaTodos.TabIndex = 7
-        Me.btnAltaVentaTodos.Text = "Restaurar todas"
-        Me.btnAltaVentaTodos.UseVisualStyleBackColor = True
-        '
-        'btnAltaVenta
-        '
-        Me.btnAltaVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAltaVenta.Location = New System.Drawing.Point(131, 496)
-        Me.btnAltaVenta.Name = "btnAltaVenta"
-        Me.btnAltaVenta.Size = New System.Drawing.Size(317, 41)
-        Me.btnAltaVenta.TabIndex = 6
-        Me.btnAltaVenta.Text = "Restaurar"
-        Me.btnAltaVenta.UseVisualStyleBackColor = True
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(41, 21)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(68, 24)
-        Me.Label19.TabIndex = 3
-        Me.Label19.Text = "Ventas"
-        '
-        'dgvVentas
-        '
-        Me.dgvVentas.AllowUserToAddRows = False
-        Me.dgvVentas.AllowUserToDeleteRows = False
-        Me.dgvVentas.AllowUserToResizeRows = False
-        Me.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVenta, Me.fechaHora, Me.formPago, Me.cuotas, Me.activoVenta, Me.detalles})
-        Me.dgvVentas.Location = New System.Drawing.Point(45, 61)
-        Me.dgvVentas.Name = "dgvVentas"
-        Me.dgvVentas.RowHeadersVisible = False
-        Me.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvVentas.Size = New System.Drawing.Size(790, 422)
-        Me.dgvVentas.TabIndex = 2
-        '
-        'idVenta
-        '
-        Me.idVenta.DataPropertyName = "idVenta"
-        Me.idVenta.HeaderText = "ID"
-        Me.idVenta.Name = "idVenta"
-        '
-        'fechaHora
-        '
-        Me.fechaHora.DataPropertyName = "fechaHora"
-        Me.fechaHora.HeaderText = "Fecha y Hora"
-        Me.fechaHora.Name = "fechaHora"
-        '
-        'formPago
-        '
-        Me.formPago.DataPropertyName = "formPago"
-        Me.formPago.HeaderText = "Forma de Pago"
-        Me.formPago.Name = "formPago"
-        Me.formPago.Visible = False
-        '
-        'cuotas
-        '
-        Me.cuotas.DataPropertyName = "cuotas"
-        Me.cuotas.HeaderText = "Cuotas"
-        Me.cuotas.Name = "cuotas"
-        Me.cuotas.Visible = False
-        '
-        'activoVenta
-        '
-        Me.activoVenta.DataPropertyName = "activo"
-        Me.activoVenta.HeaderText = "Activo"
-        Me.activoVenta.Name = "activoVenta"
-        Me.activoVenta.Visible = False
-        '
-        'detalles
-        '
-        Me.detalles.HeaderText = "Opciones"
-        Me.detalles.Name = "detalles"
-        Me.detalles.Text = "Ver más detalles"
-        Me.detalles.UseColumnTextForButtonValue = True
         '
         'TabPage7
         '
@@ -2522,6 +2422,7 @@ Partial Class frmOpciones
         Me.Controls.Add(Me.tabBajas)
         Me.Controls.Add(Me.tabConfiguraciones)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1151, 625)
         Me.MinimumSize = New System.Drawing.Size(1151, 625)
@@ -2578,9 +2479,6 @@ Partial Class frmOpciones
         Me.TabPage11.ResumeLayout(False)
         Me.TabPage11.PerformLayout()
         CType(Me.dgvServTec, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage12.ResumeLayout(False)
-        Me.TabPage12.PerformLayout()
-        CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
         CType(Me.dgvNotas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2715,9 +2613,6 @@ Partial Class frmOpciones
     Friend WithEvents TabPage11 As TabPage
     Friend WithEvents Label18 As Label
     Friend WithEvents dgvServTec As DataGridView
-    Friend WithEvents TabPage12 As TabPage
-    Friend WithEvents Label19 As Label
-    Friend WithEvents dgvVentas As DataGridView
     Friend WithEvents btnAltaCliente As Button
     Friend WithEvents btnAltaClienteTodos As Button
     Friend WithEvents btnAltaProductosTodos As Button
@@ -2726,8 +2621,6 @@ Partial Class frmOpciones
     Friend WithEvents btnAltaProveedor As Button
     Friend WithEvents btnAltaServTecTodos As Button
     Friend WithEvents btnAltaServTec As Button
-    Friend WithEvents btnAltaVentaTodos As Button
-    Friend WithEvents btnAltaVenta As Button
     Friend WithEvents TabPage7 As TabPage
     Friend WithEvents btnAltaNotasTodas As Button
     Friend WithEvents btnAltaNota As Button
@@ -2764,28 +2657,11 @@ Partial Class frmOpciones
     Friend WithEvents direccionProveedor As DataGridViewTextBoxColumn
     Friend WithEvents horario As DataGridViewTextBoxColumn
     Friend WithEvents activoProveedor As DataGridViewTextBoxColumn
-    Friend WithEvents idReparacion As DataGridViewTextBoxColumn
-    Friend WithEvents cliente As DataGridViewTextBoxColumn
-    Friend WithEvents marcaST As DataGridViewTextBoxColumn
-    Friend WithEvents modeloST As DataGridViewTextBoxColumn
-    Friend WithEvents accesorios As DataGridViewTextBoxColumn
-    Friend WithEvents descripcionST As DataGridViewTextBoxColumn
-    Friend WithEvents fechaRecepcion As DataGridViewTextBoxColumn
-    Friend WithEvents fechaLimite As DataGridViewTextBoxColumn
-    Friend WithEvents estado As DataGridViewTextBoxColumn
-    Friend WithEvents notaTecnico As DataGridViewTextBoxColumn
-    Friend WithEvents activoST As DataGridViewTextBoxColumn
     Friend WithEvents idnota As DataGridViewTextBoxColumn
     Friend WithEvents nota As DataGridViewTextBoxColumn
     Friend WithEvents fecha As DataGridViewTextBoxColumn
     Friend WithEvents color As DataGridViewTextBoxColumn
     Friend WithEvents activoNota As DataGridViewTextBoxColumn
-    Friend WithEvents idVenta As DataGridViewTextBoxColumn
-    Friend WithEvents fechaHora As DataGridViewTextBoxColumn
-    Friend WithEvents formPago As DataGridViewTextBoxColumn
-    Friend WithEvents cuotas As DataGridViewTextBoxColumn
-    Friend WithEvents activoVenta As DataGridViewTextBoxColumn
-    Friend WithEvents detalles As DataGridViewButtonColumn
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
@@ -2799,4 +2675,16 @@ Partial Class frmOpciones
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents idReparacion As DataGridViewTextBoxColumn
+    Friend WithEvents tipo As DataGridViewTextBoxColumn
+    Friend WithEvents cliente As DataGridViewTextBoxColumn
+    Friend WithEvents marcaST As DataGridViewTextBoxColumn
+    Friend WithEvents modeloST As DataGridViewTextBoxColumn
+    Friend WithEvents accesorios As DataGridViewTextBoxColumn
+    Friend WithEvents descripcionST As DataGridViewTextBoxColumn
+    Friend WithEvents fechaRecepcion As DataGridViewTextBoxColumn
+    Friend WithEvents fechaLimite As DataGridViewTextBoxColumn
+    Friend WithEvents estado As DataGridViewTextBoxColumn
+    Friend WithEvents notaTecnico As DataGridViewTextBoxColumn
+    Friend WithEvents activoST As DataGridViewTextBoxColumn
 End Class

@@ -96,7 +96,7 @@
             If dgvClientes.CurrentRow.Selected = False Then
                 MsgBox("No hay ningun cliente seleccionado", MsgBoxStyle.Information, "Clientes")
             Else
-                If MsgBox("¿Desea dar de baja este cliente?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Clientes") = MsgBoxResult.Yes Then
+                If MsgBox("¿Desea dar de baja el cliente cliente '" & dgvClientes.CurrentRow.Cells("nombreApel").Value & "'?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Clientes") = MsgBoxResult.Yes Then
                     eCliente.idCliente = dgvClientes.CurrentRow.Cells("idcliente").Value
                     eCliente.bajaCliente()
                     actualizarClientes()
@@ -140,8 +140,12 @@
 
     Private Sub frmClientes_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyData
-            Case (Keys.Control + Keys.B)
+            Case (Keys.Alt + Keys.B)
                 txtBuscar.Select()
+            Case Keys.Escape
+                If reparacion = True Then
+                    Call btnBajaCancelar_Click(btnBajaCancelar, e)
+                End If
             Case Keys.F10
                 Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
             Case Keys.F11
@@ -174,5 +178,14 @@
 
     Private Sub frmClientes_Disposed(sender As Object, e As EventArgs) Handles Me.Disposed
         ' Me.Close()
+    End Sub
+
+    Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
+        Select Case e.KeyData
+            Case Keys.Enter
+                If reparacion = True Then
+                    Call btnAgregarSeleccionar_Click(btnAgregarSeleccionar, e)
+                End If
+        End Select
     End Sub
 End Class

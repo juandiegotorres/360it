@@ -54,9 +54,10 @@ Partial Class frmVender
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.cbFormPago = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.txtClienteCtaCorriente = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnCancelarCtaCorriente = New System.Windows.Forms.Button()
+        Me.txtClienteCtaCorriente = New System.Windows.Forms.TextBox()
+        Me.lblCtaCorriente = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -99,7 +100,7 @@ Partial Class frmVender
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -366,16 +367,19 @@ Partial Class frmVender
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.98814!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.01186!))
-        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel6, 1, 0)
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.75494!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.24506!))
+        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel3, 1, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.lblCtaCorriente, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 251)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 228)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowCount = 2
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(506, 36)
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(506, 59)
         Me.TableLayoutPanel4.TabIndex = 63
         '
         'TableLayoutPanel5
@@ -386,85 +390,93 @@ Partial Class frmVender
         Me.TableLayoutPanel5.Controls.Add(Me.cbFormPago, 1, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.Label9, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 22)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(257, 36)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(265, 34)
         Me.TableLayoutPanel5.TabIndex = 3
         '
         'cbFormPago
         '
-        Me.cbFormPago.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbFormPago.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.cbFormPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbFormPago.Enabled = False
-        Me.cbFormPago.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbFormPago.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbFormPago.FormattingEnabled = True
-        Me.cbFormPago.Location = New System.Drawing.Point(111, 7)
-        Me.cbFormPago.Margin = New System.Windows.Forms.Padding(3, 7, 3, 3)
+        Me.cbFormPago.Location = New System.Drawing.Point(110, 5)
+        Me.cbFormPago.Margin = New System.Windows.Forms.Padding(2, 5, 3, 3)
         Me.cbFormPago.Name = "cbFormPago"
-        Me.cbFormPago.Size = New System.Drawing.Size(143, 30)
+        Me.cbFormPago.Size = New System.Drawing.Size(152, 29)
         Me.cbFormPago.TabIndex = 61
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label9.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(8, 13)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(8, 13, 3, 5)
+        Me.Label9.Location = New System.Drawing.Point(8, 8)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(8, 3, 3, 5)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(97, 18)
+        Me.Label9.Size = New System.Drawing.Size(97, 21)
         Me.Label9.TabIndex = 62
         Me.Label9.Text = "Form. Pago"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TableLayoutPanel6
+        'Panel3
         '
-        Me.TableLayoutPanel6.ColumnCount = 2
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.txtClienteCtaCorriente, 0, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.btnCancelarCtaCorriente, 1, 0)
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(257, 0)
-        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(249, 36)
-        Me.TableLayoutPanel6.TabIndex = 4
-        '
-        'txtClienteCtaCorriente
-        '
-        Me.txtClienteCtaCorriente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtClienteCtaCorriente.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtClienteCtaCorriente.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtClienteCtaCorriente.Location = New System.Drawing.Point(15, 8)
-        Me.txtClienteCtaCorriente.Margin = New System.Windows.Forms.Padding(15, 8, 3, 3)
-        Me.txtClienteCtaCorriente.Name = "txtClienteCtaCorriente"
-        Me.txtClienteCtaCorriente.ReadOnly = True
-        Me.txtClienteCtaCorriente.Size = New System.Drawing.Size(190, 26)
-        Me.txtClienteCtaCorriente.TabIndex = 49
-        Me.txtClienteCtaCorriente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtClienteCtaCorriente.Visible = False
+        Me.Panel3.Controls.Add(Me.btnCancelarCtaCorriente)
+        Me.Panel3.Controls.Add(Me.txtClienteCtaCorriente)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(271, 19)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(235, 40)
+        Me.Panel3.TabIndex = 6
         '
         'btnCancelarCtaCorriente
         '
-        Me.btnCancelarCtaCorriente.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCancelarCtaCorriente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCancelarCtaCorriente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelarCtaCorriente.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnCancelarCtaCorriente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelarCtaCorriente.Location = New System.Drawing.Point(211, 8)
-        Me.btnCancelarCtaCorriente.Margin = New System.Windows.Forms.Padding(3, 8, 15, 6)
+        Me.btnCancelarCtaCorriente.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelarCtaCorriente.Image = Global.WindowsApp1.My.Resources.Resources.cancelar
+        Me.btnCancelarCtaCorriente.Location = New System.Drawing.Point(200, 10)
+        Me.btnCancelarCtaCorriente.Margin = New System.Windows.Forms.Padding(5, 8, 3, 6)
         Me.btnCancelarCtaCorriente.Name = "btnCancelarCtaCorriente"
-        Me.btnCancelarCtaCorriente.Size = New System.Drawing.Size(23, 22)
-        Me.btnCancelarCtaCorriente.TabIndex = 0
-        Me.btnCancelarCtaCorriente.Text = "X"
-        Me.btnCancelarCtaCorriente.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnCancelarCtaCorriente.Size = New System.Drawing.Size(20, 20)
+        Me.btnCancelarCtaCorriente.TabIndex = 53
+        Me.btnCancelarCtaCorriente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCancelarCtaCorriente.UseVisualStyleBackColor = True
         Me.btnCancelarCtaCorriente.Visible = False
+        '
+        'txtClienteCtaCorriente
+        '
+        Me.txtClienteCtaCorriente.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtClienteCtaCorriente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtClienteCtaCorriente.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtClienteCtaCorriente.Location = New System.Drawing.Point(26, 10)
+        Me.txtClienteCtaCorriente.Margin = New System.Windows.Forms.Padding(10, 8, 3, 3)
+        Me.txtClienteCtaCorriente.Name = "txtClienteCtaCorriente"
+        Me.txtClienteCtaCorriente.ReadOnly = True
+        Me.txtClienteCtaCorriente.Size = New System.Drawing.Size(169, 26)
+        Me.txtClienteCtaCorriente.TabIndex = 52
+        Me.txtClienteCtaCorriente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtClienteCtaCorriente.Visible = False
+        '
+        'lblCtaCorriente
+        '
+        Me.lblCtaCorriente.AutoSize = True
+        Me.lblCtaCorriente.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lblCtaCorriente.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCtaCorriente.Location = New System.Drawing.Point(293, 5)
+        Me.lblCtaCorriente.Margin = New System.Windows.Forms.Padding(22, 5, 3, 0)
+        Me.lblCtaCorriente.Name = "lblCtaCorriente"
+        Me.lblCtaCorriente.Size = New System.Drawing.Size(210, 14)
+        Me.lblCtaCorriente.TabIndex = 5
+        Me.lblCtaCorriente.Text = "Cuenta corriente a nombre de:"
+        Me.lblCtaCorriente.Visible = False
         '
         'TableLayoutPanel3
         '
@@ -968,10 +980,11 @@ Partial Class frmVender
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.TableLayoutPanel4.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
-        Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.TableLayoutPanel6.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -1028,9 +1041,6 @@ Partial Class frmVender
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents cbFormPago As ComboBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents btnCancelarCtaCorriente As Button
-    Friend WithEvents txtClienteCtaCorriente As TextBox
     Friend WithEvents cbBuscador As ComboBox
     Friend WithEvents txtDescuento As TextBox
     Friend WithEvents idProductoCarrito As DataGridViewTextBoxColumn
@@ -1042,4 +1052,8 @@ Partial Class frmVender
     Friend WithEvents precioVentaCarrito As DataGridViewTextBoxColumn
     Friend WithEvents precioCostoCarrito As DataGridViewTextBoxColumn
     Friend WithEvents btnEliminarDGV As DataGridViewButtonColumn
+    Friend WithEvents lblCtaCorriente As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents btnCancelarCtaCorriente As Button
+    Friend WithEvents txtClienteCtaCorriente As TextBox
 End Class

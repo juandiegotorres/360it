@@ -217,6 +217,11 @@ WindowsApp1
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApp1.My.Resources.Resources.itl_cat_orange_wallpaper_142494">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApp1.My.Resources.Resources.maximize">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -248,6 +253,16 @@ WindowsApp1
 </summary>
 </member>
 <member name="P:WindowsApp1.My.Resources.Resources.vender36dpx28">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp1.My.Resources.Resources.Wallpaper">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp1.My.Resources.Resources.Wallpaper1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

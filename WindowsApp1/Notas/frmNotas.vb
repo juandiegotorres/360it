@@ -79,7 +79,7 @@
                             'Una vez que pude entrar dentro del panel header asigno el nombre del label
                             nombreLabel = "fecha" & numeroDePanel
                             lbl = _control2.Controls.Item(nombreLabel)
-                            lbl.Text = CDate(tablaNotas.Rows(numeroDePanel - 1).Item("fecha").ToString)
+                            lbl.Text = CDate(tablaNotas.Rows(numeroDePanel - 1).Item("date(fecha)").ToString)
                         End If
                     End If
                 Next
@@ -202,7 +202,7 @@
             pag3.BackColor = Color.Transparent
             pag2.Text = "2"
             linkAnterior.Enabled = True
-            cargarNotas(8)
+            cargarNotas(8 + 1)
         ElseIf paginaActual = 3 Then
             pag2.BackColor = Color.Transparent
             pag1.Text = "1"
@@ -210,12 +210,12 @@
             pag3.Text = "3"
             pag3.BackColor = Color.DarkOrange
             linkAnterior.Enabled = True
-            cargarNotas(16)
+            cargarNotas(16 + 1)
         ElseIf paginaActual > 3 Then
             pag1.Text = CInt(pag1.Text) - 1
             pag2.Text = CInt(pag2.Text) - 1
             pag3.Text = CInt(pag3.Text) - 1
-            cargarNotas(paginaActual * 8)
+            cargarNotas((paginaActual * 8) + 1)
         End If
     End Sub
     Private Sub linkSiguiente_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkSiguiente.LinkClicked
@@ -227,18 +227,18 @@
             pag2.BackColor = Color.DarkOrange
             pag1.BackColor = Color.Transparent
             linkAnterior.Enabled = True
-            cargarNotas(8)
+            cargarNotas(8 + 1)
         ElseIf paginaActual = 3 Then
             pag2.BackColor = Color.Transparent
             pag3.BackColor = Color.DarkOrange
             linkAnterior.Enabled = True
-            cargarNotas(16)
+            cargarNotas(16 + 1)
         ElseIf paginaActual > 3 Then
             pag1.Text = pag2.Text
             pag2.Text = pag3.Text
             pag3.Text = paginaActual
             linkAnterior.Enabled = True
-            cargarNotas(8 * paginaActual)
+            cargarNotas((8 * paginaActual) + 1)
         End If
     End Sub
 

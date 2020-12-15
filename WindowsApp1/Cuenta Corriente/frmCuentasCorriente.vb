@@ -4,6 +4,7 @@
     Dim debe, entrega As Double
     Dim bsMovimientoCuenta As New BindingSource
     Dim filtroBS As String
+    Dim ventaSeleccionada As UInt64
     Public Sub cargarCuentaCorriente()
         tablaCuenta.Clear()
         debe = 0
@@ -82,28 +83,11 @@
     Private Sub frmCuentasCorriente_Load(sender As Object, e As EventArgs) Handles Me.Load
         debe = 0
         entrega = 0
+        dgvCuentas.Select()
     End Sub
 
 
-    Private Sub btnEntregaDeDinero_Click(sender As Object, e As EventArgs) Handles btnEntregaDeDinero.Click
-        If dgvCuentas.Rows.Count >= 1 Then
-            Dim entregaDinero As New frmEntrega()
-            entregaDinero.eCtaCorriente.idCtaCorriente = dgvCuentas.Rows(0).Cells("cuentacorriente").Value
-            If dgvCuentas.SelectedRows.Count = 1 Then
-                entregaDinero.eCtaCorriente.idVenta = dgvCuentas.CurrentRow.Cells("venta").Value
-            End If
-            entregaDinero.ShowDialog()
-            If entregaDinero.DialogResult = DialogResult.OK Then
-                eCuentaCorriente.entrega = entregaDinero.eCtaCorriente.entrega
-                eCuentaCorriente.idVenta = entregaDinero.eCtaCorriente.idVenta
-                eCuentaCorriente.idCtaCorriente = dgvCuentas.Rows(0).Cells("cuentacorriente").Value
-                eCuentaCorriente.entregaDinero()
-                cargarCuentaCorriente()
-            End If
-        End If
-    End Sub
-
-    Private Sub btnEliminarMovimiento_Click(sender As Object, e As EventArgs) Handles btnEliminarMovimiento.Click
+    Private Sub btnEliminarMovimiento_Click(sender As Object, e As EventArgs)
         If dgvCuentas.SelectedRows.Count = 1 Then
             Dim tipoMovimiento As String = dgvCuentas.CurrentRow.Cells("tipoMovimiento").Value.ToString
             If tipoMovimiento = "DÉBITO" Then
@@ -149,18 +133,38 @@
         corregirDataGrid()
     End Sub
 
-
     Private Sub frmCuentasCorriente_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyData
-            Case (Keys.Control + Keys.B)
+            Case (Keys.Alt + Keys.B)
                 picClientes_Click(picClientes, e)
             Case Keys.F10
                 Call btnDetalleVenta_Click(btnDetalleVenta, e)
             Case Keys.F11
                 Call btnEntregaDeDinero_Click(btnEntregaDeDinero, e)
-            Case Keys.F12
-                Call btnEliminarMovimiento_Click(btnEliminarMovimiento, e)
         End Select
+    End Sub
+
+    Private Sub btnEntregaDeDinero_Click(sender As Object, e As EventArgs) Handles btnEntregaDeDinero.Click
+        'If cbVentas.Text = "Todas" Then
+        If dgvCuentas.Rows.Count >= 1 Then
+            Dim entregaDinero As New frmEntrega(200, cbVentas.SelectedValue)
+            entregaDinero.eCtaCorriente.idCliente = dgvCuentas.Rows(0).Cells("idcliente").Value
+            If dgvCuentas.SelectedRows.Count = 1 Then
+                entregaDinero.eCtaCorriente.idVenta = dgvCuentas.CurrentRow.Cells("venta").Value
+            End If
+            entregaDinero.ShowDialog()
+            If entregaDinero.DialogResult = DialogResult.OK Then
+                eCuentaCorriente.entrega = entregaDinero.eCtaCorriente.entrega
+                eCuentaCorriente.idVenta = entregaDinero.eCtaCorriente.idVenta
+                eCuentaCorriente.idCtaCorriente = dgvCuentas.Rows(0).Cells("cuentacorriente").Value
+                eCuentaCorriente.entregaDinero()
+                cargarCuentaCorriente()
+                'Vuelvo a filtrar la venta por el numero al que hice la entrega
+                cbVentas.SelectedValue = eCuentaCorriente.idVenta
+                cbVentas_SelectionChangeCommitted(cbVentas, e)
+            End If
+        End If
+        'End If
     End Sub
 
     Private Sub cbVentas_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbVentas.SelectionChangeCommitted

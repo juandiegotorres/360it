@@ -79,7 +79,7 @@
         Dim detalleVenta As New frmDetalleVentaCtaCorriente
         With detalleVenta
             If dgvHistCtaCorriente.SelectedRows.Count = 1 Then
-                .e_Venta.idVenta = dgvHistCtaCorriente.CurrentRow.Cells("idVentaCta").Value
+                .e_Venta.idVenta = dgvHistCtaCorriente.CurrentRow.Cells("idVentaCC").Value
                 .ShowDialog()
             End If
         End With
