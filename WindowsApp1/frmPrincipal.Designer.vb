@@ -25,7 +25,7 @@ Partial Class frmPrincipal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.panelCost = New System.Windows.Forms.Panel()
+        Me.panelSelector = New System.Windows.Forms.Panel()
         Me.btnReportes = New System.Windows.Forms.Button()
         Me.btnNotas = New System.Windows.Forms.Button()
         Me.btnOpciones = New System.Windows.Forms.Button()
@@ -69,7 +69,7 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.panelCost)
+        Me.Panel1.Controls.Add(Me.panelSelector)
         Me.Panel1.Controls.Add(Me.btnReportes)
         Me.Panel1.Controls.Add(Me.btnNotas)
         Me.Panel1.Controls.Add(Me.btnOpciones)
@@ -87,13 +87,14 @@ Partial Class frmPrincipal
         Me.Panel1.Size = New System.Drawing.Size(209, 703)
         Me.Panel1.TabIndex = 0
         '
-        'panelCost
+        'panelSelector
         '
-        Me.panelCost.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.panelCost.Location = New System.Drawing.Point(1, 101)
-        Me.panelCost.Name = "panelCost"
-        Me.panelCost.Size = New System.Drawing.Size(8, 45)
-        Me.panelCost.TabIndex = 47
+        Me.panelSelector.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.panelSelector.Location = New System.Drawing.Point(1, 101)
+        Me.panelSelector.Name = "panelSelector"
+        Me.panelSelector.Size = New System.Drawing.Size(8, 45)
+        Me.panelSelector.TabIndex = 47
+        Me.panelSelector.Visible = False
         '
         'btnReportes
         '
@@ -546,6 +547,6 @@ Partial Class frmPrincipal
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnNotas As Button
     Friend WithEvents btnReportes As Button
-    Friend WithEvents panelCost As Panel
+    Friend WithEvents panelSelector As Panel
     Friend WithEvents ttAyuda As ToolTip
 End Class

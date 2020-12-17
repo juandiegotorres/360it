@@ -126,12 +126,12 @@ Partial Class frmCantidad
         Me.ClientSize = New System.Drawing.Size(387, 221)
         Me.Controls.Add(Me.lblDisponibilidad)
         Me.Controls.Add(Me.lblError)
-        Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtCantidad)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.pnlHeader)
         Me.Controls.Add(Me.lblTitulo)
+        Me.Controls.Add(Me.btnAgregar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.ImeMode = System.Windows.Forms.ImeMode.[On]
         Me.KeyPreview = True

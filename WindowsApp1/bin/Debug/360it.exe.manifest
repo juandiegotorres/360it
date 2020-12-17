@@ -50,19 +50,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NYdfGxILVvhBFUY4u3yUEYV6bTOBTZWOHFzPTfaqw8E=</dsig:DigestValue>
+        <dsig:DigestValue>EDLHfOHvB0Q6Rt/abeJfUcENSc6IPIk60GSke0bORQg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDeNegocios.exe" size="26624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDeNegocios.dll" size="21504">
       <assemblyIdentity name="CapaDeNegocios" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>27k+CWu1/qWpXmJOY8VT5dnfRAxo+dDAA2RB3pomh2w=</dsig:DigestValue>
+        <dsig:DigestValue>/YKmdeMuDDnfOt77gVrGVRWrAwI3+uuHls06ZyAQ1xc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

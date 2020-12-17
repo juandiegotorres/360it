@@ -150,7 +150,6 @@ C:\Users\Juandi\Desktop\360it\WindowsApp1\obj\Debug\WindowsApp1.pdb
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Entidades.dll
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\MySql.Data.dll
-C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\CapaDeNegocios.exe
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Entidades.pdb
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Entidades.xml
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
@@ -207,5 +206,6 @@ C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\360it.application
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\360it.exe
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\360it.xml
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\360it.pdb
-C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\CapaDeNegocios.exe.config
 C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\obj\Debug\WindowsApp1.frmPassword.resources
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll
+C:\Users\Juandi\Documents\GitHub\360it\WindowsApp1\bin\Debug\CapaDeNegocios.dll.config

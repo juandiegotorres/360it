@@ -31,6 +31,7 @@ Public Class frmCantidad
             End If
         ElseIf agregar = False Then
             lblTitulo.Text = "Quitar"
+            btnAgregar.Text = "Quitar"
             lblDisponibilidad.Text = "Solo puede quitar " & cantidadProductos & " productos"
             txtCantidad.Text = cantidadProductos
         End If

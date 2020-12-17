@@ -24,7 +24,7 @@
             'ElseIf cbVenta.Text = "" Then
             '    MsgBox("Debe elegir una venta", MsgBoxStyle.Exclamation, "Entrega de Dinero")
         ElseIf CDbl(txtEntrega.Text) > eCtaCorriente.resto Then
-            MsgBox("Este monto es más de lo que el cliente debe, intente chequear la opcion 'Entregar resto faltante'", MsgBoxStyle.Exclamation, "Entrega de Dinero")
+            MsgBox("El monto ingresado es mayor al adeudado por el cliente $" & eCtaCorriente.resto & ", ingrese un importe menor", MsgBoxStyle.Exclamation, "Entrega de Dinero")
             Return True
         Else
             eCtaCorriente.entrega = CDbl(txtEntrega.Text)

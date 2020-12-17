@@ -34,6 +34,7 @@ Partial Class frmEntrega
         Me.cbVenta = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.chbResto = New System.Windows.Forms.CheckBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -70,7 +71,7 @@ Partial Class frmEntrega
         'txtEntrega
         '
         Me.txtEntrega.Font = New System.Drawing.Font("Montserrat", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEntrega.Location = New System.Drawing.Point(184, 88)
+        Me.txtEntrega.Location = New System.Drawing.Point(189, 88)
         Me.txtEntrega.Name = "txtEntrega"
         Me.txtEntrega.Size = New System.Drawing.Size(209, 33)
         Me.txtEntrega.TabIndex = 0
@@ -133,7 +134,7 @@ Partial Class frmEntrega
         Me.cbVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbVenta.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbVenta.FormattingEnabled = True
-        Me.cbVenta.Location = New System.Drawing.Point(184, 131)
+        Me.cbVenta.Location = New System.Drawing.Point(189, 131)
         Me.cbVenta.Name = "cbVenta"
         Me.cbVenta.Size = New System.Drawing.Size(209, 34)
         Me.cbVenta.TabIndex = 1
@@ -154,12 +155,22 @@ Partial Class frmEntrega
         '
         Me.chbResto.AutoSize = True
         Me.chbResto.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chbResto.Location = New System.Drawing.Point(184, 171)
+        Me.chbResto.Location = New System.Drawing.Point(189, 171)
         Me.chbResto.Name = "chbResto"
         Me.chbResto.Size = New System.Drawing.Size(209, 19)
         Me.chbResto.TabIndex = 49
         Me.chbResto.Text = "Entregar resto faltante de la venta"
         Me.chbResto.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Montserrat SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(168, 92)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(24, 26)
+        Me.Label4.TabIndex = 50
+        Me.Label4.Text = "$"
         '
         'frmEntrega
         '
@@ -176,6 +187,7 @@ Partial Class frmEntrega
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.pnlHeader)
+        Me.Controls.Add(Me.Label4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
         Me.Name = "frmEntrega"
@@ -200,4 +212,5 @@ Partial Class frmEntrega
     Friend WithEvents cbVenta As ComboBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents chbResto As CheckBox
+    Friend WithEvents Label4 As Label
 End Class

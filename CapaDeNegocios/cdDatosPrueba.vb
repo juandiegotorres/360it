@@ -23,10 +23,11 @@ Public Class cdDatosPrueba
             End If
             Return True
         Catch ex As MySqlException
-            MsgBox(ex.Message, MsgBoxStyle.Critical, "Clase cdDatos")
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Base de Datos")
+            MsgBox("Sucedió un error y no se pudo conectar a la base de datos", MsgBoxStyle.Critical, "Base de Datos")
             Return False
         Catch e As Exception
-            MsgBox(e.Message, MsgBoxStyle.Critical, "Clase cdDatos")
+            MsgBox(e.Message, MsgBoxStyle.Critical, "Base de Datos")
             Return False
         End Try
     End Function

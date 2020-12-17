@@ -3,10 +3,11 @@
     Dim eNotas As New Entidades.Nota
     Dim cantidadNotas, cantidadPaginas, paginaActual, a As UInt32
     Dim tablaNotas As New DataTable
+    Dim listaIDS(1, 8) As Integer
     Dim _control As Control
     Dim _control2 As Control
-    Dim txt As TextBox
-    Dim lbl As Label
+    Dim txt As New TextBox
+    Dim lbl As New Label
     Dim nombreLabel, numeroDePanel, nombreTextbox As String
     Dim numeroDeFilas As Integer
     Private Sub frmNotas_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -65,6 +66,9 @@
         tablaNotas.Clear()
         eNotas.traerNotas(tablaNotas, offset)
         numeroDeFilas = tablaNotas.Rows.Count
+        If paginaActual >= cantidadPaginas Then
+            linkSiguiente.Enabled = False
+        End If
         For Each _control In TableLayoutPanel2.Controls
             If TypeOf _control Is Panel Then
                 'Para yo poder recorrer cada uno de los paneles para poder llenarlo con las notas tengo que obtener el numero de panel en el que estoy situado ya que eso me va a dar el numero de textbox donde tengo que situar la nota. Una vez que lo tengo almaceno en una variable
@@ -85,27 +89,27 @@
                 Next
                 'Ahora prosigo a hacer algo similar con lo de arriba pero para los textbox
                 If numeroDePanel <= numeroDeFilas Then
-
                     nombreTextbox = "nota" & numeroDePanel
                     txt = _control.Controls.Item(nombreTextbox)
                     txt.Text = tablaNotas.Rows(numeroDePanel - 1).Item("nota").ToString
-                    'Voy a asignar el ID al tag por si el usario desea dar de baja la nota poder identificarla
-                    txt.Tag = tablaNotas.Rows(numeroDePanel - 1).Item("idnota").ToString
+                    'txt.Tag = tablaNotas.Rows(numeroDePanel - 1).Item("idnota").ToString
                     colorPanel(tablaNotas.Rows(numeroDePanel - 1).Item("color").ToString, _control, txt)
+                    'Voy a asignar el ID a un array con la posicion del panel por si el usario desea dar de baja la nota poder identificarla
+                    listaIDS(1, numeroDePanel) = tablaNotas.Rows(numeroDePanel - 1).Item("idnota").ToString
+                    '_control.Tag = tablaNotas.Rows(numeroDePanel - 1).Item("idnota").ToString
                     _control.Visible = True
                 Else
                     'Si hay menos de 8 notas voy a esconder los paneles sobrantes
                     _control.Visible = False
                 End If
-
             End If
         Next
     End Sub
     Public Sub eliminarNota(ByRef id As Integer)
         If MsgBox("¿Desea dar de baja esta nota?", MsgBoxStyle.YesNo Or MsgBoxStyle.Critical, "Notas") = MsgBoxResult.Yes Then
             eNotas.bajaNota(id)
-            cargarNotas(0)
             paginaActual = 1
+            cargarNotas(0)
             If paginaActual < cantidadPaginas Then
                 linkSiguiente.Enabled = True
             End If
@@ -113,6 +117,7 @@
             pag2.BackColor = Color.Transparent
             pag3.BackColor = Color.Transparent
         End If
+
     End Sub
     Public Sub modificarNota(ByRef id As Integer)
         Dim mdfNota As New frmNuevaNota(id, True)
@@ -122,27 +127,37 @@
         End If
     End Sub
     Private Sub picEliminar1_Click(sender As Object, e As EventArgs) Handles picEliminar1.Click
-        eliminarNota(nota1.Tag)
+        eliminarNota(listaIDS(1, 1))
     End Sub
 
     Private Sub picEliminar2_Click(sender As Object, e As EventArgs) Handles picEliminar2.Click
-        eliminarNota(nota2.Tag)
+        eliminarNota(listaIDS(1, 2))
     End Sub
 
     Private Sub picEliminar3_Click(sender As Object, e As EventArgs) Handles picEliminar3.Click
-        eliminarNota(nota3.Tag)
+        eliminarNota(listaIDS(1, 3))
     End Sub
 
     Private Sub picEliminar4_Click(sender As Object, e As EventArgs) Handles picEliminar4.Click
-        eliminarNota(nota4.Tag)
+        eliminarNota(listaIDS(1, 4))
     End Sub
 
     Private Sub picEliminar5_Click(sender As Object, e As EventArgs) Handles picEliminar5.Click
-        eliminarNota(nota5.Tag)
+        eliminarNota(listaIDS(1, 5))
+
     End Sub
 
     Private Sub picEliminar6_Click(sender As Object, e As EventArgs) Handles picEliminar6.Click
-        eliminarNota(nota6.Tag)
+        eliminarNota(listaIDS(1, 6))
+    End Sub
+
+    Private Sub picEliminar7_Click(sender As Object, e As EventArgs) Handles picEliminar7.Click
+        eliminarNota(listaIDS(1, 7))
+    End Sub
+
+
+    Private Sub picEliminar8_Click(sender As Object, e As EventArgs) Handles picEliminar8.Click
+        eliminarNota(listaIDS(1, 8))
     End Sub
 
     Private Sub btnAgregarSeleccionar_Click(sender As Object, e As EventArgs) Handles btnAgregarSeleccionar.Click
@@ -152,35 +167,32 @@
             cargarNotas(0)
         End If
     End Sub
-    Private Sub picEliminar7_Click(sender As Object, e As EventArgs) Handles picEliminar7.Click
-        eliminarNota(nota7.Tag)
-    End Sub
-
-
-    Private Sub picEliminar8_Click(sender As Object, e As EventArgs) Handles picEliminar8.Click
-        eliminarNota(nota8.Tag)
-    End Sub
-
 
     Private Sub picEditar1_Click(sender As Object, e As EventArgs) Handles picEditar1.Click
-        modificarNota(nota1.Tag)
+        modificarNota(listaIDS(1, 1))
     End Sub
     Private Sub picEditar2_Click(sender As Object, e As EventArgs) Handles picEditar2.Click
-        modificarNota(nota2.Tag)
+        modificarNota(listaIDS(1, 2))
     End Sub
     Private Sub picEditar3_Click(sender As Object, e As EventArgs) Handles picEditar3.Click
-        modificarNota(nota3.Tag)
+        modificarNota(listaIDS(1, 3))
     End Sub
 
     Private Sub picEditar4_Click(sender As Object, e As EventArgs) Handles picEditar4.Click
-        modificarNota(nota4.Tag)
+        modificarNota(listaIDS(1,4))
     End Sub
 
     Private Sub picEditar5_Click(sender As Object, e As EventArgs) Handles picEditar5.Click
-        modificarNota(nota5.Tag)
+        modificarNota(listaIDS(1, 5))
     End Sub
     Private Sub picEditar6_Click(sender As Object, e As EventArgs) Handles picEditar6.Click
-        modificarNota(nota6.Tag)
+        modificarNota(listaIDS(1, 6))
+    End Sub
+    Private Sub picEditar7_Click(sender As Object, e As EventArgs) Handles picEditar7.Click
+        modificarNota(listaIDS(1, 7))
+    End Sub
+    Private Sub picEditar8_Click(sender As Object, e As EventArgs) Handles picEditar8.Click
+        modificarNota(listaIDS(1, 8))
     End Sub
     Private Sub linkAnterior_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkAnterior.LinkClicked
         paginaActual = paginaActual - 1
@@ -202,7 +214,7 @@
             pag3.BackColor = Color.Transparent
             pag2.Text = "2"
             linkAnterior.Enabled = True
-            cargarNotas(8 + 1)
+            cargarNotas(8)
         ElseIf paginaActual = 3 Then
             pag2.BackColor = Color.Transparent
             pag1.Text = "1"
@@ -210,12 +222,12 @@
             pag3.Text = "3"
             pag3.BackColor = Color.DarkOrange
             linkAnterior.Enabled = True
-            cargarNotas(16 + 1)
+            cargarNotas(16)
         ElseIf paginaActual > 3 Then
             pag1.Text = CInt(pag1.Text) - 1
             pag2.Text = CInt(pag2.Text) - 1
             pag3.Text = CInt(pag3.Text) - 1
-            cargarNotas((paginaActual * 8) + 1)
+            cargarNotas((paginaActual * 8))
         End If
     End Sub
     Private Sub linkSiguiente_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkSiguiente.LinkClicked
@@ -227,25 +239,18 @@
             pag2.BackColor = Color.DarkOrange
             pag1.BackColor = Color.Transparent
             linkAnterior.Enabled = True
-            cargarNotas(8 + 1)
+            cargarNotas(8)
         ElseIf paginaActual = 3 Then
             pag2.BackColor = Color.Transparent
             pag3.BackColor = Color.DarkOrange
             linkAnterior.Enabled = True
-            cargarNotas(16 + 1)
+            cargarNotas(16)
         ElseIf paginaActual > 3 Then
             pag1.Text = pag2.Text
             pag2.Text = pag3.Text
             pag3.Text = paginaActual
             linkAnterior.Enabled = True
-            cargarNotas((8 * paginaActual) + 1)
+            cargarNotas((8 * paginaActual))
         End If
-    End Sub
-
-    Private Sub picEditar7_Click(sender As Object, e As EventArgs) Handles picEditar7.Click
-        modificarNota(nota7.Tag)
-    End Sub
-    Private Sub picEditar8_Click(sender As Object, e As EventArgs) Handles picEditar8.Click
-        modificarNota(nota8.Tag)
     End Sub
 End Class

@@ -1,4 +1,6 @@
-﻿Public Class frmOpciones
+﻿Imports System.ComponentModel
+
+Public Class frmOpciones
     Dim eConfiguracion As New Entidades.Opcion
     Dim eCapaDatos As New CapaDeNegocios.cdDatosPrueba
     Dim probarConexion As New CapaDeNegocios.cdDatosPrueba
@@ -712,7 +714,7 @@
 
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        Me.Close()
+        Me.DialogResult = DialogResult.OK
     End Sub
 
 
@@ -971,7 +973,7 @@
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         frmPassword.ShowDialog()
         If frmPassword.DialogResult = DialogResult.OK Then
-            MsgBox("Sea cuidadoso con los datos que modifica, el programa podría quedar inutilizado", MsgBoxStyle.Exclamation, "Credenciales Base de Datos")
+            MsgBox("Sea cuidadoso con los datos que modifica, el programa podría quedar inutilizable", MsgBoxStyle.Exclamation, "Credenciales Base de Datos")
             txtServer.Enabled = True
             txtUsuario.Enabled = True
             txtPassword.Enabled = True
@@ -1020,7 +1022,11 @@
 
     Private Sub frmOpciones_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Escape Then
-            Me.Close()
+            Me.DialogResult = DialogResult.OK
         End If
+    End Sub
+
+    Private Sub frmOpciones_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Me.DialogResult = DialogResult.OK
     End Sub
 End Class

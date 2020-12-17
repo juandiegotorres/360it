@@ -1,0 +1,4 @@
+﻿[*.vb]
+
+# BC30420: 'No se encontró 'Sub Main' en 'CapaDeNegocios.Form1'.
+dotnet_diagnostic.BC30420.severity = none

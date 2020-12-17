@@ -158,7 +158,7 @@ Partial Class frmNuevoCliente
         Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelefono.Location = New System.Drawing.Point(158, 192)
-        Me.txtTelefono.MaxLength = 24
+        Me.txtTelefono.MaxLength = 10
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(237, 31)
         Me.txtTelefono.TabIndex = 2

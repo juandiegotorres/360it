@@ -14,8 +14,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub abrirForm(ByVal formulario As Form)
-        'Cerraro formulario actual
-
+        'Cerrar formulario actual
         colorGeneral = Color.FromArgb(124, 231, 45)
         Dim formHijo As Form = TryCast(formulario, Form)
         formHijo.TopLevel = False
@@ -121,7 +120,6 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnAgrandar_Click(sender As Object, e As EventArgs) Handles btnAgrandar.Click
-
         With Screen.PrimaryScreen.WorkingArea
             Me.SetBounds(.Left, .Top, .Width, .Height)
         End With
@@ -130,7 +128,6 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnAchicar_Click(sender As Object, e As EventArgs) Handles btnAchicar.Click
-
         With Screen.PrimaryScreen.WorkingArea
             Me.SetBounds(.Left, .Top, 1234, 703)
         End With
@@ -146,7 +143,6 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
-
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -158,9 +154,9 @@ Public Class frmPrincipal
     Private Sub btnVentas_Click_1(sender As Object, e As EventArgs) Handles btnVentas.Click
         cerrarForm()
         pnlContenedor.Controls.Add(PictureBox3)
-        panelCost.Visible = True
-        panelCost.Height = btnVentas.Height
-        panelCost.Top = btnVentas.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnVentas.Height
+        panelSelector.Top = btnVentas.Top
         If pnlSubMenuVentas.Visible = True Then
             pnlSubMenuVentas.Visible = False
         Else
@@ -170,9 +166,9 @@ Public Class frmPrincipal
 
     Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnVentas.Height
-        panelCost.Top = btnVentas.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnVentas.Height
+        panelSelector.Top = btnVentas.Top
         btnVender.BackColor = Color.Orange
         setColor(btnVender)
         abrirForm(frmVender)
@@ -180,49 +176,49 @@ Public Class frmPrincipal
 
     Private Sub btnCaja_Click(sender As Object, e As EventArgs) Handles btnCaja.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnVentas.Height
-        panelCost.Top = btnVentas.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnVentas.Height
+        panelSelector.Top = btnVentas.Top
         abrirForm(frmCaja)
         setColor(btnCaja)
     End Sub
 
     Private Sub btnHistorialVentas_Click(sender As Object, e As EventArgs) Handles btnHistorialVentas.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnVentas.Height
-        panelCost.Top = btnVentas.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnVentas.Height
+        panelSelector.Top = btnVentas.Top
         setColor(btnHistorialVentas)
         abrirForm(frmHistorialVentas)
     End Sub
 
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnClientes.Height
-        panelCost.Top = btnClientes.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnClientes.Height
+        panelSelector.Top = btnClientes.Top
         abrirForm(frmClientes)
     End Sub
     Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnProductos.Height
-        panelCost.Top = btnProductos.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnProductos.Height
+        panelSelector.Top = btnProductos.Top
         abrirForm(frmProductos)
     End Sub
 
     Private Sub btnServTecnico_Click(sender As Object, e As EventArgs) Handles btnServTecnico.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnServTecnico.Height
-        panelCost.Top = btnServTecnico.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnServTecnico.Height
+        panelSelector.Top = btnServTecnico.Top
         abrirForm(frmServTecnico)
     End Sub
     Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnProveedores.Height
-        panelCost.Top = btnProveedores.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnProveedores.Height
+        panelSelector.Top = btnProveedores.Top
         abrirForm(frmProveedores)
     End Sub
     Public Sub setColor(ByVal boton As Button)
@@ -238,45 +234,60 @@ Public Class frmPrincipal
         'Si el boton ventas no esta habilitado significa que hay un error y no se puede conectar a la base de datos, de ese modo le indico al formulario opciones con el parametro errorDB, si es verdadero que solo deje habilitada las credenciales de la base de datos, si es false que cargue normalmente
         If btnVentas.Enabled = False Then
             Dim opciones As New frmOpciones(True)
-            opciones.Show()
+            opciones.ShowDialog()
+            If opciones.DialogResult = DialogResult.OK Then
+                Call Panel1_Click(Panel1, e)
+                panelSelector.Visible = False
+            End If
         Else
             Dim opciones As New frmOpciones(False)
-            opciones.Show()
+            opciones.ShowDialog()
+            If opciones.DialogResult = DialogResult.OK Then
+                Call Panel1_Click(Panel1, e)
+                panelSelector.Visible = False
+            End If
         End If
-
     End Sub
 
 
     Private Sub btnCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCuentaCorriente.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnVentas.Height
-        panelCost.Top = btnVentas.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnVentas.Height
+        panelSelector.Top = btnVentas.Top
         setColor(btnCuentaCorriente)
         abrirForm(frmCuentasCorriente)
     End Sub
 
     Private Sub btnNotas_Click(sender As Object, e As EventArgs) Handles btnNotas.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnNotas.Height
-        panelCost.Top = btnNotas.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnNotas.Height
+        panelSelector.Top = btnNotas.Top
         abrirForm(frmNotas)
     End Sub
 
     Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
         cerrarForm()
-        panelCost.Visible = True
-        panelCost.Height = btnReportes.Height
-        panelCost.Top = btnReportes.Top
+        panelSelector.Visible = True
+        panelSelector.Height = btnReportes.Height
+        panelSelector.Top = btnReportes.Top
         abrirForm(frmReportes)
     End Sub
 
-    Private Sub panelCost_LocationChanged(sender As Object, e As EventArgs) Handles panelCost.LocationChanged
+    Private Sub panelCost_LocationChanged(sender As Object, e As EventArgs) Handles panelSelector.LocationChanged
         Dim btn As Button
         For Each btn In pnlSubMenuVentas.Controls
             btn.BackColor = Color.FromArgb(100, 100, 100)
         Next
     End Sub
 
+    Private Sub Panel5_Click(sender As Object, e As EventArgs) Handles Panel5.Click
+        cerrarForm()
+        pnlContenedor.Controls.Add(PictureBox3)
+    End Sub
+    Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles Panel1.Click
+        cerrarForm()
+        pnlContenedor.Controls.Add(PictureBox3)
+    End Sub
 End Class

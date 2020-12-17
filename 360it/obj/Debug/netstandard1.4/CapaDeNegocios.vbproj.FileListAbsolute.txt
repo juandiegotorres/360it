@@ -1,8 +1,0 @@
-C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\360it\bin\Debug\netstandard1.4\CapaDeNegocios.deps.json
-C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\360it\bin\Debug\netstandard1.4\CapaDeNegocios.dll
-C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\360it\bin\Debug\netstandard1.4\CapaDeNegocios.pdb
-C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\360it\obj\Debug\netstandard1.4\CapaDeNegocios.vbprojAssemblyReference.cache
-C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\360it\obj\Debug\netstandard1.4\CapaDeNegocios.vbproj.CoreCompileInputs.cache
-C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\360it\obj\Debug\netstandard1.4\CapaDeNegocios.AssemblyInfo.vb
-C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\360it\obj\Debug\netstandard1.4\CapaDeNegocios.dll
-C:\Users\Juan Diego Torres\Documents\Visual Studio 2017\Projects\360it\360it\obj\Debug\netstandard1.4\CapaDeNegocios.pdb
